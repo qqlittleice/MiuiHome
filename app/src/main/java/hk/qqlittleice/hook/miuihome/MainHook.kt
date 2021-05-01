@@ -4,6 +4,8 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.ScrollView
+import android.widget.SeekBar
+import android.widget.TextView
 import hk.qqlittleice.hook.miuihome.module.*
 import hk.qqlittleice.hook.miuihome.utils.OwnSP
 import hk.qqlittleice.hook.miuihome.utils.dp2px
@@ -26,6 +28,8 @@ class MainHook {
         EnableMamlDownload().init()
         EnableClockGadget().init()
         EnableSimpleAnimation().init()
+        ModifyAnimDurationRatio().init()
+        TestHook().init()
     }
 
     private fun showSettingDialog() {
@@ -37,7 +41,7 @@ class MainHook {
                 setPadding(dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 10f), dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 5f))
                 addView(SettingTextView.FastBuilder(mText = "MiuiHome设置", mSize = SettingTextView.titleSize).build())
                 addView(SettingTextView.FastBuilder(mText = "模糊设置", mSize = SettingTextView.text2Size).build())
-                addView(SettingTextView.FastBuilder(mText = "后台模糊级别", mSize = SettingTextView.textSize) { showModifyBlurLevel() }.build())
+                addView(SettingTextView.FastBuilder(mText = "后台模糊级别") { showModifyBlurLevel() }.build())
                 addView(SettingTextView.FastBuilder(mText = "其他设置", mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = "平滑动画", mKey = "smoothAnimation").build())
                 addView(SettingSwitch.FastBuilder(mText = "文件夹模糊", mKey = "blurWhenOpenFolder").build())
@@ -45,6 +49,7 @@ class MainHook {
                 addView(SettingTextView.FastBuilder(mText = "扩展设置", mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = "时钟常显", mKey = "clockGadget").build())
                 addView(SettingSwitch.FastBuilder(mText = "简单动画", mKey = "simpleAnimation").build())
+                addView(SettingTextView.FastBuilder(mText = "动画速度调节") { showModifyAnimationLevel() }.build())
             })
         })
         dialogBuilder.setPositiveButton("关闭", null)
@@ -79,6 +84,57 @@ class MainHook {
             })
         })
         dialog = dialogBuilder.show()
+    }
+
+    private fun showModifyAnimationLevel() {
+        val dialogBuilder = AlertDialog.Builder(HomeContext.activity)
+        val mKey = "animationLevel"
+        var nowValue: Float = sharedPreferences.getFloat("animationLevel", 0f)
+        lateinit var valueTextView: TextView
+        fun saveValue(value: Float) {
+            nowValue = value
+            editor.putFloat(mKey, value)
+            editor.apply()
+        }
+        dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
+            overScrollMode = 2
+            addView(LinearLayout(HomeContext.activity).apply {
+                orientation = LinearLayout.VERTICAL
+                addView(SettingTextView.FastBuilder(mText = "动画速度调节", mSize = SettingTextView.text2Size).build())
+                addView(SeekBar(HomeContext.context).apply {
+                    min = 10
+                    max = 500
+                    progress = (nowValue * 100).toInt()
+                    setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+                        override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                            saveValue(progress.toFloat() / 100)
+                            valueTextView.text = "${nowValue}f"
+                        }
+                        override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+                        override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+                    })
+                })
+                addView(LinearLayout(HomeContext.context).apply {
+                    addView(TextView(HomeContext.context).apply {
+                        text = "0.1f"
+                        layoutParams = LinearLayout.LayoutParams(70, LinearLayout.LayoutParams.MATCH_PARENT)
+                    })
+                    addView(TextView(HomeContext.context).apply {
+                        text = "${nowValue}f"
+                        weightSum = 1f
+                        textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                        valueTextView = this
+                        layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1f)
+                    })
+                    addView(TextView(HomeContext.context).apply {
+                        text = "5.0f"
+                        textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
+                        layoutParams = LinearLayout.LayoutParams(70, LinearLayout.LayoutParams.MATCH_PARENT)
+                    })
+                })
+            })
+        })
+        dialogBuilder.show()
     }
 
 }

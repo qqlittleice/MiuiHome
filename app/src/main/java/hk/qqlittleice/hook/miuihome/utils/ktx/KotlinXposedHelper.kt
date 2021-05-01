@@ -382,6 +382,10 @@ fun <T> T.setLongField(field: String?, value: Long) = apply {
     setLongField(this, field, value)
 }
 
+fun <T> T.setFloatField(field: String?, value: Float) = apply {
+    setFloatField(this, field, value)
+}
+
 fun <T> T.setObjectField(field: String?, value: Any?) = apply {
     setObjectField(this, field, value)
 }

@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "hk.qqlittleice.hook.miuihome"
-        minSdk 22
+        minSdk 28
         targetSdk 30
         versionCode 1
         versionName "1.0"
