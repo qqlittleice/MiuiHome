@@ -4,6 +4,8 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.ScrollView
+import hk.qqlittleice.hook.miuihome.Config.SP_NAME
+import hk.qqlittleice.hook.miuihome.Config.hookPackage
 import hk.qqlittleice.hook.miuihome.module.*
 import hk.qqlittleice.hook.miuihome.utils.OwnSP
 import hk.qqlittleice.hook.miuihome.utils.dp2px
@@ -11,6 +13,7 @@ import hk.qqlittleice.hook.miuihome.utils.ktx.hookAfterMethod
 import hk.qqlittleice.hook.miuihome.view.SettingSeekBarDialog
 import hk.qqlittleice.hook.miuihome.view.SettingSwitch
 import hk.qqlittleice.hook.miuihome.view.SettingTextView
+import java.io.File
 
 class MainHook {
 
@@ -49,10 +52,24 @@ class MainHook {
                 addView(SettingSwitch.FastBuilder(mText = "时钟常显", mKey = "clockGadget").build())
                 addView(SettingSwitch.FastBuilder(mText = "简单动画", mKey = "simpleAnimation").build())
                 addView(SettingTextView.FastBuilder(mText = "动画速度调节") { showModifyAnimationLevel() }.build())
+                addView(SettingTextView.FastBuilder(mText = "模块设置") { showHookSetting() }.build())
             })
         })
         dialogBuilder.setPositiveButton("关闭", null)
-        dialogBuilder.setNeutralButton("重启系统桌面") { _, _ -> System.exit(0)}
+        dialogBuilder.setNeutralButton("重启系统桌面") { _, _ -> System.exit(0) }
+        dialogBuilder.show()
+    }
+
+    private fun showHookSetting() {
+        val dialogBuilder = AlertDialog.Builder(HomeContext.activity)
+        dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
+            overScrollMode = 2
+            addView(LinearLayout(HomeContext.activity).apply {
+                orientation = LinearLayout.VERTICAL
+                setPadding(dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 10f), dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 5f))
+                addView(SettingTextView.FastBuilder(mText = "清除模块配置") { File("/data/data/$hookPackage/shared_prefs/${SP_NAME}.xml").delete(); System.exit(0) }.build())
+            })
+        })
         dialogBuilder.show()
     }
 
@@ -68,6 +85,7 @@ class MainHook {
             overScrollMode = 2
             addView(LinearLayout(HomeContext.activity).apply {
                 orientation = LinearLayout.VERTICAL
+                setPadding(dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 10f), dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 5f))
                 addView(SettingTextView.FastBuilder(mText = "完整模糊", mSize = SettingTextView.textSize) {
                     saveValue("COMPLETE")
                     dialog.dismiss()

@@ -28,6 +28,7 @@ class SettingSeekBarDialog(private val mText: String,
             overScrollMode = 2
             addView(LinearLayout(HomeContext.activity).apply {
                 orientation = LinearLayout.VERTICAL
+                setPadding(dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 10f), dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 5f))
                 addView(SettingTextView.FastBuilder(mText = "请输入[${mText}]的值：", mSize = SettingTextView.textSize).build())
                 addView(EditText(HomeContext.context).apply {
                     hint = if (divide != 1) "输入的值会被除以$divide" else ""
@@ -70,6 +71,7 @@ class SettingSeekBarDialog(private val mText: String,
             overScrollMode = 2
             addView(LinearLayout(HomeContext.activity).apply {
                 orientation = LinearLayout.VERTICAL
+                setPadding(dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 10f), dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 5f))
                 addView(SettingTextView.FastBuilder(mText = mText, mSize = SettingTextView.text2Size).build())
                 addView(SeekBar(HomeContext.context).apply {
                     min = minValue
@@ -107,7 +109,6 @@ class SettingSeekBarDialog(private val mText: String,
                     gravity = Gravity.CENTER_VERTICAL
                     (this.layoutParams as LinearLayout.LayoutParams).apply {
                         topMargin = dp2px(HomeContext.context, 5f)
-                        setPaddingRelative(dp2px(HomeContext.context, 12f), dp2px(HomeContext.context, 6f), dp2px(HomeContext.context, 12f), dp2px(HomeContext.context, 5f))
                     }
                 })
                 if (canUserInput) {
