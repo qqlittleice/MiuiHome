@@ -2,6 +2,7 @@ package hk.qqlittleice.hook.miuihome
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.view.Gravity
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.SeekBar
@@ -131,6 +132,12 @@ class MainHook {
                         textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
                         layoutParams = LinearLayout.LayoutParams(70, LinearLayout.LayoutParams.MATCH_PARENT)
                     })
+                    layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+                    gravity = Gravity.CENTER_VERTICAL
+                    (this.layoutParams as LinearLayout.LayoutParams).apply {
+                        topMargin = dp2px(HomeContext.context, 5f)
+                        setPaddingRelative(dp2px(HomeContext.context, 12f), paddingTop, paddingEnd, dp2px(HomeContext.context, 5f))
+                    }
                 })
             })
         })
