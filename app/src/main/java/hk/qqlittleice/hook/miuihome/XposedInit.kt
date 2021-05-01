@@ -1,11 +1,15 @@
 package hk.qqlittleice.hook.miuihome
 
+import android.app.Activity
 import android.app.Application
 import android.content.Context
+import android.content.pm.PackageManager
 import de.robv.android.xposed.IXposedHookLoadPackage
 import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XposedHelpers
 import de.robv.android.xposed.callbacks.XC_LoadPackage
+import hk.qqlittleice.hook.miuihome.utils.ktx.hookAfterAllMethods
+import hk.qqlittleice.hook.miuihome.utils.ktx.hookAfterMethod
 
 class XposedInit : IXposedHookLoadPackage {
 
@@ -15,6 +19,10 @@ class XposedInit : IXposedHookLoadPackage {
             override fun afterHookedMethod(param: MethodHookParam) {
                 HomeContext.context = param.args[0] as Context
                 HomeContext.classLoader = HomeContext.context.classLoader
+                XposedHelpers.findClass("android.app.Instrumentation", HomeContext.classLoader)
+                        .hookAfterAllMethods("newActivity") { activityParam ->
+                            HomeContext.activity = activityParam.result as Activity
+                        }
                 MainHook().doHook()
             }
         })
