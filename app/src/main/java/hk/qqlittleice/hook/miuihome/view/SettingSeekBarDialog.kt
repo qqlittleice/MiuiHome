@@ -42,9 +42,8 @@ class SettingSeekBarDialog(private val mText: String,
         dialogBuilder.setPositiveButton("保存") { dialog, _ ->
             if (saveValue(editText.text.toString().toFloat() / divide)) {
                 dialog.dismiss()
-            } else{
                 LogUtil.toast("设置成功！")
-            }
+            } else{}
         }
         dialogBuilder.setNeutralButton("取消") { dialog, _ ->
             dialog.dismiss()
