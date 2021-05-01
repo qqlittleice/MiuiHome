@@ -3,13 +3,11 @@ package hk.qqlittleice.hook.miuihome
 import android.app.Activity
 import android.app.Application
 import android.content.Context
-import android.content.pm.PackageManager
 import de.robv.android.xposed.IXposedHookLoadPackage
 import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XposedHelpers
 import de.robv.android.xposed.callbacks.XC_LoadPackage
 import hk.qqlittleice.hook.miuihome.utils.ktx.hookAfterAllMethods
-import hk.qqlittleice.hook.miuihome.utils.ktx.hookAfterMethod
 
 class XposedInit : IXposedHookLoadPackage {
 

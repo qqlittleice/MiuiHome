@@ -57,7 +57,6 @@ class MainHook {
         dialogBuilder.show()
     }
 
-
     private fun showModifyBlurLevel() {
         val dialogBuilder = AlertDialog.Builder(HomeContext.activity)
         val mKey = "blurLevel"
@@ -136,7 +135,7 @@ class MainHook {
                     gravity = Gravity.CENTER_VERTICAL
                     (this.layoutParams as LinearLayout.LayoutParams).apply {
                         topMargin = dp2px(HomeContext.context, 5f)
-                        setPaddingRelative(dp2px(HomeContext.context, 12f), paddingTop, paddingEnd, dp2px(HomeContext.context, 5f))
+                        setPaddingRelative(dp2px(HomeContext.context, 12f), dp2px(HomeContext.context, 6f), dp2px(HomeContext.context, 12f), dp2px(HomeContext.context, 5f))
                     }
                 })
             })
