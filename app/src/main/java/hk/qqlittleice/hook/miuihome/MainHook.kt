@@ -2,15 +2,13 @@ package hk.qqlittleice.hook.miuihome
 
 import android.app.AlertDialog
 import android.os.Bundle
-import android.view.Gravity
 import android.widget.LinearLayout
 import android.widget.ScrollView
-import android.widget.SeekBar
-import android.widget.TextView
 import hk.qqlittleice.hook.miuihome.module.*
 import hk.qqlittleice.hook.miuihome.utils.OwnSP
 import hk.qqlittleice.hook.miuihome.utils.dp2px
 import hk.qqlittleice.hook.miuihome.utils.ktx.hookAfterMethod
+import hk.qqlittleice.hook.miuihome.view.SettingSeekBarDialog
 import hk.qqlittleice.hook.miuihome.view.SettingSwitch
 import hk.qqlittleice.hook.miuihome.view.SettingTextView
 
@@ -54,6 +52,7 @@ class MainHook {
             })
         })
         dialogBuilder.setPositiveButton("关闭", null)
+        dialogBuilder.setNeutralButton("重启系统桌面") { _, _ -> System.exit(0)}
         dialogBuilder.show()
     }
 
@@ -87,60 +86,7 @@ class MainHook {
     }
 
     private fun showModifyAnimationLevel() {
-        val dialogBuilder = AlertDialog.Builder(HomeContext.activity)
-        val mKey = "animationLevel"
-        var nowValue: Float = sharedPreferences.getFloat("animationLevel", 0f)
-        lateinit var valueTextView: TextView
-        fun saveValue(value: Float) {
-            nowValue = value
-            editor.putFloat(mKey, value)
-            editor.apply()
-        }
-        dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
-            overScrollMode = 2
-            addView(LinearLayout(HomeContext.activity).apply {
-                orientation = LinearLayout.VERTICAL
-                addView(SettingTextView.FastBuilder(mText = "动画速度调节", mSize = SettingTextView.text2Size).build())
-                addView(SeekBar(HomeContext.context).apply {
-                    min = 10
-                    max = 500
-                    progress = (nowValue * 100).toInt()
-                    setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
-                        override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                            saveValue(progress.toFloat() / 100)
-                            valueTextView.text = "${nowValue}f"
-                        }
-                        override fun onStartTrackingTouch(seekBar: SeekBar?) {}
-                        override fun onStopTrackingTouch(seekBar: SeekBar?) {}
-                    })
-                })
-                addView(LinearLayout(HomeContext.context).apply {
-                    addView(TextView(HomeContext.context).apply {
-                        text = "0.1f"
-                        layoutParams = LinearLayout.LayoutParams(70, LinearLayout.LayoutParams.MATCH_PARENT)
-                    })
-                    addView(TextView(HomeContext.context).apply {
-                        text = "${nowValue}f"
-                        weightSum = 1f
-                        textAlignment = TextView.TEXT_ALIGNMENT_CENTER
-                        valueTextView = this
-                        layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1f)
-                    })
-                    addView(TextView(HomeContext.context).apply {
-                        text = "5.0f"
-                        textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
-                        layoutParams = LinearLayout.LayoutParams(70, LinearLayout.LayoutParams.MATCH_PARENT)
-                    })
-                    layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
-                    gravity = Gravity.CENTER_VERTICAL
-                    (this.layoutParams as LinearLayout.LayoutParams).apply {
-                        topMargin = dp2px(HomeContext.context, 5f)
-                        setPaddingRelative(dp2px(HomeContext.context, 12f), dp2px(HomeContext.context, 6f), dp2px(HomeContext.context, 12f), dp2px(HomeContext.context, 5f))
-                    }
-                })
-            })
-        })
-        dialogBuilder.show()
+        SettingSeekBarDialog("动画速度调节", "animationLevel", 10, 500, "0.1f", "5.0f").build()
     }
 
 }
