@@ -18,7 +18,6 @@ class SettingSeekBarDialog(private val mText: String, private val mKey: String, 
     private fun userInputDialog() {
         lateinit var editText: EditText
         val dialogBuilder = AlertDialog.Builder(HomeContext.activity)
-        lateinit var dialog: AlertDialog
         dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
             overScrollMode = 2
             addView(LinearLayout(HomeContext.activity).apply {
@@ -35,15 +34,15 @@ class SettingSeekBarDialog(private val mText: String, private val mKey: String, 
             })
         })
         dialogBuilder.setPositiveButton("保存", null)
-        dialogBuilder.setNeutralButton("取消") { _, _ ->
+        dialogBuilder.setNeutralButton("取消") { dialog, _ ->
             dialog.dismiss()
         }
-        dialog = dialogBuilder.show().apply {
+        dialogBuilder.show().apply {
             this.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
                 try {
                     if (saveValue(editText.text.toString().toFloat() / divide)) {
                         LogUtil.toast("[$mText]设置成功")
-                        dialog.dismiss()
+                        this.dismiss()
                     }
                 }catch (e: NumberFormatException) {
                     LogUtil.toast("请输入正确的值！")
