@@ -19,3 +19,9 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-repackageclasses "lIIlIIIIlIIIlI"
+
+-obfuscationdictionary ../dict.txt
+-classobfuscationdictionary ../dict.txt
+-packageobfuscationdictionary ../dict.txt
