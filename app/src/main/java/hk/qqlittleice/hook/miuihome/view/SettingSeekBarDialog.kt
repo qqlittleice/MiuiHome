@@ -40,10 +40,14 @@ class SettingSeekBarDialog(private val mText: String,
             })
         })
         dialogBuilder.setPositiveButton("保存") { dialog, _ ->
-            if (saveValue(editText.text.toString().toFloat() / divide)) {
-                dialog.dismiss()
-                LogUtil.toast("设置成功！")
-            } else{}
+            try {
+                if (saveValue(editText.text.toString().toFloat() / divide)) {
+                    dialog.dismiss()
+                    LogUtil.toast("设置成功！")
+                }
+            } catch (e: NumberFormatException) {
+                LogUtil.toast("请输入数值！")
+            }
         }
         dialogBuilder.setNeutralButton("取消") { dialog, _ ->
             dialog.dismiss()
@@ -94,7 +98,6 @@ class SettingSeekBarDialog(private val mText: String,
                     })
                     addView(TextView(HomeContext.context).apply {
                         text = "${tempValue}f"
-                        weightSum = 1f
                         textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                         valueTextView = this
                         layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1f)
