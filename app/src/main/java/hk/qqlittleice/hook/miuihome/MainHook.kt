@@ -59,6 +59,7 @@ class MainHook {
                 addView(SettingSwitch.FastBuilder(mText = "时钟常显", mKey = "clockGadget").build())
                 addView(SettingSwitch.FastBuilder(mText = "简单动画", mKey = "simpleAnimation").build())
                 addView(SettingTextView.FastBuilder(mText = "动画速度调节") { showModifyAnimationLevel() }.build())
+                addView(SettingTextView.FastBuilder(mText = "后台卡片图标文字间距调节") { showModifyTextSize() }.build())
                 addView(SettingTextView.FastBuilder(mText = "模块设置") { showHookSetting() }.build())
             })
         })
@@ -79,6 +80,13 @@ class MainHook {
             })
         })
         dialogBuilder.show()
+    }
+
+    private fun showModifyTextSize() {
+        SettingSeekBarDialog("后台卡片图标文字间距调节", "recents_task_view_header_height",
+                0, 100,
+                "0dp", "100dp",
+                canUserInput = true, divide = 1, onlyUserInput = true).build()
     }
 
     private fun showModifyBlurLevel() {

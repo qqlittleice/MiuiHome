@@ -1,3 +1,4 @@
 <resources>
   <string name="name">MiuiHome</string>
+  <dimen name="textSize">0dp</dimen>
 </resources>

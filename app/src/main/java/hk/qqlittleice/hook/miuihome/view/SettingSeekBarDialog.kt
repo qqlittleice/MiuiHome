@@ -10,12 +10,13 @@ import hk.qqlittleice.hook.miuihome.utils.OwnSP
 import hk.qqlittleice.hook.miuihome.utils.dp2px
 
 class SettingSeekBarDialog(private val mText: String, private val mKey: String, private val minValue: Int, private val maxValue: Int,
-                           private val minText: String, private val maxText: String, private val divide: Int = 100, private val canUserInput: Boolean) {
+                           private val minText: String, private val maxText: String, private val divide: Int = 100, private val canUserInput: Boolean,
+                           private val onlyUserInput: Boolean = false) {
 
     private val sharedPreferences = OwnSP.ownSP
     private val editor by lazy { sharedPreferences.edit() }
 
-    private fun userInputDialog() {
+    private fun userInputDialog(): AlertDialog {
         lateinit var editText: EditText
         val dialogBuilder = AlertDialog.Builder(HomeContext.activity)
         dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
@@ -47,10 +48,11 @@ class SettingSeekBarDialog(private val mText: String, private val mKey: String, 
                         LogUtil.toast("[$mText]设置成功")
                         this.dismiss()
                     }
-                }catch (e: NumberFormatException) {
+                } catch (e: NumberFormatException) {
                     LogUtil.toast("请输入正确的值！")
                 }
             }
+            return this
         }
     }
 
@@ -65,6 +67,9 @@ class SettingSeekBarDialog(private val mText: String, private val mKey: String, 
     }
 
     fun build(): AlertDialog {
+        if (onlyUserInput) {
+            return userInputDialog()
+        }
         val dialogBuilder = AlertDialog.Builder(HomeContext.activity)
         var tempValue: Float = sharedPreferences.getFloat(mKey, 0f)
         lateinit var valueTextView: TextView
