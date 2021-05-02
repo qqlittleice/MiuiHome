@@ -4,9 +4,11 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.ScrollView
+import android.widget.Toast
 import hk.qqlittleice.hook.miuihome.Config.SP_NAME
 import hk.qqlittleice.hook.miuihome.Config.hookPackage
 import hk.qqlittleice.hook.miuihome.module.*
+import hk.qqlittleice.hook.miuihome.utils.LogUtil
 import hk.qqlittleice.hook.miuihome.utils.OwnSP
 import hk.qqlittleice.hook.miuihome.utils.dp2px
 import hk.qqlittleice.hook.miuihome.utils.ktx.hookAfterMethod
@@ -14,6 +16,7 @@ import hk.qqlittleice.hook.miuihome.view.SettingSeekBarDialog
 import hk.qqlittleice.hook.miuihome.view.SettingSwitch
 import hk.qqlittleice.hook.miuihome.view.SettingTextView
 import java.io.File
+import kotlin.concurrent.thread
 
 class MainHook {
 
@@ -35,6 +38,10 @@ class MainHook {
     }
 
     private fun showSettingDialog() {
+        if (sharedPreferences.getBoolean("isFirstUse", true)) {
+            firstUseDialog()
+            return
+        }
         val dialogBuilder = AlertDialog.Builder(HomeContext.activity)
         dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
             overScrollMode = 2
@@ -57,6 +64,7 @@ class MainHook {
         })
         dialogBuilder.setPositiveButton("关闭", null)
         dialogBuilder.setNeutralButton("重启系统桌面") { _, _ -> System.exit(0) }
+        dialogBuilder.setCancelable(false)
         dialogBuilder.show()
     }
 
@@ -105,6 +113,27 @@ class MainHook {
 
     private fun showModifyAnimationLevel() {
         SettingSeekBarDialog("动画速度调节", "animationLevel", 10, 500, "0.1f", "5.0f", canUserInput = true).build()
+    }
+
+    private fun firstUseDialog() {
+        val dialogBuilder = AlertDialog.Builder(HomeContext.activity).apply {
+            setTitle("欢迎")
+            setMessage("检测到你是第一次使用本模块，模块会进行默认值设定，并随后重启系统桌面\n如需进一步设置，请待桌面重启后再次打开桌面设置")
+            setOnDismissListener {
+                OwnSP.set("blurLevel", "COMPLETE")
+                OwnSP.set("smoothAnimation", true)
+                OwnSP.set("animationLevel", 1.0f)
+                OwnSP.set("isFirstUse", false)
+                thread {
+                    LogUtil.toast("系统桌面将会在3秒后重启")
+                    Thread.sleep(3000)
+                    System.exit(0)
+                }
+            }
+            setPositiveButton("确定", null)
+            setCancelable(false)
+        }
+        dialogBuilder.show()
     }
 
 }

@@ -33,9 +33,12 @@ class SettingSeekBarDialog(private val mText: String, private val mKey: String, 
                 addView(SettingTextView.FastBuilder(mText = "可输入的最大值为：$maxValue", mSize = SettingTextView.text2Size).build())
             })
         })
-        dialogBuilder.setPositiveButton("保存", null)
-        dialogBuilder.setNeutralButton("取消") { dialog, _ ->
-            dialog.dismiss()
+        dialogBuilder.apply {
+            setPositiveButton("保存", null)
+            setNeutralButton("取消") { dialog, _ ->
+                dialog.dismiss()
+            }
+            setCancelable(false)
         }
         dialogBuilder.show().apply {
             this.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
