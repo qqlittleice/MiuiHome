@@ -9,14 +9,8 @@ import hk.qqlittleice.hook.miuihome.utils.LogUtil
 import hk.qqlittleice.hook.miuihome.utils.OwnSP
 import hk.qqlittleice.hook.miuihome.utils.dp2px
 
-class SettingSeekBarDialog(private val mText: String,
-                           private val mKey: String,
-                           private val minValue: Int,
-                           private val maxValue: Int,
-                           private val minText: String,
-                           private val maxText: String,
-                           private val divide: Int = 100,
-                           private val canUserInput: Boolean) {
+class SettingSeekBarDialog(private val mText: String, private val mKey: String, private val minValue: Int, private val maxValue: Int,
+                           private val minText: String, private val maxText: String, private val divide: Int = 100, private val canUserInput: Boolean) {
 
     private val sharedPreferences = OwnSP.ownSP
     private val editor by lazy { sharedPreferences.edit() }
@@ -24,6 +18,7 @@ class SettingSeekBarDialog(private val mText: String,
     private fun userInputDialog() {
         lateinit var editText: EditText
         val dialogBuilder = AlertDialog.Builder(HomeContext.activity)
+        lateinit var dialog: AlertDialog
         dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
             overScrollMode = 2
             addView(LinearLayout(HomeContext.activity).apply {
@@ -39,20 +34,22 @@ class SettingSeekBarDialog(private val mText: String,
                 addView(SettingTextView.FastBuilder(mText = "可输入的最大值为：$maxValue", mSize = SettingTextView.text2Size).build())
             })
         })
-        dialogBuilder.setPositiveButton("保存") { dialog, _ ->
-            try {
-                if (saveValue(editText.text.toString().toFloat() / divide)) {
-                    dialog.dismiss()
-                    LogUtil.toast("设置成功！")
-                }
-            } catch (e: NumberFormatException) {
-                LogUtil.toast("请输入数值！")
-            }
-        }
-        dialogBuilder.setNeutralButton("取消") { dialog, _ ->
+        dialogBuilder.setPositiveButton("保存", null)
+        dialogBuilder.setNeutralButton("取消") { _, _ ->
             dialog.dismiss()
         }
-        dialogBuilder.show()
+        dialog = dialogBuilder.show().apply {
+            this.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+                try {
+                    if (saveValue(editText.text.toString().toFloat() / divide)) {
+                        LogUtil.toast("[$mText]设置成功")
+                        dialog.dismiss()
+                    }
+                }catch (e: NumberFormatException) {
+                    LogUtil.toast("请输入正确的值！")
+                }
+            }
+        }
     }
 
     fun saveValue(value: Float): Boolean {
