@@ -17,4 +17,8 @@
 ### 原仓库：[YuKongA/MiuiHome](https://github.com/YuKongA/MiuiHome)
 
 ### Credit
-[FuckCoolapk](https://github.com/ejiaogl/FuckCoolapk)
+[FC](https://github.com/ejiaogl/FuckCoolapk)
+[BiliRoaming](https://github.com/yujincheng08/BiliRoaming/blob/master/LICENSE)
+[XposedBridge](https://github.com/rovo89/XposedBridge)
+[LSPosed](https://github.com/LSPosed/LSPosed)
+[androidx.annotation](https://android.googlesource.com/platform/frameworks/support/+/androidx-master-dev/annotation/annotation/)
