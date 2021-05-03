@@ -118,7 +118,7 @@ class MainHook {
     }
 
     private fun showModifyAnimationLevel() {
-        SettingSeekBarDialog("动画速度调节", "animationLevel", 10, 500, "0.1f", "5.0f", canUserInput = true).build()
+        SettingSeekBarDialog("动画速度调节", "animationLevel", 10, 500, canUserInput = true).build()
     }
 
     private fun firstUseDialog() {

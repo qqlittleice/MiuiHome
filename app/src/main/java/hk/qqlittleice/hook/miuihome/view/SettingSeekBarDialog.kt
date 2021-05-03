@@ -12,8 +12,7 @@ import hk.qqlittleice.hook.miuihome.utils.OwnSP
 import hk.qqlittleice.hook.miuihome.utils.dp2px
 
 class SettingSeekBarDialog(private val mText: String, private val mKey: String, private val minValue: Int, private val maxValue: Int,
-                           private val minText: String, private val maxText: String, private val divide: Int = 100, private val canUserInput: Boolean,
-                           private val unit: String = "f") {
+                           private val divide: Int = 100, private val canUserInput: Boolean, private val unit: String = "f") {
 
     private val sharedPreferences = OwnSP.ownSP
     private val editor by lazy { sharedPreferences.edit() }
@@ -46,7 +45,7 @@ class SettingSeekBarDialog(private val mText: String, private val mKey: String, 
                     setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
                         override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                             saveValue(progress.toFloat() / divide)
-                            valueTextView.text = "${tempValue}$unit"
+                            valueTextView.text = "$tempValue$unit"
                             tempValue = (progress.toFloat() / divide)
                         }
 
@@ -56,17 +55,17 @@ class SettingSeekBarDialog(private val mText: String, private val mKey: String, 
                 })
                 addView(LinearLayout(HomeContext.context).apply {
                     addView(TextView(HomeContext.context).apply {
-                        text = minText
+                        text = "${(minValue/divide.toFloat())}$unit"
                         layoutParams = LinearLayout.LayoutParams(70, LinearLayout.LayoutParams.MATCH_PARENT)
                     })
                     addView(TextView(HomeContext.context).apply {
-                        text = "${tempValue}$unit"
+                        text = "$tempValue$unit"
                         textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                         valueTextView = this
                         layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1f)
                     })
                     addView(TextView(HomeContext.context).apply {
-                        text = maxText
+                        text = "${(maxValue/divide.toFloat())}$unit"
                         textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
                         layoutParams = LinearLayout.LayoutParams(70, LinearLayout.LayoutParams.MATCH_PARENT)
                     })
