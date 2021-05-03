@@ -20,7 +20,7 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--repackageclasses "lIIlIIIIlIIIlI"
+-repackageclasses "l"
 
 -obfuscationdictionary ../dict.txt
 -classobfuscationdictionary ../dict.txt

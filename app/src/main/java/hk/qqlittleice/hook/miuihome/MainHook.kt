@@ -27,6 +27,7 @@ class MainHook {
         "com.miui.home.settings.MiuiHomeSettingActivity".hookAfterMethod("onCreate", Bundle::class.java) {
             showSettingDialog()
         }
+        SetDeviceLevel().init()
         ModifyBlurLevel().init()
         EnableSmoothAnimation().init()
         EnableBlurWhenOpenFolder().init()
