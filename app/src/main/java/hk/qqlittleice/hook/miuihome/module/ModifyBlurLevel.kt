@@ -18,9 +18,6 @@ class ModifyBlurLevel {
                 "NONE" -> {
                     it.result = 0
                 }
-                else -> {
-                    LogUtil.e("未设置模糊等级")
-                }
             }
         }
     }

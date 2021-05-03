@@ -1,37 +1,18 @@
 package hk.qqlittleice.hook.miuihome.module
 
-import android.content.res.Resources
-import de.robv.android.xposed.XC_MethodHook
-import de.robv.android.xposed.XposedHelpers
-import hk.qqlittleice.hook.miuihome.Config
-import hk.qqlittleice.hook.miuihome.HomeContext
-import hk.qqlittleice.hook.miuihome.utils.OwnSP
-import hk.qqlittleice.hook.miuihome.utils.dp2px
+import hk.qqlittleice.hook.miuihome.utils.ktx.callMethod
+import hk.qqlittleice.hook.miuihome.utils.ktx.findClass
+import hk.qqlittleice.hook.miuihome.utils.ktx.getObjectField
+import hk.qqlittleice.hook.miuihome.utils.ktx.hookBeforeMethod
 
 class TestHook {
 
     fun init() {
-
-        val value = OwnSP.ownSP.getFloat("recents_task_view_header_height", -1f)
-        if (value == -1f) return
-
-        XposedHelpers.findAndHookMethod(Resources::class.java, "getDimensionPixelSize", Int::class.javaPrimitiveType, object : XC_MethodHook() {
-            override fun beforeHookedMethod(param: MethodHookParam?) {
-                super.beforeHookedMethod(param)
-                if (param!!.args[0] == HomeContext.context.resources.getIdentifier("recents_task_view_header_height", "dimen", Config.hookPackage)) {
-                    param.result = dp2px(HomeContext.context, value)
-                }
-            }
-        })
-        XposedHelpers.findAndHookMethod(Resources::class.java, "getDimensionPixelOffset", Int::class.javaPrimitiveType, object : XC_MethodHook() {
-            override fun beforeHookedMethod(param: MethodHookParam?) {
-                super.beforeHookedMethod(param)
-                if (param!!.args[0] == HomeContext.context.resources.getIdentifier("recents_task_view_header_height", "dimen", Config.hookPackage)) {
-                    param.result = dp2px(HomeContext.context, value)
-                }
-            }
-        })
-
+        val mSurfaceControl = "com.android.systemui.shared.recents.system.SurfaceControlCompat".findClass()
+        "com.android.systemui.shared.recents.system.TransactionCompat".hookBeforeMethod("show", mSurfaceControl) {
+            it.thisObject.getObjectField("mTransaction")?.callMethod("hide", it.args[0].getObjectField("mSurfaceControl"))
+            it.result = it.thisObject
+        }
     }
 
 }

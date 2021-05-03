@@ -35,7 +35,8 @@ class MainHook {
         EnableClockGadget().init()
         EnableSimpleAnimation().init()
         ModifyAnimDurationRatio().init()
-        TestHook().init()
+        ModifyHeaderHeight().init()
+//        TestHook().init()
     }
 
     private fun showSettingDialog() {
