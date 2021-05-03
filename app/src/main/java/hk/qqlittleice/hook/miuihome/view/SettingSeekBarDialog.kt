@@ -2,15 +2,18 @@ package hk.qqlittleice.hook.miuihome.view
 
 import android.app.AlertDialog
 import android.view.Gravity
-import android.view.inputmethod.EditorInfo
-import android.widget.*
+import android.widget.LinearLayout
+import android.widget.ScrollView
+import android.widget.SeekBar
+import android.widget.TextView
 import hk.qqlittleice.hook.miuihome.HomeContext
 import hk.qqlittleice.hook.miuihome.utils.LogUtil
 import hk.qqlittleice.hook.miuihome.utils.OwnSP
 import hk.qqlittleice.hook.miuihome.utils.dp2px
 
 class SettingSeekBarDialog(private val mText: String, private val mKey: String, private val minValue: Int, private val maxValue: Int,
-                           private val minText: String, private val maxText: String, private val divide: Int = 100, private val canUserInput: Boolean) {
+                           private val minText: String, private val maxText: String, private val divide: Int = 100, private val canUserInput: Boolean,
+                           private val unit: String = "f") {
 
     private val sharedPreferences = OwnSP.ownSP
     private val editor by lazy { sharedPreferences.edit() }
@@ -43,7 +46,7 @@ class SettingSeekBarDialog(private val mText: String, private val mKey: String, 
                     setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
                         override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                             saveValue(progress.toFloat() / divide)
-                            valueTextView.text = "${tempValue}f"
+                            valueTextView.text = "${tempValue}$unit"
                             tempValue = (progress.toFloat() / divide)
                         }
 
@@ -57,7 +60,7 @@ class SettingSeekBarDialog(private val mText: String, private val mKey: String, 
                         layoutParams = LinearLayout.LayoutParams(70, LinearLayout.LayoutParams.MATCH_PARENT)
                     })
                     addView(TextView(HomeContext.context).apply {
-                        text = "${tempValue}f"
+                        text = "${tempValue}$unit"
                         textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                         valueTextView = this
                         layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1f)
