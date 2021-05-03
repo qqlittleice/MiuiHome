@@ -4,7 +4,6 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.ScrollView
-import android.widget.Toast
 import hk.qqlittleice.hook.miuihome.Config.SP_NAME
 import hk.qqlittleice.hook.miuihome.Config.hookPackage
 import hk.qqlittleice.hook.miuihome.module.*
@@ -15,6 +14,7 @@ import hk.qqlittleice.hook.miuihome.utils.ktx.hookAfterMethod
 import hk.qqlittleice.hook.miuihome.view.SettingSeekBarDialog
 import hk.qqlittleice.hook.miuihome.view.SettingSwitch
 import hk.qqlittleice.hook.miuihome.view.SettingTextView
+import hk.qqlittleice.hook.miuihome.view.SettingUserInput
 import java.io.File
 import kotlin.concurrent.thread
 
@@ -83,10 +83,7 @@ class MainHook {
     }
 
     private fun showModifyTextSize() {
-        SettingSeekBarDialog("后台卡片图标文字间距调节", "recents_task_view_header_height",
-                0, 100,
-                "0dp", "100dp",
-                canUserInput = true, divide = 1, onlyUserInput = true).build()
+        SettingUserInput("后台卡片图标文字间距调节", "recents_task_view_header_height", 0, 200, 1).build()
     }
 
     private fun showModifyBlurLevel() {
