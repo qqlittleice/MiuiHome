@@ -8,6 +8,8 @@ class EnableBlurWhenOpenFolder {
     fun init() {
         if (OwnSP.ownSP.getBoolean("blurWhenOpenFolder", false)) {
             "com.miui.home.launcher.common.BlurUtils".setReturnConstant("isUserBlurWhenOpenFolder", result = true)
+        } else {
+            "com.miui.home.launcher.common.BlurUtils".setReturnConstant("isUserBlurWhenOpenFolder", result = false)
         }
     }
 

@@ -13,7 +13,7 @@
             android:value="true" />
         <meta-data
             android:name="xposeddescription"
-            android:value="Hook for Miui Home" />
+            android:value="Hook for Miui Launcher" />
         <meta-data
             android:name="xposedminversion"
             android:value="82" />

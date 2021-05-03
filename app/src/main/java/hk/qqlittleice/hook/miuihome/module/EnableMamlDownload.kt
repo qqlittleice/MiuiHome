@@ -8,6 +8,8 @@ class EnableMamlDownload {
     fun init() {
         if (OwnSP.ownSP.getBoolean("mamlDownload", false)) {
             "com.miui.home.launcher.common.CpuLevelUtils".setReturnConstant("needMamlDownload", result = true)
+        } else {
+            "com.miui.home.launcher.common.CpuLevelUtils".setReturnConstant("needMamlDownload", result = false)
         }
     }
 
