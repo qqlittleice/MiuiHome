@@ -20,6 +20,14 @@ class ModifyBlurLevel {
                 }
             }
         }
+
+        "com.miui.home.launcher.common.BlurUtils".hookBeforeMethod("isUseCompleteBlurOnDev") {
+            when (OwnSP.ownSP.getString("blurLevel", "")) {
+                "TEST" -> {
+                    it.result = true
+                }
+            }
+        }
     }
 
 }

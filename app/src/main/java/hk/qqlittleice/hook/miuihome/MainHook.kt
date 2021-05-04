@@ -112,6 +112,10 @@ class MainHook {
                     saveValue("COMPLETE")
                     dialog.dismiss()
                 }.build())
+                addView(SettingTextView.FastBuilder(mText = "测试模糊", mSize = SettingTextView.textSize) {
+                    saveValue("TEST")
+                    dialog.dismiss()
+                }.build())
                 addView(SettingTextView.FastBuilder(mText = "简单模糊", mSize = SettingTextView.textSize) {
                     saveValue("SIMPLE")
                     dialog.dismiss()
