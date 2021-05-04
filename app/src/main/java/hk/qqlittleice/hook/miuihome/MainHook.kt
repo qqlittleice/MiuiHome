@@ -27,14 +27,23 @@ class MainHook {
         "com.miui.home.settings.MiuiHomeSettingActivity".hookAfterMethod("onCreate", Bundle::class.java) {
             showSettingDialog()
         }
+        //修改设备分级
         SetDeviceLevel().init()
+        //修改模糊等级
         ModifyBlurLevel().init()
+        //开启平滑动画
         EnableSmoothAnimation().init()
+        //开启文件夹模糊
         EnableBlurWhenOpenFolder().init()
+        //开启水波纹
         EnableMamlDownload().init()
+        //开启时钟常显
         EnableClockGadget().init()
+        //开启简单动画
         EnableSimpleAnimation().init()
+        //动画速度调节
         ModifyAnimDurationRatio().init()
+        //后台卡片图标文字间距调节
         ModifyHeaderHeight().init()
 //        TestHook().init()
     }

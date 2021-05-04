@@ -8,7 +8,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "hk.qqlittleice.hook.miuihome"
+        applicationId "com.yuk.miuihome"
         minSdk 28
         targetSdk 30
         versionCode 1
