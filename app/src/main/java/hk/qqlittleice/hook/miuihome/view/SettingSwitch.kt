@@ -2,6 +2,7 @@ package hk.qqlittleice.hook.miuihome.view
 
 import android.content.Context
 import android.graphics.Color
+import android.view.View
 import android.widget.CompoundButton
 import android.widget.Switch
 import hk.qqlittleice.hook.miuihome.HomeContext
@@ -41,12 +42,13 @@ class SettingSwitch(context: Context) : Switch(context) {
         fun build() = SettingSwitch(mContext).apply(block)
     }
 
-    class FastBuilder(private val mContext: Context = HomeContext.context, private val mText: String, private val mToastText: String? = null, private val mDefaultState: Boolean? = null, private val mKey: String) {
+    class FastBuilder(private val mContext: Context = HomeContext.context, private val mText: String, private val mToastText: String? = null, private val mDefaultState: Boolean? = null, private val mKey: String, private val mOnClickListener: ((View) -> Unit)? = null) {
         fun build() = SettingSwitch(mContext).apply {
             text = mText
             mToastText?.let { toastText = it }
             mDefaultState?.let { defaultState = it }
             key = mKey
+            mOnClickListener?.let { setOnClickListener(it) }
         }
     }
 }

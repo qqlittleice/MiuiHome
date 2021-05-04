@@ -11,10 +11,7 @@ import hk.qqlittleice.hook.miuihome.utils.LogUtil
 import hk.qqlittleice.hook.miuihome.utils.OwnSP
 import hk.qqlittleice.hook.miuihome.utils.dp2px
 import hk.qqlittleice.hook.miuihome.utils.ktx.hookAfterMethod
-import hk.qqlittleice.hook.miuihome.view.SettingSeekBarDialog
-import hk.qqlittleice.hook.miuihome.view.SettingSwitch
-import hk.qqlittleice.hook.miuihome.view.SettingTextView
-import hk.qqlittleice.hook.miuihome.view.SettingUserInput
+import hk.qqlittleice.hook.miuihome.view.*
 import java.io.File
 import kotlin.concurrent.thread
 
@@ -45,7 +42,7 @@ class MainHook {
         ModifyAnimDurationRatio().init()
         //后台卡片图标文字间距调节
         ModifyHeaderHeight().init()
-//        TestHook().init()
+        TestHook().init()
     }
 
     private fun showSettingDialog() {
@@ -88,6 +85,7 @@ class MainHook {
                 orientation = LinearLayout.VERTICAL
                 setPadding(dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 10f), dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 5f))
                 addView(SettingTextView.FastBuilder(mText = "清除模块配置") { File("/data/data/$hookPackage/shared_prefs/${SP_NAME}.xml").delete(); System.exit(0) }.build())
+                addView(SettingSwitch.FastBuilder(mText = "测试功能", mKey = "TESTONLY") { SettingImportantDialog("该功能仅供开发测试使用，如果不知道用途请不要开启！", 5, "TESTONLY").build() }.build())
             })
         })
         dialogBuilder.show()
