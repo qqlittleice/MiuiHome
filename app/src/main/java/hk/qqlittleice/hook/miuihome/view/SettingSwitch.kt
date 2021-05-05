@@ -42,7 +42,7 @@ class SettingSwitch(context: Context) : Switch(context) {
         fun build() = SettingSwitch(mContext).apply(block)
     }
 
-    class FastBuilder(private val mContext: Context = HomeContext.context, private val mText: String, private val mToastText: String? = null, private val mDefaultState: Boolean? = null, private val mKey: String, private val mOnClickListener: ((View) -> Unit)? = null) {
+    class FastBuilder(private val mContext: Context = HomeContext.contextForView, private val mText: String, private val mToastText: String? = null, private val mDefaultState: Boolean? = null, private val mKey: String, private val mOnClickListener: ((View) -> Unit)? = null) {
         fun build() = SettingSwitch(mContext).apply {
             text = mText
             mToastText?.let { toastText = it }

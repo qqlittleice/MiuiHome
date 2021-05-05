@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MiuiHome</string>
+    <string name="res_hooked">资源注入成功</string>
 </resources>

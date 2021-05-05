@@ -1,5 +1,4 @@
 <resources>
-  <string name="res_hooked">资源注入成功</string>
   <dimen name="textSize">0dp</dimen>
 
 </resources>

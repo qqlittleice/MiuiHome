@@ -2,8 +2,10 @@ package hk.qqlittleice.hook.miuihome
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.view.View
 import android.widget.LinearLayout
 import android.widget.ScrollView
+import android.widget.TextView
 import hk.qqlittleice.hook.miuihome.Config.SP_NAME
 import hk.qqlittleice.hook.miuihome.Config.hookPackage
 import hk.qqlittleice.hook.miuihome.module.*
@@ -100,6 +102,7 @@ class MainHook {
         val dialogBuilder = AlertDialog.Builder(HomeContext.activity, android.R.style.Theme_DeviceDefault_Dialog_Alert)
         val mKey = "blurLevel"
         lateinit var dialog: AlertDialog
+        lateinit var onClick: View
         fun saveValue(value: String) {
             editor.putString(mKey, value)
             editor.apply()
@@ -112,22 +115,30 @@ class MainHook {
                 addView(SettingTextView.FastBuilder(mText = "完整模糊", mSize = SettingTextView.textSize) {
                     saveValue("COMPLETE")
                     dialog.dismiss()
+                    onClick = it
                 }.build())
                 addView(SettingTextView.FastBuilder(mText = "测试模糊", mSize = SettingTextView.textSize) {
                     saveValue("TEST")
                     dialog.dismiss()
+                    onClick = it
                 }.build())
                 addView(SettingTextView.FastBuilder(mText = "简单模糊", mSize = SettingTextView.textSize) {
                     saveValue("SIMPLE")
                     dialog.dismiss()
+                    onClick = it
                 }.build())
                 addView(SettingTextView.FastBuilder(mText = "无模糊", mSize = SettingTextView.textSize) {
                     saveValue("NONE")
                     dialog.dismiss()
+                    onClick = it
                 }.build())
             })
         })
-        dialog = dialogBuilder.show()
+        dialog = dialogBuilder.show().apply {
+            setOnDismissListener {
+                LogUtil.toast("后台模糊等级设置为：${(onClick as TextView).text}")
+            }
+        }
     }
 
     private fun showModifyAnimationLevel() {

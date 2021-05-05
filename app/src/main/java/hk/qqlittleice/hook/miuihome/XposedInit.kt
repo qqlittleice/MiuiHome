@@ -31,6 +31,11 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
                 MainHook().doHook()
             }
         })
+        XposedHelpers.findAndHookMethod(Application::class.java, "attach", Context::class.java, object : XC_MethodHook() {
+            override fun afterHookedMethod(param: MethodHookParam) {
+                HomeContext.contextForView = param.args[0] as Context
+            }
+        })
 
     }
 

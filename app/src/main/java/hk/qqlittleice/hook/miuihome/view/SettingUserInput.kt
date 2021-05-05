@@ -26,12 +26,12 @@ class SettingUserInput(private val mText: String, private val mKey: String, priv
                 setPadding(dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 10f), dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 5f))
                 addView(SettingTextView.FastBuilder(mText = "请输入[${mText}]的值：", mSize = SettingTextView.textSize).build())
                 addView(EditText(HomeContext.context).apply {
-                    hint = if (divide != 1) "输入的值会被除以$divide" else ""
                     editText = this
                     inputType = EditorInfo.TYPE_CLASS_NUMBER
                 })
                 addView(SettingTextView.FastBuilder(mText = "可输入的最小值为：$minValue", mSize = SettingTextView.text2Size).build())
                 addView(SettingTextView.FastBuilder(mText = "可输入的最大值为：$maxValue", mSize = SettingTextView.text2Size).build())
+                addView(SettingTextView.FastBuilder(mText = "输入的值会被除以$divide").build())
             })
         })
         dialogBuilder.apply {
