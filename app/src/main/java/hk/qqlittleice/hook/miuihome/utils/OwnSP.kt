@@ -6,7 +6,7 @@ import hk.qqlittleice.hook.miuihome.Config
 import hk.qqlittleice.hook.miuihome.HomeContext
 
 object OwnSP {
-    val ownSP: SharedPreferences by lazy { HomeContext.context.getSharedPreferences(Config.SP_NAME, Context.MODE_PRIVATE) }
+    val ownSP: SharedPreferences by lazy { HomeContext.context.createDeviceProtectedStorageContext().getSharedPreferences(Config.SP_NAME, Context.MODE_PRIVATE) }
     private val ownEditor: SharedPreferences.Editor = ownSP.edit()
     fun set(key: String, any: Any) {
         when (any) {
