@@ -29,8 +29,8 @@ class SettingUserInput(private val mText: String, private val mKey: String, priv
                     editText = this
                     inputType = EditorInfo.TYPE_CLASS_NUMBER
                 })
-                addView(SettingTextView.FastBuilder(mText = "可输入的最小值为：$minValue", mSize = SettingTextView.text2Size).build())
-                addView(SettingTextView.FastBuilder(mText = "可输入的最大值为：$maxValue", mSize = SettingTextView.text2Size).build())
+                addView(SettingTextView.FastBuilder(mText = "可输入的最小值：$minValue", mSize = SettingTextView.text2Size).build())
+                addView(SettingTextView.FastBuilder(mText = "可输入的最大值：$maxValue", mSize = SettingTextView.text2Size).build())
                 addView(SettingTextView.FastBuilder(mText = "输入的值会被除以$divide").build())
             })
         })
