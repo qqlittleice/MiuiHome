@@ -6,8 +6,8 @@ import android.content.Context
 
 object HomeContext {
     lateinit var application: Application
-    val context by lazy { application }
+    lateinit var context: Context
     lateinit var classLoader: ClassLoader
     lateinit var activity: Activity
-    lateinit var contextForView: Context
+
 }

@@ -18,25 +18,20 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
         if (lpparam.packageName != Config.hookPackage) return
         EzXHelperInit.initHandleLoadPackage(lpparam)
-        XposedHelpers.findAndHookMethod("miui.external.Application", lpparam.classLoader, "attachBaseContext", Context::class.java, object : XC_MethodHook() {
+        XposedHelpers.findAndHookMethod("com.miui.home.launcher.Application", lpparam.classLoader, "attachBaseContext", Context::class.java, object : XC_MethodHook() {
             override fun afterHookedMethod(param: MethodHookParam) {
                 HomeContext.application = param.thisObject as Application
+                HomeContext.context = param.args[0] as Context
                 HomeContext.classLoader = HomeContext.context.classLoader
                 EzXHelperInit.initAppContext(HomeContext.application)
                 XposedHelpers.findClass("android.app.Instrumentation", HomeContext.classLoader)
-                        .hookAfterAllMethods("newActivity") { activityParam ->
-                            HomeContext.activity = activityParam.result as Activity
-                        }
+                    .hookAfterAllMethods("newActivity") { activityParam ->
+                        HomeContext.activity = activityParam.result as Activity
+                    }
                 ResHook().init()
                 MainHook().doHook()
             }
         })
-        XposedHelpers.findAndHookMethod(Application::class.java, "attach", Context::class.java, object : XC_MethodHook() {
-            override fun afterHookedMethod(param: MethodHookParam) {
-                HomeContext.contextForView = param.args[0] as Context
-            }
-        })
-
     }
 
     override fun initZygote(startupParam: IXposedHookZygoteInit.StartupParam) {
