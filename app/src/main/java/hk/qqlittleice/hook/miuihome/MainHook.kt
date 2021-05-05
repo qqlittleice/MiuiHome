@@ -45,6 +45,9 @@ class MainHook {
         ModifyAnimDurationRatio().init()
         //后台卡片图标文字间距调节
         ModifyHeaderHeight().init()
+        //后台卡片圆角大小调节
+        ModifyRoundedCorners().init()
+
         TestHook().init()
     }
 
@@ -70,6 +73,7 @@ class MainHook {
                 addView(SettingSwitch.FastBuilder(mText = "时钟常显", mKey = "clockGadget").build())
                 addView(SettingSwitch.FastBuilder(mText = "简单动画", mKey = "simpleAnimation").build())
                 addView(SettingTextView.FastBuilder(mText = "动画速度调节") { showModifyAnimationLevel() }.build())
+                addView(SettingTextView.FastBuilder(mText = "后台卡片圆角大小调节") { showModifyRoundCorner() }.build())
                 addView(SettingTextView.FastBuilder(mText = "后台卡片图标文字间距调节") { showModifyTextSize() }.build())
                 addView(SettingTextView.FastBuilder(mText = "模块设置") { showHookSetting() }.build())
             })
@@ -94,9 +98,14 @@ class MainHook {
         dialogBuilder.show()
     }
 
+    private fun showModifyRoundCorner() {
+        SettingUserInput("后台卡片圆角大小调节", "recents_task_view_rounded_corners_radius_min", 0, 100, 1).build()
+    }
+
     private fun showModifyTextSize() {
         SettingUserInput("后台卡片图标文字间距调节", "recents_task_view_header_height", 0, 200, 1).build()
     }
+
 
     private fun showModifyBlurLevel() {
         val dialogBuilder = AlertDialog.Builder(HomeContext.activity, android.R.style.Theme_DeviceDefault_Dialog_Alert)
