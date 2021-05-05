@@ -99,7 +99,7 @@ class MainHook {
     }
 
     private fun showModifyRoundCorner() {
-        SettingUserInput("后台卡片圆角大小调节", "recents_task_view_rounded_corners_radius_min", 0, 100, 1).build()
+        SettingUserInput("后台卡片圆角大小调节", "recents_task_view_rounded_corners_radius", 0, 100, 1).build()
     }
 
     private fun showModifyTextSize() {

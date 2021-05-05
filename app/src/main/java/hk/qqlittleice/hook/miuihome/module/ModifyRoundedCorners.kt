@@ -12,7 +12,7 @@ class ModifyRoundedCorners {
 
     fun init() {
 
-        val value = OwnSP.ownSP.getFloat("recents_task_view_rounded_corners_radius_min", -1f)
+        val value = OwnSP.ownSP.getFloat("recents_task_view_rounded_corners_radius", -1f)
         if (value == -1f) return
 
         XposedHelpers.findAndHookMethod(Resources::class.java, "getDimensionPixelSize", Int::class.javaPrimitiveType, object : XC_MethodHook() {
@@ -23,9 +23,6 @@ class ModifyRoundedCorners {
                 }
             }
         })
-
-        val value1 = OwnSP.ownSP.getFloat("recents_task_view_rounded_corners_radius_max", 100f)
-        if (value1 == -1f) return
 
         XposedHelpers.findAndHookMethod(Resources::class.java, "getDimensionPixelSize", Int::class.javaPrimitiveType, object : XC_MethodHook() {
             override fun beforeHookedMethod(param: MethodHookParam?) {
