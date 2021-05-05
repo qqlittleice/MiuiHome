@@ -1,6 +1,7 @@
 package hk.qqlittleice.hook.miuihome.view
 
 import android.app.AlertDialog
+import android.graphics.Color
 import android.view.Gravity
 import android.widget.LinearLayout
 import android.widget.ScrollView
@@ -28,7 +29,7 @@ class SettingSeekBarDialog(private val mText: String, private val mKey: String, 
     }
 
     fun build(): AlertDialog {
-        val dialogBuilder = AlertDialog.Builder(HomeContext.activity)
+        val dialogBuilder = AlertDialog.Builder(HomeContext.activity, android.R.style.Theme_DeviceDefault_Dialog_Alert)
         var tempValue: Float = sharedPreferences.getFloat(mKey, 0f)
         lateinit var valueTextView: TextView
         lateinit var dialog: AlertDialog
@@ -57,17 +58,20 @@ class SettingSeekBarDialog(private val mText: String, private val mKey: String, 
                     addView(TextView(HomeContext.context).apply {
                         text = "${(minValue/divide.toFloat())}$unit"
                         layoutParams = LinearLayout.LayoutParams(70, LinearLayout.LayoutParams.MATCH_PARENT)
+                        setTextColor(Color.parseColor("#ffffff"))
                     })
                     addView(TextView(HomeContext.context).apply {
                         text = "$tempValue$unit"
                         textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                         valueTextView = this
                         layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1f)
+                        setTextColor(Color.parseColor("#ffffff"))
                     })
                     addView(TextView(HomeContext.context).apply {
                         text = "${(maxValue/divide.toFloat())}$unit"
                         textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
                         layoutParams = LinearLayout.LayoutParams(70, LinearLayout.LayoutParams.MATCH_PARENT)
+                        setTextColor(Color.parseColor("#ffffff"))
                     })
                     layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
                     gravity = Gravity.CENTER_VERTICAL

@@ -10,6 +10,7 @@ import hk.qqlittleice.hook.miuihome.module.*
 import hk.qqlittleice.hook.miuihome.utils.LogUtil
 import hk.qqlittleice.hook.miuihome.utils.OwnSP
 import hk.qqlittleice.hook.miuihome.utils.dp2px
+import hk.qqlittleice.hook.miuihome.utils.isNightMode
 import hk.qqlittleice.hook.miuihome.utils.ktx.hookAfterMethod
 import hk.qqlittleice.hook.miuihome.view.*
 import java.io.File
@@ -50,7 +51,7 @@ class MainHook {
             firstUseDialog()
             return
         }
-        val dialogBuilder = AlertDialog.Builder(HomeContext.activity)
+        val dialogBuilder = AlertDialog.Builder(HomeContext.activity, android.R.style.Theme_DeviceDefault_Dialog_Alert)
         dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
             overScrollMode = 2
             addView(LinearLayout(HomeContext.activity).apply {
@@ -78,7 +79,7 @@ class MainHook {
     }
 
     private fun showHookSetting() {
-        val dialogBuilder = AlertDialog.Builder(HomeContext.activity)
+        val dialogBuilder = AlertDialog.Builder(HomeContext.activity, android.R.style.Theme_DeviceDefault_Dialog_Alert)
         dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
             overScrollMode = 2
             addView(LinearLayout(HomeContext.activity).apply {
@@ -96,7 +97,7 @@ class MainHook {
     }
 
     private fun showModifyBlurLevel() {
-        val dialogBuilder = AlertDialog.Builder(HomeContext.activity)
+        val dialogBuilder = AlertDialog.Builder(HomeContext.activity, android.R.style.Theme_DeviceDefault_Dialog_Alert)
         val mKey = "blurLevel"
         lateinit var dialog: AlertDialog
         fun saveValue(value: String) {
@@ -134,7 +135,7 @@ class MainHook {
     }
 
     private fun firstUseDialog() {
-        val dialogBuilder = AlertDialog.Builder(HomeContext.activity).apply {
+        val dialogBuilder = AlertDialog.Builder(HomeContext.activity, android.R.style.Theme_DeviceDefault_Dialog_Alert).apply {
             setTitle("欢迎")
             setMessage("检测到你是第一次使用本模块，模块会进行默认值设定，并随后重启系统桌面\n如需进一步设置，请待桌面重启后再次打开桌面设置")
             setOnDismissListener {

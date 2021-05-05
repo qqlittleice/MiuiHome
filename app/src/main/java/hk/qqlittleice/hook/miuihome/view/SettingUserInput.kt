@@ -18,7 +18,7 @@ class SettingUserInput(private val mText: String, private val mKey: String, priv
 
     fun build(): AlertDialog {
         lateinit var editText: EditText
-        val dialogBuilder = AlertDialog.Builder(HomeContext.activity)
+        val dialogBuilder = AlertDialog.Builder(HomeContext.activity, android.R.style.Theme_DeviceDefault_Dialog_Alert)
         dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
             overScrollMode = 2
             addView(LinearLayout(HomeContext.activity).apply {
