@@ -85,7 +85,7 @@ class MainHook {
                 orientation = LinearLayout.VERTICAL
                 setPadding(dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 10f), dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 5f))
                 addView(SettingTextView.FastBuilder(mText = "清除模块配置") { File("/data/data/$hookPackage/shared_prefs/${SP_NAME}.xml").delete(); System.exit(0) }.build())
-                addView(SettingSwitch.FastBuilder(mText = "测试功能", mKey = "TESTONLY") { SettingImportantDialog("该功能仅供开发测试使用，如果不知道用途请不要开启！", 5, "TESTONLY").build() }.build())
+                addView(SettingSwitch.FastBuilder(mText = "测试功能", mKey = "TESTONLY") { SettingInformationDialog("该功能仅供开发测试使用，如果不知道用途请不要开启！", 5, "TESTONLY").build() }.build())
             })
         })
         dialogBuilder.show()

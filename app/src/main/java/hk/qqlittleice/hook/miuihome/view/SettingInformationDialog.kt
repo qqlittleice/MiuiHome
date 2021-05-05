@@ -9,7 +9,7 @@ import hk.qqlittleice.hook.miuihome.utils.OwnSP
 import hk.qqlittleice.hook.miuihome.utils.dp2px
 import kotlin.concurrent.thread
 
-class SettingImportantDialog(private val message: String, private val seconds: Int, private val key: String) {
+class SettingInformationDialog(private val message: String, private val seconds: Int, private val key: String) {
 
     fun build(): AlertDialog {
         val dialogBuilder = AlertDialog.Builder(HomeContext.activity)
