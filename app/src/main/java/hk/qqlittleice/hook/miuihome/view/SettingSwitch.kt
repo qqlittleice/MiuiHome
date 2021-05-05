@@ -17,7 +17,7 @@ class SettingSwitch(context: Context) : Switch(context) {
         set(value) {
             textSize = value
         }
-    var color = if (isNightMode(getContext())) "#ffffff" else "#000000"
+    var color = if (isNightMode(getContext())) "#ffffff" else "#ffffff" // #000000
         set(value) = setTextColor(Color.parseColor(value))
     var sharedPreferences = OwnSP.ownSP
     private val editor by lazy { sharedPreferences.edit() }
