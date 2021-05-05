@@ -9,10 +9,7 @@ import android.widget.TextView
 import hk.qqlittleice.hook.miuihome.Config.SP_NAME
 import hk.qqlittleice.hook.miuihome.Config.hookPackage
 import hk.qqlittleice.hook.miuihome.module.*
-import hk.qqlittleice.hook.miuihome.utils.LogUtil
-import hk.qqlittleice.hook.miuihome.utils.OwnSP
-import hk.qqlittleice.hook.miuihome.utils.dp2px
-import hk.qqlittleice.hook.miuihome.utils.isNightMode
+import hk.qqlittleice.hook.miuihome.utils.*
 import hk.qqlittleice.hook.miuihome.utils.ktx.hookAfterMethod
 import hk.qqlittleice.hook.miuihome.view.*
 import java.io.File
@@ -43,10 +40,10 @@ class MainHook {
         EnableSimpleAnimation().init()
         //动画速度调节
         ModifyAnimDurationRatio().init()
-        //后台卡片图标文字间距调节
-        ModifyHeaderHeight().init()
         //后台卡片圆角大小调节
         ModifyRoundedCorners().init()
+        //后台卡片图标文字间距调节
+        ModifyHeaderHeight().init()
 
         TestHook().init()
     }
@@ -62,20 +59,20 @@ class MainHook {
             addView(LinearLayout(HomeContext.activity).apply {
                 orientation = LinearLayout.VERTICAL
                 setPadding(dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 10f), dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 5f))
-                addView(SettingTextView.FastBuilder(mText = "MiuiHome设置", mSize = SettingTextView.titleSize).build())
-                addView(SettingTextView.FastBuilder(mText = "模糊设置", mSize = SettingTextView.text2Size).build())
+                addView(SettingTextView.FastBuilder(mText = "MiuiHome", mSize = SettingTextView.titleSize).build())
+                addView(SettingTextView.FastBuilder(mText = "模糊设置", mColor = "#0C84FF",mSize = SettingTextView.text2Size).build())
                 addView(SettingTextView.FastBuilder(mText = "后台模糊级别") { showModifyBlurLevel() }.build())
-                addView(SettingTextView.FastBuilder(mText = "其他设置", mSize = SettingTextView.text2Size).build())
+                addView(SettingTextView.FastBuilder(mText = "更多设置", mColor = "#0C84FF",mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = "平滑动画", mKey = "smoothAnimation").build())
                 addView(SettingSwitch.FastBuilder(mText = "文件夹模糊", mKey = "blurWhenOpenFolder").build())
                 addView(SettingSwitch.FastBuilder(mText = "水波纹下载特效", mKey = "mamlDownload").build())
-                addView(SettingTextView.FastBuilder(mText = "扩展设置", mSize = SettingTextView.text2Size).build())
-                addView(SettingSwitch.FastBuilder(mText = "时钟常显", mKey = "clockGadget").build())
-                addView(SettingSwitch.FastBuilder(mText = "简单动画", mKey = "simpleAnimation").build())
                 addView(SettingTextView.FastBuilder(mText = "动画速度调节") { showModifyAnimationLevel() }.build())
                 addView(SettingTextView.FastBuilder(mText = "后台卡片圆角大小调节") { showModifyRoundCorner() }.build())
                 addView(SettingTextView.FastBuilder(mText = "后台卡片图标文字间距调节") { showModifyTextSize() }.build())
-                addView(SettingTextView.FastBuilder(mText = "模块设置") { showHookSetting() }.build())
+                addView(SettingTextView.FastBuilder(mText = "扩展设置", mColor = "#0C84FF" ,mSize = SettingTextView.text2Size).build())
+                addView(SettingSwitch.FastBuilder(mText = "时钟常显", mKey = "clockGadget").build())
+                addView(SettingSwitch.FastBuilder(mText = "简单动画", mKey = "simpleAnimation").build())
+                addView(SettingTextView.FastBuilder(mText = "模块相关") { showHookSetting() }.build())
             })
         })
         dialogBuilder.setPositiveButton("关闭", null)
