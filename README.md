@@ -1,6 +1,6 @@
-# MiuiHome  [![Android CI](https://github.com/1767523953/MiuiHome/actions/workflows/main.yml/badge.svg)](https://github.com/1767523953/MiuiHome/actions/workflows/main.yml)
+# MiuiHome
 
- MiuiHome 自定义 - Xposed
+__Hook for MIUI Launcher - Xposed__
  
 ### 自定义你的 MiuiHome
 
@@ -15,6 +15,11 @@
 - 下载时图标的水波纹特效.
 - 后台卡片图标文字间距调节.
 - 强制为高端设备(默认启用).
+
+### 激活模块后重启系统桌面,再打开桌面设置即可看见模块设置弹窗.
+
+![MiuiHome1](https://i.loli.net/2021/05/06/xNM5aTQsVJIifRp.jpg)
+![MiuiHome2](https://i.loli.net/2021/05/06/uNGSjqotQ8n5XaL.jpg)
 
 ### 原仓库：[YuKongA/MiuiHome](https://github.com/YuKongA/MiuiHome)
 
