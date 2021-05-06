@@ -142,7 +142,9 @@ class MainHook {
         })
         dialog = dialogBuilder.show().apply {
             setOnDismissListener {
-                LogUtil.toast("后台模糊等级设置为：${(onClick as TextView).text}")
+                try {
+                    LogUtil.toast("后台模糊等级设置为：${(onClick as TextView).text}")
+                } catch (ignore: Exception) {}
             }
         }
     }
