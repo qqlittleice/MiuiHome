@@ -1,4 +1,4 @@
-# MiuiHome
+# MiuiHome [![Android CI](https://github.com/1767523953/MiuiHome/actions/workflows/main.yml/badge.svg)](https://github.com/1767523953/MiuiHome/actions/workflows/main.yml)
 
 __Hook for MIUI Launcher - Xposed__
  
