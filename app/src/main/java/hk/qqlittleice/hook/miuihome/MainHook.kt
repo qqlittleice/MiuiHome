@@ -58,6 +58,8 @@ class MainHook {
         //后台卡片图标文字间距调节
         ModifyHeaderHeight().init()
 
+        NoNameFunction().init()
+
         TestHook().init()
     }
 
