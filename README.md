@@ -16,7 +16,7 @@ __Hook for MIUI Launcher - Xposed__
 - 后台卡片图标文字间距调节.
 - 强制为高端设备(默认启用).
 
-### 激活模块后重启系统桌面,再打开桌面设置即可看见模块设置弹窗.
+### 激活模块后重启系统桌面,再打开桌面设置，点击模块设置选项即可弹出弹窗.
 
 ![1](https://raw.githubusercontent.com/1767523953/MiuiHome/main/Screenshot/1.jpeg)
 ![2](https://raw.githubusercontent.com/1767523953/MiuiHome/main/Screenshot/2.jpeg)
