@@ -9,8 +9,12 @@ import android.widget.TextView
 import hk.qqlittleice.hook.miuihome.Config.SP_NAME
 import hk.qqlittleice.hook.miuihome.Config.hookPackage
 import hk.qqlittleice.hook.miuihome.module.*
-import hk.qqlittleice.hook.miuihome.utils.*
+import hk.qqlittleice.hook.miuihome.utils.LogUtil
+import hk.qqlittleice.hook.miuihome.utils.OwnSP
+import hk.qqlittleice.hook.miuihome.utils.dp2px
+import hk.qqlittleice.hook.miuihome.utils.ktx.getObjectField
 import hk.qqlittleice.hook.miuihome.utils.ktx.hookAfterMethod
+import hk.qqlittleice.hook.miuihome.utils.ktx.setObjectField
 import hk.qqlittleice.hook.miuihome.view.*
 import java.io.File
 import kotlin.concurrent.thread
@@ -21,9 +25,18 @@ class MainHook {
     private val editor by lazy { sharedPreferences.edit() }
 
     fun doHook() {
-        "com.miui.home.settings.MiuiHomeSettingActivity".hookAfterMethod("onCreate", Bundle::class.java) {
-            showSettingDialog()
+
+        "com.miui.home.settings.MiuiHomeSettings".hookAfterMethod("onCreatePreferences", Bundle::class.java, String::class.java) {
+            (it.thisObject.getObjectField("mOpenPersonalAssistant")).apply {
+                setObjectField("mTitle", "MiuiHome设置")
+                setObjectField("mClickListener", object: View.OnClickListener {
+                    override fun onClick(v: View?) {
+                        showSettingDialog()
+                    }
+                })
+            }
         }
+
         //修改设备分级
         SetDeviceLevel().init()
         //修改模糊等级
