@@ -18,9 +18,6 @@ __Hook for MIUI Launcher - Xposed__
 
 ### 激活模块后重启系统桌面，再打开桌面设置，点击模块设置选项即可弹出弹窗.
 
-![1](https://raw.githubusercontent.com/1767523953/MiuiHome/main/Screenshot/1.jpeg)
-![2](https://raw.githubusercontent.com/1767523953/MiuiHome/main/Screenshot/2.jpeg)
-
 ### 原仓库：[YuKongA/MiuiHome](https://github.com/YuKongA/MiuiHome)
 
 ### Credit
@@ -29,3 +26,5 @@ __Hook for MIUI Launcher - Xposed__
 [XposedBridge](https://github.com/rovo89/XposedBridge)
 [LSPosed](https://github.com/LSPosed/LSPosed)
 [androidx.annotation](https://android.googlesource.com/platform/frameworks/support/+/androidx-master-dev/annotation/annotation/)
+
+![1](https://raw.githubusercontent.com/1767523953/MiuiHome/main/Screenshot/1.jpeg)
