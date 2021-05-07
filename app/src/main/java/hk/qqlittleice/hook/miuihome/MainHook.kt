@@ -28,7 +28,7 @@ class MainHook {
 
         "com.miui.home.settings.MiuiHomeSettings".hookAfterMethod("onCreatePreferences", Bundle::class.java, String::class.java) {
             (it.thisObject.getObjectField("mOpenPersonalAssistant")).apply {
-                setObjectField("mTitle", "MiuiHome设置")
+                setObjectField("mTitle", "${this?.getObjectField("mTitle")} | MiuiHome设置")
                 setObjectField("mClickListener", object: View.OnClickListener {
                     override fun onClick(v: View?) {
                         showSettingDialog()
