@@ -12,8 +12,16 @@ import hk.qqlittleice.hook.miuihome.utils.LogUtil
 import hk.qqlittleice.hook.miuihome.utils.OwnSP
 import hk.qqlittleice.hook.miuihome.utils.dp2px
 
-class SettingSeekBarDialog(private val mText: String, private val mKey: String, private val minValue: Int, private val maxValue: Int,
-                           private val divide: Int = 100, private val canUserInput: Boolean, private val unit: String = "f") {
+class SettingSeekBarDialog(
+    private val mText: String,
+    private val mKey: String,
+    private val minValue: Int,
+    private val maxValue: Int,
+    private val divide: Int = 100,
+    private val canUserInput: Boolean,
+    private val unit: String = " f",
+    private val defval: Int
+) {
 
     private val sharedPreferences = OwnSP.ownSP
     private val editor by lazy { sharedPreferences.edit() }
@@ -57,7 +65,7 @@ class SettingSeekBarDialog(private val mText: String, private val mKey: String, 
                 addView(LinearLayout(HomeContext.context).apply {
                     addView(TextView(HomeContext.context).apply {
                         text = "${(minValue/divide.toFloat())}$unit"
-                        layoutParams = LinearLayout.LayoutParams(70, LinearLayout.LayoutParams.MATCH_PARENT)
+                        layoutParams = LinearLayout.LayoutParams(100, LinearLayout.LayoutParams.MATCH_PARENT)
                         setTextColor(Color.parseColor("#ffffff"))
                     })
                     addView(TextView(HomeContext.context).apply {
@@ -70,7 +78,7 @@ class SettingSeekBarDialog(private val mText: String, private val mKey: String, 
                     addView(TextView(HomeContext.context).apply {
                         text = "${(maxValue/divide.toFloat())}$unit"
                         textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
-                        layoutParams = LinearLayout.LayoutParams(70, LinearLayout.LayoutParams.MATCH_PARENT)
+                        layoutParams = LinearLayout.LayoutParams(100, LinearLayout.LayoutParams.MATCH_PARENT)
                         setTextColor(Color.parseColor("#ffffff"))
                     })
                     layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
@@ -82,7 +90,7 @@ class SettingSeekBarDialog(private val mText: String, private val mKey: String, 
                 if (canUserInput) {
                     addView(SettingTextView.FastBuilder(mText = "手动输入", mSize = SettingTextView.text2Size) {
                         dialog.dismiss()
-                        SettingUserInput(mText, mKey, minValue, maxValue, divide).build()
+                        SettingUserInput(mText, mKey, minValue, maxValue, divide,defval).build()
                     }.build())
                 }
             })

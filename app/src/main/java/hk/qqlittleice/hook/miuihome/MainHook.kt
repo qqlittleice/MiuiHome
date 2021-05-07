@@ -27,8 +27,8 @@ class MainHook {
     fun doHook() {
 
         "com.miui.home.settings.MiuiHomeSettings".hookAfterMethod("onCreatePreferences", Bundle::class.java, String::class.java) {
-            (it.thisObject.getObjectField("mOpenPersonalAssistant")).apply {
-                setObjectField("mTitle", "${this?.getObjectField("mTitle")} | MiuiHome设置")
+            (it.thisObject.getObjectField("mDefaultHomeSetting")).apply {
+                setObjectField("mTitle", "模块设置")
                 setObjectField("mClickListener", object: View.OnClickListener {
                     override fun onClick(v: View?) {
                         showSettingDialog()
@@ -75,13 +75,14 @@ class MainHook {
                 addView(SettingTextView.FastBuilder(mText = "MiuiHome", mSize = SettingTextView.titleSize).build())
                 addView(SettingTextView.FastBuilder(mText = "模糊设置", mColor = "#0C84FF",mSize = SettingTextView.text2Size).build())
                 addView(SettingTextView.FastBuilder(mText = "后台模糊级别") { showModifyBlurLevel() }.build())
-                addView(SettingTextView.FastBuilder(mText = "更多设置", mColor = "#0C84FF",mSize = SettingTextView.text2Size).build())
+                addView(SettingTextView.FastBuilder(mText = "特效设置", mColor = "#0C84FF",mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = "平滑动画", mKey = "smoothAnimation").build())
                 addView(SettingSwitch.FastBuilder(mText = "文件夹模糊", mKey = "blurWhenOpenFolder").build())
                 addView(SettingSwitch.FastBuilder(mText = "水波纹下载特效", mKey = "mamlDownload").build())
-                addView(SettingTextView.FastBuilder(mText = "动画速度调节") { showModifyAnimationLevel() }.build())
-                addView(SettingTextView.FastBuilder(mText = "后台卡片圆角大小调节") { showModifyRoundCorner() }.build())
-                addView(SettingTextView.FastBuilder(mText = "后台卡片图标文字间距调节") { showModifyTextSize() }.build())
+                addView(SettingTextView.FastBuilder(mText = "后台设置", mColor = "#0C84FF",mSize = SettingTextView.text2Size).build())
+                addView(SettingTextView.FastBuilder(mText = "动画速度") { showModifyAnimationLevel() }.build())
+                addView(SettingTextView.FastBuilder(mText = "卡片圆角大小") { showModifyRoundCorner() }.build())
+                addView(SettingTextView.FastBuilder(mText = "图标文字间距") { showModifyTextSize() }.build())
                 addView(SettingTextView.FastBuilder(mText = "扩展设置", mColor = "#0C84FF" ,mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = "时钟常显", mKey = "clockGadget").build())
                 addView(SettingSwitch.FastBuilder(mText = "简单动画", mKey = "simpleAnimation").build())
@@ -109,11 +110,11 @@ class MainHook {
     }
 
     private fun showModifyRoundCorner() {
-        SettingUserInput("后台卡片圆角大小调节", "recents_task_view_rounded_corners_radius", 0, 100, 1).build()
+        SettingUserInput("圆角大小", "recents_task_view_rounded_corners_radius", 0, 100, 1,20).build()
     }
 
     private fun showModifyTextSize() {
-        SettingUserInput("后台卡片图标文字间距调节", "recents_task_view_header_height", 0, 200, 1).build()
+        SettingUserInput("图标文字间距", "recents_task_view_header_height", 0, 200, 1,40).build()
     }
 
 
@@ -163,7 +164,7 @@ class MainHook {
     }
 
     private fun showModifyAnimationLevel() {
-        SettingSeekBarDialog("动画速度调节", "animationLevel", 10, 500, canUserInput = true).build()
+        SettingSeekBarDialog("动画速度", "animationLevel", 10, 500, canUserInput = true, defval = 100).build()
     }
 
     private fun firstUseDialog() {
@@ -176,7 +177,7 @@ class MainHook {
                 OwnSP.set("animationLevel", 1.0f)
                 OwnSP.set("isFirstUse", false)
                 thread {
-                    LogUtil.toast("系统桌面将会在3秒后重启")
+                    LogUtil.toast("系统桌面将会在3秒后重启!")
                     Thread.sleep(3000)
                     System.exit(0)
                 }

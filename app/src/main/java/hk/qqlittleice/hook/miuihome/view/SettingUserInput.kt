@@ -11,7 +11,7 @@ import hk.qqlittleice.hook.miuihome.utils.OwnSP
 import hk.qqlittleice.hook.miuihome.utils.dp2px
 
 class SettingUserInput(private val mText: String, private val mKey: String, private val minValue: Int, private val maxValue: Int,
-                       private val divide: Int = 100) {
+                       private val divide: Int = 100, private val defval:Int) {
 
     private val sharedPreferences = OwnSP.ownSP
     private val editor by lazy { sharedPreferences.edit() }
@@ -29,9 +29,9 @@ class SettingUserInput(private val mText: String, private val mKey: String, priv
                     editText = this
                     inputType = EditorInfo.TYPE_CLASS_NUMBER
                 })
-                addView(SettingTextView.FastBuilder(mText = "可输入的最小值：$minValue", mSize = SettingTextView.text2Size).build())
-                addView(SettingTextView.FastBuilder(mText = "可输入的最大值：$maxValue", mSize = SettingTextView.text2Size).build())
-                addView(SettingTextView.FastBuilder(mText = "输入的值会被除以$divide").build())
+                addView(SettingTextView.FastBuilder(mText = "官方默认值：$defval").build())
+                addView(SettingTextView.FastBuilder(mText = "可输入范围：$minValue~$maxValue").build())
+                addView(SettingTextView.FastBuilder(mText = "该输入值会被除以$divide").build())
             })
         })
         dialogBuilder.apply {
