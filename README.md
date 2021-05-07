@@ -18,8 +18,8 @@ __Hook for MIUI Launcher - Xposed__
 
 ### 激活模块后重启系统桌面,再打开桌面设置即可看见模块设置弹窗.
 
-![MiuiHome1](https://i.loli.net/2021/05/06/xNM5aTQsVJIifRp.jpg)
-![MiuiHome2](https://i.loli.net/2021/05/06/uNGSjqotQ8n5XaL.jpg)
+![1](https://raw.githubusercontent.com/1767523953/MiuiHome/main/Screenshot/1.jpeg)
+![2](https://raw.githubusercontent.com/1767523953/MiuiHome/main/Screenshot/2.jpeg)
 
 ### 原仓库：[YuKongA/MiuiHome](https://github.com/YuKongA/MiuiHome)
 
