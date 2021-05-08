@@ -14,6 +14,7 @@ import java.io.InputStreamReader
 class TestHook {
 
     fun init() {
+
         if (! OwnSP.ownSP.getBoolean("TESTONLY", false)) return
         val exec = Runtime.getRuntime().exec("pm path " + BuildConfig.APPLICATION_ID)
         val bufferedReader = BufferedReader(InputStreamReader(exec.inputStream))

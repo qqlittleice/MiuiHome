@@ -7,6 +7,7 @@ import hk.qqlittleice.hook.miuihome.utils.ktx.hookBeforeMethod
 class ModifyBlurLevel {
 
     fun init() {
+
         "com.miui.home.launcher.common.BlurUtils".hookBeforeMethod("getBlurType") {
             when (OwnSP.ownSP.getString("blurLevel", "")) {
                 "COMPLETE" -> {

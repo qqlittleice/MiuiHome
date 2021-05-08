@@ -61,6 +61,8 @@ class MainHook {
         ModifyTaskVertical().init()
         //横向后台卡片大小
         ModifyTaskHorizontal().init()
+        //进入后台是否隐藏状态栏
+        EnableHideStatusBarWhenEnterRecents().init()
 
         TestHook().init()
     }
@@ -85,6 +87,7 @@ class MainHook {
                 addView(SettingSwitch.FastBuilder(mText = "水波纹下载特效", mKey = "mamlDownload").build())
                 addView(SettingTextView.FastBuilder(mText = "后台设置", mColor = "#0C84FF",mSize = SettingTextView.text2Size).build())
                 addView(SettingTextView.FastBuilder(mText = "动画速度") { showModifyAnimationLevel() }.build())
+                addView(SettingSwitch.FastBuilder(mText = "隐藏状态栏", mKey = "hideStatusBar").build())
                 addView(SettingTextView.FastBuilder(mText = "卡片圆角大小") { showModifyRoundCorner() }.build())
                 addView(SettingTextView.FastBuilder(mText = "纵向(瀑布)卡片大小") { showModifyVertical() }.build())
                 addView(SettingTextView.FastBuilder(mText = "横向(平铺)卡片大小") { showModifyHorizontal() }.build())
@@ -131,6 +134,9 @@ class MainHook {
         SettingUserInput("横向卡片大小", "task_horizontal", 100, 1000, 1000,544).build()
     }
 
+    private fun showModifyAnimationLevel() {
+        SettingSeekBarDialog("动画速度", "animationLevel", 10, 500, canUserInput = true, defval = 100).build()
+    }
 
     private fun showModifyBlurLevel() {
         val dialogBuilder = SettingBaseDialog().get()
@@ -177,9 +183,6 @@ class MainHook {
         }
     }
 
-    private fun showModifyAnimationLevel() {
-        SettingSeekBarDialog("动画速度", "animationLevel", 10, 500, canUserInput = true, defval = 100).build()
-    }
 
     private fun firstUseDialog() {
         val dialogBuilder = SettingBaseDialog().get().apply {
@@ -189,6 +192,7 @@ class MainHook {
                 OwnSP.set("blurLevel", "COMPLETE")
                 OwnSP.set("smoothAnimation", true)
                 OwnSP.set("animationLevel", 1.0f)
+                OwnSP.set("hideStatusBar", true)
                 OwnSP.set("isFirstUse", false)
                 thread {
                     LogUtil.toast("系统桌面将会在3秒后重启!")

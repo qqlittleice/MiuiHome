@@ -13,6 +13,7 @@ import hk.qqlittleice.hook.miuihome.utils.ktx.replaceMethod
 class ModifyTaskVertical {
     
     fun init() {
+
         val value = OwnSP.ownSP.getFloat("task_vertical", -1f)
         if (value == -1f) return
 
