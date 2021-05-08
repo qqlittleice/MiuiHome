@@ -1,5 +1,6 @@
 package hk.qqlittleice.hook.miuihome.view
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.widget.LinearLayout
 import android.widget.ScrollView
@@ -11,6 +12,7 @@ import kotlin.concurrent.thread
 
 class SettingInformationDialog(private val message: String, private val seconds: Int, private val key: String) {
 
+    @SuppressLint("SetTextI18n")
     fun build(): AlertDialog {
         val dialogBuilder = SettingBaseDialog().get()
         var timeLeft = seconds
