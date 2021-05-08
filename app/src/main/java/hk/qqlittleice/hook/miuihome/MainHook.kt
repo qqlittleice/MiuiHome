@@ -34,6 +34,9 @@ class MainHook {
                         showSettingDialog()
                     }
                 })
+                if (XposedInit.hasHookPackageResources) {
+                    setObjectField("mTitle", "模块设置(资源钩子已生效)")
+                }
             }
         }
 

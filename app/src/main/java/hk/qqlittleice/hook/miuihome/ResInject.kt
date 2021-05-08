@@ -7,11 +7,11 @@ import dalvik.system.DexClassLoader
 import hk.qqlittleice.hook.miuihome.utils.LogUtil
 import hk.qqlittleice.hook.miuihome.utils.ModuleRes
 
-class ResHook {
+class ResInject {
 
     lateinit var moduleRes: ModuleRes
 
-    fun init(modulePath: String = XposedInit.modulePath): ResHook {
+    fun init(modulePath: String = XposedInit.modulePath): ResInject {
         try {
             val assetManager = AssetManager::class.java.newInstance()
             val method = assetManager.javaClass.getMethod("addAssetPath", String::class.java)
