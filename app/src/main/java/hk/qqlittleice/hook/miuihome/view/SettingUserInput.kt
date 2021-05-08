@@ -1,6 +1,7 @@
 package hk.qqlittleice.hook.miuihome.view
 
 import android.app.AlertDialog
+import android.graphics.Color
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.LinearLayout
@@ -9,6 +10,7 @@ import hk.qqlittleice.hook.miuihome.HomeContext
 import hk.qqlittleice.hook.miuihome.utils.LogUtil
 import hk.qqlittleice.hook.miuihome.utils.OwnSP
 import hk.qqlittleice.hook.miuihome.utils.dp2px
+import hk.qqlittleice.hook.miuihome.utils.isNightMode
 
 class SettingUserInput(private val mText: String, private val mKey: String, private val minValue: Int, private val maxValue: Int,
                        private val divide: Int = 100, private val defval:Int) {
@@ -18,7 +20,7 @@ class SettingUserInput(private val mText: String, private val mKey: String, priv
 
     fun build(): AlertDialog {
         lateinit var editText: EditText
-        val dialogBuilder = AlertDialog.Builder(HomeContext.activity, android.R.style.Theme_DeviceDefault_Dialog_Alert)
+        val dialogBuilder = SettingBaseDialog().get()
         dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
             overScrollMode = 2
             addView(LinearLayout(HomeContext.activity).apply {
@@ -28,6 +30,7 @@ class SettingUserInput(private val mText: String, private val mKey: String, priv
                 addView(EditText(HomeContext.context).apply {
                     editText = this
                     inputType = EditorInfo.TYPE_CLASS_NUMBER
+                    setTextColor(Color.parseColor(if (isNightMode(getContext())) "#ffffff" else "#000000"))
                 })
                 addView(SettingTextView.FastBuilder(mText = "官方默认值：$defval").build())
                 addView(SettingTextView.FastBuilder(mText = "可输入范围：$minValue~$maxValue").build())

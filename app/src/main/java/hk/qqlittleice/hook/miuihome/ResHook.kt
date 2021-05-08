@@ -11,11 +11,7 @@ class ResHook {
 
     lateinit var moduleRes: ModuleRes
 
-    companion object {
-        lateinit var res: Resources
-    }
-
-    fun init(modulePath: String = XposedInit.modulePath): ModuleRes {
+    fun init(modulePath: String = XposedInit.modulePath): ResHook {
         try {
             val assetManager = AssetManager::class.java.newInstance()
             val method = assetManager.javaClass.getMethod("addAssetPath", String::class.java)
@@ -29,9 +25,8 @@ class ResHook {
             if (!file.exists()) file.mkdir()
             val classLoader = DexClassLoader(modulePath, file.absolutePath, null, HomeContext.classLoader)
             moduleRes = ModuleRes(resources, classLoader)
-            LogUtil.e("成功加载资源")
-            res = resources
-            return moduleRes
+            LogUtil.e(moduleRes.resources.getString(R.string.res_hooked))
+            return this
         } catch (e: Throwable) {
             LogUtil.e(e)
             throw e

@@ -25,7 +25,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
                     .hookAfterAllMethods("newActivity") { activityParam ->
                         HomeContext.activity = activityParam.result as Activity
                     }
-                ResHook().init()
+                HomeContext.myRes = ResHook().init()
                 MainHook().doHook()
 
             }

@@ -12,7 +12,7 @@ import kotlin.concurrent.thread
 class SettingInformationDialog(private val message: String, private val seconds: Int, private val key: String) {
 
     fun build(): AlertDialog {
-        val dialogBuilder = AlertDialog.Builder(HomeContext.activity, android.R.style.Theme_DeviceDefault_Dialog_Alert)
+        val dialogBuilder = SettingBaseDialog().get()
         var timeLeft = seconds
         dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
             overScrollMode = 2

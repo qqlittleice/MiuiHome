@@ -70,7 +70,7 @@ class MainHook {
             firstUseDialog()
             return
         }
-        val dialogBuilder = AlertDialog.Builder(HomeContext.activity, android.R.style.Theme_DeviceDefault_Dialog_Alert)
+        val dialogBuilder = SettingBaseDialog().get()
         dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
             overScrollMode = 2
             addView(LinearLayout(HomeContext.activity).apply {
@@ -102,7 +102,7 @@ class MainHook {
     }
 
     private fun showHookSetting() {
-        val dialogBuilder = AlertDialog.Builder(HomeContext.activity, android.R.style.Theme_DeviceDefault_Dialog_Alert)
+        val dialogBuilder = SettingBaseDialog().get()
         dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
             overScrollMode = 2
             addView(LinearLayout(HomeContext.activity).apply {
@@ -133,7 +133,7 @@ class MainHook {
 
 
     private fun showModifyBlurLevel() {
-        val dialogBuilder = AlertDialog.Builder(HomeContext.activity, android.R.style.Theme_DeviceDefault_Dialog_Alert)
+        val dialogBuilder = SettingBaseDialog().get()
         val mKey = "blurLevel"
         lateinit var dialog: AlertDialog
         lateinit var onClick: View
@@ -182,7 +182,7 @@ class MainHook {
     }
 
     private fun firstUseDialog() {
-        val dialogBuilder = AlertDialog.Builder(HomeContext.activity, android.R.style.Theme_DeviceDefault_Dialog_Alert).apply {
+        val dialogBuilder = SettingBaseDialog().get().apply {
             setTitle("欢迎")
             setMessage("检测到你是第一次使用本模块，模块会进行默认值设定，并随后重启系统桌面\n如需进一步设置，请待桌面重启后再次打开桌面设置")
             setOnDismissListener {

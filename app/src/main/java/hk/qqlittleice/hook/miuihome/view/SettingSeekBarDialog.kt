@@ -11,6 +11,7 @@ import hk.qqlittleice.hook.miuihome.HomeContext
 import hk.qqlittleice.hook.miuihome.utils.LogUtil
 import hk.qqlittleice.hook.miuihome.utils.OwnSP
 import hk.qqlittleice.hook.miuihome.utils.dp2px
+import hk.qqlittleice.hook.miuihome.utils.isNightMode
 
 class SettingSeekBarDialog(
     private val mText: String,
@@ -37,7 +38,7 @@ class SettingSeekBarDialog(
     }
 
     fun build(): AlertDialog {
-        val dialogBuilder = AlertDialog.Builder(HomeContext.activity, android.R.style.Theme_DeviceDefault_Dialog_Alert)
+        val dialogBuilder = SettingBaseDialog().get()
         var tempValue: Float = sharedPreferences.getFloat(mKey, 0f)
         lateinit var valueTextView: TextView
         lateinit var dialog: AlertDialog
@@ -66,20 +67,20 @@ class SettingSeekBarDialog(
                     addView(TextView(HomeContext.context).apply {
                         text = "${(minValue/divide.toFloat())}$unit"
                         layoutParams = LinearLayout.LayoutParams(100, LinearLayout.LayoutParams.MATCH_PARENT)
-                        setTextColor(Color.parseColor("#ffffff"))
+                        setTextColor(Color.parseColor(if (isNightMode(getContext())) "#ffffff" else "#000000"))
                     })
                     addView(TextView(HomeContext.context).apply {
                         text = "$tempValue$unit"
                         textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                         valueTextView = this
                         layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1f)
-                        setTextColor(Color.parseColor("#ffffff"))
+                        setTextColor(Color.parseColor(if (isNightMode(getContext())) "#ffffff" else "#000000"))
                     })
                     addView(TextView(HomeContext.context).apply {
                         text = "${(maxValue/divide.toFloat())}$unit"
                         textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
                         layoutParams = LinearLayout.LayoutParams(100, LinearLayout.LayoutParams.MATCH_PARENT)
-                        setTextColor(Color.parseColor("#ffffff"))
+                        setTextColor(Color.parseColor(if (isNightMode(getContext())) "#ffffff" else "#000000"))
                     })
                     layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
                     gravity = Gravity.CENTER_VERTICAL
