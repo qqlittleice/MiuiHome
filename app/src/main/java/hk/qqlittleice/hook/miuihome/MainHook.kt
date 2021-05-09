@@ -127,7 +127,8 @@ class MainHook {
                 orientation = LinearLayout.VERTICAL
                 setPadding(dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 10f), dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 5f))
                 addView(SettingTextView.FastBuilder(mText = "资源钩子", mSize = SettingTextView.titleSize).build())
-                addView(SettingTextView.FastBuilder(mText = "自定义后台卡片文字大小") { showModifyBackgroundTextSize() }.build())
+                addView(SettingSwitch.FastBuilder(mText = "解锁桌面图标布局", mKey = "cellCount").build())
+                addView(SettingTextView.FastBuilder(mText = "后台卡片文字大小") { showModifyBackgroundTextSize() }.build())
             })
         })
         dialogBuilder.setPositiveButton("返回") { _, _ -> showSettingDialog()}
@@ -224,6 +225,7 @@ class MainHook {
                 OwnSP.set("animationLevel", 1.0f)
                 OwnSP.set("hideStatusBar", true)
                 OwnSP.set("isFirstUse", false)
+                OwnSP.set("cellCount", false)
                 thread {
                     LogUtil.toast("系统桌面将会在3秒后重启!")
                     Thread.sleep(3000)

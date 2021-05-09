@@ -3,6 +3,7 @@ package hk.qqlittleice.hook.miuihome
 import android.content.res.XModuleResources
 import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResourcesParam
 import hk.qqlittleice.hook.miuihome.utils.OwnSP
+import hk.qqlittleice.hook.miuihome.utils.ktx.setReturnConstant
 import hk.qqlittleice.hook.miuihome.utils.ktx.setTryReplacement
 import kotlin.concurrent.thread
 
@@ -22,7 +23,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 hasLoad = true
             }
 
-            // Test Code
+            //后台卡片文字大小
             val backgroundTextSize = OwnSP.ownSP.getFloat("backgroundTextSize", 13f)
             hookedRes.res.setTryReplacement(
                 Config.hookPackage,
@@ -31,7 +32,31 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 modRes.fwd(getResId("dimen", "sp${backgroundTextSize.toInt()}"))
             )
 
+            //解锁桌面布局
+            if (OwnSP.ownSP.getBoolean("cellCount", false)) {
+                hookedRes.res.setTryReplacement(
+                    Config.hookPackage,
+                    "integer",
+                    "config_cell_count_x_max",
+                    9)
+                hookedRes.res.setTryReplacement(
+                    Config.hookPackage,
+                    "integer",
+                    "config_cell_count_y_max",
+                    9)
+                hookedRes.res.setTryReplacement(
+                    Config.hookPackage,
+                    "integer",
+                    "config_cell_count_x_min",
+                    4)
+                hookedRes.res.setTryReplacement(
+                    Config.hookPackage,
+                    "integer",
+                    "config_cell_count_y_min",
+                    4)
+            } else {
+               return@thread
+            }
         }
     }
-
 }
