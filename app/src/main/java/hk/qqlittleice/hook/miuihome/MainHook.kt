@@ -108,7 +108,29 @@ class MainHook {
         })
         dialogBuilder.setPositiveButton("关闭", null)
         dialogBuilder.setNeutralButton("重启系统桌面") { _, _ -> System.exit(0) }
+        if (XposedInit.hasHookPackageResources) {
+            dialogBuilder.setNegativeButton("资源钩子设置") { _, _ -> showResHookedDialog() }
+        }
         dialogBuilder.setCancelable(false)
+        dialogBuilder.show()
+    }
+
+    private fun showModifyBackgroundTextSize() {
+        SettingUserInput("后台卡片文字大小", "backgroundTextSize", 0, 100, 1, 13).build()
+    }
+
+    private fun showResHookedDialog() {
+        val dialogBuilder = SettingBaseDialog().get()
+        dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
+            overScrollMode = 2
+            addView(LinearLayout(HomeContext.activity).apply {
+                orientation = LinearLayout.VERTICAL
+                setPadding(dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 10f), dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 5f))
+                addView(SettingTextView.FastBuilder(mText = "资源钩子", mSize = SettingTextView.titleSize).build())
+                addView(SettingTextView.FastBuilder(mText = "自定义后台卡片文字大小") { showModifyBackgroundTextSize() }.build())
+            })
+        })
+        dialogBuilder.setPositiveButton("返回") { _, _ -> showSettingDialog()}
         dialogBuilder.show()
     }
 
