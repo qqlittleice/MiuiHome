@@ -32,6 +32,18 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 modRes.fwd(getResId("dimen", "sp${backgroundTextSize.toInt()}"))
             )
 
+            //后台隐藏应用图标
+            if (OwnSP.ownSP.getBoolean("buttonPadding", false)) {
+                hookedRes.res.setTryReplacement(
+                    Config.hookPackage,
+                    "dimen",
+                    "recents_task_view_header_button_padding",
+                    modRes.fwd(
+                        getResId("dimen", "sp100")
+                    )
+                )
+            }
+
             //解锁桌面布局
             if (OwnSP.ownSP.getBoolean("cellCount", false)) {
                 hookedRes.res.setTryReplacement(

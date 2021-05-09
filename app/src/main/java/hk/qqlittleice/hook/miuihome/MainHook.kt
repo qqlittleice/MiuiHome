@@ -128,6 +128,7 @@ class MainHook {
                 setPadding(dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 10f), dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 5f))
                 addView(SettingTextView.FastBuilder(mText = "资源钩子", mSize = SettingTextView.titleSize).build())
                 addView(SettingSwitch.FastBuilder(mText = "解锁桌面图标布局", mKey = "cellCount").build())
+                addView(SettingSwitch.FastBuilder(mText = "隐藏后台应用图标", mKey = "buttonPadding").build())
                 addView(SettingTextView.FastBuilder(mText = "后台卡片文字大小") { showModifyBackgroundTextSize() }.build())
             })
         })
@@ -226,6 +227,7 @@ class MainHook {
                 OwnSP.set("hideStatusBar", true)
                 OwnSP.set("isFirstUse", false)
                 OwnSP.set("cellCount", false)
+                OwnSP.set("buttonPadding", false)
                 thread {
                     LogUtil.toast("系统桌面将会在3秒后重启!")
                     Thread.sleep(3000)
