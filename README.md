@@ -27,6 +27,7 @@ __Hook for MIUI Launcher - Xposed__
 [LSPosed](https://github.com/LSPosed/LSPosed)
 [androidx.annotation](https://android.googlesource.com/platform/frameworks/support/+/androidx-master-dev/annotation/annotation/)
 
+### 软件截图
 ![1](https://raw.githubusercontent.com/1767523953/MiuiHome/main/Screenshot/1.jpeg)
 
 ### License
