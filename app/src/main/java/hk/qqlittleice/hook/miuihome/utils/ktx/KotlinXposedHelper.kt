@@ -419,7 +419,7 @@ inline fun XResources.hookLayout(pkg: String, type: String, name: String, crossi
     }
 }
 
-inline fun XResources.setTryReplacement(pkg: String, type: String, name: String, obj: Any?) {
+fun XResources.setTryReplacement(pkg: String, type: String, name: String, obj: Any?) {
     try {
         this.setReplacement(pkg, type, name, obj)
     } catch (e: Throwable) {
