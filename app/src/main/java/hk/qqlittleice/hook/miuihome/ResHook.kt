@@ -44,6 +44,18 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 )
             }
 
+            //后台隐藏小窗应用
+            if (OwnSP.ownSP.getBoolean("smallWindow", false)) {
+                hookedRes.res.setTryReplacement(
+                    Config.hookPackage,
+                    "dimen",
+                    "recent_tv_small_window_margin_start",
+                    modRes.fwd(
+                        getResId("dimen", "dp_100")
+                    )
+                )
+            }
+
             //解锁桌面布局
             if (OwnSP.ownSP.getBoolean("cellCount", false)) {
                 hookedRes.res.setTryReplacement(
