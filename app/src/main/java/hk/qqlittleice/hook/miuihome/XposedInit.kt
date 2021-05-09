@@ -27,6 +27,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
     }
 
     override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam) {
+        if (resparam.packageName != Config.hookPackage) return
         hasHookPackageResources = true
         ResHook(resparam).init()
     }
