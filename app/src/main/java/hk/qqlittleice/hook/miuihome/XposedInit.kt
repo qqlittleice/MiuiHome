@@ -19,10 +19,6 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                 HomeContext.application = param.thisObject as Application
                 HomeContext.context = param.args[0] as Context
                 HomeContext.classLoader = HomeContext.context.classLoader
-                XposedHelpers.findClass("android.app.Instrumentation", HomeContext.classLoader)
-                    .hookAfterAllMethods("newActivity") { activityParam ->
-                        HomeContext.activity = activityParam.result as Activity
-                    }
                 HomeContext.myRes = ResInject().init()
                 MainHook().doHook()
 

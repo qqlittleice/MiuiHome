@@ -1,5 +1,6 @@
 package hk.qqlittleice.hook.miuihome
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
@@ -25,6 +26,10 @@ class MainHook {
     private val editor by lazy { sharedPreferences.edit() }
 
     fun doHook() {
+
+        "com.miui.home.settings.MiuiHomeSettingActivity".hookAfterMethod("onCreate", Bundle::class.java) {
+            HomeContext.activity = it.thisObject as Activity
+        }
 
         "com.miui.home.settings.MiuiHomeSettings".hookAfterMethod("onCreatePreferences", Bundle::class.java, String::class.java) {
             (it.thisObject.getObjectField("mDefaultHomeSetting")).apply {
