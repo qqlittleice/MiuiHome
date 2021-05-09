@@ -3,6 +3,7 @@ package hk.qqlittleice.hook.miuihome
 import android.content.res.XModuleResources
 import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResourcesParam
 import hk.qqlittleice.hook.miuihome.utils.OwnSP
+import hk.qqlittleice.hook.miuihome.utils.ktx.setTryReplacement
 import kotlin.concurrent.thread
 
 class ResHook(private val hookedRes: InitPackageResourcesParam) {
@@ -22,15 +23,14 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
             }
 
             // Test Code
-            try {
-                val backgroundTextSize = OwnSP.ownSP.getFloat("backgroundTextSize", 13f)
-                hookedRes.res.setReplacement(
-                    Config.hookPackage,
-                    "dimen",
-                    "recents_task_view_header_title_text_size",
-                    modRes.fwd(getResId("dimen", "sp${backgroundTextSize.toInt()}"))
-                )
-            } catch (e: Throwable) {}
+            val backgroundTextSize = OwnSP.ownSP.getFloat("backgroundTextSize", 13f)
+            hookedRes.res.setTryReplacement(
+                Config.hookPackage,
+                "dimen",
+                "recents_task_view_header_title_text_size",
+                modRes.fwd(getResId("dimen", "sp${backgroundTextSize.toInt()}"))
+            )
+
         }
     }
 
