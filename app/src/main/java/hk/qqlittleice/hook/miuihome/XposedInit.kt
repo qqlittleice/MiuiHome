@@ -26,8 +26,9 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         })
     }
 
-    override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam?) {
+    override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam) {
         hasHookPackageResources = true
+        ResHook(resparam).init()
     }
 
     override fun initZygote(startupParam: IXposedHookZygoteInit.StartupParam) {
