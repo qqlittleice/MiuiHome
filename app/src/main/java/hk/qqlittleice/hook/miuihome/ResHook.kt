@@ -55,32 +55,6 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                     )
                 )
             }
-
-            //解锁桌面布局
-            if (OwnSP.ownSP.getBoolean("cellCount", false)) {
-                hookedRes.res.setTryReplacement(
-                    Config.hookPackage,
-                    "integer",
-                    "config_cell_count_x_max",
-                    9)
-                hookedRes.res.setTryReplacement(
-                    Config.hookPackage,
-                    "integer",
-                    "config_cell_count_y_max",
-                    9)
-                hookedRes.res.setTryReplacement(
-                    Config.hookPackage,
-                    "integer",
-                    "config_cell_count_x_min",
-                    4)
-                hookedRes.res.setTryReplacement(
-                    Config.hookPackage,
-                    "integer",
-                    "config_cell_count_y_min",
-                    4)
-            } else {
-               return@thread
-            }
         }
     }
 }
