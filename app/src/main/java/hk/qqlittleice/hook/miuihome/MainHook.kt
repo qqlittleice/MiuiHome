@@ -71,8 +71,7 @@ class MainHook {
         ModifyTaskHorizontal().init()
         //进入后台是否隐藏状态栏
         EnableHideStatusBarWhenEnterRecents().init()
-        //解锁桌面布局限制
-        EnableCellCount().init()
+
         TestHook().init()
     }
 
@@ -102,7 +101,6 @@ class MainHook {
                 addView(SettingTextView.FastBuilder(mText = "横向(平铺)卡片大小") { showModifyHorizontal() }.build())
                 addView(SettingTextView.FastBuilder(mText = "应用图标与文字间距") { showModifyTextSize() }.build())
                 addView(SettingTextView.FastBuilder(mText = "扩展设置", mColor = "#0C84FF" ,mSize = SettingTextView.text2Size).build())
-                addView(SettingSwitch.FastBuilder(mText = "解锁桌面图标布局", mKey = "cellCount").build())
                 addView(SettingSwitch.FastBuilder(mText = "时钟常显", mKey = "clockGadget").build())
                 addView(SettingSwitch.FastBuilder(mText = "简单动画", mKey = "simpleAnimation").build())
                 addView(SettingTextView.FastBuilder(mText = "模块相关") { showHookSetting() }.build())
@@ -129,6 +127,7 @@ class MainHook {
                 orientation = LinearLayout.VERTICAL
                 setPadding(dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 10f), dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 5f))
                 addView(SettingTextView.FastBuilder(mText = "资源钩子", mSize = SettingTextView.titleSize).build())
+//                addView(SettingSwitch.FastBuilder(mText = "解锁桌面图标布局", mKey = "cellCount").build())
                 addView(SettingSwitch.FastBuilder(mText = "隐藏后台应用图标", mKey = "buttonPadding").build())
                 addView(SettingSwitch.FastBuilder(mText = "隐藏后台小窗应用图标", mKey = "smallWindow").build())
                 addView(SettingTextView.FastBuilder(mText = "后台卡片文字大小") { showModifyBackgroundTextSize() }.build())
