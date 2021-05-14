@@ -7,7 +7,9 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true">
-
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
         <meta-data
             android:name="xposeddescription"
             android:value="Hook for Miui Launcher\n模块设置在系统桌面的设置里！" />
