@@ -227,7 +227,6 @@ class MainHook {
                 OwnSP.set("animationLevel", 1.0f)
                 OwnSP.set("hideStatusBar", true)
                 OwnSP.set("isFirstUse", false)
-                OwnSP.set("cellCount", false)
                 OwnSP.set("buttonPadding", false)
                 OwnSP.set("smallWindow", false)
                 thread {
