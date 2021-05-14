@@ -109,7 +109,7 @@ class MainHook {
         dialogBuilder.setPositiveButton("关闭", null)
         dialogBuilder.setNeutralButton("重启系统桌面") { _, _ -> System.exit(0) }
         if (XposedInit.hasHookPackageResources) {
-            dialogBuilder.setNegativeButton("资源钩子设置") { _, _ -> showResHookedDialog() }
+            dialogBuilder.setNegativeButton("资源钩子功能") { _, _ -> showResHookedDialog() }
         }
         dialogBuilder.setCancelable(false)
         dialogBuilder.show()
