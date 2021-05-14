@@ -3,6 +3,7 @@ package hk.qqlittleice.hook.miuihome
 import android.content.res.XModuleResources
 import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResourcesParam
 import hk.qqlittleice.hook.miuihome.utils.OwnSP
+import hk.qqlittleice.hook.miuihome.utils.ktx.setReturnConstant
 import hk.qqlittleice.hook.miuihome.utils.ktx.setTryReplacement
 import kotlin.concurrent.thread
 
@@ -22,7 +23,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 hasLoad = true
             }
 
-            // Test Code
+            //后台卡片文字大小
             val backgroundTextSize = OwnSP.ownSP.getFloat("backgroundTextSize", 13f)
             hookedRes.res.setTryReplacement(
                 Config.hookPackage,
@@ -31,7 +32,49 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 modRes.fwd(getResId("dimen", "sp${backgroundTextSize.toInt()}"))
             )
 
+            //后台隐藏应用图标
+            if (OwnSP.ownSP.getBoolean("buttonPadding", false)) {
+                hookedRes.res.setTryReplacement(
+                    Config.hookPackage,
+                    "dimen",
+                    "recents_task_view_header_button_padding",
+                    modRes.fwd(
+                        getResId("dimen", "sp100")
+                    )
+                )
+            }
+
+            //后台隐藏小窗应用
+            if (OwnSP.ownSP.getBoolean("smallWindow", false)) {
+                hookedRes.res.setTryReplacement(
+                    Config.hookPackage,
+                    "dimen",
+                    "recent_tv_small_window_margin_start",
+                    modRes.fwd(
+                        getResId("dimen", "dp_100")
+                    )
+                )
+            }
+            //解锁桌面布局限制
+            if (OwnSP.ownSP.getBoolean("cellCount", false)) {
+                hookedRes.res.setTryReplacement(
+                    Config.hookPackage,
+                    "integer",
+                    "config_cell_count_x_max",
+                    9)
+                hookedRes.res.setTryReplacement(
+                    Config.hookPackage,
+                    "integer",
+                    "config_cell_count_y_max",
+                    9)
+                hookedRes.res.setTryReplacement(
+                    Config.hookPackage,
+                    "integer",
+                    "config_cell_count_y_min",
+                    5)
+            } else {
+                return@thread
+            }
         }
     }
-
 }

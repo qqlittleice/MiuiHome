@@ -13,9 +13,11 @@
         <meta-data
             android:name="xposeddescription"
             android:value="Hook for Miui Launcher\n模块设置在系统桌面的设置里！" />
+
         <meta-data
             android:name="xposedminversion"
             android:value="82" />
+
         <meta-data
           android:name="xposedscope"
           android:resource="@array/xposed_scope" />

@@ -101,6 +101,7 @@
   <dimen name="dp98">98dp</dimen>
   <dimen name="dp99">99dp</dimen>
   <dimen name="dp100">100dp</dimen>
+  <dimen name="dp_100">-100dp</dimen>
 
   <dimen name="sp0">0sp</dimen>
   <dimen name="sp1">1sp</dimen>

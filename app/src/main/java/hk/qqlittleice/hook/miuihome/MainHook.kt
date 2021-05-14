@@ -127,7 +127,10 @@ class MainHook {
                 orientation = LinearLayout.VERTICAL
                 setPadding(dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 10f), dp2px(HomeContext.context, 20f), dp2px(HomeContext.context, 5f))
                 addView(SettingTextView.FastBuilder(mText = "资源钩子", mSize = SettingTextView.titleSize).build())
-                addView(SettingTextView.FastBuilder(mText = "自定义后台卡片文字大小") { showModifyBackgroundTextSize() }.build())
+//                addView(SettingSwitch.FastBuilder(mText = "解锁桌面图标布局", mKey = "cellCount").build())
+                addView(SettingSwitch.FastBuilder(mText = "隐藏后台应用图标", mKey = "buttonPadding").build())
+                addView(SettingSwitch.FastBuilder(mText = "隐藏后台小窗应用图标", mKey = "smallWindow").build())
+                addView(SettingTextView.FastBuilder(mText = "后台卡片文字大小") { showModifyBackgroundTextSize() }.build())
             })
         })
         dialogBuilder.setPositiveButton("返回") { _, _ -> showSettingDialog()}
