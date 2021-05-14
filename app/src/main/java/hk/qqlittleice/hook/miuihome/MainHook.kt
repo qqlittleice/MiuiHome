@@ -71,6 +71,8 @@ class MainHook {
         ModifyTaskHorizontal().init()
         //进入后台是否隐藏状态栏
         EnableHideStatusBarWhenEnterRecents().init()
+        //禁用Log
+        DisableLog().init()
 
         TestHook().init()
     }
