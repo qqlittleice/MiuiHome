@@ -227,7 +227,6 @@ class MainHook {
                 OwnSP.set("animationLevel", 1.0f)
                 OwnSP.set("hideStatusBar", true)
                 OwnSP.set("isFirstUse", false)
-                OwnSP.set("buttonPadding", false)
                 OwnSP.set("smallWindow", false)
                 thread {
                     LogUtil.toast("系统桌面将会在3秒后重启!")
