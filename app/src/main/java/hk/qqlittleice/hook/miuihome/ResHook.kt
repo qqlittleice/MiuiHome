@@ -55,6 +55,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                     )
                 )
             }
+
             //解锁桌面布局限制
             if (OwnSP.ownSP.getBoolean("cellCount", false)) {
                 hookedRes.res.setTryReplacement(
