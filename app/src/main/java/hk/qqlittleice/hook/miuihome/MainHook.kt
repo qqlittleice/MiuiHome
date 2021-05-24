@@ -57,8 +57,6 @@ class MainHook {
         EnableMamlDownload().init()
         //开启时钟常显
         EnableClockGadget().init()
-        //开启简单动画
-        EnableSimpleAnimation().init()
         //动画速度调节
         ModifyAnimDurationRatio().init()
         //后台卡片圆角大小调节
@@ -104,7 +102,6 @@ class MainHook {
                 addView(SettingTextView.FastBuilder(mText = "应用图标与文字间距") { showModifyTextSize() }.build())
                 addView(SettingTextView.FastBuilder(mText = "扩展设置", mColor = "#0C84FF" ,mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = "时钟常显", mKey = "clockGadget").build())
-                addView(SettingSwitch.FastBuilder(mText = "简单动画", mKey = "simpleAnimation").build())
                 addView(SettingTextView.FastBuilder(mText = "模块相关") { showHookSetting() }.build())
             })
         })
