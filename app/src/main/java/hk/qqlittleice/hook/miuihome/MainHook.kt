@@ -71,6 +71,8 @@ class MainHook {
         EnableHideStatusBarWhenEnterRecents().init()
         //禁用Log
         DisableLog().init()
+        //桌面搜索框模糊
+        EnableSearchBarBlur().init()
 
         TestHook().init()
     }
@@ -102,6 +104,7 @@ class MainHook {
                 addView(SettingTextView.FastBuilder(mText = "应用图标与文字间距") { showModifyTextSize() }.build())
                 addView(SettingTextView.FastBuilder(mText = "扩展设置", mColor = "#0C84FF" ,mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = "时钟常显", mKey = "clockGadget").build())
+                addView(SettingSwitch.FastBuilder(mText = "0524内测桌面启用搜索框模糊", mKey = "searchBarBlur").build())
                 addView(SettingTextView.FastBuilder(mText = "模块相关") { showHookSetting() }.build())
             })
         })
