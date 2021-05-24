@@ -3,7 +3,6 @@ package hk.qqlittleice.hook.miuihome
 import android.content.res.XModuleResources
 import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResourcesParam
 import hk.qqlittleice.hook.miuihome.utils.OwnSP
-import hk.qqlittleice.hook.miuihome.utils.ktx.setReturnConstant
 import hk.qqlittleice.hook.miuihome.utils.ktx.setTryReplacement
 import kotlin.concurrent.thread
 
@@ -29,7 +28,9 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 Config.hookPackage,
                 "dimen",
                 "recents_task_view_header_title_text_size",
-                modRes.fwd(getResId("dimen", "sp${backgroundTextSize.toInt()}"))
+                modRes.fwd(
+                    getResId("dimen", "sp${backgroundTextSize.toInt()}")
+                )
             )
 
             //后台隐藏应用图标
@@ -62,19 +63,36 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                     Config.hookPackage,
                     "integer",
                     "config_cell_count_x_max",
-                    9)
+                    9
+                )
                 hookedRes.res.setTryReplacement(
                     Config.hookPackage,
                     "integer",
                     "config_cell_count_y_max",
-                    9)
+                    9
+                )
                 hookedRes.res.setTryReplacement(
                     Config.hookPackage,
                     "integer",
                     "config_cell_count_y_min",
-                    5)
-            } else {
-                return@thread
+                    5
+                )
+            }
+
+            //隐藏后台清理图标
+            if (OwnSP.ownSP.getBoolean("cleanUp", false)) {
+                hookedRes.res.setTryReplacement(
+                    Config.hookPackage,
+                    "drawable",
+                    "btn_clear_all",
+                    modRes.fwd(R.drawable.a)
+                )
+                hookedRes.res.setTryReplacement(
+                    Config.hookPackage,
+                    "drawable",
+                    "notifications_clear_all",
+                    modRes.fwd(R.drawable.a)
+                )
             }
         }
     }

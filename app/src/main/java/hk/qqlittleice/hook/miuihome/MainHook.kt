@@ -128,6 +128,7 @@ class MainHook {
                 addView(SettingTextView.FastBuilder(mText = "资源钩子", mSize = SettingTextView.titleSize).build())
 //                addView(SettingSwitch.FastBuilder(mText = "解锁桌面图标布局", mKey = "cellCount").build())
                 addView(SettingSwitch.FastBuilder(mText = "隐藏后台应用图标", mKey = "buttonPadding").build())
+                addView(SettingSwitch.FastBuilder(mText = "隐藏后台清理图标", mKey = "cleanUp").build())
                 addView(SettingSwitch.FastBuilder(mText = "隐藏后台小窗应用图标", mKey = "smallWindow").build())
                 addView(SettingTextView.FastBuilder(mText = "后台卡片文字大小") { showModifyBackgroundTextSize() }.build())
             })
