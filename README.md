@@ -12,7 +12,7 @@ __原仓库：[YuKongA/MiuiHome](https://github.com/YuKongA/MiuiHome)__
 
 __新仓库：[1767523953/MiuiHome](https://github.com/1767523953/MiuiHome)__
  
-__涉及内容：__
+### 模块涉及内容
 
 - 平滑动画.
 - 文件夹模糊.
