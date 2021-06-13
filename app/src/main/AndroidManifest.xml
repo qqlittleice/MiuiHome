@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="hk.qqlittleice.hook.miuihome">
+    package="com.yuk.miuihome">
 
     <application
         android:allowBackup="false"
@@ -12,7 +12,7 @@
             android:value="true" />
         <meta-data
             android:name="xposeddescription"
-            android:value="Hook for Miui Launcher\n模块设置在系统桌面的设置里！" />
+            android:value="Hook for MIUI Launcher\n模块设置在系统桌面的设置里！" />
 
         <meta-data
             android:name="xposedminversion"
@@ -21,6 +21,19 @@
         <meta-data
           android:name="xposedscope"
           android:resource="@array/xposed_scope" />
+        <activity
+          android:name=".activity.EntryActivity"
+          android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
+            </intent-filter>
+        </activity>
+
+        <activity
+          android:name=".activity.MainActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -10,9 +10,9 @@
     {
       "type": "SINGLE",
       "filters": [],
-      "versionCode": 310,
-      "versionName": "3.1.0",
-      "outputFile": "app-release.apk"
+      "versionCode": 314,
+      "versionName": "3.1.4",
+      "outputFile": "MiuiHome_3.1.4.apk"
     }
   ]
 }

@@ -3,9 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android/MiuiHome/app/src/main/res/drawable/ic_launcher.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/13485/Documents/GitHub/MiuiHome-1/app/src/main/res/drawable/ic_launcher.xml" value="1.0" />
+        <entry key="..\:/Users/13485/Documents/GitHub/MiuiHome-1/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2947916666666667" />
+        <entry key="..\:/Users/13485/Documents/GitHub/MiuiHome-1/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2947916666666667" />
+        <entry key="..\:/Users/13485/Documents/GitHub/MiuiHome-1/app/src/main/res/layout/entry_activity.xml" value="0.29791666666666666" />
       </map>
     </option>
+  </component>
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="android.annotation.SuppressLint" />
+    </list>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
