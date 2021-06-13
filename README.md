@@ -36,4 +36,4 @@ __新仓库：[1767523953/MiuiHome](https://github.com/1767523953/MiuiHome)__
 ![Screenshot](https://cdn.jsdelivr.net/gh/YuKongA/MiuiHome-New@main/Screenshot/Screenshot.jpg)
 
 ### License
-[AMTPL v1 + GPL-3.0](LICENSE) ，开源协议遵循新仓库.
+[AMTPL v1 + GPL-3.0](LICENSE)
