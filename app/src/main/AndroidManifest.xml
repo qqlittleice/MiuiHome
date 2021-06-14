@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.yuk.miuihome">
+  package="com.yuk.miuihome">
 
     <application
         android:allowBackup="false"
@@ -21,15 +21,23 @@
         <meta-data
           android:name="xposedscope"
           android:resource="@array/xposed_scope" />
+
         <activity
-          android:name=".activity.EntryActivity"
-          android:exported="true">
+          android:name=".activity.EntryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
                 <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
             </intent-filter>
         </activity>
+
+        <activity-alias
+          android:name=".activity.EntryActivityAlias"
+          android:targetActivity=".activity.EntryActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
 
         <activity
           android:name=".activity.MainActivity">

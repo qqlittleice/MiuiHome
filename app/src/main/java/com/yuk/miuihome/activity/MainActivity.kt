@@ -68,17 +68,31 @@ class MainActivity: Activity() {
                     addView(Button(this@MainActivity).apply {
                         text = "隐藏桌面图标"
                         setOnClickListener {
-                            packageManager.setComponentEnabledSetting(mComponentName, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP)
+                            packageManager.setComponentEnabledSetting(
+                                mComponentName,
+                                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                                PackageManager.DONT_KILL_APP
+                            )
+                            ComponentName("com.yuk.miuihome.activity.EntryActivity", "com.yuk.miuihome.activity.EntryActivityAlias")
                             getSP().edit().putBoolean("shouldHide", true).apply()
                         }
                     })
+                } else {
                     addView(TextView(this@MainActivity).apply {
                         text = ""
                     })
-                    addView(TextView(this@MainActivity).apply {
-                        text = "注意：一旦选择隐藏图标，只能通过卸载来恢复。"
-                    })
-                }
+                    addView(Button(this@MainActivity).apply {
+                        text = "显示桌面图标"
+                        setOnClickListener {
+                            packageManager.setComponentEnabledSetting(
+                                mComponentName,
+                                PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                                PackageManager.DONT_KILL_APP
+                            )
+                            getSP().edit().putBoolean("shouldHide", false).apply()
+                            }
+                        })
+                    }
             })
         }
         return scrollView

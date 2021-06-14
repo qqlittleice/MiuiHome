@@ -12,7 +12,7 @@ lateinit var mComponentName: ComponentName
 class EntryActivity: Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(miui.R.style.Theme_DayNight_NoTitle)
+        setTheme(miui.R.style.Theme_Light_NoTitle)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.entry_activity)
         mComponentName = componentName
