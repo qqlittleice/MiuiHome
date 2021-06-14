@@ -5,7 +5,7 @@ __Hook for MIUI Launcher - Xposed__ [![Android CI](https://github.com/1767523953
 ### 如何使用
 __激活模块后重启一次系统桌面，再打开桌面设置，点击模块设置选项即可弹出弹窗.__
 
-__此应用无桌面图标!!请在桌面设置中打开Dialog来设置.__
+__模块设置不在本应用界面!!请在MIUI桌面设置中打开Dialog来设置.__
 
 ### 前世今生
 __原仓库：[YuKongA/MiuiHome](https://github.com/YuKongA/MiuiHome)__
