@@ -1,10 +1,7 @@
 package com.yuk.miuihome.activity
 
 import android.annotation.SuppressLint
-import android.content.ComponentName
-import android.content.Context
-import android.content.Intent
-import android.content.SharedPreferences
+import android.content.*
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.*
@@ -68,12 +65,13 @@ class MainActivity: Activity() {
                     addView(Button(this@MainActivity).apply {
                         text = "隐藏桌面图标"
                         setOnClickListener {
-                            packageManager.setComponentEnabledSetting(
-                                mComponentName,
-                                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
-                                PackageManager.DONT_KILL_APP
-                            )
-                            ComponentName("com.yuk.miuihome.activity.EntryActivity", "com.yuk.miuihome.activity.EntryActivityAlias")
+                            try {
+                                packageManager.setComponentEnabledSetting(
+                                    ComponentName("com.yuk.miuihome", "com.yuk.miuihome.activity.EntryActivity"),
+                                    PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                                    PackageManager.DONT_KILL_APP
+                                )
+                            } catch (e: ActivityNotFoundException) { e.printStackTrace() }
                             getSP().edit().putBoolean("shouldHide", true).apply()
                         }
                     })
@@ -85,11 +83,15 @@ class MainActivity: Activity() {
                         text = "显示桌面图标"
                         setOnClickListener {
                             packageManager.setComponentEnabledSetting(
-                                mComponentName,
-                                PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                                ComponentName("com.yuk.miuihome", "com.yuk.miuihome.activity.EntryActivity"),
+                                PackageManager.COMPONENT_ENABLED_STATE_DEFAULT,
                                 PackageManager.DONT_KILL_APP
                             )
                             getSP().edit().putBoolean("shouldHide", false).apply()
+                            finish()
+                            val intent = Intent()
+                            intent.component = ComponentName("com.yuk.miuihome", "com.yuk.miuihome.activity.EntryActivity")
+                            startActivity(intent)
                             }
                         })
                     }
