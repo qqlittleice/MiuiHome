@@ -65,10 +65,6 @@ class MainHook {
         ModifyRoundedCorners().init()
         //后台卡片图标文字间距调节
         ModifyHeaderHeight().init()
-        //纵向后台卡片大小
-        ModifyTaskVertical().init()
-        //横向后台卡片大小
-        ModifyTaskHorizontal().init()
         //进入后台是否隐藏状态栏
         EnableHideStatusBarWhenEnterRecents().init()
         //禁用Log
@@ -103,8 +99,6 @@ class MainHook {
                 addView(SettingTextView.FastBuilder(mText = "动画速度") { showModifyAnimationLevel() }.build())
                 addView(SettingSwitch.FastBuilder(mText = "隐藏状态栏", mKey = "hideStatusBar").build())
                 addView(SettingTextView.FastBuilder(mText = "卡片圆角大小") { showModifyRoundCorner() }.build())
-                addView(SettingTextView.FastBuilder(mText = "纵向(瀑布)卡片大小") { showModifyVertical() }.build())
-                addView(SettingTextView.FastBuilder(mText = "横向(平铺)卡片大小") { showModifyHorizontal() }.build())
                 addView(SettingTextView.FastBuilder(mText = "应用图标与名称间距") { showModifyTextSize() }.build())
                 addView(SettingTextView.FastBuilder(mText = "其他设置", mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = "时钟常显", mKey = "clockGadget").build())
@@ -170,14 +164,6 @@ class MainHook {
 
     private fun showModifyTextSize() {
         SettingUserInput("图标文字间距", "recents_task_view_header_height", 0, 200, 1,40).build()
-    }
-
-    private fun showModifyVertical() {
-        SettingUserInput("纵向卡片大小", "task_vertical", 50, 150, 100,100).build()
-    }
-
-    private fun showModifyHorizontal() {
-        SettingUserInput("横向卡片大小", "task_horizontal", 100, 1000, 1000,544).build()
     }
 
     private fun showModifyAnimationLevel() {
