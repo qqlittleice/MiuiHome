@@ -9,6 +9,7 @@ class EnableHideStatusBarWhenEnterRecents {
 
         if (OwnSP.ownSP.getBoolean("hideStatusBar", false)){
             "com.miui.home.launcher.common.DeviceLevelUtils".setReturnConstant("isHideStatusBarWhenEnterRecents", result = true)
+            "com.miui.home.launcher.DeviceConfig".setReturnConstant("keepStatusBarShowingForBetterPerformance", result = false)
         } else {
             "com.miui.home.launcher.common.DeviceLevelUtils".setReturnConstant("isHideStatusBarWhenEnterRecents", result = false)
         }

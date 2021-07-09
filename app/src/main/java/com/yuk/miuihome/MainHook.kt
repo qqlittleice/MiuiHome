@@ -248,7 +248,6 @@ class MainHook {
                 OwnSP.set("blurLevel", "COMPLETE")
                 OwnSP.set("smoothAnimation", true)
                 OwnSP.set("animationLevel", 1.0f)
-                OwnSP.set("hideStatusBar", true)
                 OwnSP.set("isFirstUse", false)
                 thread {
                     LogUtil.toast("桌面将在2秒后重启!")
