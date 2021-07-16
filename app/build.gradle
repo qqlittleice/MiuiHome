@@ -4,13 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 30
-    buildToolsVersion "30.0.3"
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.yuk.miuihome"
         minSdk 28
-        targetSdk 30
+        targetSdk 31
         versionCode 320
         versionName "3.2.0"
 

@@ -23,7 +23,8 @@
           android:resource="@array/xposed_scope" />
 
         <activity
-          android:name=".activity.EntryActivity">
+          android:name=".activity.EntryActivity"
+          android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
@@ -33,7 +34,8 @@
 
         <activity-alias
           android:name=".activity.EntryActivityAlias"
-          android:targetActivity=".activity.EntryActivity">
+          android:targetActivity=".activity.EntryActivity"
+          android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
