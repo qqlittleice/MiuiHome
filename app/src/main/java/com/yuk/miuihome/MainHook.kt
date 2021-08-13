@@ -71,6 +71,8 @@ class MainHook {
         DisableLog().init()
         //桌面搜索框模糊
         EnableSearchBarBlur().init()
+        //允许最近任务横屏
+        EnableRecentsViewHorizontal().init()
     }
 
     private fun showSettingDialog() {
@@ -94,15 +96,16 @@ class MainHook {
                 addView(SettingSwitch.FastBuilder(mText = "平滑动画", mKey = "smoothAnimation").build())
                 addView(SettingSwitch.FastBuilder(mText = "水波纹下载特效", mKey = "mamlDownload").build())
                 addView(SettingSwitch.FastBuilder(mText = "文件夹打开模糊(仅内测桌面)", mKey = "blurWhenOpenFolder").build())
-                addView(SettingTextView.FastBuilder(mText = "后台设置", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
+                addView(SettingTextView.FastBuilder(mText = "最近任务设置", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
                 addView(SettingTextView.FastBuilder(mText = "模糊级别") { showModifyBlurLevel() }.build())
                 addView(SettingTextView.FastBuilder(mText = "动画速度") { showModifyAnimationLevel() }.build())
                 addView(SettingSwitch.FastBuilder(mText = "隐藏状态栏", mKey = "hideStatusBar").build())
-                addView(SettingTextView.FastBuilder(mText = "卡片圆角大小") { showModifyRoundCorner() }.build())
+                addView(SettingSwitch.FastBuilder(mText = "横屏最近任务", mKey = "horizontal").build())
+                addView(SettingTextView.FastBuilder(mText = "应用卡片圆角大小") { showModifyRoundCorner() }.build())
                 addView(SettingTextView.FastBuilder(mText = "应用图标与名称间距") { showModifyTextSize() }.build())
                 addView(SettingTextView.FastBuilder(mText = "其他设置", mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = "时钟常显", mKey = "clockGadget").build())
-                addView(SettingSwitch.FastBuilder(mText = "搜索框模糊(0524及之后版本)", mKey = "searchBarBlur").build())
+                addView(SettingSwitch.FastBuilder(mText = "启用搜索框模糊", mKey = "searchBarBlur").build())
                 addView(SettingTextView.FastBuilder(mText = "模块相关") { showHookSetting() }.build())
             })
         })

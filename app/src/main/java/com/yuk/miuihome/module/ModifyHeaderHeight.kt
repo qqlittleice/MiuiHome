@@ -23,6 +23,7 @@ class ModifyHeaderHeight {
                 }
             }
         })
+
         XposedHelpers.findAndHookMethod(Resources::class.java, "getDimensionPixelOffset", Int::class.javaPrimitiveType, object : XC_MethodHook() {
             override fun beforeHookedMethod(param: MethodHookParam?) {
                 super.beforeHookedMethod(param)
