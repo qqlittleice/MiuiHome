@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.yuk.miuihome",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 323,
+      "versionName": "3.2.3",
+      "outputFile": "MiuiHome_3.2.3.apk"
+    }
+  ],
+  "elementType": "File"
+}

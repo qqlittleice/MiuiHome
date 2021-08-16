@@ -11,8 +11,8 @@ android {
         applicationId "com.yuk.miuihome"
         minSdk 28
         targetSdk 31
-        versionCode 322
-        versionName "3.2.2"
+        versionCode 323
+        versionName "3.2.3"
 
     }
 

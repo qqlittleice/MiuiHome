@@ -73,6 +73,8 @@ class MainHook {
         EnableSearchBarBlur().init()
         //允许最近任务横屏
         EnableRecentsViewHorizontal().init()
+        //取消最近任务壁纸压暗
+        DisableRecentsViewWallpaperDarken().init()
     }
 
     private fun showSettingDialog() {
@@ -101,6 +103,7 @@ class MainHook {
                 addView(SettingTextView.FastBuilder(mText = "动画速度") { showModifyAnimationLevel() }.build())
                 addView(SettingSwitch.FastBuilder(mText = "隐藏状态栏", mKey = "hideStatusBar").build())
                 addView(SettingSwitch.FastBuilder(mText = "横屏最近任务", mKey = "horizontal").build())
+                addView(SettingSwitch.FastBuilder(mText = "取消壁纸压暗", mKey = "wallpaperDarken").build())
                 addView(SettingTextView.FastBuilder(mText = "应用卡片圆角大小") { showModifyRoundCorner() }.build())
                 addView(SettingTextView.FastBuilder(mText = "应用图标与名称间距") { showModifyTextSize() }.build())
                 addView(SettingTextView.FastBuilder(mText = "其他设置", mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
