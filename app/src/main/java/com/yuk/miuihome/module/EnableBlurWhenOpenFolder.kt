@@ -13,5 +13,4 @@ class EnableBlurWhenOpenFolder {
             "com.miui.home.launcher.common.BlurUtils".setReturnConstant("isUserBlurWhenOpenFolder", result = false)
         }
     }
-
 }

@@ -75,8 +75,8 @@ class MainHook {
         EnableRecentsViewHorizontal().init()
         //取消最近任务壁纸压暗
         DisableRecentsViewWallpaperDarken().init()
-        //好耶，新功能
-        TestCode().init()
+        //隐藏桌面小部件标题
+        HideWidgetTitle().init()
     }
 
     private fun showSettingDialog() {
@@ -110,6 +110,7 @@ class MainHook {
                 addView(SettingTextView.FastBuilder(mText = "应用图标与名称间距") { showModifyTextSize() }.build())
                 addView(SettingTextView.FastBuilder(mText = "其他设置", mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = "时钟常显", mKey = "clockGadget").build())
+                addView(SettingSwitch.FastBuilder(mText = "隐藏小部件标题", mKey = "hideWidgetTitle").build())
                 addView(SettingSwitch.FastBuilder(mText = "启用搜索框模糊", mKey = "searchBarBlur").build())
                 addView(SettingTextView.FastBuilder(mText = "模块相关") { showHookSetting() }.build())
             })
