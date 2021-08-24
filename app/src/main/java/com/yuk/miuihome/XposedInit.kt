@@ -27,7 +27,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
 
     private fun checkAlpha() {
         val pkgInfo = HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0)
-        if (! pkgInfo.versionName.contains("RELEASE")) {
+        if (! pkgInfo.versionName.contains("RELEASE", ignoreCase = true)) {
             HomeContext.isAlpha = pkgInfo.versionName.contains("ALPHA")
         } else {
             HomeContext.isAlpha = false
