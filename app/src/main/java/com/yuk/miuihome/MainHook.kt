@@ -121,10 +121,6 @@ class MainHook {
         dialogBuilder.show()
     }
 
-    private fun showModifyBackgroundTextSize() {
-        SettingUserInput("后台卡片文字大小", "backgroundTextSize", 0, 100, 1, 13).build()
-    }
-
     private fun showResHookedDialog() {
         val dialogBuilder = SettingBaseDialog().get()
         dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
@@ -137,6 +133,7 @@ class MainHook {
                     dp2px(HomeContext.context, 10f),
                     dp2px(HomeContext.context, 5f))
                 addView(SettingTextView.FastBuilder(mText = "资源钩子", mSize = SettingTextView.titleSize).build())
+                addView(SettingSwitch.FastBuilder(mText = "隐藏桌面应用名称", mKey = "icons").build())
                 addView(SettingSwitch.FastBuilder(mText = "隐藏后台应用图标", mKey = "buttonPadding").build())
                 addView(SettingSwitch.FastBuilder(mText = "隐藏后台清理图标", mKey = "cleanUp").build())
                 addView(SettingSwitch.FastBuilder(mText = "隐藏后台小窗应用图标", mKey = "smallWindow").build())
@@ -174,6 +171,10 @@ class MainHook {
 
     private fun showModifyAnimationLevel() {
         SettingSeekBarDialog("动画速度", "animationLevel", 10, 500, canUserInput = true, defval = 100).build()
+    }
+
+    private fun showModifyBackgroundTextSize() {
+        SettingUserInput("后台卡片文字大小", "backgroundTextSize", 0, 100, 1, 13).build()
     }
 
     private fun showModifyBlurLevel() {
