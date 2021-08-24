@@ -75,6 +75,8 @@ class MainHook {
         EnableRecentsViewHorizontal().init()
         //取消最近任务壁纸压暗
         DisableRecentsViewWallpaperDarken().init()
+        //好耶，新功能
+        TestCode().init()
     }
 
     private fun showSettingDialog() {
