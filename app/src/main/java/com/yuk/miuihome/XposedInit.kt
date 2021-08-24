@@ -2,6 +2,7 @@ package com.yuk.miuihome
 
 import android.app.Application
 import android.content.Context
+import android.content.pm.PackageManager
 import androidx.annotation.Keep
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
@@ -18,10 +19,19 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                 HomeContext.context = param.args[0] as Context
                 HomeContext.classLoader = HomeContext.context.classLoader
                 HomeContext.myRes = ResInject().init()
+                checkAlpha()
                 MainHook().doHook()
-
             }
         })
+    }
+
+    private fun checkAlpha() {
+        val pkgInfo = HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0)
+        if (! pkgInfo.versionName.contains("RELEASE")) {
+            HomeContext.isAlpha = pkgInfo.versionName.contains("ALPHA")
+        } else {
+            HomeContext.isAlpha = false
+        }
     }
 
     override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam) {

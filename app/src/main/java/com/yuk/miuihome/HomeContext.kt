@@ -10,4 +10,5 @@ object HomeContext {
     lateinit var classLoader: ClassLoader
     lateinit var activity: Activity
     lateinit var myRes: ResInject
+    var isAlpha = false
 }
