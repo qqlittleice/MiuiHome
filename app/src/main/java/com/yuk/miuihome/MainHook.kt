@@ -77,8 +77,8 @@ class MainHook {
         DisableRecentsViewWallpaperDarken().init()
         //隐藏桌面小部件标题
         HideWidgetTitle().init()
-        //新功能测试，好耶
-        TestCode().init()
+        //允许桌面经典小部件移到负一屏
+        AllowWidgetToMinus().init()
     }
 
     private fun showSettingDialog() {
@@ -112,8 +112,9 @@ class MainHook {
                 addView(SettingTextView.FastBuilder(mText = "应用图标与名称间距") { showModifyTextSize() }.build())
                 addView(SettingTextView.FastBuilder(mText = "其他设置", mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = "时钟常显", mKey = "clockGadget").build())
-                addView(SettingSwitch.FastBuilder(mText = "隐藏小部件标题", mKey = "hideWidgetTitle").build())
                 addView(SettingSwitch.FastBuilder(mText = "启用搜索框模糊", mKey = "searchBarBlur").build())
+                addView(SettingSwitch.FastBuilder(mText = "隐藏小部件标题", mKey = "hideWidgetTitle").build())
+                addView(SettingSwitch.FastBuilder(mText = "允许经典部件移到负一屏", mKey = "widgetToMinus").build())
                 addView(SettingTextView.FastBuilder(mText = "模块相关") { showHookSetting() }.build())
             })
         })
