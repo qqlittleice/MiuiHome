@@ -77,6 +77,8 @@ class MainHook {
         DisableRecentsViewWallpaperDarken().init()
         //隐藏桌面小部件标题
         HideWidgetTitle().init()
+        //新功能测试，好耶
+        TestCode().init()
     }
 
     private fun showSettingDialog() {
