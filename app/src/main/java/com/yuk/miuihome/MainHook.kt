@@ -79,8 +79,7 @@ class MainHook {
         HideWidgetTitle().init()
         //允许桌面经典小部件移到负一屏
         AllowWidgetToMinus().init()
-        //新功能
-        TestCode().init()
+
     }
 
     private fun showSettingDialog() {
