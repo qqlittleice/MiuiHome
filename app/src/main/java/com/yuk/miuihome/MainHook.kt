@@ -162,7 +162,7 @@ class MainHook {
                     dp2px(HomeContext.context, 10f),
                     dp2px(HomeContext.context, 10f),
                     dp2px(HomeContext.context, 5f))
-                addView(SettingTextView.FastBuilder(mText = "清除用户配置(还原至模块默认)") { File("/data/data/$hookPackage/shared_prefs/${SP_NAME}.xml").delete(); exitProcess(0) }.build())
+                addView(SettingTextView.FastBuilder(mText = "清除用户配置(还原至模块默认)") { editor.clear(); editor.commit(); exitProcess(0) }.build())
             })
         })
         dialogBuilder.show()
