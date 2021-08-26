@@ -99,6 +99,7 @@ class MainHook {
                     dp2px(HomeContext.context, 5f)
                 )
                 addView(SettingTextView.FastBuilder(mText = "MiuiHome", mSize = SettingTextView.titleSize).build())
+                addView(SettingTextView.FastBuilder(mText = "请注意，部分功能模块只是提供开关开启，实际效果取决于你设备上的桌面版本", mColor = "#ff0c0c", mSize = SettingTextView.text2Size).build())
                 addView(SettingTextView.FastBuilder(mText = "基础设置", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = "平滑动画", mKey = "smoothAnimation").build())
                 addView(SettingSwitch.FastBuilder(mText = "水波纹下载特效", mKey = "mamlDownload").build())
