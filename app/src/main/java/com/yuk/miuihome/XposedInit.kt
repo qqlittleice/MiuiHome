@@ -2,7 +2,6 @@ package com.yuk.miuihome
 
 import android.app.Application
 import android.content.Context
-import android.content.pm.PackageManager
 import androidx.annotation.Keep
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources

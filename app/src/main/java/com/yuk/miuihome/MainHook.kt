@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
-import androidx.annotation.Keep
 import com.yuk.miuihome.module.*
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
@@ -18,7 +17,7 @@ import com.yuk.miuihome.utils.ktx.setObjectField
 import com.yuk.miuihome.view.*
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
-@Keep
+
 class MainHook {
 
     private val sharedPreferences = OwnSP.ownSP
