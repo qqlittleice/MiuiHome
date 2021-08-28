@@ -8,8 +8,6 @@ import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
 import androidx.annotation.Keep
-import com.yuk.miuihome.Config.SP_NAME
-import com.yuk.miuihome.Config.hookPackage
 import com.yuk.miuihome.module.*
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
@@ -18,7 +16,6 @@ import com.yuk.miuihome.utils.ktx.getObjectField
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import com.yuk.miuihome.utils.ktx.setObjectField
 import com.yuk.miuihome.view.*
-import java.io.File
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 @Keep
@@ -77,9 +74,10 @@ class MainHook {
         DisableRecentsViewWallpaperDarken().init()
         //隐藏桌面小部件标题
         HideWidgetTitle().init()
-        //允许桌面经典小部件移到负一屏
+        //允许桌面安卓小部件移到负一屏
         AllowWidgetToMinus().init()
-
+        //允许在安卓小部件显示MIUI组件
+        AlwaysShowMIUIWidget().init()
     }
 
     private fun showSettingDialog() {
@@ -116,7 +114,8 @@ class MainHook {
                 addView(SettingSwitch.FastBuilder(mText = "时钟常显", mKey = "clockGadget").build())
                 addView(SettingSwitch.FastBuilder(mText = "启用搜索框模糊", mKey = "searchBarBlur").build())
                 addView(SettingSwitch.FastBuilder(mText = "隐藏小部件标题", mKey = "hideWidgetTitle").build())
-                addView(SettingSwitch.FastBuilder(mText = "允许经典部件移到负一屏", mKey = "widgetToMinus").build())
+                addView(SettingSwitch.FastBuilder(mText = "允许安卓小部件移到负一屏", mKey = "widgetToMinus").build())
+                addView(SettingSwitch.FastBuilder(mText = "允许在安卓小部件显示MIUI组件", mKey = "alwaysShowMIUIWidget").build())
                 addView(SettingTextView.FastBuilder(mText = "模块相关") { showHookSetting() }.build())
             })
         })
