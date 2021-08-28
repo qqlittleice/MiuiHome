@@ -16,12 +16,13 @@ class AlwaysShowMIUIWidget {
 
             "com.miui.home.launcher.widget.WidgetsVerticalAdapter".hookBeforeMethod("buildAppWidgetsItems", List::class.java, ArrayList::class.java) {
                 hook1 = "com.miui.home.launcher.LauncherAppWidgetProviderInfo".hookAfterMethod("fromProviderInfo", Context::class.java, AppWidgetProviderInfo::class.java) {
-                    val obj = it.thisObject
-                    obj.setBooleanField("isMIUIWidget", false)
-                    obj.getObjectField("providerInfo")?.setIntField("widgetFeatures", 0)
+                    it.thisObject.apply {
+                        setBooleanField("isMIUIWidget", false)
+                        getObjectField("providerInfo")?.setIntField("widgetFeatures", 0)
+                    }
                 }
                 hook2 = "com.miui.home.launcher.MIUIWidgetUtil".hookBeforeMethod("isMIUIWidgetSupport") {
-                        it.result = false
+                    it.result = false
                 }
             }
 
