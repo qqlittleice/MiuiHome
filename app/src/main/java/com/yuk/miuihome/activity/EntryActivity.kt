@@ -13,7 +13,7 @@ class EntryActivity: Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.entry_activity)
         thread {
-            Thread.sleep(1000)
+            Thread.sleep(1200)
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }

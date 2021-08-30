@@ -4,7 +4,6 @@ import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 import com.yuk.miuihome.utils.ktx.setFloatField
-import com.yuk.miuihome.utils.ktx.setReturnConstant
 
 class DisableRecentsViewWallpaperDarken {
 
