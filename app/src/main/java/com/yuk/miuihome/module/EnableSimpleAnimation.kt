@@ -7,10 +7,18 @@ class EnableSimpleAnimation {
 
     fun init() {
 
-        if (OwnSP.ownSP.getBoolean("simpleAnimation", false)){
-            "com.miui.home.launcher.common.DeviceLevelUtils".setReturnConstant("isUseSimpleAnim", result = true)
-        } else {
-            "com.miui.home.launcher.common.DeviceLevelUtils".setReturnConstant("isUseSimpleAnim", result = false)
+        if (OwnSP.ownSP.getBoolean("testUser", false)) {
+            if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
+                "com.miui.home.launcher.common.DeviceLevelUtils".setReturnConstant(
+                    "isUseSimpleAnim",
+                    result = true
+                )
+            } else {
+                "com.miui.home.launcher.common.DeviceLevelUtils".setReturnConstant(
+                    "isUseSimpleAnim",
+                    result = false
+                )
+            }
         }
     }
 

@@ -6,7 +6,7 @@ import com.yuk.miuihome.utils.ktx.setReturnConstant
 class EnableBlurWhenOpenFolder {
 
     fun init() {
-        if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
+        if (OwnSP.ownSP.getBoolean("simpleAnimation", false) and OwnSP.ownSP.getBoolean("testUser", false)) {
             "com.miui.home.launcher.common.BlurUtils".setReturnConstant("isUserBlurWhenOpenFolder", result = false)
         } else {
             if (OwnSP.ownSP.getBoolean("blurWhenOpenFolder", false)) {
@@ -16,4 +16,5 @@ class EnableBlurWhenOpenFolder {
             }
         }
     }
+
 }

@@ -8,7 +8,7 @@ import com.yuk.miuihome.utils.ktx.setFloatField
 class DisableRecentsViewWallpaperDarken {
 
     fun init() {
-        if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
+        if (OwnSP.ownSP.getBoolean("simpleAnimation", false) and OwnSP.ownSP.getBoolean("testUser", false)) {
             return
         } else {
             if (OwnSP.ownSP.getBoolean("wallpaperDarken", false)){
@@ -20,4 +20,5 @@ class DisableRecentsViewWallpaperDarken {
             }
         }
     }
+
 }

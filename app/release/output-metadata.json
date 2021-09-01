@@ -11,9 +11,9 @@
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 330,
-      "versionName": "3.3.0",
-      "outputFile": "MiuiHome_3.3.0.apk"
+      "versionCode": 331,
+      "versionName": "3.3.1",
+      "outputFile": "MiuiHome_3.3.1.apk"
     }
   ],
   "elementType": "File"
