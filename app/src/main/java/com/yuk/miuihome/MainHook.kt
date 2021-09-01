@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
+import androidx.annotation.Keep
 import com.yuk.miuihome.module.*
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
@@ -18,6 +19,7 @@ import com.yuk.miuihome.view.*
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
+@Keep
 class MainHook {
 
     private val sharedPreferences = OwnSP.ownSP
@@ -96,12 +98,12 @@ class MainHook {
                     dp2px(HomeContext.context, 5f)
                 )
                 addView(SettingTextView.FastBuilder(mText = "MiuiHome", mSize = SettingTextView.titleSize).build())
-                addView(SettingTextView.FastBuilder(mText = "请注意，部分功能模块只是提供开关开启，实际效果取决于你设备上的桌面版本", mColor = "#ff0c0c", mSize = SettingTextView.text2Size).build())
-                addView(SettingTextView.FastBuilder(mText = "基础设置", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
+                addView(SettingTextView.FastBuilder(mText = "注意:部分功能模块只提供开关开启,实际效果由您设备上运行的桌面版本而定.", mColor = "#ff0c0c", mSize = SettingTextView.textSize).build())
+                addView(SettingTextView.FastBuilder(mText = "基础设定", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = "平滑动画", mKey = "smoothAnimation").build())
                 addView(SettingSwitch.FastBuilder(mText = "水波纹下载特效", mKey = "mamlDownload").build())
                 addView(SettingSwitch.FastBuilder(mText = "文件夹打开模糊(仅内测桌面)", mKey = "blurWhenOpenFolder").build())
-                addView(SettingTextView.FastBuilder(mText = "最近任务设置", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
+                addView(SettingTextView.FastBuilder(mText = "最近任务", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
                 addView(SettingTextView.FastBuilder(mText = "模糊级别") { showModifyBlurLevel() }.build())
                 addView(SettingTextView.FastBuilder(mText = "动画速度") { showModifyAnimationLevel() }.build())
                 addView(SettingSwitch.FastBuilder(mText = "隐藏状态栏", mKey = "hideStatusBar").build())
@@ -109,61 +111,28 @@ class MainHook {
                 addView(SettingSwitch.FastBuilder(mText = "取消壁纸压暗", mKey = "wallpaperDarken").build())
                 addView(SettingTextView.FastBuilder(mText = "应用卡片圆角大小") { showModifyRoundCorner() }.build())
                 addView(SettingTextView.FastBuilder(mText = "应用图标与名称间距") { showModifyTextSize() }.build())
-                addView(SettingTextView.FastBuilder(mText = "其他设置", mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
+                addView(SettingTextView.FastBuilder(mText = "小部件", mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
+                addView(SettingSwitch.FastBuilder(mText = "隐藏小部件标题", mKey = "hideWidgetTitle").build())
+                addView(SettingSwitch.FastBuilder(mText = "允许将安卓小部件移到负一屏", mKey = "widgetToMinus").build())
+                addView(SettingSwitch.FastBuilder(mText = "允许在安卓小部件中显示MIUI小部件", mKey = "alwaysShowMIUIWidget").build())
+                if (XposedInit.hasHookPackageResources) {
+                    addView(SettingTextView.FastBuilder(mText = "资源钩子功能", mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
+                    addView(SettingSwitch.FastBuilder(mText = "隐藏桌面应用名称", mKey = "icons").build())
+                    addView(SettingSwitch.FastBuilder(mText = "隐藏后台应用图标", mKey = "buttonPadding").build())
+                    addView(SettingSwitch.FastBuilder(mText = "隐藏后台清理图标", mKey = "cleanUp").build())
+                    addView(SettingSwitch.FastBuilder(mText = "隐藏后台小窗应用图标", mKey = "smallWindow").build())
+                    addView(SettingTextView.FastBuilder(mText = "后台卡片文字大小") { showModifyBackgroundTextSize() }.build())
+                }
+                addView(SettingTextView.FastBuilder(mText = "其他内容", mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = "时钟常显", mKey = "clockGadget").build())
                 addView(SettingSwitch.FastBuilder(mText = "启用搜索框模糊", mKey = "searchBarBlur").build())
-                addView(SettingSwitch.FastBuilder(mText = "隐藏小部件标题", mKey = "hideWidgetTitle").build())
-                addView(SettingSwitch.FastBuilder(mText = "允许安卓小部件移到负一屏", mKey = "widgetToMinus").build())
-                addView(SettingSwitch.FastBuilder(mText = "允许在安卓小部件显示MIUI组件", mKey = "alwaysShowMIUIWidget").build())
-                addView(SettingTextView.FastBuilder(mText = "模块相关") { showHookSetting() }.build())
+                addView(SettingTextView.FastBuilder(mText = "模块相关", mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
+                addView(SettingTextView.FastBuilder(mText = "清除用户配置(还原至模块默认)") { editor.clear(); editor.commit(); exitProcess(0) }.build())
             })
         })
         dialogBuilder.setPositiveButton("关闭", null)
         dialogBuilder.setNeutralButton("重启桌面") { _, _ -> exitProcess(0) }
-        if (XposedInit.hasHookPackageResources) {
-            dialogBuilder.setNegativeButton("资源钩子功能") { _, _ -> showResHookedDialog() }
-        }
         dialogBuilder.setCancelable(false)
-        dialogBuilder.show()
-    }
-
-    private fun showResHookedDialog() {
-        val dialogBuilder = SettingBaseDialog().get()
-        dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
-            overScrollMode = 2
-            addView(LinearLayout(HomeContext.activity).apply {
-                orientation = LinearLayout.VERTICAL
-                setPadding(
-                    dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 5f))
-                addView(SettingTextView.FastBuilder(mText = "资源钩子", mSize = SettingTextView.titleSize).build())
-                addView(SettingSwitch.FastBuilder(mText = "隐藏桌面应用名称", mKey = "icons").build())
-                addView(SettingSwitch.FastBuilder(mText = "隐藏后台应用图标", mKey = "buttonPadding").build())
-                addView(SettingSwitch.FastBuilder(mText = "隐藏后台清理图标", mKey = "cleanUp").build())
-                addView(SettingSwitch.FastBuilder(mText = "隐藏后台小窗应用图标", mKey = "smallWindow").build())
-                addView(SettingTextView.FastBuilder(mText = "后台卡片文字大小") { showModifyBackgroundTextSize() }.build())
-            })
-        })
-        dialogBuilder.setPositiveButton("返回") { _, _ -> showSettingDialog()}
-        dialogBuilder.show()
-    }
-
-    private fun showHookSetting() {
-        val dialogBuilder = SettingBaseDialog().get()
-        dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
-            overScrollMode = 2
-            addView(LinearLayout(HomeContext.activity).apply {
-                orientation = LinearLayout.VERTICAL
-                setPadding(
-                    dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 5f))
-                addView(SettingTextView.FastBuilder(mText = "清除用户配置(还原至模块默认)") { editor.clear(); editor.commit(); exitProcess(0) }.build())
-            })
-        })
         dialogBuilder.show()
     }
 

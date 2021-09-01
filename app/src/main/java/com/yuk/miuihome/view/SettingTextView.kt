@@ -49,7 +49,7 @@ class SettingTextView(context: Context) : TextView(context) {
 
     companion object {
         val titleSize = sp2px(HomeContext.context, 9f).toFloat()
-        val textSize = sp2px(HomeContext.context, 8f).toFloat()
+        val textSize = sp2px(HomeContext.context, 6f).toFloat()
         val text2Size = sp2px(HomeContext.context, 7f).toFloat()
     }
 }
