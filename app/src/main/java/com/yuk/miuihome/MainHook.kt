@@ -107,17 +107,17 @@ class MainHook {
                 addView(SettingTextView.FastBuilder(mText = "注意:部分功能模块只提供开关开启,实际效果由您设备上运行的桌面版本而定.", mColor = "#ff0c0c", mSize = SettingTextView.textSize).build())
                 addView(SettingTextView.FastBuilder(mText = "基础设定", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = "平滑动画", mKey = "smoothAnimation").build())
-                if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) { null } else {
+                if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                     addView(SettingTextView.FastBuilder(mText = "后台模糊级别") { showModifyBlurLevel() }.build())
                 }
                 addView(SettingTextView.FastBuilder(mText = "手势动画速度") { showModifyAnimationLevel() }.build())
                 addView(SettingTextView.FastBuilder(mText = "进阶设定", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = "后台隐藏状态栏", mKey = "hideStatusBar").build())
-                if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) { null } else {
+                if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                 addView(SettingSwitch.FastBuilder(mText = "取消壁纸压暗效果", mKey = "wallpaperDarken").build())
                 }
                 addView(SettingSwitch.FastBuilder(mText = "水波纹应用下载特效", mKey = "mamlDownload").build())
-                if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) { null } else {
+                if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                     addView(SettingSwitch.FastBuilder(mText = "文件夹打开背景模糊", mKey = "blurWhenOpenFolder").build())
                 }
                 addView(SettingTextView.FastBuilder(mText = "应用卡片圆角大小") { showModifyRoundCorner() }.build())
@@ -199,7 +199,7 @@ class MainHook {
                     dp2px(HomeContext.context, 5f)
                 )
                 addView(SettingTextView.FastBuilder(
-                    mText = "「模糊级别」",
+                    mText = "「后台模糊级别」",
                     mSize = SettingTextView.text2Size,
                     mColor = "#0C84FF")
                     .build()
@@ -229,7 +229,7 @@ class MainHook {
         dialog = dialogBuilder.show().apply {
             setOnDismissListener {
                 try {
-                    LogUtil.toast("模糊级别设置为：${(onClick as TextView).text}")
+                    LogUtil.toast("后台模糊级别已设为:${(onClick as TextView).text}")
                 } catch (ignore: Exception) {}
             }
         }
