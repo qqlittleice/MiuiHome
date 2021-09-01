@@ -237,7 +237,7 @@ class MainHook {
 
     private fun firstUseDialog() {
         val dialogBuilder = SettingBaseDialog().get().apply {
-            setTitle("欢迎")
+            setTitle("「欢迎」")
             setMessage("检测到你是第一次使用本模块，模块会进行默认值设定，并随后重启桌面\n如需进一步设置，请待桌面重启后再次打开桌面设置。")
             setOnDismissListener {
                 OwnSP.set("blurLevel", "COMPLETE")
