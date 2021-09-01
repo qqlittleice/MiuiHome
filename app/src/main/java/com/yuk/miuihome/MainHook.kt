@@ -79,6 +79,12 @@ class MainHook {
         AllowWidgetToMinus().init()
         //允许在安卓小部件显示MIUI组件
         AlwaysShowMIUIWidget().init()
+        //纵向后台卡片大小
+        ModifyTaskVertical().init()
+        //横向后台卡片大小
+        ModifyTaskHorizontal().init()
+        //开启简单动画
+        EnableSimpleAnimation().init()
     }
 
     private fun showSettingDialog() {
@@ -101,18 +107,23 @@ class MainHook {
                 addView(SettingTextView.FastBuilder(mText = "注意:部分功能模块只提供开关开启,实际效果由您设备上运行的桌面版本而定.", mColor = "#ff0c0c", mSize = SettingTextView.textSize).build())
                 addView(SettingTextView.FastBuilder(mText = "基础设定", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = "平滑动画", mKey = "smoothAnimation").build())
-                addView(SettingSwitch.FastBuilder(mText = "水波纹下载特效", mKey = "mamlDownload").build())
-                addView(SettingSwitch.FastBuilder(mText = "文件夹打开模糊(仅内测桌面)", mKey = "blurWhenOpenFolder").build())
-                addView(SettingTextView.FastBuilder(mText = "最近任务", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
-                addView(SettingTextView.FastBuilder(mText = "模糊级别") { showModifyBlurLevel() }.build())
-                addView(SettingTextView.FastBuilder(mText = "动画速度") { showModifyAnimationLevel() }.build())
-                addView(SettingSwitch.FastBuilder(mText = "隐藏状态栏", mKey = "hideStatusBar").build())
-                addView(SettingSwitch.FastBuilder(mText = "横屏最近任务", mKey = "horizontal").build())
-                addView(SettingSwitch.FastBuilder(mText = "取消壁纸压暗", mKey = "wallpaperDarken").build())
+                if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) { null } else {
+                    addView(SettingTextView.FastBuilder(mText = "后台模糊级别") { showModifyBlurLevel() }.build())
+                }
+                addView(SettingTextView.FastBuilder(mText = "手势动画速度") { showModifyAnimationLevel() }.build())
+                addView(SettingTextView.FastBuilder(mText = "进阶设定", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
+                addView(SettingSwitch.FastBuilder(mText = "后台隐藏状态栏", mKey = "hideStatusBar").build())
+                if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) { null } else {
+                addView(SettingSwitch.FastBuilder(mText = "取消壁纸压暗效果", mKey = "wallpaperDarken").build())
+                }
+                addView(SettingSwitch.FastBuilder(mText = "水波纹应用下载特效", mKey = "mamlDownload").build())
+                if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) { null } else {
+                    addView(SettingSwitch.FastBuilder(mText = "文件夹打开背景模糊", mKey = "blurWhenOpenFolder").build())
+                }
                 addView(SettingTextView.FastBuilder(mText = "应用卡片圆角大小") { showModifyRoundCorner() }.build())
                 addView(SettingTextView.FastBuilder(mText = "应用图标与名称间距") { showModifyTextSize() }.build())
-                addView(SettingTextView.FastBuilder(mText = "小部件", mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
-                addView(SettingSwitch.FastBuilder(mText = "隐藏小部件标题", mKey = "hideWidgetTitle").build())
+                addView(SettingTextView.FastBuilder(mText = "小部件相关", mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
+                addView(SettingSwitch.FastBuilder(mText = "隐藏小部件名称", mKey = "hideWidgetTitle").build())
                 addView(SettingSwitch.FastBuilder(mText = "允许将安卓小部件移到负一屏", mKey = "widgetToMinus").build())
                 addView(SettingSwitch.FastBuilder(mText = "允许在安卓小部件中显示MIUI小部件", mKey = "alwaysShowMIUIWidget").build())
                 if (XposedInit.hasHookPackageResources) {
@@ -123,10 +134,18 @@ class MainHook {
                     addView(SettingSwitch.FastBuilder(mText = "隐藏后台小窗应用图标", mKey = "smallWindow").build())
                     addView(SettingTextView.FastBuilder(mText = "后台卡片文字大小") { showModifyBackgroundTextSize() }.build())
                 }
-                addView(SettingTextView.FastBuilder(mText = "其他内容", mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
+                if (OwnSP.ownSP.getBoolean("testUser", false)) {
+                    addView(SettingTextView.FastBuilder(mText = "实验性功能", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
+                    addView(SettingSwitch.FastBuilder(mText = "简单动画", mKey = "simpleAnimation").build())
+                    addView(SettingSwitch.FastBuilder(mText = "真·横屏后台", mKey = "horizontal").build())
+                    addView(SettingTextView.FastBuilder(mText = "纵向(瀑布)卡片大小") { showModifyVertical() }.build())
+                    addView(SettingTextView.FastBuilder(mText = "横向(平铺)卡片大小") { showModifyHorizontal() }.build())
+                }
+                addView(SettingTextView.FastBuilder(mText = "其他功能", mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = "时钟常显", mKey = "clockGadget").build())
-                addView(SettingSwitch.FastBuilder(mText = "启用搜索框模糊", mKey = "searchBarBlur").build())
+                addView(SettingSwitch.FastBuilder(mText = "搜索框模糊", mKey = "searchBarBlur").build())
                 addView(SettingTextView.FastBuilder(mText = "模块相关", mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
+                addView(SettingSwitch.FastBuilder(mText = "实验性功能(启用后请重启桌面)", mKey = "testUser").build())
                 addView(SettingTextView.FastBuilder(mText = "清除用户配置(还原至模块默认)") { editor.clear(); editor.commit(); exitProcess(0) }.build())
             })
         })
@@ -137,19 +156,27 @@ class MainHook {
     }
 
     private fun showModifyRoundCorner() {
-        SettingUserInput("卡片圆角大小", "recents_task_view_rounded_corners_radius", 0, 100, 1,20).build()
+        SettingUserInput("应用卡片圆角大小", "recents_task_view_rounded_corners_radius", 0, 100, 1,20).build()
     }
 
     private fun showModifyTextSize() {
-        SettingUserInput("图标文字间距", "recents_task_view_header_height", 0, 200, 1,40).build()
+        SettingUserInput("应用图标与文字间距", "recents_task_view_header_height", 0, 200, 1,40).build()
     }
 
     private fun showModifyAnimationLevel() {
-        SettingSeekBarDialog("动画速度", "animationLevel", 10, 500, canUserInput = true, defval = 100).build()
+        SettingSeekBarDialog("手势动画速度", "animationLevel", 10, 500, canUserInput = true, defval = 100).build()
     }
 
     private fun showModifyBackgroundTextSize() {
-        SettingUserInput("后台卡片文字大小", "backgroundTextSize", 0, 100, 1, 13).build()
+        SettingUserInput("应用卡片文字大小", "backgroundTextSize", 0, 100, 1, 13).build()
+    }
+
+    private fun showModifyVertical() {
+        SettingUserInput("纵向应用卡片大小", "task_vertical", 50, 150, 100,100).build()
+    }
+
+    private fun showModifyHorizontal() {
+        SettingUserInput("横向应用卡片大小", "task_horizontal", 100, 1000, 1000,544).build()
     }
 
     private fun showModifyBlurLevel() {
