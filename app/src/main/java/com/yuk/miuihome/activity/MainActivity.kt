@@ -10,13 +10,13 @@ import com.yuk.miuihome.utils.dp2px
 import miui.app.Activity
 
 class MainActivity: Activity() {
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(miui.R.style.Theme_Light_Settings)
         super.onCreate(savedInstanceState)
         setContentView(getMainLayout())
     }
 
-    @SuppressLint("SetTextI18n")
     private fun getMainLayout(): ScrollView {
         val scrollView = ScrollView(this)
         scrollView.apply {
@@ -29,13 +29,13 @@ class MainActivity: Activity() {
                     dp2px(this@MainActivity, 20f),
                     dp2px(this@MainActivity, 20f))
                 addView(TextView(this@MainActivity).apply {
-                    text = "请先在Lsposed管理器中激活模块，并重新启动系统桌面。"
+                    text = resources.getString(R.string.MainActivity1)
                 })
                 addView(TextView(this@MainActivity).apply {
-                    text = "模块的设置界面在MIUI系统桌面的设置中！"
+                    text = resources.getString(R.string.MainActivity2)
                 })
                 addView(TextView(this@MainActivity).apply {
-                    text = "如果不清楚在哪，请点击\"让我康康！\"查看图片。"
+                    text = resources.getString(R.string.MainActivity3)
                 })
                 addView(TextView(this@MainActivity).apply {
                     text = ""
@@ -44,14 +44,14 @@ class MainActivity: Activity() {
                     text = ""
                 })
                 addView(Button(this@MainActivity).apply {
-                    text = "让我康康！"
+                    text = resources.getString(R.string.MainActivity4)
                     setOnClickListener { setContentView(getImageLayout()) }
                 })
                 addView(TextView(this@MainActivity).apply {
                     text = ""
                 })
                 addView(Button(this@MainActivity).apply {
-                    text = "打开MIUI桌面设置"
+                    text = resources.getString(R.string.MainActivity5)
                     setOnClickListener {
                         val intent = Intent()
                         intent.component = ComponentName("com.miui.home", "com.miui.home.settings.MiuiHomeSettingActivity")
@@ -63,7 +63,7 @@ class MainActivity: Activity() {
                         text = ""
                     })
                     addView(Button(this@MainActivity).apply {
-                        text = "隐藏桌面图标"
+                        text = resources.getString(R.string.HideAppIcon)
                         setOnClickListener {
                             try {
                                 packageManager.setComponentEnabledSetting(
@@ -80,7 +80,7 @@ class MainActivity: Activity() {
                         text = ""
                     })
                     addView(Button(this@MainActivity).apply {
-                        text = "显示桌面图标"
+                        text = resources.getString(R.string.ShowAppIcon)
                         setOnClickListener {
                             packageManager.setComponentEnabledSetting(
                                 ComponentName("com.yuk.miuihome", "com.yuk.miuihome.activity.EntryActivity"),
@@ -114,7 +114,7 @@ class MainActivity: Activity() {
                     dp2px(this@MainActivity, 5f))
 
                 addView(Button(this@MainActivity).apply {
-                    text = "返回"
+                    text = resources.getString(R.string.Back)
                     setOnClickListener { setContentView(getMainLayout()) }
                 })
                 addView(ImageView(this@MainActivity).apply {
