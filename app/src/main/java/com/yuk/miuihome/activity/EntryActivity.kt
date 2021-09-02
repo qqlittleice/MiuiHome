@@ -9,7 +9,7 @@ import kotlin.concurrent.thread
 class EntryActivity: Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(miui.R.style.Theme_Light_NoTitle)
+        setTheme(miui.R.style.Theme_DayNight_NoTitle)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.entry_activity)
         thread {

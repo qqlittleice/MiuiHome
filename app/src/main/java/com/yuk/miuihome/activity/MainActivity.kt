@@ -12,7 +12,7 @@ import miui.app.Activity
 class MainActivity: Activity() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(miui.R.style.Theme_Light_Settings)
+        setTheme(miui.R.style.Theme_DayNight)
         super.onCreate(savedInstanceState)
         setContentView(getMainLayout())
     }
@@ -25,9 +25,9 @@ class MainActivity: Activity() {
                 orientation = LinearLayout.VERTICAL
                 setPadding(
                     dp2px(this@MainActivity, 28f),
-                    dp2px(this@MainActivity, 20f),
-                    dp2px(this@MainActivity, 20f),
-                    dp2px(this@MainActivity, 20f))
+                    dp2px(this@MainActivity, 15f),
+                    dp2px(this@MainActivity, 28f),
+                    dp2px(this@MainActivity, 15f))
                 addView(TextView(this@MainActivity).apply {
                     text = resources.getString(R.string.MainActivity1)
                 })
@@ -109,10 +109,9 @@ class MainActivity: Activity() {
                 orientation = LinearLayout.VERTICAL
                 setPadding(
                     dp2px(this@MainActivity, 28f),
-                    dp2px(this@MainActivity, 20f),
-                    dp2px(this@MainActivity, 20f),
-                    dp2px(this@MainActivity, 5f))
-
+                    dp2px(this@MainActivity, 15f),
+                    dp2px(this@MainActivity, 28f),
+                    dp2px(this@MainActivity, 15f))
                 addView(Button(this@MainActivity).apply {
                     text = resources.getString(R.string.Back)
                     setOnClickListener { setContentView(getMainLayout()) }
