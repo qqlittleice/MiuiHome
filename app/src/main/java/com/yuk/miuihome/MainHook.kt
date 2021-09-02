@@ -94,6 +94,7 @@ class MainHook {
             return
         }
         val dialogBuilder = SettingBaseDialog().get()
+        lateinit var dialog: AlertDialog
         dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
             overScrollMode = 2
             addView(LinearLayout(HomeContext.activity).apply {
@@ -144,14 +145,17 @@ class MainHook {
                 addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.AlwaysShowStatusBarClock), mKey = "clockGadget").build())
                 addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.SearchBarBlur), mKey = "searchBarBlur").build())
                 addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.ModuleFeature), mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
-                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.TestFeature), mKey = "testUser").build())
+                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.TestFeature), mKey = "testUser") {
+                    dialog.cancel()
+                    showSettingDialog()
+                }.build())
                 addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.CleanModuleSettings)) { editor.clear(); editor.commit(); exitProcess(0) }.build())
             })
         })
         dialogBuilder.setPositiveButton(myRes.getString(R.string.Close), null)
         dialogBuilder.setNeutralButton(myRes.getString(R.string.Reboot)) { _, _ -> exitProcess(0) }
         dialogBuilder.setCancelable(false)
-        dialogBuilder.show()
+        dialog = dialogBuilder.show()
     }
 
     private fun showModifyRoundCorner() {
