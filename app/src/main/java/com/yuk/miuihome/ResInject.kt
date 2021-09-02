@@ -9,7 +9,7 @@ import com.yuk.miuihome.utils.ModuleRes
 
 class ResInject {
 
-    private lateinit var moduleRes: ModuleRes
+    lateinit var moduleRes: ModuleRes
 
     fun init(modulePath: String = XposedInit.modulePath): ResInject {
         try {

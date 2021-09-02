@@ -17,7 +17,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                 HomeContext.application = param.thisObject as Application
                 HomeContext.context = param.args[0] as Context
                 HomeContext.classLoader = HomeContext.context.classLoader
-                HomeContext.myRes = ResInject().init()
+                HomeContext.resInstance = ResInject().init()
                 checkAlpha()
                 MainHook().doHook()
             }

@@ -24,6 +24,7 @@ class MainHook {
 
     private val sharedPreferences = OwnSP.ownSP
     private val editor by lazy { sharedPreferences.edit() }
+    private val myRes by lazy { HomeContext.resInstance.moduleRes.resources }
 
     fun doHook() {
 
@@ -33,14 +34,14 @@ class MainHook {
 
         "com.miui.home.settings.MiuiHomeSettings".hookAfterMethod("onCreatePreferences", Bundle::class.java, String::class.java) {
             (it.thisObject.getObjectField("mDefaultHomeSetting")).apply {
-                setObjectField("mTitle", "模块设置")
+                setObjectField("mTitle", myRes.getString(R.string.ModuleSettings))
                 setObjectField("mClickListener", object: View.OnClickListener {
                     override fun onClick(v: View?) {
                         showSettingDialog()
                     }
                 })
                 if (XposedInit.hasHookPackageResources) {
-                    setObjectField("mTitle", "模块设置(资源钩子√)")
+                    setObjectField("mTitle", myRes.getString(R.string.ModuleSettingsResHook))
                 }
             }
         }
@@ -103,8 +104,8 @@ class MainHook {
                     dp2px(HomeContext.context, 10f),
                     dp2px(HomeContext.context, 5f)
                 )
-                addView(SettingTextView.FastBuilder(mText = "MiuiHome", mSize = SettingTextView.titleSize).build())
-                addView(SettingTextView.FastBuilder(mText = "注意:部分功能模块只提供开关开启,实际效果由您设备上运行的桌面版本而定.", mColor = "#ff0c0c", mSize = SettingTextView.textSize).build())
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.app_name), mSize = SettingTextView.titleSize).build())
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.Warn), mColor = "#ff0c0c", mSize = SettingTextView.textSize).build())
                 addView(SettingTextView.FastBuilder(mText = "基础设定", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = "平滑动画", mKey = "smoothAnimation").build())
                 if (!OwnSP.ownSP.getBoolean("simpleAnimation", false) or !OwnSP.ownSP.getBoolean("testUser", false)) {

@@ -1,4 +1,44 @@
 <resources>
     <string name="app_name">MiuiHome</string>
     <string name="res_hooked">资源注入成功</string>
+    <string name="Warn">注意:部分功能模块只提供开关开启,实际效果由您设备上运行的桌面版本而定.</string>
+    <string name="BaseFeature">基础设定</string>
+    <string name="SmoothAnimation">平滑动画</string>
+    <string name="BlurLevel">后台模糊级别</string>
+    <string name="AnimationLevel">手势动画速度</string>
+    <string name="AdvancedFeature">进阶设定</string>
+    <string name="HideStatusBar">后台隐藏状态栏</string>
+    <string name="MamlDownload">水波纹应用下载特效</string>
+    <string name="BlurWhenOpenFolder">文件夹打开背景模糊</string>
+    <string name="WallpaperDarken">取消后台壁纸压暗效果</string>
+    <string name="RoundCorner">应用卡片圆角大小</string>
+    <string name="AppTextSize">应用图标与名称间距</string>
+    <string name="Widget">小部件相关</string>
+    <string name="HideWidgetTitle">隐藏小部件名称</string>
+    <string name="WidgetToMinus">允许将安卓小部件移到负一屏</string>
+    <string name="AlwaysShowMIUIWidget">允许在安卓小部件中显示MIUI小部件</string>
+    <string name="ResourceHooks">资源钩子功能</string>
+    <string name="HideAppTitle">隐藏桌面应用名称</string>
+    <string name="HideTaskViewAppIcon">隐藏后台应用图标</string>
+    <string name="HideTaskViewCleanUpIcon">隐藏后台清理图标</string>
+    <string name="HideTaskViewSmallWindowIcon">隐藏后台小窗应用图标</string>
+    <string name="TaskViewAppCardTextSize">后台卡片文字大小</string>
+    <string name="TestFeature">实验性功能</string>
+    <string name="SimpleAnimation">简单动画</string>
+    <string name="RealTaskViewHorizontal">真·横屏最近任务</string>
+    <string name="VerticalTaskViewOfAppCardSize">纵向应用卡片大小</string>
+    <string name="HorizontalTaskViewOfAppCardSize">横向应用卡片大小</string>
+    <string name="OtherFeature">其他功能</string>
+    <string name="AlwaysShowStatusBarClock">时钟常显</string>
+    <string name="SearchBarBlur">搜索框模糊</string>
+    <string name="ModuleFeature">模块相关</string>
+    <string name="CleanModuleSettings">清除用户配置</string>
+    <string name="ModuleSettings">模块设置</string>
+    <string name="ModuleSettingsResHook">模块设置(资源钩子√)</string>
+    <string name="CompleteBlur">完整模糊</string>
+    <string name="TestBlur">测试模糊</string>
+    <string name="SimpleBlur">简单模糊</string>
+    <string name="NoneBlur">无模糊</string>
+    <string name="ManualInput">手动输入</string>
+
 </resources>
