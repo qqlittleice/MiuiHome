@@ -12,7 +12,7 @@
             android:value="true" />
         <meta-data
             android:name="xposeddescription"
-            android:value="Hook for MIUI Launcher\n模块设置在系统桌面的设置里！" />
+            android:value="@string/Description" />
 
         <meta-data
             android:name="xposedminversion"

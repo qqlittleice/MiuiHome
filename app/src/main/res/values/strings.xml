@@ -42,7 +42,7 @@
     <string name="ManualInput">手动输入</string>
     <string name="TaskViewBlurSetTo">后台模糊级别已设为:</string>
     <string name="Welcome">欢迎</string>
-    <string name="Tips">检测到你是第一次使用本模块,模块会进行默认值设定,并随后重启桌面.如需进一步设置,请待桌面重启后再次打开桌面设置.</string>
+    <string name="Tips">检测到你是第一次使用本模块,模块会进行默认值设定,并随后重启桌面.\n如需进一步设置,请待桌面重启后再次打开桌面设置.</string>
     <string name="Reboot">重启桌面</string>
     <string name="Reboot2">桌面将在2秒后重启!</string>
     <string name="Yes">确定</string>
@@ -62,5 +62,6 @@
     <string name="HideAppIcon">隐藏桌面图标</string>
     <string name="ShowAppIcon">显示桌面图标</string>
     <string name="Back">返回</string>
+    <string name="Description">Hook for MIUI Launcher.\n模块设置在系统桌面的设置里!</string>
 
 </resources>
