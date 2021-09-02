@@ -106,76 +106,76 @@ class MainHook {
                 )
                 addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.app_name), mSize = SettingTextView.titleSize).build())
                 addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.Warn), mColor = "#ff0c0c", mSize = SettingTextView.textSize).build())
-                addView(SettingTextView.FastBuilder(mText = "基础设定", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
-                addView(SettingSwitch.FastBuilder(mText = "平滑动画", mKey = "smoothAnimation").build())
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.BaseFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
+                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.SmoothAnimation), mKey = "smoothAnimation").build())
                 if (!OwnSP.ownSP.getBoolean("simpleAnimation", false) or !OwnSP.ownSP.getBoolean("testUser", false)) {
-                    addView(SettingTextView.FastBuilder(mText = "后台模糊级别") { showModifyBlurLevel() }.build())
+                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.TaskViewBlurLevel)) { showModifyBlurLevel() }.build())
                 }
-                addView(SettingTextView.FastBuilder(mText = "手势动画速度") { showModifyAnimationLevel() }.build())
-                addView(SettingTextView.FastBuilder(mText = "进阶设定", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
-                addView(SettingSwitch.FastBuilder(mText = "后台隐藏状态栏", mKey = "hideStatusBar").build())
-                addView(SettingSwitch.FastBuilder(mText = "水波纹应用下载特效", mKey = "mamlDownload").build())
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.AnimationLevel)) { showModifyAnimationLevel() }.build())
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.AdvancedFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
+                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.HideStatusBar), mKey = "hideStatusBar").build())
+                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.MamlDownload), mKey = "mamlDownload").build())
                 if (!OwnSP.ownSP.getBoolean("simpleAnimation", false) or !OwnSP.ownSP.getBoolean("testUser", false)) {
-                    addView(SettingSwitch.FastBuilder(mText = "文件夹打开背景模糊", mKey = "blurWhenOpenFolder").build())
-                    addView(SettingSwitch.FastBuilder(mText = "取消后台壁纸压暗效果", mKey = "wallpaperDarken").build())
+                    addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.BlurWhenOpenFolder), mKey = "blurWhenOpenFolder").build())
+                    addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.WallpaperDarken), mKey = "wallpaperDarken").build())
                 }
-                addView(SettingTextView.FastBuilder(mText = "应用卡片圆角大小") { showModifyRoundCorner() }.build())
-                addView(SettingTextView.FastBuilder(mText = "应用图标与名称间距") { showModifyTextSize() }.build())
-                addView(SettingTextView.FastBuilder(mText = "小部件相关", mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
-                addView(SettingSwitch.FastBuilder(mText = "隐藏小部件名称", mKey = "hideWidgetTitle").build())
-                addView(SettingSwitch.FastBuilder(mText = "允许将安卓小部件移到负一屏", mKey = "widgetToMinus").build())
-                addView(SettingSwitch.FastBuilder(mText = "允许在安卓小部件中显示MIUI小部件", mKey = "alwaysShowMIUIWidget").build())
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.RoundCorner)) { showModifyRoundCorner() }.build())
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.AppTextSize)) { showModifyTextSize() }.build())
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.Widget), mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
+                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.HideWidgetTitle), mKey = "hideWidgetTitle").build())
+                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.WidgetToMinus), mKey = "widgetToMinus").build())
+                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.AlwaysShowMIUIWidget), mKey = "alwaysShowMIUIWidget").build())
                 if (XposedInit.hasHookPackageResources) {
-                    addView(SettingTextView.FastBuilder(mText = "资源钩子功能", mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
-                    addView(SettingSwitch.FastBuilder(mText = "隐藏桌面应用名称", mKey = "icons").build())
-                    addView(SettingSwitch.FastBuilder(mText = "隐藏后台应用图标", mKey = "buttonPadding").build())
-                    addView(SettingSwitch.FastBuilder(mText = "隐藏后台清理图标", mKey = "cleanUp").build())
-                    addView(SettingSwitch.FastBuilder(mText = "隐藏后台小窗应用图标", mKey = "smallWindow").build())
-                    addView(SettingTextView.FastBuilder(mText = "后台卡片文字大小") { showModifyBackgroundTextSize() }.build())
+                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.ResourceHooks), mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
+                    addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.HideAppTitle), mKey = "icons").build())
+                    addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.HideTaskViewAppIcon), mKey = "buttonPadding").build())
+                    addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.HideTaskViewCleanUpIcon), mKey = "cleanUp").build())
+                    addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.HideTaskViewSmallWindowIcon), mKey = "smallWindow").build())
+                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.TaskViewAppCardTextSize)) { showModifyBackgroundTextSize() }.build())
                 }
                 if (OwnSP.ownSP.getBoolean("testUser", false)) {
-                    addView(SettingTextView.FastBuilder(mText = "实验性功能", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
-                    addView(SettingSwitch.FastBuilder(mText = "简单动画", mKey = "simpleAnimation").build())
-                    addView(SettingSwitch.FastBuilder(mText = "真·横屏后台", mKey = "horizontal").build())
-                    addView(SettingTextView.FastBuilder(mText = "纵向卡片大小") { showModifyVertical() }.build())
-                    addView(SettingTextView.FastBuilder(mText = "横向卡片大小") { showModifyHorizontal() }.build())
+                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.TestFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
+                    addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.SimpleAnimation), mKey = "simpleAnimation").build())
+                    addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.RealTaskViewHorizontal), mKey = "horizontal").build())
+                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.VerticalTaskViewOfAppCardSize)) { showModifyVertical() }.build())
+                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.HorizontalTaskViewOfAppCardSize)) { showModifyHorizontal() }.build())
                 }
-                addView(SettingTextView.FastBuilder(mText = "其他功能", mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
-                addView(SettingSwitch.FastBuilder(mText = "时钟常显", mKey = "clockGadget").build())
-                addView(SettingSwitch.FastBuilder(mText = "搜索框模糊", mKey = "searchBarBlur").build())
-                addView(SettingTextView.FastBuilder(mText = "模块相关", mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
-                addView(SettingSwitch.FastBuilder(mText = "实验性功能", mKey = "testUser").build())
-                addView(SettingTextView.FastBuilder(mText = "清除用户配置") { editor.clear(); editor.commit(); exitProcess(0) }.build())
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.OtherFeature), mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
+                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.AlwaysShowStatusBarClock), mKey = "clockGadget").build())
+                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.SearchBarBlur), mKey = "searchBarBlur").build())
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.ModuleFeature), mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
+                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.TestFeature), mKey = "testUser").build())
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.CleanModuleSettings)) { editor.clear(); editor.commit(); exitProcess(0) }.build())
             })
         })
-        dialogBuilder.setPositiveButton("关闭", null)
-        dialogBuilder.setNeutralButton("重启桌面") { _, _ -> exitProcess(0) }
+        dialogBuilder.setPositiveButton(myRes.getString(R.string.Close), null)
+        dialogBuilder.setNeutralButton(myRes.getString(R.string.Reboot)) { _, _ -> exitProcess(0) }
         dialogBuilder.setCancelable(false)
         dialogBuilder.show()
     }
 
     private fun showModifyRoundCorner() {
-        SettingUserInput("应用卡片圆角大小", "recents_task_view_rounded_corners_radius", 0, 100, 1,20).build()
+        SettingUserInput(myRes.getString(R.string.RoundCorner), "recents_task_view_rounded_corners_radius", 0, 100, 1,20).build()
     }
 
     private fun showModifyTextSize() {
-        SettingUserInput("应用图标与文字间距", "recents_task_view_header_height", 0, 200, 1,40).build()
+        SettingUserInput(myRes.getString(R.string.AppTextSize), "recents_task_view_header_height", 0, 200, 1,40).build()
     }
 
     private fun showModifyAnimationLevel() {
-        SettingSeekBarDialog("手势动画速度", "animationLevel", 10, 500, canUserInput = true, defval = 100).build()
+        SettingSeekBarDialog(myRes.getString(R.string.AnimationLevel), "animationLevel", 10, 500, canUserInput = true, defval = 100).build()
     }
 
     private fun showModifyBackgroundTextSize() {
-        SettingUserInput("应用卡片文字大小", "backgroundTextSize", 0, 100, 1, 13).build()
+        SettingUserInput(myRes.getString(R.string.TaskViewAppCardTextSize), "backgroundTextSize", 0, 100, 1, 13).build()
     }
 
     private fun showModifyVertical() {
-        SettingUserInput("纵向应用卡片大小", "task_vertical", 50, 150, 100,100).build()
+        SettingUserInput(myRes.getString(R.string.VerticalTaskViewOfAppCardSize), "task_vertical", 50, 150, 100,100).build()
     }
 
     private fun showModifyHorizontal() {
-        SettingUserInput("横向应用卡片大小", "task_horizontal", 100, 1000, 1000,544).build()
+        SettingUserInput(myRes.getString(R.string.HorizontalTaskViewOfAppCardSize), "task_horizontal", 100, 1000, 1000,544).build()
     }
 
     private fun showModifyBlurLevel() {
@@ -193,32 +193,32 @@ class MainHook {
                 orientation = LinearLayout.VERTICAL
                 setPadding(
                     dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 10f),
+                    dp2px(HomeContext.context, 5f),
                     dp2px(HomeContext.context, 10f),
                     dp2px(HomeContext.context, 5f)
                 )
                 addView(SettingTextView.FastBuilder(
-                    mText = "「后台模糊级别」",
+                    mText = "「" + myRes.getString(R.string.TaskViewBlurLevel) + "」",
                     mSize = SettingTextView.text2Size,
                     mColor = "#0C84FF")
                     .build()
                 )
-                addView(SettingTextView.FastBuilder(mText = "完整模糊") {
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.CompleteBlur)) {
                     saveValue("COMPLETE")
                     onClick = it
                     dialog.dismiss()
                 }.build())
-                addView(SettingTextView.FastBuilder(mText = "测试模糊") {
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.TestBlur)) {
                     saveValue("TEST")
                     onClick = it
                     dialog.dismiss()
                 }.build())
-                addView(SettingTextView.FastBuilder(mText = "简单模糊") {
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.SimpleBlur)) {
                     saveValue("SIMPLE")
                     onClick = it
                     dialog.dismiss()
                 }.build())
-                addView(SettingTextView.FastBuilder(mText = "无模糊") {
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.NoneBlur)) {
                     saveValue("NONE")
                     onClick = it
                     dialog.dismiss()
@@ -228,7 +228,7 @@ class MainHook {
         dialog = dialogBuilder.show().apply {
             setOnDismissListener {
                 try {
-                    LogUtil.toast("后台模糊级别已设为:${(onClick as TextView).text}")
+                    LogUtil.toast(myRes.getString(R.string.TaskViewBlurSetTo) + "${(onClick as TextView).text}")
                 } catch (ignore: Exception) {}
             }
         }
@@ -236,20 +236,20 @@ class MainHook {
 
     private fun firstUseDialog() {
         val dialogBuilder = SettingBaseDialog().get().apply {
-            setTitle("「欢迎」")
-            setMessage("检测到你是第一次使用本模块，模块会进行默认值设定，并随后重启桌面\n如需进一步设置，请待桌面重启后再次打开桌面设置。")
+            setTitle("「" + myRes.getString(R.string.Welcome) + "」")
+            setMessage(myRes.getString(R.string.Tips))
             setOnDismissListener {
                 OwnSP.set("blurLevel", "COMPLETE")
                 OwnSP.set("smoothAnimation", true)
                 OwnSP.set("animationLevel", 1.0f)
                 OwnSP.set("isFirstUse", false)
                 thread {
-                    LogUtil.toast("桌面将在2秒后重启!")
+                    LogUtil.toast(myRes.getString(R.string.Reboot2))
                     Thread.sleep(2000)
                     exitProcess(0)
                 }
             }
-            setPositiveButton("确定", null)
+            setPositiveButton(myRes.getString(R.string.Yes), null)
             setCancelable(false)
         }
         dialogBuilder.show()

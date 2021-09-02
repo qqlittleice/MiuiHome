@@ -27,7 +27,7 @@ class SettingTextView(context: Context) : TextView(context) {
     init {
         setPadding(
             dp2px(getContext(), 10f),
-            dp2px(getContext(), 10f),
+            dp2px(getContext(), 5f),
             dp2px(getContext(), 10f),
             dp2px(getContext(), 5f))
         setTextColor(Color.parseColor(color))

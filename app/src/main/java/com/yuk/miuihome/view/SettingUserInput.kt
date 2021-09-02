@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import com.yuk.miuihome.HomeContext
+import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.dp2px
@@ -17,6 +18,7 @@ class SettingUserInput(private val mText: String, private val mKey: String, priv
 
     private val sharedPreferences = OwnSP.ownSP
     private val editor by lazy { sharedPreferences.edit() }
+    private val myRes by lazy { HomeContext.resInstance.moduleRes.resources }
 
     fun build(): AlertDialog {
         lateinit var editText: EditText
@@ -27,7 +29,7 @@ class SettingUserInput(private val mText: String, private val mKey: String, priv
                 orientation = LinearLayout.VERTICAL
                 setPadding(
                     dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 10f),
+                    dp2px(HomeContext.context, 5f),
                     dp2px(HomeContext.context, 10f),
                     dp2px(HomeContext.context, 5f)
                 )
@@ -46,24 +48,24 @@ class SettingUserInput(private val mText: String, private val mKey: String, priv
                 })
                 addView(
                     SettingTextView.FastBuilder(
-                        mText = "官方默认值：$defval")
+                        mText = myRes.getString(R.string.Defeat) + " $defval")
                         .build()
                 )
                 addView(
                     SettingTextView.FastBuilder(
-                        mText = "可输入范围：$minValue~$maxValue")
+                        mText = myRes.getString(R.string.Scope) + " $minValue ~ $maxValue")
                         .build()
                 )
                 addView(
                     SettingTextView.FastBuilder(
-                        mText = "输入的值会被除以$divide")
+                        mText = myRes.getString(R.string.Multiple) + " $divide")
                         .build()
                 )
             })
         })
         dialogBuilder.apply {
-            setPositiveButton("保存", null)
-            setNeutralButton("取消") { dialog, _ ->
+            setPositiveButton(myRes.getString(R.string.Save), null)
+            setNeutralButton(myRes.getString(R.string.Cancel)) { dialog, _ ->
                 dialog.dismiss()
             }
             setCancelable(false)
@@ -72,11 +74,11 @@ class SettingUserInput(private val mText: String, private val mKey: String, priv
             this.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
                 try {
                     if (saveValue(editText.text.toString().toFloat() / divide)) {
-                        LogUtil.toast("「${mText}」设置成功")
+                        LogUtil.toast("「${mText}」" + myRes.getString(R.string.SetSuccessfully))
                         this.dismiss()
                     }
                 } catch (e: NumberFormatException) {
-                    LogUtil.toast("请输入允许范围内的值！")
+                    LogUtil.toast(myRes.getString(R.string.OutOfInput))
                 }
             }
             return this
@@ -85,7 +87,7 @@ class SettingUserInput(private val mText: String, private val mKey: String, priv
 
     private fun saveValue(value: Float): Boolean {
         if ((value < (minValue.toFloat() / divide)) or (value > (maxValue.toFloat() / divide))) {
-            LogUtil.toast("请输入允许范围内的值！")
+            LogUtil.toast(myRes.getString(R.string.OutOfInput))
             return false
         }
         editor.putFloat(mKey, value)

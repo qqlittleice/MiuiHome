@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">MiuiHome</string>
-    <string name="res_hooked">资源注入成功</string>
+    <string name="res_hooked">资源注入成功!</string>
     <string name="Warn">注意:部分功能模块只提供开关开启,实际效果由您设备上运行的桌面版本而定.</string>
     <string name="BaseFeature">基础设定</string>
     <string name="SmoothAnimation">平滑动画</string>
-    <string name="BlurLevel">后台模糊级别</string>
+    <string name="TaskViewBlurLevel">后台模糊级别</string>
     <string name="AnimationLevel">手势动画速度</string>
     <string name="AdvancedFeature">进阶设定</string>
     <string name="HideStatusBar">后台隐藏状态栏</string>
@@ -40,5 +40,19 @@
     <string name="SimpleBlur">简单模糊</string>
     <string name="NoneBlur">无模糊</string>
     <string name="ManualInput">手动输入</string>
+    <string name="TaskViewBlurSetTo">后台模糊级别已设为:</string>
+    <string name="Welcome">欢迎</string>
+    <string name="Tips">检测到你是第一次使用本模块,模块会进行默认值设定,并随后重启桌面.如需进一步设置,请待桌面重启后再次打开桌面设置.</string>
+    <string name="Reboot">重启桌面</string>
+    <string name="Reboot2">桌面将在2秒后重启!</string>
+    <string name="Yes">确定</string>
+    <string name="Close">关闭</string>
+    <string name="Defeat">官方默认值:</string>
+    <string name="Scope">可输入范围:</string>
+    <string name="Multiple">输入的值将被除以:</string>
+    <string name="Save">保存</string>
+    <string name="Cancel">取消</string>
+    <string name="SetSuccessfully">设置成功</string>
+    <string name="OutOfInput">请输入允许范围内的值!</string>
 
 </resources>

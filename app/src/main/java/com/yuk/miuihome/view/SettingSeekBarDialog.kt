@@ -8,6 +8,7 @@ import android.widget.ScrollView
 import android.widget.SeekBar
 import android.widget.TextView
 import com.yuk.miuihome.HomeContext
+import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.dp2px
@@ -26,10 +27,11 @@ class SettingSeekBarDialog(
 
     private val sharedPreferences = OwnSP.ownSP
     private val editor by lazy { sharedPreferences.edit() }
+    private val myRes by lazy { HomeContext.resInstance.moduleRes.resources }
 
     fun saveValue(value: Float): Boolean {
         if ((value < (minValue.toFloat() / divide)) or (value > (maxValue.toFloat() / divide))) {
-            LogUtil.toast("请输入允许范围内的值！")
+            LogUtil.toast(myRes.getString(R.string.OutOfInput))
             return false
         }
         editor.putFloat(mKey, value)
@@ -48,7 +50,7 @@ class SettingSeekBarDialog(
                 orientation = LinearLayout.VERTICAL
                 setPadding(
                     dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 10f),
+                    dp2px(HomeContext.context, 5f),
                     dp2px(HomeContext.context, 10f),
                     dp2px(HomeContext.context, 5f)
                 )
@@ -112,7 +114,7 @@ class SettingSeekBarDialog(
                 if (canUserInput) {
                     addView(
                         SettingTextView.FastBuilder(
-                            mText = "手动输入"
+                            mText = myRes.getString(R.string.ManualInput)
                         ) {
                             dialog.dismiss()
                             SettingUserInput(
