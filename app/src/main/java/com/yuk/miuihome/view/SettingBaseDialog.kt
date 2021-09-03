@@ -13,5 +13,4 @@ class SettingBaseDialog {
             AlertDialog.Builder(HomeContext.activity, miui.R.style.Theme_Light_Dialog)
         }
     }
-
 }

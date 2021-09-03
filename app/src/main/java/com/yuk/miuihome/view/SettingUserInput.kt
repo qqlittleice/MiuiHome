@@ -104,5 +104,4 @@ class SettingUserInput(
         editor.apply()
         return true
     }
-
 }

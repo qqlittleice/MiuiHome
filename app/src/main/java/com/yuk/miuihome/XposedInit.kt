@@ -53,5 +53,4 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         lateinit var modulePath: String
         var hasHookPackageResources = false
     }
-
 }

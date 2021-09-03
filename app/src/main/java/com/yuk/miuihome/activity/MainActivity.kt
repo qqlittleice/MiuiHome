@@ -143,5 +143,4 @@ class MainActivity : Activity() {
     private fun getSP(): SharedPreferences {
         return getSharedPreferences("settings", Context.MODE_PRIVATE)
     }
-
 }

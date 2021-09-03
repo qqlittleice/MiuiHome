@@ -46,5 +46,4 @@ class ResInject {
             throw e
         }
     }
-
 }
