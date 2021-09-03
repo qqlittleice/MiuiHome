@@ -54,7 +54,7 @@
   <string name="Cancel">取消</string>
   <string name="SetSuccessfully">设置成功</string>
   <string name="OutOfInput">请输入允许范围内的值!</string>
-  <string name="MainActivity1">请先在Lsposed管理器中激活模块,并重新启动系统桌面.</string>
+  <string name="MainActivity1">请先在LSPosed管理器中激活模块,并重新启动系统桌面.</string>
   <string name="MainActivity2">模块的设置界面在MIUI系统桌面的设置中!</string>
   <string name="MainActivity3">如果不清楚在哪,请点击 \"让我康康!\" 查看图片.</string>
   <string name="MainActivity4">让我康康!</string>
