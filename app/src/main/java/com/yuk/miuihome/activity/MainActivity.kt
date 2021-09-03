@@ -5,6 +5,7 @@ import android.content.*
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.*
+import androidx.annotation.Keep
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.dp2px
 import miui.app.Activity
@@ -110,10 +111,16 @@ class MainActivity : Activity() {
                         }
                     })
                 }
+                addView(TextView(this@MainActivity).apply {
+                    text = getActiveText()
+                })
             })
         }
         return scrollView
     }
+
+    @Keep
+    private fun getActiveText(): String = "模块未激活"
 
     @SuppressLint("ResourceType")
     private fun getImageLayout(): ScrollView {

@@ -3,6 +3,7 @@ package com.yuk.miuihome
 import android.app.Application
 import android.content.Context
 import androidx.annotation.Keep
+import com.yuk.miuihome.activity.MainActivity
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
 import de.robv.android.xposed.callbacks.XC_LoadPackage
@@ -11,22 +12,33 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage
 class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookInitPackageResources {
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
-        if (lpparam.packageName != Config.hookPackage) return
-        XposedHelpers.findAndHookMethod(
-            "com.miui.home.launcher.Application",
-            lpparam.classLoader,
-            "attachBaseContext",
-            Context::class.java,
-            object : XC_MethodHook() {
-                override fun afterHookedMethod(param: MethodHookParam) {
-                    HomeContext.application = param.thisObject as Application
-                    HomeContext.context = param.args[0] as Context
-                    HomeContext.classLoader = HomeContext.context.classLoader
-                    HomeContext.resInstance = ResInject().init()
-                    checkAlpha()
-                    MainHook().doHook()
-                }
-            })
+        if (lpparam.packageName != Config.hookPackage && lpparam.packageName != BuildConfig.APPLICATION_ID) return
+        when (lpparam.packageName) {
+            Config.myself -> {
+                XposedHelpers.findAndHookMethod(
+                    MainActivity::class.java.name,
+                    lpparam.classLoader,
+                    "getActiveText",
+                    XC_MethodReplacement.returnConstant("模块已激活"))
+            }
+            Config.hookPackage -> {
+                XposedHelpers.findAndHookMethod(
+                    "com.miui.home.launcher.Application",
+                    lpparam.classLoader,
+                    "attachBaseContext",
+                    Context::class.java,
+                    object : XC_MethodHook() {
+                        override fun afterHookedMethod(param: MethodHookParam) {
+                            HomeContext.application = param.thisObject as Application
+                            HomeContext.context = param.args[0] as Context
+                            HomeContext.classLoader = HomeContext.context.classLoader
+                            HomeContext.resInstance = ResInject().init()
+                            checkAlpha()
+                            MainHook().doHook()
+                        }
+                    })
+            }
+        }
     }
 
     private fun checkAlpha() {
