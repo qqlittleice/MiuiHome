@@ -63,5 +63,7 @@
   <string name="ShowAppIcon">显示桌面图标</string>
   <string name="Back">返回</string>
   <string name="Description">Hook for MIUI Launcher.\n模块设置在系统桌面的设置里!</string>
+  <string name="ModuleNotEnable">模块未激活</string>
+  <string name="ModuleEnable">模块已激活</string>
 
 </resources>

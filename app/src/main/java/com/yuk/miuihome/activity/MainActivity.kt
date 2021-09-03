@@ -112,6 +112,12 @@ class MainActivity : Activity() {
                     })
                 }
                 addView(TextView(this@MainActivity).apply {
+                    text = ""
+                })
+                addView(TextView(this@MainActivity).apply {
+                    text = ""
+                })
+                addView(TextView(this@MainActivity).apply {
                     text = getActiveText()
                 })
             })
@@ -120,7 +126,7 @@ class MainActivity : Activity() {
     }
 
     @Keep
-    private fun getActiveText(): String = "模块未激活"
+    private fun getActiveText(): String = resources.getString(R.string.ModuleNotEnable)
 
     @SuppressLint("ResourceType")
     private fun getImageLayout(): ScrollView {
