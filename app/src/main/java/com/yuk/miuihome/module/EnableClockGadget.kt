@@ -8,8 +8,11 @@ class EnableClockGadget {
     fun init() {
 
         if (OwnSP.ownSP.getBoolean("clockGadget", false)) {
-            "com.miui.home.launcher.Workspace".setReturnConstant("isScreenHasClockGadget", Long::class.java, result = false)
+            "com.miui.home.launcher.Workspace".setReturnConstant(
+                "isScreenHasClockGadget",
+                Long::class.java,
+                result = false
+            )
         }
     }
-
 }

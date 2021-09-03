@@ -9,8 +9,8 @@ import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.dp2px
 import miui.app.Activity
 
-class MainActivity: Activity() {
-    
+class MainActivity : Activity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(miui.R.style.Theme_DayNight)
         super.onCreate(savedInstanceState)
@@ -27,7 +27,8 @@ class MainActivity: Activity() {
                     dp2px(this@MainActivity, 28f),
                     dp2px(this@MainActivity, 15f),
                     dp2px(this@MainActivity, 28f),
-                    dp2px(this@MainActivity, 15f))
+                    dp2px(this@MainActivity, 15f)
+                )
                 addView(TextView(this@MainActivity).apply {
                     text = resources.getString(R.string.MainActivity1)
                 })
@@ -54,11 +55,14 @@ class MainActivity: Activity() {
                     text = resources.getString(R.string.MainActivity5)
                     setOnClickListener {
                         val intent = Intent()
-                        intent.component = ComponentName("com.miui.home", "com.miui.home.settings.MiuiHomeSettingActivity")
+                        intent.component = ComponentName(
+                            "com.miui.home",
+                            "com.miui.home.settings.MiuiHomeSettingActivity"
+                        )
                         startActivity(intent)
                     }
                 })
-                if (! getSP().getBoolean("shouldHide", false)) {
+                if (!getSP().getBoolean("shouldHide", false)) {
                     addView(TextView(this@MainActivity).apply {
                         text = ""
                     })
@@ -67,11 +71,16 @@ class MainActivity: Activity() {
                         setOnClickListener {
                             try {
                                 packageManager.setComponentEnabledSetting(
-                                    ComponentName("com.yuk.miuihome", "com.yuk.miuihome.activity.EntryActivity"),
+                                    ComponentName(
+                                        "com.yuk.miuihome",
+                                        "com.yuk.miuihome.activity.EntryActivity"
+                                    ),
                                     PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                                     PackageManager.DONT_KILL_APP
                                 )
-                            } catch (e: ActivityNotFoundException) { e.printStackTrace() }
+                            } catch (e: ActivityNotFoundException) {
+                                e.printStackTrace()
+                            }
                             getSP().edit().putBoolean("shouldHide", true).apply()
                         }
                     })
@@ -83,18 +92,24 @@ class MainActivity: Activity() {
                         text = resources.getString(R.string.ShowAppIcon)
                         setOnClickListener {
                             packageManager.setComponentEnabledSetting(
-                                ComponentName("com.yuk.miuihome", "com.yuk.miuihome.activity.EntryActivity"),
+                                ComponentName(
+                                    "com.yuk.miuihome",
+                                    "com.yuk.miuihome.activity.EntryActivity"
+                                ),
                                 PackageManager.COMPONENT_ENABLED_STATE_DEFAULT,
                                 PackageManager.DONT_KILL_APP
                             )
                             getSP().edit().putBoolean("shouldHide", false).apply()
                             finish()
                             val intent = Intent()
-                            intent.component = ComponentName("com.yuk.miuihome", "com.yuk.miuihome.activity.EntryActivity")
+                            intent.component = ComponentName(
+                                "com.yuk.miuihome",
+                                "com.yuk.miuihome.activity.EntryActivity"
+                            )
                             startActivity(intent)
-                            }
-                        })
-                    }
+                        }
+                    })
+                }
             })
         }
         return scrollView
@@ -111,7 +126,8 @@ class MainActivity: Activity() {
                     dp2px(this@MainActivity, 28f),
                     dp2px(this@MainActivity, 15f),
                     dp2px(this@MainActivity, 28f),
-                    dp2px(this@MainActivity, 15f))
+                    dp2px(this@MainActivity, 15f)
+                )
                 addView(Button(this@MainActivity).apply {
                     text = resources.getString(R.string.Back)
                     setOnClickListener { setContentView(getMainLayout()) }

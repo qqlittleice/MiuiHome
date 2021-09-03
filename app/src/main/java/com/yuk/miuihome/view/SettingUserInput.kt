@@ -13,8 +13,14 @@ import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.dp2px
 import com.yuk.miuihome.utils.isNightMode
 
-class SettingUserInput(private val mText: String, private val mKey: String, private val minValue: Int, private val maxValue: Int,
-                       private val divide: Int = 100, private val defval:Int) {
+class SettingUserInput(
+    private val mText: String,
+    private val mKey: String,
+    private val minValue: Int,
+    private val maxValue: Int,
+    private val divide: Int = 100,
+    private val defval: Int
+) {
 
     private val sharedPreferences = OwnSP.ownSP
     private val editor by lazy { sharedPreferences.edit() }
@@ -37,28 +43,32 @@ class SettingUserInput(private val mText: String, private val mKey: String, priv
                     SettingTextView.FastBuilder(
                         mText = "「${mText}」",
                         mSize = SettingTextView.text2Size,
-                        mColor = "#0C84FF")
+                        mColor = "#0C84FF"
+                    )
                         .build()
                 )
                 addView(
                     EditText(HomeContext.context).apply {
-                    editText = this
-                    inputType = EditorInfo.TYPE_CLASS_NUMBER
-                    setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
-                })
+                        editText = this
+                        inputType = EditorInfo.TYPE_CLASS_NUMBER
+                        setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
+                    })
                 addView(
                     SettingTextView.FastBuilder(
-                        mText = myRes.getString(R.string.Defeat) + " $defval")
+                        mText = myRes.getString(R.string.Defeat) + " $defval"
+                    )
                         .build()
                 )
                 addView(
                     SettingTextView.FastBuilder(
-                        mText = myRes.getString(R.string.Scope) + " $minValue ~ $maxValue")
+                        mText = myRes.getString(R.string.Scope) + " $minValue ~ $maxValue"
+                    )
                         .build()
                 )
                 addView(
                     SettingTextView.FastBuilder(
-                        mText = myRes.getString(R.string.Multiple) + " $divide")
+                        mText = myRes.getString(R.string.Multiple) + " $divide"
+                    )
                         .build()
                 )
             })

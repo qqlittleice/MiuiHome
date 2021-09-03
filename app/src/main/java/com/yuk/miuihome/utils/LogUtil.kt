@@ -21,7 +21,12 @@ object LogUtil {
     }
 
     @JvmStatic
-    private fun doLog(f: (String, String) -> Int, obj: Any?, toXposed: Boolean = false, toToast: Boolean = true) {
+    private fun doLog(
+        f: (String, String) -> Int,
+        obj: Any?,
+        toXposed: Boolean = false,
+        toToast: Boolean = true
+    ) {
         val str = if (obj is Throwable) ALog.getStackTraceString(obj) else obj.toString()
         if (str.length > maxLength) {
             val chunkCount: Int = str.length / maxLength

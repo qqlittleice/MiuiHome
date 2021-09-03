@@ -12,21 +12,27 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
         if (lpparam.packageName != Config.hookPackage) return
-        XposedHelpers.findAndHookMethod("com.miui.home.launcher.Application", lpparam.classLoader, "attachBaseContext", Context::class.java, object : XC_MethodHook() {
-            override fun afterHookedMethod(param: MethodHookParam) {
-                HomeContext.application = param.thisObject as Application
-                HomeContext.context = param.args[0] as Context
-                HomeContext.classLoader = HomeContext.context.classLoader
-                HomeContext.resInstance = ResInject().init()
-                checkAlpha()
-                MainHook().doHook()
-            }
-        })
+        XposedHelpers.findAndHookMethod(
+            "com.miui.home.launcher.Application",
+            lpparam.classLoader,
+            "attachBaseContext",
+            Context::class.java,
+            object : XC_MethodHook() {
+                override fun afterHookedMethod(param: MethodHookParam) {
+                    HomeContext.application = param.thisObject as Application
+                    HomeContext.context = param.args[0] as Context
+                    HomeContext.classLoader = HomeContext.context.classLoader
+                    HomeContext.resInstance = ResInject().init()
+                    checkAlpha()
+                    MainHook().doHook()
+                }
+            })
     }
 
     private fun checkAlpha() {
-        val pkgInfo = HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0)
-        if (! pkgInfo.versionName.contains("RELEASE", ignoreCase = true)) {
+        val pkgInfo =
+            HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0)
+        if (!pkgInfo.versionName.contains("RELEASE", ignoreCase = true)) {
             HomeContext.isAlpha = pkgInfo.versionName.contains("ALPHA", ignoreCase = true)
         } else {
             HomeContext.isAlpha = false

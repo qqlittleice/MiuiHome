@@ -56,9 +56,10 @@ class SettingSeekBarDialog(
                 )
                 addView(
                     SettingTextView.FastBuilder(
-                        mText ="「${mText}」",
+                        mText = "「${mText}」",
                         mSize = SettingTextView.text2Size,
-                        mColor = "#0C84FF")
+                        mColor = "#0C84FF"
+                    )
                         .build()
                 )
                 addView(SeekBar(HomeContext.context).apply {

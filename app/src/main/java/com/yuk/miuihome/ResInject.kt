@@ -23,7 +23,8 @@ class ResInject {
             )
             val file = HomeContext.application.getDir("dex", Context.MODE_PRIVATE)
             if (!file.exists()) file.mkdir()
-            val classLoader = DexClassLoader(modulePath, file.absolutePath, null, HomeContext.classLoader)
+            val classLoader =
+                DexClassLoader(modulePath, file.absolutePath, null, HomeContext.classLoader)
             moduleRes = ModuleRes(resources, classLoader)
             LogUtil.e(moduleRes.resources.getString(R.string.res_hooked))
             return this

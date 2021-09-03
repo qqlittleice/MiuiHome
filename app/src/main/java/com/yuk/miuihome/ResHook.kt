@@ -9,7 +9,9 @@ import kotlin.concurrent.thread
 class ResHook(private val hookedRes: InitPackageResourcesParam) {
 
     private val modRes = XModuleResources.createInstance(XposedInit.modulePath, hookedRes.res)
-    private fun getResId(type: String, name: String): Int = modRes.getIdentifier(name, type, Config.myself)
+    private fun getResId(type: String, name: String): Int =
+        modRes.getIdentifier(name, type, Config.myself)
+
     companion object {
         private var hasLoad = false
     }

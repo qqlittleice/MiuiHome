@@ -6,7 +6,9 @@ class SetDeviceLevel {
 
     fun init() {
 
-        "com.miui.home.launcher.common.DeviceLevelUtils".setReturnConstant("getDeviceLevel", result = 2)
+        "com.miui.home.launcher.common.DeviceLevelUtils".setReturnConstant(
+            "getDeviceLevel",
+            result = 2
+        )
     }
-
 }

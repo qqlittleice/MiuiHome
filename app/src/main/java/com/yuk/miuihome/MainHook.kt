@@ -28,14 +28,21 @@ class MainHook {
 
     fun doHook() {
 
-        "com.miui.home.settings.MiuiHomeSettingActivity".hookAfterMethod("onCreate", Bundle::class.java) {
+        "com.miui.home.settings.MiuiHomeSettingActivity".hookAfterMethod(
+            "onCreate",
+            Bundle::class.java
+        ) {
             HomeContext.activity = it.thisObject as Activity
         }
 
-        "com.miui.home.settings.MiuiHomeSettings".hookAfterMethod("onCreatePreferences", Bundle::class.java, String::class.java) {
+        "com.miui.home.settings.MiuiHomeSettings".hookAfterMethod(
+            "onCreatePreferences",
+            Bundle::class.java,
+            String::class.java
+        ) {
             (it.thisObject.getObjectField("mDefaultHomeSetting")).apply {
                 setObjectField("mTitle", myRes.getString(R.string.ModuleSettings))
-                setObjectField("mClickListener", object: View.OnClickListener {
+                setObjectField("mClickListener", object : View.OnClickListener {
                     override fun onClick(v: View?) {
                         showSettingDialog()
                     }
@@ -105,51 +112,208 @@ class MainHook {
                     dp2px(HomeContext.context, 10f),
                     dp2px(HomeContext.context, 5f)
                 )
-                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.app_name), mSize = SettingTextView.titleSize).build())
-                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.Warn), mColor = "#ff0c0c", mSize = SettingTextView.textSize).build())
-                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.BaseFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
-                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.SmoothAnimation), mKey = "smoothAnimation").build())
-                if (!OwnSP.ownSP.getBoolean("simpleAnimation", false) or !OwnSP.ownSP.getBoolean("testUser", false)) {
-                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.TaskViewBlurLevel)) { showModifyBlurLevel() }.build())
+                addView(
+                    SettingTextView.FastBuilder(
+                        mText = myRes.getString(R.string.app_name),
+                        mSize = SettingTextView.titleSize
+                    ).build()
+                )
+                addView(
+                    SettingTextView.FastBuilder(
+                        mText = myRes.getString(R.string.Warn),
+                        mColor = "#ff0c0c",
+                        mSize = SettingTextView.textSize
+                    ).build()
+                )
+                addView(
+                    SettingTextView.FastBuilder(
+                        mText = myRes.getString(R.string.BaseFeature),
+                        mColor = "#0C84FF",
+                        mSize = SettingTextView.text2Size
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.SmoothAnimation),
+                        mKey = "smoothAnimation"
+                    ).build()
+                )
+                if (!OwnSP.ownSP.getBoolean(
+                        "simpleAnimation",
+                        false
+                    ) or !OwnSP.ownSP.getBoolean("testUser", false)
+                ) {
+                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.TaskViewBlurLevel)) { showModifyBlurLevel() }
+                        .build())
                 }
-                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.AnimationLevel)) { showModifyAnimationLevel() }.build())
-                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.AdvancedFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
-                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.HideStatusBar), mKey = "hideStatusBar").build())
-                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.MamlDownload), mKey = "mamlDownload").build())
-                if (!OwnSP.ownSP.getBoolean("simpleAnimation", false) or !OwnSP.ownSP.getBoolean("testUser", false)) {
-                    addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.BlurWhenOpenFolder), mKey = "blurWhenOpenFolder").build())
-                    addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.WallpaperDarken), mKey = "wallpaperDarken").build())
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.AnimationLevel)) { showModifyAnimationLevel() }
+                    .build())
+                addView(
+                    SettingTextView.FastBuilder(
+                        mText = myRes.getString(R.string.AdvancedFeature),
+                        mColor = "#0C84FF",
+                        mSize = SettingTextView.text2Size
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.HideStatusBar),
+                        mKey = "hideStatusBar"
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.MamlDownload),
+                        mKey = "mamlDownload"
+                    ).build()
+                )
+                if (!OwnSP.ownSP.getBoolean(
+                        "simpleAnimation",
+                        false
+                    ) or !OwnSP.ownSP.getBoolean("testUser", false)
+                ) {
+                    addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.BlurWhenOpenFolder),
+                            mKey = "blurWhenOpenFolder"
+                        ).build()
+                    )
+                    addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.WallpaperDarken),
+                            mKey = "wallpaperDarken"
+                        ).build()
+                    )
                 }
-                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.RoundCorner)) { showModifyRoundCorner() }.build())
-                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.AppTextSize)) { showModifyTextSize() }.build())
-                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.Widget), mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
-                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.HideWidgetTitle), mKey = "hideWidgetTitle").build())
-                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.WidgetToMinus), mKey = "widgetToMinus").build())
-                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.AlwaysShowMIUIWidget), mKey = "alwaysShowMIUIWidget").build())
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.RoundCorner)) { showModifyRoundCorner() }
+                    .build())
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.AppTextSize)) { showModifyTextSize() }
+                    .build())
+                addView(
+                    SettingTextView.FastBuilder(
+                        mText = myRes.getString(R.string.Widget),
+                        mColor = "#0C84FF",
+                        mSize = SettingTextView.text2Size
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.HideWidgetTitle),
+                        mKey = "hideWidgetTitle"
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.WidgetToMinus),
+                        mKey = "widgetToMinus"
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.AlwaysShowMIUIWidget),
+                        mKey = "alwaysShowMIUIWidget"
+                    ).build()
+                )
                 if (XposedInit.hasHookPackageResources) {
-                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.ResourceHooks), mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
-                    addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.HideAppTitle), mKey = "icons").build())
-                    addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.HideTaskViewAppIcon), mKey = "buttonPadding").build())
-                    addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.HideTaskViewCleanUpIcon), mKey = "cleanUp").build())
-                    addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.HideTaskViewSmallWindowIcon), mKey = "smallWindow").build())
-                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.TaskViewAppCardTextSize)) { showModifyBackgroundTextSize() }.build())
+                    addView(
+                        SettingTextView.FastBuilder(
+                            mText = myRes.getString(R.string.ResourceHooks),
+                            mColor = "#0C84FF",
+                            mSize = SettingTextView.text2Size
+                        ).build()
+                    )
+                    addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.HideAppTitle),
+                            mKey = "icons"
+                        ).build()
+                    )
+                    addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.HideTaskViewAppIcon),
+                            mKey = "buttonPadding"
+                        ).build()
+                    )
+                    addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.HideTaskViewCleanUpIcon),
+                            mKey = "cleanUp"
+                        ).build()
+                    )
+                    addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.HideTaskViewSmallWindowIcon),
+                            mKey = "smallWindow"
+                        ).build()
+                    )
+                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.TaskViewAppCardTextSize)) { showModifyBackgroundTextSize() }
+                        .build())
                 }
                 if (OwnSP.ownSP.getBoolean("testUser", false)) {
-                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.TestFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
-                    addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.SimpleAnimation), mKey = "simpleAnimation").build())
-                    addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.RealTaskViewHorizontal), mKey = "horizontal").build())
-                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.VerticalTaskViewOfAppCardSize)) { showModifyVertical() }.build())
-                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.HorizontalTaskViewOfAppCardSize)) { showModifyHorizontal() }.build())
+                    addView(
+                        SettingTextView.FastBuilder(
+                            mText = myRes.getString(R.string.TestFeature),
+                            mColor = "#0C84FF",
+                            mSize = SettingTextView.text2Size
+                        ).build()
+                    )
+                    addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.SimpleAnimation),
+                            mKey = "simpleAnimation"
+                        ).build()
+                    )
+                    addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.RealTaskViewHorizontal),
+                            mKey = "horizontal"
+                        ).build()
+                    )
+                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.VerticalTaskViewOfAppCardSize)) { showModifyVertical() }
+                        .build())
+                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.HorizontalTaskViewOfAppCardSize)) { showModifyHorizontal() }
+                        .build())
                 }
-                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.OtherFeature), mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
-                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.AlwaysShowStatusBarClock), mKey = "clockGadget").build())
-                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.SearchBarBlur), mKey = "searchBarBlur").build())
-                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.ModuleFeature), mColor = "#0C84FF" , mSize = SettingTextView.text2Size).build())
-                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.TestFeature), mKey = "testUser") {
-                    dialog.cancel()
-                    showSettingDialog()
+                addView(
+                    SettingTextView.FastBuilder(
+                        mText = myRes.getString(R.string.OtherFeature),
+                        mColor = "#0C84FF",
+                        mSize = SettingTextView.text2Size
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.AlwaysShowStatusBarClock),
+                        mKey = "clockGadget"
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.SearchBarBlur),
+                        mKey = "searchBarBlur"
+                    ).build()
+                )
+                addView(
+                    SettingTextView.FastBuilder(
+                        mText = myRes.getString(R.string.ModuleFeature),
+                        mColor = "#0C84FF",
+                        mSize = SettingTextView.text2Size
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.TestFeature),
+                        mKey = "testUser"
+                    ) {
+                        dialog.cancel()
+                        showSettingDialog()
+                    }.build()
+                )
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.CleanModuleSettings)) {
+                    editor.clear(); editor.commit(); exitProcess(
+                    0
+                )
                 }.build())
-                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.CleanModuleSettings)) { editor.clear(); editor.commit(); exitProcess(0) }.build())
             })
         })
         dialogBuilder.setPositiveButton(myRes.getString(R.string.Close), null)
@@ -159,27 +323,69 @@ class MainHook {
     }
 
     private fun showModifyRoundCorner() {
-        SettingUserInput(myRes.getString(R.string.RoundCorner), "recents_task_view_rounded_corners_radius", 0, 100, 1,20).build()
+        SettingUserInput(
+            myRes.getString(R.string.RoundCorner),
+            "recents_task_view_rounded_corners_radius",
+            0,
+            100,
+            1,
+            20
+        ).build()
     }
 
     private fun showModifyTextSize() {
-        SettingUserInput(myRes.getString(R.string.AppTextSize), "recents_task_view_header_height", 0, 200, 1,40).build()
+        SettingUserInput(
+            myRes.getString(R.string.AppTextSize),
+            "recents_task_view_header_height",
+            0,
+            200,
+            1,
+            40
+        ).build()
     }
 
     private fun showModifyAnimationLevel() {
-        SettingSeekBarDialog(myRes.getString(R.string.AnimationLevel), "animationLevel", 10, 500, canUserInput = true, defval = 100).build()
+        SettingSeekBarDialog(
+            myRes.getString(R.string.AnimationLevel),
+            "animationLevel",
+            10,
+            500,
+            canUserInput = true,
+            defval = 100
+        ).build()
     }
 
     private fun showModifyBackgroundTextSize() {
-        SettingUserInput(myRes.getString(R.string.TaskViewAppCardTextSize), "backgroundTextSize", 0, 100, 1, 13).build()
+        SettingUserInput(
+            myRes.getString(R.string.TaskViewAppCardTextSize),
+            "backgroundTextSize",
+            0,
+            100,
+            1,
+            13
+        ).build()
     }
 
     private fun showModifyVertical() {
-        SettingUserInput(myRes.getString(R.string.VerticalTaskViewOfAppCardSize), "task_vertical", 50, 150, 100,100).build()
+        SettingUserInput(
+            myRes.getString(R.string.VerticalTaskViewOfAppCardSize),
+            "task_vertical",
+            50,
+            150,
+            100,
+            100
+        ).build()
     }
 
     private fun showModifyHorizontal() {
-        SettingUserInput(myRes.getString(R.string.HorizontalTaskViewOfAppCardSize), "task_horizontal", 100, 1000, 1000,544).build()
+        SettingUserInput(
+            myRes.getString(R.string.HorizontalTaskViewOfAppCardSize),
+            "task_horizontal",
+            100,
+            1000,
+            1000,
+            544
+        ).build()
     }
 
     private fun showModifyBlurLevel() {
@@ -201,11 +407,13 @@ class MainHook {
                     dp2px(HomeContext.context, 10f),
                     dp2px(HomeContext.context, 5f)
                 )
-                addView(SettingTextView.FastBuilder(
-                    mText = "「" + myRes.getString(R.string.TaskViewBlurLevel) + "」",
-                    mSize = SettingTextView.text2Size,
-                    mColor = "#0C84FF")
-                    .build()
+                addView(
+                    SettingTextView.FastBuilder(
+                        mText = "「" + myRes.getString(R.string.TaskViewBlurLevel) + "」",
+                        mSize = SettingTextView.text2Size,
+                        mColor = "#0C84FF"
+                    )
+                        .build()
                 )
                 addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.CompleteBlur)) {
                     saveValue("COMPLETE")
@@ -233,7 +441,8 @@ class MainHook {
             setOnDismissListener {
                 try {
                     LogUtil.toast(myRes.getString(R.string.TaskViewBlurSetTo) + "${(onClick as TextView).text}")
-                } catch (ignore: Exception) {}
+                } catch (ignore: Exception) {
+                }
             }
         }
     }

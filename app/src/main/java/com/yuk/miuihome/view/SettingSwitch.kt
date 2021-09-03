@@ -41,15 +41,26 @@ class SettingSwitch(context: Context) : Switch(context) {
             dp2px(getContext(), 10f),
             dp2px(getContext(), 5f),
             dp2px(getContext(), 10f),
-            dp2px(getContext(), 5f))
+            dp2px(getContext(), 5f)
+        )
         setTextColor(Color.parseColor(color))
     }
 
-    class Builder(private val mContext: Context = HomeContext.context, private val block: SettingSwitch.() -> Unit) {
+    class Builder(
+        private val mContext: Context = HomeContext.context,
+        private val block: SettingSwitch.() -> Unit
+    ) {
         fun build() = SettingSwitch(mContext).apply(block)
     }
 
-    class FastBuilder(private val mContext: Context = HomeContext.context, private val mText: String, private val mToastText: String? = null, private val mDefaultState: Boolean? = null, private val mKey: String, private val mOnClickListener: ((View) -> Unit)? = null) {
+    class FastBuilder(
+        private val mContext: Context = HomeContext.context,
+        private val mText: String,
+        private val mToastText: String? = null,
+        private val mDefaultState: Boolean? = null,
+        private val mKey: String,
+        private val mOnClickListener: ((View) -> Unit)? = null
+    ) {
         fun build() = SettingSwitch(mContext).apply {
             text = mText
             mToastText?.let { toastText = it }

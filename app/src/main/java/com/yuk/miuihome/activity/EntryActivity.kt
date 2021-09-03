@@ -6,7 +6,7 @@ import com.yuk.miuihome.R
 import miui.app.Activity
 import kotlin.concurrent.thread
 
-class EntryActivity: Activity() {
+class EntryActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(miui.R.style.Theme_DayNight_NoTitle)
