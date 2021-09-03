@@ -1,6 +1,7 @@
 # MiuiHome
 
 ![Launcher](https://github.com/1767523953/MiuiHome/blob/main/Pic/Launcher.png)
+
 Hook for MIUI Launcher - Xposed
 
 [![Android CI](https://github.com/1767523953/MiuiHome/actions/workflows/main.yml/badge.svg)](https://github.com/1767523953/MiuiHome/actions/workflows/main.yml)
