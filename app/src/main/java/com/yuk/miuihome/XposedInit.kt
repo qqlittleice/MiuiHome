@@ -3,6 +3,7 @@ package com.yuk.miuihome
 import android.app.Application
 import android.content.Context
 import androidx.annotation.Keep
+import com.yuk.miuihome.Config.myself
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
 import de.robv.android.xposed.callbacks.XC_LoadPackage
@@ -12,7 +13,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
         when (lpparam.packageName) {
-            "com.yuk.miuihome" -> {
+            myself -> {
                 XposedHelpers.findAndHookMethod(
                     "com.yuk.miuihome.activity.MainActivity",
                     lpparam.classLoader,
