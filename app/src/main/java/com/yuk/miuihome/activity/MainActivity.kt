@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.*
 import androidx.annotation.Keep
+import com.yuk.miuihome.Config.myself
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.dp2px
 import miui.app.Activity
@@ -95,7 +96,7 @@ class MainActivity : Activity() {
                         setOnClickListener {
                             packageManager.setComponentEnabledSetting(
                                 ComponentName(
-                                    "com.yuk.miuihome",
+                                    myself,
                                     "com.yuk.miuihome.activity.EntryActivity"
                                 ),
                                 PackageManager.COMPONENT_ENABLED_STATE_DEFAULT,
@@ -105,7 +106,7 @@ class MainActivity : Activity() {
                             finish()
                             val intent = Intent()
                             intent.component = ComponentName(
-                                "com.yuk.miuihome",
+                                myself,
                                 "com.yuk.miuihome.activity.EntryActivity"
                             )
                             startActivity(intent)
@@ -119,7 +120,13 @@ class MainActivity : Activity() {
                     text = ""
                 })
                 addView(TextView(this@MainActivity).apply {
-                    text = "${resources.getString(R.string.State)} : ${if (moduleEnable()) resources.getString(R.string.ModuleEnable) else resources.getString(R.string.ModuleNotEnable)}"
+                    text = "${resources.getString(R.string.State)} : ${
+                        if (moduleEnable()) resources.getString(
+                            R.string.ModuleEnable
+                        ) else resources.getString(
+                            R.string.ModuleNotEnable
+                        )
+                    }"
                 })
             })
         }
