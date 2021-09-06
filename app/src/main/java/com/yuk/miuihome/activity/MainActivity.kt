@@ -118,15 +118,9 @@ class MainActivity : Activity() {
                 addView(TextView(this@MainActivity).apply {
                     text = ""
                 })
-                if (moduleEnable()) {
-                    addView(TextView(this@MainActivity).apply {
-                        text = resources.getString(R.string.State) + " : " + resources.getString(R.string.ModuleEnable)
-                    })
-                } else {
-                    addView(TextView(this@MainActivity).apply {
-                        text = resources.getString(R.string.State) + " : " + resources.getString(R.string.ModuleNotEnable)
-                    })
-                }
+                addView(TextView(this@MainActivity).apply {
+                    text = "${resources.getString(R.string.State)} : ${if (moduleEnable()) resources.getString(R.string.ModuleEnable) else resources.getString(R.string.ModuleNotEnable)}"
+                })
             })
         }
         return scrollView
