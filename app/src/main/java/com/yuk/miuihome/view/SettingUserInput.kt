@@ -55,19 +55,19 @@ class SettingUserInput(
                     })
                 addView(
                     SettingTextView.FastBuilder(
-                        mText = myRes.getString(R.string.Defeat) + " $defval"
+                        mText = myRes.getString(R.string.Defeat) + " : $defval"
                     )
                         .build()
                 )
                 addView(
                     SettingTextView.FastBuilder(
-                        mText = myRes.getString(R.string.Scope) + " $minValue ~ $maxValue"
+                        mText = myRes.getString(R.string.Scope) + " : $minValue ~ $maxValue"
                     )
                         .build()
                 )
                 addView(
                     SettingTextView.FastBuilder(
-                        mText = myRes.getString(R.string.Multiple) + " $divide"
+                        mText = myRes.getString(R.string.Multiple) + " : $divide"
                     )
                         .build()
                 )

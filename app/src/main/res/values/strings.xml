@@ -47,9 +47,9 @@
   <string name="Reboot2">桌面将在2秒后重启!</string>
   <string name="Yes">确定</string>
   <string name="Close">关闭</string>
-  <string name="Defeat">官方默认值:</string>
-  <string name="Scope">可输入范围:</string>
-  <string name="Multiple">输入的值将被除以:</string>
+  <string name="Defeat">官方默认值</string>
+  <string name="Scope">可输入范围</string>
+  <string name="Multiple">输入的值将被除以</string>
   <string name="Save">保存</string>
   <string name="Cancel">取消</string>
   <string name="SetSuccessfully">设置成功</string>
@@ -63,5 +63,9 @@
   <string name="ShowAppIcon">显示桌面图标</string>
   <string name="Back">返回</string>
   <string name="Description">Hook for MIUI Launcher.\n模块设置在系统桌面的设置里!</string>
+  <string name="State">当前状态</string>
+  <string name="ModuleEnable">模块已激活</string>
+  <string name="ModuleNotEnable">模块未激活</string>
+
 
 </resources>

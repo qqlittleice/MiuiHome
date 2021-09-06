@@ -11,22 +11,40 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage
 class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookInitPackageResources {
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
-        if (lpparam.packageName != Config.hookPackage) return
-        XposedHelpers.findAndHookMethod(
-            "com.miui.home.launcher.Application",
-            lpparam.classLoader,
-            "attachBaseContext",
-            Context::class.java,
-            object : XC_MethodHook() {
-                override fun afterHookedMethod(param: MethodHookParam) {
-                    HomeContext.application = param.thisObject as Application
-                    HomeContext.context = param.args[0] as Context
-                    HomeContext.classLoader = HomeContext.context.classLoader
-                    HomeContext.resInstance = ResInject().init()
-                    checkAlpha()
-                    MainHook().doHook()
-                }
-            })
+        when (lpparam.packageName) {
+            "com.yuk.miuihome" -> {
+                XposedHelpers.findAndHookMethod(
+                    "com.yuk.miuihome.activity.MainActivity",
+                    lpparam.classLoader,
+                    "moduleEnable",
+                    object : XC_MethodHook() {
+                        override fun afterHookedMethod(lpparam: MethodHookParam) {
+                            lpparam.result = true
+                        }
+                    }
+                )
+            }
+            Config.hookPackage -> {
+                XposedHelpers.findAndHookMethod(
+                    "com.miui.home.launcher.Application",
+                    lpparam.classLoader,
+                    "attachBaseContext",
+                    Context::class.java,
+                    object : XC_MethodHook() {
+                        override fun afterHookedMethod(param: MethodHookParam) {
+                            HomeContext.application = param.thisObject as Application
+                            HomeContext.context = param.args[0] as Context
+                            HomeContext.classLoader = HomeContext.context.classLoader
+                            HomeContext.resInstance = ResInject().init()
+                            checkAlpha()
+                            MainHook().doHook()
+                        }
+                    })
+            }
+            else -> {
+                return
+            }
+        }
     }
 
     private fun checkAlpha() {

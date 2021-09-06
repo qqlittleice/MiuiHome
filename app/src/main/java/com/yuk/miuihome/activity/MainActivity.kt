@@ -5,6 +5,7 @@ import android.content.*
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.*
+import androidx.annotation.Keep
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.dp2px
 import miui.app.Activity
@@ -17,6 +18,7 @@ class MainActivity : Activity() {
         setContentView(getMainLayout())
     }
 
+    @SuppressLint("SetTextI18n")
     private fun getMainLayout(): ScrollView {
         val scrollView = ScrollView(this)
         scrollView.apply {
@@ -110,6 +112,21 @@ class MainActivity : Activity() {
                         }
                     })
                 }
+                addView(TextView(this@MainActivity).apply {
+                    text = ""
+                })
+                addView(TextView(this@MainActivity).apply {
+                    text = ""
+                })
+                if (moduleEnable()) {
+                    addView(TextView(this@MainActivity).apply {
+                        text = resources.getString(R.string.State) + " : " + resources.getString(R.string.ModuleEnable)
+                    })
+                } else {
+                    addView(TextView(this@MainActivity).apply {
+                        text = resources.getString(R.string.State) + " : " + resources.getString(R.string.ModuleNotEnable)
+                    })
+                }
             })
         }
         return scrollView
@@ -142,5 +159,10 @@ class MainActivity : Activity() {
 
     private fun getSP(): SharedPreferences {
         return getSharedPreferences("settings", Context.MODE_PRIVATE)
+    }
+
+    @Keep
+    private fun moduleEnable(): Boolean {
+        return false
     }
 }
