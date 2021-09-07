@@ -36,26 +36,10 @@ class MainActivity : Activity() {
                     text = resources.getString(R.string.MainActivity1)
                 })
                 addView(TextView(this@MainActivity).apply {
-                    text = resources.getString(R.string.MainActivity2)
-                })
-                addView(TextView(this@MainActivity).apply {
-                    text = resources.getString(R.string.MainActivity3)
-                })
-                addView(TextView(this@MainActivity).apply {
-                    text = ""
-                })
-                addView(TextView(this@MainActivity).apply {
-                    text = ""
+                    text = "\n"
                 })
                 addView(Button(this@MainActivity).apply {
-                    text = resources.getString(R.string.MainActivity4)
-                    setOnClickListener { setContentView(getImageLayout()) }
-                })
-                addView(TextView(this@MainActivity).apply {
-                    text = ""
-                })
-                addView(Button(this@MainActivity).apply {
-                    text = resources.getString(R.string.MainActivity5)
+                    text = resources.getString(R.string.OpenMiuiHomeSettings)
                     setOnClickListener {
                         val intent = Intent()
                         intent.component = ComponentName(
@@ -67,7 +51,7 @@ class MainActivity : Activity() {
                 })
                 if (!getSP().getBoolean("shouldHide", false)) {
                     addView(TextView(this@MainActivity).apply {
-                        text = ""
+                        text = "\n"
                     })
                     addView(Button(this@MainActivity).apply {
                         text = resources.getString(R.string.HideAppIcon)
@@ -114,13 +98,10 @@ class MainActivity : Activity() {
                     })
                 }
                 addView(TextView(this@MainActivity).apply {
-                    text = ""
+                    text = "\n"
                 })
                 addView(TextView(this@MainActivity).apply {
-                    text = ""
-                })
-                addView(TextView(this@MainActivity).apply {
-                    text = "${resources.getString(R.string.State)} : ${
+                    text = "${resources.getString(R.string.State)}:\n${
                         if (moduleEnable()) resources.getString(
                             R.string.ModuleEnable
                         ) else resources.getString(
@@ -128,30 +109,11 @@ class MainActivity : Activity() {
                         )
                     }"
                 })
-            })
-        }
-        return scrollView
-    }
-
-    @SuppressLint("ResourceType")
-    private fun getImageLayout(): ScrollView {
-        val scrollView = ScrollView(this)
-        scrollView.apply {
-            overScrollMode = 2
-            addView(LinearLayout(this@MainActivity).apply {
-                orientation = LinearLayout.VERTICAL
-                setPadding(
-                    dp2px(this@MainActivity, 28f),
-                    dp2px(this@MainActivity, 15f),
-                    dp2px(this@MainActivity, 28f),
-                    dp2px(this@MainActivity, 15f)
-                )
-                addView(Button(this@MainActivity).apply {
-                    text = resources.getString(R.string.Back)
-                    setOnClickListener { setContentView(getMainLayout()) }
+                addView(TextView(this@MainActivity).apply {
+                    text = ""
                 })
-                addView(ImageView(this@MainActivity).apply {
-                    setImageResource(R.raw.image)
+                addView(TextView(this@MainActivity).apply {
+                    text = resources.getString(R.string.MainActivity2)
                 })
             })
         }
