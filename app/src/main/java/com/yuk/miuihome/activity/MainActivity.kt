@@ -51,7 +51,7 @@ class MainActivity : Activity() {
                 })
                 if (!getSP().getBoolean("shouldHide", false)) {
                     addView(TextView(this@MainActivity).apply {
-                        text = "\n"
+                        text = ""
                     })
                     addView(Button(this@MainActivity).apply {
                         text = resources.getString(R.string.HideAppIcon)
