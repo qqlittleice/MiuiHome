@@ -269,6 +269,12 @@ class MainHook {
                     )
                     addView(
                         SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.InfiniteScroll),
+                            mKey = "infiniteScroll"
+                        ).build()
+                    )
+                    addView(
+                        SettingSwitch.FastBuilder(
                             mText = myRes.getString(R.string.RealTaskViewHorizontal),
                             mKey = "horizontal"
                         ).build()
@@ -295,12 +301,6 @@ class MainHook {
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.SearchBarBlur),
                         mKey = "searchBarBlur"
-                    ).build()
-                )
-                addView(
-                    SettingSwitch.FastBuilder(
-                        mText = myRes.getString(R.string.InfiniteScroll),
-                        mKey = "infiniteScroll"
                     ).build()
                 )
                 addView(
