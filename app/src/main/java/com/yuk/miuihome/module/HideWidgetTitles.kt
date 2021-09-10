@@ -11,7 +11,6 @@ import java.util.function.Predicate
 class HideWidgetTitles {
 
     fun init() {
-
         if (OwnSP.ownSP.getBoolean("hideWidgetTitle", false)) {
             val widgetInfo = "com.miui.home.launcher.LauncherAppWidgetInfo".findClass()
             val widgetProviderInfo = "android.appwidget.AppWidgetProviderInfo".findClass()

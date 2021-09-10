@@ -6,7 +6,6 @@ import com.yuk.miuihome.utils.ktx.setReturnConstant
 class EnableHideStatusBarWhenEnterRecents {
 
     fun init() {
-
         if (OwnSP.ownSP.getBoolean("hideStatusBar", false)) {
             "com.miui.home.launcher.common.DeviceLevelUtils".setReturnConstant(
                 "isHideStatusBarWhenEnterRecents",

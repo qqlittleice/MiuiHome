@@ -6,7 +6,6 @@ import com.yuk.miuihome.utils.ktx.setReturnConstant
 class EnableClockGadget {
 
     fun init() {
-
         if (OwnSP.ownSP.getBoolean("clockGadget", false)) {
             "com.miui.home.launcher.Workspace".setReturnConstant(
                 "isScreenHasClockGadget",

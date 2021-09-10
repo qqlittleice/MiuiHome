@@ -11,7 +11,6 @@ import com.yuk.miuihome.utils.dp2px
 class ModifyRoundedCorners {
 
     fun init() {
-
         val value = OwnSP.ownSP.getFloat("recents_task_view_rounded_corners_radius", -1f)
         if (value == -1f) return
 

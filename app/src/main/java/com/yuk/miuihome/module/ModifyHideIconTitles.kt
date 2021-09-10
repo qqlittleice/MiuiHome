@@ -7,6 +7,7 @@ import de.robv.android.xposed.XposedHelpers
 
 //From CustoMIUIzer
 class ModifyHideIconTitles {
+
     fun init() {
         if (OwnSP.ownSP.getBoolean("icons", false)) {
             "com.miui.home.launcher.ItemIcon".hookAfterMethod(

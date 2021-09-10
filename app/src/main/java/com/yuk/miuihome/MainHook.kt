@@ -28,7 +28,6 @@ class MainHook {
     private val myRes by lazy { HomeContext.resInstance.moduleRes.resources }
 
     fun doHook() {
-
         "com.miui.home.settings.MiuiHomeSettingActivity".hookAfterMethod(
             "onCreate",
             Bundle::class.java

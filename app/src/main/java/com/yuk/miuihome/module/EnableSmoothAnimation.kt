@@ -6,7 +6,6 @@ import com.yuk.miuihome.utils.ktx.setReturnConstant
 class EnableSmoothAnimation {
 
     fun init() {
-
         if (OwnSP.ownSP.getBoolean("smoothAnimation", false)) {
             "com.miui.home.launcher.common.Utilities".setReturnConstant(
                 "isUseSmoothAnimationEffect",

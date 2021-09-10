@@ -11,7 +11,6 @@ import com.yuk.miuihome.utils.dp2px
 class ModifyHeaderHeight {
 
     fun init() {
-
         val value = OwnSP.ownSP.getFloat("recents_task_view_header_height", -1f)
         if (value == -1f) return
 
