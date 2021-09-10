@@ -19,6 +19,7 @@ import com.yuk.miuihome.view.*
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
+
 @Keep
 class MainHook {
 
@@ -82,7 +83,7 @@ class MainHook {
         //取消最近任务壁纸压暗
         DisableRecentsViewWallpaperDarken().init()
         //隐藏桌面小部件标题
-        HideWidgetTitle().init()
+        HideWidgetTitles().init()
         //允许桌面安卓小部件移到负一屏
         AllowWidgetToMinus().init()
         //允许在安卓小部件显示MIUI组件
@@ -93,6 +94,10 @@ class MainHook {
         ModifyTaskHorizontal().init()
         //开启简单动画
         EnableSimpleAnimation().init()
+        //屏幕无限滚动
+        ModifynfiniteScroll().init()
+        //隐藏桌面应用标题
+        ModifyHideIconTitles().init()
     }
 
     private fun showSettingDialog() {
@@ -153,6 +158,12 @@ class MainHook {
                         mText = myRes.getString(R.string.AdvancedFeature),
                         mColor = "#0C84FF",
                         mSize = SettingTextView.text2Size
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.HideAppTitle),
+                        mKey = "icons"
                     ).build()
                 )
                 addView(
@@ -224,12 +235,6 @@ class MainHook {
                     )
                     addView(
                         SettingSwitch.FastBuilder(
-                            mText = myRes.getString(R.string.HideAppTitle),
-                            mKey = "icons"
-                        ).build()
-                    )
-                    addView(
-                        SettingSwitch.FastBuilder(
                             mText = myRes.getString(R.string.HideTaskViewAppIcon),
                             mKey = "buttonPadding"
                         ).build()
@@ -291,6 +296,12 @@ class MainHook {
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.SearchBarBlur),
                         mKey = "searchBarBlur"
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.InfiniteScroll),
+                        mKey = "infiniteScroll"
                     ).build()
                 )
                 addView(
@@ -467,5 +478,4 @@ class MainHook {
         }
         dialogBuilder.show()
     }
-
 }

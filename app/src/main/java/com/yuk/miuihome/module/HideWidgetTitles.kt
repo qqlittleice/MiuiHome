@@ -8,7 +8,7 @@ import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import java.util.function.Predicate
 
-class HideWidgetTitle {
+class HideWidgetTitles {
 
     fun init() {
 
