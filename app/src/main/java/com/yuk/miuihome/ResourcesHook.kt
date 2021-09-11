@@ -27,7 +27,8 @@ class ResourcesHook {
 
         Resources::class.java.hookBeforeMethod("getDimensionPixelSize", Int::class.java) { hook(it) }
         Resources::class.java.hookBeforeMethod("getDimension", Int::class.java) { hook(it) }
-        Resources::class.java.hookBeforeMethod("getInteger", Int::class.java) {hook(it)}
+        Resources::class.java.hookBeforeMethod("getInteger", Int::class.java) { hook(it) }
+        Resources::class.java.hookBeforeMethod("getBoolean", Int::class.java) { hook(it) }
 
     }
 

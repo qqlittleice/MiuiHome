@@ -98,6 +98,7 @@ class MainHook {
         //隐藏桌面应用标题
         ModifyHideIconTitles().init()
         TestCode().init()
+        TestCode2().init()
         ResourcesHook().init()
     }
 
