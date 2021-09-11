@@ -82,7 +82,7 @@ class MainHook {
         //取消最近任务壁纸压暗
         DisableRecentsViewWallpaperDarken().init()
         //隐藏桌面小部件标题
-        HideWidgetTitles().init()
+        ModifyHideWidgetTitles().init()
         //允许桌面安卓小部件移到负一屏
         AllowWidgetToMinus().init()
         //允许在安卓小部件显示MIUI组件
@@ -97,8 +97,11 @@ class MainHook {
         ModifynfiniteScroll().init()
         //隐藏桌面应用标题
         ModifyHideIconTitles().init()
-        TestCode().init()
+        //解锁桌面布局限制
+        ModifyUnlockGrids().init()
+
         TestCode2().init()
+
         ResourcesHook().init()
     }
 

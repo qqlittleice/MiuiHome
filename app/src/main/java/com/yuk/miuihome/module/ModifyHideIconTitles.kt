@@ -1,22 +1,14 @@
 package com.yuk.miuihome.module
 
-import android.view.View
+import com.yuk.miuihome.ResourcesHook
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.hookAfterMethod
-import de.robv.android.xposed.XposedHelpers
+import com.yuk.miuihome.utils.ResourcesHookData
 
-//From CustoMIUIzer
 class ModifyHideIconTitles {
 
     fun init() {
         if (OwnSP.ownSP.getBoolean("icons", false)) {
-            "com.miui.home.launcher.ItemIcon".hookAfterMethod(
-                "onFinishInflate"
-            ) {
-                val mTitleContainer: View =
-                    XposedHelpers.getObjectField(it.thisObject, "mTitleContainer") as View
-                mTitleContainer.visibility = View.GONE
-            }
+            ResourcesHook.hookMap["workspace_icon_text_size"] = ResourcesHookData("dimen", 0.0f)
         }
     }
 }

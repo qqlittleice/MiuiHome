@@ -73,6 +73,18 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                     modRes.fwd(R.drawable.a)
                 )
             }
+
+            //隐藏桌面应用名称
+            if (OwnSP.ownSP.getBoolean("icons", false)) {
+                hookedRes.res.setTryReplacement(
+                    Config.hookPackage,
+                    "dimen",
+                    "workspace_icon_text_size",
+                    modRes.fwd(
+                        getResId("dimen", "dp0")
+                    )
+                )
+            }
         }
     }
 }

@@ -3,7 +3,7 @@ package com.yuk.miuihome.module
 import com.yuk.miuihome.ResourcesHook
 import com.yuk.miuihome.utils.ResourcesHookData
 
-class TestCode {
+class ModifyUnlockGrids {
 
     fun init() {
         ResourcesHook.hookMap["config_cell_count_x"] = ResourcesHookData("integer", 3)
