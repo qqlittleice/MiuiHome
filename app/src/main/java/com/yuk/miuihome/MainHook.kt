@@ -99,8 +99,8 @@ class MainHook {
         ModifyHideIconTitles().init()
         //解锁桌面布局限制
         ModifyUnlockGrids().init()
-
-        TestCode2().init()
+        //TestCode().init()
+        //TestCode2().init()
 
         ResourcesHook().init()
     }
