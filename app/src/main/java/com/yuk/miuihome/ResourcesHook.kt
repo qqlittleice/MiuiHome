@@ -19,6 +19,7 @@ class ResourcesHook {
                     param.result = hookMap[resName]?.afterValue
                     XposedBridge.log("$resName hooked! after value = ${hookMap[resName]?.afterValue}")
                 }
+                XposedBridge.log("$resName = $resType")
             }
         } catch (ignore: Exception) {}
     }
