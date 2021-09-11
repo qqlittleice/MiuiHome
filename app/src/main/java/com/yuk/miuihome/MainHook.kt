@@ -97,6 +97,8 @@ class MainHook {
         ModifynfiniteScroll().init()
         //隐藏桌面应用标题
         ModifyHideIconTitles().init()
+        TestCode().init()
+        ResourcesHook().init()
     }
 
     private fun showSettingDialog() {
