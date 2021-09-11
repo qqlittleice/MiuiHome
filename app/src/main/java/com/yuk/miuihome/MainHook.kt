@@ -19,7 +19,6 @@ import com.yuk.miuihome.view.*
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
-
 @Keep
 class MainHook {
 

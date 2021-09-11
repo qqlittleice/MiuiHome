@@ -54,6 +54,8 @@ __新仓库：[1767523953/MiuiHome](https://github.com/1767523953/MiuiHome)__
 
 [androidx.annotation](https://android.googlesource.com/platform/frameworks/support/+/androidx-master-dev/annotation/annotation/)
 
+[CustoMIUIzer](https://code.highspec.ru/Mikanoshi/CustoMIUIzer/)
+
 ## 软件截图
 
 ![Screenshot](https://github.com/1767523953/MiuiHome/blob/main/Pic/Screenshot.png)

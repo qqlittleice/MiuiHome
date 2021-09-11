@@ -4,7 +4,6 @@ package com.yuk.miuihome.module
 import android.view.View
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import de.robv.android.xposed.XposedHelpers
-import kotlin.concurrent.thread
 
 class TestCode {
     fun init() {

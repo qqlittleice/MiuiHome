@@ -36,5 +36,4 @@ class ResourcesHook {
     companion object {
         val hookMap = ResourcesHookMap<String, ResourcesHookData>()
     }
-
 }
