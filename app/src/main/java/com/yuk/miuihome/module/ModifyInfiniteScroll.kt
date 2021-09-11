@@ -5,7 +5,7 @@ import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import de.robv.android.xposed.XposedHelpers
 
 //From CustoMIUIzer
-class ModifynfiniteScroll {
+class ModifyInfiniteScroll {
 
     fun init() {
         if (OwnSP.ownSP.getBoolean("infiniteScroll", false)) {

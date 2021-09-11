@@ -65,5 +65,6 @@
   <string name="ModuleEnable">模块已激活</string>
   <string name="ModuleNotEnable">模块未激活</string>
   <string name="InfiniteScroll">桌面无限滚动</string>
+  <string name="UnlockGrids">解锁桌面布局限制</string>
 
 </resources>

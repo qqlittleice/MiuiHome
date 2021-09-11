@@ -94,7 +94,7 @@ class MainHook {
         //开启简单动画
         EnableSimpleAnimation().init()
         //屏幕无限滚动
-        ModifynfiniteScroll().init()
+        ModifyInfiniteScroll().init()
         //隐藏桌面应用标题
         ModifyHideIconTitles().init()
         //解锁桌面布局限制
@@ -168,7 +168,13 @@ class MainHook {
                 addView(
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.HideAppTitle),
-                        mKey = "icons"
+                        mKey = "hideIconTitles"
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.UnlockGrids),
+                        mKey = "unlockGrids"
                     ).build()
                 )
                 addView(
@@ -215,7 +221,7 @@ class MainHook {
                 addView(
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.HideWidgetTitle),
-                        mKey = "hideWidgetTitle"
+                        mKey = "hideWidgetTitles"
                     ).build()
                 )
                 addView(
