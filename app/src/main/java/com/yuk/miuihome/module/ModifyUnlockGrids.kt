@@ -1,8 +1,10 @@
 package com.yuk.miuihome.module
 
+import android.content.Context
 import com.yuk.miuihome.ResourcesHook
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ResourcesHookData
+import com.yuk.miuihome.utils.ktx.setReturnConstant
 
 class ModifyUnlockGrids {
 
@@ -14,6 +16,13 @@ class ModifyUnlockGrids {
             ResourcesHook.hookMap["config_cell_count_y_min"] = ResourcesHookData("integer", 4)
             ResourcesHook.hookMap["config_cell_count_x_max"] = ResourcesHookData("integer", 9)
             ResourcesHook.hookMap["config_cell_count_y_max"] = ResourcesHookData("integer", 9)
+
+            "com.miui.home.launcher.compat.LauncherCellCountCompatDevice".setReturnConstant(
+                "shouldUseDeviceValue",
+                Context::class.java,
+                Int::class.java,
+                result = false
+            )
         }
     }
 }

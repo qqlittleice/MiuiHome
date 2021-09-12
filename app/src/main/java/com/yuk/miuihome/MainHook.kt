@@ -98,7 +98,9 @@ class MainHook {
         ModifyHideIconTitles().init()
         //解锁桌面布局限制
         ModifyUnlockGrids().init()
-        //TestCode().init()
+        //打开应用时关闭文件夹
+        ModifyCloseFolderOnLaunch().init()
+
         //TestCode2().init()
 
         ResourcesHook().init()
@@ -211,6 +213,31 @@ class MainHook {
                     .build())
                 addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.AppTextSize)) { showModifyTextSize() }
                     .build())
+                addView(
+                    SettingTextView.FastBuilder(
+                        mText = myRes.getString(R.string.Folder),
+                        mColor = "#0C84FF",
+                        mSize = SettingTextView.text2Size
+                    ).build()
+                )
+                if (!OwnSP.ownSP.getBoolean(
+                        "simpleAnimation",
+                        false
+                    ) or !OwnSP.ownSP.getBoolean("testUser", false)
+                ) {
+                    addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.BlurWhenOpenFolder),
+                            mKey = "blurWhenOpenFolder"
+                        ).build()
+                    )
+                }
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.CloseFolder),
+                        mKey = "closeFolder"
+                    ).build()
+                )
                 addView(
                     SettingTextView.FastBuilder(
                         mText = myRes.getString(R.string.Widget),
