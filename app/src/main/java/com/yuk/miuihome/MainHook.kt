@@ -166,10 +166,11 @@ class MainHook {
                 )
                 addView(
                     SettingSwitch.FastBuilder(
-                        mText = myRes.getString(R.string.HideAppTitle),
+                        mText = myRes.getString(R.string.HideAppTitles),
                         mKey = "hideIconTitles"
                     ).build()
                 )
+                //addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.ShowDockTitles), mKey = "showDockTitles").build())
                 addView(
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.UnlockGrids),
@@ -219,7 +220,7 @@ class MainHook {
                 )
                 addView(
                     SettingSwitch.FastBuilder(
-                        mText = myRes.getString(R.string.HideWidgetTitle),
+                        mText = myRes.getString(R.string.HideWidgetTitles),
                         mKey = "hideWidgetTitles"
                     ).build()
                 )

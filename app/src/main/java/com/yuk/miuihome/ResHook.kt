@@ -75,7 +75,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
             }
 
             //隐藏桌面应用名称
-            if (OwnSP.ownSP.getBoolean("icons", false)) {
+            if (OwnSP.ownSP.getBoolean("hideIconTitles", false)) {
                 hookedRes.res.setTryReplacement(
                     Config.hookPackage,
                     "dimen",

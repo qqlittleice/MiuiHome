@@ -14,11 +14,11 @@
   <string name="RoundCorner">应用卡片圆角大小</string>
   <string name="AppTextSize">应用图标与名称间距</string>
   <string name="Widget">小部件相关</string>
-  <string name="HideWidgetTitle">隐藏桌面小部件名称</string>
+  <string name="HideWidgetTitles">隐藏桌面小部件名称</string>
   <string name="WidgetToMinus">允许将安卓小部件移到负一屏</string>
   <string name="AlwaysShowMIUIWidget">允许在安卓小部件中显示MIUI小部件</string>
   <string name="ResourceHooks">资源钩子功能</string>
-  <string name="HideAppTitle">隐藏桌面应用名称</string>
+  <string name="HideAppTitles">隐藏桌面应用名称</string>
   <string name="HideTaskViewAppIcon">隐藏后台应用图标</string>
   <string name="HideTaskViewCleanUpIcon">隐藏后台清理图标</string>
   <string name="HideTaskViewSmallWindowIcon">隐藏后台小窗应用图标</string>
@@ -66,5 +66,6 @@
   <string name="ModuleNotEnable">模块未激活</string>
   <string name="InfiniteScroll">桌面无限滚动</string>
   <string name="UnlockGrids">解锁桌面布局限制</string>
+  <string name="ShowDockTitles">显示底栏应用名称</string>
 
 </resources>
