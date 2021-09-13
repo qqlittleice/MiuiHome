@@ -10,11 +10,12 @@ import de.robv.android.xposed.XposedHelpers
 import kotlin.math.roundToInt
 
 
-class TestCode2 {
+class TestCode {
 
     fun init() {
         if (OwnSP.ownSP.getBoolean("showDockTitles", false)) {
-            ResourcesHook.hookMap["config_hide_hotseats_app_title"] = ResourcesHookData("bool", false)
+            ResourcesHook.hookMap["config_hide_hotseats_app_title"] =
+                ResourcesHookData("bool", false)
 
             "com.miui.home.launcher.DeviceConfig".hookAfterMethod(
                 "calcHotSeatsHeight",

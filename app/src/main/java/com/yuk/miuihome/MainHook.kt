@@ -101,7 +101,7 @@ class MainHook {
         //打开应用时关闭文件夹
         ModifyCloseFolderOnLaunch().init()
 
-        //TestCode2().init()
+        //TestCode().init()
 
         ResourcesHook().init()
     }
@@ -179,12 +179,14 @@ class MainHook {
                         mKey = "unlockGrids"
                     ).build()
                 )
-                addView(
-                    SettingSwitch.FastBuilder(
-                        mText = myRes.getString(R.string.HideStatusBar),
-                        mKey = "hideStatusBar"
-                    ).build()
-                )
+                if (HomeContext.isAlpha) {
+                    addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.HideStatusBar),
+                            mKey = "hideStatusBar"
+                        ).build()
+                    )
+                }
                 addView(
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.MamlDownload),
@@ -214,17 +216,19 @@ class MainHook {
                         mSize = SettingTextView.text2Size
                     ).build()
                 )
-                if (!OwnSP.ownSP.getBoolean(
-                        "simpleAnimation",
-                        false
-                    ) or !OwnSP.ownSP.getBoolean("testUser", false)
-                ) {
-                    addView(
-                        SettingSwitch.FastBuilder(
-                            mText = myRes.getString(R.string.BlurWhenOpenFolder),
-                            mKey = "blurWhenOpenFolder"
-                        ).build()
-                    )
+                if (HomeContext.isAlpha) {
+                    if (!OwnSP.ownSP.getBoolean(
+                            "simpleAnimation",
+                            false
+                        ) or !OwnSP.ownSP.getBoolean("testUser", false)
+                    ) {
+                        addView(
+                            SettingSwitch.FastBuilder(
+                                mText = myRes.getString(R.string.BlurWhenOpenFolder),
+                                mKey = "blurWhenOpenFolder"
+                            ).build()
+                        )
+                    }
                 }
                 addView(
                     SettingSwitch.FastBuilder(
@@ -232,31 +236,33 @@ class MainHook {
                         mKey = "closeFolder"
                     ).build()
                 )
-                addView(
-                    SettingTextView.FastBuilder(
-                        mText = myRes.getString(R.string.Widget),
-                        mColor = "#0C84FF",
-                        mSize = SettingTextView.text2Size
-                    ).build()
-                )
-                addView(
-                    SettingSwitch.FastBuilder(
-                        mText = myRes.getString(R.string.HideWidgetTitles),
-                        mKey = "hideWidgetTitles"
-                    ).build()
-                )
-                addView(
-                    SettingSwitch.FastBuilder(
-                        mText = myRes.getString(R.string.WidgetToMinus),
-                        mKey = "widgetToMinus"
-                    ).build()
-                )
-                addView(
-                    SettingSwitch.FastBuilder(
-                        mText = myRes.getString(R.string.AlwaysShowMIUIWidget),
-                        mKey = "alwaysShowMIUIWidget"
-                    ).build()
-                )
+                if (HomeContext.isAlpha) {
+                    addView(
+                        SettingTextView.FastBuilder(
+                            mText = myRes.getString(R.string.Widget),
+                            mColor = "#0C84FF",
+                            mSize = SettingTextView.text2Size
+                        ).build()
+                    )
+                    addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.HideWidgetTitles),
+                            mKey = "hideWidgetTitles"
+                        ).build()
+                    )
+                    addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.WidgetToMinus),
+                            mKey = "widgetToMinus"
+                        ).build()
+                    )
+                    addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.AlwaysShowMIUIWidget),
+                            mKey = "alwaysShowMIUIWidget"
+                        ).build()
+                    )
+                }
                 if (XposedInit.hasHookPackageResources) {
                     addView(
                         SettingTextView.FastBuilder(
@@ -306,12 +312,14 @@ class MainHook {
                             mKey = "infiniteScroll"
                         ).build()
                     )
-                    addView(
-                        SettingSwitch.FastBuilder(
-                            mText = myRes.getString(R.string.RealTaskViewHorizontal),
-                            mKey = "horizontal"
-                        ).build()
-                    )
+                    if (HomeContext.isAlpha) {
+                        addView(
+                            SettingSwitch.FastBuilder(
+                                mText = myRes.getString(R.string.RealTaskViewHorizontal),
+                                mKey = "horizontal"
+                            ).build()
+                        )
+                    }
                     addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.VerticalTaskViewOfAppCardSize)) { showModifyVertical() }
                         .build())
                     addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.HorizontalTaskViewOfAppCardSize)) { showModifyHorizontal() }
