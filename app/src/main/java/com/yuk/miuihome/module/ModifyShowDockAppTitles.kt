@@ -1,21 +1,22 @@
 package com.yuk.miuihome.module
 
 import android.content.Context
-import com.yuk.miuihome.ResourcesHook
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ResourcesHookData
 import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
+import com.yuk.miuihome.utils.ktx.setReturnConstant
 import de.robv.android.xposed.XposedHelpers
 import kotlin.math.roundToInt
 
 
-class TestCode {
+class ModifyShowDockAppTitles {
 
     fun init() {
-        if (OwnSP.ownSP.getBoolean("showDockTitles", false)) {
-            ResourcesHook.hookMap["config_hide_hotseats_app_title"] =
-                ResourcesHookData("bool", false)
+        if (OwnSP.ownSP.getBoolean("showDockAppTitles", false)) {
+            "com.miui.home.launcher.DeviceConfig".setReturnConstant(
+                "isHotseatsAppTitleHided",
+                result = false
+            )
 
             "com.miui.home.launcher.DeviceConfig".hookAfterMethod(
                 "calcHotSeatsHeight",

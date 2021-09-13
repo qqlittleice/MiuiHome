@@ -65,7 +65,7 @@
   <string name="ModuleNotEnable">模块未激活</string>
   <string name="InfiniteScroll">桌面无限滚动</string>
   <string name="UnlockGrids">解锁桌面布局限制</string>
-  <string name="ShowDockTitles">显示底栏应用名称</string>
+  <string name="ShowDockAppTitles">显示底栏应用名称</string>
   <string name="CloseFolder">打开应用时关闭文件夹</string>
   <string name="Folder">文件夹相关</string>
 

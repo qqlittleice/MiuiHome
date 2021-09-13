@@ -100,8 +100,8 @@ class MainHook {
         ModifyUnlockGrids().init()
         //打开应用时关闭文件夹
         ModifyCloseFolderOnLaunch().init()
-
-        //TestCode().init()
+        //显示底栏应用标题
+        ModifyShowDockAppTitles().init()
 
         ResourcesHook().init()
     }
@@ -172,7 +172,12 @@ class MainHook {
                         mKey = "hideIconTitles"
                     ).build()
                 )
-                //addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.ShowDockTitles), mKey = "showDockTitles").build())
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.ShowDockAppTitles),
+                        mKey = "showDockAppTitles"
+                    ).build()
+                )
                 addView(
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.UnlockGrids),
