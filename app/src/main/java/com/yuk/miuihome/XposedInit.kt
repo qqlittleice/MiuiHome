@@ -7,6 +7,7 @@ import com.yuk.miuihome.Config.myself
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
 import de.robv.android.xposed.callbacks.XC_LoadPackage
+import de.robv.android.xposed.XposedHelpers.ClassNotFoundError
 
 class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookInitPackageResources {
 
@@ -38,6 +39,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                             HomeContext.classLoader = HomeContext.context.classLoader
                             HomeContext.resInstance = ResInject().init()
                             checkAlpha()
+                            checkWidgetLauncher()
                             MainHook().doHook()
                         }
                     })
@@ -55,6 +57,22 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
             HomeContext.isAlpha = pkgInfo.versionName.contains("ALPHA", ignoreCase = true)
         } else {
             HomeContext.isAlpha = false
+        }
+    }
+
+    fun checkWidgetLauncher() {
+        val checkList = arrayListOf(
+            "com.miui.home.launcher.widget.MIUIAppWidgetInfo",
+            "com.miui.home.launcher.LauncherAppWidgetInfo",
+            "com.miui.home.launcher.MIUIWidgetUtil"
+        )
+        try {
+            for (item in checkList) {
+                XposedHelpers.findClass(item, HomeContext.classLoader)
+            }
+            HomeContext.isWidgetLauncher = true
+        } catch (e: ClassNotFoundError) {
+            HomeContext.isWidgetLauncher = false
         }
     }
 

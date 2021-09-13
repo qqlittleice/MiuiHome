@@ -13,4 +13,5 @@ object HomeContext {
     lateinit var activity: Activity
     lateinit var resInstance: ResInject
     var isAlpha = false
+    var isWidgetLauncher = false
 }
