@@ -101,9 +101,7 @@ class MainHook {
         //打开应用时关闭文件夹
         ModifyCloseFolderOnLaunch().init()
         //显示底栏应用标题
-        ModifyShowDockIconTitles().init()
-        //显示底栏应用阴影
-        EnableDockIconShadow().init()
+        ModifyShowDockAppTitles().init()
 
         ResourcesHook().init()
     }
@@ -176,14 +174,14 @@ class MainHook {
                 )
                 addView(
                     SettingSwitch.FastBuilder(
-                        mText = myRes.getString(R.string.UnlockGrids),
-                        mKey = "unlockGrids"
+                        mText = myRes.getString(R.string.ShowDockAppTitles),
+                        mKey = "showDockAppTitles"
                     ).build()
                 )
                 addView(
                     SettingSwitch.FastBuilder(
-                        mText = myRes.getString(R.string.ShowDockIconTitles),
-                        mKey = "showDockIconTitles"
+                        mText = myRes.getString(R.string.UnlockGrids),
+                        mKey = "unlockGrids"
                     ).build()
                 )
                 if (HomeContext.isAlpha) {
@@ -317,12 +315,6 @@ class MainHook {
                         SettingSwitch.FastBuilder(
                             mText = myRes.getString(R.string.InfiniteScroll),
                             mKey = "infiniteScroll"
-                        ).build()
-                    )
-                    addView(
-                        SettingSwitch.FastBuilder(
-                            mText = myRes.getString(R.string.isEnableIconShadow),
-                            mKey = "isEnableIconShadow"
                         ).build()
                     )
                     if (HomeContext.isAlpha) {
