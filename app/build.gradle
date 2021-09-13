@@ -38,20 +38,17 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
     packagingOptions {
-        jniLibs {
-            excludes += ['META-INF/com/**', 'kotlin/**']
-        }
         resources {
-            excludes += ['META-INF/com/**', 'kotlin/**']
+            excludes += "META-INF/**"
+            excludes += "kotlin/**"
         }
     }
-
 }
 
 
 dependencies {
-
     compileOnly 'de.robv.android.xposed:api:82'
     compileOnly 'androidx.annotation:annotation:1.2.0'
     implementation 'androidx.core:core-ktx:1.6.0'
