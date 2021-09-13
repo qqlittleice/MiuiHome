@@ -243,7 +243,7 @@ class MainHook {
                         mKey = "closeFolder"
                     ).build()
                 )
-                if (HomeContext.isAlpha) {
+                if (HomeContext.isWidgetLauncher) {
                     addView(
                         SettingTextView.FastBuilder(
                             mText = myRes.getString(R.string.Widget),
