@@ -198,12 +198,6 @@ class MainHook {
                 ) {
                     addView(
                         SettingSwitch.FastBuilder(
-                            mText = myRes.getString(R.string.BlurWhenOpenFolder),
-                            mKey = "blurWhenOpenFolder"
-                        ).build()
-                    )
-                    addView(
-                        SettingSwitch.FastBuilder(
                             mText = myRes.getString(R.string.WallpaperDarken),
                             mKey = "wallpaperDarken"
                         ).build()
