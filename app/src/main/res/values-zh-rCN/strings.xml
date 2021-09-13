@@ -1,5 +1,4 @@
 <resources>
-  <string name="app_name" translatable="false">MiuiHome</string>
   <string name="res_hooked">资源注入成功!</string>
   <string name="Warn">模块注意事项及故障排除请查阅附带APP.此处不做赘述.</string>
   <string name="BaseFeature">基础设定</string>

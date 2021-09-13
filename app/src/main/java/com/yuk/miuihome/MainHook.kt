@@ -491,7 +491,7 @@ class MainHook {
         dialog = dialogBuilder.show().apply {
             setOnDismissListener {
                 try {
-                    LogUtil.toast(myRes.getString(R.string.TaskViewBlurSetTo) + "${(onClick as TextView).text}")
+                    LogUtil.toast(myRes.getString(R.string.TaskViewBlurSetTo) + " : ${(onClick as TextView).text}")
                 } catch (ignore: Exception) {
                 }
             }
