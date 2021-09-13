@@ -65,8 +65,9 @@
   <string name="ModuleNotEnable">模塊未激活</string>
   <string name="InfiniteScroll">桌面無限滾動</string>
   <string name="UnlockGrids">解鎖桌面佈局限制</string>
-  <string name="ShowDockAppTitles">顯示底欄應用名稱</string>
+  <string name="ShowDockIconTitles">顯示底欄應用名稱</string>
   <string name="CloseFolder">打開應用時關閉文件夾</string>
   <string name="Folder">文件夾相關</string>
+  <string name="isEnableIconShadow">顯示應用陰影</string>
 
 </resources>

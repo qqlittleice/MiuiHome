@@ -9,10 +9,10 @@ import de.robv.android.xposed.XposedHelpers
 import kotlin.math.roundToInt
 
 
-class ModifyShowDockAppTitles {
+class ModifyShowDockIconTitles {
 
     fun init() {
-        if (OwnSP.ownSP.getBoolean("showDockAppTitles", false)) {
+        if (OwnSP.ownSP.getBoolean("showDockIconTitles", false)) {
             "com.miui.home.launcher.DeviceConfig".setReturnConstant(
                 "isHotseatsAppTitleHided",
                 result = false
