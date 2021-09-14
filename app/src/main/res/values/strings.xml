@@ -40,7 +40,7 @@
   <string name="SimpleBlur">Simple blur</string>
   <string name="NoneBlur">None blur</string>
   <string name="ManualInput">User input</string>
-  <string name="TaskViewBlurSetTo">Blur level of task view</string>
+  <string name="TaskViewBlurSetTo">Task view blur is set to</string>
   <string name="Welcome">Welcome</string>
   <string name="Tips">It is detected that you are using this module for the first time, the module will set the default value, and then restart the desktop.\nIf you need further settings,please wait for the System launcher to restart and open the home screen settings again.</string>
   <string name="Reboot">Apply</string>
