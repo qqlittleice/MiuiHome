@@ -1,4 +1,5 @@
 <resources>
+  <string name="app_name" translatable="false">MiuiHome</string>
   <string name="AdvancedFeature">Advanced Settings</string>
   <string name="AlwaysShowMIUIWidget">Allow MIUI widgets to be displayed in classic widgets</string>
   <string name="AlwaysShowStatusBarClock">Always display the clock</string>
@@ -62,11 +63,11 @@
   <string name="UnlockGrids">Unlock grid restrictions</string>
   <string name="VerticalTaskViewOfAppCardSize">The size of the thumbnail in the recent menu by vert.</string>
   <string name="WallpaperDarken">Turn off the darkening of the wallpaper</string>
-  <string name="Warn">Please refer to the attached application for information on precautions and troubleshooting of the module. Don't repeat them here.</string>
+  <string name="Warn">Please refer to the attached APP for module precautions.</string>
   <string name="Welcome">Welcome!</string>
   <string name="Widget">Widgets</string>
   <string name="WidgetToMinus">Allow moving classic widgets to -1 screen</string>
   <string name="Yes">Restart launcher</string>
-  <string name="isEnableIconShadow">Show icons shadows and reflection</string>
+  <string name="EnableIconShadow">Show icons shadows and reflection</string>
   <string name="res_hooked">The interception of resources was successful!</string>
 </resources>

@@ -67,7 +67,7 @@
   <string name="Widget">小部件相關</string>
   <string name="WidgetToMinus">允許將安卓小部件移到負一屏</string>
   <string name="Yes">確定</string>
-  <string name="isEnableIconShadow">顯示應用陰影</string>
+  <string name="EnableIconShadow">顯示應用陰影</string>
   <string name="res_hooked">資源注入成功!</string>
 
 </resources>

@@ -67,7 +67,7 @@
   <string name="Widget">Виджеты</string>
   <string name="WidgetToMinus">Разрешить перемещать классические виджеты на -1 экран</string>
   <string name="Yes">Применить</string>
-  <string name="isEnableIconShadow">Показывать тени и отражение иконок</string>
+  <string name="EnableIconShadow">Показывать тени и отражение иконок</string>
   <string name="res_hooked">Перехват ресурсов прошел успешно!</string>
 
 </resources>

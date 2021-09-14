@@ -322,7 +322,7 @@ class MainHook {
                     )
                     addView(
                         SettingSwitch.FastBuilder(
-                            mText = myRes.getString(R.string.isEnableIconShadow),
+                            mText = myRes.getString(R.string.EnableIconShadow),
                             mKey = "isEnableIconShadow"
                         ).build()
                     )
