@@ -25,7 +25,7 @@
   <string name="HideWidgetTitles">Hide widget headers</string>
   <string name="HorizontalTaskViewOfAppCardSize">The size of the thumbnail in the recent menu by horizontal</string>
   <string name="InfiniteScroll">Launcher infinite scroll</string>
-  <string name="MainActivity1">Please activate this module in the LSPosed Manager and restart the MIUI launcher once.\nThe module settings are in the settings of the Home screen!\nSpecific location: Settings - Home screen - Where the \"Default launcher\" used to be.</string>
+  <string name="MainActivity1">Please activate this module in the LSPosed Manager and restart the MIUI launcher once.\n\nThe module settings are in the settings of the Home screen!\n\nSpecific location: Settings - Home screen - Where the \"Default launcher\" used to be.</string>
   <string name="MainActivity2">Diagnostics:\n1.This module currently only support LSPosed 5606 or above, it does not going to support any other Xposed frameworks at present.\n\n2.If you have problem with module activate, follow the opinions below: re-optimize MIUI launcher - disable this module - enable this module - force stop MIUI launcher.\n\n3.When some options are invalid, please check whether the MIUI launcher you installed is the latest ALPHA version. If so, please try to re-optimize MIUI launcher in LSPosed and restart it.\n\n4.The final effect depends on your SoC, MIUI version, launcher version and so on. Please refer to the actual performance.</string>
   <string name="MamlDownload">\'Water ripple\' effect when downloading</string>
   <string name="ManualInput">Enter manually</string>
@@ -42,7 +42,7 @@
   <string name="RealTaskViewHorizontal">Real·Horizontal task view</string>
   <string name="Reboot">Restart launcher</string>
   <string name="Reboot2">The launcher will reboot in 2 seconds!</string>
-  <string name="ResourceHooks">ResHook Featre</string>
+  <string name="ResourceHooks">ResHook Feature</string>
   <string name="RoundCorner">The The size of the rounded corners of the thumbnail</string>
   <string name="Save">Save</string>
   <string name="Scope">Input range</string>
