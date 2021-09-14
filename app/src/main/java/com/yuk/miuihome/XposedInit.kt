@@ -57,7 +57,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
     fun startOnlineLog() {
         AppCenter.start(
             HomeContext.application,
-            "d30073b3-246e-4ca4-a588-6b96e11d390d",
+            "fd3fd6d6-bc0d-40d1-bc1b-63b6835f9581",
             Analytics::class.java,
             Crashes::class.java
         )
