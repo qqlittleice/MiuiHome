@@ -50,7 +50,7 @@
   <string name="ShowAppIcon">顯示桌面圖標</string>
   <string name="ShowDockIconTitles">顯示底欄應用名稱</string>
   <string name="SimpleAnimation">簡單動畫</string>
-  <string name="SimpleBlur">顯示應用陰影和倒影</string>
+  <string name="SimpleBlur">簡單模糊</string>
   <string name="SmoothAnimation">平滑動畫</string>
   <string name="State">當前狀態</string>
   <string name="TaskViewAppCardTextSize">後台卡片文字大小</string>
@@ -67,7 +67,7 @@
   <string name="Widget">小部件相關</string>
   <string name="WidgetToMinus">允許將安卓小部件移到負一屏</string>
   <string name="Yes">確定</string>
-  <string name="EnableIconShadow">顯示應用陰影</string>
+  <string name="EnableIconShadow">顯示應用陰影和倒影</string>
   <string name="res_hooked">資源注入成功!</string>
 
 </resources>
