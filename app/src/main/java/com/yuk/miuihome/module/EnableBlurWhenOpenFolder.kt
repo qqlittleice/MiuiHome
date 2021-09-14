@@ -6,7 +6,7 @@ import com.yuk.miuihome.utils.ktx.setReturnConstant
 class EnableBlurWhenOpenFolder: BaseClassAndMethodCheck {
 
     companion object {
-        var checked = true
+        var checked = false
     }
 
     fun init() {

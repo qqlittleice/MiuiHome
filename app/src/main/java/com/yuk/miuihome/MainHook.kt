@@ -232,7 +232,8 @@ class MainHook {
                         addView(
                             SettingSwitch.FastBuilder(
                                 mText = myRes.getString(R.string.BlurWhenOpenFolder),
-                                mKey = "blurWhenOpenFolder"
+                                mKey = "blurWhenOpenFolder",
+                                show = EnableBlurWhenOpenFolder.checked
                             ).build()
                         )
                     }

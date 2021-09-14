@@ -1,7 +1,6 @@
 package com.yuk.miuihome.module
 
 import com.yuk.miuihome.HomeContext
-import de.robv.android.xposed.XposedBridge
 import de.robv.android.xposed.XposedHelpers
 import de.robv.android.xposed.XposedHelpers.ClassNotFoundError
 
