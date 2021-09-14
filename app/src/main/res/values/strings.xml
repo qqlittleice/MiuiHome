@@ -44,7 +44,7 @@
   <string name="Welcome">Welcome</string>
   <string name="Tips">It is detected that you are using this module for the first time, the module will set the default value, and then restart System Launcher.\nIf you need further settings, please wait for the System launcher to restart and open the home screen settings again.</string>
   <string name="Reboot">Apply</string>
-  <string name="Reboot2">The launcher will restart in 2s</string>
+  <string name="Reboot2">System Launcher will restart in 2s</string>
   <string name="Yes">Yes</string>
   <string name="Close">Close</string>
   <string name="Defaults">Defaults</string>
