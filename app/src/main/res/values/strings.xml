@@ -23,7 +23,7 @@
   <string name="HideTaskViewCleanUpIcon">Hide clean up icon in task view</string>
   <string name="HideTaskViewSmallWindowIcon">Hide small window icon in task view</string>
   <string name="TaskViewAppCardTextSize">Size of text in task manager</string>
-  <string name="TestFeature">Experimental function</string>
+  <string name="TestFeature">Experimental Feature</string>
   <string name="SimpleAnimation">Simple animation</string>
   <string name="RealTaskViewHorizontal">Real horizontal screen task manager</string>
   <string name="VerticalTaskViewOfAppCardSize">Vertical task view of thumbnail size</string>
