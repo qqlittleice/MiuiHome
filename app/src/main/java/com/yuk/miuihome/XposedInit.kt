@@ -3,6 +3,9 @@ package com.yuk.miuihome
 import android.app.Application
 import android.content.Context
 import androidx.annotation.Keep
+import com.microsoft.appcenter.AppCenter
+import com.microsoft.appcenter.analytics.Analytics
+import com.microsoft.appcenter.crashes.Crashes
 import com.yuk.miuihome.Config.myself
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
@@ -38,6 +41,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                             HomeContext.context = param.args[0] as Context
                             HomeContext.classLoader = HomeContext.context.classLoader
                             HomeContext.resInstance = ResInject().init()
+                            startOnlineLog()
                             checkAlpha()
                             checkWidgetLauncher()
                             MainHook().doHook()
@@ -48,6 +52,15 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                 return
             }
         }
+    }
+
+    fun startOnlineLog() {
+        AppCenter.start(
+            HomeContext.application,
+            "d30073b3-246e-4ca4-a588-6b96e11d390d",
+            Analytics::class.java,
+            Crashes::class.java
+        )
     }
 
     fun checkAlpha() {
