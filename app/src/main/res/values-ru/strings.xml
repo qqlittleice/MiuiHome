@@ -62,7 +62,7 @@
   <string name="UnlockGrids">Разблокировать ограничения макета</string>
   <string name="VerticalTaskViewOfAppCardSize">Размер миниатюры в меню недавних по верт.</string>
   <string name="WallpaperDarken">Отключить затемнение обоев</string>
-  <string name="Warn">Пожалуйста, обратитесь к прилагаемому приложению для получения информации о мерах предосторожности и устранении неполадок модуля. Не повторяйте их здесь.</string>
+  <string name="Warn">Пожалуйста, обратитесь к прилагаемому приложению для получения информации о мерах предосторожности и устранении неполадок модуля.</string>
   <string name="Welcome">Добро пожаловать!</string>
   <string name="Widget">Виджеты</string>
   <string name="WidgetToMinus">Разрешить перемещать классические виджеты на -1 экран</string>

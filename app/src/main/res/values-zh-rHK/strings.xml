@@ -62,7 +62,7 @@
   <string name="UnlockGrids">解鎖桌面佈局限制</string>
   <string name="VerticalTaskViewOfAppCardSize">縱向應用卡片大小</string>
   <string name="WallpaperDarken">取消後台壁紙壓暗效果</string>
-  <string name="Warn">模塊注意事項及故障排除請查閱附帶APP.此處不做贅述.</string>
+  <string name="Warn">模塊注意事項請查閱附帶APP</string>
   <string name="Welcome">歡迎!</string>
   <string name="Widget">小部件相關</string>
   <string name="WidgetToMinus">允許將安卓小部件移到負一屏</string>
