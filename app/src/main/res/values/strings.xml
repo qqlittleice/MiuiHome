@@ -1,7 +1,7 @@
 <resources>
   <string name="app_name" translatable="false">MiuiHome</string>
   <string name="res_hooked">Resource injected successfully!</string>
-  <string name="Warn">Please refer to the attached APP for module precautions and troubleshooting. We will not repeat them here.</string>
+  <string name="Warn">Please refer to the attached APP for module precautions and troubleshooting.</string>
   <string name="BaseFeature">Basic Settings</string>
   <string name="SmoothAnimation">Smooth animation</string>
   <string name="TaskViewBlurLevel">Level of task manager blur</string>
@@ -17,7 +17,7 @@
   <string name="HideWidgetTitles">Hide widget titles</string>
   <string name="WidgetToMinus">Allow moving classic widgets to minus screen</string>
   <string name="AlwaysShowMIUIWidget">Allow MIUI widgets to be displayed in Android widgets</string>
-  <string name="ResourceHooks">Resource hook function</string>
+  <string name="ResourceHooks">Res Hook Feature</string>
   <string name="HideAppTitles">Hide apps titles</string>
   <string name="HideTaskViewAppIcon">Hide apps icons in task view</string>
   <string name="HideTaskViewCleanUpIcon">Hide clean up icon in task view</string>
@@ -28,13 +28,13 @@
   <string name="RealTaskViewHorizontal">Real horizontal screen task manager</string>
   <string name="VerticalTaskViewOfAppCardSize">Vertical task view of thumbnail size</string>
   <string name="HorizontalTaskViewOfAppCardSize">Horizontal task view of thumbnail size</string>
-  <string name="OtherFeature">Other function</string>
+  <string name="OtherFeature">Other Feature</string>
   <string name="AlwaysShowStatusBarClock">Always show status bar clock</string>
   <string name="SearchBarBlur">Enable blur of search bar</string>
-  <string name="ModuleFeature">Module feature</string>
+  <string name="ModuleFeature">Module Feature</string>
   <string name="CleanModuleSettings">Clean module user settings</string>
   <string name="ModuleSettings">Module Settings</string>
-  <string name="ModuleSettingsResHook">Module Settings(Resource Hooked√)</string>
+  <string name="ModuleSettingsResHook">Module Settings(Res Hook√)</string>
   <string name="CompleteBlur">Complete Blur</string>
   <string name="TestBlur">Test blur</string>
   <string name="SimpleBlur">Simple blur</string>
@@ -43,7 +43,7 @@
   <string name="TaskViewBlurSetTo">Blur level of task view</string>
   <string name="Welcome">Welcome</string>
   <string name="Tips">It is detected that you are using this module for the first time, the module will set the default value, and then restart the desktop.\nIf you need further settings,please wait for the System launcher to restart and open the home screen settings again.</string>
-  <string name="Reboot">Reboot launcher</string>
+  <string name="Reboot">Apply</string>
   <string name="Reboot2">The launcher will restart in 2s</string>
   <string name="Yes">Yes</string>
   <string name="Close">Close</string>
