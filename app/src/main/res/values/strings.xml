@@ -33,8 +33,8 @@
   <string name="SearchBarBlur">Enable search bar blur</string>
   <string name="ModuleFeature">Module Feature</string>
   <string name="CleanModuleSettings">Clean module user settings</string>
-  <string name="ModuleSettings">Mod Settings</string>
-  <string name="ModuleSettingsResHook">Mod Settings(Res Hook√)</string>
+  <string name="ModuleSettings">Module Settings</string>
+  <string name="ModuleSettingsResHook">Module Settings(Res Hook√)</string>
   <string name="CompleteBlur">Complete Blur</string>
   <string name="TestBlur">Test blur</string>
   <string name="SimpleBlur">Simple blur</string>
