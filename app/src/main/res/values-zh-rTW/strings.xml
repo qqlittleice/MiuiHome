@@ -1,6 +1,6 @@
 <resources>
   <string name="res_hooked">資源注入成功!</string>
-  <string name="Warn">模塊注意事項及故障排除請查閱附帶APP.此處不做贅述.</string>
+  <string name="Warn">模塊注意事項及故障排除請查閱附帶APP, 此處不做贅述.</string>
   <string name="BaseFeature">基礎設定</string>
   <string name="SmoothAnimation">平滑動畫</string>
   <string name="TaskViewBlurLevel">後台模糊級別</string>
@@ -41,20 +41,20 @@
   <string name="ManualInput">手動輸入</string>
   <string name="TaskViewBlurSetTo">後台模糊級別已設為</string>
   <string name="Welcome">歡迎</string>
-  <string name="Tips">檢測到你是第一次使用本模塊,模塊會進行默認值設定,並隨後重啟桌面.\n如需進一步設置,請待桌面重啟後再次打開桌面設置.</string>
+  <string name="Tips">檢測到你是第一次使用本模塊, 模塊會進行默認值設定, 並隨後重啟桌面.\n如需進一步設置, 請待桌面重啟後再次打開桌面設置.</string>
   <string name="Reboot">重啟桌面</string>
   <string name="Reboot2">桌面將在2秒後重啟!</string>
   <string name="Yes">確定</string>
   <string name="Close">關閉</string>
-  <string name="Defeat">官方默認值</string>
+  <string name="Defaults">官方默認值</string>
   <string name="Scope">可輸入範圍</string>
   <string name="Multiple">輸入的值將被除以</string>
   <string name="Save">保存</string>
   <string name="Cancel">取消</string>
   <string name="SetSuccessfully">設置成功</string>
   <string name="OutOfInput">請輸入允許範圍內的值!</string>
-  <string name="MainActivity1">提示:\n請先在LSPosed管理器中激活本模塊,並重啟一次系統桌面.\n模塊的設置界面在MIUI系統桌面的設置中!\n具體位置:設置-桌面-原\"默認桌面\"處.</string>
-  <string name="MainActivity2">故障排除:\n1.本模塊現只支持LSPosed,且最低需5606版本,不支持也暫不打算支持其他任何Xposed框架.\n\n2.如遇激活問題,請嘗試以下操作:重新優化系統桌面-關閉本模塊-啟用本模塊-強行停止系統桌面.\n\n3.遇到部分選項無效時,請先檢查您當前設備安裝的桌面版本是否為最新ALPHA版本.如果確認無誤,請嘗試到LSPosed管理器重新優化並重啟系統桌面.\n\n4.最終呈現效果會因您設備的SoC平台、性能水平、系統版本、桌面版本等而異,請以實際表現為準!</string>
+  <string name="MainActivity1">提示:\n請先在LSPosed管理器中激活本模塊, 並重啟一次系統桌面.\n模塊的設置界面在MIUI系統桌面的設置中!\n具體位置: 設置 - 桌面 - 原\"默認桌面\"處.</string>
+  <string name="MainActivity2">故障排除:\n1.本模塊現只支持LSPosed, 且最低需5606版本, 不支持也暫不打算支持其他任何Xposed框架.\n\n2.如遇激活問題, 請嘗試以下操作: 重新優化系統桌面 - 關閉本模塊 - 啟用本模塊 - 強行停止系統桌面.\n\n3.遇到部分選項無效時, 請先檢查您當前設備安裝的桌面版本是否為最新ALPHA版本. 如果確認無誤, 請嘗試到LSPosed管理器重新優化並重啟系統桌面.\n\n4.最終呈現效果會因您設備的SoC平台、性能水平、系統版本、桌面版本等而異, 請以實際表現為準!</string>
   <string name="OpenMiuiHomeSettings">打開MIUI桌面設置</string>
   <string name="HideAppIcon">隱藏桌面圖標</string>
   <string name="ShowAppIcon">顯示桌面圖標</string>

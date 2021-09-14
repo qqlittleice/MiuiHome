@@ -55,7 +55,7 @@ class SettingUserInput(
                     })
                 addView(
                     SettingTextView.FastBuilder(
-                        mText = myRes.getString(R.string.Defeat) + " : $defval"
+                        mText = myRes.getString(R.string.Defaults) + " : $defval"
                     )
                         .build()
                 )
