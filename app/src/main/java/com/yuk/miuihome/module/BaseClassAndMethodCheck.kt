@@ -23,6 +23,9 @@ interface BaseClassAndMethodCheck {
 
     fun checkClassAndMethodExist(): Boolean {
         val list = classAndMethodList()
+        if (list.size%2 != 0) {
+            throw RuntimeException("checkClassAndMethodExist() -> ClassAndMethodList.size should be an even number")
+        }
         try {
             for (i in 0 until list.size step 2) {
                 val cls = XposedHelpers.findClass(list[i], HomeContext.classLoader)
