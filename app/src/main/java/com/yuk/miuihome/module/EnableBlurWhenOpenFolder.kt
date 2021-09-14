@@ -11,7 +11,7 @@ class EnableBlurWhenOpenFolder: BaseClassAndMethodCheck {
 
     fun init() {
         runWithChecked {
-            checked = it
+            checked = true
             if (OwnSP.ownSP.getBoolean("simpleAnimation", false) and OwnSP.ownSP.getBoolean(
                     "testUser",
                     false

@@ -39,6 +39,4 @@ interface BaseClassAndMethodCheck {
     }
 }
 
-inline fun BaseClassAndMethodCheck.runWithChecked(crossinline code:(Boolean) -> Unit) {
-    checkClassAndMethodExist().let { if (it) code(it) else null }
-}
+inline fun BaseClassAndMethodCheck.runWithChecked(crossinline code:() -> Unit) = if (checkClassAndMethodExist()) code() else null
