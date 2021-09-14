@@ -42,7 +42,7 @@
   <string name="ManualInput">User input</string>
   <string name="TaskViewBlurSetTo">Task view blur is set to</string>
   <string name="Welcome">Welcome</string>
-  <string name="Tips">It is detected that you are using this module for the first time, the module will set the default value, and then restart the desktop.\nIf you need further settings,please wait for the System launcher to restart and open the home screen settings again.</string>
+  <string name="Tips">It is detected that you are using this module for the first time, the module will set the default value, and then restart the desktop.\nIf you need further settings, please wait for the System launcher to restart and open the home screen settings again.</string>
   <string name="Reboot">Apply</string>
   <string name="Reboot2">The launcher will restart in 2s</string>
   <string name="Yes">Yes</string>
@@ -55,7 +55,7 @@
   <string name="SetSuccessfully">Set successfully</string>
   <string name="OutOfInput">Please enter a value within the allowable range!</string>
   <string name="MainActivity1">Please activate this module in the LSPosed Manager and restart the MIUI Launcher once.\nThe module settings are in the settings of the Home screen!\nSpecific location: Settings - Home screen - Where the \"Default launcher\" used to be.</string>
-  <string name="MainActivity2">Notices:\n1.This module currently only support LSPosed 5606 or above, it does not going to support any other Xposed frameworks at present.\n\n2.When some options are invalid, please check whether the launcher version installed on your current device is the latest ALPHA version. If you confirm that it is correct, please try to re-optimize in the LSPosed manager And restart the System launcher.</string>
+  <string name="MainActivity2">Notices:\n1.This module currently only support LSPosed 5606 or above, it does not going to support any other Xposed frameworks at present.\n\n2.If you have problem with module activate, follow the opinions below: re-optimize System Launcher - disable this module - enable this module - force stop System Launcher.\n\n3.When some options are invalid, please check whether the System Launcher you installed is the latest ALPHA version. If so, please try to re-optimize System Launcher in LSPosed and restart it.\n\n4.The final effect depends on your SoC, MIUI version, launcher version and so on. Please refer to the actual performance.</string>
   <string name="OpenMiuiHomeSettings">Open \"Home Screen\" Settings</string>
   <string name="HideAppIcon">Hide app icon</string>
   <string name="ShowAppIcon">Show app icon</string>
