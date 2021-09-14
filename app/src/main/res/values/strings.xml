@@ -54,13 +54,13 @@
   <string name="Cancel">Cancel</string>
   <string name="SetSuccessfully">Set successfully</string>
   <string name="OutOfInput">Please enter a value within the allowable range!</string>
-  <string name="MainActivity1">Notice:\nPlease activate this module in the LSPosed Manager and restart the MIUI Lachuner once.\nThe module settings is in the settings of the Home screen!\nSpecific location: Settings-Home screen-Original\"Default launcher\".</string>
-  <string name="MainActivity2">Troubleshooting:\n1.This module currently only supports LSPosed, and at least version 5606 is required. It does not support and does not plan to support any other Xposed frameworks.\n\n2.When some options are invalid, please check whether the launcher version installed on your current device is the latest ALPHA version. If you confirm that it is correct, please try to re-optimize in the LSPosed manager And restart the System launcher.</string>
+  <string name="MainActivity1">Please activate this module in the LSPosed Manager and restart the MIUI Launcher once.\nThe module settings are in the settings of the Home screen!\nSpecific location: Settings - Home screen - Where the \"Default launcher\" used to be.</string>
+  <string name="MainActivity2">Notices:\n1.This module currently only supports LSPosed, and at least version 5606 is required. It does not support and does not plan to support any other Xposed frameworks.\n\n2.When some options are invalid, please check whether the launcher version installed on your current device is the latest ALPHA version. If you confirm that it is correct, please try to re-optimize in the LSPosed manager And restart the System launcher.</string>
   <string name="OpenMiuiHomeSettings">Open \"Home Screen\" Settings</string>
   <string name="HideAppIcon">Hide app icon</string>
   <string name="ShowAppIcon">Show app icon</string>
   <string name="Back">Back</string>
-  <string name="Description">Hook for MIUI Launcher.\nThe module settings is in the settings of the Home screen!</string>
+  <string name="Description">Hook for MIUI Launcher.\nThe module settings are in the settings of the Home screen!</string>
   <string name="State">State</string>
   <string name="ModuleEnable">Module enabled</string>
   <string name="ModuleNotEnable">Module not enabled</string>
