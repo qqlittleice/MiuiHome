@@ -59,6 +59,7 @@ class SettingSwitch(context: Context) : Switch(context) {
         private val mToastText: String? = null,
         private val mDefaultState: Boolean? = null,
         private val mKey: String,
+        private val show: Boolean = true,
         private val mOnClickListener: ((View) -> Unit)? = null
     ) {
         fun build() = SettingSwitch(mContext).apply {
@@ -67,6 +68,7 @@ class SettingSwitch(context: Context) : Switch(context) {
             mDefaultState?.let { defaultState = it }
             key = mKey
             mOnClickListener?.let { setOnClickListener(it) }
+            if (!show) visibility = View.GONE
         }
     }
 }
