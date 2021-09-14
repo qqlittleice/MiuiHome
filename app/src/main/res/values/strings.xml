@@ -4,7 +4,7 @@
   <string name="Warn">Please refer to the attached APP for module precautions and troubleshooting.</string>
   <string name="BaseFeature">Basic Settings</string>
   <string name="SmoothAnimation">Smooth animation</string>
-  <string name="TaskViewBlurLevel">Level of task manager blur</string>
+  <string name="TaskViewBlurLevel">Blur level of task view</string>
   <string name="AnimationLevel">Speed of gesture animation</string>
   <string name="AdvancedFeature">Advanced Settings</string>
   <string name="HideStatusBar">Hide status bar in task manager</string>
