@@ -14,8 +14,8 @@ class ModifyUnlockGrids {
             ResourcesHook.hookMap["config_cell_count_y"] = ResourcesHookData("integer", 4)
             ResourcesHook.hookMap["config_cell_count_x_min"] = ResourcesHookData("integer", 3)
             ResourcesHook.hookMap["config_cell_count_y_min"] = ResourcesHookData("integer", 4)
-            ResourcesHook.hookMap["config_cell_count_x_max"] = ResourcesHookData("integer", 9)
-            ResourcesHook.hookMap["config_cell_count_y_max"] = ResourcesHookData("integer", 9)
+            ResourcesHook.hookMap["config_cell_count_x_max"] = ResourcesHookData("integer", 10)
+            ResourcesHook.hookMap["config_cell_count_y_max"] = ResourcesHookData("integer", 10)
 
             "com.miui.home.launcher.compat.LauncherCellCountCompatDevice".setReturnConstant(
                 "shouldUseDeviceValue",
