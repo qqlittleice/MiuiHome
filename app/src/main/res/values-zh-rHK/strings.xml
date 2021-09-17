@@ -36,7 +36,7 @@
   <string name="ModuleSettingsResHook">模塊設置(資源鉤子√)</string>
   <string name="Multiple">輸入的值將被除以</string>
   <string name="NoneBlur">無模糊</string>
-  <string name="OpenMiuiHomeSettings">打開MIUI桌面設置</string>
+  <string name="OpenMiuiHomeSettings">打開桌面設置</string>
   <string name="OtherFeature">其他功能</string>
   <string name="OutOfInput">請輸入允許範圍內的值！</string>
   <string name="RealTaskViewHorizontal">真·橫屏最近任務</string>
