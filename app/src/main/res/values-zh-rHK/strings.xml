@@ -14,7 +14,7 @@
   <string name="CloseFolder">打開應用時關閉文件夾</string>
   <string name="CompleteBlur">完整模糊</string>
   <string name="Defaults">官方默認值</string>
-  <string name="Description">Hook for MIUI Launcher\n模塊設置在系統桌面的設置裡!</string>
+  <string name="Description">Hook for MIUI Launcher\n模塊設置在系統桌面的設置裡！</string>
   <string name="Folder">文件夾相關</string>
   <string name="HideAppIcon">隱藏桌面圖標</string>
   <string name="HideAppTitles">隱藏桌面應用名稱</string>
@@ -63,7 +63,7 @@
   <string name="UnlockGrids">解鎖桌面佈局限制</string>
   <string name="VerticalTaskViewOfAppCardSize">縱向應用卡片大小</string>
   <string name="WallpaperDarken">取消後台壁紙壓暗效果</string>
-  <string name="Warn">模塊注意事項請查閱附帶APP</string>
+  <string name="Warn">模塊注意事項請查閱附帶APP。</string>
   <string name="Welcome">歡迎！</string>
   <string name="Widget">小部件相關</string>
   <string name="WidgetToMinus">允許將安卓小部件移到負一屏</string>
