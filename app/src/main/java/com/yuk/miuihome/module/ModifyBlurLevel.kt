@@ -40,6 +40,23 @@ class ModifyBlurLevel {
                     }
                 }
             }
+
+            "com.miui.home.launcher.common.DeviceLevelUtils".hookBeforeMethod("isLowLevelOrLiteDevice") {
+                when (OwnSP.ownSP.getString("blurLevel", "")) {
+                    "TEST" -> {
+                        it.result = false
+                    }
+                    "COMPLETE" -> {
+                        it.result = false
+                    }
+                    "SIMPLE" -> {
+                        it.result = true
+                    }
+                    "NONE" -> {
+                        it.result = true
+                    }
+                }
+            }
         }
     }
 }
