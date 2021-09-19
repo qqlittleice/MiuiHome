@@ -19,7 +19,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: bash ./gradlew -PappVerCode=${{ env.VERSIONCODE }} assembleRelease
+        run: bash ./gradlew -PappVerName=${{ env.VERSION }} assembleRelease
 
       - name: Sign Android release
         if: success()
