@@ -186,14 +186,12 @@ class MainHook {
                         mKey = "showDockIconTitles"
                     ).build()
                 )
-                if (HomeContext.isAlpha) {
                     addView(
                         SettingSwitch.FastBuilder(
                             mText = myRes.getString(R.string.HideStatusBar),
                             mKey = "hideStatusBar"
                         ).build()
                     )
-                }
                 addView(
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.MamlDownload),
