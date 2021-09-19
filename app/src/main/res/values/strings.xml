@@ -24,7 +24,7 @@
   <string name="HideTaskViewCleanUpIcon">Hide the cleanup icon in the task view</string>
   <string name="HideTaskViewSmallWindowIcon">Hide the \"Small window\" button in the task view</string>
   <string name="HideWidgetTitles">Hide widget headers</string>
-  <string name="HorizontalTaskViewOfAppCardSize">Thumbnail size for horizontally task view</string>
+  <string name="HorizontalTaskViewOfAppCardSize">Thumbnail size for horizontal task view</string>
   <string name="InfiniteScroll">Launcher infinite scroll</string>
   <string name="MainActivity1">Please activate this module in the LSPosed Manager and restart the MIUI launcher once.\n\nThe module settings are in the settings of the \"Home screen\"!\n\nSpecific location: Settings - Home screen - Where the \"Default launcher\" used to be.</string>
   <string name="MainActivity2">Diagnostics:\n1.This module currently only support LSPosed 5606 or above, it does not going to support any other Xposed frameworks at present.\n\n2.If you have problem with module activate, follow the opinions below: re-optimize MIUI launcher - disable this module - enable this module - force stop MIUI launcher.\n\n3.When some options are invalid, please check whether the MIUI launcher you installed is the latest ALPHA version. If so, please try to re-optimize MIUI launcher in LSPosed Manager and restart it.\n\n4.The final effect depends on your SoC, MIUI version, launcher version and so on. Please refer to the actual performance.</string>
@@ -62,7 +62,7 @@
   <string name="TestFeature">Experimental Feature</string>
   <string name="Tips">It is detected that you are using this module for the first time, the module will set the default value, and then restart MIUI launcher.\nIf you need further settings, please wait for the MIUI launcher to restart and open the \"Home screen\" settings again.</string>
   <string name="UnlockGrids">Unlock grid restrictions</string>
-  <string name="VerticalTaskViewOfAppCardSize">Thumbnail size of the vertically task view</string>
+  <string name="VerticalTaskViewOfAppCardSize">Thumbnail size for vertical task view</string>
   <string name="WallpaperDarken">Turn off the task view wallpaper darkening feature</string>
   <string name="Warn">Please refer to the attached APP for module precautions.</string>
   <string name="Welcome">Welcome!</string>

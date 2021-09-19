@@ -11,9 +11,9 @@
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 400,
-      "versionName": "4.0.0",
-      "outputFile": "MiuiHome_4.0.0.apk"
+      "versionCode": 401,
+      "versionName": "4.0.1",
+      "outputFile": "MiuiHome_4.0.1.apk"
     }
   ],
   "elementType": "File"

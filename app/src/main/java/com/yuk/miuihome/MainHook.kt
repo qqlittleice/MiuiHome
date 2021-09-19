@@ -326,14 +326,12 @@ class MainHook {
                             mKey = "isEnableIconShadow"
                         ).build()
                     )
-                    if (HomeContext.isAlpha) {
-                        addView(
+                    addView(
                             SettingSwitch.FastBuilder(
                                 mText = myRes.getString(R.string.RealTaskViewHorizontal),
                                 mKey = "horizontal"
                             ).build()
                         )
-                    }
                     addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.VerticalTaskViewOfAppCardSize)) { showModifyVertical() }
                         .build())
                     addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.HorizontalTaskViewOfAppCardSize)) { showModifyHorizontal() }
