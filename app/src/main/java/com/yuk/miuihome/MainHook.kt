@@ -104,6 +104,8 @@ class MainHook {
         ModifyShowDockIconTitles().init()
         //显示底栏应用阴影
         EnableDockIconShadow().init()
+        //允许所有应用使用小窗口
+        AllowAllAppsToUseSmallWindow().init()
 
         ResourcesHook().init()
     }
@@ -186,12 +188,12 @@ class MainHook {
                         mKey = "showDockIconTitles"
                     ).build()
                 )
-                    addView(
-                        SettingSwitch.FastBuilder(
-                            mText = myRes.getString(R.string.HideStatusBar),
-                            mKey = "hideStatusBar"
-                        ).build()
-                    )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.HideStatusBar),
+                        mKey = "hideStatusBar"
+                    ).build()
+                )
                 addView(
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.MamlDownload),
@@ -325,11 +327,11 @@ class MainHook {
                         ).build()
                     )
                     addView(
-                            SettingSwitch.FastBuilder(
-                                mText = myRes.getString(R.string.RealTaskViewHorizontal),
-                                mKey = "horizontal"
-                            ).build()
-                        )
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.RealTaskViewHorizontal),
+                            mKey = "horizontal"
+                        ).build()
+                    )
                     addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.VerticalTaskViewOfAppCardSize)) { showModifyVertical() }
                         .build())
                     addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.HorizontalTaskViewOfAppCardSize)) { showModifyHorizontal() }
@@ -352,6 +354,12 @@ class MainHook {
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.SearchBarBlur),
                         mKey = "searchBarBlur"
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.SmallWindow),
+                        mKey = "supportSmallWindow"
                     ).build()
                 )
                 addView(

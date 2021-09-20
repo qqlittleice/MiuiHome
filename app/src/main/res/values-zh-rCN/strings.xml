@@ -70,4 +70,5 @@
   <string name="Yes">确定</string>
   <string name="EnableIconShadow">显示应用阴影和倒影</string>
   <string name="res_hooked">资源注入成功！</string>
+  <string name="SmallWindow">允许所有应用使用小窗口</string>
 </resources>
