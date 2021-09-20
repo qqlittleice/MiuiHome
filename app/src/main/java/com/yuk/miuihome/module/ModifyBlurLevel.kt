@@ -49,12 +49,6 @@ class ModifyBlurLevel {
                     "COMPLETE" -> {
                         it.result = false
                     }
-                    "SIMPLE" -> {
-                        it.result = true
-                    }
-                    "NONE" -> {
-                        it.result = true
-                    }
                 }
             }
         }
