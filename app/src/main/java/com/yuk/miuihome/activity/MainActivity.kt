@@ -1,6 +1,7 @@
 package com.yuk.miuihome.activity
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.*
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -9,12 +10,11 @@ import androidx.annotation.Keep
 import com.yuk.miuihome.Config.myself
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.dp2px
-import miui.app.Activity
 
 class MainActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(miui.R.style.Theme_DayNight)
+//        setTheme(miui.R.style.Theme_DayNight)
         super.onCreate(savedInstanceState)
         setContentView(getMainLayout())
     }
