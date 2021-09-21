@@ -71,4 +71,5 @@
   <string name="EnableIconShadow">Показывать тени и отражение иконок</string>
   <string name="res_hooked">Перехват ресурсов прошел успешно!</string>
   <string name="SmallWindow">Разрешить всем приложениям использовать маленькие окна</string>
+  <string name="LowEndDeviceUseMIUIWidgets">Разрешить слабым машинам добавлять виджеты MIUI</string>
 </resources>
