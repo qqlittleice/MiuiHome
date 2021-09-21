@@ -106,7 +106,8 @@ class MainHook {
         EnableDockIconShadow().init()
         //允许所有应用使用小窗口
         AllowAllAppsToUseSmallWindow().init()
-
+        //允许低端机使用MIUI小组件
+        EnableLowEndDeviceUseMIUIWidgets().init()
         ResourcesHook().init()
     }
 
@@ -322,20 +323,33 @@ class MainHook {
                     )
                     addView(
                         SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.RealTaskViewHorizontal),
+                            mKey = "horizontal"
+                        ).build()
+                    )
+                    addView(
+                        SettingSwitch.FastBuilder(
                             mText = myRes.getString(R.string.EnableIconShadow),
                             mKey = "isEnableIconShadow"
                         ).build()
                     )
                     addView(
                         SettingSwitch.FastBuilder(
-                            mText = myRes.getString(R.string.RealTaskViewHorizontal),
-                            mKey = "horizontal"
+                            mText = myRes.getString(R.string.SmallWindow),
+                            mKey = "supportSmallWindow"
+                        ).build()
+                    )
+                    addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.LowEndDeviceUseMIUIWidgets),
+                            mKey = "useMIUIWidgets"
                         ).build()
                     )
                     addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.VerticalTaskViewOfAppCardSize)) { showModifyVertical() }
                         .build())
                     addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.HorizontalTaskViewOfAppCardSize)) { showModifyHorizontal() }
                         .build())
+
                 }
                 addView(
                     SettingTextView.FastBuilder(
@@ -354,12 +368,6 @@ class MainHook {
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.SearchBarBlur),
                         mKey = "searchBarBlur"
-                    ).build()
-                )
-                addView(
-                    SettingSwitch.FastBuilder(
-                        mText = myRes.getString(R.string.SmallWindow),
-                        mKey = "supportSmallWindow"
                     ).build()
                 )
                 addView(

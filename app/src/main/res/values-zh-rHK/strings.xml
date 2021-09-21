@@ -71,4 +71,5 @@
   <string name="EnableIconShadow">顯示應用陰影和倒影</string>
   <string name="res_hooked">資源注入成功！</string>
   <string name="SmallWindow">允許所有應用使用小窗口</string>
+  <string name="LowEndDeviceUseMIUIWidgets">允許低端機添加MIUI小組件</string>
 </resources>
