@@ -11,15 +11,6 @@ class SetDeviceLevel {
                 "getDeviceLevel",
                 result = 2
             )
-            "com.miui.home.launcher.common.DeviceLevelUtils".setReturnConstant(
-                "getQualcommCpuLevel",
-                String::class.java,
-                result = 2
-            )
-            "com.mi.mibridge.DeviceLevel".setReturnConstant(
-                "getDeviceLevel",
-                result = 2
-            )
             "com.miui.home.launcher.common.CpuLevelUtils".setReturnConstant(
                 "getQualcommCpuLevel",
                 String::class.java,
