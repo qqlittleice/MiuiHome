@@ -72,4 +72,5 @@
   <string name="res_hooked">資源注入成功！</string>
   <string name="SmallWindow">允許所有應用使用小窗口</string>
   <string name="LowEndDeviceUseMIUIWidgets">允許低端機添加MIUI小組件</string>
+  <string name="RecommendServer">禁用今日推薦</string>
 </resources>

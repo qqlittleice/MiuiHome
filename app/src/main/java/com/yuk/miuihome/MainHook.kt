@@ -108,6 +108,9 @@ class MainHook {
         AllowAllAppsToUseSmallWindow().init()
         //允许低端机使用MIUI小组件
         EnableLowEndDeviceUseMIUIWidgets().init()
+        //禁用文件夹编辑内的今日推荐
+        DisableRecommendServer().init()
+
         ResourcesHook().init()
     }
 
@@ -319,6 +322,12 @@ class MainHook {
                         SettingSwitch.FastBuilder(
                             mText = myRes.getString(R.string.InfiniteScroll),
                             mKey = "infiniteScroll"
+                        ).build()
+                    )
+                    addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.RecommendServer),
+                            mKey = "recommendServer"
                         ).build()
                     )
                     addView(

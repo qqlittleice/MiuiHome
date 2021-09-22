@@ -11,10 +11,6 @@ class EnableLowEndDeviceUseMIUIWidgets {
                 "isMIUIWidgetSupport",
                 result = true
             )
-            "com.miui.home.launcher.DeviceConfig".setReturnConstant(
-                "isRecommendServerEnable",
-                result = false
-            )
         }
     }
 }
