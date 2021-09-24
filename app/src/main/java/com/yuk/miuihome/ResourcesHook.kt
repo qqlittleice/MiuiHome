@@ -9,36 +9,6 @@ import de.robv.android.xposed.XposedBridge
 
 class ResourcesHook {
 
-    enum class Type {
-        Int, Float
-    }
-
-    private fun convert(value: Any?, targetType: Type): Any? {
-        when (value) {
-            is Int -> {
-                return when (targetType) {
-                    Type.Int -> {
-                        value
-                    }
-                    Type.Float -> {
-                        value.toFloat()
-                    }
-                }
-            }
-            is Float -> {
-                return when (targetType) {
-                    Type.Float -> {
-                        value
-                    }
-                    Type.Int -> {
-                        value.toInt()
-                    }
-                }
-            }
-        }
-        return value
-    }
-
     private fun hook(param: XC_MethodHook.MethodHookParam) {
         try {
             val res = HomeContext.context.resources
@@ -46,10 +16,7 @@ class ResourcesHook {
             val resType = res.getResourceTypeName(param.args[0] as Int)
             if (hookMap.isKeyExist(resName)) {
                 if (hookMap[resName]?.type == resType) {
-                    when(param.result) {
-                        is Int -> { param.result = convert(hookMap[resName]?.afterValue, Type.Int) }
-                        is Float -> { param.result = convert(hookMap[resName]?.afterValue, Type.Float) }
-                    }
+                    param.result = hookMap[resName]?.afterValue
                     XposedBridge.log("$resName hooked! after value = ${hookMap[resName]?.afterValue}")
                 }
                 XposedBridge.log("$resName = $resType")
