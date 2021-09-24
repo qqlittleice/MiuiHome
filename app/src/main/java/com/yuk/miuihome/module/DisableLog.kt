@@ -6,6 +6,12 @@ class DisableLog {
 
     fun init() {
         "com.miui.home.launcher.MiuiHomeLog".setReturnConstant(
+            "setDebugLogState",
+            Boolean::class.java,
+            result = false
+        )
+
+        "com.miui.home.launcher.MiuiHomeLog".setReturnConstant(
             "log",
             String::class.java,
             String::class.java,
