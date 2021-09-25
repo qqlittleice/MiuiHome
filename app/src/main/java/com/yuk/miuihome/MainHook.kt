@@ -4,9 +4,7 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.ScrollView
-import android.widget.TextView
+import android.widget.*
 import androidx.annotation.Keep
 import com.yuk.miuihome.module.*
 import com.yuk.miuihome.utils.LogUtil
@@ -110,7 +108,7 @@ class MainHook {
         EnableLowEndDeviceUseMIUIWidgets().init()
         //禁用文件夹编辑内的今日推荐
         DisableRecommendServer().init()
-
+//        CustomHook.init()
         ResourcesHook().init()
     }
 
@@ -395,6 +393,9 @@ class MainHook {
                         showSettingDialog()
                     }.build()
                 )
+//                if (BuildConfig.DEBUG) {
+//                    addView(SettingTextView.FastBuilder(mText = "自定义Hook") { customHookDialog() }.build())
+//                }
                 addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.CleanModuleSettings)) {
                     editor.clear(); editor.commit(); exitProcess(
                     0
@@ -406,6 +407,67 @@ class MainHook {
         dialogBuilder.setNeutralButton(myRes.getString(R.string.Reboot)) { _, _ -> exitProcess(0) }
         dialogBuilder.setCancelable(false)
         dialog = dialogBuilder.show()
+    }
+
+    private fun customHookDialog() {
+        val argsEditText = arrayListOf<EditText>()
+        val argsLinearLayout = LinearLayout(HomeContext.activity).also {
+            it.orientation = LinearLayout.VERTICAL
+        }
+        fun createArgsEditText(): View {
+            val linearView = LinearLayout(HomeContext.activity).also { layout ->
+                lateinit var editText: EditText
+                layout.orientation = LinearLayout.HORIZONTAL
+                layout.addView(EditText(HomeContext.activity).apply {
+                    argsEditText.add(this)
+                    layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
+                    editText = this
+                })
+                layout.addView(Button(HomeContext.activity).apply {
+                    setText("X")
+                    setOnClickListener {
+                        argsEditText.remove(editText)
+                        argsLinearLayout.removeView(layout)
+                    }
+                    layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 5f)
+                })
+            }
+            return linearView
+        }
+        val dialogBuilder = SettingBaseDialog().get()
+        dialogBuilder.apply {
+            setTitle("自定义Hook")
+            setView(ScrollView(HomeContext.activity).apply {
+                overScrollMode = 2
+                addView(LinearLayout(HomeContext.activity).apply {
+                    orientation = LinearLayout.VERTICAL
+                    setPadding(
+                        dp2px(HomeContext.context, 10f),
+                        dp2px(HomeContext.context, 5f),
+                        dp2px(HomeContext.context, 10f),
+                        dp2px(HomeContext.context, 5f)
+                    )
+                    addView(SettingTextView.FastBuilder(mText = "Class:").build())
+                    val classEditText = EditText(HomeContext.activity)
+                    addView(classEditText)
+                    addView(SettingTextView.FastBuilder(mText = "Method name:").build())
+                    val methodEditText = EditText(HomeContext.activity)
+                    addView(methodEditText)
+                    addView(SettingTextView.FastBuilder(mText = "arg(s):").build())
+                    addView(argsLinearLayout)
+                    addView(Button(HomeContext.activity).apply {
+                        setText("Add arg")
+                        setOnClickListener { argsLinearLayout.addView(createArgsEditText()) }
+                    })
+                    addView(SettingTextView.FastBuilder(mText = "result(null直接不输入即可):").build())
+                    val resultEditText = EditText(HomeContext.activity)
+                    addView(resultEditText)
+                    addView(SettingTextView.FastBuilder(mText = "result type(null直接不输入即可):").build())
+                    val resultTypeEditText = EditText(HomeContext.activity)
+                    addView(resultTypeEditText)
+                })
+            })
+        }.show()
     }
 
     private fun showModifyRoundCorner() {
