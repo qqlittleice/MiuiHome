@@ -1,4 +1,4 @@
-package com.yuk.miuihome.view
+package io.lamprose.midock.ui
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -7,10 +7,7 @@ import android.widget.LinearLayout
 import android.widget.SeekBar
 import android.widget.TextView
 import com.github.kyuubiran.ezxhelper.init.InitFields
-import com.yuk.miuihome.utils.dip2px
-import com.yuk.miuihome.utils.dp2px
-import com.yuk.miuihome.utils.sp2px
-
+import io.lamprose.midock.Utils
 
 @SuppressLint("ViewConstructor")
 class SettingSeekBar(context: Context, minValue: Int = 0, maxValue: Int = 100) :
@@ -33,13 +30,13 @@ class SettingSeekBar(context: Context, minValue: Int = 0, maxValue: Int = 100) :
 
     init {
         orientation = VERTICAL
-        setPadding(dip2px(5), dip2px(5), dip2px(5), dip2px(5))
+        setPadding(Utils.dip2px(5), Utils.dip2px(5), Utils.dip2px(5), Utils.dip2px(5))
         textView = TextView(context)
         valueView = TextView(context).apply {
             text = (maxValue / 2).toString()
             textAlignment = TextView.TEXT_ALIGNMENT_CENTER
         }
-        textView.textSize = sp2px(5f)
+        textView.textSize = Utils.sp2px(5f)
         seekBar = SeekBar(context).apply {
             min = minValue
             max = maxValue
@@ -58,7 +55,7 @@ class SettingSeekBar(context: Context, minValue: Int = 0, maxValue: Int = 100) :
             })
         }
         addView(textView.apply {
-            setPadding(0, 0, 0, dip2px(5))
+            setPadding(0, 0, 0, Utils.dip2px(5))
         })
         addView(seekBar)
         addView(LinearLayout(context).apply {

@@ -1,39 +1,19 @@
 package com.yuk.miuihome
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
-import android.content.Context
-import android.content.DialogInterface
-import android.content.res.XResources
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.GradientDrawable
-import android.graphics.drawable.RippleDrawable
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.annotation.Keep
-import com.github.kyuubiran.ezxhelper.utils.*
-import com.yuk.miuihome.HomeContext.DOCK_BOTTOM
-import com.yuk.miuihome.HomeContext.DOCK_HEIGHT
-import com.yuk.miuihome.HomeContext.DOCK_ICON_BOTTOM
-import com.yuk.miuihome.HomeContext.DOCK_RADIUS
-import com.yuk.miuihome.HomeContext.DOCK_SIDE
-import com.yuk.miuihome.HomeContext.isAlpha
-import com.yuk.miuihome.HomeContext.versionCode
 import com.yuk.miuihome.module.*
-import com.yuk.miuihome.utils.*
+import com.yuk.miuihome.utils.LogUtil
+import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.dp2px
 import com.yuk.miuihome.utils.ktx.getObjectField
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import com.yuk.miuihome.utils.ktx.setObjectField
 import com.yuk.miuihome.view.*
-import com.yuk.miuihome.view.SettingSeekBar
-import com.yuk.miuihome.view.SettingText
-import de.robv.android.xposed.XC_MethodHook
-import de.robv.android.xposed.XC_MethodReplacement
-import de.robv.android.xposed.XposedBridge
-import de.robv.android.xposed.XposedHelpers
-import de.robv.android.xposed.callbacks.XC_LoadPackage
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
@@ -245,7 +225,7 @@ class MainHook {
                         mSize = SettingTextView.text2Size
                     ).build()
                 )
-                if (isAlpha) {
+                if (HomeContext.isAlpha) {
                     if (!OwnSP.ownSP.getBoolean(
                             "simpleAnimation",
                             false
@@ -434,18 +414,13 @@ class MainHook {
         val argsLinearLayout = LinearLayout(HomeContext.activity).also {
             it.orientation = LinearLayout.VERTICAL
         }
-
         fun createArgsEditText(): View {
             val linearView = LinearLayout(HomeContext.activity).also { layout ->
                 lateinit var editText: EditText
                 layout.orientation = LinearLayout.HORIZONTAL
                 layout.addView(EditText(HomeContext.activity).apply {
                     argsEditText.add(this)
-                    layoutParams = LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT,
-                        1f
-                    )
+                    layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
                     editText = this
                 })
                 layout.addView(Button(HomeContext.activity).apply {
@@ -454,16 +429,11 @@ class MainHook {
                         argsEditText.remove(editText)
                         argsLinearLayout.removeView(layout)
                     }
-                    layoutParams = LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT,
-                        5f
-                    )
+                    layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 5f)
                 })
             }
             return linearView
         }
-
         val dialogBuilder = SettingBaseDialog().get()
         dialogBuilder.apply {
             setTitle("自定义Hook")
@@ -492,265 +462,13 @@ class MainHook {
                     addView(SettingTextView.FastBuilder(mText = "result(null直接不输入即可):").build())
                     val resultEditText = EditText(HomeContext.activity)
                     addView(resultEditText)
-                    addView(
-                        SettingTextView.FastBuilder(mText = "result type(null直接不输入即可):").build()
-                    )
+                    addView(SettingTextView.FastBuilder(mText = "result type(null直接不输入即可):").build())
                     val resultTypeEditText = EditText(HomeContext.activity)
                     addView(resultTypeEditText)
                 })
             })
         }.show()
     }
-
-
-    fun showDockDialog() {
-        findMethodByCondition("com.miui.home.settings.MiuiHomeSettings") { m ->
-            m.name == "onCreatePreferences" && m.parameterTypes[0] == Bundle::class.java && m.parameterTypes[1] == String::class.java
-        }.hookAfter {
-            it.thisObject.getObjectOrNull("mSearchBarSetting")!!.invokeMethod(
-                "setTitle",
-                arrayOf("Dock设置"),
-                arrayOf(CharSequence::class.java)
-            )
-        }
-        findMethodByCondition("com.miui.home.settings.MiuiHomeSettings") { m ->
-            m.name == "showHomeSearchBarDialog" && m.parameters.isEmpty()
-        }.hookBefore {
-            Log.d("hook start")
-            val context = it.thisObject.invokeMethod("getContext") as Context
-            getVersionName()?.let { ver -> Log.d(ver) }
-            Log.d(isAlpha.toString())
-            val dialogBuilderClzStr =
-                if (isAlpha || versionCode >= 421153106L) "miuix.appcompat.app.AlertDialog${'$'}Builder" else "miui.app.AlertDialog${'$'}Builder"
-            val dialogBuilder = loadClass(dialogBuilderClzStr)
-                .getConstructor(Context::class.java)
-                .newInstance(context)
-            dialogBuilder.apply {
-                val radiusSeek =
-                    SettingSeekBar.Builder(context, "Dock圆角", getData("DOCK_RADIUS", 20))
-                        .build()
-                val heightSeek =
-                    SettingSeekBar.Builder(
-                        context,
-                        "Dock高度",
-                        getData("DOCK_HEIGHT", 84),
-                        50, 200
-                    ).build()
-                val sideSeek =
-                    SettingSeekBar.Builder(
-                        context,
-                        "Dock距离屏幕两侧",
-                        getData("DOCK_SIDE", 30),
-                        maxVal = 200
-                    ).build()
-                val bottomSeek =
-                    SettingSeekBar.Builder(
-                        context,
-                        "Dock距离屏幕底部",
-                        getData("DOCK_BOTTOM", 23),
-                        maxVal = 200
-                    ).build()
-                val iconBottomSeek =
-                    SettingSeekBar.Builder(
-                        context,
-                        "图标区域距离屏幕底部",
-                        getData("DOCK_ICON_BOTTOM", 35),
-                        maxVal = 200
-                    ).build()
-                var confirmDelete = false
-                invokeMethod("setTitle", arrayOf("Dock设置"), arrayOf(CharSequence::class.java))
-                invokeMethod(
-                    "setNegativeButton",
-                    arrayOf("删除", DialogInterface.OnClickListener { _, _ ->
-                        it.thisObject.invokeMethod(
-                            "setHomeScreenSearchBar",
-                            arrayOf(context, false),
-                            arrayOf(Context::class.java, Boolean::class.java)
-                        )
-                        confirmDelete = true
-                    }),
-                    arrayOf(CharSequence::class.java, DialogInterface.OnClickListener::class.java)
-                )
-                invokeMethod(
-                    "setPositiveButton",
-                    arrayOf("保存并重启", DialogInterface.OnClickListener { _, _ ->
-                        getEditor()?.let { editor ->
-                            editor.putInt("DOCK_RADIUS", radiusSeek.value)
-                            editor.putInt("DOCK_HEIGHT", heightSeek.value)
-                            editor.putInt("DOCK_SIDE", sideSeek.value)
-                            editor.putInt("DOCK_BOTTOM", bottomSeek.value)
-                            editor.putInt("DOCK_ICON_BOTTOM", iconBottomSeek.value)
-                            if (editor.commit()) {
-                                exitProcess(0)
-                            }
-                        }
-                    }),
-                    arrayOf(CharSequence::class.java, DialogInterface.OnClickListener::class.java)
-                )
-                invokeMethod(
-                    "setOnDismissListener",
-                    arrayOf(DialogInterface.OnDismissListener { _ ->
-                        if (!confirmDelete) it.thisObject.getObjectOrNull("mSearchBarSetting")!!
-                            .invokeMethod("setChecked", arrayOf(true), arrayOf(Boolean::class.java))
-                    }),
-                    arrayOf(DialogInterface.OnDismissListener::class.java)
-                )
-                val linearLayout = LinearLayout(context).apply {
-                    orientation = LinearLayout.VERTICAL
-                    if (isAlpha || versionCode >= 421153106L)
-                        setPadding(
-                            dip2px(20),
-                            dip2px(20),
-                            dip2px(20),
-                            dip2px(20)
-                        )
-                    addView(radiusSeek)
-                    addView(heightSeek)
-                    addView(sideSeek)
-                    addView(bottomSeek)
-                    addView(iconBottomSeek)
-                    addView(SettingText.Builder(context, "重置", SettingText.titleSize) {
-                        radiusSeek.value = DOCK_RADIUS
-                        heightSeek.value = DOCK_HEIGHT
-                        sideSeek.value = DOCK_SIDE
-                        bottomSeek.value = DOCK_BOTTOM
-                        iconBottomSeek.value = DOCK_ICON_BOTTOM
-                        context.showToast("参数重置完成", Toast.LENGTH_SHORT)
-                    }.build())
-                }
-                invokeMethod("setView", arrayOf(linearLayout), arrayOf(View::class.java))
-            }
-            it.thisObject.putObject("mHomeSearchBarDialog", dialogBuilder.invokeMethod("create"))
-            return@hookBefore
-        }
-    }
-
-    fun launcherHook(lpparam: XC_LoadPackage.LoadPackageParam) {
-        val _LAUNCHER_CLASS = XposedHelpers.findClassIfExists(
-            "com.miui.home.launcher.Launcher",
-            lpparam.classLoader
-        ) ?: return
-        try {
-            XposedHelpers.findAndHookMethod(
-                _LAUNCHER_CLASS,
-                "onCreate",
-                Bundle::class.java,
-                object : XC_MethodHook() {
-                    override fun afterHookedMethod(param: MethodHookParam) {
-                        super.afterHookedMethod(param)
-                        val SearchBarObject = XposedHelpers.callMethod(
-                            param.thisObject,
-                            "getSearchBar"
-                        ) as FrameLayout
-                        val SearchBarDesktop = SearchBarObject.getChildAt(0) as RelativeLayout
-                        val SearchBarDrawer = SearchBarObject.getChildAt(1) as RelativeLayout
-                        val SearchBarContainer = SearchBarObject.parent as FrameLayout
-                        val SearchEdgeLayout = SearchBarContainer.parent as FrameLayout
-                        // 重新给Searbar容器排序
-                        SearchEdgeLayout.removeView(SearchBarContainer)
-                        SearchEdgeLayout.addView(SearchBarContainer, 0)
-                        // 清空搜索图标和小爱同学
-                        SearchBarDesktop.removeAllViews()
-                        // 修改高度
-                        SearchBarObject.layoutParams.height = dip2px(
-                            getData("DOCK_HEIGHT", DOCK_HEIGHT)
-                        )
-
-                        // 修改应用列表搜索框
-                        val mAllAppViewField = _LAUNCHER_CLASS.getDeclaredField("mAppsView")
-                        mAllAppViewField.isAccessible = true
-                        val mAllAppView = mAllAppViewField.get(param.thisObject) as RelativeLayout
-                        val mAllAppSearchView =
-                            mAllAppView.getChildAt(mAllAppView.childCount - 1) as FrameLayout
-                        SearchBarObject.removeView(SearchBarDrawer)
-                        mAllAppSearchView.addView(SearchBarDrawer)
-                        SearchBarDrawer.bringToFront()
-                        val layoutParams = SearchBarDrawer.layoutParams as FrameLayout.LayoutParams
-                        SearchBarDrawer.layoutParams.height = dip2px(
-                            45
-                        )
-                        layoutParams.leftMargin = dip2px(15)
-                        layoutParams.rightMargin = dip2px(15)
-                        SearchBarDrawer.layoutParams = layoutParams
-                    }
-                })
-        } catch (e: Exception) {
-            XposedBridge.log("[MIDock] LauncherHook Error:" + e.message)
-        }
-    }
-
-    fun deviceConfigHook(lpparam: XC_LoadPackage.LoadPackageParam) {
-        val _DEVICE_CONFIG_CLASS = XposedHelpers.findClassIfExists(
-            "com.miui.home.launcher.DeviceConfig",
-            lpparam.classLoader
-        ) ?: return
-        try {
-            // 图标区域顶部边距
-            XposedHelpers.findAndHookMethod(
-                _DEVICE_CONFIG_CLASS,
-                "calcHotSeatsMarginTop",
-                Context::class.java,
-                Boolean::class.java,
-                object : XC_MethodHook() {
-                    override fun beforeHookedMethod(param: MethodHookParam) {
-                        param.args[1] = false
-                        super.beforeHookedMethod(param)
-                    }
-                })
-            // 图标区域底部边距
-            XposedHelpers.findAndHookMethod(
-                _DEVICE_CONFIG_CLASS,
-                "calcHotSeatsMarginBottom",
-                Context::class.java,
-                Boolean::class.java,
-                Boolean::class.java,
-                object : XC_MethodHook() {
-                    override fun beforeHookedMethod(param: MethodHookParam) {
-                        param.result =
-                            dip2px(
-                                getData("DOCK_ICON_BOTTOM", DOCK_ICON_BOTTOM)
-                            )
-                    }
-                })
-            // 搜索框宽度
-            XposedHelpers.findAndHookMethod(
-                _DEVICE_CONFIG_CLASS,
-                "calcSearchBarWidth",
-                Context::class.java,
-                object : XC_MethodHook() {
-                    override fun beforeHookedMethod(param: MethodHookParam) {
-                        val context = param.args[0] as Context
-                        val deviceWidth = px2dip(
-                            context.resources.displayMetrics.widthPixels
-                        )
-                        param.result =
-                            dip2px(
-                                deviceWidth - getData("DOCK_SIDE", DOCK_SIDE)
-                            )
-                    }
-                })
-            // Dock底部边距
-            XposedHelpers.findAndHookMethod(
-                _DEVICE_CONFIG_CLASS,
-                "calcSearchBarMarginBottom",
-                Context::class.java,
-                Boolean::class.java,
-                object : XC_MethodHook() {
-                    override fun beforeHookedMethod(param: MethodHookParam) {
-                        param.result = dip2px(getData("DOCK_BOTTOM", DOCK_BOTTOM))
-                    }
-                })
-            // 宽度变化量
-            XposedHelpers.findAndHookMethod(
-                _DEVICE_CONFIG_CLASS,
-                "getSearchBarWidthDelta",
-                XC_MethodReplacement.returnConstant(0)
-            )
-        } catch (e: Exception) {
-            XposedBridge.log("[MIDock] DeviceConfigHook Error:" + e.message)
-        }
-    }
-
 
     private fun showModifyRoundCorner() {
         SettingUserInput(
