@@ -9,6 +9,7 @@ import android.graphics.drawable.RippleDrawable
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.annotation.Keep
 import com.github.kyuubiran.ezxhelper.init.EzXHelperInit
 import com.github.kyuubiran.ezxhelper.utils.*
 import de.robv.android.xposed.*
@@ -57,6 +58,7 @@ class MainHook : IXposedHookLoadPackage, IXposedHookInitPackageResources {
         )
     }
 
+    @Keep
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
         if (lpparam.packageName != MIUI_HOME_LAUNCHER_PACKAGENAME) {
             return
