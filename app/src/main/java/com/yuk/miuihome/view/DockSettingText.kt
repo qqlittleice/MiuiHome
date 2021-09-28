@@ -1,10 +1,11 @@
-package io.lamprose.midock.ui
+package com.yuk.miuihome.view
 
 import android.content.Context
 import android.view.View
 import android.widget.TextView
 import com.github.kyuubiran.ezxhelper.init.InitFields
-import io.lamprose.midock.Utils
+import com.yuk.miuihome.utils.dip2px
+import com.yuk.miuihome.utils.sp2px
 
 class SettingText(context: Context) : TextView(context) {
     var size: Float
@@ -14,7 +15,7 @@ class SettingText(context: Context) : TextView(context) {
         }
 
     init {
-        setPadding(Utils.dip2px(5), Utils.dip2px(5), Utils.dip2px(5), Utils.dip2px(5))
+        setPadding(dip2px(5), dip2px(5), dip2px(5), dip2px(5))
     }
 
 
@@ -27,6 +28,6 @@ class SettingText(context: Context) : TextView(context) {
     }
 
     companion object {
-        val titleSize = Utils.sp2px(5f)
+        val titleSize = sp2px(5f)
     }
 }

@@ -9,7 +9,7 @@ import android.widget.TextView
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.utils.dp2px
 import com.yuk.miuihome.utils.isNightMode
-import com.yuk.miuihome.utils.sp2px
+import com.yuk.miuihome.utils.sp2px1
 
 class SettingTextView(context: Context) : TextView(context) {
     private var mContext: Context? = null
@@ -66,8 +66,8 @@ class SettingTextView(context: Context) : TextView(context) {
     }
 
     companion object {
-        val titleSize = sp2px(HomeContext.context, 9f).toFloat()
-        val textSize = sp2px(HomeContext.context, 6f).toFloat()
-        val text2Size = sp2px(HomeContext.context, 7f).toFloat()
+        val titleSize = sp2px1(HomeContext.context, 9f).toFloat()
+        val textSize = sp2px1(HomeContext.context, 6f).toFloat()
+        val text2Size = sp2px1(HomeContext.context, 7f).toFloat()
     }
 }

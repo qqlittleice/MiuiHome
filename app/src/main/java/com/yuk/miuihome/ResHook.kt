@@ -1,9 +1,19 @@
 package com.yuk.miuihome
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.res.XModuleResources
+import android.content.res.XResources
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.GradientDrawable
+import android.graphics.drawable.RippleDrawable
 import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResourcesParam
 import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.dip2px
+import com.yuk.miuihome.utils.getData
 import com.yuk.miuihome.utils.ktx.setTryReplacement
+import de.robv.android.xposed.XposedBridge
+import de.robv.android.xposed.callbacks.XC_LayoutInflated
 import kotlin.concurrent.thread
 
 class ResHook(private val hookedRes: InitPackageResourcesParam) {
@@ -17,12 +27,31 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
     }
 
     fun init() {
+
+        hookedRes.res.hookLayout(
+            "com.miui.home",
+            "layout",
+            "layout_search_bar",
+            object : XC_LayoutInflated() {
+                override fun handleLayoutInflated(liparam: LayoutInflatedParam) {
+                    // 替换资源圆角
+                    val targetView = liparam.view
+                    (if (HomeContext.isAlpha || HomeContext.versionCode >= 421153106L) HomeContext.drawableNameNewList else HomeContext.drawableNameList).forEach { drawableName ->
+                        resetDockRadius(
+                            hookedRes.res,
+                            targetView.context,
+                            drawableName
+                        )
+                    }
+                }
+            })
+
         thread {
             if (!hasLoad) {
                 Thread.sleep(500) // 这里项目经理要求运行缓慢，好让客户充钱，让其速度得到明显提升。
                 hasLoad = true
             }
-
+            
             //后台卡片文字大小
             val backgroundTextSize = OwnSP.ownSP.getFloat("backgroundTextSize", 13f)
             hookedRes.res.setTryReplacement(
@@ -85,6 +114,35 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                     )
                 )
             }
+        }
+    }
+
+    fun resetDockRadius(res: XResources, context: Context, drawableName: String) {
+        try {
+            res.setReplacement(
+                "com.miui.home",
+                "drawable",
+                drawableName,
+                object : XResources.DrawableLoader() {
+                    override fun newDrawable(xres: XResources, id: Int): Drawable {
+                        val background = context.getDrawable(
+                            xres.getIdentifier(
+                                drawableName,
+                                "drawable",
+                                "com.miui.home"
+                            )
+                        ) as RippleDrawable
+                        val backgroundShape = background.getDrawable(0) as GradientDrawable
+                        backgroundShape.cornerRadius =
+                            dip2px(getData("DOCK_RADIUS", HomeContext.DOCK_RADIUS))
+                                .toFloat()
+                        backgroundShape.setStroke(0, 0)
+                        background.setDrawable(0, backgroundShape)
+                        return background
+                    }
+                })
+        } catch (e: Exception) {
+            XposedBridge.log("[MIDock] ResourcesReplacement Error:" + e.message)
         }
     }
 }

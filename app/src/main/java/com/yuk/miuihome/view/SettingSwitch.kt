@@ -1,6 +1,5 @@
 package com.yuk.miuihome.view
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.view.View
@@ -12,7 +11,6 @@ import com.yuk.miuihome.utils.dp2px
 import com.yuk.miuihome.utils.isNightMode
 import android.widget.Switch
 
-@SuppressLint("UseSwitchCompatOrMaterialCode")
 class SettingSwitch(context: Context) : Switch(context) {
     var size: Float
         get() = textSize
@@ -29,7 +27,7 @@ class SettingSwitch(context: Context) : Switch(context) {
     var key = ""
         set(value) {
             isChecked = sharedPreferences.getBoolean(value, defaultState)
-            setOnCheckedChangeListener { compoundButton: CompoundButton, b: Boolean ->
+            setOnCheckedChangeListener { _: CompoundButton, b: Boolean ->
                 if (b and (toastText != "")) LogUtil.toast(toastText)
                 editor.putBoolean(value, b)
                 editor.apply()

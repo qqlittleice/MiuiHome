@@ -3,10 +3,17 @@ package com.yuk.miuihome
 import android.app.Application
 import android.content.Context
 import androidx.annotation.Keep
+import com.github.kyuubiran.ezxhelper.init.EzXHelperInit
+import com.github.kyuubiran.ezxhelper.utils.findMethodByCondition
+import com.github.kyuubiran.ezxhelper.utils.hookAfter
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
 import com.yuk.miuihome.Config.myself
+import com.yuk.miuihome.HomeContext.isAlpha
+import com.yuk.miuihome.HomeContext.versionCode
+import com.yuk.miuihome.utils.getVersionCode
+import com.yuk.miuihome.utils.getVersionName
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
 import de.robv.android.xposed.callbacks.XC_LoadPackage
@@ -47,6 +54,20 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                             MainHook().doHook()
                         }
                     })
+
+                EzXHelperInit.initHandleLoadPackage(lpparam)
+                EzXHelperInit.setLogTag("MIDock")
+                findMethodByCondition("com.miui.home.launcher.Application") { m ->
+                    m.name == "attachBaseContext" && m.parameterTypes[0] == Context::class.java
+                }.hookAfter {
+                    EzXHelperInit.initAppContext(it.args[0] as Context)
+                    isAlpha = getVersionName()!!.startsWith("ALPHA")
+                    versionCode = getVersionCode()
+                    MainHook().showDockDialog()
+                    MainHook().launcherHook(lpparam)
+                    MainHook().deviceConfigHook(lpparam)
+                }
+
             }
             else -> {
                 return
