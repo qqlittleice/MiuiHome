@@ -50,19 +50,15 @@ __新仓库：[1767523953/MiuiHome](https://github.com/1767523953/MiuiHome)__
 
 ## Credit
 
-- [FC](https://github.com/ejiaogl/FuckCoolapk)
-
-- [BiliRoaming](https://github.com/yujincheng08/BiliRoaming/blob/master/LICENSE)
-
-- [XposedBridge](https://github.com/rovo89/XposedBridge)
-
-- [LSPosed](https://github.com/LSPosed/LSPosed)
-
-- [androidx.annotation](https://android.googlesource.com/platform/frameworks/support/+/androidx-master-dev/annotation/annotation/)
-
-- [CustoMIUIzer](https://code.highspec.ru/Mikanoshi/CustoMIUIzer/)
-
+- [androidx.annotation](https://android.googlesource.com/platform/frameworks/support/+/androidx-master-dev/annotation/annotation)
 - [AppCenter](https://github.com/microsoft/appcenter)
+- [BiliRoaming](https://github.com/yujincheng08/BiliRoaming/blob/master/LICENSE)
+- [CustoMIUIzer](https://code.highspec.ru/Mikanoshi/CustoMIUIzer)
+- [FuckCoolapk](https://github.com/ejiaogl/FuckCoolapk)
+- [LSPosed](https://github.com/LSPosed/LSPosed)
+- [MiDock](https://github.com/lamprose/MIDock)
+- [MIUIDock](https://github.com/ouhoukyo/MIUIDock)
+- [XposedBridge](https://github.com/rovo89/XposedBridge)
 
 ## 软件截图
 
