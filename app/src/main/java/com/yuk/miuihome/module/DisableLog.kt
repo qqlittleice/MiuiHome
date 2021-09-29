@@ -17,5 +17,10 @@ class DisableLog {
             String::class.java,
             result = null
         )
+        "com.xiaomi.OneTrack".setReturnConstant(
+            "isDisable",
+            result = true
+        )
+
     }
 }
