@@ -1,5 +1,6 @@
 package com.yuk.miuihome.view
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -11,6 +12,7 @@ import com.yuk.miuihome.utils.dp2px
 import com.yuk.miuihome.utils.isNightMode
 import com.yuk.miuihome.utils.sp2px
 
+@SuppressLint("AppCompatCustomView")
 class SettingTextView(context: Context) : TextView(context) {
     private var mContext: Context? = null
 

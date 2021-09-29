@@ -29,7 +29,7 @@ class SettingSwitch(context: Context) : Switch(context) {
     var key = ""
         set(value) {
             isChecked = sharedPreferences.getBoolean(value, defaultState)
-            setOnCheckedChangeListener { compoundButton: CompoundButton, b: Boolean ->
+            setOnCheckedChangeListener { _: CompoundButton, b: Boolean ->
                 if (b and (toastText != "")) LogUtil.toast(toastText)
                 editor.putBoolean(value, b)
                 editor.apply()
