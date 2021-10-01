@@ -50,9 +50,9 @@ class SettingSeekBarDialog(
                 orientation = LinearLayout.VERTICAL
                 setPadding(
                     dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 5f),
                     dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 5f)
+                    dp2px(HomeContext.context, 10f),
+                    dp2px(HomeContext.context, 10f)
                 )
                 addView(
                     SettingTextView.FastBuilder(
