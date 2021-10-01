@@ -377,6 +377,16 @@ class MainHook {
                         mKey = "searchBarBlur"
                     ).build()
                 )
+//                addView(SettingSwitch.FastBuilder(mText = "Dock设置", mKey = "dockSettings") {
+//                        dialog.cancel()
+//                        showSettingDialog() }.build())
+                if (OwnSP.ownSP.getBoolean(
+                        "dockSettings", false
+                    )
+                ) {
+                    addView(SettingTextView.FastBuilder(mText = "Dock设置") { showDockDialog() }
+                        .build())
+                }
                 addView(
                     SettingTextView.FastBuilder(
                         mText = myRes.getString(R.string.ModuleFeature),
@@ -414,13 +424,18 @@ class MainHook {
         val argsLinearLayout = LinearLayout(HomeContext.activity).also {
             it.orientation = LinearLayout.VERTICAL
         }
+
         fun createArgsEditText(): View {
             val linearView = LinearLayout(HomeContext.activity).also { layout ->
                 lateinit var editText: EditText
                 layout.orientation = LinearLayout.HORIZONTAL
                 layout.addView(EditText(HomeContext.activity).apply {
                     argsEditText.add(this)
-                    layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
+                    layoutParams = LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        1f
+                    )
                     editText = this
                 })
                 layout.addView(Button(HomeContext.activity).apply {
@@ -429,11 +444,16 @@ class MainHook {
                         argsEditText.remove(editText)
                         argsLinearLayout.removeView(layout)
                     }
-                    layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 5f)
+                    layoutParams = LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        5f
+                    )
                 })
             }
             return linearView
         }
+
         val dialogBuilder = SettingBaseDialog().get()
         dialogBuilder.apply {
             setTitle("自定义Hook")
@@ -462,13 +482,87 @@ class MainHook {
                     addView(SettingTextView.FastBuilder(mText = "result(null直接不输入即可):").build())
                     val resultEditText = EditText(HomeContext.activity)
                     addView(resultEditText)
-                    addView(SettingTextView.FastBuilder(mText = "result type(null直接不输入即可):").build())
+                    addView(
+                        SettingTextView.FastBuilder(mText = "result type(null直接不输入即可):").build()
+                    )
                     val resultTypeEditText = EditText(HomeContext.activity)
                     addView(resultTypeEditText)
                 })
             })
         }.show()
     }
+
+    private fun showDockDialog() {
+        val dialogBuilder = SettingBaseDialog().get()
+        dialogBuilder.apply {
+            setView(ScrollView(HomeContext.activity).apply {
+                overScrollMode = 2
+                addView(LinearLayout(HomeContext.activity).apply {
+                    orientation = LinearLayout.VERTICAL
+                    setPadding(
+                        dp2px(HomeContext.context, 10f),
+                        dp2px(HomeContext.context, 5f),
+                        dp2px(HomeContext.context, 10f),
+                        dp2px(HomeContext.context, 5f)
+                    )
+                    addView(
+                        SettingTextView.FastBuilder(
+                            mText = "「Dock设置」",
+                            mColor = "#0C84FF",
+                            mSize = SettingTextView.text2Size
+                        ).build()
+                    )
+                    addView(
+                        SettingSeekBar.FastBuilder(
+                            mText = "Dock四周圆角",
+                            mKey = "dockRadius",
+                            minValue = 0,
+                            maxValue = 100,
+                            defValue = 2.0f
+                        ).build()
+                    )
+                    addView(
+                        SettingSeekBar.FastBuilder(
+                            mText = "Dock上下高度",
+                            mKey = "dockHeight",
+                            minValue = 50,
+                            maxValue = 200,
+                            defValue = 8.4f
+                        ).build()
+                    )
+                    addView(
+                        SettingSeekBar.FastBuilder(
+                            mText = "Dock距离屏幕两侧",
+                            mKey = "dockSide",
+                            minValue = 0,
+                            maxValue = 200,
+                            defValue = 3.0f
+                        ).build()
+                    )
+                    addView(
+                        SettingSeekBar.FastBuilder(
+                            mText = "Dock距离屏幕底部",
+                            mKey = "dockBottom",
+                            minValue = 0,
+                            maxValue = 200,
+                            defValue = 2.5f
+                        ).build()
+                    )
+                    addView(
+                        SettingSeekBar.FastBuilder(
+                            mText = "图标距离屏幕底部",
+                            mKey = "dockBottom",
+                            minValue = 0,
+                            maxValue = 200,
+                            defValue = 3.5f
+                        ).build()
+                    )
+
+                })
+            })
+        }.show()
+    }
+
 
     private fun showModifyRoundCorner() {
         SettingUserInput(
@@ -499,7 +593,7 @@ class MainHook {
             10,
             500,
             canUserInput = true,
-            defval = 100
+            defValue = 100
         ).build()
     }
 

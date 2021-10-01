@@ -19,7 +19,7 @@ class SettingUserInput(
     private val minValue: Int,
     private val maxValue: Int,
     private val divide: Int = 100,
-    private val defval: Int
+    private val defValue: Int
 ) {
 
     private val sharedPreferences = OwnSP.ownSP
@@ -55,7 +55,7 @@ class SettingUserInput(
                     })
                 addView(
                     SettingTextView.FastBuilder(
-                        mText = myRes.getString(R.string.Defaults) + " : $defval"
+                        mText = myRes.getString(R.string.Defaults) + " : $defValue"
                     )
                         .build()
                 )

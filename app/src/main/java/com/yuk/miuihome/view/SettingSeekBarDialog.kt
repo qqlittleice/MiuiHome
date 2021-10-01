@@ -22,7 +22,7 @@ class SettingSeekBarDialog(
     private val divide: Int = 100,
     private val canUserInput: Boolean,
     private val unit: String = " f",
-    private val defval: Int
+    private val defValue: Int
 ) {
 
     private val sharedPreferences = OwnSP.ownSP
@@ -124,7 +124,7 @@ class SettingSeekBarDialog(
                                 minValue,
                                 maxValue,
                                 divide,
-                                defval
+                                defValue
                             ).build()
                         }.build()
                     )
