@@ -381,7 +381,7 @@ class MainHook {
                         mKey = "searchBarBlur"
                     ).build()
                 )
-                addView(SettingSwitch.FastBuilder(mText = "Dock设置", mKey = "dockSettings") {
+                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.DockSettings), mKey = "dockSettings") {
                     dialog.cancel()
                     showSettingDialog()
                 }.build())
@@ -389,7 +389,7 @@ class MainHook {
                         "dockSettings", false
                     )
                 ) {
-                    addView(SettingTextView.FastBuilder(mText = "Dock设置") { showDockDialog() }
+                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.DockSettings)) { showDockDialog() }
                         .build())
                 }
                 addView(
@@ -514,14 +514,14 @@ class MainHook {
                     )
                     addView(
                         SettingTextView.FastBuilder(
-                            mText = "「Dock设置」",
+                            mText = "「" + myRes.getString(R.string.DockSettings) + "」",
                             mColor = "#0C84FF",
                             mSize = SettingTextView.text2Size
                         ).build()
                     )
                     addView(
                         SettingSeekBar.FastBuilder(
-                            mText = "Dock四周圆角",
+                            mText = myRes.getString(R.string.DockRoundedCorners),
                             mKey = "dockRadius",
                             defValue = 20,
                             minValue = 0,
@@ -530,7 +530,7 @@ class MainHook {
                     )
                     addView(
                         SettingSeekBar.FastBuilder(
-                            mText = "Dock上下高度",
+                            mText = myRes.getString(R.string.DockHeight),
                             mKey = "dockHeight",
                             defValue = 84,
                             minValue = 50,
@@ -539,7 +539,7 @@ class MainHook {
                     )
                     addView(
                         SettingSeekBar.FastBuilder(
-                            mText = "Dock距离屏幕两侧",
+                            mText = myRes.getString(R.string.DockSide),
                             mKey = "dockSide",
                             defValue = 30,
                             minValue = 0,
@@ -548,7 +548,7 @@ class MainHook {
                     )
                     addView(
                         SettingSeekBar.FastBuilder(
-                            mText = "Dock距离屏幕底部",
+                            mText = myRes.getString(R.string.DockBottom),
                             mKey = "dockBottom",
                             defValue = 25,
                             minValue = 0,
@@ -557,7 +557,7 @@ class MainHook {
                     )
                     addView(
                         SettingSeekBar.FastBuilder(
-                            mText = "图标距离屏幕底部",
+                            mText = myRes.getString(R.string.DockIconBottom),
                             mKey = "dockIconBottom",
                             defValue = 35,
                             minValue = 0,

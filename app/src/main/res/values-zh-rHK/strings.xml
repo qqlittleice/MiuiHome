@@ -13,7 +13,7 @@
   <string name="Close">關閉</string>
   <string name="CloseFolder">打開應用時關閉文件夾</string>
   <string name="CompleteBlur">完整模糊</string>
-  <string name="Defaults">官方默認值</string>
+  <string name="Defaults">默認值</string>
   <string name="Description">Hook for MIUI Launcher\n模塊設置在系統桌面的設置裡！</string>
   <string name="Folder">文件夾相關</string>
   <string name="HideAppIcon">隱藏桌面圖標</string>
@@ -74,4 +74,10 @@
   <string name="LowEndDeviceUseMIUIWidgets">允許低端機添加MIUI小組件</string>
   <string name="RecommendServer">禁用今日推薦</string>
   <string name="EveryThingBuild">使用Everything模式編譯桌面</string>
+  <string name="DockHeight">底欄高度</string>
+  <string name="DockRoundedCorners">底欄圓角</string>
+  <string name="DockSide">底欄距離屏幕兩側</string>
+  <string name="DockBottom">底欄距屏幕底部</string>
+  <string name="DockIconBottom">圖標距屏幕底部</string>
+  <string name="DockSettings">底欄設置</string>
 </resources>

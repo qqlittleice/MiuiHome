@@ -85,7 +85,7 @@ class SettingSeekBarDialog(
                     addView(TextView(HomeContext.context).apply {
                         text = "${(minValue / divide.toFloat())}$unit"
                         layoutParams =
-                            LinearLayout.LayoutParams(100, LinearLayout.LayoutParams.MATCH_PARENT)
+                            LinearLayout.LayoutParams(120, LinearLayout.LayoutParams.MATCH_PARENT)
                         setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
                     })
                     addView(TextView(HomeContext.context).apply {
@@ -100,7 +100,7 @@ class SettingSeekBarDialog(
                         text = "${(maxValue / divide.toFloat())}$unit"
                         textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
                         layoutParams =
-                            LinearLayout.LayoutParams(100, LinearLayout.LayoutParams.MATCH_PARENT)
+                            LinearLayout.LayoutParams(120, LinearLayout.LayoutParams.MATCH_PARENT)
                         setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
                     })
                     layoutParams = LinearLayout.LayoutParams(

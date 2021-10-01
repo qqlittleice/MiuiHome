@@ -75,4 +75,10 @@
   <string name="LowEndDeviceUseMIUIWidgets">Allow Low-End device to use MIUI Widgets</string>
   <string name="RecommendServer">Disable recommend server</string>
   <string name="EveryThingBuild">Compile the Launcher using Everything mode</string>
+  <string name="DockHeight">Dock bar height</string>
+  <string name="DockRoundedCorners">Dock bar rounded corners</string>
+  <string name="DockSide">Dock bar from the sides of the screen</string>
+  <string name="DockBottom">Dock bar from the bottom of the screen</string>
+  <string name="DockIconBottom">Icons from the bottom of the screen</string>
+  <string name="DockSettings">Dock Settings</string>
 </resources>

@@ -22,7 +22,6 @@ class SettingSeekBar(
     private val minValue: Int,
     private val maxValue: Int,
     private val divide: Int = 10,
-    private val unit: String = " f"
 ) :
     LinearLayout(context) {
     private var mContext: Context? = null
@@ -55,15 +54,15 @@ class SettingSeekBar(
         seekBar = SeekBar(HomeContext.context).apply {
             min = minValue
             max = maxValue
-            progress = (tempValue * divide).toInt()
+            progress = (tempValue * 10).toInt()
             setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
                 override fun onProgressChanged(
                     seekBar: SeekBar?,
                     progress: Int,
                     fromUser: Boolean
                 ) {
-                    saveValue(progress.toFloat() / divide)
-                    valueTextView.text = "$tempValue$unit"
+                    saveValue((progress.toFloat() / divide))
+                    valueTextView.text = "$progress"
                     tempValue = (progress.toFloat() / divide)
                 }
 
@@ -71,21 +70,14 @@ class SettingSeekBar(
                 override fun onStopTrackingTouch(seekBar: SeekBar?) {}
             })
         }
-        addView(textView.apply {
-            text = "默认值 : ${(defValue / divide.toFloat())}$unit"
-            setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
-            setPadding(0, 0, 0, dp2px(HomeContext.context, 5f))
-        })
-        addView(seekBar)
         addView(LinearLayout(HomeContext.context).apply {
-            addView(TextView(HomeContext.context).apply {
-                text = "${(minValue / divide.toFloat())}$unit"
+            addView(textView.apply {
                 layoutParams =
-                    LayoutParams(110, LayoutParams.MATCH_PARENT)
+                    LayoutParams(500, LayoutParams.MATCH_PARENT)
                 setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
             })
             addView(TextView(HomeContext.context).apply {
-                text = "$tempValue$unit"
+                text = ""
                 textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                 valueTextView = this
                 layoutParams =
@@ -93,10 +85,42 @@ class SettingSeekBar(
                 setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
             })
             addView(TextView(HomeContext.context).apply {
-                text = "${(maxValue / divide.toFloat())}$unit"
+                text = myRes.getString(R.string.Defaults) + " : $defValue"
                 textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
                 layoutParams =
-                    LayoutParams(110, LayoutParams.MATCH_PARENT)
+                    LayoutParams(300, LayoutParams.MATCH_PARENT)
+                setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
+            })
+            layoutParams = LayoutParams(
+                LayoutParams.MATCH_PARENT,
+                LayoutParams.WRAP_CONTENT
+            )
+            gravity = Gravity.CENTER_VERTICAL
+            (this.layoutParams as LayoutParams).apply {
+                topMargin = dp2px(HomeContext.context, 5f)
+            }
+        })
+        addView(seekBar)
+        addView(LinearLayout(HomeContext.context).apply {
+            addView(TextView(HomeContext.context).apply {
+                text = "$minValue"
+                layoutParams =
+                    LayoutParams(120, LayoutParams.MATCH_PARENT)
+                setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
+            })
+            addView(TextView(HomeContext.context).apply {
+                text = "${(tempValue * 10).toInt()}"
+                textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+                valueTextView = this
+                layoutParams =
+                    LayoutParams(0, LayoutParams.MATCH_PARENT, 1f)
+                setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
+            })
+            addView(TextView(HomeContext.context).apply {
+                text = "$maxValue"
+                textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
+                layoutParams =
+                    LayoutParams(120, LayoutParams.MATCH_PARENT)
                 setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
             })
             layoutParams = LayoutParams(

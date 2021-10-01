@@ -13,7 +13,7 @@
   <string name="Close">Закрыть</string>
   <string name="CloseFolder">Закрывать папку при открытии приложения</string>
   <string name="CompleteBlur">Полное</string>
-  <string name="Defaults">По умолчанию</string>
+  <string name="Defaults">умолчанию</string>
   <string name="Description">Дополнительные настройки для рабочего стола MIUI</string>
   <string name="Folder">Изменение папок</string>
   <string name="HideAppIcon">Скрывать иконку с рабочего стола</string>
