@@ -406,6 +406,7 @@ class MainHook {
 //                if (BuildConfig.DEBUG) {
 //                    addView(SettingTextView.FastBuilder(mText = "自定义Hook") { customHookDialog() }.build())
 //                }
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.EveryThingBuild)) { BuildWithEverything().init() }.build())
                 addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.CleanModuleSettings)) {
                     editor.clear(); editor.commit(); exitProcess(
                     0

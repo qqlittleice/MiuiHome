@@ -74,4 +74,5 @@
   <string name="SmallWindow">Allow all apps to use small window</string>
   <string name="LowEndDeviceUseMIUIWidgets">Allow Low-End device to use MIUI Widgets</string>
   <string name="RecommendServer">Disable recommend server</string>
+  <string name="EveryThingBuild">Compile the Launcher using Everything mode</string>
 </resources>
