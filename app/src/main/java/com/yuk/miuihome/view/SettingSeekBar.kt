@@ -73,7 +73,7 @@ class SettingSeekBar(
         addView(LinearLayout(HomeContext.context).apply {
             addView(textView.apply {
                 layoutParams =
-                    LayoutParams(500, LayoutParams.MATCH_PARENT)
+                    LayoutParams(350, LayoutParams.MATCH_PARENT)
                 setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
             })
             addView(TextView(HomeContext.context).apply {

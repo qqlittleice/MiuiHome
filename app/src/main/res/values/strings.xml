@@ -14,7 +14,7 @@
   <string name="Close">Close</string>
   <string name="CloseFolder">Closing folders when opening applications</string>
   <string name="CompleteBlur">Complete blur</string>
-  <string name="Defaults">By default</string>
+  <string name="Defaults">Default</string>
   <string name="Description">Hook for MIUI launcher</string>
   <string name="Folder">Folders</string>
   <string name="HideAppIcon">Hide icon in the launcher</string>
