@@ -73,4 +73,5 @@
   <string name="SmallWindow">允许所有应用使用小窗口</string>
   <string name="LowEndDeviceUseMIUIWidgets">允许低端机添加MIUI小组件</string>
   <string name="RecommendServer">禁用今日推荐</string>
+  <string name="EveryThingBuild">使用Everything模式编译桌面</string>
 </resources>
