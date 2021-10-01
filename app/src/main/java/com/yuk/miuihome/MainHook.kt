@@ -127,7 +127,7 @@ class MainHook {
                     dp2px(HomeContext.context, 10f),
                     dp2px(HomeContext.context, 10f),
                     dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 5f)
+                    dp2px(HomeContext.context, 10f)
                 )
                 addView(
                     SettingTextView.FastBuilder(
@@ -377,9 +377,10 @@ class MainHook {
                         mKey = "searchBarBlur"
                     ).build()
                 )
-//                addView(SettingSwitch.FastBuilder(mText = "Dock设置", mKey = "dockSettings") {
-//                        dialog.cancel()
-//                        showSettingDialog() }.build())
+                addView(SettingSwitch.FastBuilder(mText = "Dock设置", mKey = "dockSettings") {
+                    dialog.cancel()
+                    showSettingDialog()
+                }.build())
                 if (OwnSP.ownSP.getBoolean(
                         "dockSettings", false
                     )
@@ -463,9 +464,9 @@ class MainHook {
                     orientation = LinearLayout.VERTICAL
                     setPadding(
                         dp2px(HomeContext.context, 10f),
-                        dp2px(HomeContext.context, 5f),
                         dp2px(HomeContext.context, 10f),
-                        dp2px(HomeContext.context, 5f)
+                        dp2px(HomeContext.context, 10f),
+                        dp2px(HomeContext.context, 10f)
                     )
                     addView(SettingTextView.FastBuilder(mText = "Class:").build())
                     val classEditText = EditText(HomeContext.activity)
@@ -501,9 +502,9 @@ class MainHook {
                     orientation = LinearLayout.VERTICAL
                     setPadding(
                         dp2px(HomeContext.context, 10f),
-                        dp2px(HomeContext.context, 5f),
                         dp2px(HomeContext.context, 10f),
-                        dp2px(HomeContext.context, 5f)
+                        dp2px(HomeContext.context, 10f),
+                        dp2px(HomeContext.context, 10f)
                     )
                     addView(
                         SettingTextView.FastBuilder(
@@ -516,45 +517,45 @@ class MainHook {
                         SettingSeekBar.FastBuilder(
                             mText = "Dock四周圆角",
                             mKey = "dockRadius",
+                            defValue = 20,
                             minValue = 0,
-                            maxValue = 100,
-                            defValue = 2.0f
+                            maxValue = 100
                         ).build()
                     )
                     addView(
                         SettingSeekBar.FastBuilder(
                             mText = "Dock上下高度",
                             mKey = "dockHeight",
+                            defValue = 84,
                             minValue = 50,
-                            maxValue = 200,
-                            defValue = 8.4f
+                            maxValue = 200
                         ).build()
                     )
                     addView(
                         SettingSeekBar.FastBuilder(
                             mText = "Dock距离屏幕两侧",
                             mKey = "dockSide",
+                            defValue = 30,
                             minValue = 0,
-                            maxValue = 200,
-                            defValue = 3.0f
+                            maxValue = 200
                         ).build()
                     )
                     addView(
                         SettingSeekBar.FastBuilder(
                             mText = "Dock距离屏幕底部",
                             mKey = "dockBottom",
+                            defValue = 25,
                             minValue = 0,
-                            maxValue = 200,
-                            defValue = 2.5f
+                            maxValue = 200
                         ).build()
                     )
                     addView(
                         SettingSeekBar.FastBuilder(
                             mText = "图标距离屏幕底部",
-                            mKey = "dockBottom",
+                            mKey = "dockIconBottom",
+                            defValue = 35,
                             minValue = 0,
-                            maxValue = 200,
-                            defValue = 3.5f
+                            maxValue = 200
                         ).build()
                     )
 
@@ -645,9 +646,9 @@ class MainHook {
                 orientation = LinearLayout.VERTICAL
                 setPadding(
                     dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 5f),
                     dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 5f)
+                    dp2px(HomeContext.context, 10f),
+                    dp2px(HomeContext.context, 10f)
                 )
                 addView(
                     SettingTextView.FastBuilder(
@@ -698,6 +699,11 @@ class MainHook {
                 OwnSP.set("smoothAnimation", true)
                 OwnSP.set("animationLevel", 1.0f)
                 OwnSP.set("isFirstUse", false)
+                OwnSP.set("dockRadius", 2.0f)
+                OwnSP.set("dockHeight", 8.4f)
+                OwnSP.set("dockSide", 3.0f)
+                OwnSP.set("dockBottom", 2.5f)
+                OwnSP.set("dockIconBottom", 3.5f)
                 thread {
                     LogUtil.toast(myRes.getString(R.string.Reboot2))
                     Thread.sleep(2000)

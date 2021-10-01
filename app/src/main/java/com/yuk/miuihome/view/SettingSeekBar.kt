@@ -18,8 +18,11 @@ import com.yuk.miuihome.utils.isNightMode
 class SettingSeekBar(
     context: Context,
     private val mKey: String,
-    private val minValue: Int = 0,
-    private val maxValue: Int = 100
+    private val defValue: Int,
+    private val minValue: Int,
+    private val maxValue: Int,
+    private val divide: Int = 10,
+    private val unit: String = " f"
 ) :
     LinearLayout(context) {
     private var mContext: Context? = null
@@ -37,16 +40,15 @@ class SettingSeekBar(
     private val myRes by lazy { HomeContext.resInstance.moduleRes.resources }
     lateinit var valueTextView: TextView
     var tempValue: Float = sharedPreferences.getFloat(mKey, 0f)
-    private val divide: Int = 10
-    private val unit: String = " f"
+    var key = ""
 
     init {
         orientation = VERTICAL
         setPadding(
             dp2px(getContext(), 10f),
-            dp2px(getContext(), 5f),
             dp2px(getContext(), 10f),
-            dp2px(getContext(), 5f)
+            dp2px(getContext(), 10f),
+            dp2px(getContext(), 10f)
         )
         textView = TextView(context)
         textView.textSize = SettingTextView.textSize
@@ -70,6 +72,7 @@ class SettingSeekBar(
             })
         }
         addView(textView.apply {
+            text = "默认值 : ${(defValue / divide.toFloat())}$unit"
             setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
             setPadding(0, 0, 0, dp2px(HomeContext.context, 5f))
         })
@@ -112,13 +115,13 @@ class SettingSeekBar(
         private val mContext: Context = HomeContext.context,
         private val mText: String,
         private val mKey: String,
-        private val defValue: Float,
-        private val minValue: Int = 0,
-        private val maxValue: Int = 100
+        private val defValue: Int,
+        private val minValue: Int,
+        private val maxValue: Int
     ) {
-        fun build() = SettingSeekBar(mContext, mKey, minValue, maxValue).apply {
+        fun build() = SettingSeekBar(mContext, mKey, defValue, minValue, maxValue).apply {
             text = mText
-            mKey
+            key = mKey
             defValue
             minValue
             maxValue
