@@ -2,18 +2,22 @@ package com.yuk.miuihome
 
 import android.app.Activity
 import android.app.AlertDialog
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.annotation.Keep
 import com.yuk.miuihome.module.*
-import com.yuk.miuihome.utils.LogUtil
-import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.dp2px
+import com.yuk.miuihome.utils.*
 import com.yuk.miuihome.utils.ktx.getObjectField
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import com.yuk.miuihome.utils.ktx.setObjectField
 import com.yuk.miuihome.view.*
+import de.robv.android.xposed.XC_MethodHook
+import de.robv.android.xposed.XC_MethodReplacement
+import de.robv.android.xposed.XposedBridge
+import de.robv.android.xposed.XposedHelpers
+import de.robv.android.xposed.callbacks.XC_LoadPackage
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
@@ -407,7 +411,8 @@ class MainHook {
 //                if (BuildConfig.DEBUG) {
 //                    addView(SettingTextView.FastBuilder(mText = "自定义Hook") { customHookDialog() }.build())
 //                }
-                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.EveryThingBuild)) { BuildWithEverything().init() }.build())
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.EveryThingBuild)) { BuildWithEverything().init() }
+                    .build())
                 addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.CleanModuleSettings)) {
                     editor.clear(); editor.commit(); exitProcess(
                     0
@@ -687,6 +692,138 @@ class MainHook {
                     LogUtil.toast(myRes.getString(R.string.TaskViewBlurSetTo) + " : ${(onClick as TextView).text}")
                 } catch (ignore: Exception) {
                 }
+            }
+        }
+    }
+
+    fun dockHook(lpparam: XC_LoadPackage.LoadPackageParam) {
+        if (OwnSP.ownSP.getBoolean(
+                "dockSettings", false
+            )
+        ) {
+            val _DEVICE_CONFIG_CLASS = XposedHelpers.findClassIfExists(
+                "com.miui.home.launcher.DeviceConfig",
+                lpparam.classLoader
+            )
+            try {
+                XposedHelpers.findAndHookMethod(
+                    _DEVICE_CONFIG_CLASS,
+                    "calcHotSeatsMarginTop",
+                    Context::class.java,
+                    Boolean::class.java,
+                    object : XC_MethodHook() {
+                        override fun beforeHookedMethod(param: MethodHookParam) {
+                            param.args[1] = false
+                            super.beforeHookedMethod(param)
+                        }
+                    })
+                // 图标区域底部边距
+                XposedHelpers.findAndHookMethod(
+                    _DEVICE_CONFIG_CLASS,
+                    "calcHotSeatsMarginBottom",
+                    Context::class.java,
+                    Boolean::class.java,
+                    Boolean::class.java,
+                    object : XC_MethodHook() {
+                        override fun beforeHookedMethod(param: MethodHookParam) {
+                            param.result =
+                                dip2px(
+                                    (OwnSP.ownSP.getFloat("dockIconBottom", -1f) * 10).toInt()
+                                )
+                        }
+                    })
+                // 搜索框宽度
+                XposedHelpers.findAndHookMethod(
+                    _DEVICE_CONFIG_CLASS,
+                    "calcSearchBarWidth",
+                    Context::class.java,
+                    object : XC_MethodHook() {
+                        override fun beforeHookedMethod(param: MethodHookParam) {
+                            val context = param.args[0] as Context
+                            val deviceWidth = px2dip(
+                                context.resources.displayMetrics.widthPixels
+                            )
+                            param.result =
+                                dip2px(
+                                    deviceWidth - (OwnSP.ownSP.getFloat(
+                                        "dockSide",
+                                        -1f
+                                    ) * 10).toInt()
+                                )
+                        }
+                    })
+                // Dock底部边距
+                XposedHelpers.findAndHookMethod(
+                    _DEVICE_CONFIG_CLASS,
+                    "calcSearchBarMarginBottom",
+                    Context::class.java,
+                    Boolean::class.java,
+                    object : XC_MethodHook() {
+                        override fun beforeHookedMethod(param: MethodHookParam) {
+                            param.result = dip2px(
+                                (OwnSP.ownSP.getFloat("dockBottom", -1f) * 10).toInt()
+                            )
+                        }
+                    })
+                // 宽度变化量
+                XposedHelpers.findAndHookMethod(
+                    _DEVICE_CONFIG_CLASS,
+                    "getSearchBarWidthDelta",
+                    XC_MethodReplacement.returnConstant(0)
+                )
+            } catch (e: Exception) {
+                XposedBridge.log("[MiHome] DockHook Error:" + e.message)
+            }
+
+            val _LAUNCHER_CLASS = XposedHelpers.findClassIfExists(
+                "com.miui.home.launcher.Launcher",
+                lpparam.classLoader
+            )
+            try {
+                XposedHelpers.findAndHookMethod(
+                    _LAUNCHER_CLASS,
+                    "onCreate",
+                    Bundle::class.java,
+                    object : XC_MethodHook() {
+                        override fun afterHookedMethod(param: MethodHookParam) {
+                            super.afterHookedMethod(param)
+                            val SearchBarObject = XposedHelpers.callMethod(
+                                param.thisObject,
+                                "getSearchBar"
+                            ) as FrameLayout
+                            val SearchBarDesktop = SearchBarObject.getChildAt(0) as RelativeLayout
+                            val SearchBarDrawer = SearchBarObject.getChildAt(1) as RelativeLayout
+                            val SearchBarContainer = SearchBarObject.parent as FrameLayout
+                            val SearchEdgeLayout = SearchBarContainer.parent as FrameLayout
+                            // 重新给Searbar容器排序
+                            SearchEdgeLayout.removeView(SearchBarContainer)
+                            SearchEdgeLayout.addView(SearchBarContainer, 0)
+                            // 清空搜索图标和小爱同学
+                            SearchBarDesktop.removeAllViews()
+                            // 修改高度
+                            SearchBarObject.layoutParams.height = dip2px(
+                                (OwnSP.ownSP.getFloat("dockHeight", -1f) * 10).toInt()
+                            )
+                            // 修改应用列表搜索框
+                            val mAllAppViewField = _LAUNCHER_CLASS.getDeclaredField("mAppsView")
+                            mAllAppViewField.isAccessible = true
+                            val mAllAppView =
+                                mAllAppViewField.get(param.thisObject) as RelativeLayout
+                            val mAllAppSearchView =
+                                mAllAppView.getChildAt(mAllAppView.childCount - 1) as FrameLayout
+                            SearchBarObject.removeView(SearchBarDrawer)
+                            mAllAppSearchView.addView(SearchBarDrawer)
+                            SearchBarDrawer.bringToFront()
+                            val layoutParams =
+                                SearchBarDrawer.layoutParams as FrameLayout.LayoutParams
+                            SearchBarDrawer.layoutParams.height = dip2px(45)
+                            layoutParams.leftMargin = dip2px(15)
+                            layoutParams.rightMargin = dip2px(15)
+                            SearchBarDrawer.layoutParams = layoutParams
+                        }
+                    })
+            } catch (e: Exception) {
+                XposedBridge.log("[MiuiHome] DockHook Error:" + e.message)
             }
         }
     }

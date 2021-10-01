@@ -2,11 +2,16 @@ package com.yuk.miuihome
 
 import android.app.Application
 import android.content.Context
+import android.content.pm.PackageManager
 import androidx.annotation.Keep
+import com.github.kyuubiran.ezxhelper.init.EzXHelperInit
+import com.github.kyuubiran.ezxhelper.init.InitFields
+import com.github.kyuubiran.ezxhelper.utils.Log
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
 import com.yuk.miuihome.Config.myself
+import com.yuk.miuihome.HomeContext.isAlpha
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
 import de.robv.android.xposed.callbacks.XC_LoadPackage
@@ -37,14 +42,17 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                     Context::class.java,
                     object : XC_MethodHook() {
                         override fun afterHookedMethod(param: MethodHookParam) {
+                            EzXHelperInit.initAppContext(param.args[0] as Context)
                             HomeContext.application = param.thisObject as Application
                             HomeContext.context = param.args[0] as Context
                             HomeContext.classLoader = HomeContext.context.classLoader
                             HomeContext.resInstance = ResInject().init()
                             startOnlineLog()
                             checkAlpha()
+                            getVersionCode()
                             checkWidgetLauncher()
                             MainHook().doHook()
+                            MainHook().dockHook(lpparam)
                         }
                     })
             }
@@ -66,10 +74,20 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
     fun checkAlpha() {
         val pkgInfo =
             HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0)
-        if (!pkgInfo.versionName.contains("RELEASE", ignoreCase = true)) {
-            HomeContext.isAlpha = pkgInfo.versionName.contains("ALPHA", ignoreCase = true)
+        isAlpha = if (!pkgInfo.versionName.contains("RELEASE", ignoreCase = true)) {
+            pkgInfo.versionName.contains("ALPHA", ignoreCase = true)
         } else {
-            HomeContext.isAlpha = false
+            false
+        }
+    }
+
+    fun getVersionCode(): Long {
+        return try {
+            val packageManager: PackageManager = InitFields.appContext.packageManager
+            packageManager.getPackageInfo(InitFields.appContext.packageName, 0).longVersionCode
+        } catch (e: Exception) {
+            Log.e(e, "getVersionName")
+            -1L
         }
     }
 
