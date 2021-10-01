@@ -49,7 +49,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                             HomeContext.resInstance = ResInject().init()
                             startOnlineLog()
                             checkAlpha()
-                            getVersionCode()
+                            checkVersionCode()
                             checkWidgetLauncher()
                             MainHook().doHook()
                             MainHook().dockHook(lpparam)
@@ -81,13 +81,13 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         }
     }
 
-    fun getVersionCode(): Long {
-        return try {
+    fun checkVersionCode() {
+        try {
             val packageManager: PackageManager = InitFields.appContext.packageManager
-            packageManager.getPackageInfo(InitFields.appContext.packageName, 0).longVersionCode
+            HomeContext.versionCode = packageManager.getPackageInfo(InitFields.appContext.packageName, 0).longVersionCode
         } catch (e: Exception) {
             Log.e(e, "getVersionName")
-            -1L
+            HomeContext.versionCode = -1L
         }
     }
 
