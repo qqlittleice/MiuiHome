@@ -14,8 +14,6 @@ import com.yuk.miuihome.utils.sp2px
 
 @SuppressLint("AppCompatCustomView")
 class SettingTextView(context: Context) : TextView(context) {
-    private var mContext: Context? = null
-
     var size: Float
         get() = textSize
         set(value) {

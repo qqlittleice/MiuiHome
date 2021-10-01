@@ -14,7 +14,7 @@ import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.dp2px
 import com.yuk.miuihome.utils.isNightMode
 
-@SuppressLint("ViewConstructor")
+@SuppressLint("ViewConstructor", "SetTextI18n")
 class SettingSeekBar(
     context: Context,
     private val mKey: String,
@@ -24,8 +24,6 @@ class SettingSeekBar(
     private val divide: Int = 10,
 ) :
     LinearLayout(context) {
-    private var mContext: Context? = null
-
     var text: String = ""
         set(value) {
             field = value
@@ -79,7 +77,6 @@ class SettingSeekBar(
             addView(TextView(HomeContext.context).apply {
                 text = ""
                 textAlignment = TextView.TEXT_ALIGNMENT_CENTER
-                valueTextView = this
                 layoutParams =
                     LayoutParams(0, LayoutParams.MATCH_PARENT, 1f)
                 setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))

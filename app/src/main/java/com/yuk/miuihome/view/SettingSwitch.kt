@@ -14,12 +14,6 @@ import android.widget.Switch
 
 @SuppressLint("UseSwitchCompatOrMaterialCode")
 class SettingSwitch(context: Context) : Switch(context) {
-    var size: Float
-        get() = textSize
-        set(value) {
-            textSize = value
-        }
-
     private var color = if (isNightMode(getContext())) "#ffffff" else "#000000"
         set(value) = setTextColor(Color.parseColor(value))
     private var sharedPreferences = OwnSP.ownSP

@@ -1,5 +1,6 @@
 package com.yuk.miuihome.view
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.graphics.Color
 import android.view.Gravity
@@ -14,6 +15,7 @@ import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.dp2px
 import com.yuk.miuihome.utils.isNightMode
 
+@SuppressLint("SetTextI18n")
 class SettingSeekBarDialog(
     private val mText: String,
     private val mKey: String,
