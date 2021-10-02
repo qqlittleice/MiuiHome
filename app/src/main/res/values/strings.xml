@@ -22,7 +22,7 @@
   <string name="HideStatusBar">Hide the status bar in the task view</string>
   <string name="HideTaskViewAppIcon">Hide the application icons in the task view</string>
   <string name="HideTaskViewCleanUpIcon">Hide the cleanup icon in the task view</string>
-  <string name="HideTaskViewSmallWindowIcon">Hide the \"Small window\" button in the task view</string>
+  <string name="HideTaskViewSmallWindowIcon">Remove the \"Small window\" button in the task view</string>
   <string name="HideWidgetTitles">Hide widget headers</string>
   <string name="HorizontalTaskViewOfAppCardSize">Thumbnail size for horizontal task view</string>
   <string name="InfiniteScroll">Launcher infinite scroll</string>

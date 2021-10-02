@@ -21,7 +21,7 @@
   <string name="HideStatusBar">後台界面隱藏狀態欄</string>
   <string name="HideTaskViewAppIcon">隱藏後台應用圖標</string>
   <string name="HideTaskViewCleanUpIcon">隱藏後台清理圖標</string>
-  <string name="HideTaskViewSmallWindowIcon">隱藏後台“小窗應用”圖標</string>
+  <string name="HideTaskViewSmallWindowIcon">移除後台“小窗應用”圖標</string>
   <string name="HideWidgetTitles">隱藏桌面小部件名稱</string>
   <string name="HorizontalTaskViewOfAppCardSize">橫向應用卡片大小</string>
   <string name="InfiniteScroll">桌面無限滾動</string>
