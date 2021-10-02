@@ -142,7 +142,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                             ) as RippleDrawable
                             val backgroundShape = background.getDrawable(0) as GradientDrawable
                             backgroundShape.cornerRadius =
-                                dip2px(OwnSP.ownSP.getFloat("dockRadius", -1f).toInt() * 10).toFloat()
+                                dip2px((OwnSP.ownSP.getFloat("dockRadius", -1f) * 10).toInt()).toFloat()
                             backgroundShape.setStroke(0, 0)
                             background.setDrawable(0, backgroundShape)
                             return background
