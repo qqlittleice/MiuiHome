@@ -520,6 +520,13 @@ class MainHook {
                         ).build()
                     )
                     addView(
+                        SettingTextView.FastBuilder(
+                            mText = myRes.getString(R.string.DockWarn),
+                            mColor = "#ff0c0c",
+                            mSize = SettingTextView.textSize
+                        ).build()
+                    )
+                    addView(
                         SettingSeekBar.FastBuilder(
                             mText = myRes.getString(R.string.DockRoundedCorners),
                             mKey = "dockRadius",

@@ -80,4 +80,5 @@
   <string name="DockBottom">底栏距屏幕底部</string>
   <string name="DockIconBottom">图标距屏幕底部</string>
   <string name="DockSettings">底栏设置</string>
+  <string name="DockWarn">修改圆角需要启用资源钩子。</string>
 </resources>

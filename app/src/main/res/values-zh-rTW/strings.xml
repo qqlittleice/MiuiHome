@@ -80,4 +80,5 @@
   <string name="DockRoundedCorners">底欄圓角</string>
   <string name="DockIconBottom">圖標距屏幕底部</string>
   <string name="DockSettings">底欄設置</string>
+  <string name="DockWarn">修改圓角需要啟用資源鉤子。</string>
 </resources>
