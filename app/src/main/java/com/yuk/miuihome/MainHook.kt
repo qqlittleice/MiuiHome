@@ -375,15 +375,20 @@ class MainHook {
                         mKey = "clockGadget"
                     ).build()
                 )
+                if (!OwnSP.ownSP.getBoolean(
+                        "dockSettings", false
+                    )
+                ) {
+                    addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.SearchBarBlur),
+                            mKey = "searchBarBlur"
+                        ).build()
+                    )
+                }
                 addView(
                     SettingSwitch.FastBuilder(
-                        mText = myRes.getString(R.string.SearchBarBlur),
-                        mKey = "searchBarBlur"
-                    ).build()
-                )
-                addView(
-                    SettingSwitch.FastBuilder(
-                        mText = myRes.getString(R.string.DockSettings),
+                        mText = myRes.getString(R.string.DockFeature),
                         mKey = "dockSettings"
                     ) {
                         dialog.cancel()
@@ -532,13 +537,19 @@ class MainHook {
                         ).build()
                     )
                     addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.EnableDockBlur),
+                            mKey = "searchBarBlur"
+                        ).build()
+                    )
+                    addView(
                         SettingSeekBar.FastBuilder(
                             mText = myRes.getString(R.string.DockRoundedCorners),
                             mKey = "dockRadius",
                             defValue = 25,
                             minValue = 0,
                             maxValue = 50,
-                            canUserInput = true
+                            canUserInput = false
                         ).build()
                     )
                     addView(
@@ -548,7 +559,7 @@ class MainHook {
                             defValue = 84,
                             minValue = 50,
                             maxValue = 200,
-                            canUserInput = true
+                            canUserInput = false
                         ).build()
                     )
                     addView(
@@ -558,7 +569,7 @@ class MainHook {
                             defValue = 30,
                             minValue = 0,
                             maxValue = 200,
-                            canUserInput = true
+                            canUserInput = false
                         ).build()
                     )
                     addView(
@@ -568,7 +579,7 @@ class MainHook {
                             defValue = 16,
                             minValue = 0,
                             maxValue = 200,
-                            canUserInput = true
+                            canUserInput = false
                         ).build()
                     )
                     addView(
@@ -578,12 +589,14 @@ class MainHook {
                             defValue = 25,
                             minValue = 0,
                             maxValue = 200,
-                            canUserInput = true
+                            canUserInput = false
                         ).build()
                     )
-
                 })
             })
+            setPositiveButton(myRes.getString(R.string.Yes), null)
+            dialogBuilder.setNeutralButton("重置") { _, _ -> showModifyReset() }
+            setCancelable(false)
         }.show()
     }
 
@@ -841,6 +854,53 @@ class MainHook {
         }
     }
 
+
+    private fun showModifyReset() {
+        val dialogBuilder = SettingBaseDialog().get()
+        dialogBuilder.apply {
+            setView(ScrollView(HomeContext.activity).apply {
+                overScrollMode = 2
+                addView(LinearLayout(HomeContext.activity).apply {
+                    orientation = LinearLayout.VERTICAL
+                    setPadding(
+                        dp2px(HomeContext.context, 10f),
+                        dp2px(HomeContext.context, 10f),
+                        dp2px(HomeContext.context, 10f),
+                        dp2px(HomeContext.context, 10f)
+                    )
+                    addView(
+                        SettingTextView.FastBuilder(
+                            mText = "「" + myRes.getString(R.string.Reset) + "」",
+                            mColor = "#0C84FF",
+                            mSize = SettingTextView.text2Size
+                        ).build()
+                    )
+                    addView(
+                        SettingTextView.FastBuilder(
+                            mText = myRes.getString(R.string.Tips1)
+                        ).build()
+                    )
+                })
+            })
+            setNeutralButton(myRes.getString(R.string.Yes)) { _, _ ->
+                OwnSP.set("searchBarBlur", true)
+                OwnSP.set("dockRadius", 2.5f)
+                OwnSP.set("dockHeight", 8.4f)
+                OwnSP.set("dockSide", 3.0f)
+                OwnSP.set("dockBottom", 1.6f)
+                OwnSP.set("dockIconBottom", 2.5f)
+                thread {
+                    LogUtil.toast(myRes.getString(R.string.Reboot2))
+                    Thread.sleep(1000)
+                    exitProcess(0)
+                }
+            }
+            setPositiveButton(myRes.getString(R.string.Cancel), null)
+            setCancelable(false)
+        }
+        dialogBuilder.show()
+    }
+
     private fun firstUseDialog() {
         val dialogBuilder = SettingBaseDialog().get().apply {
             setTitle("「" + myRes.getString(R.string.Welcome) + "」")
@@ -848,7 +908,8 @@ class MainHook {
             setOnDismissListener {
                 OwnSP.set("blurLevel", "COMPLETE")
                 OwnSP.set("smoothAnimation", true)
-                OwnSP.set("animationLevel", 1.0f)
+                OwnSP.set("searchBarBlur", true)
+                OwnSP.set("animationLevel", 1.25f)
                 OwnSP.set("isFirstUse", false)
                 OwnSP.set("dockRadius", 2.5f)
                 OwnSP.set("dockHeight", 8.4f)
@@ -857,7 +918,7 @@ class MainHook {
                 OwnSP.set("dockIconBottom", 2.5f)
                 thread {
                     LogUtil.toast(myRes.getString(R.string.Reboot2))
-                    Thread.sleep(2000)
+                    Thread.sleep(1000)
                     exitProcess(0)
                 }
             }

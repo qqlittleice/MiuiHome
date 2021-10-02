@@ -11,6 +11,11 @@ class EnableSearchBarBlur {
                 "isUserBlur",
                 result = true
             )
+        } else {
+            "com.miui.home.launcher.SearchBarStyleData".setReturnConstant(
+                "isUserBlur",
+                result = false
+            )
         }
     }
 }

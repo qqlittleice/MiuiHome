@@ -42,7 +42,7 @@
   <string name="OutOfInput">Please enter a value within the allowed range!</string>
   <string name="RealTaskViewHorizontal">True · horizontal task view</string>
   <string name="Reboot">Restart launcher</string>
-  <string name="Reboot2">The launcher will restart in 2 seconds!</string>
+  <string name="Reboot2">The launcher will restart in 1 seconds!</string>
   <string name="ResourceHooks">ResHook Feature</string>
   <string name="RoundCorner">Size of thumbnail rounded corners</string>
   <string name="Save">Save</string>
@@ -82,4 +82,8 @@
   <string name="DockIconBottom">Icons from the bottom of the screen</string>
   <string name="DockSettings">Dock Settings</string>
   <string name="DockWarn">Please enable resource hooks if you need to modify rounded corners.</string>
+  <string name="DockFeature">Dock Feature</string>
+  <string name="EnableDockBlur">Enable blurring of the dock bar</string>
+  <string name="Reset">Reset Dock Parameters</string>
+  <string name="Tips1">This will reset the Dock parameter to its default value and restart the Launcher.</string>
 </resources>
