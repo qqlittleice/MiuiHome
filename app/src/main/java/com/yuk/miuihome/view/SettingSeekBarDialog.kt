@@ -23,7 +23,6 @@ class SettingSeekBarDialog(
     private val maxValue: Int,
     private val divide: Int = 100,
     private val canUserInput: Boolean,
-    private val unit: String = " f",
     private val defValue: Int
 ) {
 
@@ -75,7 +74,7 @@ class SettingSeekBarDialog(
                             fromUser: Boolean
                         ) {
                             saveValue(progress.toFloat() / divide)
-                            valueTextView.text = "$tempValue$unit"
+                            valueTextView.text = "$progress"
                             tempValue = (progress.toFloat() / divide)
                         }
 
@@ -85,13 +84,13 @@ class SettingSeekBarDialog(
                 })
                 addView(LinearLayout(HomeContext.context).apply {
                     addView(TextView(HomeContext.context).apply {
-                        text = "${minValue.toFloat() / divide}$unit"
+                        text = "$minValue"
                         layoutParams =
                             LinearLayout.LayoutParams(120, LinearLayout.LayoutParams.MATCH_PARENT)
                         setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
                     })
                     addView(TextView(HomeContext.context).apply {
-                        text = "$tempValue$unit"
+                        text = "${(tempValue * divide).toInt()}"
                         textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                         valueTextView = this
                         layoutParams =
@@ -99,7 +98,7 @@ class SettingSeekBarDialog(
                         setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
                     })
                     addView(TextView(HomeContext.context).apply {
-                        text = "${maxValue.toFloat() / divide}$unit"
+                        text = "$maxValue"
                         textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
                         layoutParams =
                             LinearLayout.LayoutParams(120, LinearLayout.LayoutParams.MATCH_PARENT)

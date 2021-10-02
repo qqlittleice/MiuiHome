@@ -65,14 +65,6 @@ class SettingUserInput(
                     )
                         .build()
                 )
-                if (divide != 1) {
-                    addView(
-                        SettingTextView.FastBuilder(
-                            mText = myRes.getString(R.string.Multiple) + " : $divide"
-                        )
-                            .build()
-                    )
-                }
             })
         })
         dialogBuilder.apply {

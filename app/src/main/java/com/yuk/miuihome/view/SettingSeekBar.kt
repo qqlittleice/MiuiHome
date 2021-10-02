@@ -110,7 +110,7 @@ class SettingSeekBar(
                 setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
             })
             addView(TextView(HomeContext.context).apply {
-                text = "${(tempValue * 10).toInt()}"
+                text = "${(tempValue * divide).toInt()}"
                 textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                 valueTextView = this
                 layoutParams =

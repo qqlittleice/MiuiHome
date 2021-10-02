@@ -615,7 +615,7 @@ class MainHook {
             myRes.getString(R.string.AnimationLevel),
             "animationLevel",
             5,
-            1000,
+            500,
             canUserInput = true,
             defValue = 100
         ).build()
