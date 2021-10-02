@@ -112,6 +112,7 @@ class MainHook {
         EnableLowEndDeviceUseMIUIWidgets().init()
         //禁用文件夹编辑内的今日推荐
         DisableRecommendServer().init()
+        HookSystemProperties().init()
 //        CustomHook.init()
         ResourcesHook().init()
     }
