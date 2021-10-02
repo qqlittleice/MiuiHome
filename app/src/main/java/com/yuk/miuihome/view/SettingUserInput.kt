@@ -65,12 +65,14 @@ class SettingUserInput(
                     )
                         .build()
                 )
-                addView(
-                    SettingTextView.FastBuilder(
-                        mText = myRes.getString(R.string.Multiple) + " : $divide"
+                if (divide != 1) {
+                    addView(
+                        SettingTextView.FastBuilder(
+                            mText = myRes.getString(R.string.Multiple) + " : $divide"
+                        )
+                            .build()
                     )
-                        .build()
-                )
+                }
             })
         })
         dialogBuilder.apply {

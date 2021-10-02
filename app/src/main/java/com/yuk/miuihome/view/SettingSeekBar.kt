@@ -1,10 +1,12 @@
 package com.yuk.miuihome.view
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.Context
 import android.graphics.Color
 import android.view.Gravity
 import android.widget.LinearLayout
+import android.widget.ScrollView
 import android.widget.SeekBar
 import android.widget.TextView
 import com.yuk.miuihome.HomeContext
@@ -17,11 +19,13 @@ import com.yuk.miuihome.utils.isNightMode
 @SuppressLint("ViewConstructor", "SetTextI18n")
 class SettingSeekBar(
     context: Context,
+    private val mText: String,
     private val mKey: String,
     private val defValue: Int,
     private val minValue: Int,
     private val maxValue: Int,
     private val divide: Int = 10,
+    private val canUserInput: Boolean
 ) :
     LinearLayout(context) {
     var text: String = ""
@@ -52,14 +56,14 @@ class SettingSeekBar(
         seekBar = SeekBar(HomeContext.context).apply {
             min = minValue
             max = maxValue
-            progress = (tempValue * 10).toInt()
+            progress = (tempValue * divide).toInt()
             setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
                 override fun onProgressChanged(
                     seekBar: SeekBar?,
                     progress: Int,
                     fromUser: Boolean
                 ) {
-                    saveValue((progress.toFloat() / divide))
+                    saveValue(progress.toFloat() / divide)
                     valueTextView.text = "$progress"
                     tempValue = (progress.toFloat() / divide)
                 }
@@ -129,6 +133,22 @@ class SettingSeekBar(
                 topMargin = dp2px(HomeContext.context, 5f)
             }
         })
+        if (canUserInput) {
+            addView(
+                SettingTextView.FastBuilder(
+                    mText = myRes.getString(R.string.ManualInput)
+                ) {
+                    SettingUserInput(
+                        mText,
+                        mKey,
+                        minValue,
+                        maxValue,
+                        divide,
+                        defValue
+                    ).build()
+                }.build()
+            )
+        }
     }
 
 
@@ -138,14 +158,27 @@ class SettingSeekBar(
         private val mKey: String,
         private val defValue: Int,
         private val minValue: Int,
-        private val maxValue: Int
+        private val maxValue: Int,
+        private val divide: Int = 10,
+        private val canUserInput: Boolean
     ) {
-        fun build() = SettingSeekBar(mContext, mKey, defValue, minValue, maxValue).apply {
+        fun build() = SettingSeekBar(
+            mContext,
+            mText,
+            mKey,
+            defValue,
+            minValue,
+            maxValue,
+            divide,
+            canUserInput
+        ).apply {
             text = mText
             key = mKey
             defValue
             minValue
             maxValue
+            divide
+            canUserInput
         }
     }
 

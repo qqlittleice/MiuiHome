@@ -381,10 +381,15 @@ class MainHook {
                         mKey = "searchBarBlur"
                     ).build()
                 )
-                addView(SettingSwitch.FastBuilder(mText = myRes.getString(R.string.DockSettings), mKey = "dockSettings") {
-                    dialog.cancel()
-                    showSettingDialog()
-                }.build())
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.DockSettings),
+                        mKey = "dockSettings"
+                    ) {
+                        dialog.cancel()
+                        showSettingDialog()
+                    }.build()
+                )
                 if (OwnSP.ownSP.getBoolean(
                         "dockSettings", false
                     )
@@ -530,9 +535,10 @@ class MainHook {
                         SettingSeekBar.FastBuilder(
                             mText = myRes.getString(R.string.DockRoundedCorners),
                             mKey = "dockRadius",
-                            defValue = 20,
+                            defValue = 25,
                             minValue = 0,
-                            maxValue = 100
+                            maxValue = 50,
+                            canUserInput = true
                         ).build()
                     )
                     addView(
@@ -541,7 +547,8 @@ class MainHook {
                             mKey = "dockHeight",
                             defValue = 84,
                             minValue = 50,
-                            maxValue = 200
+                            maxValue = 200,
+                            canUserInput = true
                         ).build()
                     )
                     addView(
@@ -550,25 +557,28 @@ class MainHook {
                             mKey = "dockSide",
                             defValue = 30,
                             minValue = 0,
-                            maxValue = 200
+                            maxValue = 200,
+                            canUserInput = true
                         ).build()
                     )
                     addView(
                         SettingSeekBar.FastBuilder(
                             mText = myRes.getString(R.string.DockBottom),
                             mKey = "dockBottom",
-                            defValue = 25,
+                            defValue = 16,
                             minValue = 0,
-                            maxValue = 200
+                            maxValue = 200,
+                            canUserInput = true
                         ).build()
                     )
                     addView(
                         SettingSeekBar.FastBuilder(
                             mText = myRes.getString(R.string.DockIconBottom),
                             mKey = "dockIconBottom",
-                            defValue = 35,
+                            defValue = 25,
                             minValue = 0,
-                            maxValue = 200
+                            maxValue = 200,
+                            canUserInput = true
                         ).build()
                     )
 
@@ -604,8 +614,8 @@ class MainHook {
         SettingSeekBarDialog(
             myRes.getString(R.string.AnimationLevel),
             "animationLevel",
-            10,
-            500,
+            5,
+            1000,
             canUserInput = true,
             defValue = 100
         ).build()
@@ -844,11 +854,11 @@ class MainHook {
                 OwnSP.set("smoothAnimation", true)
                 OwnSP.set("animationLevel", 1.0f)
                 OwnSP.set("isFirstUse", false)
-                OwnSP.set("dockRadius", 2.0f)
+                OwnSP.set("dockRadius", 2.5f)
                 OwnSP.set("dockHeight", 8.4f)
                 OwnSP.set("dockSide", 3.0f)
-                OwnSP.set("dockBottom", 2.5f)
-                OwnSP.set("dockIconBottom", 3.5f)
+                OwnSP.set("dockBottom", 1.6f)
+                OwnSP.set("dockIconBottom", 2.5f)
                 thread {
                     LogUtil.toast(myRes.getString(R.string.Reboot2))
                     Thread.sleep(2000)
