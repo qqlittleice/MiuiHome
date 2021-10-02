@@ -23,7 +23,7 @@
   <string name="DockSettings">Настройки док-бара</string>
   <string name="DockSide">Док-бар по бокам экрана</string>
   <string name="DockWarn">Если вам необходимо изменить закругленные углы, включите перехват ресурсов.</string>
-  <string name="EnableDockBlur">Включить размытие панели док-станции</string>
+  <string name="EnableDockBlur">Включить размытие панели док-бара</string>
   <string name="EnableIconShadow">Показывать тень и отражение иконок</string>
   <string name="EveryThingBuild">Скомпилировать рабочий стол MIUI, используя режим Everything</string>
   <string name="Folder">Папки</string>

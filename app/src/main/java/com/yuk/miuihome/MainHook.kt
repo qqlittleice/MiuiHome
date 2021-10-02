@@ -547,7 +547,7 @@ class MainHook {
                         SettingSeekBar.FastBuilder(
                             mText = myRes.getString(R.string.DockRoundedCorners),
                             mKey = "dockRadius",
-                            defValue = 33,
+                            defValue = 25,
                             minValue = 0,
                             maxValue = 50,
                             canUserInput = false
@@ -557,7 +557,7 @@ class MainHook {
                         SettingSeekBar.FastBuilder(
                             mText = myRes.getString(R.string.DockHeight),
                             mKey = "dockHeight",
-                            defValue = 103,
+                            defValue = 84,
                             minValue = 50,
                             maxValue = 200,
                             canUserInput = false
@@ -567,7 +567,7 @@ class MainHook {
                         SettingSeekBar.FastBuilder(
                             mText = myRes.getString(R.string.DockSide),
                             mKey = "dockSide",
-                            defValue = 19,
+                            defValue = 30,
                             minValue = 0,
                             maxValue = 200,
                             canUserInput = false
@@ -577,7 +577,7 @@ class MainHook {
                         SettingSeekBar.FastBuilder(
                             mText = myRes.getString(R.string.DockBottom),
                             mKey = "dockBottom",
-                            defValue = 11,
+                            defValue = 23,
                             minValue = 0,
                             maxValue = 200,
                             canUserInput = false
@@ -587,7 +587,7 @@ class MainHook {
                         SettingSeekBar.FastBuilder(
                             mText = myRes.getString(R.string.DockIconBottom),
                             mKey = "dockIconBottom",
-                            defValue = 28,
+                            defValue = 35,
                             minValue = 0,
                             maxValue = 200,
                             canUserInput = false
@@ -912,11 +912,11 @@ class MainHook {
                 OwnSP.set("searchBarBlur", true)
                 OwnSP.set("animationLevel", 1.25f)
                 OwnSP.set("isFirstUse", false)
-                OwnSP.set("dockRadius", 3.3f)
-                OwnSP.set("dockHeight", 10.3f)
-                OwnSP.set("dockSide", 1.9f)
-                OwnSP.set("dockBottom", 1.1f)
-                OwnSP.set("dockIconBottom", 2.8f)
+                OwnSP.set("dockRadius", 2.5f)
+                OwnSP.set("dockHeight", 8.4f)
+                OwnSP.set("dockSide", 3.0f)
+                OwnSP.set("dockBottom", 2.3f)
+                OwnSP.set("dockIconBottom", 3.5f)
                 thread {
                     LogUtil.toast(myRes.getString(R.string.Reboot2))
                     Thread.sleep(1000)
