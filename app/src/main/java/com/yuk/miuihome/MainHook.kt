@@ -796,52 +796,48 @@ class MainHook {
                 "com.miui.home.launcher.Launcher",
                 lpparam.classLoader
             )
-            try {
-                XposedHelpers.findAndHookMethod(
-                    _LAUNCHER_CLASS,
-                    "onCreate",
-                    Bundle::class.java,
-                    object : XC_MethodHook() {
-                        override fun afterHookedMethod(param: MethodHookParam) {
-                            super.afterHookedMethod(param)
-                            val SearchBarObject = XposedHelpers.callMethod(
-                                param.thisObject,
-                                "getSearchBar"
-                            ) as FrameLayout
-                            val SearchBarDesktop = SearchBarObject.getChildAt(0) as RelativeLayout
-                            val SearchBarDrawer = SearchBarObject.getChildAt(1) as RelativeLayout
-                            val SearchBarContainer = SearchBarObject.parent as FrameLayout
-                            val SearchEdgeLayout = SearchBarContainer.parent as FrameLayout
-                            // 重新给Searbar容器排序
-                            SearchEdgeLayout.removeView(SearchBarContainer)
-                            SearchEdgeLayout.addView(SearchBarContainer, 0)
-                            // 清空搜索图标和小爱同学
-                            SearchBarDesktop.removeAllViews()
-                            // 修改高度
-                            SearchBarObject.layoutParams.height = dip2px(
-                                (OwnSP.ownSP.getFloat("dockHeight", -1f) * 10).toInt()
-                            )
-                            // 修改应用列表搜索框
-                            val mAllAppViewField = _LAUNCHER_CLASS.getDeclaredField("mAppsView")
-                            mAllAppViewField.isAccessible = true
-                            val mAllAppView =
-                                mAllAppViewField.get(param.thisObject) as RelativeLayout
-                            val mAllAppSearchView =
-                                mAllAppView.getChildAt(mAllAppView.childCount - 1) as FrameLayout
-                            SearchBarObject.removeView(SearchBarDrawer)
-                            mAllAppSearchView.addView(SearchBarDrawer)
-                            SearchBarDrawer.bringToFront()
-                            val layoutParams =
-                                SearchBarDrawer.layoutParams as FrameLayout.LayoutParams
-                            SearchBarDrawer.layoutParams.height = dip2px(45)
-                            layoutParams.leftMargin = dip2px(15)
-                            layoutParams.rightMargin = dip2px(15)
-                            SearchBarDrawer.layoutParams = layoutParams
-                        }
-                    })
-            } catch (e: Exception) {
-                XposedBridge.log("[MiuiHome] DockHook Error:" + e.message)
-            }
+            XposedHelpers.findAndHookMethod(
+                _LAUNCHER_CLASS,
+                "onCreate",
+                Bundle::class.java,
+                object : XC_MethodHook() {
+                    override fun afterHookedMethod(param: MethodHookParam) {
+                        super.afterHookedMethod(param)
+                        val SearchBarObject = XposedHelpers.callMethod(
+                            param.thisObject,
+                            "getSearchBar"
+                        ) as FrameLayout
+                        val SearchBarDesktop = SearchBarObject.getChildAt(0) as RelativeLayout
+                        val SearchBarDrawer = SearchBarObject.getChildAt(1) as RelativeLayout
+                        val SearchBarContainer = SearchBarObject.parent as FrameLayout
+                        val SearchEdgeLayout = SearchBarContainer.parent as FrameLayout
+                        // 重新给Searbar容器排序
+                        SearchEdgeLayout.removeView(SearchBarContainer)
+                        SearchEdgeLayout.addView(SearchBarContainer, 0)
+                        // 清空搜索图标和小爱同学
+                        SearchBarDesktop.removeAllViews()
+                        // 修改高度
+                        SearchBarObject.layoutParams.height = dip2px(
+                            (OwnSP.ownSP.getFloat("dockHeight", -1f) * 10).toInt()
+                        )
+                        // 修改应用列表搜索框
+                        val mAllAppViewField = _LAUNCHER_CLASS.getDeclaredField("mAppsView")
+                        mAllAppViewField.isAccessible = true
+                        val mAllAppView =
+                            mAllAppViewField.get(param.thisObject) as RelativeLayout
+                        val mAllAppSearchView =
+                            mAllAppView.getChildAt(mAllAppView.childCount - 1) as FrameLayout
+                        SearchBarObject.removeView(SearchBarDrawer)
+                        mAllAppSearchView.addView(SearchBarDrawer)
+                        SearchBarDrawer.bringToFront()
+                        val layoutParams =
+                            SearchBarDrawer.layoutParams as FrameLayout.LayoutParams
+                        SearchBarDrawer.layoutParams.height = dip2px(45)
+                        layoutParams.leftMargin = dip2px(15)
+                        layoutParams.rightMargin = dip2px(15)
+                        SearchBarDrawer.layoutParams = layoutParams
+                    }
+                })
         }
     }
 

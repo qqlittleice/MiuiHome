@@ -9,7 +9,6 @@ import android.os.Bundle
 import android.widget.*
 import androidx.annotation.Keep
 import androidx.annotation.RequiresApi
-import com.yuk.miuihome.Config.myself
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.dp2px
 
@@ -83,7 +82,7 @@ class MainActivity : Activity() {
                         setOnClickListener {
                             packageManager.setComponentEnabledSetting(
                                 ComponentName(
-                                    myself,
+                                    packageName,
                                     "com.yuk.miuihome.activity.EntryActivity"
                                 ),
                                 PackageManager.COMPONENT_ENABLED_STATE_DEFAULT,
@@ -93,7 +92,7 @@ class MainActivity : Activity() {
                             finish()
                             val intent = Intent()
                             intent.component = ComponentName(
-                                myself,
+                                packageName,
                                 "com.yuk.miuihome.activity.EntryActivity"
                             )
                             startActivity(intent)

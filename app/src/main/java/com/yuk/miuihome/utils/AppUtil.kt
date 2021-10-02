@@ -13,7 +13,6 @@ fun dip2px(dpValue: Int): Int =
 fun sp2px(context: Context, spValue: Float): Int =
     (spValue * context.resources.displayMetrics.scaledDensity + 0.5f).toInt()
 
-
 fun px2dip(pxValue: Int): Int =
     (pxValue / appContext.resources.displayMetrics.density + 0.5f).toInt()
 

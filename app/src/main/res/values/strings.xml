@@ -70,7 +70,7 @@
   <string name="WidgetToMinus">Allow moving Classic widgets to \"App Vault\"</string>
   <string name="Yes">Yes</string>
   <string name="EnableIconShadow">Show icon shadow and reflection</string>
-  <string name="res_hooked">Resource Injection Success!</string>
+  <string name="res_hooked" translatable="false">Resource Injection Success!</string>
   <string name="SmallWindow">Allow all apps to use small window</string>
   <string name="LowEndDeviceUseMIUIWidgets">Allow Low-End device to use MIUI Widgets</string>
   <string name="RecommendServer">Disable recommend server</string>

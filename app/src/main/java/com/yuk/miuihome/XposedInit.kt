@@ -10,7 +10,7 @@ import com.github.kyuubiran.ezxhelper.utils.Log
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
-import com.yuk.miuihome.Config.myself
+import com.yuk.miuihome.Config.packageName
 import com.yuk.miuihome.HomeContext.isAlpha
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
@@ -22,7 +22,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
     @Keep
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
         when (lpparam.packageName) {
-            myself -> {
+            packageName -> {
                 XposedHelpers.findAndHookMethod(
                     "com.yuk.miuihome.activity.MainActivity",
                     lpparam.classLoader,
@@ -84,7 +84,8 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
     fun checkVersionCode() {
         try {
             val packageManager: PackageManager = InitFields.appContext.packageManager
-            HomeContext.versionCode = packageManager.getPackageInfo(InitFields.appContext.packageName, 0).longVersionCode
+            HomeContext.versionCode =
+                packageManager.getPackageInfo(InitFields.appContext.packageName, 0).longVersionCode
         } catch (e: Exception) {
             Log.e(e, "getVersionName")
             HomeContext.versionCode = -1L

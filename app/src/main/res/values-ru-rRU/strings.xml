@@ -69,9 +69,15 @@
   <string name="WidgetToMinus">Разрешить перемещать классические виджеты на -1 экран</string>
   <string name="Yes">Применить</string>
   <string name="EnableIconShadow">Показывать тени и отражение иконок</string>
-  <string name="res_hooked">Перехват ресурсов прошел успешно!</string>
   <string name="SmallWindow">Разрешить всем приложениям использовать маленькие окна</string>
   <string name="LowEndDeviceUseMIUIWidgets">Разрешить слабым машинам добавлять виджеты MIUI</string>
   <string name="RecommendServer">Отключить рекомендовать</string>
   <string name="EveryThingBuild">Скомпилируйте рабочий стол, используя режим Everything</string>
+  <string name="DockHeight">Высота док-бара</string>.
+  <string name="DockRoundedCorners">Панель дока с закругленными углами</string>.
+  <string name="DockSide">Панель док-станции с боковых сторон экрана</string>
+  <string name="DockBottom">Панель док-станции снизу экрана</string>
+  <string name="DockIconBottom">Иконки из нижней части экрана</string>
+  <string name="DockSettings">Настройки дока</string>
+  <string name="DockWarn">Пожалуйста, включите крючки ресурсов, если вам нужно изменить закругленные углы.</string>
 </resources>

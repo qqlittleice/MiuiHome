@@ -1,12 +1,10 @@
 package com.yuk.miuihome.view
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.content.Context
 import android.graphics.Color
 import android.view.Gravity
 import android.widget.LinearLayout
-import android.widget.ScrollView
 import android.widget.SeekBar
 import android.widget.TextView
 import com.yuk.miuihome.HomeContext

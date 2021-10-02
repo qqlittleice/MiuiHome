@@ -15,7 +15,6 @@ import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResou
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.dip2px
 import com.yuk.miuihome.utils.ktx.setTryReplacement
-import de.robv.android.xposed.XposedBridge
 import de.robv.android.xposed.callbacks.XC_LayoutInflated
 import kotlin.concurrent.thread
 
@@ -23,7 +22,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
 
     private val modRes = XModuleResources.createInstance(XposedInit.modulePath, hookedRes.res)
     private fun getResId(type: String, name: String): Int =
-        modRes.getIdentifier(name, type, Config.myself)
+        modRes.getIdentifier(name, type, Config.packageName)
 
     companion object {
         private var hasLoad = false
@@ -125,32 +124,33 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 "dockSettings", false
             )
         ) {
-            try {
-                res.setReplacement(
-                    "com.miui.home",
-                    "drawable",
-                    drawableName,
-                    object : XResources.DrawableLoader() {
-                        @SuppressLint("UseCompatLoadingForDrawables")
-                        override fun newDrawable(xres: XResources, id: Int): Drawable {
-                            val background = context.getDrawable(
-                                xres.getIdentifier(
-                                    drawableName,
-                                    "drawable",
-                                    "com.miui.home"
-                                )
-                            ) as RippleDrawable
-                            val backgroundShape = background.getDrawable(0) as GradientDrawable
-                            backgroundShape.cornerRadius =
-                                dip2px((OwnSP.ownSP.getFloat("dockRadius", -1f) * 10).toInt()).toFloat()
-                            backgroundShape.setStroke(0, 0)
-                            background.setDrawable(0, backgroundShape)
-                            return background
-                        }
-                    })
-            } catch (e: Exception) {
-                XposedBridge.log("[MiuiHome] ResHook Error:" + e.message)
-            }
+            res.setReplacement(
+                "com.miui.home",
+                "drawable",
+                drawableName,
+                object : XResources.DrawableLoader() {
+                    @SuppressLint("UseCompatLoadingForDrawables")
+                    override fun newDrawable(xres: XResources, id: Int): Drawable {
+                        val background = context.getDrawable(
+                            xres.getIdentifier(
+                                drawableName,
+                                "drawable",
+                                "com.miui.home"
+                            )
+                        ) as RippleDrawable
+                        val backgroundShape = background.getDrawable(0) as GradientDrawable
+                        backgroundShape.cornerRadius =
+                            dip2px(
+                                (OwnSP.ownSP.getFloat(
+                                    "dockRadius",
+                                    -1f
+                                ) * 10).toInt()
+                            ).toFloat()
+                        backgroundShape.setStroke(0, 0)
+                        background.setDrawable(0, backgroundShape)
+                        return background
+                    }
+                })
         }
     }
 }
