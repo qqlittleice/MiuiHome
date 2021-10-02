@@ -557,7 +557,7 @@ class MainHook {
                         SettingSeekBar.FastBuilder(
                             mText = myRes.getString(R.string.DockHeight),
                             mKey = "dockHeight",
-                            defValue = 101,
+                            defValue = 103,
                             minValue = 50,
                             maxValue = 200,
                             canUserInput = false
@@ -913,7 +913,7 @@ class MainHook {
                 OwnSP.set("animationLevel", 1.25f)
                 OwnSP.set("isFirstUse", false)
                 OwnSP.set("dockRadius", 3.3f)
-                OwnSP.set("dockHeight", 10.1f)
+                OwnSP.set("dockHeight", 10.3f)
                 OwnSP.set("dockSide", 1.9f)
                 OwnSP.set("dockBottom", 1.1f)
                 OwnSP.set("dockIconBottom", 2.8f)
