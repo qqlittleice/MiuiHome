@@ -86,4 +86,5 @@
   <string name="EnableDockBlur">Enable blurring of the dock bar</string>
   <string name="Reset">Reset Dock Parameters</string>
   <string name="Tips1">This will reset the Dock parameter to its default value and restart the Launcher.</string>
+  <string name="Reset1">Reset</string>
 </resources>
