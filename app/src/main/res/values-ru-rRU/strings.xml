@@ -84,4 +84,5 @@
   <string name="EnableDockBlur">Включить размытие панели док-станции</string>
   <string name="Reset">Сброс параметров дока</string>
   <string name="Tips1">Это приведет к сбросу параметров Dock на значения по умолчанию и перезагрузке рабочего стола.</string>
+  <string name="Reset1">Сброс</string>
 </resources>
