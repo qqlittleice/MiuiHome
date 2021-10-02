@@ -11,8 +11,8 @@ android {
         applicationId "com.yuk.miuihome"
         minSdk 28
         targetSdk 31
-        versionCode 404
-        versionName "4.0.4"
+        versionCode 405
+        versionName "4.0.5"
 
     }
 
@@ -49,8 +49,8 @@ android {
 
 dependencies {
     compileOnly 'de.robv.android.xposed:api:82'
-    implementation 'com.github.kyuubiran:EzXHelper:0.3.8'
     compileOnly 'androidx.annotation:annotation:1.2.0'
+    implementation 'com.github.kyuubiran:EzXHelper:0.3.8'
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
 
