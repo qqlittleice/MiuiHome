@@ -52,7 +52,6 @@ class SettingSeekBar(
             dp2px(getContext(), 10f)
         )
         textView = TextView(context)
-        textView.textSize = SettingTextView.textSize
         seekBar = SeekBar(HomeContext.context).apply {
             min = minValue
             max = maxValue
@@ -92,21 +91,14 @@ class SettingSeekBar(
                     LayoutParams(300, LayoutParams.MATCH_PARENT)
                 setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
             })
-            layoutParams = LayoutParams(
-                LayoutParams.MATCH_PARENT,
-                LayoutParams.WRAP_CONTENT
-            )
             gravity = Gravity.CENTER_VERTICAL
-            (this.layoutParams as LayoutParams).apply {
-                topMargin = dp2px(HomeContext.context, 5f)
-            }
         })
         addView(seekBar)
         addView(LinearLayout(HomeContext.context).apply {
             addView(TextView(HomeContext.context).apply {
                 text = "$minValue"
                 layoutParams =
-                    LayoutParams(120, LayoutParams.MATCH_PARENT)
+                    LayoutParams(150, LayoutParams.MATCH_PARENT)
                 setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
             })
             addView(TextView(HomeContext.context).apply {
@@ -121,17 +113,10 @@ class SettingSeekBar(
                 text = "$maxValue"
                 textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
                 layoutParams =
-                    LayoutParams(120, LayoutParams.MATCH_PARENT)
+                    LayoutParams(150, LayoutParams.MATCH_PARENT)
                 setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
             })
-            layoutParams = LayoutParams(
-                LayoutParams.MATCH_PARENT,
-                LayoutParams.WRAP_CONTENT
-            )
             gravity = Gravity.CENTER_VERTICAL
-            (this.layoutParams as LayoutParams).apply {
-                topMargin = dp2px(HomeContext.context, 5f)
-            }
         })
         if (canUserInput) {
             addView(
@@ -150,7 +135,6 @@ class SettingSeekBar(
             )
         }
     }
-
 
     class FastBuilder(
         private val mContext: Context = HomeContext.context,

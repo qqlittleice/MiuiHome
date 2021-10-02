@@ -86,7 +86,7 @@ class SettingSeekBarDialog(
                     addView(TextView(HomeContext.context).apply {
                         text = "$minValue"
                         layoutParams =
-                            LinearLayout.LayoutParams(120, LinearLayout.LayoutParams.MATCH_PARENT)
+                            LinearLayout.LayoutParams(150, LinearLayout.LayoutParams.MATCH_PARENT)
                         setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
                     })
                     addView(TextView(HomeContext.context).apply {
@@ -101,17 +101,10 @@ class SettingSeekBarDialog(
                         text = "$maxValue"
                         textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
                         layoutParams =
-                            LinearLayout.LayoutParams(120, LinearLayout.LayoutParams.MATCH_PARENT)
+                            LinearLayout.LayoutParams(150, LinearLayout.LayoutParams.MATCH_PARENT)
                         setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
                     })
-                    layoutParams = LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT
-                    )
                     gravity = Gravity.CENTER_VERTICAL
-                    (this.layoutParams as LinearLayout.LayoutParams).apply {
-                        topMargin = dp2px(HomeContext.context, 5f)
-                    }
                 })
                 if (canUserInput) {
                     addView(
