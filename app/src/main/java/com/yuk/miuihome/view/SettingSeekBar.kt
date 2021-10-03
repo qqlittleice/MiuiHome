@@ -45,9 +45,9 @@ class SettingSeekBar(
         orientation = VERTICAL
         setPadding(
             dp2px(getContext(), 10f),
+            dp2px(getContext(), 7f),
             dp2px(getContext(), 10f),
-            dp2px(getContext(), 10f),
-            dp2px(getContext(), 10f)
+            dp2px(getContext(), 7f)
         )
         textView = TextView(context)
         seekBar = SeekBar(HomeContext.context).apply {

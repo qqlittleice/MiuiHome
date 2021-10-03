@@ -33,9 +33,9 @@ class SettingSwitch(context: Context) : Switch(context) {
     init {
         setPadding(
             dp2px(getContext(), 10f),
+            dp2px(getContext(), 7f),
             dp2px(getContext(), 10f),
-            dp2px(getContext(), 10f),
-            dp2px(getContext(), 10f)
+            dp2px(getContext(), 7f)
         )
         setTextColor(Color.parseColor(color))
     }
