@@ -146,7 +146,8 @@ class MainHook {
                 addView(
                     SettingTextView.FastBuilder(
                         mText = "${BuildConfig.VERSION_NAME} - ${BuildConfig.VERSION_CODE} (${BuildConfig.BUILD_TYPE})",
-                        mSize = sp2px(HomeContext.context, 6f).toFloat()).build()
+                        mSize = sp2px(HomeContext.context, 6f).toFloat()
+                    ).build()
                 )
                 addView(
                     SettingTextView.FastBuilder(
@@ -436,8 +437,8 @@ class MainHook {
                     .build())
             })
         })
-        dialogBuilder.setPositiveButton(myRes.getString(R.string.Close), null)
-        dialogBuilder.setNeutralButton(myRes.getString(R.string.Reboot)) { _, _ -> exitProcess(0) }
+        dialogBuilder.setNeutralButton(myRes.getString(R.string.Close), null)
+        dialogBuilder.setPositiveButton(myRes.getString(R.string.Reboot)) { _, _ -> exitProcess(0) }
         dialogBuilder.setCancelable(false)
         dialog = dialogBuilder.show()
     }
@@ -548,16 +549,18 @@ class MainHook {
                             mKey = "searchBarBlur"
                         ).build()
                     )
-                    addView(
-                        SettingSeekBar.FastBuilder(
-                            mText = myRes.getString(R.string.DockRoundedCorners),
-                            mKey = "dockRadius",
-                            defValue = 25,
-                            minValue = 0,
-                            maxValue = 50,
-                            canUserInput = false
-                        ).build()
-                    )
+                    if (XposedInit.hasHookPackageResources) {
+                        addView(
+                            SettingSeekBar.FastBuilder(
+                                mText = myRes.getString(R.string.DockRoundedCorners),
+                                mKey = "dockRadius",
+                                defValue = 25,
+                                minValue = 0,
+                                maxValue = 50,
+                                canUserInput = false
+                            ).build()
+                        )
+                    }
                     addView(
                         SettingSeekBar.FastBuilder(
                             mText = myRes.getString(R.string.DockHeight),
@@ -601,7 +604,7 @@ class MainHook {
                 })
             })
             setPositiveButton(myRes.getString(R.string.Save), null)
-            dialogBuilder.setNeutralButton(myRes.getString(R.string.Reset1)) { _, _ -> showModifyReset() }
+            setNeutralButton(myRes.getString(R.string.Reset1)) { _, _ -> showModifyReset() }
             setCancelable(false)
         }.show()
     }
