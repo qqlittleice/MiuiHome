@@ -2,7 +2,6 @@ package com.yuk.miuihome
 
 import android.app.Activity
 import android.app.AlertDialog
-import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -17,11 +16,6 @@ import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import com.yuk.miuihome.utils.ktx.setObjectField
 import com.yuk.miuihome.utils.sp2px
 import com.yuk.miuihome.view.*
-import de.robv.android.xposed.XC_MethodHook
-import de.robv.android.xposed.XC_MethodReplacement
-import de.robv.android.xposed.XposedBridge
-import de.robv.android.xposed.XposedHelpers
-import de.robv.android.xposed.callbacks.XC_LoadPackage
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
