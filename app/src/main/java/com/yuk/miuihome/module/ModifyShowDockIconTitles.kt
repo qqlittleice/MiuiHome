@@ -8,7 +8,6 @@ import com.yuk.miuihome.utils.ktx.setReturnConstant
 import de.robv.android.xposed.XposedHelpers
 import kotlin.math.roundToInt
 
-
 class ModifyShowDockIconTitles {
 
     fun init() {

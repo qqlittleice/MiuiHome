@@ -60,7 +60,7 @@
   <string name="TaskViewBlurSetTo">Set the blur level of the task view to</string>
   <string name="TestBlur">Test blur</string>
   <string name="TestFeature">Experimental Feature</string>
-  <string name="Tips">It is detected that you are using this module for the first time, the module will set the default value, and then restart MIUI launcher.\nIf you need further settings, please wait for the MIUI launcher to restart and open the \"Home screen\" settings again.</string>
+  <string name="Tips">It is detected that you are using this module for the first time, the module will set the default value, and then restart the System launcher.\nIf you need further settings, please wait for the MIUI launcher to restart and open the \"Home screen\" settings again.</string>
   <string name="UnlockGrids">Unlock grid restrictions</string>
   <string name="VerticalTaskViewOfAppCardSize">Thumbnail size for vertical task view</string>
   <string name="WallpaperDarken">Turn off the task view wallpaper darkening feature</string>
@@ -85,6 +85,7 @@
   <string name="DockFeature">Dock Feature</string>
   <string name="EnableDockBlur">Enable blurring of the dock bar</string>
   <string name="Reset">Reset Dock Parameters</string>
-  <string name="Tips1">This will reset the Dock parameter to its default value and restart the Launcher.</string>
+  <string name="Tips1">This will restore the Dock parameter to its default value and restart the System Launcher.</string>
   <string name="Reset1">Reset</string>
+  <string name="Tips2">This will restore the module default settings and restart the System Launcher.</string>
 </resources>

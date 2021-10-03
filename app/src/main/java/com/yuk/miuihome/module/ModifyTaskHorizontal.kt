@@ -5,7 +5,6 @@ import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.callStaticMethod
 import com.yuk.miuihome.utils.ktx.replaceMethod
 
-
 class ModifyTaskHorizontal {
 
     fun init() {

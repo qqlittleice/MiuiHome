@@ -52,7 +52,6 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                             checkVersionCode()
                             checkWidgetLauncher()
                             MainHook().doHook()
-                            MainHook().dockHook(lpparam)
                         }
                     })
             }
