@@ -11,7 +11,7 @@ android {
         applicationId "com.yuk.miuihome"
         minSdk 28
         targetSdk 31
-        versionCode 4061
+        versionCode 4062
         versionName "4.0.6"
 
     }
@@ -48,6 +48,7 @@ android {
 }
 
 dependencies {
+    compileOnly files('lib/miuisdk.jar')
     compileOnly 'de.robv.android.xposed:api:82'
     compileOnly 'androidx.annotation:annotation:1.2.0'
     implementation 'com.github.kyuubiran:EzXHelper:0.3.8'

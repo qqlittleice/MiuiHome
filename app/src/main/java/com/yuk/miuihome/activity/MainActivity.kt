@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.*
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.widget.*
 import androidx.annotation.Keep
@@ -13,7 +14,11 @@ import com.yuk.miuihome.utils.dp2px
 class MainActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(android.R.style.Theme_DeviceDefault_Settings)
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.R) {
+            setTheme(miui.R.style.Theme_DayNight_Settings)
+        } else {
+            setTheme(android.R.style.Theme_DeviceDefault_DayNight)
+        }
         super.onCreate(savedInstanceState)
         setContentView(getMainLayout())
     }
