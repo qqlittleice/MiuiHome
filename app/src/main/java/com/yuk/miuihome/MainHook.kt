@@ -601,7 +601,7 @@ class MainHook {
                 })
             })
             setPositiveButton(myRes.getString(R.string.Save), null)
-            dialogBuilder.setNeutralButton(myRes.getString(R.string.Reset)) { _, _ -> showModifyReset() }
+            dialogBuilder.setNeutralButton(myRes.getString(R.string.Reset1)) { _, _ -> showModifyReset() }
             setCancelable(false)
         }.show()
     }
