@@ -120,7 +120,6 @@ class MainHook {
         HookSystemProperties().init()
         //DockHook
         DockHook().init()
-        TestHook().init()
         //CustomHook
 //        CustomHook.init()
         //ResHook
