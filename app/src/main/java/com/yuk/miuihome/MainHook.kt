@@ -15,6 +15,7 @@ import com.yuk.miuihome.utils.dp2px
 import com.yuk.miuihome.utils.ktx.getObjectField
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import com.yuk.miuihome.utils.ktx.setObjectField
+import com.yuk.miuihome.utils.sp2px
 import com.yuk.miuihome.view.*
 import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XC_MethodReplacement
@@ -119,6 +120,7 @@ class MainHook {
         HookSystemProperties().init()
         //DockHook
         DockHook().init()
+        TestHook().init()
         //CustomHook
 //        CustomHook.init()
         //ResHook
@@ -147,6 +149,11 @@ class MainHook {
                         mText = myRes.getString(R.string.app_name),
                         mSize = SettingTextView.titleSize
                     ).build()
+                )
+                addView(
+                    SettingTextView.FastBuilder(
+                        mText = "${BuildConfig.VERSION_NAME} - ${BuildConfig.VERSION_CODE} (${BuildConfig.BUILD_TYPE})",
+                        mSize = sp2px(HomeContext.context, 6f).toFloat()).build()
                 )
                 addView(
                     SettingTextView.FastBuilder(
