@@ -86,4 +86,5 @@
   <string name="Tips1">这将重置底栏配置参数到默认值并重启系统桌面。</string>
   <string name="Reset1">重置</string>
   <string name="Tips2">这将还原模块默认值设定并重启系统桌面。</string>
+  <string name="HideSeekPoints">移除页面指示器</string>
 </resources>

@@ -86,4 +86,5 @@
   <string name="Tips1">這將重置底欄配置參數到默認值並重啟系統桌面。</string>
   <string name="Reset1">重置</string>
   <string name="Tips2">這將還原模塊默認值設定並重啟系統桌面。</string>
+  <string name="HideSeekPoints">移除頁面指示器</string>
 </resources>

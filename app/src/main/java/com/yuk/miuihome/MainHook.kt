@@ -110,6 +110,8 @@ class MainHook {
         EnableLowEndDeviceUseMIUIWidgets().init()
         //禁用文件夹编辑内的今日推荐
         DisableRecommendServer().init()
+        //仅在滑动时显示桌面指示器
+        ModifyHideSeekPoints().init()
         //propHook
         HookSystemProperties().init()
         //DockHook
@@ -383,6 +385,12 @@ class MainHook {
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.AlwaysShowStatusBarClock),
                         mKey = "clockGadget"
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.HideSeekPoints),
+                        mKey = "hideSeekPoints"
                     ).build()
                 )
                 if (!OwnSP.ownSP.getBoolean(

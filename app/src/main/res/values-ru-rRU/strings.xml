@@ -98,4 +98,5 @@
   <string name="WidgetToMinus">Позволяет перемещать классические виджеты в "Ленту виджетов"</string>
   <string name="Yes">Да</string>
   <string name="Tips2">Это восстановит настройки модуля по умолчанию и перезагрузит рабочий стол системы.</string>
+  <string name="HideSeekPoints">удаления Индикатор экрана</string>
 </resources>

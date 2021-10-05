@@ -88,4 +88,5 @@
   <string name="Tips1">This will restore the Dock parameter to its default value and restart the System Launcher.</string>
   <string name="Reset1">Reset</string>
   <string name="Tips2">This will restore the module default settings and restart the System Launcher.</string>
+  <string name="HideSeekPoints">Remove Seitenanzeige</string>
 </resources>
