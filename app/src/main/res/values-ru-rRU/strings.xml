@@ -56,7 +56,7 @@
   <string name="ModuleFeature">Доп. настройки модуля</string>
   <string name="ModuleNotEnable">Модуль не активирован</string>
   <string name="ModuleSettings">Настройки модуля</string>
-  <string name="ModuleSettingsResHook">Настройки модуля (√)</string>
+  <string name="ResHook">Ресурсный крючок√</string>
   <string name="Multiple">Введенное значение будет разделено на</string>
   <string name="NoneBlur">Без размытия</string>
   <string name="OpenMiuiHomeSettings">Открыть настройки рабочего стола MIUI</string>

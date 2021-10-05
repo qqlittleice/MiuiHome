@@ -19,7 +19,10 @@ class BuildWithEverything {
 
     fun init() {
         try {
-            readStream(Runtime.getRuntime().exec("cmd package compile -m everything ${Config.hookPackage}").inputStream)
+            readStream(
+                Runtime.getRuntime()
+                    .exec("cmd package compile -m everything ${Config.hookPackage}").inputStream
+            )
         } catch (e: IOException) {
             Toast.makeText(HomeContext.context, e.toString(), Toast.LENGTH_LONG).show()
         }

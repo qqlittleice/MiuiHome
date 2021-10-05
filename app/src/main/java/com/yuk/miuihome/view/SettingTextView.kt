@@ -8,7 +8,7 @@ import android.net.Uri
 import android.view.View
 import android.widget.TextView
 import com.yuk.miuihome.HomeContext
-import com.yuk.miuihome.utils.dp2px
+import com.yuk.miuihome.utils.dip2px
 import com.yuk.miuihome.utils.isNightMode
 import com.yuk.miuihome.utils.sp2px
 
@@ -33,10 +33,10 @@ class SettingTextView(context: Context) : TextView(context) {
 
     init {
         setPadding(
-            dp2px(getContext(), 10f),
-            dp2px(getContext(), 7f),
-            dp2px(getContext(), 10f),
-            dp2px(getContext(), 7f)
+            dip2px(10),
+            dip2px(7),
+            dip2px(10),
+            dip2px(7)
         )
         setTextColor(Color.parseColor(color))
     }
@@ -66,8 +66,8 @@ class SettingTextView(context: Context) : TextView(context) {
     }
 
     companion object {
-        val titleSize = sp2px(HomeContext.context, 9f).toFloat()
-        var textSize = sp2px(HomeContext.context, 6f).toFloat()
-        val text2Size = sp2px(HomeContext.context, 7f).toFloat()
+        val titleSize = sp2px(10f)
+        var textSize = sp2px(6f)
+        val text2Size = sp2px(7f)
     }
 }

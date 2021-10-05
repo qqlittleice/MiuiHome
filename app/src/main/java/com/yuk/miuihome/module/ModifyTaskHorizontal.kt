@@ -8,20 +8,18 @@ import com.yuk.miuihome.utils.ktx.replaceMethod
 class ModifyTaskHorizontal {
 
     fun init() {
-        if (OwnSP.ownSP.getBoolean("testUser", false)) {
-            val value = OwnSP.ownSP.getFloat("task_horizontal", -1f)
-            if (value == -1f) return
+        val value = OwnSP.ownSP.getFloat("task_horizontal", -1f)
+        if (value == -1f) return
 
-            "com.miui.home.recents.views.TaskStackViewsAlgorithmHorizontal".replaceMethod(
-                "scaleTaskView",
-                RectF::class.java
-            ) {
-                "com.miui.home.recents.util.Utilities".callStaticMethod(
-                    "scaleRectAboutCenter",
-                    it.args[0],
-                    value
-                )
-            }
+        "com.miui.home.recents.views.TaskStackViewsAlgorithmHorizontal".replaceMethod(
+            "scaleTaskView",
+            RectF::class.java
+        ) {
+            "com.miui.home.recents.util.Utilities".callStaticMethod(
+                "scaleRectAboutCenter",
+                it.args[0],
+                value
+            )
         }
     }
 }

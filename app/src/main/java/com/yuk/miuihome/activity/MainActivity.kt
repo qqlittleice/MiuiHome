@@ -8,17 +8,15 @@ import android.os.Build
 import android.os.Bundle
 import android.widget.*
 import androidx.annotation.Keep
+import androidx.annotation.RequiresApi
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.dp2px
 
 class MainActivity : Activity() {
 
+    @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreate(savedInstanceState: Bundle?) {
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.R) {
-            setTheme(miui.R.style.Theme_DayNight_Settings)
-        } else {
-            setTheme(android.R.style.Theme_DeviceDefault_DayNight)
-        }
+        setTheme(android.R.style.Theme_DeviceDefault_DayNight)
         super.onCreate(savedInstanceState)
         setContentView(getMainLayout())
     }

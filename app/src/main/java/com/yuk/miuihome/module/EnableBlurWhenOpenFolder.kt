@@ -3,7 +3,7 @@ package com.yuk.miuihome.module
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.setReturnConstant
 
-class EnableBlurWhenOpenFolder: BaseClassAndMethodCheck {
+class EnableBlurWhenOpenFolder : BaseClassAndMethodCheck {
 
     companion object {
         var checked = false
@@ -12,10 +12,7 @@ class EnableBlurWhenOpenFolder: BaseClassAndMethodCheck {
     fun init() {
         runWithChecked {
             checked = true
-            if (OwnSP.ownSP.getBoolean("simpleAnimation", false) and OwnSP.ownSP.getBoolean(
-                    "testUser",
-                    false
-                )
+            if (OwnSP.ownSP.getBoolean("simpleAnimation", false)
             ) {
                 "com.miui.home.launcher.common.BlurUtils".setReturnConstant(
                     "isUserBlurWhenOpenFolder",

@@ -8,13 +8,10 @@ import android.widget.*
 import androidx.annotation.Keep
 import com.yuk.miuihome.dock.hook.DockHook
 import com.yuk.miuihome.module.*
-import com.yuk.miuihome.utils.LogUtil
-import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.dp2px
+import com.yuk.miuihome.utils.*
 import com.yuk.miuihome.utils.ktx.getObjectField
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import com.yuk.miuihome.utils.ktx.setObjectField
-import com.yuk.miuihome.utils.sp2px
 import com.yuk.miuihome.view.*
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
@@ -46,9 +43,6 @@ class MainHook {
                         showSettingDialog()
                     }
                 })
-                if (XposedInit.hasHookPackageResources) {
-                    setObjectField("mTitle", myRes.getString(R.string.ModuleSettingsResHook))
-                }
             }
         }
 
@@ -108,9 +102,9 @@ class MainHook {
         AllowAllAppsToUseSmallWindow().init()
         //允许低端机使用MIUI小组件
         EnableLowEndDeviceUseMIUIWidgets().init()
-        //禁用文件夹编辑内的今日推荐
+        //禁用今日推荐
         DisableRecommendServer().init()
-        //仅在滑动时显示桌面指示器
+        //移除桌面指示器
         ModifyHideSeekPoints().init()
         //propHook
         HookSystemProperties().init()
@@ -134,10 +128,10 @@ class MainHook {
             addView(LinearLayout(HomeContext.activity).apply {
                 orientation = LinearLayout.VERTICAL
                 setPadding(
-                    dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 10f)
+                    dip2px(10),
+                    dip2px(6),
+                    dip2px(10),
+                    dip2px(6)
                 )
                 addView(
                     SettingTextView.FastBuilder(
@@ -145,17 +139,27 @@ class MainHook {
                         mSize = SettingTextView.titleSize
                     ).build()
                 )
-                addView(
-                    SettingTextView.FastBuilder(
-                        mText = "${BuildConfig.VERSION_NAME} - ${BuildConfig.VERSION_CODE} (${BuildConfig.BUILD_TYPE})",
-                        mSize = sp2px(HomeContext.context, 6f).toFloat()
-                    ).build()
-                )
+                if (XposedInit.hasHookPackageResources) {
+                    addView(
+                        SettingTextView.FastBuilder(
+                            mText = "${BuildConfig.VERSION_NAME} - " +
+                                    "${BuildConfig.VERSION_CODE}(${BuildConfig.BUILD_TYPE}) - " +
+                                    myRes.getString(R.string.ResHook),
+                            mColor = "#01b17b"
+                        ).build()
+                    )
+                } else {
+                    addView(
+                        SettingTextView.FastBuilder(
+                            mText = "${BuildConfig.VERSION_NAME} - ${BuildConfig.VERSION_CODE}(${BuildConfig.BUILD_TYPE})",
+                            mColor = "#01b17b"
+                        ).build()
+                    )
+                }
                 addView(
                     SettingTextView.FastBuilder(
                         mText = myRes.getString(R.string.Warn),
                         mColor = "#ff0c0c",
-                        mSize = SettingTextView.textSize
                     ).build()
                 )
                 addView(
@@ -174,7 +178,7 @@ class MainHook {
                 if (!OwnSP.ownSP.getBoolean(
                         "simpleAnimation",
                         false
-                    ) or !OwnSP.ownSP.getBoolean("testUser", false)
+                    )
                 ) {
                     addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.TaskViewBlurLevel)) { showModifyBlurLevel() }
                         .build())
@@ -221,7 +225,7 @@ class MainHook {
                 if (!OwnSP.ownSP.getBoolean(
                         "simpleAnimation",
                         false
-                    ) or !OwnSP.ownSP.getBoolean("testUser", false)
+                    )
                 ) {
                     addView(
                         SettingSwitch.FastBuilder(
@@ -245,7 +249,7 @@ class MainHook {
                     if (!OwnSP.ownSP.getBoolean(
                             "simpleAnimation",
                             false
-                        ) or !OwnSP.ownSP.getBoolean("testUser", false)
+                        )
                     ) {
                         addView(
                             SettingSwitch.FastBuilder(
@@ -318,62 +322,66 @@ class MainHook {
                     addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.TaskViewAppCardTextSize)) { showModifyBackgroundTextSize() }
                         .build())
                 }
-                if (OwnSP.ownSP.getBoolean("testUser", false)) {
-                    addView(
-                        SettingTextView.FastBuilder(
-                            mText = myRes.getString(R.string.TestFeature),
-                            mColor = "#0C84FF",
-                            mSize = SettingTextView.text2Size
-                        ).build()
-                    )
-                    addView(
-                        SettingSwitch.FastBuilder(
-                            mText = myRes.getString(R.string.SimpleAnimation),
-                            mKey = "simpleAnimation"
-                        ).build()
-                    )
-                    addView(
-                        SettingSwitch.FastBuilder(
-                            mText = myRes.getString(R.string.InfiniteScroll),
-                            mKey = "infiniteScroll"
-                        ).build()
-                    )
-                    addView(
-                        SettingSwitch.FastBuilder(
-                            mText = myRes.getString(R.string.RecommendServer),
-                            mKey = "recommendServer"
-                        ).build()
-                    )
-                    addView(
-                        SettingSwitch.FastBuilder(
-                            mText = myRes.getString(R.string.RealTaskViewHorizontal),
-                            mKey = "horizontal"
-                        ).build()
-                    )
-                    addView(
-                        SettingSwitch.FastBuilder(
-                            mText = myRes.getString(R.string.EnableIconShadow),
-                            mKey = "isEnableIconShadow"
-                        ).build()
-                    )
-                    addView(
-                        SettingSwitch.FastBuilder(
-                            mText = myRes.getString(R.string.SmallWindow),
-                            mKey = "supportSmallWindow"
-                        ).build()
-                    )
-                    addView(
-                        SettingSwitch.FastBuilder(
-                            mText = myRes.getString(R.string.LowEndDeviceUseMIUIWidgets),
-                            mKey = "useMIUIWidgets"
-                        ).build()
-                    )
-                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.VerticalTaskViewOfAppCardSize)) { showModifyVertical() }
-                        .build())
-                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.HorizontalTaskViewOfAppCardSize)) { showModifyHorizontal() }
-                        .build())
+                addView(
+                    SettingTextView.FastBuilder(
+                        mText = myRes.getString(R.string.TestFeature),
+                        mColor = "#0C84FF",
+                        mSize = SettingTextView.text2Size
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.SimpleAnimation),
+                        mKey = "simpleAnimation"
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.InfiniteScroll),
+                        mKey = "infiniteScroll"
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.RecommendServer),
+                        mKey = "recommendServer"
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.HideSeekPoints),
+                        mKey = "hideSeekPoints"
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.RealTaskViewHorizontal),
+                        mKey = "horizontal"
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.EnableIconShadow),
+                        mKey = "isEnableIconShadow"
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.SmallWindow),
+                        mKey = "supportSmallWindow"
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.LowEndDeviceUseMIUIWidgets),
+                        mKey = "useMIUIWidgets"
+                    ).build()
+                )
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.VerticalTaskViewOfAppCardSize)) { showModifyVertical() }
+                    .build())
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.HorizontalTaskViewOfAppCardSize)) { showModifyHorizontal() }
+                    .build())
 
-                }
                 addView(
                     SettingTextView.FastBuilder(
                         mText = myRes.getString(R.string.OtherFeature),
@@ -385,12 +393,6 @@ class MainHook {
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.AlwaysShowStatusBarClock),
                         mKey = "clockGadget"
-                    ).build()
-                )
-                addView(
-                    SettingSwitch.FastBuilder(
-                        mText = myRes.getString(R.string.HideSeekPoints),
-                        mKey = "hideSeekPoints"
                     ).build()
                 )
                 if (!OwnSP.ownSP.getBoolean(
@@ -428,15 +430,6 @@ class MainHook {
                         mColor = "#0C84FF",
                         mSize = SettingTextView.text2Size
                     ).build()
-                )
-                addView(
-                    SettingSwitch.FastBuilder(
-                        mText = myRes.getString(R.string.TestFeature),
-                        mKey = "testUser"
-                    ) {
-                        dialog.cancel()
-                        showSettingDialog()
-                    }.build()
                 )
 //                if (BuildConfig.DEBUG) {
 //                    addView(SettingTextView.FastBuilder(mText = "自定义Hook") { customHookDialog() }.build())
@@ -494,10 +487,10 @@ class MainHook {
                 addView(LinearLayout(HomeContext.activity).apply {
                     orientation = LinearLayout.VERTICAL
                     setPadding(
-                        dp2px(HomeContext.context, 10f),
-                        dp2px(HomeContext.context, 10f),
-                        dp2px(HomeContext.context, 10f),
-                        dp2px(HomeContext.context, 10f)
+                        dip2px(10),
+                        dip2px(6),
+                        dip2px(10),
+                        dip2px(6)
                     )
                     addView(SettingTextView.FastBuilder(mText = "Class:").build())
                     val classEditText = EditText(HomeContext.activity)
@@ -532,10 +525,10 @@ class MainHook {
                 addView(LinearLayout(HomeContext.activity).apply {
                     orientation = LinearLayout.VERTICAL
                     setPadding(
-                        dp2px(HomeContext.context, 10f),
-                        dp2px(HomeContext.context, 10f),
-                        dp2px(HomeContext.context, 10f),
-                        dp2px(HomeContext.context, 10f)
+                        dip2px(10),
+                        dip2px(6),
+                        dip2px(10),
+                        dip2px(6)
                     )
                     addView(
                         SettingTextView.FastBuilder(
@@ -698,10 +691,10 @@ class MainHook {
             addView(LinearLayout(HomeContext.activity).apply {
                 orientation = LinearLayout.VERTICAL
                 setPadding(
-                    dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 10f)
+                    dip2px(10),
+                    dip2px(6),
+                    dip2px(10),
+                    dip2px(6)
                 )
                 addView(
                     SettingTextView.FastBuilder(
@@ -751,10 +744,10 @@ class MainHook {
                 addView(LinearLayout(HomeContext.activity).apply {
                     orientation = LinearLayout.VERTICAL
                     setPadding(
-                        dp2px(HomeContext.context, 10f),
-                        dp2px(HomeContext.context, 10f),
-                        dp2px(HomeContext.context, 10f),
-                        dp2px(HomeContext.context, 10f)
+                        dip2px(10),
+                        dip2px(6),
+                        dip2px(10),
+                        dip2px(6)
                     )
                     addView(
                         SettingTextView.FastBuilder(
@@ -784,7 +777,6 @@ class MainHook {
                 }
             }
             setPositiveButton(myRes.getString(R.string.Cancel), null)
-            setCancelable(false)
         }
         dialogBuilder.show()
     }
@@ -798,10 +790,10 @@ class MainHook {
                 addView(LinearLayout(HomeContext.activity).apply {
                     orientation = LinearLayout.VERTICAL
                     setPadding(
-                        dp2px(HomeContext.context, 10f),
-                        dp2px(HomeContext.context, 10f),
-                        dp2px(HomeContext.context, 10f),
-                        dp2px(HomeContext.context, 10f)
+                        dip2px(10),
+                        dip2px(6),
+                        dip2px(10),
+                        dip2px(6)
                     )
                     addView(
                         SettingTextView.FastBuilder(
@@ -821,7 +813,6 @@ class MainHook {
                 editor.clear(); editor.commit(); exitProcess(0)
             }
             setPositiveButton(myRes.getString(R.string.Cancel), null)
-            setCancelable(false)
         }
         dialogBuilder.show()
     }
@@ -834,10 +825,10 @@ class MainHook {
                 addView(LinearLayout(HomeContext.activity).apply {
                     orientation = LinearLayout.VERTICAL
                     setPadding(
-                        dp2px(HomeContext.context, 10f),
-                        dp2px(HomeContext.context, 10f),
-                        dp2px(HomeContext.context, 10f),
-                        dp2px(HomeContext.context, 10f)
+                        dip2px(10),
+                        dip2px(6),
+                        dip2px(10),
+                        dip2px(6)
                     )
                     addView(
                         SettingTextView.FastBuilder(

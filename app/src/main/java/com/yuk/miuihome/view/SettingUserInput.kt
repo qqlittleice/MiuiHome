@@ -8,10 +8,7 @@ import android.widget.LinearLayout
 import android.widget.ScrollView
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
-import com.yuk.miuihome.utils.LogUtil
-import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.dp2px
-import com.yuk.miuihome.utils.isNightMode
+import com.yuk.miuihome.utils.*
 
 class SettingUserInput(
     private val mText: String,
@@ -34,10 +31,10 @@ class SettingUserInput(
             addView(LinearLayout(HomeContext.activity).apply {
                 orientation = LinearLayout.VERTICAL
                 setPadding(
-                    dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 10f)
+                    dip2px(10),
+                    dip2px(6),
+                    dip2px(10),
+                    dip2px(6)
                 )
                 addView(
                     SettingTextView.FastBuilder(
@@ -69,10 +66,10 @@ class SettingUserInput(
         })
         dialogBuilder.apply {
             setPositiveButton(myRes.getString(R.string.Save), null)
-            setNeutralButton(myRes.getString(R.string.Cancel)) { dialog, _ ->
+            setNeutralButton(myRes.getString(R.string.Reset1)) { dialog, _ ->
+                OwnSP.set(mKey, -1f)
                 dialog.dismiss()
             }
-            setCancelable(false)
         }
         dialogBuilder.show().apply {
             this.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
@@ -90,7 +87,7 @@ class SettingUserInput(
     }
 
     private fun saveValue(value: Float): Boolean {
-        if ((value < (minValue.toFloat() / divide)) or (value > (maxValue.toFloat() / divide))) {
+        if ((value < (minValue.toFloat() / divide)) or (value > (maxValue.toFloat() / divide)) or (value == -1f)) {
             LogUtil.toast(myRes.getString(R.string.OutOfInput))
             return false
         }

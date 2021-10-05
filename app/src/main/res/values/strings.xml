@@ -34,8 +34,8 @@
   <string name="ModuleFeature">Module Feature</string>
   <string name="ModuleNotEnable">Module is not activated</string>
   <string name="ModuleSettings">Module Settings</string>
-  <string name="ModuleSettingsResHook">Module Settings (ResHook√)</string>
-  <string name="Multiple">The entered value will be divided by</string>
+  <string name="ResHook">Resource Hook√</string>
+  <string name="Multiple">输入的值将被除以</string>
   <string name="NoneBlur">No blur</string>
   <string name="OpenMiuiHomeSettings">Open \"Home screen\" settings</string>
   <string name="OtherFeature">Other Feature</string>

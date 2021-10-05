@@ -10,7 +10,10 @@ class ModifyHideIconTitles {
 
     fun init() {
         if (OwnSP.ownSP.getBoolean("hideIconTitles", false)) {
-            "com.miui.home.launcher.TitleTextView".hookAfterConstructor(Context::class.java, AttributeSet::class.java) {
+            "com.miui.home.launcher.TitleTextView".hookAfterConstructor(
+                Context::class.java,
+                AttributeSet::class.java
+            ) {
                 (it.thisObject as TextView).textSize = 0F
             }
         }

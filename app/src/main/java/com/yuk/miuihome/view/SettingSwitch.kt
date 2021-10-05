@@ -6,11 +6,8 @@ import android.graphics.Color
 import android.view.View
 import android.widget.CompoundButton
 import com.yuk.miuihome.HomeContext
-import com.yuk.miuihome.utils.LogUtil
-import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.dp2px
-import com.yuk.miuihome.utils.isNightMode
 import android.widget.Switch
+import com.yuk.miuihome.utils.*
 
 @SuppressLint("UseSwitchCompatOrMaterialCode")
 class SettingSwitch(context: Context) : Switch(context) {
@@ -32,10 +29,10 @@ class SettingSwitch(context: Context) : Switch(context) {
 
     init {
         setPadding(
-            dp2px(getContext(), 10f),
-            dp2px(getContext(), 7f),
-            dp2px(getContext(), 10f),
-            dp2px(getContext(), 7f)
+            dip2px(10),
+            dip2px(7),
+            dip2px(10),
+            dip2px(7)
         )
         setTextColor(Color.parseColor(color))
     }

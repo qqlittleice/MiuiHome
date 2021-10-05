@@ -48,7 +48,6 @@ android {
 }
 
 dependencies {
-    compileOnly files('lib/miuisdk.jar')
     compileOnly 'de.robv.android.xposed:api:82'
     compileOnly 'androidx.annotation:annotation:1.2.0'
     implementation 'com.github.kyuubiran:EzXHelper:0.3.8'

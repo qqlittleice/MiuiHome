@@ -1,14 +1,10 @@
 package com.yuk.miuihome.module
 
-import android.content.Context
-import android.os.Handler
-import android.os.Message
 import android.view.View
 import android.view.ViewGroup
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import de.robv.android.xposed.XposedHelpers
-
 
 class ModifyHideSeekPoints {
 

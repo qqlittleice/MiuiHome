@@ -6,11 +6,7 @@ import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 class ModifyBlurLevel {
 
     fun init() {
-        if (OwnSP.ownSP.getBoolean("simpleAnimation", false) and OwnSP.ownSP.getBoolean(
-                "testUser",
-                false
-            )
-        ) {
+        if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
             "com.miui.home.launcher.common.BlurUtils".hookBeforeMethod("getBlurType") {
                 it.result = 0
             }

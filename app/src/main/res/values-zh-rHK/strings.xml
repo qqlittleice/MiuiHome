@@ -33,7 +33,7 @@
   <string name="ModuleFeature">模塊相關</string>
   <string name="ModuleNotEnable">模塊未激活</string>
   <string name="ModuleSettings">模塊設置</string>
-  <string name="ModuleSettingsResHook">模塊設置(資源鉤子√)</string>
+  <string name="ResHook">資源鉤子√</string>
   <string name="Multiple">輸入的值將被除以</string>
   <string name="NoneBlur">無模糊</string>
   <string name="OpenMiuiHomeSettings">打開桌面設置</string>

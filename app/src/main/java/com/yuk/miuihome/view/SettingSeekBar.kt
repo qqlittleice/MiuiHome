@@ -9,10 +9,7 @@ import android.widget.SeekBar
 import android.widget.TextView
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
-import com.yuk.miuihome.utils.LogUtil
-import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.dp2px
-import com.yuk.miuihome.utils.isNightMode
+import com.yuk.miuihome.utils.*
 
 @SuppressLint("ViewConstructor", "SetTextI18n")
 class SettingSeekBar(
@@ -44,10 +41,10 @@ class SettingSeekBar(
     init {
         orientation = VERTICAL
         setPadding(
-            dp2px(getContext(), 10f),
-            dp2px(getContext(), 7f),
-            dp2px(getContext(), 10f),
-            dp2px(getContext(), 7f)
+            dip2px(10),
+            dip2px(7),
+            dip2px(10),
+            dip2px(7)
         )
         textView = TextView(context)
         seekBar = SeekBar(HomeContext.context).apply {

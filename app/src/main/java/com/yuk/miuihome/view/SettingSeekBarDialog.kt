@@ -10,10 +10,7 @@ import android.widget.SeekBar
 import android.widget.TextView
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
-import com.yuk.miuihome.utils.LogUtil
-import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.dp2px
-import com.yuk.miuihome.utils.isNightMode
+import com.yuk.miuihome.utils.*
 
 @SuppressLint("SetTextI18n")
 class SettingSeekBarDialog(
@@ -50,10 +47,10 @@ class SettingSeekBarDialog(
             addView(LinearLayout(HomeContext.activity).apply {
                 orientation = LinearLayout.VERTICAL
                 setPadding(
-                    dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 10f),
-                    dp2px(HomeContext.context, 10f)
+                    dip2px(10),
+                    dip2px(6),
+                    dip2px(10),
+                    dip2px(6)
                 )
                 addView(
                     SettingTextView.FastBuilder(
