@@ -88,5 +88,5 @@
   <string name="Reset1">Reset</string>
   <string name="Tips2">This will restore the module default settings and restart the System Launcher.</string>
   <string name="HideSeekPoints">Remove Page Indicator</string>
-  <string name="CategoryHideAll">Hide \"All\" in Categorize apps</string>
+  <string name="CategoryHideAll">Hide \"All\" in App Categories</string>
 </resources>
