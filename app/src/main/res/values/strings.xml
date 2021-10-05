@@ -89,4 +89,5 @@
   <string name="Reset1">Reset</string>
   <string name="Tips2">This will restore the module default settings and restart the System Launcher.</string>
   <string name="HideSeekPoints">Remove Seitenanzeige</string>
+  <string name="CategoryHideAll">hide \"All\" in Categorize apps</string>
 </resources>

@@ -87,4 +87,5 @@
   <string name="Reset1">重置</string>
   <string name="Tips2">这将还原模块默认值设定并重启系统桌面。</string>
   <string name="HideSeekPoints">移除页面指示器</string>
+  <string name="CategoryHideAll">隐藏应用分组中的 \"全部\"</string>
 </resources>

@@ -104,8 +104,10 @@ class MainHook {
         EnableLowEndDeviceUseMIUIWidgets().init()
         //禁用今日推荐
         DisableRecommendServer().init()
-        //移除桌面指示器
+        //移除非抽屉模式下桌面指示器
         ModifyHideSeekPoints().init()
+        //移除应用分组中"全部"选项卡
+        ModifyCategoryHideAll().init()
         //propHook
         HookSystemProperties().init()
         //DockHook
@@ -234,6 +236,12 @@ class MainHook {
                         ).build()
                     )
                 }
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.CategoryHideAll),
+                        mKey = "categoryHideAll"
+                    ).build()
+                )
                 addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.RoundCorner)) { showModifyRoundCorner() }
                     .build())
                 addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.AppTextSize)) { showModifyTextSize() }

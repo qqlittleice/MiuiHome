@@ -87,4 +87,5 @@
   <string name="Reset1">重置</string>
   <string name="Tips2">這將還原模塊默認值設定並重啟系統桌面。</string>
   <string name="HideSeekPoints">移除頁面指示器</string>
+  <string name="CategoryHideAll">隱藏應用分組中的 \"全部\"</string>
 </resources>
