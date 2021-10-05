@@ -14,7 +14,6 @@
   <string name="CloseFolder">Закрывать папку при открытии приложения</string>
   <string name="CompleteBlur">Полное размытие</string>
   <string name="Defaults">По умолчанию</string>
-  <string name="Description">Дополнительные настройки для рабочего стола MIUI</string>
   <string name="DockBottom">Док-бар в нижней части экрана</string>
   <string name="DockFeature">Док-бар</string>
   <string name="DockHeight">Высота док-бара</string>
@@ -98,6 +97,6 @@
   <string name="WidgetToMinus">Позволяет перемещать классические виджеты в "Ленту виджетов"</string>
   <string name="Yes">Да</string>
   <string name="Tips2">Это восстановит настройки модуля по умолчанию и перезагрузит рабочий стол системы.</string>
-  <string name="HideSeekPoints">удаления Индикатор экрана</string>
+  <string name="HideSeekPoints">Удалите индикатор страницы</string>
   <string name="CategoryHideAll">скрыть \"Все\" в категоризации приложений</string>
 </resources>

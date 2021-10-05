@@ -14,7 +14,6 @@
   <string name="CloseFolder">打開應用時關閉文件夾</string>
   <string name="CompleteBlur">完整模糊</string>
   <string name="Defaults">默認值</string>
-  <string name="Description">Hook for MIUI Launcher\n模塊設置在系統桌面的設置裡！</string>
   <string name="Folder">文件夾相關</string>
   <string name="HideAppIcon">隱藏桌面圖標</string>
   <string name="HideAppTitles">隱藏桌面應用名稱</string>
@@ -34,7 +33,6 @@
   <string name="ModuleNotEnable">模塊未激活</string>
   <string name="ModuleSettings">模塊設置</string>
   <string name="ResHook">資源鉤子√</string>
-  <string name="Multiple">輸入的值將被除以</string>
   <string name="NoneBlur">無模糊</string>
   <string name="OpenMiuiHomeSettings">打開桌面設置</string>
   <string name="OtherFeature">其他功能</string>
