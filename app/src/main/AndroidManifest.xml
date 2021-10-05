@@ -39,6 +39,9 @@
     <meta-data
       android:name="xposedminversion"
       android:value="93" />
-  </application>
 
+    <meta-data
+      android:name="xposedsharedprefs"
+      android:value="true" />
+  </application>
 </manifest>
