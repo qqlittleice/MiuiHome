@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name" translatable="false">MiuiHome</string>
   <string name="AdvancedFeature">Configurações avançadas</string>
   <string name="AlwaysShowMIUIWidget">Permitir widgets MIUI serem mostrados em widgets clássicos</string>
   <string name="AlwaysShowStatusBarClock">Sempre mostrar o relógio na barra de status</string>
@@ -15,7 +14,7 @@
   <string name="CloseFolder">Fechar pasta quando abrir aplicativo</string>
   <string name="CompleteBlur">Blur Completo</string>
   <string name="Defaults">Padrão</string>
-  <string name="Description" translatable="false">Modificação para Launcher MIUI</string>
+  <string name="Description">Modificação para Launcher MIUI</string>
   <string name="Folder">Configurações Pasta</string>
   <string name="HideAppIcon">Esconder Ícone do APP</string>
   <string name="HideAppTitles">Esconder Nome dos Aplicativos</string>
@@ -69,7 +68,7 @@
   <string name="WidgetToMinus">Permitir Mover Widgets Clássicos para o \"Assistente\"</string>
   <string name="Yes">Sim</string>
   <string name="EnableIconShadow">Mostrar Sombra do Ícone e Reflexo</string>
-  <string name="res_hooked" translatable="false">Sucesso na injeção de Recursos!</string>
+  <string name="res_hooked">Sucesso na injeção de Recursos!</string>
   <string name="SmallWindow">Permitar que todos apps usem a Janela Flutuante</string>
   <string name="LowEndDeviceUseMIUIWidgets">Habilitar novos Widgets em celulares sem suporte</string>
   <string name="RecommendServer">Desativar servidor recomendado</string>
@@ -81,7 +80,7 @@
   <string name="DockIconBottom">Ícones da parte inferior da tela</string>
   <string name="DockSettings">Configurações do Dock</string>
   <string name="DockWarn">Por favor, ative a Modificação de Recursos se você quiser modificar as bordas arrendodadas.</string>
-  <string name="DockFeature">Recursos do Dock</string>
+  <string name="DockFeature">Ligar o Recursos do Dock</string>
   <string name="EnableDockBlur">Ligar o Blur no Fundo do Dock</string>
   <string name="Reset">Resetar Parâmetros do Dock</string>
   <string name="Tips1">Isso vai restaurar os parâmetros do Dock e reiniciar o Launcher do Sistema.</string>

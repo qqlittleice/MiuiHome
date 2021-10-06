@@ -15,7 +15,7 @@
   <string name="CloseFolder">Close folder when opening applications inside folder</string>
   <string name="CompleteBlur">Complete blur</string>
   <string name="Defaults">Default</string>
-  <string name="Description" translatable="false">Hook for MIUI Launcher</string>
+  <string name="Description">Hook for MIUI Launcher</string>
   <string name="Folder">Folder Settings</string>
   <string name="HideAppIcon">Hide APP Icon</string>
   <string name="HideAppTitles">Hide Application Labels</string>
@@ -69,7 +69,7 @@
   <string name="WidgetToMinus">Allow moving Classic Widgets to \"App Vault\"</string>
   <string name="Yes">Yes</string>
   <string name="EnableIconShadow">Show Icon Shadow and Reflection</string>
-  <string name="res_hooked" translatable="false">Resource Injection Success!</string>
+  <string name="res_hooked">Resource Injection Success!</string>
   <string name="SmallWindow">Allow all apps to use Floating Windows</string>
   <string name="LowEndDeviceUseMIUIWidgets">Enable New Widget Store on Low-End Devices</string>
   <string name="RecommendServer">Disable Recommend Server</string>
@@ -81,7 +81,7 @@
   <string name="DockIconBottom">Icons from the bottom of the Screen</string>
   <string name="DockSettings">Dock Settings</string>
   <string name="DockWarn">Please enable Resource Hooks if you need to modify rounded corners.</string>
-  <string name="DockFeature">Dock Feature</string>
+  <string name="DockFeature">Enable Dock Feature</string>
   <string name="EnableDockBlur">Enable Blur of the Dock</string>
   <string name="Reset">Reset Dock Parameters</string>
   <string name="Tips1">This will restore the Dock parameter to its default value and restart the System Launcher.</string>
@@ -89,4 +89,5 @@
   <string name="Tips2">This will restore the module default settings and restart the System Launcher.</string>
   <string name="HideSeekPoints">Remove Page Indicator</string>
   <string name="CategoryHideAll">Hide \"All\" in App Categories</string>
+  <string name="Test" translatable="false">测试XSharedPreferences</string>
 </resources>

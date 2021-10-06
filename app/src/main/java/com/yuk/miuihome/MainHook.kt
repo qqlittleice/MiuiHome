@@ -124,7 +124,6 @@ class MainHook {
             return
         }
         val dialogBuilder = SettingBaseDialog().get()
-        lateinit var dialog: AlertDialog
         dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
             overScrollMode = 2
             addView(LinearLayout(HomeContext.activity).apply {
@@ -414,22 +413,8 @@ class MainHook {
                         ).build()
                     )
                 }
-                addView(
-                    SettingSwitch.FastBuilder(
-                        mText = myRes.getString(R.string.DockFeature),
-                        mKey = "dockSettings"
-                    ) {
-                        dialog.cancel()
-                        showSettingDialog()
-                    }.build()
-                )
-                if (OwnSP.ownSP.getBoolean(
-                        "dockSettings", false
-                    )
-                ) {
-                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.DockSettings)) { showDockDialog() }
-                        .build())
-                }
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.DockSettings)) { showDockDialog() }
+                    .build())
                 addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.EveryThingBuild)) { BuildWithEverything().init() }
                     .build())
                 addView(
@@ -447,9 +432,13 @@ class MainHook {
             })
         })
         dialogBuilder.setNeutralButton(myRes.getString(R.string.Close), null)
-        dialogBuilder.setPositiveButton(myRes.getString(R.string.Reboot)) { _, _ -> exitProcess(0) }
+        dialogBuilder.setPositiveButton(myRes.getString(R.string.Reboot)) { _, _ ->
+            exitProcess(
+                0
+            )
+        }
         dialogBuilder.setCancelable(false)
-        dialog = dialogBuilder.show()
+        dialogBuilder.show()
     }
 
     private fun customHookDialog() {
@@ -512,7 +501,9 @@ class MainHook {
                         setText("Add arg")
                         setOnClickListener { argsLinearLayout.addView(createArgsEditText()) }
                     })
-                    addView(SettingTextView.FastBuilder(mText = "result(null直接不输入即可):").build())
+                    addView(
+                        SettingTextView.FastBuilder(mText = "result(null直接不输入即可):").build()
+                    )
                     val resultEditText = EditText(HomeContext.activity)
                     addView(resultEditText)
                     addView(
@@ -527,6 +518,7 @@ class MainHook {
 
     private fun showDockDialog() {
         val dialogBuilder = SettingBaseDialog().get()
+        lateinit var dialog: AlertDialog
         dialogBuilder.apply {
             setView(ScrollView(HomeContext.activity).apply {
                 overScrollMode = 2
@@ -546,76 +538,97 @@ class MainHook {
                         ).build()
                     )
                     addView(
-                        SettingTextView.FastBuilder(
-                            mText = myRes.getString(R.string.DockWarn),
-                            mColor = "#ff0c0c",
-                            mSize = SettingTextView.textSize
-                        ).build()
-                    )
-                    addView(
                         SettingSwitch.FastBuilder(
-                            mText = myRes.getString(R.string.EnableDockBlur),
-                            mKey = "searchBarBlur"
-                        ).build()
+                            mText = myRes.getString(R.string.DockFeature),
+                            mKey = "dockSettings"
+                        ) {
+                            dialog.cancel()
+                            showDockDialog()
+                        }.build()
                     )
-                    if (XposedInit.hasHookPackageResources) {
+                    if (OwnSP.ownSP.getBoolean(
+                            "dockSettings", false
+                        )
+                    ) {
+                        addView(
+                            SettingSwitch.FastBuilder(
+                                mText = myRes.getString(R.string.EnableDockBlur),
+                                mKey = "searchBarBlur"
+                            ).build()
+                        )
+                        if (!XposedInit.hasHookPackageResources) {
+                            addView(
+                                SettingTextView.FastBuilder(
+                                    mText = myRes.getString(R.string.DockWarn),
+                                    mColor = "#ff0c0c",
+                                    mSize = SettingTextView.textSize
+                                ).build()
+                            )
+                        } else {
+                            addView(
+                                SettingSeekBar.FastBuilder(
+                                    mText = myRes.getString(R.string.DockRoundedCorners),
+                                    mKey = "dockRadius",
+                                    defValue = 25,
+                                    minValue = 0,
+                                    maxValue = 50,
+                                    canUserInput = false
+                                ).build()
+                            )
+                        }
                         addView(
                             SettingSeekBar.FastBuilder(
-                                mText = myRes.getString(R.string.DockRoundedCorners),
-                                mKey = "dockRadius",
-                                defValue = 25,
+                                mText = myRes.getString(R.string.DockHeight),
+                                mKey = "dockHeight",
+                                defValue = 84,
+                                minValue = 50,
+                                maxValue = 200,
+                                canUserInput = false
+                            ).build()
+                        )
+                        addView(
+                            SettingSeekBar.FastBuilder(
+                                mText = myRes.getString(R.string.DockSide),
+                                mKey = "dockSide",
+                                defValue = 30,
                                 minValue = 0,
-                                maxValue = 50,
+                                maxValue = 200,
+                                canUserInput = false
+                            ).build()
+                        )
+                        addView(
+                            SettingSeekBar.FastBuilder(
+                                mText = myRes.getString(R.string.DockBottom),
+                                mKey = "dockBottom",
+                                defValue = 23,
+                                minValue = 0,
+                                maxValue = 200,
+                                canUserInput = false
+                            ).build()
+                        )
+                        addView(
+                            SettingSeekBar.FastBuilder(
+                                mText = myRes.getString(R.string.DockIconBottom),
+                                mKey = "dockIconBottom",
+                                defValue = 35,
+                                minValue = 0,
+                                maxValue = 200,
                                 canUserInput = false
                             ).build()
                         )
                     }
-                    addView(
-                        SettingSeekBar.FastBuilder(
-                            mText = myRes.getString(R.string.DockHeight),
-                            mKey = "dockHeight",
-                            defValue = 84,
-                            minValue = 50,
-                            maxValue = 200,
-                            canUserInput = false
-                        ).build()
-                    )
-                    addView(
-                        SettingSeekBar.FastBuilder(
-                            mText = myRes.getString(R.string.DockSide),
-                            mKey = "dockSide",
-                            defValue = 30,
-                            minValue = 0,
-                            maxValue = 200,
-                            canUserInput = false
-                        ).build()
-                    )
-                    addView(
-                        SettingSeekBar.FastBuilder(
-                            mText = myRes.getString(R.string.DockBottom),
-                            mKey = "dockBottom",
-                            defValue = 23,
-                            minValue = 0,
-                            maxValue = 200,
-                            canUserInput = false
-                        ).build()
-                    )
-                    addView(
-                        SettingSeekBar.FastBuilder(
-                            mText = myRes.getString(R.string.DockIconBottom),
-                            mKey = "dockIconBottom",
-                            defValue = 35,
-                            minValue = 0,
-                            maxValue = 200,
-                            canUserInput = false
-                        ).build()
-                    )
                 })
             })
-            setPositiveButton(myRes.getString(R.string.Save), null)
-            setNeutralButton(myRes.getString(R.string.Reset1)) { _, _ -> showModifyReset() }
-            setCancelable(false)
-        }.show()
+            if (OwnSP.ownSP.getBoolean(
+                    "dockSettings", false
+                )
+            ) {
+                setPositiveButton(myRes.getString(R.string.Save), null)
+                setNeutralButton(myRes.getString(R.string.Reset1)) { _, _ -> showModifyReset() }
+                setCancelable(false)
+            }
+        }
+        dialog = dialogBuilder.show()
     }
 
 

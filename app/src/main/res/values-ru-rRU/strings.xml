@@ -15,8 +15,9 @@
   <string name="CloseFolder">Закрывать папку при открытии приложения</string>
   <string name="CompleteBlur">Полное размытие</string>
   <string name="Defaults">По умолчанию</string>
+  <string name="Description">Дополнительные настройки для рабочего стола MIUI</string>
   <string name="DockBottom">Док-бар в нижней части экрана</string>
-  <string name="DockFeature">Док-бар</string>
+  <string name="DockFeature">Включить функции Док-бар</string>
   <string name="DockHeight">Высота док-бара</string>
   <string name="DockIconBottom">Иконки в нижней части экрана</string>
   <string name="DockRoundedCorners">Закругленные углы док-бара</string>
@@ -57,6 +58,7 @@
   <string name="ResHook">Перехват ресурсов√</string>
   <string name="Reset">Сброс параметров дока</string>
   <string name="Reset1">Сброс</string>
+  <string name="res_hooked">Перехват ресурсов прошел успешно!</string>
   <string name="ResourceHooks">Внедрение ресурсов</string>
   <string name="RoundCorner">Размер закруглениея углов миниатюры</string>
   <string name="Save">Сохранить</string>

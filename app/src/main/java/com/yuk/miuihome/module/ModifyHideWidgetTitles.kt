@@ -21,7 +21,7 @@ class ModifyHideWidgetTitles {
                 widgetInfo,
                 widgetProviderInfo
             ) {
-                val view = it.result as Object
+                val view = it.result as Any
                 view.callMethod("getTitleView")?.callMethod("setVisibility", View.GONE)
             }
 
@@ -32,7 +32,7 @@ class ModifyHideWidgetTitles {
                 Boolean::class.java,
                 Predicate::class.java
             ) {
-                val view = it.result as Object
+                val view = it.result as Any
                 view.callMethod("getTitleView")?.callMethod("setVisibility", View.GONE)
             }
         }

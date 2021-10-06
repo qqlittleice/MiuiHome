@@ -14,6 +14,7 @@
   <string name="CloseFolder">打开应用时关闭文件夹</string>
   <string name="CompleteBlur">完整模糊</string>
   <string name="Defaults">默认值</string>
+  <string name="Description">针对MIUI桌面的自定义扩展</string>
   <string name="Folder">文件夹相关</string>
   <string name="HideAppIcon">隐藏桌面图标</string>
   <string name="HideAppTitles">隐藏桌面应用名称</string>
@@ -33,6 +34,7 @@
   <string name="ModuleNotEnable">模块未激活</string>
   <string name="ModuleSettings">模块设置</string>
   <string name="ResHook">资源钩子√</string>
+  <string name="res_hooked">资源注入成功!</string>
   <string name="NoneBlur">无模糊</string>
   <string name="OpenMiuiHomeSettings">打开桌面设置</string>
   <string name="OtherFeature">其他功能</string>
@@ -78,7 +80,7 @@
   <string name="DockIconBottom">图标距屏幕底部</string>
   <string name="DockSettings">底栏设置</string>
   <string name="DockWarn">修改圆角需要启用资源钩子。</string>
-  <string name="DockFeature">底栏功能</string>
+  <string name="DockFeature">启用底栏功能</string>
   <string name="EnableDockBlur">启用底栏模糊</string>
   <string name="Reset">重置底栏配置参数</string>
   <string name="Tips1">这将重置底栏配置参数到默认值并重启系统桌面。</string>
