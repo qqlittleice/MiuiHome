@@ -7,6 +7,7 @@ import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import de.robv.android.xposed.XposedHelpers
 
 class ModifyCloseFolderOnLaunch {
+    
     fun init() {
         if (OwnSP.ownSP.getBoolean("closeFolder", false)) {
             "com.miui.home.launcher.Launcher".hookAfterMethod(

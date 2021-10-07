@@ -275,14 +275,14 @@ class MainHook {
                         mKey = "closeFolder"
                     ).build()
                 )
-                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.FolderColumnsCount)) { showModifyFolderColumnsCount() }
-                    .build())
                 addView(
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.FolderWidth),
                         mKey = "folderWidth"
                     ).build()
                 )
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.FolderColumnsCount)) { showModifyFolderColumnsCount() }
+                    .build())
                 if (HomeContext.isWidgetLauncher) {
                     addView(
                         SettingTextView.FastBuilder(
@@ -712,7 +712,7 @@ class MainHook {
         SettingUserInput(
             myRes.getString(R.string.FolderColumnsCount),
             "folderColumns",
-            2,
+            1,
             6,
             1,
             3
@@ -897,7 +897,7 @@ class MainHook {
                 OwnSP.set("dockSide", 3.0f)
                 OwnSP.set("dockBottom", 2.3f)
                 OwnSP.set("dockIconBottom", 3.5f)
-                OwnSP.set("folderColumns", 3)
+                OwnSP.set("folderColumns", 3f)
                 thread {
                     LogUtil.toast(myRes.getString(R.string.Reboot2))
                     Thread.sleep(1000)

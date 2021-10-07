@@ -90,5 +90,5 @@
   <string name="HideSeekPoints">Remove Page Indicator</string>
   <string name="CategoryHideAll">Hide \"All\" in App Categories</string>
   <string name="FolderColumnsCount">Folder Columns Count</string>
-  <string name="FolderWidth">Use entire folder\\\'s width</string>
+  <string name="FolderWidth">Use entire folder\'s width</string>
 </resources>

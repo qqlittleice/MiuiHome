@@ -5,17 +5,14 @@ import android.widget.GridView
 import android.view.ViewGroup
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
-import de.robv.android.xposed.XposedBridge
 
 class ModifyFolderColumnsCount {
 
     fun init() {
-
         "com.miui.home.launcher.Folder".hookAfterMethod(
             "onFinishInflate"
         ) {
-            val columns: Int = OwnSP.ownSP.getInt("folderColumns", 1)
-            XposedBridge.log("输出：$columns")
+            val columns: Int = OwnSP.ownSP.getFloat("folderColumns", 3f).toInt()
             val mContent =
                 XposedHelpers.getObjectField(it.thisObject, "mContent") as GridView
             mContent.numColumns = columns

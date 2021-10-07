@@ -6,8 +6,6 @@ import android.content.res.Resources
 import dalvik.system.DexClassLoader
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.ModuleRes
-import com.yuk.miuihome.utils.OwnSP
-import de.robv.android.xposed.XposedBridge
 
 class ResInject {
 

@@ -67,7 +67,7 @@ class SettingUserInput(
         dialogBuilder.apply {
             setPositiveButton(myRes.getString(R.string.Save), null)
             setNeutralButton(myRes.getString(R.string.Reset1)) { dialog, _ ->
-                OwnSP.set(mKey, -1f)
+                OwnSP.remove(mKey)
                 dialog.dismiss()
             }
         }
