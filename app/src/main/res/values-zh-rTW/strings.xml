@@ -88,4 +88,6 @@
   <string name="Tips2">這將還原模塊默認值設定並重啟系統桌面。</string>
   <string name="HideSeekPoints">移除頁面指示器</string>
   <string name="CategoryHideAll">隱藏應用分組中的 \"全部\"</string>
+    <string name="FolderColumnsCount">文件夾排列數</string>
+    <string name="FolderWidth">利用整個文件夾的寬度</string>
 </resources>

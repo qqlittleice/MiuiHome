@@ -108,6 +108,8 @@ class MainHook {
         ModifyHideSeekPoints().init()
         //移除应用分组中"全部"选项卡
         ModifyCategoryHideAll().init()
+        //文件夹列数
+        ModifyFolderColumnsCount().init()
         //propHook
         HookSystemProperties().init()
         //DockHook
@@ -271,6 +273,14 @@ class MainHook {
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.CloseFolder),
                         mKey = "closeFolder"
+                    ).build()
+                )
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.FolderColumnsCount)) { showModifyFolderColumnsCount() }
+                    .build())
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.FolderWidth),
+                        mKey = "folderWidth"
                     ).build()
                 )
                 if (HomeContext.isWidgetLauncher) {
@@ -698,6 +708,17 @@ class MainHook {
         ).build()
     }
 
+    private fun showModifyFolderColumnsCount() {
+        SettingUserInput(
+            myRes.getString(R.string.FolderColumnsCount),
+            "folderColumns",
+            2,
+            6,
+            1,
+            3
+        ).build()
+    }
+
     private fun showModifyBlurLevel() {
         val dialogBuilder = SettingBaseDialog().get()
         val mKey = "blurLevel"
@@ -876,6 +897,7 @@ class MainHook {
                 OwnSP.set("dockSide", 3.0f)
                 OwnSP.set("dockBottom", 2.3f)
                 OwnSP.set("dockIconBottom", 3.5f)
+                OwnSP.set("folderColumns", 3)
                 thread {
                     LogUtil.toast(myRes.getString(R.string.Reboot2))
                     Thread.sleep(1000)

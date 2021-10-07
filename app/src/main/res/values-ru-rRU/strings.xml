@@ -88,4 +88,6 @@
   <string name="Widget">Виджеты</string>
   <string name="WidgetToMinus">Позволяет перемещать классические виджеты в \"Ленту виджетов\"</string>
   <string name="Yes">Да</string>
+  <string name="FolderWidth">Использовать всю ширину папки</string>
+  <string name="FolderColumnsCount">Число колонок в папках</string>
 </resources>

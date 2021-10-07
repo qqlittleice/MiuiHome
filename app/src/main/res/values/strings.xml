@@ -89,5 +89,6 @@
   <string name="Tips2">This will restore the module default settings and restart the System Launcher.</string>
   <string name="HideSeekPoints">Remove Page Indicator</string>
   <string name="CategoryHideAll">Hide \"All\" in App Categories</string>
-  <string name="Test" translatable="false">测试XSharedPreferences</string>
+  <string name="FolderColumnsCount">Folder Columns Count</string>
+  <string name="FolderWidth">Use entire folder\\\'s width</string>
 </resources>
