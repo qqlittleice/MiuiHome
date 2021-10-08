@@ -27,7 +27,7 @@
   <string name="HorizontalTaskViewOfAppCardSize">افقی منظر کے لیے تھمب نیل سائز۔</string>
   <string name="InfiniteScroll">لانچر لامحدود سکرول۔</string>
   <string name="MainActivity1">براہ کرم LSPosed مینیجر میں اس ماڈیول کو چالو کریں اور MIUI لانچر کو ایک بار دوبارہ شروع کریں۔ ماڈیول کی ترتیبات کی ترتیبات میں ہیں۔ ہوم اسکرین مخصوص مقام: ترتیبات - ہوم اسکرین - جہاں ڈیفالٹ لانچر ہوا کرتا تھا۔</string>
-  <string name="MainActivity2">تشخیص: یہ ماڈیول فی الحال صرف LSPosed 5606 یا اس سے اوپر کی حمایت کرتا ہے ، یہ فی الحال کسی دوسرے Xposed فریم ورک کی حمایت نہیں کرے گا۔ اگر آپ کو ماڈیول ایکٹیویٹ کرنے میں دشواری ہے تو ، نیچے دی گئی رائے پر عمل کریں: MIUI لانچر کو دوبارہ بہتر بنائیں - اس ماڈیول کو غیر فعال کریں - اس ماڈیول کو فعال کریں - MIUI لانچر کو زبردستی روکیں۔ 3. جب کچھ آپشنز غلط ہوں ، براہ کرم چیک کریں کہ آپ نے جو MIUI لانچر انسٹال کیا ہے وہ ALPHA کا تازہ ترین ورژن ہے۔ اگر ایسا ہے تو ، براہ کرم LSPosed مینیجر میں MIUI لانچر کو دوبارہ بہتر بنانے کی کوشش کریں اور اسے دوبارہ شروع کریں۔ 4. حتمی اثر آپ کے ایس او سی ، ایم آئی یو آئی ورژن ، لانچر ورژن وغیرہ پر منحصر ہے۔ براہ کرم اصل کارکردگی کا حوالہ دیں۔</string>
+  <string name="MainActivity2">Diagnostics:\n1.This module currently only support LSPosed 5606 or above, it does not going to support any other Xposed frameworks at present.\n\n2.If you have problem with module activate, follow the opinions below: re-optimize MIUI launcher - disable this module - enable this module - force stop MIUI launcher.\n\n3.When some options are invalid, please check whether the MIUI launcher you installed is the latest ALPHA version. If so, please try to re-optimize MIUI launcher in LSPosed Manager and restart it.\n\n4.The final effect depends on your SoC, MIUI version, launcher version and so on. Please refer to the actual performance.</string>
   <string name="MamlDownload">ڈاؤن لوڈ کرتے وقت پانی کی لہر کا منظر۔</string>
   <string name="ManualInput">خود اندراج کرو</string>
   <string name="ModuleEnable">ماڈیول چالو ہے۔</string>
@@ -74,7 +74,7 @@
   <string name="LowEndDeviceUseMIUIWidgets">کم وسائل والے آلات پر نیا ویجیٹ اسٹور فعال کریں۔</string>
   <string name="RecommendServer">تجویز کردہ سرور کو غیر فعال کریں۔</string>
   <string name="EveryThingBuild">ہر چیز کے موڈ کے ساتھ لانچر کو بہتر بنائیں۔</string>
-  <string name="DockHeight">گودی بار کی اونچائی۔</string>
+  <string  بار کی اونچائی۔</string>
   <string name="DockRoundedCorners">ڈاک بار گول کونے۔</string>
   <string name="DockSide">سکرین کے اطراف سے ڈاک بار کا فاصلہ۔</string>
   <string name="DockBottom">سکرین کے نیچے سے ڈاک بار کا فاصلہ۔</string>
