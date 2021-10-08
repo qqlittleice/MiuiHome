@@ -59,6 +59,7 @@
   <string name="TaskViewBlurSetTo">ضبط مستوي الضبابية في التطبيقات الاخيرة ل</string>
   <string name="TestBlur">ضباب تجريبي</string>
   <string name="TestFeature">مميزات تجريبية</string>
+  <string name="Tips">تم اكتشاف انك تستخدم هذه الاضافة لأول مره, سيتم تطبيق الاعدادات الافتراضية, ثم سيتم إعادة تشغيل مشغل التطبيقات.\nاذا احتجت لاعدادات اضافية انتظر حتي يتم اعادة تشغيل مشغل التطبيقات ثم قم بفتح اعدادات \"الشاشة الرئيسية\" مجدداً.</string>
   <string name="UnlockGrids">الغاء حد تنسيق الشاشة الرئيسية</string>
   <string name="VerticalTaskViewOfAppCardSize">حجم التطبيق في التطبيقات الاخيرة الرأسية</string>
   <string name="WallpaperDarken">تعطيل الخلفية الداكنة في التطبيقات الاخيرة</string>
