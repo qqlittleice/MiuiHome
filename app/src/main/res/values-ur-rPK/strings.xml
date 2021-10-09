@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name" translatable="false">MiuiHome</string>
-  <string name="AdvancedFeature">اعلی درجے کی ترتیبات</string>
+    <string name="AdvancedFeature">اعلی درجے کی ترتیبات</string>
   <string name="AlwaysShowMIUIWidget">MIUI ویجٹ کو کلاسیکی ویجٹ میں دکھانے کی اجازت دیں۔</string>
   <string name="AlwaysShowStatusBarClock">اسٹیٹس بار کی گھڑی ہمیشہ دکھائیں</string>
   <string name="AnimationLevel">اشارہ حرکت پذیری کی رفتار</string>
@@ -36,7 +35,7 @@
   <string name="ModuleSettings">ماڈیول کی ترتیبات۔</string>
   <string name="ResHook">ریسورس ہک√</string>
   <string name="NoneBlur">کوئی دھندلاپن نہیں۔</string>
-  <string name="OpenMiuiHomeSettings"></string>
+  <string name="OpenMiuiHomeSettings">ہوم اسکرین کی ترتیبات کھولیں۔</string>
   <string name="OtherFeature">دیگر خصوصیات</string>
   <string name="OutOfInput">براہ کرم حد کے اندر ایک قدر درج کریں!</string>
   <string name="RealTaskViewHorizontal">سچ · افقی حالیہ۔</string>
