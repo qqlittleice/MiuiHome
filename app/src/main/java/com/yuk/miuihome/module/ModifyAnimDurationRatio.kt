@@ -6,8 +6,8 @@ import com.yuk.miuihome.utils.ktx.setReturnConstant
 class ModifyAnimDurationRatio {
 
     fun init() {
-        val value = OwnSP.ownSP.getFloat("animationLevel", 233f)
-        if (value != 233f) {
+        val value = OwnSP.ownSP.getFloat("animationLevel", -1f)
+        if (value != -1f) {
             "com.miui.home.recents.TransitionAnimDurationHelper".setReturnConstant(
                 "getAnimDurationRatio",
                 result = value
