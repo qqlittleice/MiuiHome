@@ -89,4 +89,5 @@
     <string name="CategoryHideAll">اخفاء \"الكل\" من تصنيفات التطبيقات</string>
     <string name="FolderColumnsCount">عدد الاعمدة داخل المجلد</string>
     <string name="FolderWidth">استخدام عرض المجلد بالكامل</string>
+    <string name="IconTitleFontSize">حجم خط اسماء التطبيقات</string>
 </resources>
