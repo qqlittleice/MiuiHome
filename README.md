@@ -44,6 +44,13 @@ __Now：[1767523953/MiuiHome](https://github.com/1767523953/MiuiHome)__
 - [x] Force the current device to be a high-end device.
 - [x] Allow Android widgets to be moved to -1 screen.
 - [x] Allow MIUI widgets to be displayed in Android widget page.
+- [x] Change Icon Label Font Size
+- [x] Change Folder Column Count
+- [x] Use entire Folder space
+- [x] Hide All Section in App Drawer mode
+- [x] Option to Remove Page Indicator
+- [x] Enable Dock Bar and Dock Bar Blur
+
 - [ ] More...
 
 ## Credit
