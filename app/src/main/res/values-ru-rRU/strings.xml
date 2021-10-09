@@ -29,7 +29,6 @@
     <string name="EveryThingBuild">Скомпилировать рабочий стол MIUI, используя режим \"Everything\"</string>
     <string name="Folder">Папки</string>
     <string name="HideAppIcon">Скрыть иконку на рабочем столе MIUI</string>
-    <string name="HideAppTitles">Скрыть имена приложений</string>
     <string name="HideSeekPoints">Скрыть индикатор страниц рабочего стола</string>
     <string name="HideStatusBar">Скрывать строку состояния в меню недавних</string>
     <string name="HideTaskViewAppIcon">Скрыть иконки приложений в меню недавних</string>

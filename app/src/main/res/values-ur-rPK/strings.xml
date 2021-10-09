@@ -17,8 +17,7 @@
   <string name="Description">MIUI لانچر کے لیے ہک۔</string>
   <string name="Folder">فولڈر کی ترتیبات</string>
   <string name="HideAppIcon">ایپلیکیشن آئیکن چھپائیں</string>
-  <string name="HideAppTitles">ایپس کے نام چھپائیں</string>
-  <string name="HideStatusBar">ٹاسک ویو اسکرین میں اسٹیٹس بار چھپائیں۔</string>
+    <string name="HideStatusBar">ٹاسک ویو اسکرین میں اسٹیٹس بار چھپائیں۔</string>
   <string name="HideTaskViewAppIcon">ٹاسک ویو میں ایپلیکیشن آئیکن کو چھپائیں۔</string>
   <string name="HideTaskViewCleanUpIcon">ٹاسک ویو میں کلین آل بٹن چھپائیں</string>
   <string name="HideTaskViewSmallWindowIcon">ٹاسک ویو میں فلوٹنگ ونڈوز کو ہٹا دیں۔</string>

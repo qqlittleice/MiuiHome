@@ -17,8 +17,7 @@
     <string name="Description">تعديلات لمشغل تطبيقات Miui</string>
     <string name="Folder">اعدادات المجلدات</string>
     <string name="HideAppIcon">اخفاء ايقونة التطبيق</string>
-    <string name="HideAppTitles">اخفاء اسماء التطبيقات</string>
-    <string name="HideStatusBar">اخفاء شريط الحالة في قائمة التطبيقات الاخيرة</string>
+  <string name="HideStatusBar">اخفاء شريط الحالة في قائمة التطبيقات الاخيرة</string>
     <string name="HideTaskViewAppIcon">اخفاء ايقونة التطبيقات في قائمة التطبيقات الاخيرة</string>
     <string name="HideTaskViewCleanUpIcon">اخفاء زر مسح الكل في قائمة التطبيقات الاخيرة</string>
     <string name="HideTaskViewSmallWindowIcon">ازالة زر \"النوافذ المنبثقة\" في قائمة التطبيقات الاخيرة</string>

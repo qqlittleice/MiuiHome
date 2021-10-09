@@ -18,7 +18,6 @@
   <string name="Description">Hook for MIUI Launcher</string>
   <string name="Folder">Folder Settings</string>
   <string name="HideAppIcon">Hide APP Icon</string>
-  <string name="HideAppTitles">Hide Application Labels</string>
   <string name="HideStatusBar">Hide the Status Bar in the Recent Screen</string>
   <string name="HideTaskViewAppIcon">Hide the Application Icon in the Recent</string>
   <string name="HideTaskViewCleanUpIcon">Hide the Clean All Button in the Recent</string>
@@ -91,4 +90,5 @@
   <string name="CategoryHideAll">Hide \"All\" in App Categories</string>
   <string name="FolderColumnsCount">Folder Columns Count</string>
   <string name="FolderWidth">Use entire folder\'s width</string>
+  <string name="IconTitleFontSize">Icon Labels Font Size</string>
 </resources>

@@ -17,7 +17,6 @@
     <string name="Description">Modificação para Launcher MIUI</string>
     <string name="Folder">Configurações Pasta</string>
     <string name="HideAppIcon">Esconder Ícone do APP</string>
-    <string name="HideAppTitles">Esconder Nome dos Aplicativos</string>
     <string name="HideStatusBar">Esconder Barra de Status na Tela de Aplicativos Recentes</string>
     <string name="HideTaskViewAppIcon">Esconder Ícone do Aplicativo na Tela de Recentes</string>
     <string name="HideTaskViewCleanUpIcon">Esconder o Botão de Limpar Tudo na Tela de Recentes</string>

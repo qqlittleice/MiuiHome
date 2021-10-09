@@ -17,7 +17,6 @@
     <string name="Description">針對MIUI桌面的自定義擴展</string>
     <string name="Folder">文件夾相關</string>
     <string name="HideAppIcon">隱藏桌面圖標</string>
-    <string name="HideAppTitles">隱藏桌面應用名稱</string>
     <string name="HideStatusBar">後台界面隱藏狀態欄</string>
     <string name="HideTaskViewAppIcon">隱藏後台應用圖標</string>
     <string name="HideTaskViewCleanUpIcon">隱藏後台清理圖標</string>
@@ -90,4 +89,5 @@
     <string name="CategoryHideAll">隱藏應用分組中的 \"全部\"</string>
     <string name="FolderColumnsCount">文件夾排列數</string>
     <string name="FolderWidth">利用整個文件夾的寬度</string>
+    <string name="IconTitleFontSize">應用標題文字大小</string>
 </resources>

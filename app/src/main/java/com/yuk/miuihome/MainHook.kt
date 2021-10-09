@@ -88,8 +88,6 @@ class MainHook {
         EnableSimpleAnimation().init()
         //屏幕无限滚动
         ModifyInfiniteScroll().init()
-        //隐藏桌面应用标题
-        ModifyHideIconTitles().init()
         //解锁桌面布局限制
         ModifyUnlockGrids().init()
         //打开应用时关闭文件夹
@@ -110,6 +108,8 @@ class MainHook {
         ModifyCategoryHideAll().init()
         //文件夹列数
         ModifyFolderColumnsCount().init()
+        //桌面标题字体大小
+        ModifyIconTitleFontSize().init()
         //propHook
         HookSystemProperties().init()
         //DockHook
@@ -197,12 +197,6 @@ class MainHook {
                 )
                 addView(
                     SettingSwitch.FastBuilder(
-                        mText = myRes.getString(R.string.HideAppTitles),
-                        mKey = "hideIconTitles"
-                    ).build()
-                )
-                addView(
-                    SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.UnlockGrids),
                         mKey = "unlockGrids"
                     ).build()
@@ -243,6 +237,8 @@ class MainHook {
                         mKey = "categoryHideAll"
                     ).build()
                 )
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.IconTitleFontSize)) { showModifyIconTitleFontSize() }
+                    .build())
                 addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.RoundCorner)) { showModifyRoundCorner() }
                     .build())
                 addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.AppTextSize)) { showModifyTextSize() }
@@ -716,6 +712,17 @@ class MainHook {
             6,
             1,
             3
+        ).build()
+    }
+
+    private fun showModifyIconTitleFontSize() {
+        SettingUserInput(
+            myRes.getString(R.string.IconTitleFontSize),
+            "iconTitleFontSize",
+            0,
+            30,
+            1,
+            12
         ).build()
     }
 
