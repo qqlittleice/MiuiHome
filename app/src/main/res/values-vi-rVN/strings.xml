@@ -89,4 +89,5 @@
     <string name="CategoryHideAll">Ẩn \"Tất cả \" trong Danh mục ứng dụng</string>
     <string name="FolderColumnsCount">Số lượng cột thư mục</string>
     <string name="FolderWidth">Sử dụng toàn bộ chiều rộng của thư mục\'s </string>
+    <string name="IconTitleFontSize">Kích thước văn bản tiêu đề ứng dụng</string>
 </resources>
