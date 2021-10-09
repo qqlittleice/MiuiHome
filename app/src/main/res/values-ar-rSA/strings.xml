@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="AdvancedFeature">اعدادات متقدمة</string>
+    <string name="AdvancedFeature">اعدادات متقدمة</string>
     <string name="AlwaysShowMIUIWidget">السماح لإضافات Miui ان تعرض مع الإضافات العادية</string>
     <string name="AlwaysShowStatusBarClock">إظهار الساعة في شريط الحالة دائما</string>
     <string name="AnimationLevel">سرعة الانيميشن</string>
@@ -17,7 +17,7 @@
     <string name="Description">تعديلات لمشغل تطبيقات Miui</string>
     <string name="Folder">اعدادات المجلدات</string>
     <string name="HideAppIcon">اخفاء ايقونة التطبيق</string>
-  <string name="HideStatusBar">اخفاء شريط الحالة في قائمة التطبيقات الاخيرة</string>
+    <string name="HideStatusBar">اخفاء شريط الحالة في قائمة التطبيقات الاخيرة</string>
     <string name="HideTaskViewAppIcon">اخفاء ايقونة التطبيقات في قائمة التطبيقات الاخيرة</string>
     <string name="HideTaskViewCleanUpIcon">اخفاء زر مسح الكل في قائمة التطبيقات الاخيرة</string>
     <string name="HideTaskViewSmallWindowIcon">ازالة زر \"النوافذ المنبثقة\" في قائمة التطبيقات الاخيرة</string>
