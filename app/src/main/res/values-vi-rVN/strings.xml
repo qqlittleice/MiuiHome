@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">MiuiHome</string>
     <string name="AdvancedFeature">Cài đặt nâng cao</string>
     <string name="AlwaysShowMIUIWidget">Cho phép các tiện ích MIUI được hiển thị trong các tiện ích Cổ điển</string>
     <string name="AlwaysShowStatusBarClock">Luôn hiển thị đồng hồ trên thanh trạng thái</string>
