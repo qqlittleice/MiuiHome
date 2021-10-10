@@ -50,8 +50,8 @@ class SettingUserInputText(
         })
         dialogBuilder.apply {
             setPositiveButton(myRes.getString(R.string.Save), null)
-            setNeutralButton(myRes.getString(R.string.Reset)) { dialog, _ ->
-                OwnSP.set("enableCustomRecentText", false)
+            setNeutralButton(myRes.getString(R.string.Reset1)) { dialog, _ ->
+                OwnSP.remove(mKey)
                 dialog.dismiss()
             }
         }
