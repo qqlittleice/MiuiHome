@@ -89,6 +89,4 @@
     <string name="CategoryHideAll">Esconder \"Tudo\" em Categorias de App</string>
     <string name="FolderColumnsCount">Número de colunas em pastas</string>
     <string name="FolderWidth">Use toda a largura da pasta</string>
-    <string name="IconTitleFontSize">Tamanho da fonte dos ícones>
-    <string name="CustomRecentText">Personalize a exibição de texto de recentes quando não houver fundo</string>
 </resources>
