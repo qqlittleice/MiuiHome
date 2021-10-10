@@ -72,7 +72,7 @@
     <string name="SmallWindow">אפדר לכל האפליקציות להיות "חלון צף"</string>
     <string name="LowEndDeviceUseMIUIWidgets">אפשר את חנות הוידג'טים החדשה במכשירים מדרגה נמוכה</string>
     <string name="RecommendServer">השבת את השרת המומלץ</string>
-    <string name="EveryThingBuild">ייעל את הלאונצ'ר באמצעות מצב הכל (Everything Mode<)/string>
+    <string name="EveryThingBuild">ייעל את הלאונצ'ר באמצעות מצב הכל (Everything Mode) </string>
     <string name="DockHeight">גובה עמדת העגינה</string>
     <string name="DockRoundedCorners">רדיוס פינות עמדת העגינה</string>
     <string name="DockSide">עמדת עגינה מצד המסך</string>
@@ -92,6 +92,4 @@
     <string name="FolderWidth">השתמש בכל רוחב התיקייה</string>
     <string name="IconTitleFontSize">גודל פונט התוויות</string>
     <string name="CustomRecentText">התאם אישית את הטקסט המוצג במסל האפליקציות האחרונות בזמן שאין שום רקע</string>
-</resources>
-�אין שום רקע</string>
 </resources>
