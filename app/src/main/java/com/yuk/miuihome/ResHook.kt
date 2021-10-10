@@ -117,7 +117,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 )
             }
             if (OwnSP.ownSP.getString("recentText", "YuKongADisable") != "YuKongADisable") {
-                val message: String? = OwnSP.ownSP.getString("recentText", "YuKongADisable")
+                val message: String = OwnSP.ownSP.getString("recentText", "YuKongADisable").toString()
                 hookedRes.res.setTryReplacement(
                     Config.hookPackage,
                     "string",

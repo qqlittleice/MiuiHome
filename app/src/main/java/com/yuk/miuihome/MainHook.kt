@@ -730,7 +730,7 @@ class MainHook {
 
     private fun showModifyRecentText() {
         SettingUserInputText(
-            "自定义无后台时的文本展示",
+            myRes.getString(R.string.CustomRecentText),
             "recentText"
         ).build()
     }
