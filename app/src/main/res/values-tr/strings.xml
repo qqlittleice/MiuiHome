@@ -35,7 +35,8 @@
     <string name="ModuleSettings">Modül Ayarları</string>
     <string name="ResHook">Resource Hook√</string>
     <string name="NoneBlur">Bulanıklık Kapalı</string>
-    <string name="OpenMiuiHomeSettings">Miui Başlatıcı Ayarlarını Aç<string name="OtherFeature">Diğer Özellikler</string>
+    <string name="OpenMiuiHomeSettings">Miui Başlatıcı Ayarlarını Aç</string>
+    <string name="OtherFeature">Diğer Özellikler</string>
     <string name="OutOfInput">Lütfen kabul edilebilir değer içerisinde bir sayı girin!</string>
     <string name="RealTaskViewHorizontal">Doğru · Son Kullanılanlar Görünümü</string>
     <string name="Reboot">Başlatıcıyı Yeniden Baskat</string>
