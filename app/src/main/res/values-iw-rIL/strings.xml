@@ -3,7 +3,7 @@
     <string name="app_name" translatable="false">MiuiHome</string>
     <string name="AdvancedFeature">הגדרות מתקדמות</string>
     <string name="AlwaysShowMIUIWidget">אשר לוידג'טים של Miui להיות מוצגים בוידג'טים הקלאסיים</string>
-    <string name="AlwaysShowStatusBarClock">הצג תמיד את השעון בשורת המצב (status bar)</string>
+    <string name="AlwaysShowStatusBarClock">הצג תמיד את השעון בשורת המצב status bar</string>
     <string name="AnimationLevel">מהירות אנימציית מחוות</string>
     <string name="AppTextSize">ריווח בין סמלי האפליקציות לבין השם שלהן בעמוד האפליקציות האחרונות</string>
     <string name="Back">חזור</string>
@@ -15,16 +15,16 @@
     <string name="CloseFolder">סגור את התיקייה אם פותחים אפליקצייה מהתיקייה</string>
     <string name="CompleteBlur">טשטוש מוחלט</string>
     <string name="Defaults">ברירת מחדל</string>
-    <string name="Description">Hook for MIUI Launcher (לכוד את הלאונצ'ר של MIUI)</string>
+    <string name="Description">Hook for MIUI Launcher לכוד את הלאונצ'ר של MIUI</string>
     <string name="Folder">הגדרות תיקייה</string>
     <string name="HideAppIcon">הסתר את סמל האפליקציה</string>
     <string name="HideStatusBar">הסתר את שורת המשימות במסך האפליקציות האחרונות</string>
     <string name="HideTaskViewAppIcon">הסתר את סמל האפליקציה במסך האפליקציות האחרונות</string>
-    <string name="HideTaskViewCleanUpIcon">הסתר את כפתור "נקה הכל" במסך האפליקציות האחרונות</string>
-    <string name="HideTaskViewSmallWindowIcon">הסר את כפתור ה"חלון צף" במסך האפליקציות האחרונות</string>
+    <string name="HideTaskViewCleanUpIcon">הסתר את כפתור נקה הכל במסך האפליקציות האחרונות</string>
+    <string name="HideTaskViewSmallWindowIcon">הסר את כפתור חלון צף במסך האפליקציות האחרונות</string>
     <string name="HideWidgetTitles">הסתר את תוית הוידג'ט</string>
     <string name="HorizontalTaskViewOfAppCardSize">גודל תמונת התצוגה המקדימה במצב לרוחב</string>
-    <string name="InfiniteScroll">גלילה אין-סופית בלאונצ'ר (משגר)</string>
+    <string name="InfiniteScroll">גלילה אין-סופית בלאונצ'ר</string>
     <string name="MainActivity1">הפעילו בבקשה מודול זה באמצעות LSPosed Manager והפעילו מחדש את הלאונצ'ר של MIUI פעם אחת. \n\nThe הגדרות המודול נמצאות בהגדרות \"Home screen\"!\n\nSpecific location: Settings - Home screen - איפה ש \"Default launcher\" היו קודם.</string>
     <string name="MainActivity2">Diagnostics:\n1.This module currently only support LSPosed 5606 or above, it does not going to support any other Xposed frameworks at present.\n\n2.If you have problem with module activate, follow the opinions below: re-optimize MIUI launcher - disable this module - enable this module - force stop MIUI launcher.\n\n3.When some options are invalid, please check whether the MIUI launcher you installed is the latest ALPHA version. If so, please try to re-optimize MIUI launcher in LSPosed Manager and restart it.\n\n4.The final effect depends on your SoC, MIUI version, launcher version and so on. Please refer to the actual performance. אבחון: \ n1. מודול זה תומך כרגע רק ב- LSPosed 5606 ומעלה, הוא אינו תומך במסגרות Xposed אחרות כרגע. \ N \ n2. אם יש לך בעיה בהפעלת המודול, עקוב אחר הדעות הבאות: אופטימיזציה מחדש של MIUI  משגר - השבת מודול זה - הפעל מודול זה - עצור כוח משגר MIUI. \ n \ n 3. כאשר חלק מהאפשרויות אינן חוקיות, בדוק אם משגר MIUI שהתקנת הוא גרסת ALPHA העדכנית ביותר.  אם כן, נסה לבצע אופטימיזציה מחדש של משגר MIUI ב- LSPosed Manager והפעל אותו מחדש. \ N \ n 4. ההשפעה הסופית תלויה בגרסת ה- SoC שלך, גרסת MIUI, גרסת המשגר ​​וכן הלאה.  אנא עיין בביצועים בפועל.</string>
     <string name="MamlDownload">אפקט הורדה - אדוות מים</string>
@@ -40,7 +40,7 @@
     <string name="OutOfInput">הזן בבקשה מספר בטווח המותר!</string>
     <string name="RealTaskViewHorizontal">מסך אפליקציות אחרונות אמיתי</string>
     <string name="Reboot">אתחל לאונצ'ר (משגר)</string>
-    <string name="Reboot2">הלאונצ'ר (משגר) יאותחל בתוך שניה אחת!</string>
+    <string name="Reboot2">הלאונצ'ר יאותחל בתוך שניה אחת!</string>
     <string name="ResourceHooks">ResourceHook פיצ'רים</string>
     <string name="RoundCorner">רדיוס הפינות המעוגלות של התצוגה המקדימה במסך האפליקציות האחרונות</string>
     <string name="Save">שמור</string>
@@ -48,7 +48,7 @@
     <string name="SearchBarBlur">הפעל טשטוש בתיבת החיפוש</string>
     <string name="SetSuccessfully">הוגדר בהצלחה</string>
     <string name="ShowAppIcon">הצג את סמל האפליקציה</string>
-    <string name="ShowDockIconTitles">הצג את שם האפליקציה בDock</string>
+    <string name="ShowDockIconTitles">הצג את שם האפליקציה בעמדת העגינה</string>
     <string name="SimpleAnimation">אנימציה פשוטה</string>
     <string name="SimpleBlur">טשטוש פשוט</string>
     <string name="SmoothAnimation">אנימציה חלקה</string>
@@ -68,11 +68,11 @@
     <string name="WidgetToMinus">אפשר למקם מחדש וידג'טים ל \"App Vault\"</string>
     <string name="Yes">כן</string>
     <string name="EnableIconShadow">הצג את צל הסמל ואת השתקפותו</string>
-    <string name="res_hooked">הזרמת משאבמם בוצעה בהצלחה!</string>
+    <string name="res_hooked">הזרמת משאבים בוצעה בהצלחה!</string>
     <string name="SmallWindow">אפדר לכל האפליקציות להיות "חלון צף"</string>
     <string name="LowEndDeviceUseMIUIWidgets">אפשר את חנות הוידג'טים החדשה במכשירים מדרגה נמוכה</string>
     <string name="RecommendServer">השבת את השרת המומלץ</string>
-    <string name="EveryThingBuild">ייעל את הלאונצ'ר (משגר) באמצעות מצב הכל (Everything Mode<)/string>
+    <string name="EveryThingBuild">ייעל את הלאונצ'ר באמצעות מצב הכל (Everything Mode<)/string>
     <string name="DockHeight">גובה עמדת העגינה</string>
     <string name="DockRoundedCorners">רדיוס פינות עמדת העגינה</string>
     <string name="DockSide">עמדת עגינה מצד המסך</string>
@@ -83,13 +83,15 @@
     <string name="DockFeature">הפעל פיצ'ר עמדת עגינה</string>
     <string name="EnableDockBlur">הפעל טשטוש רקע עמדת עגינה</string>
     <string name="Reset">אפס את הפרמטרים של עמדת העגינה</string>
-    <string name="Tips1">זה ישחזר את הפרמטרים של עמדת העגינה לבריכת המחדדת ויאתחל את לאונצ'ר (משגר) המערכת.</string>
+    <string name="Tips1">זה ישחזר את הפרמטרים של עמדת העגינה לבריכת המחדדת ויאתחל את הלאונצ'ר המערכת.</string>
     <string name="Reset1">אפס</string>
-    <string name="Tips2">זה יאפס את הגדרות המודול לברירת המחדל ויאתחל את לאונצ'ר (משגר) המערכת</string>
-    <string name="HideSeekPoints">הבר עמוד מחוון</string>
+    <string name="Tips2">זה יאפס את הגדרות המודול לברירת המחדל ויאתחל את לאונצ'ר המערכת</string>
+    <string name="HideSeekPoints">הסתר עמוד מחוון</string>
     <string name="CategoryHideAll">הסתר \"All\" בקטגוריות האפליקציה</string>
     <string name="FolderColumnsCount">ספירת עמודות בתיקייה</string>
     <string name="FolderWidth">השתמש בכל רוחב התיקייה</string>
     <string name="IconTitleFontSize">גודל פונט התוויות</string>
     <string name="CustomRecentText">התאם אישית את הטקסט המוצג במסל האפליקציות האחרונות בזמן שאין שום רקע</string>
+</resources>
+�אין שום רקע</string>
 </resources>
