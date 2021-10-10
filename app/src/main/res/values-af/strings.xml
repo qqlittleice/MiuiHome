@@ -84,7 +84,6 @@
     <string name="EnableDockBlur">Vervaging van het Dock inschakelen</string>
     <string name="Reset">Dock-parameters resetten</string>
     <string name="Tips1">Hierdoor wordt de Dock-parameter hersteld naar de standaardwaarde en wordt de System Launcher opnieuw gestart.</string>
-    <string name="Reset1">Reset</string>
     <string name="Tips2">Hiermee worden de standaardinstellingen van de module hersteld en wordt de System Launcher opnieuw gestart.</string>
     <string name="HideSeekPoints">Pagina-indicator verwijderen</string>
     <string name="CategoryHideAll">Verberg \"Alle\" in app-categorieën</string>
