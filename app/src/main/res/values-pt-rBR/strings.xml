@@ -85,10 +85,9 @@
     <string name="Tips1">Isso vai restaurar os parâmetros do Dock e reiniciar o Launcher do Sistema.</string>
     <string name="Reset1">Resetar</string>
     <string name="Tips2">Isso vai restaurar as configurações padrões do módulo e reiniciar o Launcher do Sistema.</string>
-    <string name="HideSeekPoints">Remover Indicação de Página</string>
     <string name="CategoryHideAll">Esconder \"Tudo\" em Categorias de App</string>
     <string name="FolderColumnsCount">Número de colunas em pastas</string>
     <string name="FolderWidth">Use toda a largura da pasta</string>
-    <string name="IconTitleFontSize">Tamanho da fonte dos ícones>
+    <string name="IconTitleFontSize">Tamanho da fonte dos ícones</string>
     <string name="CustomRecentText">Personalize a exibição de texto de recentes quando não houver fundo</string>
 </resources>
