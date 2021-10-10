@@ -15,7 +15,7 @@
     <string name="CloseFolder">Klasörü Otomatik Kapat</string>
     <string name="CompleteBlur">Tamamen Bulanıklık</string>
     <string name="Defaults">Varsayılan</string>
-    <string name="Description">Miui Launcher İçin Hook</string>
+    <string name="Description">Miui Başlatıcı İçin Resource Hook</string>
     <string name="Folder">Klasör Ayarları</string>
     <string name="HideAppIcon">Uygulama İkonunu Gizle</string>
     <string name="HideStatusBar">Son Uygulamalar Ekranında Durum Çubuğunu Gizle</string>
@@ -28,15 +28,14 @@
     <string name="MainActivity1">Lütfen bu modülü LSPosed Yöneticisinde etkinleştirin ve MIUI başlatıcısını bir kez yeniden başlatın.</string>
     <string name="MainActivity2">Teşhis:Bu modül şu anda yalnızca LSPosed 5606 veya üstünü desteklemektedir, şu anda diğer Xposed çerçevelerini desteklemeyecektir.Modül etkinleştirmeyle ilgili sorun yaşıyorsanız, aşağıdaki görüşleri izleyin: MIUI'yi yeniden optimize edin başlatıcı - bu modülü devre dışı bırak - bu modülü etkinleştir - MIUI başlatıcısını zorla durdur.Bazı seçenekler geçersiz olduğunda, lütfen yüklediğiniz MIUI başlatıcısının en son ALPHA sürümü olup olmadığını kontrol edin. Öyleyse, lütfen MIUI başlatıcısını LSPosed Yöneticisi'nde yeniden optimize etmeyi deneyin ve yeniden başlatın.Son etki SoC, MIUI sürümünüze, başlatıcı sürümünüze vb. bağlıdır. Lütfen gerçek performansa bakın..</string>
     <string name="MamlDownload">Su Dalgalanması İndirme Efekti</string>
-    <string name="ManualInput">Manuel Giriş</string>
+    <string name="ManualInput">Manual Giriş</string>
     <string name="ModuleEnable">Modül Aktif</string>
     <string name="ModuleFeature">Modül Özellikleri</string>
     <string name="ModuleNotEnable">Modül Aktif Değil</string>
     <string name="ModuleSettings">Modül Ayarları</string>
     <string name="ResHook">Resource Hook√</string>
     <string name="NoneBlur">Bulanıklık Kapalı</string>
-    <string name="OpenMiuiHomeSettings">Miui Başlatıcı Ayarlarını Aç</string>
-    <string name="OtherFeature">Diğer Özellikler</string>
+    <string name="OpenMiuiHomeSettings">Miui Başlatıcı Ayarlarını Aç<string name="OtherFeature">Diğer Özellikler</string>
     <string name="OutOfInput">Lütfen kabul edilebilir değer içerisinde bir sayı girin!</string>
     <string name="RealTaskViewHorizontal">Doğru · Son Kullanılanlar Görünümü</string>
     <string name="Reboot">Başlatıcıyı Yeniden Baskat</string>
@@ -70,7 +69,7 @@
     <string name="EnableIconShadow">İkon Hareketlerini ve Gölgelerini Göster</string>
     <string name="res_hooked">Resource Hook Başarıyla Enjekte Edildi!</string>
     <string name="SmallWindow">Bütün Uygulamalara Yüzen Pencereler İçin İzin Ver</string>
-    <string name="LowEndDeviceUseMIUIWidgets">Yemi Widget Mağazasını Eski/Düşük Telefonlar İçin Aktif Et</string>
+    <string name="LowEndDeviceUseMIUIWidgets">Yeni Widget Mağazasını Eski/Düşük Telefonlar İçin Aktif Et</string>
     <string name="RecommendServer">Önerilen Sunucuyu Devre Dışı Bırak</string>
     <string name="EveryThingBuild">Başlatıcıyı herşey için optimize et</string>
     <string name="DockHeight">Dock Yüksekliği</string>
