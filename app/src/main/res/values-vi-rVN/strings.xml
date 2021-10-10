@@ -90,4 +90,5 @@
     <string name="FolderColumnsCount">Số lượng cột thư mục</string>
     <string name="FolderWidth">Sử dụng toàn bộ chiều rộng của thư mục\'s </string>
     <string name="IconTitleFontSize">Kích thước văn bản tiêu đề ứng dụng</string>
+    <string name="CustomRecentText">Hiển thị văn bản khi không có ứng dụng trong nền</string>
 </resources>
