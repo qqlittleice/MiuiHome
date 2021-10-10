@@ -90,4 +90,5 @@
     <string name="FolderColumnsCount">عدد الاعمدة داخل المجلد</string>
     <string name="FolderWidth">استخدام عرض المجلد بالكامل</string>
     <string name="IconTitleFontSize">حجم خط اسماء التطبيقات</string>
+    <string name="CustomRecentText">تخصيص النص الظاهر في التطبيقات الاخيرة عندما لا يكون هناك تطبيقات</string>
 </resources>
