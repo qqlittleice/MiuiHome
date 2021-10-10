@@ -90,5 +90,5 @@
     <string name="FolderColumnsCount">文件夾排列數</string>
     <string name="FolderWidth">利用整個文件夾的寬度</string>
     <string name="IconTitleFontSize">應用標題文字大小</string>
-    <string name="CustomRecentText">無後台時後台的文本顯示</string>
+    <string name="CustomRecentText">後台無應用時的文本顯示</string>
 </resources>
