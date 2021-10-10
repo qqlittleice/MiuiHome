@@ -26,7 +26,7 @@
     <string name="HorizontalTaskViewOfAppCardSize">Yatay Son Kullanilanlar Icin Uygulama Boyutu</string>
     <string name="InfiniteScroll">Sonsuz Kaydirma</string>
     <string name="MainActivity1">Lutfen bu modulu LSPosed Yoneticisinde etkinlestirin ve MIUI baslaticisini bir kez yeniden baslatin.</string>
-    <string name="MainActivity2">Teshis:Bu modul su anda yalnizca LSPosed 5606 veya ustunu desteklemektedir, su anda diger Xposed cercevelerini desteklemeyecektir.Modul etkinlestirmeyle ilgili sorun yasiyorsaniz, asagidaki gorusleri izleyin: MIUI'yi yeniden optimize edin baslatici - bu modulu devre disi birak - bu modulu etkinlestir - MIUI baslaticisini zorla durdur.Bazi secenekler gecersiz oldugunda, lutfen yuklediginiz MIUI baslaticisinin en son ALPHA surumu olup olmadigini kontrol edin. oyleyse, lutfen MIUI baslaticisini LSPosed Yoneticisi'nde yeniden optimize etmeyi deneyin ve yeniden baslatin.Son etki SoC, MIUI surumunuze, baslatici surumunuze vb. baglidir. Lutfen gercek performansa bakin..</string>
+    <string name="MainActivity2">Teshis:Bu modul su anda yalnizca LSPosed 5606 veya ustunu desteklemektedir, su anda diger Xposed cercevelerini desteklemeyecektir.Modul etkinlestirmeyle ilgili sorun yasiyorsaniz, asagidaki gorusleri izleyin: MIUIyi yeniden optimize edin baslatici - bu modulu devre disi birak - bu modulu etkinlestir - MIUI baslaticisini zorla durdur.Bazi secenekler gecersiz oldugunda, lutfen yuklediginiz MIUI baslaticisinin en son ALPHA surumu olup olmadigini kontrol edin. oyleyse, lutfen MIUI baslaticisini LSPosed Yoneticisinde yeniden optimize etmeyi deneyin ve yeniden baslatin.Son etki SoC, MIUI surumunuze, baslatici surumunuze vb. baglidir. Lutfen gercek performansa bakin..</string>
     <string name="MamlDownload">Su Dalgalanmasi Indirme Efekti</string>
     <string name="ManualInput">Manual Giris</string>
     <string name="ModuleEnable">Modul Aktif</string>
@@ -48,7 +48,7 @@
     <string name="SearchBarBlur">Arama cubugu Bulanikligi</string>
     <string name="SetSuccessfully">Basariyla Ayarlandi</string>
     <string name="ShowAppIcon">Uygulama Ismini Goster</string>
-    <string name="ShowDockIconTitles">Dock'taki Uygulama Isimlerini Goster</string>
+    <string name="ShowDockIconTitles">Docktaki Uygulama Isimlerini Goster</string>
     <string name="SimpleAnimation">Basit Animasyon</string>
     <string name="SimpleBlur">Basit Bulaniklik</string>
     <string name="SmoothAnimation">Akici Animasyon</string>
@@ -71,7 +71,7 @@
     <string name="res_hooked">Resource Hook Basariyla Enjekte Edildi!</string>
     <string name="SmallWindow">Butun Uygulamalara Yuzen Pencereler Icin Izin Ver</string>
     <string name="LowEndDeviceUseMIUIWidgets">Yeni Widget Magazasini Eski/Dusuk Telefonlar Icin Aktif Et</string>
-    <string name="RecommendServer">onerilen Sunucuyu Devre Disi Birak</string>
+    <string name="RecommendServer">Onerilen Sunucuyu Devre Disi Birak</string>
     <string name="EveryThingBuild">Baslaticiyi hersey icin optimize et</string>
     <string name="DockHeight">Dock Yuksekligi</string>
     <string name="DockRoundedCorners">Dock Kivriltilmis Koseler</string>
@@ -79,15 +79,15 @@
     <string name="DockBottom">Dock Ekranin Altindaki Bosluk</string>
     <string name="DockIconBottom">Ekranin Altindaki Ikonlar</string>
     <string name="DockSettings">Dock Ayarlari</string>
-    <string name="DockWarn">Eger Dock'un koselerini ozellestirmeniz gerekiyorsa Resource Hooks'u acin.</string>
+    <string name="DockWarn">Eger Dockun koselerini ozellestirmeniz gerekiyorsa Resource Hooksu acin.</string>
     <string name="DockFeature">Dock Islevini Ac</string>
-    <string name="EnableDockBlur">Dock'a Bulaniklik Ekle</string>
+    <string name="EnableDockBlur">Docka Bulaniklik Ekle</string>
     <string name="Reset">Dock ayarlarini sifirla.</string>
     <string name="Tips1">Bu, Dock seceneklerini sifirlar ve sistem baslaticisini yeniden baslatir.</string>
     <string name="Reset1">Sifirla</string>
     <string name="Tips2">Bu, sistem baslaticisinin butun ayarlarini sifirlar.</string>
     <string name="HideSeekPoints">Sayfa Gostergesini Kaldir</string>
-    <string name="CategoryHideAll">Uygulama Kategorisinde :Hepsi' Secenegini Gizle</string>
+    <string name="CategoryHideAll">Uygulama Kategorisinde :Hepsi Secenegini Gizle</string>
     <string name="FolderColumnsCount">Dosya Sutun Sayisi</string>
     <string name="FolderWidth">Tum Klasorun Genisligini Kullan</string>
     <string name="IconTitleFontSize">Ikon Isimleri Yazi Boyutu</string>
