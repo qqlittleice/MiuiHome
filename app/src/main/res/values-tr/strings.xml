@@ -28,14 +28,15 @@
     <string name="MainActivity1">Lütfen bu modülü LSPosed Yöneticisinde etkinleştirin ve MIUI başlatıcısını bir kez yeniden başlatın.</string>
     <string name="MainActivity2">Teşhis:Bu modül şu anda yalnızca LSPosed 5606 veya üstünü desteklemektedir, şu anda diğer Xposed çerçevelerini desteklemeyecektir.Modül etkinleştirmeyle ilgili sorun yaşıyorsanız, aşağıdaki görüşleri izleyin: MIUI'yi yeniden optimize edin başlatıcı - bu modülü devre dışı bırak - bu modülü etkinleştir - MIUI başlatıcısını zorla durdur.Bazı seçenekler geçersiz olduğunda, lütfen yüklediğiniz MIUI başlatıcısının en son ALPHA sürümü olup olmadığını kontrol edin. Öyleyse, lütfen MIUI başlatıcısını LSPosed Yöneticisi'nde yeniden optimize etmeyi deneyin ve yeniden başlatın.Son etki SoC, MIUI sürümünüze, başlatıcı sürümünüze vb. bağlıdır. Lütfen gerçek performansa bakın..</string>
     <string name="MamlDownload">Su Dalgalanması İndirme Efekti</string>
-    <string name="ManualInput">Manual Giriş</string>
+    <string name="ManualInput">Manuel Giriş</string>
     <string name="ModuleEnable">Modül Aktif</string>
     <string name="ModuleFeature">Modül Özellikleri</string>
     <string name="ModuleNotEnable">Modül Aktif Değil</string>
     <string name="ModuleSettings">Modül Ayarları</string>
     <string name="ResHook">Resource Hook√</string>
     <string name="NoneBlur">Bulanıklık Kapalı</string>
-    <string name="OpenMiuiHomeSettings">Miui Başlatıcı Ayarlarını Aç<string name="OtherFeature">Diğer Özellikler</string>
+    <string name="OpenMiuiHomeSettings">Miui Başlatıcı Ayarlarını Aç</string>
+    <string name="OtherFeature">Diğer Özellikler</string>
     <string name="OutOfInput">Lütfen kabul edilebilir değer içerisinde bir sayı girin!</string>
     <string name="RealTaskViewHorizontal">Doğru · Son Kullanılanlar Görünümü</string>
     <string name="Reboot">Başlatıcıyı Yeniden Baskat</string>
