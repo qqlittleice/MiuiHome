@@ -334,7 +334,7 @@ class MainHook {
                     )
                     addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.TaskViewAppCardTextSize)) { showModifyBackgroundTextSize() }
                         .build())
-                    addView(SettingTextView.FastBuilder(mText = "自定义无后台时的文本展示") { showModifyRecentText() }
+                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.CustomRecentText)) { showModifyRecentText() }
                         .build())
                 }
                 addView(
