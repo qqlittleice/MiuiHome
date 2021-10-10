@@ -10,7 +10,7 @@ import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.*
 
-class SettingUserInput(
+class SettingUserInputNumber(
     private val mText: String,
     private val mKey: String,
     private val minValue: Int,

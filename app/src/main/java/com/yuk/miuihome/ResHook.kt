@@ -116,6 +116,15 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                     )
                 )
             }
+            if (OwnSP.ownSP.getBoolean("enableCustomRecentText", false)) {
+                val message: String? = OwnSP.ownSP.getString("recentText", "YuKongA")
+                hookedRes.res.setTryReplacement(
+                    Config.hookPackage,
+                    "string",
+                    "recents_empty_message",
+                    message
+                )
+            }
         }
     }
 

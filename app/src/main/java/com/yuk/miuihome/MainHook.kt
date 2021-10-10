@@ -334,6 +334,8 @@ class MainHook {
                     )
                     addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.TaskViewAppCardTextSize)) { showModifyBackgroundTextSize() }
                         .build())
+                    addView(SettingTextView.FastBuilder(mText = "自定义无后台时的文本展示") { showModifyRecentText() }
+                        .build())
                 }
                 addView(
                     SettingTextView.FastBuilder(
@@ -639,7 +641,7 @@ class MainHook {
 
 
     private fun showModifyRoundCorner() {
-        SettingUserInput(
+        SettingUserInputNumber(
             myRes.getString(R.string.RoundCorner),
             "recents_task_view_rounded_corners_radius",
             0,
@@ -650,7 +652,7 @@ class MainHook {
     }
 
     private fun showModifyTextSize() {
-        SettingUserInput(
+        SettingUserInputNumber(
             myRes.getString(R.string.AppTextSize),
             "recents_task_view_header_height",
             0,
@@ -672,7 +674,7 @@ class MainHook {
     }
 
     private fun showModifyBackgroundTextSize() {
-        SettingUserInput(
+        SettingUserInputNumber(
             myRes.getString(R.string.TaskViewAppCardTextSize),
             "backgroundTextSize",
             0,
@@ -683,7 +685,7 @@ class MainHook {
     }
 
     private fun showModifyVertical() {
-        SettingUserInput(
+        SettingUserInputNumber(
             myRes.getString(R.string.VerticalTaskViewOfAppCardSize),
             "task_vertical",
             50,
@@ -694,7 +696,7 @@ class MainHook {
     }
 
     private fun showModifyHorizontal() {
-        SettingUserInput(
+        SettingUserInputNumber(
             myRes.getString(R.string.HorizontalTaskViewOfAppCardSize),
             "task_horizontal",
             100,
@@ -705,7 +707,7 @@ class MainHook {
     }
 
     private fun showModifyFolderColumnsCount() {
-        SettingUserInput(
+        SettingUserInputNumber(
             myRes.getString(R.string.FolderColumnsCount),
             "folderColumns",
             1,
@@ -716,13 +718,20 @@ class MainHook {
     }
 
     private fun showModifyIconTitleFontSize() {
-        SettingUserInput(
+        SettingUserInputNumber(
             myRes.getString(R.string.IconTitleFontSize),
             "iconTitleFontSize",
             0,
             30,
             1,
             12
+        ).build()
+    }
+
+    private fun showModifyRecentText() {
+        SettingUserInputText(
+            "自定义无后台时的文本展示",
+            "recentText"
         ).build()
     }
 

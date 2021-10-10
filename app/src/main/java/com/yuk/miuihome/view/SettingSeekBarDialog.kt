@@ -109,7 +109,7 @@ class SettingSeekBarDialog(
                             mText = myRes.getString(R.string.ManualInput)
                         ) {
                             dialog.dismiss()
-                            SettingUserInput(
+                            SettingUserInputNumber(
                                 mText,
                                 mKey,
                                 minValue,

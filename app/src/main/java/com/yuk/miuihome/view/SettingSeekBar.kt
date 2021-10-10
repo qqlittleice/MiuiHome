@@ -118,7 +118,7 @@ class SettingSeekBar(
                 SettingTextView.FastBuilder(
                     mText = myRes.getString(R.string.ManualInput)
                 ) {
-                    SettingUserInput(
+                    SettingUserInputNumber(
                         mText,
                         mKey,
                         minValue,
