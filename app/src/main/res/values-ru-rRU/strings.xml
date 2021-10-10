@@ -90,4 +90,5 @@
     <string name="FolderWidth">Использовать всю ширину папки</string>
     <string name="FolderColumnsCount">Число колонок в папках</string>
     <string name="IconTitleFontSize">Размер шрифта подписи иконок</string>
+    <string name="CustomRecentText">Изменение текста при отсутствии приложений в недавних</string>
 </resources>
