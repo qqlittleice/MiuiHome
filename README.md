@@ -20,7 +20,7 @@ __Old：[YuKongA/MiuiHome](https://github.com/YuKongA/MiuiHome)__
 
 __Now：[1767523953/MiuiHome](https://github.com/1767523953/MiuiHome)__
 
-## Module Features (Google Translate)
+## Module Features
 
 - [x] Enable Smooth Animation.
 - [x] Always show status bar clock.
@@ -50,7 +50,6 @@ __Now：[1767523953/MiuiHome](https://github.com/1767523953/MiuiHome)__
 - [x] Hide All Section in App Drawer mode
 - [x] Option to Remove Page Indicator
 - [x] Enable Dock Bar and Dock Bar Blur
-
 - [ ] More...
 
 ## Credit
