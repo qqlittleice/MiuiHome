@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">MiuiHome</string>
     <string name="AdvancedFeature">Geavanceerde instellingen</string>
-    <string name="AlwaysShowMIUIWidget">Toestaan ​​dat MIUI widgets worden weergegeven in klassieke widgets</string>
+    <string name="AlwaysShowMIUIWidget">Toestaan dat MIUI widgets worden weergegeven in klassieke widgets</string>
     <string name="AlwaysShowStatusBarClock">Altijd de statusbalkklok weergeven</string>
     <string name="AnimationLevel">Gebaar animatie snelheid</string>
     <string name="AppTextSize">Afstand tussen applicatiepictogrammen en namen voor taakweergave</string>
@@ -44,7 +43,7 @@
     <string name="ResourceHooks">ResourceHook Features</string>
     <string name="RoundCorner">Grootte van de afgeronde hoeken van de miniatuur</string>
     <string name="Save">Opslaan</string>
-    <string name="Scope">Toegestaan ​​invoerbereik</string>
+    <string name="Scope">Toegestaan invoerbereik</string>
     <string name="SearchBarBlur">Vervaging in zoekvak inschakelen</string>
     <string name="SetSuccessfully">Succesvol ingesteld</string>
     <string name="ShowAppIcon">Toon APP-pictogram</string>
@@ -69,7 +68,7 @@
     <string name="Yes">Ja</string>
     <string name="EnableIconShadow">Pictogram Schaduw en reflectie weergeven</string>
     <string name="res_hooked">Succes met het injecteren van hulpbronnen!</string>
-    <string name="SmallWindow">Alle apps toestaan ​​zwevende vensters te gebruiken</string>
+    <string name="SmallWindow">Alle apps toestaan zwevende vensters te gebruiken</string>
     <string name="LowEndDeviceUseMIUIWidgets">Nieuwe widgetwinkel inschakelen op Low-End apparaten</string>
     <string name="RecommendServer">Aanbevelingsserver uitschakelen</string>
     <string name="EveryThingBuild">Launcher optimaliseren met Alles-modus</string>

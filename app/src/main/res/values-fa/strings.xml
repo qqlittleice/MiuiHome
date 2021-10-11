@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">لانچر شیائومی</string>
     <string name="AdvancedFeature">تنظیمات پیشرفته</string>
     <string name="AlwaysShowMIUIWidget">اجازه دهید ابزارک های لانچر در ابزارک های کلاسیک نمایش داده شوند</string>
     <string name="AlwaysShowStatusBarClock">همیشه ساعت را در نوار وضعیت نشان بده</string>

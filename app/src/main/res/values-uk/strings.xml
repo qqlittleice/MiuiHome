@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">MiuiHome</string>
     <string name="AdvancedFeature">Додаткові налаштування</string>
     <string name="AlwaysShowMIUIWidget">Дозволити MIUI віджетам відображення в класичних віджетах</string>
     <string name="AlwaysShowStatusBarClock">Завжди показувати годинник у статусбарі</string>

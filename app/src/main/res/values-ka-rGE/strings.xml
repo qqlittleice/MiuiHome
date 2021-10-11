@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">MiuiHome</string>
     <string name="AdvancedFeature">დამატებიტი პარამეტრები</string>
     <string name="AlwaysShowMIUIWidget">MIUI Widget-ების კლასიკურ Widget-ებთან ჩვენება</string>
     <string name="AlwaysShowStatusBarClock">ყოველთვის ჩანდეს დრო Status Bar-ზე</string>
