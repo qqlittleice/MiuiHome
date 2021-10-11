@@ -84,7 +84,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                     "dimen",
                     "recent_tv_small_window_margin_start",
                     modRes.fwd(
-                        getResId("dimen", "dp_100")
+                        getResId("dimen", "dp_200")
                     )
                 )
             }
