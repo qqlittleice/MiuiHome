@@ -24,10 +24,8 @@
     <string name="HideWidgetTitles">Widget-ების სახელების დამალვა</string>
     <string name="HorizontalTaskViewOfAppCardSize">აპლიკაციების ზომა ჰორიზონტალურ მოქმედ აპლიკაციების ფანჯარაში </string>
     <string name="InfiniteScroll">Launcher-ზე ულიმიტოთ სქროლი</string>
-    <string name="MainActivity1">
-გთხოვთ, რომ გააქტიუროთ ეს მოდული LSPosed Manager-ში და დაარესტარტოთ  MIUI launcher-ი. მოდულის პარამეტრები ჩვეულებრივ პარამეტრებშია, სადაც Launcher-ის არჩევა შეგეძლოთ.</string>
-    <string name="MainActivity2">
-დიაგნოსტიკა: ეს მოდული მხოლოდ LSPosed 5606 ვერსიაზე და ზემოთ მუშაობს, ის სხვა არცერთ ვერსიაზე მუშაობს. თუ ვერ ააქტიურებთ მოდულს, გათიშეთ Launcher-ი. თუ კიდევ გაქვთ პრობლემები, მოდული ჩართეთ და გათიშეთ. Alpha ვერსიებზე პრობლემები აქვს მოდულს. დანარჩენი პრობლემები ტელეფონის ბრალია.</string>
+    <string name="MainActivity1">\nგთხოვთ, რომ გააქტიუროთ ეს მოდული LSPosed Manager-ში და დაარესტარტოთ  MIUI launcher-ი. მოდულის პარამეტრები ჩვეულებრივ პარამეტრებშია, სადაც Launcher-ის არჩევა შეგეძლოთ.</string>
+    <string name="MainActivity2">\nდიაგნოსტიკა: ეს მოდული მხოლოდ LSPosed 5606 ვერსიაზე და ზემოთ მუშაობს, ის სხვა არცერთ ვერსიაზე მუშაობს. თუ ვერ ააქტიურებთ მოდულს, გათიშეთ Launcher-ი. თუ კიდევ გაქვთ პრობლემები, მოდული ჩართეთ და გათიშეთ. Alpha ვერსიებზე პრობლემები აქვს მოდულს. დანარჩენი პრობლემები ტელეფონის ბრალია.</string>
     <string name="MamlDownload">წყლის წვეთვის ეფექტი</string>
     <string name="ManualInput">მექანიკურად შეყვანა</string>
     <string name="ModuleEnable">მოდული ჩართულია</string>

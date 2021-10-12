@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">MiuiHome</string>
     <string name="AdvancedFeature">Impostazioni avanzate</string>
     <string name="AlwaysShowMIUIWidget">Consenti la visualizzazione dei Widget MIUI nei widget classici</string>
     <string name="AlwaysShowStatusBarClock">Mostra sempre l\'orologio della barra di stato</string>
