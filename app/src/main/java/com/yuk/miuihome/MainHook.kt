@@ -114,6 +114,8 @@ class MainHook {
         HookSystemProperties().init()
         //DockHook
         DockHook().init()
+
+        //ModifyDT2W().init()
         //CustomHook
 //        CustomHook.init()
         //ResHook

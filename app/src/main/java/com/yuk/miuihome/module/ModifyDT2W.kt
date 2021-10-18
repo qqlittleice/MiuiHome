@@ -1,11 +1,12 @@
 package com.yuk.miuihome.module
 
 import android.widget.Toast
-import com.yuk.miuihome.Config
 import com.yuk.miuihome.HomeContext
-import java.io.*
+import java.io.BufferedReader
+import java.io.InputStream
+import java.io.InputStreamReader
 
-class BuildWithEverything {
+class ModifyDT2W {
 
     private fun readStream(input: InputStream) {
         val reader = BufferedReader(InputStreamReader(input))
@@ -18,13 +19,11 @@ class BuildWithEverything {
     }
 
     fun init() {
-        try {
+        //if (isDoubleTap) {
             readStream(
                 Runtime.getRuntime()
-                    .exec("su -c cmd package compile -m everything ${Config.hookPackage}").inputStream
+                    .exec("su -c input keyevent 26").inputStream
             )
-        } catch (e: IOException) {
-            Toast.makeText(HomeContext.context, e.toString(), Toast.LENGTH_LONG).show()
-        }
+        //}
     }
 }
