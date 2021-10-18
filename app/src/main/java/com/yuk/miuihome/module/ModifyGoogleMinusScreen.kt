@@ -1,12 +1,10 @@
 package com.yuk.miuihome.module
 
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.setReturnConstant
 import de.robv.android.xposed.XposedHelpers
 import android.app.Application
 import android.provider.Settings
-import com.yuk.miuihome.utils.ktx.findClass
-import com.yuk.miuihome.utils.ktx.setBooleanField
+import com.yuk.miuihome.utils.ktx.*
 
 class ModifyGoogleMinusScreen {
 
@@ -17,11 +15,9 @@ class ModifyGoogleMinusScreen {
                 result = true
             )
             val configCls = "com.miui.home.launcher.DeviceConfig".findClass()
-            val SELECT_MINUS_SCREEN_CLIENT_ID = XposedHelpers.getStaticObjectField(
-                configCls,
-                "SELECT_MINUS_SCREEN_CLIENT_ID"
-            ) as HashSet<String>
-            SELECT_MINUS_SCREEN_CLIENT_ID.add("")
+            val selectMinusScreenClientId =
+                configCls.getStaticObjectField("SELECT_MINUS_SCREEN_CLIENT_ID") as HashSet<String>
+            selectMinusScreenClientId.add("")
             "com.miui.home.launcher.DeviceConfig".findClass().setBooleanField(
                 "CAN_SWITCH_MINUS_SCREEN", true
             )
