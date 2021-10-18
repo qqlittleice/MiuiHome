@@ -91,4 +91,5 @@
     <string name="FolderWidth">利用整个文件夹的宽度</string>
     <string name="IconTitleFontSize">应用标题文字大小</string>
     <string name="CustomRecentText">后台无应用时的文本显示</string>
+    <string name="GoogleMinusScreen">使用谷歌探索(需要安装应用)</string>
 </resources>
