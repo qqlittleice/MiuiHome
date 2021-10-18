@@ -16,6 +16,10 @@ class SetDeviceLevel {
                 String::class.java,
                 result = 2
             )
+            "com.miui.home.launcher.DeviceConfig".setReturnConstant(
+                "isSupportCompleteAnimation",
+                result = true
+            )
         } catch (e: Throwable) {
             LogUtil.e(e)
             throw e

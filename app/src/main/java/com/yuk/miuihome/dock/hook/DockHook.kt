@@ -7,6 +7,7 @@ import android.widget.RelativeLayout
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.dip2px
 import com.yuk.miuihome.utils.ktx.findClass
+import com.yuk.miuihome.utils.ktx.setReturnConstant
 import com.yuk.miuihome.utils.px2dip
 import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XC_MethodReplacement
@@ -54,12 +55,10 @@ class DockHook {
                     override fun beforeHookedMethod(param: MethodHookParam) {
                         val context = param.args[0] as Context
                         val deviceWidth = px2dip(context.resources.displayMetrics.widthPixels)
-                        param.result = dip2px(
-                            deviceWidth - (OwnSP.ownSP.getFloat(
-                                "dockSide",
-                                -1f
-                            ) * 10).toInt()
-                        )
+                        param.result =
+                            dip2px(
+                                deviceWidth - (OwnSP.ownSP.getFloat("dockSide", -1f) * 10).toInt()
+                            )
                     }
                 })
             // Dock底部边距

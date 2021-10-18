@@ -59,7 +59,7 @@
     <string name="Reset1">Сброс</string>
     <string name="res_hooked">Перехват ресурсов прошел успешно!</string>
     <string name="ResourceHooks">Внедрение ресурсов</string>
-    <string name="RoundCorner">Размер закруглениея углов миниатюры</string>
+    <string name="RoundCorner">Размер закругления углов миниатюры</string>
     <string name="Save">Сохранить</string>
     <string name="Scope">Диапазон ввода</string>
     <string name="SearchBarBlur">Размытие поля поиска</string>
