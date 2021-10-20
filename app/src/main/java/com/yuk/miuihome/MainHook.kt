@@ -115,8 +115,6 @@ class MainHook {
         //DockHook
         DockHook().init()
         //
-        ModifyGoogleMinusScreen().init()
-        //
         //ModifyDT2W().init()
         //CustomHook
         //CustomHook.init()
@@ -370,12 +368,6 @@ class MainHook {
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.HideSeekPoints),
                         mKey = "hideSeekPoints"
-                    ).build()
-                )
-                addView(
-                    SettingSwitch.FastBuilder(
-                        mText = myRes.getString(R.string.GoogleMinusScreen),
-                        mKey = "googleMinusScreen"
                     ).build()
                 )
                 addView(

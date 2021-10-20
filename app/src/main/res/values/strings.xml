@@ -92,5 +92,4 @@
     <string name="FolderWidth">Use entire folder\'s width</string>
     <string name="IconTitleFontSize">Icon Labels Font Size</string>
     <string name="CustomRecentText">Customize the text display of Recent when there is no background</string>
-    <string name="GoogleMinusScreen">Force Google Discover(APP need to be installed)</string>
 </resources>
