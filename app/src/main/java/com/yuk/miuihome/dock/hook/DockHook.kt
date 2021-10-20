@@ -11,14 +11,30 @@ import com.yuk.miuihome.utils.px2dip
 import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XC_MethodReplacement
 import de.robv.android.xposed.XposedHelpers
+import java.io.BufferedReader
+import java.io.InputStream
+import java.io.InputStreamReader
 
 class DockHook {
+
+    private fun readStream(input: InputStream) {
+        val reader = BufferedReader(InputStreamReader(input))
+        var read = ""
+        while (true) {
+            val temp: String = reader.readLine() ?: break
+            read += temp
+        }
+    }
 
     fun init() {
         if (OwnSP.ownSP.getBoolean(
                 "dockSettings", false
             )
         ) {
+            readStream(
+                Runtime.getRuntime()
+                    .exec("su -c settings put system key_home_screen_search_bar_show_initiate 1").inputStream
+            )
             val deviceConfigClass = "com.miui.home.launcher.DeviceConfig".findClass()
             val launcherClass = "com.miui.home.launcher.Launcher".findClass()
             XposedHelpers.findAndHookMethod(

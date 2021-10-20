@@ -2,6 +2,7 @@ package com.yuk.miuihome
 
 import android.app.Activity
 import android.app.AlertDialog
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -22,7 +23,7 @@ class MainHook {
     private val sharedPreferences = OwnSP.ownSP
     private val editor by lazy { sharedPreferences.edit() }
     private val myRes by lazy { HomeContext.resInstance.moduleRes.resources }
-
+    val AndSDK: Int = Build.VERSION.SDK_INT
     fun doHook() {
         "com.miui.home.settings.MiuiHomeSettingActivity".hookAfterMethod(
             "onCreate",
@@ -423,8 +424,12 @@ class MainHook {
                         ).build()
                     )
                 }
-                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.DockSettings)) { showDockDialog() }
-                    .build())
+                if (AndSDK == 30) {
+                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.DockSettings)) { showDockDialog() }
+                        .build())
+                } else {
+                    OwnSP.set("dockSetts", false)
+                }
                 addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.EveryThingBuild)) { BuildWithEverything().init() }
                     .build())
                 addView(
