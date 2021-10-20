@@ -37,13 +37,6 @@ class SettingSwitch(context: Context) : Switch(context) {
         setTextColor(Color.parseColor(color))
     }
 
-    class Builder(
-        private val mContext: Context = HomeContext.context,
-        private val block: SettingSwitch.() -> Unit
-    ) {
-        fun build() = SettingSwitch(mContext).apply(block)
-    }
-
     class FastBuilder(
         private val mContext: Context = HomeContext.context,
         private val mText: String,

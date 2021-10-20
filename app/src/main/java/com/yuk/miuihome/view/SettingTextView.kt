@@ -41,13 +41,6 @@ class SettingTextView(context: Context) : TextView(context) {
         setTextColor(Color.parseColor(color))
     }
 
-    class Builder(
-        private val mContext: Context = HomeContext.context,
-        private val block: SettingTextView.() -> Unit
-    ) {
-        fun build() = SettingTextView(mContext).apply(block)
-    }
-
     class FastBuilder(
         private val mContext: Context = HomeContext.context,
         private val mText: String,

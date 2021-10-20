@@ -7,7 +7,6 @@ import android.widget.RelativeLayout
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.dip2px
 import com.yuk.miuihome.utils.ktx.findClass
-import com.yuk.miuihome.utils.ktx.setReturnConstant
 import com.yuk.miuihome.utils.px2dip
 import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XC_MethodReplacement
