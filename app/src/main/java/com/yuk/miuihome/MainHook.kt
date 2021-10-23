@@ -413,10 +413,7 @@ class MainHook {
                         mKey = "clockGadget"
                     ).build()
                 )
-                if (!OwnSP.ownSP.getBoolean(
-                        "dockSettings", false
-                    )
-                ) {
+                if (!OwnSP.ownSP.getBoolean("dockSettings", false) && (AndSDK == 30)) {
                     addView(
                         SettingSwitch.FastBuilder(
                             mText = myRes.getString(R.string.SearchBarBlur),
@@ -424,12 +421,8 @@ class MainHook {
                         ).build()
                     )
                 }
-                if (AndSDK == 30) {
-                    addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.DockSettings)) { showDockDialog() }
-                        .build())
-                } else {
-                    OwnSP.set("dockSetts", false)
-                }
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.DockSettings)) { showDockDialog() }
+                    .build())
                 addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.EveryThingBuild)) { BuildWithEverything().init() }
                     .build())
                 addView(
@@ -561,16 +554,15 @@ class MainHook {
                             showDockDialog()
                         }.build()
                     )
-                    if (OwnSP.ownSP.getBoolean(
-                            "dockSettings", false
-                        )
-                    ) {
-                        addView(
-                            SettingSwitch.FastBuilder(
-                                mText = myRes.getString(R.string.EnableDockBlur),
-                                mKey = "searchBarBlur"
-                            ).build()
-                        )
+                    if (OwnSP.ownSP.getBoolean("dockSettings", false)) {
+                        if (AndSDK == 30) {
+                            addView(
+                                SettingSwitch.FastBuilder(
+                                    mText = myRes.getString(R.string.EnableDockBlur),
+                                    mKey = "searchBarBlur"
+                                ).build()
+                            )
+                        }
                         if (!XposedInit.hasHookPackageResources) {
                             addView(
                                 SettingTextView.FastBuilder(
