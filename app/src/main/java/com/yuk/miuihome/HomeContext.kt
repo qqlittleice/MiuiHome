@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Application
 import android.content.Context
+import android.os.Build
 
 @SuppressLint("StaticFieldLeak")
 object HomeContext {
@@ -15,6 +16,7 @@ object HomeContext {
     var isAlpha = false
     var isWidgetLauncher = false
     var versionCode: Long = -1L
+    val AndSDK: Int = Build.VERSION.SDK_INT
 
     val drawableNameList = arrayOf(
         "bg_search_bar_white85_black5",

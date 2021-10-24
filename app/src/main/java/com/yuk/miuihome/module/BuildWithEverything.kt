@@ -3,6 +3,7 @@ package com.yuk.miuihome.module
 import android.widget.Toast
 import com.yuk.miuihome.Config
 import com.yuk.miuihome.HomeContext
+import com.yuk.miuihome.HomeContext.AndSDK
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStream
@@ -21,13 +22,16 @@ class BuildWithEverything {
     }
 
     fun init() {
-        try {
+        if (AndSDK >= 31) {
             readStream(
                 Runtime.getRuntime()
                     .exec("su -c cmd package compile -m everything ${Config.hookPackage}").inputStream
             )
-        } catch (e: IOException) {
-            Toast.makeText(HomeContext.context, e.toString(), Toast.LENGTH_LONG).show()
+        } else {
+            readStream(
+                Runtime.getRuntime()
+                    .exec("cmd package compile -m everything ${Config.hookPackage}").inputStream
+            )
         }
     }
 }

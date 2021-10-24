@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.annotation.Keep
+import com.yuk.miuihome.HomeContext.AndSDK
 import com.yuk.miuihome.dock.hook.DockHook
 import com.yuk.miuihome.module.*
 import com.yuk.miuihome.utils.*
@@ -23,7 +24,7 @@ class MainHook {
     private val sharedPreferences = OwnSP.ownSP
     private val editor by lazy { sharedPreferences.edit() }
     private val myRes by lazy { HomeContext.resInstance.moduleRes.resources }
-    val AndSDK: Int = Build.VERSION.SDK_INT
+
     fun doHook() {
         "com.miui.home.settings.MiuiHomeSettingActivity".hookAfterMethod(
             "onCreate",
