@@ -3,7 +3,6 @@ package com.yuk.miuihome.module
 import android.widget.Toast
 import com.yuk.miuihome.Config
 import com.yuk.miuihome.HomeContext
-import com.yuk.miuihome.XposedInit
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStream
