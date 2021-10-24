@@ -16,7 +16,7 @@
     <string name="Defaults">默认值</string>
     <string name="Description">针对MIUI桌面的自定义扩展</string>
     <string name="Folder">文件夹相关</string>
-    <string name="HideAppIcon">隐藏桌面图标</string>
+    <string name="HideAppIcon">隐藏图标</string>
     <string name="HideStatusBar">后台界面隐藏状态栏</string>
     <string name="HideTaskViewAppIcon">隐藏后台应用图标</string>
     <string name="HideTaskViewCleanUpIcon">隐藏后台清理图标</string>
@@ -35,7 +35,7 @@
     <string name="ResHook">资源钩子√</string>
     <string name="res_hooked">资源注入成功!</string>
     <string name="NoneBlur">无模糊</string>
-    <string name="OpenMiuiHomeSettings">打开桌面设置</string>
+    <string name="OpenMiuiHomeSettings">桌面设置</string>
     <string name="OtherFeature">其他功能</string>
     <string name="OutOfInput">请输入允许范围内的值！</string>
     <string name="RealTaskViewHorizontal">真·横屏最近任务</string>
@@ -47,7 +47,7 @@
     <string name="Scope">可输入范围</string>
     <string name="SearchBarBlur">搜索框模糊</string>
     <string name="SetSuccessfully">设置成功</string>
-    <string name="ShowAppIcon">显示桌面图标</string>
+    <string name="ShowAppIcon">显示图标</string>
     <string name="ShowDockIconTitles">显示底栏应用名称</string>
     <string name="SimpleAnimation">简单动画</string>
     <string name="SimpleBlur">简单模糊</string>
@@ -92,4 +92,7 @@
     <string name="IconTitleFontSize">应用标题文字大小</string>
     <string name="CustomRecentText">后台无应用时的文本显示</string>
     <string name="DoubleTap">双击锁屏</string>
+    <string name="Coolapk">酷安地址</string>
+    <string name="Github" translatable="false">开源地址</string>
+    <string name="Telegram">加入组群</string>
 </resources>

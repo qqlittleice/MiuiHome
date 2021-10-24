@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.*
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.widget.*
@@ -38,7 +39,7 @@ class MainActivity : Activity() {
                     text = resources.getString(R.string.MainActivity1)
                 })
                 addView(TextView(this@MainActivity).apply {
-                    text = "\n"
+                    text = ""
                 })
                 addView(Button(this@MainActivity).apply {
                     text = resources.getString(R.string.OpenMiuiHomeSettings)
@@ -52,9 +53,6 @@ class MainActivity : Activity() {
                     }
                 })
                 if (!getSP().getBoolean("shouldHide", false)) {
-                    addView(TextView(this@MainActivity).apply {
-                        text = ""
-                    })
                     addView(Button(this@MainActivity).apply {
                         text = resources.getString(R.string.HideAppIcon)
                         setOnClickListener {
@@ -74,9 +72,6 @@ class MainActivity : Activity() {
                         }
                     })
                 } else {
-                    addView(TextView(this@MainActivity).apply {
-                        text = ""
-                    })
                     addView(Button(this@MainActivity).apply {
                         text = resources.getString(R.string.ShowAppIcon)
                         setOnClickListener {
@@ -99,8 +94,35 @@ class MainActivity : Activity() {
                         }
                     })
                 }
+                addView(Button(this@MainActivity).apply {
+                    text = resources.getString(R.string.Github)
+                    setOnClickListener {
+                        val intent = Intent(Intent.ACTION_VIEW)
+                        intent.addCategory(Intent.CATEGORY_BROWSABLE)
+                        intent.data = Uri.parse("https://github.com/1767523953/MiuiHome")
+                        startActivity(intent)
+                    }
+                })
+                addView(Button(this@MainActivity).apply {
+                    text = resources.getString(R.string.Coolapk)
+                    setOnClickListener {
+                        val intent = Intent(Intent.ACTION_VIEW)
+                        intent.addCategory(Intent.CATEGORY_BROWSABLE)
+                        intent.data = Uri.parse("coolmarket://www.coolapk.com/apk/com.yuk.miuihome")
+                        startActivity(intent)
+                    }
+                })
+                addView(Button(this@MainActivity).apply {
+                    text = resources.getString(R.string.Telegram)
+                    setOnClickListener {
+                        val intent = Intent(Intent.ACTION_VIEW)
+                        intent.addCategory(Intent.CATEGORY_BROWSABLE)
+                        intent.data = Uri.parse("https://t.me/MiuiHome_Xposed")
+                        startActivity(intent)
+                    }
+                })
                 addView(TextView(this@MainActivity).apply {
-                    text = "\n"
+                    text = ""
                 })
                 addView(TextView(this@MainActivity).apply {
                     text = "${resources.getString(R.string.State)}:\n${

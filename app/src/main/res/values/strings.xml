@@ -93,4 +93,7 @@
     <string name="IconTitleFontSize">Icon Labels Font Size</string>
     <string name="CustomRecentText">Customize the text display of Recent when there is no background</string>
     <string name="DoubleTap">DoubleTapToSleep</string>
+    <string name="Coolapk">Coolapk</string>
+    <string name="Github">Github</string>
+    <string name="Telegram">Telegram</string>
 </resources>
