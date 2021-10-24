@@ -20,6 +20,10 @@ class SetDeviceLevel {
                 "isSupportCompleteAnimation",
                 result = true
             )
+            "com.miui.home.launcher.DeviceConfig".setReturnConstant(
+                "isDefaultIcon",
+                result = true
+            )
         } catch (e: Throwable) {
             LogUtil.e(e)
             throw e

@@ -7,9 +7,6 @@ import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.ktx.hookAfterAllConstructors
 import com.yuk.miuihome.utils.ktx.hookBeforeMethod
-import java.io.BufferedReader
-import java.io.InputStream
-import java.io.InputStreamReader
 
 class ModifyDoubleTapToSleep {
 
@@ -57,20 +54,9 @@ class ModifyDoubleTapToSleep {
                     ) as Boolean
                 ) return@hookBeforeMethod
                 mDoubleTapControllerEx.onDoubleTapEvent()
+                Runtime.getRuntime()
+                    .exec("su -c input keyevent 26").inputStream
 
-                fun readStream(input: InputStream) {
-                    val reader = BufferedReader(InputStreamReader(input))
-                    var read = ""
-                    while (true) {
-                        val temp: String = reader.readLine() ?: break
-                        read += temp
-                    }
-                }
-
-                readStream(
-                    Runtime.getRuntime()
-                        .exec("su -c input keyevent 26").inputStream
-                )
             }
         }
     }
