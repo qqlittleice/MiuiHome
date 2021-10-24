@@ -116,7 +116,7 @@ class MainHook {
         //DockHook
         DockHook().init()
         //
-        //ModifyDT2W().init()
+        ModifyDoubleTapToSleep().init()
         //CustomHook
         //CustomHook.init()
         //ResHook
@@ -351,6 +351,12 @@ class MainHook {
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.SimpleAnimation),
                         mKey = "simpleAnimation"
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.DoubleTap),
+                        mKey = "doubleTap"
                     ).build()
                 )
                 addView(
