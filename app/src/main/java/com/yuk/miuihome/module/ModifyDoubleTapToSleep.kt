@@ -1,6 +1,7 @@
 package com.yuk.miuihome.module
 
 import android.content.Context
+import android.content.Intent
 import de.robv.android.xposed.XposedHelpers
 import android.view.MotionEvent
 import com.yuk.miuihome.utils.OwnSP
@@ -54,8 +55,12 @@ class ModifyDoubleTapToSleep {
                     ) as Boolean
                 ) return@hookBeforeMethod
                 mDoubleTapControllerEx.onDoubleTapEvent()
-                Runtime.getRuntime()
-                    .exec("su -c input keyevent 26").inputStream
+                val context =
+                    XposedHelpers.callMethod(it.thisObject, "getContext") as Context
+                context.sendBroadcast(
+                    Intent("com.miui.app.ExtraStatusBarManager.action_TRIGGER_TOGGLE")
+                        .putExtra("com.miui.app.ExtraStatusBarManager.extra_TOGGLE_ID", 10)
+                )
 
             }
         }
