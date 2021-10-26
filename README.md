@@ -20,14 +20,6 @@ __Old：[YuKongA/MiuiHome](https://github.com/YuKongA/MiuiHome)__
 
 __Now：[1767523953/MiuiHome](https://github.com/1767523953/MiuiHome)__
 
-## Translation Contributions
-
-Default string resources for the MiuiHome app are located here:
-
-- `app/src/main/res/values/strings.xml`
-
-Translate each and place them in the respective locations: (`[module]/src/main/res/values-[lang]/strings.xml`).
-
 ## Module Features
 
 - [x] Enable Smooth Animation.
@@ -59,6 +51,13 @@ Translate each and place them in the respective locations: (`[module]/src/main/r
 - [x] Option to Remove Page Indicator
 - [x] Enable Dock Bar and Dock Bar Blur
 - [ ] More...
+
+
+## Translation Contributions
+
+Default string resources for the MiuiHome app are located here:(`app/src/main/res/values/strings.xml`).
+
+Translate each and place them in the respective locations: (`app/src/main/res/values-[lang]/strings.xml`).
 
 ## Credit
 
