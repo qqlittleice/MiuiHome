@@ -20,10 +20,11 @@ __原仓库：[YuKongA/MiuiHome](https://github.com/YuKongA/MiuiHome)__
 
 __新仓库：[1767523953/MiuiHome](https://github.com/1767523953/MiuiHome)__
 
-## 模块涉及内容
+## 模块内容
 
 - [x] 平滑动画.
 - [x] 时钟常显.
+- [x] 双击锁屏.
 - [x] 搜索框模糊.
 - [x] 后台模糊级别.
 - [x] 手势动画速度.
@@ -34,19 +35,25 @@ __新仓库：[1767523953/MiuiHome](https://github.com/1767523953/MiuiHome)__
 - [x] 隐藏桌面应用图标.
 - [x] 隐藏后台应用图标.
 - [x] 隐藏后台清理图标.
+- [x] 改变文件夹的列数.
 - [x] 隐藏桌面小部件名称.
 - [x] 水波纹应用下载特性.
 - [x] 文件夹打开背景模糊.
+- [x] 使用整个文件夹空间.
 - [x] 打开应用时关闭文件夹.
 - [x] 取消后台壁纸压暗效果.
 - [x] 隐藏后台小窗应用图标.
+- [x] 改变图标标签字体大小.
 - [x] 后台应用图标与名称间距.
 - [x] 强制当前设备为高端设备.
+- [x] 支持将搜索框修改为Dock栏.
 - [x] 允许将安卓小部件移到负一屏.
+- [x] 在应用抽屉模式中隐藏"全部"部分.
+- [x] 支持移除非抽屉模式下的页面指示器.
 - [x] 允许在安卓小部件页显示MIUI小部件.
 - [ ] 更多......
 
-## Credit
+## Credits
 
 - [androidx.annotation](https://android.googlesource.com/platform/frameworks/support/+/androidx-master-dev/annotation/annotation)
 - [AppCenter](https://github.com/microsoft/appcenter)
@@ -58,7 +65,7 @@ __新仓库：[1767523953/MiuiHome](https://github.com/1767523953/MiuiHome)__
 - [MIUIDock](https://github.com/ouhoukyo/MIUIDock)
 - [XposedBridge](https://github.com/rovo89/XposedBridge)
 
-## 软件截图
+## Screenshot
 
 ![Screenshot](https://github.com/1767523953/MiuiHome/blob/main/Pic/Screenshot.png)
 

@@ -52,12 +52,11 @@ __Now：[1767523953/MiuiHome](https://github.com/1767523953/MiuiHome)__
 - [x] Enable Dock Bar and Dock Bar Blur
 - [ ] More...
 
-
 ## Translation Contributions
 
-Default string resources for the MiuiHome app are located here:(`app/src/main/res/values/strings.xml`).
+If you want to help us translate, please submit a PR after checking that the translation is correct.
 
-Translate each and place them in the respective locations: (`app/src/main/res/values-[lang]/strings.xml`).
+and if you want to translate it into a new language, please place it in the appropriate location: (`app/src/main/res/values-[lang]/strings.xml`).
 
 ## Credit
 
