@@ -241,6 +241,12 @@ class MainHook {
                         mKey = "categoryHideAll"
                     ).build()
                 )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.CategoryPagingHideEdit),
+                        mKey = "CategoryPagingHideEdit"
+                    ).build()
+                )
                 addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.IconTitleFontSize)) { showModifyIconTitleFontSize() }
                     .build())
                 addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.RoundCorner)) { showModifyRoundCorner() }

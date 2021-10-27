@@ -88,6 +88,7 @@
     <string name="Tips2">This will restore the module default settings and restart the System Launcher.</string>
     <string name="HideSeekPoints">Remove Page Indicator</string>
     <string name="CategoryHideAll">Hide \"All\" in App Categories</string>
+    <string name="CategoryPagingHideEdit">Hide \"Edit\" Button in App Category\'s Paging</string>
     <string name="FolderColumnsCount">Folder Columns Count</string>
     <string name="FolderWidth">Use entire folder\'s width</string>
     <string name="IconTitleFontSize">Icon Labels Font Size</string>
