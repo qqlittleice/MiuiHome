@@ -24,7 +24,7 @@
     <string name="HideWidgetTitles">隐藏桌面小部件名称</string>
     <string name="HorizontalTaskViewOfAppCardSize">横向应用卡片大小</string>
     <string name="InfiniteScroll">桌面无限滚动</string>
-    <string name="MainActivity1">请先在LSPosed管理器中激活本模块，并重启一次系统桌面。\n\n模块的设置界面在MIUI系统桌面的设置中！\n\n具体位置：设置-桌面-原“默认桌面”处。</string>
+    <string name="MainActivity1">请先在LSPosed管理器中激活本模块，并重启一次系统桌面。模块的设置界面在MIUI系统桌面的设置中！\n\n具体位置：设置-桌面-原“默认桌面”处。</string>
     <string name="MainActivity2">提示：\n1. 本模块现只支持LSPosed 5606及以上版本，不支持也暂不打算支持其他任何Xposed框架。\n\n2. 如遇激活问题，请尝试以下操作：重新优化系统桌面-关闭本模块-启用本模块-强行停止系统桌面。\n\n3. 遇到部分选项无效时，请先检查您当前设备安装的桌面版本是否为最新ALPHA版本。如果确认无误，请尝试到LSPosed管理器重新优化并重启系统桌面。\n\n4. 最终呈现效果会因您设备的SoC平台、性能水平、系统版本、桌面版本等而异，请以实际表现为准！</string>
     <string name="MamlDownload">水波纹应用下载特效</string>
     <string name="ManualInput">手动输入</string>

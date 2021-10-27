@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.view.Window
 import androidx.annotation.RequiresApi
 import com.yuk.miuihome.R
 import kotlin.concurrent.thread
@@ -14,6 +15,7 @@ class EntryActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(android.R.style.Theme_DeviceDefault_DayNight)
         super.onCreate(savedInstanceState)
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.entry_activity)
         thread {
             Thread.sleep(1000)

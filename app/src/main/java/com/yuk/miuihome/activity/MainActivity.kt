@@ -30,9 +30,9 @@ class MainActivity : Activity() {
             addView(LinearLayout(this@MainActivity).apply {
                 orientation = LinearLayout.VERTICAL
                 setPadding(
-                    dp2px(this@MainActivity, 28f),
+                    dp2px(this@MainActivity, 30f),
                     dp2px(this@MainActivity, 15f),
-                    dp2px(this@MainActivity, 28f),
+                    dp2px(this@MainActivity, 30f),
                     dp2px(this@MainActivity, 15f)
                 )
                 addView(TextView(this@MainActivity).apply {
