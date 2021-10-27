@@ -87,12 +87,13 @@
     <string name="Tips2">這將還原模塊默認值設定並重啟系統桌面。</string>
     <string name="HideSeekPoints">移除頁面指示器</string>
     <string name="CategoryHideAll">隱藏應用分組中的 \"全部\"</string>
+    <string name="CategoryPagingHideEdit">隱藏應用分頁內的編輯按鈕</string>
     <string name="FolderColumnsCount">文件夾排列數</string>
     <string name="FolderWidth">利用整個文件夾的寬度</string>
     <string name="IconTitleFontSize">應用標題文字大小</string>
     <string name="CustomRecentText">後台無應用時的文本顯示</string>
     <string name="DoubleTap">雙擊鎖屏</string>
     <string name="Coolapk">酷安地址</string>
-    <string name="Github" translatable="false">開源地址</string>
+    <string name="Github">開源地址</string>
     <string name="Telegram">加入組群</string>
 </resources>

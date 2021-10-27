@@ -94,6 +94,6 @@
     <string name="CustomRecentText">后台无应用时的文本显示</string>
     <string name="DoubleTap">双击锁屏</string>
     <string name="Coolapk">酷安地址</string>
-    <string name="Github" translatable="false">开源地址</string>
+    <string name="Github">开源地址</string>
     <string name="Telegram">加入组群</string>
 </resources>
