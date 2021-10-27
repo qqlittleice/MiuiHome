@@ -1,4 +1,4 @@
-package com.yuk.miuihome.dock.hook
+package com.yuk.miuihome.module
 
 import android.content.Context
 import android.os.Bundle

@@ -2,13 +2,11 @@ package com.yuk.miuihome
 
 import android.app.Activity
 import android.app.AlertDialog
-import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.annotation.Keep
-import com.yuk.miuihome.HomeContext.AndSDK
-import com.yuk.miuihome.dock.hook.DockHook
+import com.yuk.miuihome.HomeContext.AndroidSDK
 import com.yuk.miuihome.module.*
 import com.yuk.miuihome.utils.*
 import com.yuk.miuihome.utils.ktx.getObjectField
@@ -426,7 +424,7 @@ class MainHook {
                         mKey = "clockGadget"
                     ).build()
                 )
-                if (!OwnSP.ownSP.getBoolean("dockSettings", false) && (AndSDK == 30)) {
+                if (!OwnSP.ownSP.getBoolean("dockSettings", false) && (AndroidSDK == 30)) {
                     addView(
                         SettingSwitch.FastBuilder(
                             mText = myRes.getString(R.string.SearchBarBlur),
@@ -568,7 +566,7 @@ class MainHook {
                         }.build()
                     )
                     if (OwnSP.ownSP.getBoolean("dockSettings", false)) {
-                        if (AndSDK == 30) {
+                        if (AndroidSDK == 30) {
                             addView(
                                 SettingSwitch.FastBuilder(
                                     mText = myRes.getString(R.string.EnableDockBlur),

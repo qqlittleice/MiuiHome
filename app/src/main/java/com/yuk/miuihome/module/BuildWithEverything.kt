@@ -3,9 +3,8 @@ package com.yuk.miuihome.module
 import android.widget.Toast
 import com.yuk.miuihome.Config
 import com.yuk.miuihome.HomeContext
-import com.yuk.miuihome.HomeContext.AndSDK
+import com.yuk.miuihome.HomeContext.AndroidSDK
 import java.io.BufferedReader
-import java.io.IOException
 import java.io.InputStream
 import java.io.InputStreamReader
 
@@ -22,7 +21,7 @@ class BuildWithEverything {
     }
 
     fun init() {
-        if (AndSDK >= 31) {
+        if (AndroidSDK >= 31) {
             readStream(
                 Runtime.getRuntime()
                     .exec("su -c cmd package compile -m everything ${Config.hookPackage}").inputStream

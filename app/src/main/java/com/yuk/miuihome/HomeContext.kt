@@ -16,7 +16,7 @@ object HomeContext {
     var isAlpha = false
     var isWidgetLauncher = false
     var versionCode: Long = -1L
-    val AndSDK: Int = Build.VERSION.SDK_INT
+    val AndroidSDK: Int = Build.VERSION.SDK_INT
 
     val drawableNameList = arrayOf(
         "bg_search_bar_white85_black5",
