@@ -50,6 +50,7 @@ __Now：[1767523953/MiuiHome](https://github.com/1767523953/MiuiHome)__
 - [x] Hide All Section in App Drawer mode
 - [x] Option to Remove Page Indicator
 - [x] Enable Dock Bar and Dock Bar Blur
+- [x] Hide "Edit" Button in App Category's Paging
 - [ ] More...
 
 ## Translation Contributions
@@ -58,7 +59,7 @@ If you want to help us translate, please submit a PR after checking that the tra
 
 and if you want to translate it into a new language, please place it in the appropriate location: (`app/src/main/res/values-[lang]/strings.xml`).
 
-## Credit
+## Credits
 
 - [androidx.annotation](https://android.googlesource.com/platform/frameworks/support/+/androidx-master-dev/annotation/annotation)
 - [AppCenter](https://github.com/microsoft/appcenter)
@@ -68,6 +69,7 @@ and if you want to translate it into a new language, please place it in the appr
 - [LSPosed](https://github.com/LSPosed/LSPosed)
 - [MiDock](https://github.com/lamprose/MIDock)
 - [MIUIDock](https://github.com/ouhoukyo/MIUIDock)
+- [MIUltra](https://github.com/lamprose/MIUltra)
 - [XposedBridge](https://github.com/rovo89/XposedBridge)
 
 ## Screenshot
