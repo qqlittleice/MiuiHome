@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.*
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -12,6 +13,8 @@ import androidx.annotation.Keep
 import androidx.annotation.RequiresApi
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.dp2px
+import android.widget.TextView
+
 
 class MainActivity : Activity() {
 
@@ -30,16 +33,13 @@ class MainActivity : Activity() {
             addView(LinearLayout(this@MainActivity).apply {
                 orientation = LinearLayout.VERTICAL
                 setPadding(
-                    dp2px(this@MainActivity, 30f),
                     dp2px(this@MainActivity, 15f),
-                    dp2px(this@MainActivity, 30f),
+                    dp2px(this@MainActivity, 15f),
+                    dp2px(this@MainActivity, 15f),
                     dp2px(this@MainActivity, 15f)
                 )
                 addView(TextView(this@MainActivity).apply {
-                    text = resources.getString(R.string.MainActivity1)
-                })
-                addView(TextView(this@MainActivity).apply {
-                    text = ""
+                    text = resources.getString(R.string.MainActivity1) + "\n"
                 })
                 addView(Button(this@MainActivity).apply {
                     text = resources.getString(R.string.OpenMiuiHomeSettings)
@@ -122,16 +122,16 @@ class MainActivity : Activity() {
                     }
                 })
                 addView(TextView(this@MainActivity).apply {
-                    text = ""
+                    text = "\n${resources.getString(R.string.State)}:"
+
                 })
                 addView(TextView(this@MainActivity).apply {
-                    text = "${resources.getString(R.string.State)}:\n${
-                        if (moduleEnable()) resources.getString(
-                            R.string.ModuleEnable
-                        ) else resources.getString(
-                            R.string.ModuleNotEnable
-                        )
-                    }"
+                    text =
+                        if (moduleEnable())
+                            resources.getString(R.string.ModuleEnable)
+                        else
+                            resources.getString(R.string.ModuleNotEnable)
+                    if (moduleEnable()) this.setTextColor(Color.GREEN) else this.setTextColor(Color.RED)
                 })
                 addView(TextView(this@MainActivity).apply {
                     text = ""
