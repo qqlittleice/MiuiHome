@@ -456,7 +456,6 @@ class MainHook {
                 0
             )
         }
-        dialogBuilder.setCancelable(false)
         dialogBuilder.show()
     }
 
@@ -480,7 +479,7 @@ class MainHook {
                     editText = this
                 })
                 layout.addView(Button(HomeContext.activity).apply {
-                    setText("X")
+                    text = "X"
                     setOnClickListener {
                         argsEditText.remove(editText)
                         argsLinearLayout.removeView(layout)
@@ -517,7 +516,7 @@ class MainHook {
                     addView(SettingTextView.FastBuilder(mText = "arg(s):").build())
                     addView(argsLinearLayout)
                     addView(Button(HomeContext.activity).apply {
-                        setText("Add arg")
+                        text = "Add arg"
                         setOnClickListener { argsLinearLayout.addView(createArgsEditText()) }
                     })
                     addView(
@@ -536,7 +535,10 @@ class MainHook {
     }
 
     private fun showDockDialog() {
-        val dialogBuilder = SettingBaseDialog().get()
+        var dialogBuilder = SettingBaseDialog().get()
+        if (OwnSP.ownSP.getBoolean("dockSettings", false)) {
+            dialogBuilder = SettingBaseDialog().get(dismissByBack = false)
+        }
         lateinit var dialog: AlertDialog
         dialogBuilder.apply {
             setView(ScrollView(HomeContext.activity).apply {
@@ -648,7 +650,6 @@ class MainHook {
         }
         dialog = dialogBuilder.show()
     }
-
 
     private fun showModifyRoundCorner() {
         SettingUserInputNumber(
@@ -886,7 +887,7 @@ class MainHook {
     }
 
     private fun firstUseDialog() {
-        val dialogBuilder = SettingBaseDialog().get()
+        val dialogBuilder = SettingBaseDialog().get(dismissByBack = false)
         dialogBuilder.apply {
             setView(ScrollView(HomeContext.activity).apply {
                 overScrollMode = 2
