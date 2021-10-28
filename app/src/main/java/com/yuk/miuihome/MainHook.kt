@@ -480,7 +480,7 @@ class MainHook {
                     editText = this
                 })
                 layout.addView(Button(HomeContext.activity).apply {
-                    setText("X")
+                    text = "X"
                     setOnClickListener {
                         argsEditText.remove(editText)
                         argsLinearLayout.removeView(layout)
@@ -517,7 +517,7 @@ class MainHook {
                     addView(SettingTextView.FastBuilder(mText = "arg(s):").build())
                     addView(argsLinearLayout)
                     addView(Button(HomeContext.activity).apply {
-                        setText("Add arg")
+                        text = "Add arg"
                         setOnClickListener { argsLinearLayout.addView(createArgsEditText()) }
                     })
                     addView(
