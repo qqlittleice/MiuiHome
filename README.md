@@ -63,8 +63,9 @@ and if you want to translate it into a new language, please place it in the appr
 
 - [androidx.annotation](https://android.googlesource.com/platform/frameworks/support/+/androidx-master-dev/annotation/annotation)
 - [AppCenter](https://github.com/microsoft/appcenter)
-- [BiliRoaming](https://github.com/yujincheng08/BiliRoaming/blob/master/LICENSE)
+- [BiliRoaming](https://github.com/yujincheng08/BiliRoaming)
 - [CustoMIUIzer](https://code.highspec.ru/Mikanoshi/CustoMIUIzer)
+- [EzXHelper](https://github.com/KyuubiRan/EzXHelper)
 - [FuckCoolapk](https://github.com/ejiaogl/FuckCoolapk)
 - [LSPosed](https://github.com/LSPosed/LSPosed)
 - [MiDock](https://github.com/lamprose/MIDock)

@@ -15,7 +15,6 @@ import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.dp2px
 import android.widget.TextView
 
-
 class MainActivity : Activity() {
 
     @RequiresApi(Build.VERSION_CODES.Q)
@@ -122,7 +121,7 @@ class MainActivity : Activity() {
                     }
                 })
                 addView(TextView(this@MainActivity).apply {
-                    text = "\n${resources.getString(R.string.State)}:"
+                    text = "\n" + resources.getString(R.string.State) + ":"
 
                 })
                 addView(TextView(this@MainActivity).apply {
@@ -134,10 +133,7 @@ class MainActivity : Activity() {
                     if (moduleEnable()) this.setTextColor(Color.GREEN) else this.setTextColor(Color.RED)
                 })
                 addView(TextView(this@MainActivity).apply {
-                    text = ""
-                })
-                addView(TextView(this@MainActivity).apply {
-                    text = resources.getString(R.string.MainActivity2)
+                    text = "\n" + resources.getString(R.string.MainActivity2)
                 })
             })
         }
