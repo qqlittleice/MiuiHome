@@ -68,10 +68,14 @@ __新仓库：[1767523953/MiuiHome](https://github.com/1767523953/MiuiHome)__
 - [MIUltra](https://github.com/lamprose/MIUltra)
 - [XposedBridge](https://github.com/rovo89/XposedBridge)
 
-## Screenshot
+## 屏幕截图
 
 ![Screenshot](https://github.com/1767523953/MiuiHome/blob/main/Pic/Screenshot.png)
 
-## License
+## 许可证
 
 [AMTPL v1 + GPL-3.0](LICENSE)
+
+## Star 数量统计
+
+[![Stargazers over time](https://starchart.cc/1767523953/MiuiHome.svg)](https://starchart.cc/1767523953/MiuiHome)
