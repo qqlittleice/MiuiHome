@@ -91,4 +91,7 @@
     <string name="FolderWidth">استخدام عرض المجلد بالكامل</string>
     <string name="IconTitleFontSize">حجم خط اسماء التطبيقات</string>
     <string name="CustomRecentText">تخصيص النص الظاهر في التطبيقات الاخيرة عندما لا يكون هناك تطبيقات</string>
+    <string name="Telegram">تيليجرام</string>
+    <string name="DoubleTap">الضغط مرتين لقفل الشاشة</string>
+    <string name="CategoryPagingHideEdit">اخفاء زر \"تعديل\" في تصنيفات التطبيقات</string>
 </resources>
