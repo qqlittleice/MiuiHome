@@ -92,4 +92,5 @@
     <string name="IconTitleFontSize">Kích thước văn bản tiêu đề ứng dụng</string>
     <string name="CustomRecentText">Hiển thị văn bản khi không có ứng dụng trong nền</string>
     <string name="DoubleTap">Nhấp đôi để tắt màn hình</string>
+    <string name="CategoryPagingHideEdit"> Ẩn nút \"Chỉnh sửa \" trong Phân trang của Danh mục Ứng dụng</string>
 </resources>
