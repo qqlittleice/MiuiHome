@@ -5,7 +5,7 @@ import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XposedHelpers
 import com.yuk.miuihome.Config
 import com.yuk.miuihome.HomeContext
-import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.ownSP
 import com.yuk.miuihome.utils.dp2px
 
 class ModifyHeaderHeight {

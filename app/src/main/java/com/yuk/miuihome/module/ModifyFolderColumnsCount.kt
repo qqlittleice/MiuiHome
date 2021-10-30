@@ -3,7 +3,7 @@ package com.yuk.miuihome.module
 import de.robv.android.xposed.XposedHelpers
 import android.widget.GridView
 import android.view.ViewGroup
-import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.ownSP
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 
 class ModifyFolderColumnsCount {

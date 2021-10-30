@@ -11,7 +11,7 @@ import android.widget.TextView
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.*
-import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.ownSP
 
 @SuppressLint("SetTextI18n")
 class SettingSeekBarDialog(

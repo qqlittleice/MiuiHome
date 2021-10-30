@@ -9,7 +9,7 @@ import androidx.annotation.Keep
 import com.yuk.miuihome.Config.AndroidSDK
 import com.yuk.miuihome.module.*
 import com.yuk.miuihome.utils.*
-import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.ownSP
 import com.yuk.miuihome.utils.ktx.getObjectField
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import com.yuk.miuihome.utils.ktx.setObjectField
@@ -524,9 +524,6 @@ class MainHook {
 
     private fun showDockDialog() {
         var dialogBuilder = SettingBaseDialog().get()
-        if (ownSP.getBoolean("dockSettings", false)) {
-            dialogBuilder = SettingBaseDialog().get(dismissByBack = false)
-        }
         lateinit var dialog: AlertDialog
         dialogBuilder.apply {
             setView(ScrollView(HomeContext.activity).apply {
@@ -867,7 +864,7 @@ class MainHook {
     }
 
     private fun firstUseDialog() {
-        val dialogBuilder = SettingBaseDialog().get(dismissByBack = false)
+        val dialogBuilder = SettingBaseDialog().get()
         dialogBuilder.apply {
             setView(ScrollView(HomeContext.activity).apply {
                 overScrollMode = 2

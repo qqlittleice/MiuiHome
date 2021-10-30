@@ -6,7 +6,7 @@ import android.widget.Toast
 import de.robv.android.xposed.XposedBridge
 import com.yuk.miuihome.Config.Tag
 import com.yuk.miuihome.HomeContext
-import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.ownSP
 import android.util.Log as ALog
 
 object LogUtil {

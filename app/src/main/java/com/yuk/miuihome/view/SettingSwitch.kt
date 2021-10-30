@@ -8,7 +8,7 @@ import android.widget.CompoundButton
 import com.yuk.miuihome.HomeContext
 import android.widget.Switch
 import com.yuk.miuihome.utils.*
-import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.ownSP
 
 @SuppressLint("UseSwitchCompatOrMaterialCode")
 class SettingSwitch(context: Context) : Switch(context) {

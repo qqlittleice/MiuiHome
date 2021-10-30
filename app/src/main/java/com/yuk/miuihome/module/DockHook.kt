@@ -7,7 +7,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.LogUtil
-import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.ownSP
 import com.yuk.miuihome.utils.dip2px
 import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.px2dip
