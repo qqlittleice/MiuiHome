@@ -2,7 +2,7 @@ package com.yuk.miuihome.module
 
 import android.view.View
 import android.view.ViewGroup
-import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import de.robv.android.xposed.XposedHelpers
 
@@ -46,7 +46,7 @@ class ModifyHideSeekPoints {
             XposedHelpers.callMethod(workspace, "isInNormalEditingMode") as Boolean
         val mScreenSeekBar = XposedHelpers.getObjectField(workspace, "mScreenSeekBar") as View
         mScreenSeekBar.animate().cancel()
-        if (!isInEditingMode && OwnSP.ownSP.getBoolean("hideSeekPoints", false)) {
+        if (!isInEditingMode && ownSP.getBoolean("hideSeekPoints", false)) {
             mScreenSeekBar.alpha = 0.0f
             mScreenSeekBar.visibility = View.GONE
             return

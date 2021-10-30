@@ -10,16 +10,17 @@ import android.widget.TextView
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.*
+import com.yuk.miuihome.utils.OwnSP.ownSP
 
 @SuppressLint("ViewConstructor", "SetTextI18n")
 class SettingSeekBar(
     context: Context,
     private val mText: String,
     private val mKey: String,
-    private val defValue: Int,
     private val minValue: Int,
     private val maxValue: Int,
     private val divide: Int = 10,
+    private val defValue: Int,
     private val canUserInput: Boolean
 ) :
     LinearLayout(context) {
@@ -31,11 +32,10 @@ class SettingSeekBar(
 
     private val seekBar: SeekBar
     private val textView: TextView
-    private var sharedPreferences = OwnSP.ownSP
-    private val editor by lazy { sharedPreferences.edit() }
+    private val editor by lazy { ownSP.edit() }
     private val myRes by lazy { HomeContext.resInstance.moduleRes.resources }
     lateinit var valueTextView: TextView
-    var tempValue: Float = sharedPreferences.getFloat(mKey, 0f)
+    var tempValue: Float = ownSP.getFloat(mKey, 0f)
     var key = ""
 
     init {
@@ -135,28 +135,28 @@ class SettingSeekBar(
         private val mContext: Context = HomeContext.context,
         private val mText: String,
         private val mKey: String,
-        private val defValue: Int,
         private val minValue: Int,
         private val maxValue: Int,
         private val divide: Int = 10,
-        private val canUserInput: Boolean
+        private val defValue: Int,
+        private val canUserInput: Boolean = false
     ) {
         fun build() = SettingSeekBar(
             mContext,
             mText,
             mKey,
-            defValue,
             minValue,
             maxValue,
             divide,
+            defValue,
             canUserInput
         ).apply {
             text = mText
             key = mKey
-            defValue
             minValue
             maxValue
             divide
+            defValue
             canUserInput
         }
     }

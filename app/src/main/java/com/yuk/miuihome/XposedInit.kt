@@ -10,6 +10,7 @@ import com.github.kyuubiran.ezxhelper.utils.Log
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
+import com.yuk.miuihome.Config.hookPackage
 import com.yuk.miuihome.Config.packageName
 import com.yuk.miuihome.HomeContext.isAlpha
 import de.robv.android.xposed.*
@@ -34,7 +35,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                     }
                 )
             }
-            Config.hookPackage -> {
+            hookPackage -> {
                 XposedHelpers.findAndHookMethod(
                     "com.miui.home.launcher.Application",
                     lpparam.classLoader,

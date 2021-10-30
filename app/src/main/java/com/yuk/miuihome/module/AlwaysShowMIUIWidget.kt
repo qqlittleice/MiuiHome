@@ -2,7 +2,7 @@ package com.yuk.miuihome.module
 
 import android.appwidget.AppWidgetProviderInfo
 import android.content.Context
-import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.ktx.*
 import de.robv.android.xposed.XC_MethodHook
 import java.util.*
@@ -10,7 +10,7 @@ import java.util.*
 class AlwaysShowMIUIWidget {
 
     fun init() {
-        if (OwnSP.ownSP.getBoolean("alwaysShowMIUIWidget", false)) {
+        if (ownSP.getBoolean("alwaysShowMIUIWidget", false)) {
             var hook1: XC_MethodHook.Unhook? = null
             var hook2: XC_MethodHook.Unhook? = null
 

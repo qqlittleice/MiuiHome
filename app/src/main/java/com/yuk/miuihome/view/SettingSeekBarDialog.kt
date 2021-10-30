@@ -11,6 +11,7 @@ import android.widget.TextView
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.*
+import com.yuk.miuihome.utils.OwnSP.ownSP
 
 @SuppressLint("SetTextI18n")
 class SettingSeekBarDialog(
@@ -19,12 +20,11 @@ class SettingSeekBarDialog(
     private val minValue: Int,
     private val maxValue: Int,
     private val divide: Int = 100,
-    private val canUserInput: Boolean,
-    private val defValue: Int
+    private val defValue: Int,
+    private val canUserInput: Boolean
 ) {
 
-    private val sharedPreferences = OwnSP.ownSP
-    private val editor by lazy { sharedPreferences.edit() }
+    private val editor by lazy { ownSP.edit() }
     private val myRes by lazy { HomeContext.resInstance.moduleRes.resources }
 
     fun saveValue(value: Float): Boolean {
@@ -39,7 +39,7 @@ class SettingSeekBarDialog(
 
     fun build(): AlertDialog {
         val dialogBuilder = SettingBaseDialog().get()
-        var tempValue: Float = sharedPreferences.getFloat(mKey, 0f)
+        var tempValue: Float = ownSP.getFloat(mKey, 0f)
         lateinit var valueTextView: TextView
         lateinit var dialog: AlertDialog
         dialogBuilder.setView(ScrollView(HomeContext.activity).apply {

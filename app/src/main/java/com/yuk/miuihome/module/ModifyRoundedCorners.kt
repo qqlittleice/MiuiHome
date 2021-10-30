@@ -5,13 +5,13 @@ import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XposedHelpers
 import com.yuk.miuihome.Config
 import com.yuk.miuihome.HomeContext
-import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.dp2px
 
 class ModifyRoundedCorners {
 
     fun init() {
-        val value = OwnSP.ownSP.getFloat("recents_task_view_rounded_corners_radius", -1f)
+        val value = ownSP.getFloat("recents_task_view_rounded_corners_radius", -1f)
         if (value == -1f) return
 
         XposedHelpers.findAndHookMethod(

@@ -6,9 +6,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.annotation.Keep
-import com.yuk.miuihome.HomeContext.AndroidSDK
+import com.yuk.miuihome.Config.AndroidSDK
 import com.yuk.miuihome.module.*
 import com.yuk.miuihome.utils.*
+import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.ktx.getObjectField
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import com.yuk.miuihome.utils.ktx.setObjectField
@@ -19,8 +20,7 @@ import kotlin.system.exitProcess
 @Keep
 class MainHook {
 
-    private val sharedPreferences = OwnSP.ownSP
-    private val editor by lazy { sharedPreferences.edit() }
+    private val editor by lazy { ownSP.edit() }
     private val myRes by lazy { HomeContext.resInstance.moduleRes.resources }
 
     fun doHook() {
@@ -123,7 +123,7 @@ class MainHook {
     }
 
     private fun showSettingDialog() {
-        if (sharedPreferences.getBoolean("isFirstUse", true)) {
+        if (ownSP.getBoolean("isFirstUse", true)) {
             firstUseDialog()
             return
         }
@@ -180,11 +180,7 @@ class MainHook {
                         mKey = "smoothAnimation"
                     ).build()
                 )
-                if (!OwnSP.ownSP.getBoolean(
-                        "simpleAnimation",
-                        false
-                    )
-                ) {
+                if (!ownSP.getBoolean("simpleAnimation", false)) {
                     addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.TaskViewBlurLevel)) { showModifyBlurLevel() }
                         .build())
                 }
@@ -221,11 +217,7 @@ class MainHook {
                         mKey = "mamlDownload"
                     ).build()
                 )
-                if (!OwnSP.ownSP.getBoolean(
-                        "simpleAnimation",
-                        false
-                    )
-                ) {
+                if (!ownSP.getBoolean("simpleAnimation", false)) {
                     addView(
                         SettingSwitch.FastBuilder(
                             mText = myRes.getString(R.string.WallpaperDarken),
@@ -259,11 +251,7 @@ class MainHook {
                     ).build()
                 )
                 if (HomeContext.isAlpha) {
-                    if (!OwnSP.ownSP.getBoolean(
-                            "simpleAnimation",
-                            false
-                        )
-                    ) {
+                    if (!ownSP.getBoolean("simpleAnimation", false)) {
                         addView(
                             SettingSwitch.FastBuilder(
                                 mText = myRes.getString(R.string.BlurWhenOpenFolder),
@@ -424,7 +412,7 @@ class MainHook {
                         mKey = "clockGadget"
                     ).build()
                 )
-                if (!OwnSP.ownSP.getBoolean("dockSettings", false) && (AndroidSDK == 30)) {
+                if (!ownSP.getBoolean("dockSettings", false) && (AndroidSDK == 30)) {
                     addView(
                         SettingSwitch.FastBuilder(
                             mText = myRes.getString(R.string.SearchBarBlur),
@@ -536,7 +524,7 @@ class MainHook {
 
     private fun showDockDialog() {
         var dialogBuilder = SettingBaseDialog().get()
-        if (OwnSP.ownSP.getBoolean("dockSettings", false)) {
+        if (ownSP.getBoolean("dockSettings", false)) {
             dialogBuilder = SettingBaseDialog().get(dismissByBack = false)
         }
         lateinit var dialog: AlertDialog
@@ -567,7 +555,7 @@ class MainHook {
                             showDockDialog()
                         }.build()
                     )
-                    if (OwnSP.ownSP.getBoolean("dockSettings", false)) {
+                    if (ownSP.getBoolean("dockSettings", false)) {
                         if (AndroidSDK == 30) {
                             addView(
                                 SettingSwitch.FastBuilder(
@@ -589,10 +577,9 @@ class MainHook {
                                 SettingSeekBar.FastBuilder(
                                     mText = myRes.getString(R.string.DockRoundedCorners),
                                     mKey = "dockRadius",
-                                    defValue = 25,
                                     minValue = 0,
                                     maxValue = 50,
-                                    canUserInput = false
+                                    defValue = 25
                                 ).build()
                             )
                         }
@@ -600,49 +587,42 @@ class MainHook {
                             SettingSeekBar.FastBuilder(
                                 mText = myRes.getString(R.string.DockHeight),
                                 mKey = "dockHeight",
-                                defValue = 84,
                                 minValue = 50,
                                 maxValue = 200,
-                                canUserInput = false
+                                defValue = 84
                             ).build()
                         )
                         addView(
                             SettingSeekBar.FastBuilder(
                                 mText = myRes.getString(R.string.DockSide),
                                 mKey = "dockSide",
-                                defValue = 30,
                                 minValue = 0,
                                 maxValue = 200,
-                                canUserInput = false
+                                defValue = 30
                             ).build()
                         )
                         addView(
                             SettingSeekBar.FastBuilder(
                                 mText = myRes.getString(R.string.DockBottom),
                                 mKey = "dockBottom",
-                                defValue = 23,
                                 minValue = 0,
                                 maxValue = 200,
-                                canUserInput = false
+                                defValue = 23
                             ).build()
                         )
                         addView(
                             SettingSeekBar.FastBuilder(
                                 mText = myRes.getString(R.string.DockIconBottom),
                                 mKey = "dockIconBottom",
-                                defValue = 35,
                                 minValue = 0,
                                 maxValue = 200,
-                                canUserInput = false
+                                defValue = 35
                             ).build()
                         )
                     }
                 })
             })
-            if (OwnSP.ownSP.getBoolean(
-                    "dockSettings", false
-                )
-            ) {
+            if (ownSP.getBoolean("dockSettings", false)) {
                 setPositiveButton(myRes.getString(R.string.Save), null)
                 setNeutralButton(myRes.getString(R.string.Reset1)) { _, _ -> showModifyReset() }
                 setCancelable(false)

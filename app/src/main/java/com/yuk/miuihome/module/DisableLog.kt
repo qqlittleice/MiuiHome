@@ -21,6 +21,5 @@ class DisableLog {
             "isDisable",
             result = true
         )
-
     }
 }

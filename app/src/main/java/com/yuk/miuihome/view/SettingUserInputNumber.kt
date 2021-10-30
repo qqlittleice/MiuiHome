@@ -9,18 +9,18 @@ import android.widget.ScrollView
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.*
+import com.yuk.miuihome.utils.OwnSP.ownSP
 
 class SettingUserInputNumber(
     private val mText: String,
     private val mKey: String,
     private val minValue: Int,
     private val maxValue: Int,
-    private val divide: Int = 100,
-    private val defValue: Int
+    private val defValue: Int,
+    private val divide: Int = 100
 ) {
 
-    private val sharedPreferences = OwnSP.ownSP
-    private val editor by lazy { sharedPreferences.edit() }
+    private val editor by lazy { ownSP.edit() }
     private val myRes by lazy { HomeContext.resInstance.moduleRes.resources }
 
     fun build(): AlertDialog {

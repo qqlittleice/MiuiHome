@@ -7,12 +7,12 @@ import android.content.res.XResources
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.RippleDrawable
-import com.yuk.miuihome.HomeContext.drawableNameList
-import com.yuk.miuihome.HomeContext.drawableNameNewList
+import com.yuk.miuihome.Config.DrawableNameList
+import com.yuk.miuihome.Config.DrawableNameNewList
 import com.yuk.miuihome.HomeContext.isAlpha
 import com.yuk.miuihome.HomeContext.versionCode
 import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResourcesParam
-import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.dip2px
 import com.yuk.miuihome.utils.ktx.setTryReplacement
 import de.robv.android.xposed.callbacks.XC_LayoutInflated
@@ -38,7 +38,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 override fun handleLayoutInflated(liparam: LayoutInflatedParam) {
                     // 替换资源圆角
                     val targetView = liparam.view
-                    (if (isAlpha || versionCode >= 421153106L) drawableNameNewList else drawableNameList).forEach { drawableName ->
+                    (if (isAlpha || versionCode >= 421153106L) DrawableNameNewList else DrawableNameList).forEach { drawableName ->
                         resetDockRadius(
                             hookedRes.res,
                             targetView.context,
@@ -55,7 +55,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
             }
 
             //后台卡片文字大小
-            val backgroundTextSize = OwnSP.ownSP.getFloat("backgroundTextSize", 13f)
+            val backgroundTextSize = ownSP.getFloat("backgroundTextSize", 13f)
             hookedRes.res.setTryReplacement(
                 Config.hookPackage,
                 "dimen",
@@ -66,7 +66,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
             )
 
             //后台隐藏应用图标
-            if (OwnSP.ownSP.getBoolean("buttonPadding", false)) {
+            if (ownSP.getBoolean("buttonPadding", false)) {
                 hookedRes.res.setTryReplacement(
                     Config.hookPackage,
                     "dimen",
@@ -78,7 +78,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
             }
 
             //后台隐藏小窗应用
-            if (OwnSP.ownSP.getBoolean("smallWindow", false)) {
+            if (ownSP.getBoolean("smallWindow", false)) {
                 hookedRes.res.setTryReplacement(
                     Config.hookPackage,
                     "dimen",
@@ -90,7 +90,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
             }
 
             //隐藏后台清理图标
-            if (OwnSP.ownSP.getBoolean("cleanUp", false)) {
+            if (ownSP.getBoolean("cleanUp", false)) {
                 hookedRes.res.setTryReplacement(
                     Config.hookPackage,
                     "drawable",
@@ -106,7 +106,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
             }
 
             //隐藏桌面应用名称
-            if (OwnSP.ownSP.getBoolean("hideIconTitles", false)) {
+            if (ownSP.getBoolean("hideIconTitles", false)) {
                 hookedRes.res.setTryReplacement(
                     Config.hookPackage,
                     "dimen",
@@ -116,9 +116,9 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                     )
                 )
             }
-            if (OwnSP.ownSP.getString("recentText", "YuKongADisable") != "YuKongADisable") {
+            if (ownSP.getString("recentText", "YuKongADisable") != "YuKongADisable") {
                 val message: String =
-                    OwnSP.ownSP.getString("recentText", "YuKongADisable").toString()
+                    ownSP.getString("recentText", "YuKongADisable").toString()
                 hookedRes.res.setTryReplacement(
                     Config.hookPackage,
                     "string",
@@ -130,10 +130,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
     }
 
     private fun resetDockRadius(res: XResources, context: Context, drawableName: String) {
-        if (OwnSP.ownSP.getBoolean(
-                "dockSettings", false
-            )
-        ) {
+        if (ownSP.getBoolean("dockSettings", false)) {
             res.setReplacement(
                 "com.miui.home",
                 "drawable",
@@ -151,7 +148,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                         val backgroundShape = background.getDrawable(0) as GradientDrawable
                         backgroundShape.cornerRadius =
                             dip2px(
-                                (OwnSP.ownSP.getFloat(
+                                (ownSP.getFloat(
                                     "dockRadius",
                                     -1f
                                 ) * 10).toInt()

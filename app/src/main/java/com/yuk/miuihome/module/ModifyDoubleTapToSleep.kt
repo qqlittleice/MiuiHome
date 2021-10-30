@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import de.robv.android.xposed.XposedHelpers
 import android.view.MotionEvent
-import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.ktx.hookAfterAllConstructors
 import com.yuk.miuihome.utils.ktx.hookBeforeMethod
@@ -12,7 +12,7 @@ import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 class ModifyDoubleTapToSleep {
 
     fun init() {
-        if (OwnSP.ownSP.getBoolean("doubleTap", false)) {
+        if (ownSP.getBoolean("doubleTap", false)) {
             val workspace = "com.miui.home.launcher.Workspace".findClass()
             workspace.hookAfterAllConstructors {
                 var mDoubleTapControllerEx = XposedHelpers.getAdditionalInstanceField(

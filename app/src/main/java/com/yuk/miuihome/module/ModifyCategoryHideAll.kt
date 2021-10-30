@@ -1,7 +1,7 @@
 package com.yuk.miuihome.module
 
 import android.view.View
-import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.ktx.callMethod
 import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.ktx.getObjectField
@@ -11,7 +11,7 @@ import com.yuk.miuihome.utils.ktx.hookAfterMethod
 class ModifyCategoryHideAll {
 
     fun init() {
-        if (OwnSP.ownSP.getBoolean("categoryHideAll", false)) {
+        if (ownSP.getBoolean("categoryHideAll", false)) {
             "com.miui.home.launcher.allapps.category.AllAppsCategoryListContainer".hookAfterMethod(
                 "buildSortCategoryList"
             ) {
@@ -22,7 +22,7 @@ class ModifyCategoryHideAll {
                 }
             }
         }
-        if (OwnSP.ownSP.getBoolean("CategoryPagingHideEdit", false)) {
+        if (ownSP.getBoolean("CategoryPagingHideEdit", false)) {
             "com.miui.home.launcher.allapps.AllAppsGridAdapter"
                 .hookAfterMethod(
                     "onBindViewHolder",

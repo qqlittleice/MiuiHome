@@ -4,7 +4,10 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
-import com.yuk.miuihome.utils.OwnSP
+import android.widget.TextView
+import com.yuk.miuihome.R
+import com.yuk.miuihome.utils.LogUtil
+import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.dip2px
 import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.px2dip
@@ -27,14 +30,14 @@ class DockHook {
     }
 
     fun init() {
-        if (OwnSP.ownSP.getBoolean(
-                "dockSettings", false
-            )
-        ) {
-            readStream(
-                Runtime.getRuntime()
-                    .exec("su -c settings put system key_home_screen_search_bar_show_initiate 1").inputStream
-            )
+        if (ownSP.getBoolean("dockSettings", false)) {
+            try {
+                readStream(
+                    Runtime.getRuntime()
+                        .exec("su -c settings put system key_home_screen_search_bar_show_initiate 1").inputStream
+                )
+            } catch (ignore: Exception) {
+            }
             val deviceConfigClass = "com.miui.home.launcher.DeviceConfig".findClass()
             val launcherClass = "com.miui.home.launcher.Launcher".findClass()
             XposedHelpers.findAndHookMethod(
@@ -57,8 +60,7 @@ class DockHook {
                 Boolean::class.java,
                 object : XC_MethodHook() {
                     override fun beforeHookedMethod(param: MethodHookParam) {
-                        param.result =
-                            dip2px((OwnSP.ownSP.getFloat("dockIconBottom", -1f) * 10).toInt())
+                        param.result = dip2px((ownSP.getFloat("dockIconBottom", -1f) * 10).toInt())
                     }
                 })
             // 搜索框宽度
@@ -71,9 +73,7 @@ class DockHook {
                         val context = param.args[0] as Context
                         val deviceWidth = px2dip(context.resources.displayMetrics.widthPixels)
                         param.result =
-                            dip2px(
-                                deviceWidth - (OwnSP.ownSP.getFloat("dockSide", -1f) * 10).toInt()
-                            )
+                            dip2px(deviceWidth - (ownSP.getFloat("dockSide", -1f) * 10).toInt())
                     }
                 })
             // Dock底部边距
@@ -84,8 +84,7 @@ class DockHook {
                 Boolean::class.java,
                 object : XC_MethodHook() {
                     override fun beforeHookedMethod(param: MethodHookParam) {
-                        param.result =
-                            dip2px((OwnSP.ownSP.getFloat("dockBottom", -1f) * 10).toInt())
+                        param.result = dip2px((ownSP.getFloat("dockBottom", -1f) * 10).toInt())
                     }
                 })
             // 宽度变化量
@@ -116,7 +115,7 @@ class DockHook {
                         searchBarDesktop.removeAllViews()
                         // 修改高度
                         searchBarObject.layoutParams.height =
-                            dip2px((OwnSP.ownSP.getFloat("dockHeight", -1f) * 10).toInt())
+                            dip2px((ownSP.getFloat("dockHeight", -1f) * 10).toInt())
                         // 修改应用列表搜索框
                         val mAllAppViewField = launcherClass.getDeclaredField("mAppsView")
                         mAllAppViewField.isAccessible = true

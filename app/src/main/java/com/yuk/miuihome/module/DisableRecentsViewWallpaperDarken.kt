@@ -1,6 +1,6 @@
 package com.yuk.miuihome.module
 
-import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 import com.yuk.miuihome.utils.ktx.setFloatField
@@ -8,11 +8,10 @@ import com.yuk.miuihome.utils.ktx.setFloatField
 class DisableRecentsViewWallpaperDarken {
 
     fun init() {
-        if (OwnSP.ownSP.getBoolean("simpleAnimation", false)
-        ) {
+        if (ownSP.getBoolean("simpleAnimation", false)) {
             return
         } else {
-            if (OwnSP.ownSP.getBoolean("wallpaperDarken", false)) {
+            if (ownSP.getBoolean("wallpaperDarken", false)) {
                 val surfaceControlCompat =
                     "com.android.systemui.shared.recents.system.SurfaceControlCompat".findClass()
                 "com.miui.home.recents.DimLayer".hookBeforeMethod(
