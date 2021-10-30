@@ -1,6 +1,6 @@
 package com.yuk.miuihome.module
 
-import com.yuk.miuihome.utils.ownSP
+import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.ktx.callMethod
 import com.yuk.miuihome.utils.ktx.getObjectField
 import com.yuk.miuihome.utils.ktx.hookBeforeMethod

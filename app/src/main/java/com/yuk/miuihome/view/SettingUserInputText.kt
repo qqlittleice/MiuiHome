@@ -8,8 +8,11 @@ import android.widget.LinearLayout
 import android.widget.ScrollView
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
-import com.yuk.miuihome.utils.*
-import com.yuk.miuihome.utils.ownSP
+import com.yuk.miuihome.utils.LogUtil
+import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.OwnSP.remove
+import com.yuk.miuihome.utils.dip2px
+import com.yuk.miuihome.utils.isNightMode
 
 class SettingUserInputText(
     private val mText: String,
@@ -51,7 +54,7 @@ class SettingUserInputText(
         dialogBuilder.apply {
             setPositiveButton(myRes.getString(R.string.Save), null)
             setNeutralButton(myRes.getString(R.string.Reset1)) { dialog, _ ->
-                OwnSP.remove(mKey)
+                remove(mKey)
                 dialog.dismiss()
             }
         }

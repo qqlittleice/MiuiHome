@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import de.robv.android.xposed.XposedHelpers
 import android.view.MotionEvent
-import com.yuk.miuihome.utils.ownSP
+import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.ktx.hookAfterAllConstructors
 import com.yuk.miuihome.utils.ktx.hookBeforeMethod

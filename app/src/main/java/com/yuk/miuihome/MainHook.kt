@@ -9,7 +9,7 @@ import androidx.annotation.Keep
 import com.yuk.miuihome.Config.AndroidSDK
 import com.yuk.miuihome.module.*
 import com.yuk.miuihome.utils.*
-import com.yuk.miuihome.utils.ownSP
+import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.ktx.getObjectField
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import com.yuk.miuihome.utils.ktx.setObjectField

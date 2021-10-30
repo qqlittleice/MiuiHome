@@ -2,7 +2,7 @@ package com.yuk.miuihome.module
 
 import android.appwidget.AppWidgetProviderInfo
 import android.content.Context
-import com.yuk.miuihome.utils.ownSP
+import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.ktx.*
 import de.robv.android.xposed.XC_MethodHook
 import java.util.*

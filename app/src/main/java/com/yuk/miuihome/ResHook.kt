@@ -12,7 +12,7 @@ import com.yuk.miuihome.Config.DrawableNameNewList
 import com.yuk.miuihome.HomeContext.isAlpha
 import com.yuk.miuihome.HomeContext.versionCode
 import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResourcesParam
-import com.yuk.miuihome.utils.ownSP
+import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.dip2px
 import com.yuk.miuihome.utils.ktx.setTryReplacement
 import de.robv.android.xposed.callbacks.XC_LayoutInflated

@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Application
 import android.content.Context
-import android.os.Build
 
 @SuppressLint("StaticFieldLeak")
 object HomeContext {

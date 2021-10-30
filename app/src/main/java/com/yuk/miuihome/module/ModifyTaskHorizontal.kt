@@ -1,7 +1,7 @@
 package com.yuk.miuihome.module
 
 import android.graphics.RectF
-import com.yuk.miuihome.utils.ownSP
+import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.ktx.callStaticMethod
 import com.yuk.miuihome.utils.ktx.replaceMethod
 

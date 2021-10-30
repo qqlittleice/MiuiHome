@@ -2,7 +2,7 @@ package com.yuk.miuihome.module
 
 
 import android.view.View
-import com.yuk.miuihome.utils.ownSP
+import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import de.robv.android.xposed.XposedHelpers
 

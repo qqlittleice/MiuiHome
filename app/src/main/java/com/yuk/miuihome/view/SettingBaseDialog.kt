@@ -1,7 +1,6 @@
 package com.yuk.miuihome.view
 
 import android.app.AlertDialog
-import android.view.KeyEvent
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.utils.isNightMode
 
