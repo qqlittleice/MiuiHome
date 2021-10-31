@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
+import com.yuk.miuihome.Config.AndroidSDK
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP.ownSP
@@ -31,12 +32,14 @@ class DockHook {
 
     fun init() {
         if (ownSP.getBoolean("dockSettings", false)) {
-            try {
-                readStream(
-                    Runtime.getRuntime()
-                        .exec("su -c settings put system key_home_screen_search_bar_show_initiate 1").inputStream
-                )
-            } catch (ignore: Exception) {
+            if (AndroidSDK >= 30) {
+                try {
+                    readStream(
+                        Runtime.getRuntime()
+                            .exec("su -c settings put system key_home_screen_search_bar_show_initiate 1").inputStream
+                    )
+                } catch (ignore: Exception) {
+                }
             }
             val deviceConfigClass = "com.miui.home.launcher.DeviceConfig".findClass()
             val launcherClass = "com.miui.home.launcher.Launcher".findClass()
