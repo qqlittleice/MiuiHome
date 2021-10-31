@@ -17,7 +17,7 @@
     <string name="Defaults">Default</string>
     <string name="Description">Hook for MIUI Launcher</string>
     <string name="Folder">Folder Settings</string>
-    <string name="HideAppIcon">Hide APP Icon</string>
+    <string name="HideAppIcon">Hide Icon</string>
     <string name="HideStatusBar">Hide the Status Bar in the Recent Screen</string>
     <string name="HideTaskViewAppIcon">Hide the Application Icon in the Recent</string>
     <string name="HideTaskViewCleanUpIcon">Hide the Clean All Button in the Recent</string>
@@ -35,7 +35,7 @@
     <string name="ModuleSettings">Module Settings</string>
     <string name="ResHook">Resource Hook√</string>
     <string name="NoneBlur">No Blur</string>
-    <string name="OpenMiuiHomeSettings">Open \"Home screen\" Settings</string>
+    <string name="OpenMiuiHomeSettings">Open Launcher Settings</string>
     <string name="OtherFeature">Other Features</string>
     <string name="OutOfInput">Please enter a value within the allowed range!</string>
     <string name="RealTaskViewHorizontal">True · Horizontal Recent</string>
@@ -47,7 +47,7 @@
     <string name="Scope">Allowed Input Range</string>
     <string name="SearchBarBlur">Enable Blur in Search Box</string>
     <string name="SetSuccessfully">Set Successfully</string>
-    <string name="ShowAppIcon">Show APP Icon</string>
+    <string name="ShowAppIcon">Show Icon</string>
     <string name="ShowDockIconTitles">Show application name in the Dock</string>
     <string name="SimpleAnimation">Simple Animation</string>
     <string name="SimpleBlur">Simple Blur</string>

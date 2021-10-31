@@ -56,7 +56,7 @@ class MainActivity : ComponentActivity() {
         ) {
             Box {
                 Column(
-                    Modifier.padding(15.dp, 28.dp, 15.dp, 23.dp),
+                    Modifier.padding(13.dp, 28.dp, 13.dp, 23.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     Text(
@@ -71,24 +71,33 @@ class MainActivity : ComponentActivity() {
                 }
             }
             Column(
-                Modifier.padding(15.dp, 5.dp, 15.dp, 10.dp),
+                Modifier.padding(13.dp, 5.dp, 13.dp, 5.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                Text(stringResource(R.string.MainActivity1), Modifier.padding(10.dp))
+                Text(
+                    stringResource(R.string.MainActivity1),
+                    Modifier.padding(10.dp),
+                    fontSize = 14.sp
+                )
                 Row(
-                    Modifier
-                        .padding(0.dp)
-                        .padding(2.5.dp)
+                    Modifier.padding(13.dp, 5.dp, 13.dp, 5.dp)
                 ) {
-                    ElevatedButton(onClick = {
-                        val intent = Intent()
-                        intent.component = ComponentName(
-                            "com.miui.home",
-                            "com.miui.home.settings.MiuiHomeSettingActivity"
+                    ElevatedButton(
+                        onClick = {
+                            val intent = Intent()
+                            intent.component = ComponentName(
+                                "com.miui.home",
+                                "com.miui.home.settings.MiuiHomeSettingActivity"
+                            )
+                            startActivity(intent)
+                        }, contentPadding = PaddingValues(
+                            start = 20.dp,
+                            top = 15.dp,
+                            end = 20.dp,
+                            bottom = 15.dp
                         )
-                        startActivity(intent)
-                    }) { Text(stringResource(R.string.OpenMiuiHomeSettings)) }
-                    Spacer(Modifier.size(15.dp))
+                    ) { Text(stringResource(R.string.OpenMiuiHomeSettings), fontSize = 14.sp) }
+                    Spacer(Modifier.size(10.dp))
                     if (!getSP().getBoolean("shouldHide", false)) {
                         ElevatedButton(
                             onClick = {
@@ -105,8 +114,13 @@ class MainActivity : ComponentActivity() {
                                     e.printStackTrace()
                                 }
                                 getSP().edit().putBoolean("shouldHide", true).apply()
-                            }
-                        ) { Text(stringResource(R.string.HideAppIcon)) }
+                            }, contentPadding = PaddingValues(
+                                start = 20.dp,
+                                top = 15.dp,
+                                end = 20.dp,
+                                bottom = 15.dp
+                            )
+                        ) { Text(stringResource(R.string.HideAppIcon), fontSize = 14.sp) }
                     } else {
                         ElevatedButton(
                             onClick = {
@@ -127,20 +141,30 @@ class MainActivity : ComponentActivity() {
                                         "com.yuk.miuihome.activity.EntryActivity"
                                     )
                                 startActivity(intent)
-                            }
-                        ) { Text(stringResource(R.string.ShowAppIcon)) }
+                            }, contentPadding = PaddingValues(
+                                start = 20.dp,
+                                top = 15.dp,
+                                end = 20.dp,
+                                bottom = 15.dp
+                            )
+                        ) { Text(stringResource(R.string.ShowAppIcon), fontSize = 14.sp) }
                     }
                 }
-                Row(Modifier.padding(2.5.dp)) {
+                Row(Modifier.padding(13.dp, 5.dp, 13.dp, 5.dp)) {
                     ElevatedButton(
                         onClick = {
                             val intent = Intent(Intent.ACTION_VIEW)
                             intent.addCategory(Intent.CATEGORY_BROWSABLE)
                             intent.data = Uri.parse("https://github.com/1767523953/MiuiHome")
                             startActivity(intent)
-                        }
-                    ) { Text(stringResource(R.string.Github)) }
-                    Spacer(Modifier.size(15.dp))
+                        }, contentPadding = PaddingValues(
+                            start = 20.dp,
+                            top = 15.dp,
+                            end = 20.dp,
+                            bottom = 15.dp
+                        )
+                    ) { Text(stringResource(R.string.Github), fontSize = 14.sp) }
+                    Spacer(Modifier.size(10.dp))
                     ElevatedButton(
                         onClick = {
                             val intent = Intent(Intent.ACTION_VIEW)
@@ -148,45 +172,55 @@ class MainActivity : ComponentActivity() {
                             intent.data =
                                 Uri.parse("coolmarket://www.coolapk.com/apk/com.yuk.miuihome")
                             startActivity(intent)
-                        }
-                    ) { Text(stringResource(R.string.Coolapk)) }
-                    Spacer(Modifier.size(15.dp))
+                        }, contentPadding = PaddingValues(
+                            start = 20.dp,
+                            top = 15.dp,
+                            end = 20.dp,
+                            bottom = 15.dp
+                        )
+                    ) { Text(stringResource(R.string.Coolapk), fontSize = 14.sp) }
+                    Spacer(Modifier.size(10.dp))
                     ElevatedButton(
                         onClick = {
                             val intent = Intent(Intent.ACTION_VIEW)
                             intent.addCategory(Intent.CATEGORY_BROWSABLE)
                             intent.data = Uri.parse("https://t.me/MiuiHome_Xposed")
                             startActivity(intent)
-                        }
-                    ) { Text(stringResource(R.string.Telegram)) }
+                        }, contentPadding = PaddingValues(
+                            start = 20.dp,
+                            top = 15.dp,
+                            end = 20.dp,
+                            bottom = 15.dp
+                        )
+                    ) { Text(stringResource(R.string.Telegram), fontSize = 14.sp) }
                 }
                 Row {
                     Text(
                         stringResource(R.string.State) + " :",
-                        Modifier
-                            .padding(10.dp, 10.dp, 1.dp)
+                        Modifier.padding(10.dp, 10.dp, 1.dp),
+                        fontSize = 14.sp,
                     )
                     if (moduleEnable()) {
                         Text(
                             stringResource(R.string.ModuleEnable),
                             Modifier.padding(10.dp, 10.dp, 1.dp),
+                            fontSize = 14.sp,
                             color = Green
                         )
                     } else {
                         Text(
                             stringResource(R.string.ModuleNotEnable),
                             Modifier.padding(10.dp, 10.dp, 1.dp),
+                            fontSize = 14.sp,
                             color = Red
                         )
                     }
                 }
                 Column(
-                    Modifier.padding(15.dp, 10.dp, 15.dp, 5.dp),
+                    Modifier.padding(13.dp, 10.dp, 13.dp, 5.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
-                    Text(
-                        stringResource(R.string.MainActivity2)
-                    )
+                    Text(stringResource(R.string.MainActivity2), fontSize = 14.sp)
                 }
             }
         }
