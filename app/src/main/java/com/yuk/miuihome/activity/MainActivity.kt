@@ -8,6 +8,7 @@ import android.graphics.Color
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.widget.*
 import androidx.annotation.Keep
 import androidx.annotation.RequiresApi
@@ -20,6 +21,7 @@ class MainActivity : Activity() {
     @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(android.R.style.Theme_DeviceDefault_DayNight)
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         super.onCreate(savedInstanceState)
         setContentView(getMainLayout())
     }
