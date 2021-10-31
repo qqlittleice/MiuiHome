@@ -1,47 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.yuk.miuihome">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yuk.miuihome">
 
-  <application
-    android:icon="@drawable/ic_launcher"
-    android:label="@string/app_name"
-    android:supportsRtl="true">
-    <activity
-      android:exported="true"
-      android:name=".activity.EntryActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        tools:ignore="AllowBackup">
+        <activity
+            android:name=".activity.EntryActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
-    </activity>
-    <activity android:name=".activity.MainActivity" />
+                <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.MainActivity" />
 
-    <activity-alias
-      android:exported="true"
-      android:name=".activity.EntryActivityAlias"
-      android:targetActivity=".activity.EntryActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
-      </intent-filter>
-    </activity-alias>
+        <activity-alias
+            android:name=".activity.EntryActivityAlias"
+            android:exported="true"
+            android:targetActivity=".activity.EntryActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
+            </intent-filter>
+        </activity-alias>
 
-    <meta-data
-      android:name="xposedscope"
-      android:resource="@array/xposed_scope" />
+        <meta-data
+            android:name="xposedscope"
+            android:resource="@array/xposed_scope" />
 
-    <meta-data
-      android:name="xposeddescription"
-      android:value="@string/Description" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="@string/Description" />
 
-    <meta-data
-      android:name="xposedminversion"
-      android:value="93" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="93" />
 
-    <meta-data
-      android:name="xposedsharedprefs"
-      android:value="true" />
-  </application>
+        <meta-data
+            android:name="xposedsharedprefs"
+            android:value="true" />
+    </application>
 </manifest>

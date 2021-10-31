@@ -634,8 +634,8 @@ class MainHook {
             "recents_task_view_rounded_corners_radius",
             0,
             100,
-            1,
-            20
+            20,
+            1
         ).build()
     }
 
@@ -645,8 +645,8 @@ class MainHook {
             "recents_task_view_header_height",
             0,
             200,
-            1,
-            40
+            40,
+            1
         ).build()
     }
 
@@ -667,8 +667,8 @@ class MainHook {
             "backgroundTextSize",
             0,
             100,
-            1,
-            13
+            13,
+            1
         ).build()
     }
 
@@ -689,8 +689,8 @@ class MainHook {
             "task_horizontal",
             100,
             1000,
-            1000,
-            544
+            544,
+            1000
         ).build()
     }
 
@@ -700,8 +700,8 @@ class MainHook {
             "folderColumns",
             1,
             6,
-            1,
-            3
+            3,
+            1
         ).build()
     }
 
@@ -711,8 +711,8 @@ class MainHook {
             "iconTitleFontSize",
             0,
             30,
-            1,
-            12
+            12,
+            1
         ).build()
     }
 
