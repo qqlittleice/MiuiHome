@@ -91,4 +91,6 @@
     <string name="FolderColumnsCount">Число колонок в папках</string>
     <string name="IconTitleFontSize">Размер шрифта подписи иконок</string>
     <string name="CustomRecentText">Изменение текста при отсутствии приложений в недавних</string>
+    <string name="CategoryPagingHideEdit">Скрыть "Редактировать" в меню категорий приложений</string>
+    <string name="DoubleTap">Двойное нажатие для блокировки экрана</string>
 </resources>
