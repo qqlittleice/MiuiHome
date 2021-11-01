@@ -84,7 +84,7 @@ class MainActivity : ComponentActivity() {
                     Modifier.padding(10.dp),
                     fontSize = 14.sp
                 )
-                Column(
+                Row(
                     Modifier.padding(13.dp, 5.dp, 13.dp, 5.dp)
                 ) {
                     ElevatedButton(
@@ -155,6 +155,41 @@ class MainActivity : ComponentActivity() {
                         ) { Text(stringResource(R.string.ShowAppIcon), fontSize = 14.sp) }
                     }
                 }
+                Row {
+                    Text(
+                        stringResource(R.string.State) + " :",
+                        Modifier.padding(10.dp, 10.dp, 1.dp),
+                        fontSize = 14.sp,
+                    )
+                    if (moduleEnable()) {
+                        Text(
+                            stringResource(R.string.ModuleEnable),
+                            Modifier.padding(10.dp, 10.dp, 1.dp),
+                            fontSize = 14.sp,
+                            color = Green
+                        )
+                    } else {
+                        Text(
+                            stringResource(R.string.ModuleNotEnable),
+                            Modifier.padding(10.dp, 10.dp, 1.dp),
+                            fontSize = 14.sp,
+                            color = Red
+                        )
+                    }
+                }
+                Column(
+                    Modifier.padding(13.dp, 10.dp, 13.dp, 5.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                ) {
+                    Text(stringResource(R.string.MainActivity2), fontSize = 14.sp)
+                }
+                Row {
+                    Text(
+                        stringResource(R.string.About),
+                        Modifier.padding(10.dp, 5.dp, 1.dp,5.dp),
+                        fontSize = 14.sp,
+                    )
+                }
                 Row(Modifier.padding(13.dp, 5.dp, 13.dp, 5.dp)) {
                     ElevatedButton(
                         onClick = {
@@ -213,34 +248,6 @@ class MainActivity : ComponentActivity() {
                             contentDescription = "Telegram"
                         )
                     }
-                }
-                Row {
-                    Text(
-                        stringResource(R.string.State) + " :",
-                        Modifier.padding(10.dp, 10.dp, 1.dp),
-                        fontSize = 14.sp,
-                    )
-                    if (moduleEnable()) {
-                        Text(
-                            stringResource(R.string.ModuleEnable),
-                            Modifier.padding(10.dp, 10.dp, 1.dp),
-                            fontSize = 14.sp,
-                            color = Green
-                        )
-                    } else {
-                        Text(
-                            stringResource(R.string.ModuleNotEnable),
-                            Modifier.padding(10.dp, 10.dp, 1.dp),
-                            fontSize = 14.sp,
-                            color = Red
-                        )
-                    }
-                }
-                Column(
-                    Modifier.padding(13.dp, 10.dp, 13.dp, 5.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                ) {
-                    Text(stringResource(R.string.MainActivity2), fontSize = 14.sp)
                 }
             }
         }

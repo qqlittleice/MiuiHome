@@ -94,4 +94,5 @@
     <string name="CustomRecentText">后台无应用时的文本显示</string>
     <string name="DoubleTap">双击锁屏</string>
     <string name="LowEndAnim">允许低端机使用动画图标</string>
+    <string name="About">关于我们</string>
 </resources>

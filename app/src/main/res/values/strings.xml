@@ -95,4 +95,5 @@
     <string name="CustomRecentText">Customize the text display of Recent when there is no background</string>
     <string name="DoubleTap">Double Tap To Sleep</string>
     <string name="LowEndAnim">Allow animated icons for low-end devices</string>
+    <string name="About">About</string>
 </resources>

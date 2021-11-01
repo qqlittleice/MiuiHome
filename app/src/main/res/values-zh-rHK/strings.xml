@@ -94,4 +94,5 @@
     <string name="CustomRecentText">後台無應用時的文本顯示</string>
     <string name="DoubleTap">雙擊鎖屏</string>
     <string name="LowEndAnim">允許低端機使用動畫圖標</string>
+    <string name="About">關於我們</string>
 </resources>
