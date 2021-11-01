@@ -9,12 +9,18 @@ import android.view.Window
 import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.*
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -38,7 +44,10 @@ class EntryActivity : ComponentActivity() {
         }
     }
 
-    @Preview(name = "Light Mode")
+    @Preview(
+        name = "Light Mode",
+        showBackground = true
+    )
     @Preview(
         uiMode = Configuration.UI_MODE_NIGHT_YES,
         showBackground = true,
@@ -54,14 +63,32 @@ class EntryActivity : ComponentActivity() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Box(modifier = Modifier.size(width = 100.dp, height = 100.dp)) {
+            Column(
+                modifier = Modifier
+                    .size(width = 140.dp, height = 170.dp)
+                    .padding(5.dp)
+            ) {
                 Image(
                     painter = painterResource(R.drawable.icon),
                     contentDescription = "icon"
                 )
+                Text(stringResource(R.string.app_name), fontSize = 28.sp)
             }
-            Box(Modifier.padding(10.dp)) {
-                Text(stringResource(R.string.app_name), fontSize = 26.sp)
+
+        }
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxHeight(),
+            verticalArrangement = Arrangement.Bottom,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Box(
+                Modifier
+                    .padding(0.dp)
+                    .padding(40.dp)
+            ) {
+                Text("Hook for MIUI Launcher", fontSize = 18.sp)
             }
         }
     }

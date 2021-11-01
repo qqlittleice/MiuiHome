@@ -42,7 +42,10 @@ class MainActivity : ComponentActivity() {
 
     }
 
-    @Preview(name = "Light Mode")
+    @Preview(
+        name = "Light Mode",
+        showBackground = true
+    )
     @Preview(
         uiMode = Configuration.UI_MODE_NIGHT_YES,
         showBackground = true,
@@ -61,7 +64,7 @@ class MainActivity : ComponentActivity() {
         ) {
             Box {
                 Column(
-                    Modifier.padding(13.dp, 28.dp, 13.dp, 23.dp),
+                    Modifier.padding(13.dp, 35.dp, 13.dp, 25.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     Text(
@@ -85,7 +88,7 @@ class MainActivity : ComponentActivity() {
                     fontSize = 14.sp
                 )
                 Row(
-                    Modifier.padding(13.dp, 5.dp, 13.dp, 5.dp)
+                    Modifier.padding(13.dp, 10.dp, 13.dp, 10.dp)
                 ) {
                     ElevatedButton(
                         onClick = {
@@ -157,21 +160,21 @@ class MainActivity : ComponentActivity() {
                 }
                 Row {
                     Text(
-                        stringResource(R.string.State) + " :",
-                        Modifier.padding(10.dp, 10.dp, 1.dp),
+                        stringResource(R.string.State) + " :  ",
+                        Modifier.padding(0.dp, 10.dp),
                         fontSize = 14.sp,
                     )
                     if (moduleEnable()) {
                         Text(
                             stringResource(R.string.ModuleEnable),
-                            Modifier.padding(10.dp, 10.dp, 1.dp),
+                            Modifier.padding(0.dp, 10.dp),
                             fontSize = 14.sp,
                             color = Green
                         )
                     } else {
                         Text(
                             stringResource(R.string.ModuleNotEnable),
-                            Modifier.padding(10.dp, 10.dp, 1.dp),
+                            Modifier.padding(0.dp, 10.dp),
                             fontSize = 14.sp,
                             color = Red
                         )
@@ -186,7 +189,7 @@ class MainActivity : ComponentActivity() {
                 Row {
                     Text(
                         stringResource(R.string.About),
-                        Modifier.padding(10.dp, 5.dp, 1.dp,5.dp),
+                        Modifier.padding(10.dp, 13.dp, 0.dp, 8.dp),
                         fontSize = 14.sp,
                     )
                 }
