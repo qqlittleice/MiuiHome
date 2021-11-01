@@ -446,9 +446,7 @@ class MainHook {
         })
         dialogBuilder.setNeutralButton(myRes.getString(R.string.Close), null)
         dialogBuilder.setPositiveButton(myRes.getString(R.string.Reboot)) { _, _ ->
-            exitProcess(
-                0
-            )
+            exitProcess(0)
         }
         dialogBuilder.show()
     }

@@ -11,8 +11,8 @@ android {
         applicationId "com.yuk.miuihome"
         minSdk 28
         targetSdk 31
-        versionCode 4119
-        versionName "4.1.1"
+        versionCode 4120
+        versionName "4.1.2"
     }
 
     buildFeatures {
@@ -50,7 +50,7 @@ android {
         resources {
             excludes += "META-INF/**"
             excludes += "kotlin/**"
-            excludes += "**.properties"
+            excludes += "DebugProbesKt.bin"
         }
     }
     compileSdkVersion 31
