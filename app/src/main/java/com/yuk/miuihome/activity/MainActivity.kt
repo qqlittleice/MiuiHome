@@ -30,11 +30,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import kotlin.system.exitProcess
 import android.content.Intent
-import android.os.Process
-import com.yuk.miuihome.HomeContext.context
-
 
 class MainActivity : ComponentActivity() {
 
@@ -283,12 +279,5 @@ class MainActivity : ComponentActivity() {
         window.decorView.systemUiVisibility = option
         window.statusBarColor = Color.parseColor("#00000000")
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-    }
-
-    private fun restartApplication() {
-        val intent = context.packageManager.getLaunchIntentForPackage(context.packageName)
-        intent!!.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        startActivity(intent)
-        Process.killProcess(Process.myPid())
     }
 }

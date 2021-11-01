@@ -250,16 +250,13 @@ class MainHook {
                         mSize = SettingTextView.text2Size
                     ).build()
                 )
-                if (HomeContext.isAlpha) {
-                    if (!ownSP.getBoolean("simpleAnimation", false)) {
-                        addView(
-                            SettingSwitch.FastBuilder(
-                                mText = myRes.getString(R.string.BlurWhenOpenFolder),
-                                mKey = "blurWhenOpenFolder",
-                                show = EnableBlurWhenOpenFolder.checked
-                            ).build()
-                        )
-                    }
+                if (!ownSP.getBoolean("simpleAnimation", false)) {
+                    addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.BlurWhenOpenFolder),
+                            mKey = "blurWhenOpenFolder"
+                        ).build()
+                    )
                 }
                 addView(
                     SettingSwitch.FastBuilder(
