@@ -14,13 +14,17 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.Keep
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ElevatedButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color.Companion.Green
 import androidx.compose.ui.graphics.Color.Companion.Red
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -50,9 +54,10 @@ class MainActivity : ComponentActivity() {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .fillMaxHeight(),
+                .fillMaxHeight()
+                .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Box {
                 Column(
@@ -79,7 +84,7 @@ class MainActivity : ComponentActivity() {
                     Modifier.padding(10.dp),
                     fontSize = 14.sp
                 )
-                Row(
+                Column(
                     Modifier.padding(13.dp, 5.dp, 13.dp, 5.dp)
                 ) {
                     ElevatedButton(
@@ -163,7 +168,12 @@ class MainActivity : ComponentActivity() {
                             end = 20.dp,
                             bottom = 15.dp
                         )
-                    ) { Text(stringResource(R.string.Github), fontSize = 14.sp) }
+                    ) {
+                        Icon(
+                            painter = painterResource(R.drawable.github),
+                            contentDescription = "Github"
+                        )
+                    }
                     Spacer(Modifier.size(10.dp))
                     ElevatedButton(
                         onClick = {
@@ -178,7 +188,12 @@ class MainActivity : ComponentActivity() {
                             end = 20.dp,
                             bottom = 15.dp
                         )
-                    ) { Text(stringResource(R.string.Coolapk), fontSize = 14.sp) }
+                    ) {
+                        Icon(
+                            painter = painterResource(R.drawable.coolapk),
+                            contentDescription = "Coolapk"
+                        )
+                    }
                     Spacer(Modifier.size(10.dp))
                     ElevatedButton(
                         onClick = {
@@ -192,7 +207,12 @@ class MainActivity : ComponentActivity() {
                             end = 20.dp,
                             bottom = 15.dp
                         )
-                    ) { Text(stringResource(R.string.Telegram), fontSize = 14.sp) }
+                    ) {
+                        Icon(
+                            painter = painterResource(R.drawable.telegram),
+                            contentDescription = "Telegram"
+                        )
+                    }
                 }
                 Row {
                     Text(

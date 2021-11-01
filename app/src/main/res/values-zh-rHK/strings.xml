@@ -93,7 +93,5 @@
     <string name="IconTitleFontSize">應用標題文字大小</string>
     <string name="CustomRecentText">後台無應用時的文本顯示</string>
     <string name="DoubleTap">雙擊鎖屏</string>
-    <string name="Coolapk">酷安地址</string>
-    <string name="Github">開源地址</string>
-    <string name="Telegram">加入組群</string>
+    <string name="LowEndAnim">允許低端機使用動畫圖標</string>
 </resources>

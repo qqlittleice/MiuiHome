@@ -390,6 +390,12 @@ class MainHook {
                 )
                 addView(
                     SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.LowEndAnim),
+                        mKey = "lowEndAnim"
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.LowEndDeviceUseMIUIWidgets),
                         mKey = "useMIUIWidgets"
                     ).build()
