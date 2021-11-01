@@ -189,7 +189,7 @@ class MainActivity : ComponentActivity() {
                 Row {
                     Text(
                         stringResource(R.string.About),
-                        Modifier.padding(10.dp, 13.dp, 0.dp, 8.dp),
+                        Modifier.padding(13.dp, 13.dp, 13.dp, 8.dp),
                         fontSize = 14.sp,
                     )
                 }
