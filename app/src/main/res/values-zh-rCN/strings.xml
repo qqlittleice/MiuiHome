@@ -22,7 +22,7 @@
     <string name="HideTaskViewCleanUpIcon">隐藏后台清理图标</string>
     <string name="HideTaskViewSmallWindowIcon">移除后台“小窗应用”图标</string>
     <string name="HideWidgetTitles">隐藏桌面小部件名称</string>
-    <string name="HorizontalTaskViewOfAppCardSize">横向应用卡片大小</string>
+    <string name="HorizontalTaskViewOfAppCardSize">横向(平铺)应用卡片大小</string>
     <string name="InfiniteScroll">桌面无限滚动</string>
     <string name="MainActivity1">请先在LSPosed管理器中激活本模块，并重启一次系统桌面。模块的设置界面在MIUI系统桌面的设置中！\n\n具体位置：设置-桌面-原“默认桌面”处。</string>
     <string name="MainActivity2">提示：\n1. 本模块现只支持LSPosed 5606及以上版本，不支持也暂不打算支持其他任何Xposed框架。\n\n2. 如遇激活问题，请尝试以下操作：重新优化系统桌面-关闭本模块-启用本模块-强行停止系统桌面。\n\n3. 遇到部分选项无效时，请先检查您当前设备安装的桌面版本是否为最新ALPHA版本。如果确认无误，请尝试到LSPosed管理器重新优化并重启系统桌面。\n\n4. 最终呈现效果会因您设备的SoC平台、性能水平、系统版本、桌面版本等而异，请以实际表现为准！</string>
@@ -60,7 +60,7 @@
     <string name="TestFeature">实验性功能</string>
     <string name="Tips">检测到你是第一次使用本模块，模块会进行默认值设定，并随后重启系统桌面。\n如需进一步设置，请待桌面重启后再次打开桌面设置。</string>
     <string name="UnlockGrids">解锁桌面布局限制</string>
-    <string name="VerticalTaskViewOfAppCardSize">纵向应用卡片大小</string>
+    <string name="VerticalTaskViewOfAppCardSize">纵向(瀑布)应用卡片大小</string>
     <string name="WallpaperDarken">取消后台壁纸压暗效果</string>
     <string name="Warn">模块注意事项请查阅附带APP。</string>
     <string name="Welcome">欢迎！</string>
@@ -97,6 +97,6 @@
     <string name="About">关于我们</string>
     <string name="VerticalScreen">竖屏</string>
     <string name="HorizontalScreen">横屏</string>
-    <string name="Reset2">重置横向卡片大小配置参数</string>
-    <string name="Tips3">这将重置横向卡片大小配置参数到默认值并重启系统桌面。</string>
+    <string name="Reset2">重置横向(平铺)卡片大小配置参数</string>
+    <string name="Tips3">这将重置横向(平铺)卡片大小配置参数到默认值并重启系统桌面。</string>
 </resources>

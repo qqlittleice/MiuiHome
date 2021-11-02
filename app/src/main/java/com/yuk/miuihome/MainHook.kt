@@ -244,6 +244,10 @@ class MainHook {
                     .build())
                 addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.AppTextSize)) { showModifyTextSize() }
                     .build())
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.VerticalTaskViewOfAppCardSize)) { showModifyVertical() }
+                    .build())
+                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.HorizontalTaskViewOfAppCardSize)) { showModifyHorizontal() }
+                    .build())
                 addView(
                     SettingTextView.FastBuilder(
                         mText = myRes.getString(R.string.Folder),
@@ -348,12 +352,6 @@ class MainHook {
                 )
                 addView(
                     SettingSwitch.FastBuilder(
-                        mText = myRes.getString(R.string.DoubleTap),
-                        mKey = "doubleTap"
-                    ).build()
-                )
-                addView(
-                    SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.InfiniteScroll),
                         mKey = "infiniteScroll"
                     ).build()
@@ -400,11 +398,6 @@ class MainHook {
                         mKey = "useMIUIWidgets"
                     ).build()
                 )
-                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.VerticalTaskViewOfAppCardSize)) { showModifyVertical() }
-                    .build())
-                addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.HorizontalTaskViewOfAppCardSize)) { showModifyHorizontal() }
-                    .build())
-
                 addView(
                     SettingTextView.FastBuilder(
                         mText = myRes.getString(R.string.OtherFeature),
@@ -416,6 +409,12 @@ class MainHook {
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.AlwaysShowStatusBarClock),
                         mKey = "clockGadget"
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.DoubleTap),
+                        mKey = "doubleTap"
                     ).build()
                 )
                 if (!ownSP.getBoolean("dockSettings", false) && (AndroidSDK == 30)) {
