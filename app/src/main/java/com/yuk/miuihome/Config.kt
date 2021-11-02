@@ -5,8 +5,8 @@ import android.os.Build
 object Config {
     const val packageName = BuildConfig.APPLICATION_ID
     const val hookPackage = "com.miui.home"
-    const val SpName = "MiuiHomeConfig"
-    const val Tag = "MiuiHome"
+    const val SP_NAME = "MiuiHomeConfig"
+    const val TAG = "MiuiHome"
     val AndroidSDK: Int = Build.VERSION.SDK_INT
     val DrawableNameList = arrayOf(
         "bg_search_bar_white85_black5",

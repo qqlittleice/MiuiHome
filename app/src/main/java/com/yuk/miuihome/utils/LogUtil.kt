@@ -3,8 +3,8 @@ package com.yuk.miuihome.utils
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
+import com.yuk.miuihome.Config.TAG
 import de.robv.android.xposed.XposedBridge
-import com.yuk.miuihome.Config.Tag
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.utils.OwnSP.ownSP
 import android.util.Log as ALog
@@ -40,9 +40,9 @@ object LogUtil {
                 }
             }
         } else {
-            f(Tag, str)
+            f(TAG, str)
             if (toToast) toast(str, false)
-            if (toXposed) XposedBridge.log("$Tag: $str")
+            if (toXposed) XposedBridge.log("$TAG: $str")
         }
     }
 

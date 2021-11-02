@@ -624,8 +624,7 @@ class MainHook {
             })
             if (ownSP.getBoolean("dockSettings", false)) {
                 setPositiveButton(myRes.getString(R.string.Save), null)
-                setNeutralButton(myRes.getString(R.string.Reset1)) { _, _ -> showModifyReset() }
-                setCancelable(false)
+                setNeutralButton(myRes.getString(R.string.Reset1)) { _, _ -> showModifyReset1() }
             }
         }
         dialog = dialogBuilder.show()
@@ -729,7 +728,7 @@ class MainHook {
                 })
             })
             setPositiveButton(myRes.getString(R.string.Save), null)
-            setNeutralButton(myRes.getString(R.string.Reset1)) { _, _ -> showModifyReset1() }
+            setNeutralButton(myRes.getString(R.string.Reset1)) { _, _ -> showModifyReset2() }
         }
         dialogBuilder.show()
     }
@@ -867,7 +866,7 @@ class MainHook {
         dialogBuilder.show()
     }
 
-    private fun showModifyReset() {
+    private fun showModifyReset2() {
         val dialogBuilder = SettingBaseDialog().get()
         dialogBuilder.apply {
             setView(ScrollView(HomeContext.activity).apply {
@@ -895,8 +894,8 @@ class MainHook {
                 })
             })
             setNeutralButton(myRes.getString(R.string.Yes)) { _, _ ->
-                OwnSP.set("task_horizontal1", 1f)
-                OwnSP.set("task_horizontal2", 1f)
+                OwnSP.set("task_horizontal1", 1.0f)
+                OwnSP.set("task_horizontal2", 1.0f)
                 thread {
                     LogUtil.toast(myRes.getString(R.string.Reboot2))
                     Thread.sleep(1000)
