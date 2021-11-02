@@ -896,8 +896,8 @@ class MainHook {
                 })
             })
             setNeutralButton(myRes.getString(R.string.Yes)) { _, _ ->
-                OwnSP.set("task_horizontal1", 1000)
-                OwnSP.set("task_horizontal2", 1000)
+                OwnSP.set("task_horizontal1", 1f)
+                OwnSP.set("task_horizontal2", 1f)
                 thread {
                     LogUtil.toast(myRes.getString(R.string.Reboot2))
                     Thread.sleep(1000)
