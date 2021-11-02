@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.*
 import androidx.annotation.Keep
 import com.yuk.miuihome.Config.AndroidSDK
+import com.yuk.miuihome.HomeContext.isAlpha
 import com.yuk.miuihome.module.*
 import com.yuk.miuihome.utils.*
 import com.yuk.miuihome.utils.OwnSP.ownSP
@@ -251,12 +252,14 @@ class MainHook {
                     ).build()
                 )
                 if (!ownSP.getBoolean("simpleAnimation", false)) {
-                    addView(
-                        SettingSwitch.FastBuilder(
-                            mText = myRes.getString(R.string.BlurWhenOpenFolder),
-                            mKey = "blurWhenOpenFolder"
-                        ).build()
-                    )
+                    if (isAlpha) {
+                        addView(
+                            SettingSwitch.FastBuilder(
+                                mText = myRes.getString(R.string.BlurWhenOpenFolder),
+                                mKey = "blurWhenOpenFolder"
+                            ).build()
+                        )
+                    }
                 }
                 addView(
                     SettingSwitch.FastBuilder(

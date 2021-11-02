@@ -12,7 +12,7 @@ import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 import com.yuk.miuihome.utils.ktx.setReturnConstant
 import com.yuk.miuihome.utils.px2dip
-import de.robv.android.xposed.XposedHelpers
+import de.robv.android.xposed.XposedHelpers.callMethod
 import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader
@@ -83,10 +83,7 @@ class DockHook {
                 "onCreate",
                 Bundle::class.java
             ) {
-                val searchBarObject = XposedHelpers.callMethod(
-                    it.thisObject,
-                    "getSearchBar"
-                ) as FrameLayout
+                val searchBarObject = callMethod(it.thisObject, "getSearchBar") as FrameLayout
                 val searchBarDesktop = searchBarObject.getChildAt(0) as RelativeLayout
                 val searchBarDrawer = searchBarObject.getChildAt(1) as RelativeLayout
                 val searchBarContainer = searchBarObject.parent as FrameLayout
