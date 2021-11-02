@@ -95,4 +95,8 @@
     <string name="DoubleTap">雙擊鎖屏</string>
     <string name="LowEndAnim">允許低端機使用動畫圖標</string>
     <string name="About">關於我們</string>
+    <string name="VerticalScreen">豎屏</string>
+    <string name="HorizontalScreen">橫屏</string>
+    <string name="Reset2">重置橫向卡片大小配置參數</string>
+    <string name="Tips3">這將重置橫向卡片大小配置參數到默認值並重啟系統桌面。 </string>
 </resources>

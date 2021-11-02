@@ -688,14 +688,51 @@ class MainHook {
     }
 
     private fun showModifyHorizontal() {
-        SettingUserInputNumber(
-            myRes.getString(R.string.HorizontalTaskViewOfAppCardSize),
-            "task_horizontal",
-            100,
-            1000,
-            544,
-            1000
-        ).build()
+        var dialogBuilder = SettingBaseDialog().get()
+        dialogBuilder.apply {
+            setView(ScrollView(HomeContext.activity).apply {
+                overScrollMode = 2
+                addView(LinearLayout(HomeContext.activity).apply {
+                    orientation = LinearLayout.VERTICAL
+                    setPadding(
+                        dip2px(10),
+                        dip2px(6),
+                        dip2px(10),
+                        dip2px(6)
+                    )
+                    addView(
+                        SettingTextView.FastBuilder(
+                            mText = "「" + myRes.getString(R.string.HorizontalTaskViewOfAppCardSize) + "」",
+                            mColor = "#0C84FF",
+                            mSize = SettingTextView.text2Size
+                        ).build()
+                    )
+                    addView(
+                        SettingSeekBar.FastBuilder(
+                            mText = myRes.getString(R.string.VerticalScreen),
+                            mKey = "task_horizontal1",
+                            minValue = 10,
+                            maxValue = 1500,
+                            divide = 1000,
+                            defValue = 1000
+                        ).build()
+                    )
+                    addView(
+                        SettingSeekBar.FastBuilder(
+                            mText = myRes.getString(R.string.HorizontalScreen),
+                            mKey = "task_horizontal2",
+                            minValue = 10,
+                            maxValue = 1500,
+                            divide = 1000,
+                            defValue = 1000,
+                        ).build()
+                    )
+                })
+            })
+            setPositiveButton(myRes.getString(R.string.Save), null)
+            setNeutralButton(myRes.getString(R.string.Reset1)) { _, _ -> showModifyReset1() }
+        }
+        dialogBuilder.show()
     }
 
     private fun showModifyFolderColumnsCount() {
@@ -786,6 +823,51 @@ class MainHook {
         }
     }
 
+    private fun showModifyReset1() {
+        val dialogBuilder = SettingBaseDialog().get()
+        dialogBuilder.apply {
+            setView(ScrollView(HomeContext.activity).apply {
+                overScrollMode = 2
+                addView(LinearLayout(HomeContext.activity).apply {
+                    orientation = LinearLayout.VERTICAL
+                    setPadding(
+                        dip2px(10),
+                        dip2px(6),
+                        dip2px(10),
+                        dip2px(6)
+                    )
+                    addView(
+                        SettingTextView.FastBuilder(
+                            mText = "「" + myRes.getString(R.string.Reset2) + "」",
+                            mColor = "#0C84FF",
+                            mSize = SettingTextView.text2Size
+                        ).build()
+                    )
+                    addView(
+                        SettingTextView.FastBuilder(
+                            mText = myRes.getString(R.string.Tips3)
+                        ).build()
+                    )
+                })
+            })
+            setNeutralButton(myRes.getString(R.string.Yes)) { _, _ ->
+                OwnSP.set("searchBarBlur", true)
+                OwnSP.set("dockRadius", 2.5f)
+                OwnSP.set("dockHeight", 8.4f)
+                OwnSP.set("dockSide", 3.0f)
+                OwnSP.set("dockBottom", 1.6f)
+                OwnSP.set("dockIconBottom", 2.5f)
+                thread {
+                    LogUtil.toast(myRes.getString(R.string.Reboot2))
+                    Thread.sleep(1000)
+                    exitProcess(0)
+                }
+            }
+            setPositiveButton(myRes.getString(R.string.Cancel), null)
+        }
+        dialogBuilder.show()
+    }
+
     private fun showModifyReset() {
         val dialogBuilder = SettingBaseDialog().get()
         dialogBuilder.apply {
@@ -801,25 +883,21 @@ class MainHook {
                     )
                     addView(
                         SettingTextView.FastBuilder(
-                            mText = "「" + myRes.getString(R.string.Reset) + "」",
+                            mText = "「" + myRes.getString(R.string.Reset1) + "」",
                             mColor = "#0C84FF",
                             mSize = SettingTextView.text2Size
                         ).build()
                     )
                     addView(
                         SettingTextView.FastBuilder(
-                            mText = myRes.getString(R.string.Tips1)
+                            mText = myRes.getString(R.string.Tips2)
                         ).build()
                     )
                 })
             })
             setNeutralButton(myRes.getString(R.string.Yes)) { _, _ ->
-                OwnSP.set("searchBarBlur", true)
-                OwnSP.set("dockRadius", 2.5f)
-                OwnSP.set("dockHeight", 8.4f)
-                OwnSP.set("dockSide", 3.0f)
-                OwnSP.set("dockBottom", 1.6f)
-                OwnSP.set("dockIconBottom", 2.5f)
+                OwnSP.set("task_horizontal1", 1000)
+                OwnSP.set("task_horizontal2", 1000)
                 thread {
                     LogUtil.toast(myRes.getString(R.string.Reboot2))
                     Thread.sleep(1000)

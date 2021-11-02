@@ -2,23 +2,22 @@ package com.yuk.miuihome.module
 
 import android.graphics.RectF
 import com.yuk.miuihome.utils.OwnSP.ownSP
-import com.yuk.miuihome.utils.ktx.callStaticMethod
-import com.yuk.miuihome.utils.ktx.replaceMethod
+import com.yuk.miuihome.utils.ktx.*
 
 class ModifyTaskHorizontal {
 
     fun init() {
-        val value = ownSP.getFloat("task_horizontal", -1f)
-        if (value == -1f) return
-
-        "com.miui.home.recents.views.TaskStackViewsAlgorithmHorizontal".replaceMethod(
+        val value1 = ownSP.getFloat("task_horizontal1", -1f)
+        val value2 = ownSP.getFloat("task_horizontal2", -1f)
+        if (value1 == -1f && value2 == -1f) return
+        "com.miui.home.recents.views.TaskStackViewsAlgorithmHorizontal".hookBeforeMethod(
             "scaleTaskView",
-            RectF::class.java
+            RectF::class.java,
         ) {
             "com.miui.home.recents.util.Utilities".callStaticMethod(
                 "scaleRectAboutCenter",
                 it.args[0],
-                value
+                if (it.thisObject.callMethod("isLandscapeVisually") as Boolean) value2 else value1
             )
         }
     }

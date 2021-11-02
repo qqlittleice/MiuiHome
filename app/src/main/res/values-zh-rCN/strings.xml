@@ -95,4 +95,8 @@
     <string name="DoubleTap">双击锁屏</string>
     <string name="LowEndAnim">允许低端机使用动画图标</string>
     <string name="About">关于我们</string>
+    <string name="VerticalScreen">竖屏</string>
+    <string name="HorizontalScreen">横屏</string>
+    <string name="Reset2">重置横向卡片大小配置参数</string>
+    <string name="Tips3">这将重置横向卡片大小配置参数到默认值并重启系统桌面。</string>
 </resources>

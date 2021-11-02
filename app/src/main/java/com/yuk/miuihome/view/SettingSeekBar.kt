@@ -21,9 +21,8 @@ class SettingSeekBar(
     private val mKey: String,
     private val minValue: Int,
     private val maxValue: Int,
-    private val divide: Int = 10,
-    private val defValue: Int,
-    private val canUserInput: Boolean
+    private val divide: Int,
+    private val defValue: Int
 ) :
     LinearLayout(context) {
     var text: String = ""
@@ -115,22 +114,6 @@ class SettingSeekBar(
             })
             gravity = Gravity.CENTER_VERTICAL
         })
-        if (canUserInput) {
-            addView(
-                SettingTextView.FastBuilder(
-                    mText = myRes.getString(R.string.ManualInput)
-                ) {
-                    SettingUserInputNumber(
-                        mText,
-                        mKey,
-                        minValue,
-                        maxValue,
-                        divide,
-                        defValue
-                    ).build()
-                }.build()
-            )
-        }
     }
 
     class FastBuilder(
@@ -141,7 +124,6 @@ class SettingSeekBar(
         private val maxValue: Int,
         private val divide: Int = 10,
         private val defValue: Int,
-        private val canUserInput: Boolean = false
     ) {
         fun build() = SettingSeekBar(
             mContext,
@@ -150,8 +132,7 @@ class SettingSeekBar(
             minValue,
             maxValue,
             divide,
-            defValue,
-            canUserInput
+            defValue
         ).apply {
             text = mText
             key = mKey
@@ -159,7 +140,6 @@ class SettingSeekBar(
             maxValue
             divide
             defValue
-            canUserInput
         }
     }
 
