@@ -47,7 +47,7 @@ class ModifyDockHook {
                 Context::class.java,
                 Boolean::class.java
             ) {
-                it.result = dip2px((ownSP.getFloat("dockIconTop", -1f) * 10).toInt())
+                it.result = dip2px((ownSP.getFloat("dockIconTop", 0.6f) * 10).toInt())
             }
             // 图标距屏幕底部
             deviceConfigClass.hookBeforeMethod(
@@ -56,7 +56,7 @@ class ModifyDockHook {
                 Boolean::class.java,
                 Boolean::class.java
             ) {
-                it.result = dip2px((ownSP.getFloat("dockIconBottom", -1f) * 10).toInt())
+                it.result = dip2px((ownSP.getFloat("dockIconBottom", 3.5f) * 10).toInt())
             }
             // Dock距屏幕两侧
             deviceConfigClass.hookBeforeMethod(
@@ -66,7 +66,7 @@ class ModifyDockHook {
                 val context = it.args[0] as Context
                 val deviceWidth = px2dip(context.resources.displayMetrics.widthPixels)
                 it.result =
-                    dip2px(deviceWidth - (ownSP.getFloat("dockSide", -1f) * 10).toInt())
+                    dip2px(deviceWidth - (ownSP.getFloat("dockSide", 3.0f) * 10).toInt())
             }
             // Dock距屏幕底部
             deviceConfigClass.hookBeforeMethod(
@@ -74,7 +74,7 @@ class ModifyDockHook {
                 Context::class.java,
                 Boolean::class.java
             ) {
-                it.result = dip2px((ownSP.getFloat("dockBottom", -1f) * 10).toInt())
+                it.result = dip2px((ownSP.getFloat("dockBottom", 2.3f) * 10).toInt())
             }
             // 宽度变化量
             deviceConfigClass.setReturnConstant("getSearchBarWidthDelta", result = 0)
@@ -94,7 +94,7 @@ class ModifyDockHook {
                 searchBarDesktop.removeAllViews()
                 // 修改高度
                 searchBarObject.layoutParams.height =
-                    dip2px((ownSP.getFloat("dockHeight", -1f) * 10).toInt())
+                    dip2px((ownSP.getFloat("dockHeight", 7.9f) * 10).toInt())
                 // 修改应用列表搜索框
                 val mAllAppViewField = launcherClass.getDeclaredField("mAppsView")
                 mAllAppViewField.isAccessible = true
