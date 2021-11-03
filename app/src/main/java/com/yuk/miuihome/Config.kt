@@ -5,7 +5,7 @@ import android.os.Build
 object Config {
     const val packageName = BuildConfig.APPLICATION_ID
     const val hookPackage = "com.miui.home"
-    const val SP_NAME = "MiuiHomeConfig"
+    const val SP_NAME = "MiuiHome_Config"
     const val TAG = "MiuiHome"
     val AndroidSDK: Int = Build.VERSION.SDK_INT
     val DrawableNameList = arrayOf(

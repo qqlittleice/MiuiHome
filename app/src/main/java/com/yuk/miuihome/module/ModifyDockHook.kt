@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import com.yuk.miuihome.Config.AndroidSDK
+import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.dip2px
 import com.yuk.miuihome.utils.ktx.findClass
@@ -18,15 +19,6 @@ import java.io.InputStream
 import java.io.InputStreamReader
 
 class ModifyDockHook {
-
-    private fun readStream(input: InputStream) {
-        val reader = BufferedReader(InputStreamReader(input))
-        var read = ""
-        while (true) {
-            val temp: String = reader.readLine() ?: break
-            read += temp
-        }
-    }
 
     fun init() {
         if (ownSP.getBoolean("dockSettings", false)) {
@@ -63,8 +55,7 @@ class ModifyDockHook {
                 "calcSearchBarWidth",
                 Context::class.java
             ) {
-                val context = it.args[0] as Context
-                val deviceWidth = px2dip(context.resources.displayMetrics.widthPixels)
+                val deviceWidth = px2dip(HomeContext.context.resources.displayMetrics.widthPixels)
                 it.result =
                     dip2px(deviceWidth - (ownSP.getFloat("dockSide", 3.0f) * 10).toInt())
             }
@@ -110,6 +101,15 @@ class ModifyDockHook {
                 layoutParams.rightMargin = dip2px(15)
                 searchBarDrawer.layoutParams = layoutParams
             }
+        }
+    }
+
+    private fun readStream(input: InputStream) {
+        val reader = BufferedReader(InputStreamReader(input))
+        var read = ""
+        while (true) {
+            val temp: String = reader.readLine() ?: break
+            read += temp
         }
     }
 }
