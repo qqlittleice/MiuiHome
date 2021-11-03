@@ -54,16 +54,16 @@ __新仓库：[1767523953/MiuiHome](https://github.com/1767523953/MiuiHome)__
 - [x] 允许在安卓小部件页显示MIUI小部件
 - [ ] 更多......
 
-## Credits
+## 引用库
 
-- [androidx.annotation](https://android.googlesource.com/platform/frameworks/support/+/androidx-master-dev/annotation/annotation)
+- [androidx](https://android.googlesource.com/platform/frameworks/support)
 - [AppCenter](https://github.com/microsoft/appcenter)
 - [BiliRoaming](https://github.com/yujincheng08/BiliRoaming)
 - [CustoMIUIzer](https://code.highspec.ru/Mikanoshi/CustoMIUIzer)
 - [EzXHelper](https://github.com/KyuubiRan/EzXHelper)
 - [FuckCoolapk](https://github.com/ejiaogl/FuckCoolapk)
 - [LSPosed](https://github.com/LSPosed/LSPosed)
-- [MiDock](https://github.com/lamprose/MIDock)
+- [MIDock](https://github.com/lamprose/MIDock)
 - [MIUIDock](https://github.com/ouhoukyo/MIUIDock)
 - [MIUltra](https://github.com/lamprose/MIUltra)
 - [XposedBridge](https://github.com/rovo89/XposedBridge)
