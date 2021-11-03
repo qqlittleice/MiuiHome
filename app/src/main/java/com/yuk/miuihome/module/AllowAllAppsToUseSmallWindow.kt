@@ -4,7 +4,6 @@ import android.content.Context
 import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.ktx.setReturnConstant
 
-
 class AllowAllAppsToUseSmallWindow {
 
     fun init() {

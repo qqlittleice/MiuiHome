@@ -15,7 +15,7 @@ class ModifyBlurLevel {
                 it.result = false
             }
         } else {
-            if (string == "NULL") return
+            if (string == "") return
             "com.miui.home.launcher.common.BlurUtils".hookBeforeMethod("getBlurType") {
                 when (string) {
                     "COMPLETE" -> {

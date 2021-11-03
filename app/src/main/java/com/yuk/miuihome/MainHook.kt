@@ -969,7 +969,6 @@ class MainHook {
                 editor.clear()
                 editor.commit()
                 OwnSP.set("isFirstUse", false)
-                OwnSP.set("blurLevel", "NULL")
                 OwnSP.set("animationLevel", 1.25f)
                 thread {
                     LogUtil.toast(myRes.getString(R.string.Reboot2))
@@ -1011,7 +1010,6 @@ class MainHook {
             })
             setOnDismissListener {
                 OwnSP.set("isFirstUse", false)
-                OwnSP.set("blurLevel", "NULL")
                 OwnSP.set("animationLevel", 1.25f)
                 thread {
                     LogUtil.toast(myRes.getString(R.string.Reboot2))
