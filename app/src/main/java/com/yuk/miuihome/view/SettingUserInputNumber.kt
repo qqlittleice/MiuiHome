@@ -6,8 +6,6 @@ import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.ScrollView
-import com.github.kyuubiran.ezxhelper.init.InitFields
-import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.LogUtil
@@ -50,10 +48,10 @@ class SettingUserInputNumber(
                         .build()
                 )
                 addView(
-                    EditText(appContext).apply {
+                    EditText(HomeContext.context).apply {
                         editText = this
                         inputType = EditorInfo.TYPE_CLASS_NUMBER
-                        setTextColor(Color.parseColor(if (isNightMode()) "#ffffff" else "#000000"))
+                        setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
                     })
                 addView(
                     SettingTextView.FastBuilder(

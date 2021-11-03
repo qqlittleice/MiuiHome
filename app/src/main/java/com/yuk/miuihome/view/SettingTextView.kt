@@ -7,8 +7,6 @@ import android.graphics.Color
 import android.net.Uri
 import android.view.View
 import android.widget.TextView
-import com.github.kyuubiran.ezxhelper.init.InitFields
-import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.utils.dip2px
 import com.yuk.miuihome.utils.isNightMode
@@ -21,7 +19,7 @@ class SettingTextView(context: Context) : TextView(context) {
         set(value) {
             textSize = value
         }
-    var color = if (isNightMode()) "#ffffff" else "#000000"
+    var color = if (isNightMode(getContext())) "#ffffff" else "#000000"
         set(value) = setTextColor(Color.parseColor(value))
     var url = ""
         set(value) = setOnClickListener {
@@ -44,7 +42,7 @@ class SettingTextView(context: Context) : TextView(context) {
     }
 
     class FastBuilder(
-        private val mContext: Context = appContext,
+        private val mContext: Context = HomeContext.context,
         private val mText: String,
         private val mSize: Float? = null,
         private val mColor: String? = null,

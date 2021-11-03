@@ -8,8 +8,6 @@ import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.SeekBar
 import android.widget.TextView
-import com.github.kyuubiran.ezxhelper.init.InitFields
-import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.LogUtil
@@ -64,7 +62,7 @@ class SettingSeekBarDialog(
                     )
                         .build()
                 )
-                addView(SeekBar(appContext).apply {
+                addView(SeekBar(HomeContext.context).apply {
                     min = minValue
                     max = maxValue
                     progress = (tempValue * divide).toInt()
@@ -83,27 +81,27 @@ class SettingSeekBarDialog(
                         override fun onStopTrackingTouch(seekBar: SeekBar?) {}
                     })
                 })
-                addView(LinearLayout(appContext).apply {
-                    addView(TextView(appContext).apply {
+                addView(LinearLayout(HomeContext.context).apply {
+                    addView(TextView(HomeContext.context).apply {
                         text = "$minValue"
                         layoutParams =
                             LinearLayout.LayoutParams(150, LinearLayout.LayoutParams.MATCH_PARENT)
-                        setTextColor(Color.parseColor(if (isNightMode()) "#ffffff" else "#000000"))
+                        setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
                     })
-                    addView(TextView(appContext).apply {
+                    addView(TextView(HomeContext.context).apply {
                         text = "${(tempValue * divide).toInt()}"
                         textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                         valueTextView = this
                         layoutParams =
                             LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1f)
-                        setTextColor(Color.parseColor(if (isNightMode()) "#ffffff" else "#000000"))
+                        setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
                     })
-                    addView(TextView(appContext).apply {
+                    addView(TextView(HomeContext.context).apply {
                         text = "$maxValue"
                         textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
                         layoutParams =
                             LinearLayout.LayoutParams(150, LinearLayout.LayoutParams.MATCH_PARENT)
-                        setTextColor(Color.parseColor(if (isNightMode()) "#ffffff" else "#000000"))
+                        setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
                     })
                     gravity = Gravity.CENTER_VERTICAL
                 })

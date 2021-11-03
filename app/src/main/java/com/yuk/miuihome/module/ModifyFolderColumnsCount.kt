@@ -10,7 +10,7 @@ class ModifyFolderColumnsCount {
 
     fun init() {
         val value = ownSP.getFloat("folderColumns", -1f)
-        if (value == -1f) return
+        if (value == -1f || value == 3f) return
         "com.miui.home.launcher.Folder".hookAfterMethod(
             "onFinishInflate"
         ) {
@@ -18,7 +18,7 @@ class ModifyFolderColumnsCount {
             val mContent =
                 XposedHelpers.getObjectField(it.thisObject, "mContent") as GridView
             mContent.numColumns = columns
-            if (ownSP.getBoolean("folderWidth", false)) {
+            if (ownSP.getBoolean("folderWidth", false) && (columns > 3)) {
                 val lp = mContent.layoutParams
                 lp.width = ViewGroup.LayoutParams.MATCH_PARENT
                 mContent.layoutParams = lp

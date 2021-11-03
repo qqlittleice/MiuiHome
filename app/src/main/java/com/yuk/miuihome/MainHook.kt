@@ -924,8 +924,8 @@ class MainHook {
                 })
             })
             setNeutralButton(myRes.getString(R.string.Yes)) { _, _ ->
-                OwnSP.remove("task_horizontal1")
-                OwnSP.remove("task_horizontal2")
+                OwnSP.set("task_horizontal1", 1.0f)
+                OwnSP.set("task_horizontal2", 1.0f)
                 thread {
                     LogUtil.toast(myRes.getString(R.string.Reboot2))
                     Thread.sleep(1000)
@@ -970,6 +970,15 @@ class MainHook {
                 editor.commit()
                 OwnSP.set("isFirstUse", false)
                 OwnSP.set("animationLevel", 1.25f)
+                OwnSP.set("dockRadius", 2.5f)
+                OwnSP.set("dockHeight", 7.9f)
+                OwnSP.set("dockSide", 3.0f)
+                OwnSP.set("dockBottom", 2.3f)
+                OwnSP.set("dockIconBottom", 3.5f)
+                OwnSP.set("dockIconTop", 0.6f)
+                OwnSP.set("folderColumns", 3f)
+                OwnSP.set("task_horizontal1", 1.0f)
+                OwnSP.set("task_horizontal2", 1.0f)
                 thread {
                     LogUtil.toast(myRes.getString(R.string.Reboot2))
                     Thread.sleep(1000)
@@ -1011,6 +1020,15 @@ class MainHook {
             setOnDismissListener {
                 OwnSP.set("isFirstUse", false)
                 OwnSP.set("animationLevel", 1.25f)
+                OwnSP.set("dockRadius", 2.5f)
+                OwnSP.set("dockHeight", 7.9f)
+                OwnSP.set("dockSide", 3.0f)
+                OwnSP.set("dockBottom", 2.3f)
+                OwnSP.set("dockIconBottom", 3.5f)
+                OwnSP.set("dockIconTop", 0.6f)
+                OwnSP.set("folderColumns", 3f)
+                OwnSP.set("task_horizontal1", 1.0f)
+                OwnSP.set("task_horizontal2", 1.0f)
                 thread {
                     LogUtil.toast(myRes.getString(R.string.Reboot2))
                     Thread.sleep(1000)
