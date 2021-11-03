@@ -17,7 +17,7 @@ import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader
 
-class DockHook {
+class ModifyDockHook {
 
     private fun readStream(input: InputStream) {
         val reader = BufferedReader(InputStreamReader(input))
@@ -41,7 +41,7 @@ class DockHook {
             }
             val deviceConfigClass = "com.miui.home.launcher.DeviceConfig".findClass()
             val launcherClass = "com.miui.home.launcher.Launcher".findClass()
-            deviceConfigClass.hookAfterMethod(
+            deviceConfigClass.hookBeforeMethod(
                 "calcHotSeatsMarginTop",
                 Context::class.java,
                 Boolean::class.java
@@ -76,9 +76,7 @@ class DockHook {
                 it.result = dip2px((ownSP.getFloat("dockBottom", -1f) * 10).toInt())
             }
             // 宽度变化量
-            deviceConfigClass.setReturnConstant(
-                "getSearchBarWidthDelta", result = 0
-            )
+            deviceConfigClass.setReturnConstant("getSearchBarWidthDelta", result = 0)
             launcherClass.hookAfterMethod(
                 "onCreate",
                 Bundle::class.java

@@ -4,7 +4,7 @@
     <string name="AlwaysShowMIUIWidget">允许在安卓小部件中显示MIUI小部件</string>
     <string name="AlwaysShowStatusBarClock">时钟常显</string>
     <string name="AnimationLevel">手势动画速度</string>
-    <string name="AppTextSize">应用图标与名称间距</string>
+    <string name="AppTextSize">应用图标与标题间距</string>
     <string name="Back">返回</string>
     <string name="BaseFeature">基础设定</string>
     <string name="BlurWhenOpenFolder">文件夹打开背景模糊</string>
@@ -21,7 +21,7 @@
     <string name="HideTaskViewAppIcon">隐藏后台应用图标</string>
     <string name="HideTaskViewCleanUpIcon">隐藏后台清理图标</string>
     <string name="HideTaskViewSmallWindowIcon">移除后台“小窗应用”图标</string>
-    <string name="HideWidgetTitles">隐藏桌面小部件名称</string>
+    <string name="HideWidgetTitles">隐藏桌面小部件标题</string>
     <string name="HorizontalTaskViewOfAppCardSize">横向(平铺)应用卡片大小</string>
     <string name="InfiniteScroll">桌面无限滚动</string>
     <string name="MainActivity1">请先在LSPosed管理器中激活本模块，并重启一次系统桌面。模块的设置界面在MIUI系统桌面的设置中！\n\n具体位置：设置-桌面-原“默认桌面”处。</string>
@@ -48,7 +48,7 @@
     <string name="SearchBarBlur">搜索框模糊</string>
     <string name="SetSuccessfully">设置成功</string>
     <string name="ShowAppIcon">显示桌面图标</string>
-    <string name="ShowDockIconTitles">显示底栏应用名称</string>
+    <string name="ShowDockIconTitles">显示底栏应用标题</string>
     <string name="SimpleAnimation">简单动画</string>
     <string name="SimpleBlur">简单模糊</string>
     <string name="SmoothAnimation">平滑动画</string>
@@ -99,4 +99,5 @@
     <string name="HorizontalScreen">横屏</string>
     <string name="Reset2">重置横向(平铺)卡片大小配置参数</string>
     <string name="Tips3">这将重置横向(平铺)卡片大小配置参数到默认值并重启系统桌面。</string>
+    <string name="UnlockIcons">解锁底栏图标数量限制</string>
 </resources>

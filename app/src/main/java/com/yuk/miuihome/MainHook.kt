@@ -111,12 +111,14 @@ class MainHook {
         ModifyFolderColumnsCount().init()
         // 桌面标题字体大小
         ModifyIconTitleFontSize().init()
-        // PropHook
+        // Prop
         HookSystemProperties().init()
-        // DockHook
-        DockHook().init()
+        // Dock
+        ModifyDockHook().init()
         // 双击锁屏
         ModifyDoubleTapToSleep().init()
+        //
+        ModifyUnlockHotseatIcon().init()
         // CustomHook
         //CustomHook.init()
         // ResHook
@@ -216,6 +218,12 @@ class MainHook {
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.MamlDownload),
                         mKey = "mamlDownload"
+                    ).build()
+                )
+                addView(
+                    SettingSwitch.FastBuilder(
+                        mText = myRes.getString(R.string.UnlockIcons),
+                        mKey = "unlockIcons"
                     ).build()
                 )
                 if (!ownSP.getBoolean("simpleAnimation", false)) {
