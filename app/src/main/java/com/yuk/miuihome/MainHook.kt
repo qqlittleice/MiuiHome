@@ -47,79 +47,79 @@ class MainHook {
             }
         }
 
-        //修改设备分级
+        // 修改设备分级
         SetDeviceLevel().init()
-        //修改模糊等级
+        // 修改模糊等级
         ModifyBlurLevel().init()
-        //开启平滑动画
+        // 开启平滑动画
         EnableSmoothAnimation().init()
-        //开启文件夹模糊
+        // 开启文件夹模糊
         EnableBlurWhenOpenFolder().init()
-        //开启水波纹
+        // 开启水波纹
         EnableMamlDownload().init()
-        //开启时钟常显
+        // 开启时钟常显
         EnableClockGadget().init()
-        //动画速度调节
+        // 动画速度调节
         ModifyAnimDurationRatio().init()
-        //后台卡片圆角大小调节
+        // 后台卡片圆角大小调节
         ModifyRoundedCorners().init()
-        //后台卡片图标文字间距调节
+        // 后台卡片图标文字间距调节
         ModifyHeaderHeight().init()
-        //进入后台是否隐藏状态栏
+        // 进入后台是否隐藏状态栏
         EnableHideStatusBarWhenEnterRecents().init()
-        //禁用Log
+        // 禁用Log
         DisableLog().init()
-        //桌面搜索框模糊
+        // 桌面搜索框模糊
         EnableSearchBarBlur().init()
-        //允许最近任务横屏
+        // 允许最近任务横屏
         EnableRecentsViewHorizontal().init()
-        //取消最近任务壁纸压暗
+        // 取消最近任务壁纸压暗
         DisableRecentsViewWallpaperDarken().init()
-        //隐藏桌面小部件标题
+        // 隐藏桌面小部件标题
         ModifyHideWidgetTitles().init()
-        //允许桌面安卓小部件移到负一屏
+        // 允许桌面安卓小部件移到负一屏
         AllowWidgetToMinus().init()
-        //允许在安卓小部件显示MIUI组件
+        // 允许在安卓小部件显示MIUI组件
         AlwaysShowMIUIWidget().init()
-        //纵向后台卡片大小
+        // 纵向后台卡片大小
         ModifyTaskVertical().init()
-        //横向后台卡片大小
+        // 横向后台卡片大小
         ModifyTaskHorizontal().init()
-        //开启简单动画
+        // 开启简单动画
         EnableSimpleAnimation().init()
-        //屏幕无限滚动
+        // 屏幕无限滚动
         ModifyInfiniteScroll().init()
-        //解锁桌面布局限制
+        // 解锁桌面布局限制
         ModifyUnlockGrids().init()
-        //打开应用时关闭文件夹
+        // 打开应用时关闭文件夹
         ModifyCloseFolderOnLaunch().init()
-        //显示底栏应用标题
+        // 显示底栏应用标题
         ModifyShowDockIconTitles().init()
-        //显示底栏应用阴影
+        // 显示底栏应用阴影
         EnableDockIconShadow().init()
-        //允许所有应用使用小窗口
+        // 允许所有应用使用小窗口
         AllowAllAppsToUseSmallWindow().init()
-        //允许低端机使用MIUI小组件
+        // 允许低端机使用MIUI小组件
         EnableLowEndDeviceUseMIUIWidgets().init()
-        //禁用今日推荐
+        // 禁用今日推荐
         DisableRecommendServer().init()
-        //移除非抽屉模式下桌面指示器
+        // 移除非抽屉模式下桌面指示器
         ModifyHideSeekPoints().init()
-        //移除应用分组中"全部"选项卡
+        // 移除应用分组中"全部"选项卡
         ModifyCategoryHideAll().init()
-        //文件夹列数
+        // 文件夹列数
         ModifyFolderColumnsCount().init()
-        //桌面标题字体大小
+        // 桌面标题字体大小
         ModifyIconTitleFontSize().init()
-        //propHook
+        // PropHook
         HookSystemProperties().init()
-        //DockHook
+        // DockHook
         DockHook().init()
-        //
+        // 双击锁屏
         ModifyDoubleTapToSleep().init()
-        //CustomHook
+        // CustomHook
         //CustomHook.init()
-        //ResHook
+        // ResHook
         ResourcesHook().init()
     }
 

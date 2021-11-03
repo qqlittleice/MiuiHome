@@ -36,7 +36,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
             "layout_search_bar",
             object : XC_LayoutInflated() {
                 override fun handleLayoutInflated(liparam: LayoutInflatedParam) {
-                    // 替换资源圆角
+                    //替换资源圆角
                     val targetView = liparam.view
                     (if (isAlpha || versionCode >= 421153106L) DrawableNameNewList else DrawableNameList).forEach { drawableName ->
                         resetDockRadius(
@@ -54,7 +54,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 hasLoad = true
             }
 
-            //后台卡片文字大小
+            // 后台卡片文字大小
             val backgroundTextSize = ownSP.getFloat("backgroundTextSize", 13f)
             hookedRes.res.setTryReplacement(
                 Config.hookPackage,
@@ -65,7 +65,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 )
             )
 
-            //后台隐藏应用图标
+            // 隐藏后台应用图标
             if (ownSP.getBoolean("buttonPadding", false)) {
                 hookedRes.res.setTryReplacement(
                     Config.hookPackage,
@@ -77,7 +77,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 )
             }
 
-            //后台隐藏小窗应用
+            // 隐藏后台小窗应用
             if (ownSP.getBoolean("smallWindow", false)) {
                 hookedRes.res.setTryReplacement(
                     Config.hookPackage,
@@ -89,7 +89,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 )
             }
 
-            //隐藏后台清理图标
+            // 隐藏后台清理图标
             if (ownSP.getBoolean("cleanUp", false)) {
                 hookedRes.res.setTryReplacement(
                     Config.hookPackage,
@@ -105,17 +105,19 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 )
             }
 
-            //隐藏桌面应用名称
-            if (ownSP.getBoolean("hideIconTitles", false)) {
+            // 桌面应用标题文本大小
+            if (ownSP.getFloat("iconTitleFontSize", -1f) != -1f) {
                 hookedRes.res.setTryReplacement(
                     Config.hookPackage,
                     "dimen",
                     "workspace_icon_text_size",
                     modRes.fwd(
-                        getResId("dimen", "dp0")
+                        getResId("dimen", "dp${ownSP.getFloat("iconTitleFontSize", -1f).toInt()}")
                     )
                 )
             }
+
+            // 后台无应用文本提示
             if (ownSP.getString("recentText", "YuKongADisable") != "YuKongADisable") {
                 val message: String =
                     ownSP.getString("recentText", "YuKongADisable").toString()
