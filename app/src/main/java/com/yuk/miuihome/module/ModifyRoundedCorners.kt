@@ -11,7 +11,7 @@ class ModifyRoundedCorners {
 
     fun init() {
         val value = ownSP.getFloat("recents_task_view_rounded_corners_radius", -1f)
-        if (value == -1f || value == 20f) return
+        if (value == -1f) return
         Resources::class.java.hookBeforeMethod(
             "getDimensionPixelSize",
             Int::class.javaPrimitiveType

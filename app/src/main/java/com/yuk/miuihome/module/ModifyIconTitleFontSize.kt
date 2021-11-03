@@ -11,7 +11,7 @@ class ModifyIconTitleFontSize {
 
     fun init() {
         val value = ownSP.getFloat("iconTitleFontSize", -1f)
-        if (value == -1f || value == 12f) return
+        if (value == -1f) return
         "com.miui.home.launcher.ItemIcon".hookAfterMethod(
             "onFinishInflate"
         ) {

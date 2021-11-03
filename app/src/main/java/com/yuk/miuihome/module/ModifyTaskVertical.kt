@@ -13,7 +13,7 @@ class ModifyTaskVertical {
 
     fun init() {
         val value = ownSP.getFloat("task_vertical", -1f)
-        if (value == -1f || value == 100f) return
+        if (value == -1f) return
         "com.miui.home.recents.views.TaskStackViewsAlgorithmVertical".replaceMethod(
             "scaleTaskView",
             RectF::class.java

@@ -9,7 +9,7 @@ class ModifyTaskHorizontal {
     fun init() {
         val value1 = ownSP.getFloat("task_horizontal1", -1f)
         val value2 = ownSP.getFloat("task_horizontal2", -1f)
-        if ((value1 == -1f && value2 == -1f) || (value1 == 1000f && value2 == 1000f)) return
+        if (value1 == -1f && value2 == -1f) return
         "com.miui.home.recents.views.TaskStackViewsAlgorithmHorizontal".hookBeforeMethod(
             "scaleTaskView",
             RectF::class.java,

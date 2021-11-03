@@ -967,7 +967,25 @@ class MainHook {
                 })
             })
             setNeutralButton(myRes.getString(R.string.Yes)) { _, _ ->
-                editor.clear(); editor.commit(); exitProcess(0)
+                editor.clear()
+                editor.commit()
+                OwnSP.set("isFirstUse", false)
+                OwnSP.set("blurLevel", "COMPLETE")
+                OwnSP.set("smoothAnimation", true)
+                OwnSP.set("searchBarBlur", true)
+                OwnSP.set("animationLevel", 1.25f)
+                OwnSP.set("dockRadius", 2.5f)
+                OwnSP.set("dockHeight", 7.9f)
+                OwnSP.set("dockSide", 3.0f)
+                OwnSP.set("dockBottom", 2.3f)
+                OwnSP.set("dockIconBottom", 3.5f)
+                OwnSP.set("dockIconTop", 0.6f)
+                OwnSP.set("folderColumns", 3f)
+                thread {
+                    LogUtil.toast(myRes.getString(R.string.Reboot2))
+                    Thread.sleep(1000)
+                    exitProcess(0)
+                }
             }
             setPositiveButton(myRes.getString(R.string.Cancel), null)
         }
