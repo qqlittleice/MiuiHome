@@ -12,7 +12,6 @@ class ModifyHeaderHeight {
     fun init() {
         val value = ownSP.getFloat("recents_task_view_header_height", -1f)
         if (value == -1f) return
-
         Resources::class.java.hookBeforeMethod(
             "getDimensionPixelSize",
             Int::class.javaPrimitiveType
@@ -26,8 +25,6 @@ class ModifyHeaderHeight {
                 it.result = dp2px(value)
             }
         }
-
-
         Resources::class.java.hookBeforeMethod(
             "getDimensionPixelOffset",
             Int::class.javaPrimitiveType

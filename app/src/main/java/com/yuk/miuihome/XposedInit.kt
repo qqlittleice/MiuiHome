@@ -73,10 +73,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
 
     fun checkAlpha() {
         val pkgInfo =
-            InitFields.appContext.packageManager.getPackageInfo(
-                InitFields.appContext.packageName,
-                0
-            )
+            HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0)
         isAlpha = if (!pkgInfo.versionName.contains("RELEASE", ignoreCase = true)) {
             pkgInfo.versionName.contains("ALPHA", ignoreCase = true)
         } else {
@@ -86,11 +83,11 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
 
     fun checkVersionCode() {
         try {
-            val packageManager: PackageManager = InitFields.appContext.packageManager
+            val packageManager: PackageManager = HomeContext.context.packageManager
             HomeContext.versionCode =
-                packageManager.getPackageInfo(InitFields.appContext.packageName, 0).longVersionCode
+                packageManager.getPackageInfo(HomeContext.context.packageName, 0).longVersionCode
         } catch (e: Exception) {
-            Log.e(e, "getVersionName")
+            Logger.log(e)
             HomeContext.versionCode = -1L
         }
     }

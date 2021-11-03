@@ -273,14 +273,13 @@ class MainHook {
                     ).build()
                 )
                 if (!ownSP.getBoolean("simpleAnimation", false)) {
-                    if (isAlpha) {
-                        addView(
-                            SettingSwitch.FastBuilder(
-                                mText = myRes.getString(R.string.BlurWhenOpenFolder),
-                                mKey = "blurWhenOpenFolder"
-                            ).build()
-                        )
-                    }
+                    addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.BlurWhenOpenFolder),
+                            mKey = "blurWhenOpenFolder",
+                            show = EnableBlurWhenOpenFolder.checked
+                        ).build()
+                    )
                 }
                 addView(
                     SettingSwitch.FastBuilder(
@@ -882,7 +881,7 @@ class MainHook {
                 OwnSP.set("searchBarBlur", true)
                 OwnSP.set("dockRadius", 2.5f)
                 OwnSP.set("dockHeight", 7.9f)
-                OwnSP.set("dockSide", 3.0f)
+                OwnSP.set("dockSide", 3f)
                 OwnSP.set("dockBottom", 1.6f)
                 OwnSP.set("dockIconBottom", 2.5f)
                 OwnSP.set("dockIconTop", 0.6f)
@@ -925,8 +924,8 @@ class MainHook {
                 })
             })
             setNeutralButton(myRes.getString(R.string.Yes)) { _, _ ->
-                OwnSP.set("task_horizontal1", 1.0f)
-                OwnSP.set("task_horizontal2", 1.0f)
+                OwnSP.remove("task_horizontal1")
+                OwnSP.remove("task_horizontal2")
                 thread {
                     LogUtil.toast(myRes.getString(R.string.Reboot2))
                     Thread.sleep(1000)
@@ -970,17 +969,8 @@ class MainHook {
                 editor.clear()
                 editor.commit()
                 OwnSP.set("isFirstUse", false)
-                OwnSP.set("blurLevel", "COMPLETE")
-                OwnSP.set("smoothAnimation", true)
-                OwnSP.set("searchBarBlur", true)
+                OwnSP.set("blurLevel", "NULL")
                 OwnSP.set("animationLevel", 1.25f)
-                OwnSP.set("dockRadius", 2.5f)
-                OwnSP.set("dockHeight", 7.9f)
-                OwnSP.set("dockSide", 3.0f)
-                OwnSP.set("dockBottom", 2.3f)
-                OwnSP.set("dockIconBottom", 3.5f)
-                OwnSP.set("dockIconTop", 0.6f)
-                OwnSP.set("folderColumns", 3f)
                 thread {
                     LogUtil.toast(myRes.getString(R.string.Reboot2))
                     Thread.sleep(1000)
@@ -1021,17 +1011,8 @@ class MainHook {
             })
             setOnDismissListener {
                 OwnSP.set("isFirstUse", false)
-                OwnSP.set("blurLevel", "COMPLETE")
-                OwnSP.set("smoothAnimation", true)
-                OwnSP.set("searchBarBlur", true)
+                OwnSP.set("blurLevel", "NULL")
                 OwnSP.set("animationLevel", 1.25f)
-                OwnSP.set("dockRadius", 2.5f)
-                OwnSP.set("dockHeight", 7.9f)
-                OwnSP.set("dockSide", 3.0f)
-                OwnSP.set("dockBottom", 2.3f)
-                OwnSP.set("dockIconBottom", 3.5f)
-                OwnSP.set("dockIconTop", 0.6f)
-                OwnSP.set("folderColumns", 3f)
                 thread {
                     LogUtil.toast(myRes.getString(R.string.Reboot2))
                     Thread.sleep(1000)

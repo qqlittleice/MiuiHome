@@ -11,28 +11,28 @@ class ModifyHideSeekPoints {
     fun init() {
         "com.miui.home.launcher.ScreenView".hookBeforeMethod(
             "updateSeekPoints",
-            Int::class.java
+            Int::class.javaPrimitiveType
         ) {
             showSeekBar(it.thisObject as View)
         }
         "com.miui.home.launcher.ScreenView".hookBeforeMethod(
             "addView",
             View::class.java,
-            Int::class.java,
+            Int::class.javaPrimitiveType,
             ViewGroup.LayoutParams::class.java
         ) {
             showSeekBar(it.thisObject as View)
         }
         "com.miui.home.launcher.ScreenView".hookBeforeMethod(
             "removeScreen",
-            Int::class.java
+            Int::class.javaPrimitiveType
         ) {
             showSeekBar(it.thisObject as View)
         }
         "com.miui.home.launcher.ScreenView".hookBeforeMethod(
             "removeScreensInLayout",
-            Int::class.java,
-            Int::class.java
+            Int::class.javaPrimitiveType,
+            Int::class.javaPrimitiveType
         ) {
             showSeekBar(it.thisObject as View)
         }
