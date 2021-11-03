@@ -41,14 +41,15 @@ class ModifyDockHook {
             }
             val deviceConfigClass = "com.miui.home.launcher.DeviceConfig".findClass()
             val launcherClass = "com.miui.home.launcher.Launcher".findClass()
+            // 页面指示器距离图标距离
             deviceConfigClass.hookBeforeMethod(
                 "calcHotSeatsMarginTop",
                 Context::class.java,
                 Boolean::class.java
             ) {
-                it.args[1] = false
+                it.result = dip2px((ownSP.getFloat("dockIconTop", -1f) * 10).toInt())
             }
-            // 图标区域底部边距
+            // 图标距屏幕底部
             deviceConfigClass.hookBeforeMethod(
                 "calcHotSeatsMarginBottom",
                 Context::class.java,
@@ -57,7 +58,7 @@ class ModifyDockHook {
             ) {
                 it.result = dip2px((ownSP.getFloat("dockIconBottom", -1f) * 10).toInt())
             }
-            // 搜索框宽度
+            // Dock距屏幕两侧
             deviceConfigClass.hookBeforeMethod(
                 "calcSearchBarWidth",
                 Context::class.java
@@ -67,7 +68,7 @@ class ModifyDockHook {
                 it.result =
                     dip2px(deviceWidth - (ownSP.getFloat("dockSide", -1f) * 10).toInt())
             }
-            // Dock底部边距
+            // Dock距屏幕底部
             deviceConfigClass.hookBeforeMethod(
                 "calcSearchBarMarginBottom",
                 Context::class.java,

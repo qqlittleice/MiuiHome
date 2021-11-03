@@ -596,8 +596,8 @@ class MainHook {
                                 mText = myRes.getString(R.string.DockHeight),
                                 mKey = "dockHeight",
                                 minValue = 50,
-                                maxValue = 200,
-                                defValue = 84
+                                maxValue = 150,
+                                defValue = 79
                             ).build()
                         )
                         addView(
@@ -605,7 +605,7 @@ class MainHook {
                                 mText = myRes.getString(R.string.DockSide),
                                 mKey = "dockSide",
                                 minValue = 0,
-                                maxValue = 200,
+                                maxValue = 100,
                                 defValue = 30
                             ).build()
                         )
@@ -614,7 +614,7 @@ class MainHook {
                                 mText = myRes.getString(R.string.DockBottom),
                                 mKey = "dockBottom",
                                 minValue = 0,
-                                maxValue = 200,
+                                maxValue = 150,
                                 defValue = 23
                             ).build()
                         )
@@ -623,8 +623,17 @@ class MainHook {
                                 mText = myRes.getString(R.string.DockIconBottom),
                                 mKey = "dockIconBottom",
                                 minValue = 0,
-                                maxValue = 200,
+                                maxValue = 150,
                                 defValue = 35
+                            ).build()
+                        )
+                        addView(
+                            SettingSeekBar.FastBuilder(
+                                mText = myRes.getString(R.string.DockIconTop),
+                                mKey = "dockIconTop",
+                                minValue = 0,
+                                maxValue = 50,
+                                defValue = 6
                             ).build()
                         )
                     }
@@ -859,10 +868,11 @@ class MainHook {
             setNeutralButton(myRes.getString(R.string.Yes)) { _, _ ->
                 OwnSP.set("searchBarBlur", true)
                 OwnSP.set("dockRadius", 2.5f)
-                OwnSP.set("dockHeight", 8.4f)
+                OwnSP.set("dockHeight", 7.9f)
                 OwnSP.set("dockSide", 3.0f)
                 OwnSP.set("dockBottom", 1.6f)
                 OwnSP.set("dockIconBottom", 2.5f)
+                OwnSP.set("dockIconTop", 0.6f)
                 thread {
                     LogUtil.toast(myRes.getString(R.string.Reboot2))
                     Thread.sleep(1000)
@@ -985,10 +995,11 @@ class MainHook {
                 OwnSP.set("searchBarBlur", true)
                 OwnSP.set("animationLevel", 1.25f)
                 OwnSP.set("dockRadius", 2.5f)
-                OwnSP.set("dockHeight", 8.4f)
+                OwnSP.set("dockHeight", 7.9f)
                 OwnSP.set("dockSide", 3.0f)
                 OwnSP.set("dockBottom", 2.3f)
                 OwnSP.set("dockIconBottom", 3.5f)
+                OwnSP.set("dockIconTop", 0.6f)
                 OwnSP.set("folderColumns", 3f)
                 thread {
                     LogUtil.toast(myRes.getString(R.string.Reboot2))
