@@ -645,7 +645,7 @@ class MainHook {
                                 mText = myRes.getString(R.string.DockIconTop),
                                 mKey = "dockIconTop",
                                 minValue = 0,
-                                maxValue = 50,
+                                maxValue = 80,
                                 defValue = 6
                             ).build()
                         )
