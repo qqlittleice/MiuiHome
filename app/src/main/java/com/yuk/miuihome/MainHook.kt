@@ -130,6 +130,7 @@ class MainHook {
             firstUseDialog()
             return
         }
+        lateinit var dialog: AlertDialog
         val dialogBuilder = SettingBaseDialog().get()
         dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
             overScrollMode = 2
@@ -170,6 +171,14 @@ class MainHook {
                         mColor = "#ff0c0c",
                     ).build()
                 )
+                if (ownSP.getBoolean("simpleAnimation", false)) {
+                    addView(
+                        SettingTextView.FastBuilder(
+                            mText = myRes.getString(R.string.SimpleWarn),
+                            mColor = "#ff0c0c",
+                        ).build()
+                    )
+                }
                 addView(
                     SettingTextView.FastBuilder(
                         mText = myRes.getString(R.string.BaseFeature),
@@ -177,13 +186,13 @@ class MainHook {
                         mSize = SettingTextView.text2Size
                     ).build()
                 )
-                addView(
-                    SettingSwitch.FastBuilder(
-                        mText = myRes.getString(R.string.SmoothAnimation),
-                        mKey = "smoothAnimation"
-                    ).build()
-                )
                 if (!ownSP.getBoolean("simpleAnimation", false)) {
+                    addView(
+                        SettingSwitch.FastBuilder(
+                            mText = myRes.getString(R.string.SmoothAnimation),
+                            mKey = "smoothAnimation"
+                        ).build()
+                    )
                     addView(SettingTextView.FastBuilder(mText = myRes.getString(R.string.TaskViewBlurLevel)) { showModifyBlurLevel() }
                         .build())
                 }
@@ -356,7 +365,10 @@ class MainHook {
                     SettingSwitch.FastBuilder(
                         mText = myRes.getString(R.string.SimpleAnimation),
                         mKey = "simpleAnimation"
-                    ).build()
+                    ) {
+                        dialog.cancel()
+                        showSettingDialog()
+                    }.build()
                 )
                 addView(
                     SettingSwitch.FastBuilder(
@@ -452,10 +464,11 @@ class MainHook {
             })
         })
         dialogBuilder.setNeutralButton(myRes.getString(R.string.Close), null)
-        dialogBuilder.setPositiveButton(myRes.getString(R.string.Reboot)) { _, _ ->
+        dialogBuilder.setPositiveButton(myRes.getString(R.string.Reboot))
+        { _, _ ->
             exitProcess(0)
         }
-        dialogBuilder.show()
+        dialog = dialogBuilder.show()
     }
 
     private fun customHookDialog() {

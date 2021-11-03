@@ -102,4 +102,5 @@
     <string name="Tips3">This will reset the Thumbnail size for Horizontal Recent parameters to its default value and restart the System Launcher.</string>
     <string name="UnlockIcons">Unlock hotseat icon number limit</string>
     <string name="DockIconTop">Page Indicator and Icon Spacing</string>
+    <string name="SimpleWarn">You have enabled simple animation, this will hide some settings.</string>
 </resources>
