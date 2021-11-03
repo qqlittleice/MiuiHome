@@ -12,10 +12,8 @@ import com.yuk.miuihome.utils.ktx.replaceMethod
 class ModifyTaskVertical {
 
     fun init() {
-
         val value = ownSP.getFloat("task_vertical", -1f)
-        if (value == -1f) return
-
+        if (value == -1f || value == 100f) return
         "com.miui.home.recents.views.TaskStackViewsAlgorithmVertical".replaceMethod(
             "scaleTaskView",
             RectF::class.java
@@ -30,7 +28,6 @@ class ModifyTaskVertical {
                     context
                 )
             )
-
             "com.miui.home.recents.util.Utilities".callStaticMethod(
                 "scaleRectAboutCenter",
                 it.args[0],

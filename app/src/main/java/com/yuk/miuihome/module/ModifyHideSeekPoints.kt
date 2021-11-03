@@ -3,38 +3,36 @@ package com.yuk.miuihome.module
 import android.view.View
 import android.view.ViewGroup
 import com.yuk.miuihome.utils.OwnSP.ownSP
-import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import de.robv.android.xposed.XposedHelpers
+import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 
 class ModifyHideSeekPoints {
 
     fun init() {
-        "com.miui.home.launcher.ScreenView".hookAfterMethod(
+        "com.miui.home.launcher.ScreenView".hookBeforeMethod(
             "updateSeekPoints",
-            Int::class.javaPrimitiveType
+            Int::class.java
         ) {
             showSeekBar(it.thisObject as View)
         }
-        "com.miui.home.launcher.ScreenView".hookAfterMethod(
+        "com.miui.home.launcher.ScreenView".hookBeforeMethod(
             "addView",
             View::class.java,
-            Int::class.javaPrimitiveType,
+            Int::class.java,
             ViewGroup.LayoutParams::class.java
         ) {
             showSeekBar(it.thisObject as View)
         }
-
-        "com.miui.home.launcher.ScreenView".hookAfterMethod(
+        "com.miui.home.launcher.ScreenView".hookBeforeMethod(
             "removeScreen",
-            Int::class.javaPrimitiveType,
+            Int::class.java
         ) {
-
             showSeekBar(it.thisObject as View)
         }
-        "com.miui.home.launcher.ScreenView".hookAfterMethod(
+        "com.miui.home.launcher.ScreenView".hookBeforeMethod(
             "removeScreensInLayout",
-            Int::class.javaPrimitiveType,
-            Int::class.javaPrimitiveType,
+            Int::class.java,
+            Int::class.java
         ) {
             showSeekBar(it.thisObject as View)
         }
@@ -44,7 +42,8 @@ class ModifyHideSeekPoints {
         if ("Workspace" != workspace.javaClass.simpleName) return
         val isInEditingMode =
             XposedHelpers.callMethod(workspace, "isInNormalEditingMode") as Boolean
-        val mScreenSeekBar = XposedHelpers.getObjectField(workspace, "mScreenSeekBar") as View
+        val mScreenSeekBar =
+            XposedHelpers.getObjectField(workspace, "mScreenSeekBar") as View
         mScreenSeekBar.animate().cancel()
         if (!isInEditingMode && ownSP.getBoolean("hideSeekPoints", false)) {
             mScreenSeekBar.alpha = 0.0f

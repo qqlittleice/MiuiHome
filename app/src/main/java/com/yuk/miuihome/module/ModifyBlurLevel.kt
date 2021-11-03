@@ -10,7 +10,6 @@ class ModifyBlurLevel {
             "com.miui.home.launcher.common.BlurUtils".hookBeforeMethod("getBlurType") {
                 it.result = 0
             }
-
             "com.miui.home.launcher.common.BlurUtils".hookBeforeMethod("isUseCompleteBlurOnDev") {
                 it.result = false
             }
@@ -28,7 +27,6 @@ class ModifyBlurLevel {
                     }
                 }
             }
-
             "com.miui.home.launcher.common.BlurUtils".hookBeforeMethod("isUseCompleteBlurOnDev") {
                 when (ownSP.getString("blurLevel", "")) {
                     "TEST" -> {
@@ -36,7 +34,6 @@ class ModifyBlurLevel {
                     }
                 }
             }
-
             "com.miui.home.launcher.common.DeviceLevelUtils".hookBeforeMethod("isLowLevelOrLiteDevice") {
                 when (ownSP.getString("blurLevel", "")) {
                     "TEST" -> {

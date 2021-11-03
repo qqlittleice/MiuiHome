@@ -73,7 +73,10 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
 
     fun checkAlpha() {
         val pkgInfo =
-            HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0)
+            InitFields.appContext.packageManager.getPackageInfo(
+                InitFields.appContext.packageName,
+                0
+            )
         isAlpha = if (!pkgInfo.versionName.contains("RELEASE", ignoreCase = true)) {
             pkgInfo.versionName.contains("ALPHA", ignoreCase = true)
         } else {
@@ -109,7 +112,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
     }
 
     override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam) {
-        if (resparam.packageName != Config.hookPackage) return
+        if (resparam.packageName != hookPackage) return
         hasHookPackageResources = true
         ResHook(resparam).init()
     }

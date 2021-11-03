@@ -27,7 +27,6 @@ class ModifyDoubleTapToSleep {
                     mDoubleTapControllerEx
                 )
             }
-
             "com.miui.home.launcher.Workspace".hookBeforeMethod(
                 "dispatchTouchEvent",
                 MotionEvent::class.java
@@ -61,7 +60,6 @@ class ModifyDoubleTapToSleep {
                     Intent("com.miui.app.ExtraStatusBarManager.action_TRIGGER_TOGGLE")
                         .putExtra("com.miui.app.ExtraStatusBarManager.extra_TOGGLE_ID", 10)
                 )
-
             }
         }
     }

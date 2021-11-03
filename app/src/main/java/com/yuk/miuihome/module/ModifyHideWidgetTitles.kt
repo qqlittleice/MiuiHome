@@ -14,6 +14,7 @@ class ModifyHideWidgetTitles {
         if (ownSP.getBoolean("hideWidgetTitles", false)) {
             val widgetInfo = "com.miui.home.launcher.LauncherAppWidgetInfo".findClass()
             val widgetProviderInfo = "android.appwidget.AppWidgetProviderInfo".findClass()
+            val maMlWidgetInfo = "com.miui.home.launcher.maml.MaMlWidgetInfo".findClass()
             "com.miui.home.launcher.LauncherAppWidgetHost".hookAfterMethod(
                 "createLauncherWidgetView",
                 Context::class.java,
@@ -24,8 +25,6 @@ class ModifyHideWidgetTitles {
                 val view = it.result as Any
                 view.callMethod("getTitleView")?.callMethod("setVisibility", View.GONE)
             }
-
-            val maMlWidgetInfo = "com.miui.home.launcher.maml.MaMlWidgetInfo".findClass()
             "com.miui.home.launcher.Launcher".hookAfterMethod(
                 "addMaMl",
                 maMlWidgetInfo,

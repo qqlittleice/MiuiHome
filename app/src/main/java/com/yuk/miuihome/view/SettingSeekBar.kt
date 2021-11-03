@@ -7,6 +7,7 @@ import android.view.Gravity
 import android.widget.LinearLayout
 import android.widget.SeekBar
 import android.widget.TextView
+import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.LogUtil
@@ -48,7 +49,7 @@ class SettingSeekBar(
             dip2px(7)
         )
         textView = TextView(context)
-        seekBar = SeekBar(HomeContext.context).apply {
+        seekBar = SeekBar(appContext).apply {
             min = minValue
             max = maxValue
             progress = (tempValue * divide).toInt()
@@ -67,57 +68,57 @@ class SettingSeekBar(
                 override fun onStopTrackingTouch(seekBar: SeekBar?) {}
             })
         }
-        addView(LinearLayout(HomeContext.context).apply {
+        addView(LinearLayout(appContext).apply {
             addView(textView.apply {
                 layoutParams =
                     LayoutParams(350, LayoutParams.MATCH_PARENT)
-                setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
+                setTextColor(Color.parseColor(if (isNightMode()) "#ffffff" else "#000000"))
             })
-            addView(TextView(HomeContext.context).apply {
+            addView(TextView(appContext).apply {
                 text = ""
                 textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                 layoutParams =
                     LayoutParams(0, LayoutParams.MATCH_PARENT, 1f)
-                setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
+                setTextColor(Color.parseColor(if (isNightMode()) "#ffffff" else "#000000"))
             })
-            addView(TextView(HomeContext.context).apply {
+            addView(TextView(appContext).apply {
                 text = myRes.getString(R.string.Defaults) + " : $defValue"
                 textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
                 layoutParams =
                     LayoutParams(300, LayoutParams.MATCH_PARENT)
-                setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
+                setTextColor(Color.parseColor(if (isNightMode()) "#ffffff" else "#000000"))
             })
             gravity = Gravity.CENTER_VERTICAL
         })
         addView(seekBar)
-        addView(LinearLayout(HomeContext.context).apply {
-            addView(TextView(HomeContext.context).apply {
+        addView(LinearLayout(appContext).apply {
+            addView(TextView(appContext).apply {
                 text = "$minValue"
                 layoutParams =
                     LayoutParams(150, LayoutParams.MATCH_PARENT)
-                setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
+                setTextColor(Color.parseColor(if (isNightMode()) "#ffffff" else "#000000"))
             })
-            addView(TextView(HomeContext.context).apply {
+            addView(TextView(appContext).apply {
                 text = "${(tempValue * divide).toInt()}"
                 textAlignment = TextView.TEXT_ALIGNMENT_CENTER
                 valueTextView = this
                 layoutParams =
                     LayoutParams(0, LayoutParams.MATCH_PARENT, 1f)
-                setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
+                setTextColor(Color.parseColor(if (isNightMode()) "#ffffff" else "#000000"))
             })
-            addView(TextView(HomeContext.context).apply {
+            addView(TextView(appContext).apply {
                 text = "$maxValue"
                 textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
                 layoutParams =
                     LayoutParams(150, LayoutParams.MATCH_PARENT)
-                setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
+                setTextColor(Color.parseColor(if (isNightMode()) "#ffffff" else "#000000"))
             })
             gravity = Gravity.CENTER_VERTICAL
         })
     }
 
     class FastBuilder(
-        private val mContext: Context = HomeContext.context,
+        private val mContext: Context = appContext,
         private val mText: String,
         private val mKey: String,
         private val minValue: Int,

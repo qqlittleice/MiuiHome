@@ -7,6 +7,8 @@ import android.view.View
 import android.widget.CompoundButton
 import com.yuk.miuihome.HomeContext
 import android.widget.Switch
+import com.github.kyuubiran.ezxhelper.init.InitFields
+import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.dip2px
@@ -14,7 +16,7 @@ import com.yuk.miuihome.utils.isNightMode
 
 @SuppressLint("UseSwitchCompatOrMaterialCode")
 class SettingSwitch(context: Context) : Switch(context) {
-    private var color = if (isNightMode(getContext())) "#ffffff" else "#000000"
+    private var color = if (isNightMode()) "#ffffff" else "#000000"
         set(value) = setTextColor(Color.parseColor(value))
     private val editor by lazy { ownSP.edit() }
     var toastText = ""
@@ -40,7 +42,7 @@ class SettingSwitch(context: Context) : Switch(context) {
     }
 
     class FastBuilder(
-        private val mContext: Context = HomeContext.context,
+        private val mContext: Context = appContext,
         private val mText: String,
         private val mToastText: String? = null,
         private val mDefState: Boolean? = null,

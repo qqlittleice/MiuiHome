@@ -1,6 +1,7 @@
 package com.yuk.miuihome.module
 
 import android.content.Context
+import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
@@ -16,19 +17,17 @@ class ModifyShowDockIconTitles {
                 "isHotseatsAppTitleHided",
                 result = false
             )
-
             "com.miui.home.launcher.DeviceConfig".hookAfterMethod(
                 "calcHotSeatsHeight",
                 Context::class.java,
                 Boolean::class.java
             ) {
-                val context: Context = it.args[0] as Context
                 val height = it.result as Int
                 val sIsImmersiveNavigationBar = XposedHelpers.getStaticBooleanField(
                     "com.miui.home.launcher.DeviceConfig".findClass(), "sIsImmersiveNavigationBar"
                 )
                 if (sIsImmersiveNavigationBar) it.result =
-                    (height + 8 * context.resources.displayMetrics.density).roundToInt()
+                    (height + 8 * HomeContext.context.resources.displayMetrics.density).roundToInt()
             }
         }
     }

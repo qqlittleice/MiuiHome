@@ -7,11 +7,9 @@ class ModifyAnimDurationRatio {
 
     fun init() {
         val value = ownSP.getFloat("animationLevel", -1f)
-        if (value != -1f) {
-            "com.miui.home.recents.TransitionAnimDurationHelper".setReturnConstant(
-                "getAnimDurationRatio",
-                result = value
-            )
-        }
+        "com.miui.home.recents.TransitionAnimDurationHelper".setReturnConstant(
+            "getAnimDurationRatio",
+            result = value
+        )
     }
 }

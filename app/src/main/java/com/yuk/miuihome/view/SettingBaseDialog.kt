@@ -7,7 +7,7 @@ import com.yuk.miuihome.utils.isNightMode
 class SettingBaseDialog {
 
     fun get(): AlertDialog.Builder {
-        return if (isNightMode(HomeContext.activity)) {
+        return if (isNightMode()) {
             AlertDialog.Builder(
                 HomeContext.activity,
                 android.R.style.Theme_Material_Dialog_Alert
