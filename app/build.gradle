@@ -11,8 +11,8 @@ android {
         applicationId "com.yuk.miuihome"
         minSdk 28
         targetSdk 31
-        versionCode 4127
-        versionName "4.1.2"
+        versionCode 4130
+        versionName "4.1.3"
     }
 
     buildFeatures {
@@ -27,7 +27,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro', 'proguard-log.pro'
             android.applicationVariants.all { variant ->
                 variant.outputs.all {
-                    outputFileName = "MiuiHome_${versionName}.apk"
+                    outputFileName = "MiuiHome_${versionName}(${versionCode}).apk"
                 }
             }
         }
