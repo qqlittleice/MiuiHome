@@ -67,7 +67,6 @@
     <string name="WidgetToMinus">Abilita lo spostamento dei widget classici alla \"App Vault\"</string>
     <string name="Yes">Si</string>
     <string name="EnableIconShadow">Mostra ombra e riflesso dell\'icona</string>
-    <string name="res_hooked">Iniezione delle risorse riuscita!</string>
     <string name="SmallWindow">Consenti a tutte le app di usare le Finestre Fluttuanti</string>
     <string name="LowEndDeviceUseMIUIWidgets">Abilita il nuovo Widget Store nei dispositivi di fascia bassa</string>
     <string name="RecommendServer">Disabilita server consigliato</string>

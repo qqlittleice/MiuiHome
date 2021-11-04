@@ -67,7 +67,6 @@
     <string name="WidgetToMinus">Sta het verplaatsen van klassieke widgets toe naar \"App Vault\"</string>
     <string name="Yes">Ja</string>
     <string name="EnableIconShadow">Pictogram Schaduw en reflectie weergeven</string>
-    <string name="res_hooked">Succes met het injecteren van hulpbronnen!</string>
     <string name="SmallWindow">Alle apps toestaan zwevende vensters te gebruiken</string>
     <string name="LowEndDeviceUseMIUIWidgets">Nieuwe widgetwinkel inschakelen op Low-End apparaten</string>
     <string name="RecommendServer">Aanbevelingsserver uitschakelen</string>

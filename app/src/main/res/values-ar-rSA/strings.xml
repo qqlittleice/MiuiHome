@@ -67,7 +67,6 @@
     <string name="WidgetToMinus">السماح بنقل الاضافات العادية الي \"منصة التطبيقات\"</string>
     <string name="Yes">حسنا</string>
     <string name="EnableIconShadow">اظهار ظل التطبيقات وانعكاسها</string>
-    <string name="res_hooked">تم تفعيل ميزة resource hooks بنجاح!</string>
     <string name="SmallWindow">السماح لكل التطبيقات باستخدام النوافذ المنبثقة</string>
     <string name="LowEndDeviceUseMIUIWidgets">تفعيل متجر الاضافات الجديد علي الاجهزة الضعيفة</string>
     <string name="RecommendServer">تعطيل خادم الاقتراحات</string>

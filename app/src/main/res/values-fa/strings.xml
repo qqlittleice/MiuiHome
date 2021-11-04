@@ -67,7 +67,6 @@
     <string name="WidgetToMinus">اجازه دادن به آوردن ویجت های کلاسیک به \"App Vault\"</string>
     <string name="Yes">بله</string>
     <string name="EnableIconShadow">نمایش نماد سایه و انتقال</string>
-    <string name="res_hooked">تزریق منابع موفقیت آمیز بود!</string>
     <string name="SmallWindow">به همه برنامه ها اجازه دهید تا از پنجره ی شناور استفاده کنند</string>
     <string name="LowEndDeviceUseMIUIWidgets">فروشگاه ویجت جدید را در دستگاه های کم مصرف فعال کنید</string>
     <string name="RecommendServer">غیرفعال کردن سرور پیش فرض</string>

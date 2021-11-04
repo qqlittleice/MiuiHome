@@ -67,7 +67,6 @@
     <string name="WidgetToMinus">Επιτρέψτε την μεταφορά των κλασικών γραφικών στοιχείων στην \"Αποθήκη εφαρμογών\"</string>
     <string name="Yes">Ναι</string>
     <string name="EnableIconShadow">Εμφάνιση σκιών και αντανακλάσεων στα εικονίδια</string>
-    <string name="res_hooked">Resource Injection Success!</string>
     <string name="SmallWindow">Επιτρέψτε σε όλες τις εφαρμογές να χρησιμοποιήσουν την λειτουργιά αναδυόμενα παράθυρα</string>
     <string name="LowEndDeviceUseMIUIWidgets">Ενεργοποιήστε το νέο “μαγαζί” γραφικών στοιχείων και σε ποιο αδύναμες συσκευές</string>
     <string name="RecommendServer">Απενεργοποίηση της πρότασης σέρβερ</string>

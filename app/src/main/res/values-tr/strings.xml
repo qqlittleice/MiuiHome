@@ -67,7 +67,6 @@
     <string name="WidgetToMinus">Klasik Widgetlerin Uygulama Kasasina Tasinmasina Izin Ver</string>
     <string name="Yes">Evet</string>
     <string name="EnableIconShadow">Ikon Hareketlerini ve Golgelerini Goster</string>
-    <string name="res_hooked">Resource Hook Basariyla Enjekte Edildi!</string>
     <string name="SmallWindow">Butun Uygulamalara Yuzen Pencereler Icin Izin Ver</string>
     <string name="LowEndDeviceUseMIUIWidgets">Yeni Widget Magazasini Eski/Dusuk Telefonlar Icin Aktif Et</string>
     <string name="RecommendServer">Onerilen Sunucuyu Devre Disi Birak</string>

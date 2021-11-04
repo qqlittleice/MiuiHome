@@ -67,7 +67,6 @@
     <string name="WidgetToMinus">क्लासिक विजेट को \"ऐप वॉल्ट\ ले जाने दें"</string>
     <string name="Yes">हां</string>
     <string name="EnableIconShadow">आइकन परछाई तथा प्रतिबिंब दिखाएँ</string>
-    <string name="res_hooked">संसाधन इंजेक्शन सफल!</string>
     <string name="SmallWindow">सभी ऐप्स को फ़्लोटिंग विंडोज़ का उपयोग करने दें</string>
     <string name="LowEndDeviceUseMIUIWidgets">लो-एंड डिवाइस पर नया विजेट स्टोर सक्षम करें</string>
     <string name="RecommendServer">अनुशंसित सर्वर अक्षम करें</string>

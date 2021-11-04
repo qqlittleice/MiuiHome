@@ -67,7 +67,6 @@
     <string name="WidgetToMinus">Cho phép di chuyển các Widget Cổ điển sang \"App Vault\"</string>
     <string name="Yes">Yes</string>
     <string name="EnableIconShadow">Hiển thị Bóng biểu tượng và Phản chiếu</string>
-    <string name="res_hooked">Nạp tài nguyên thành công!</string>
     <string name="SmallWindow">Cho phép tất cả các ứng dụng sử dụng Cửa sổ nổi</string>
     <string name="LowEndDeviceUseMIUIWidgets">Bật Cửa hàng tiện ích con mới trên thiết bị cấp thấp</string>
     <string name="RecommendServer">Tắt máy chủ được đề xuất</string>

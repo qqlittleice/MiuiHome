@@ -67,7 +67,6 @@
     <string name="WidgetToMinus">Дозволити переміщення класичних віджетів в \"Ассистент\"</string>
     <string name="Yes">Так</string>
     <string name="EnableIconShadow">Тінь та відображення іконок</string>
-    <string name="res_hooked">Впровадження ресурсів пройшло успішно!</string>
     <string name="SmallWindow">Дозволити всім програмам використовувати плаваючі вікна</string>
     <string name="LowEndDeviceUseMIUIWidgets">Увімкніть новий магазин віджетів на пристроях низького класу</string>
     <string name="RecommendServer">Вимкніть рекомендований сервер</string>

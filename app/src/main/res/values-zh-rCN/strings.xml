@@ -33,7 +33,6 @@
     <string name="ModuleNotEnable">模块未激活</string>
     <string name="ModuleSettings">模块设置</string>
     <string name="ResHook">资源钩子√</string>
-    <string name="res_hooked">资源注入成功!</string>
     <string name="NoneBlur">无模糊</string>
     <string name="OpenMiuiHomeSettings">打开桌面设置</string>
     <string name="OtherFeature">其他功能</string>

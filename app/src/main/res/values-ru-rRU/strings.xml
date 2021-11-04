@@ -92,7 +92,6 @@
     <string name="Widget">Виджеты</string>
     <string name="WidgetToMinus">Позволить перемещать классические виджеты в \"Ленту виджетов\"</string>
     <string name="Yes">Да</string>
-    <string name="res_hooked">Перехват ресурсов прошел успешно!</string>
     <string name="LowEndAnim">Low-end уст-ва могут использовать анимированные иконки</string>
     <string name="About">О проекте</string>
     <string name="UnlockIcons">Откл. ограничение кол-ва иконок в док-баре</string>

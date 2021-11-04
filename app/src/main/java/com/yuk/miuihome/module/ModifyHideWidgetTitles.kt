@@ -18,7 +18,7 @@ class ModifyHideWidgetTitles {
             "com.miui.home.launcher.LauncherAppWidgetHost".hookAfterMethod(
                 "createLauncherWidgetView",
                 Context::class.java,
-                Int::class.java,
+                Int::class.javaPrimitiveType,
                 widgetInfo,
                 widgetProviderInfo
             ) {

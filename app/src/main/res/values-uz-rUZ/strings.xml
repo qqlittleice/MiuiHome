@@ -67,7 +67,6 @@
     <string name="WidgetToMinus">Klassik vidjetlarni \"Ilovalar qutisiga\" ga ko\'chirishga ruxsat berish</string>
     <string name="Yes">Ha</string>
     <string name="EnableIconShadow">Ilova belgilari soyasi va aksini ko\'rsatish</string>
-    <string name="res_hooked">Resurslar muvaffaqiyatli in\'ektsiya qilindi!</string>
     <string name="SmallWindow">Barcha ilovalar suzuvchi oyna rejimida ishlashiga ruxsat berish</string>
     <string name="LowEndDeviceUseMIUIWidgets">Kuchsiz qurilmalarda yangi vidjetlar do\'konini yoqish</string>
     <string name="RecommendServer">Tavsiyalar serverini o\'chirish</string>

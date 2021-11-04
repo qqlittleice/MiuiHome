@@ -27,7 +27,7 @@ class ModifyCategoryHideAll {
                 .hookAfterMethod(
                     "onBindViewHolder",
                     "com.miui.home.launcher.allapps.AllAppsGridAdapter.ViewHolder".findClass(),
-                    Int::class.java
+                    Int::class.javaPrimitiveType
                 ) {
                     if ((it.args[0].callMethod("getItemViewType") as Int) == 64)
                         (it.args[0].getObjectField("itemView") as View).visibility = View.INVISIBLE

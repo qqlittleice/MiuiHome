@@ -68,7 +68,6 @@
     <string name="WidgetToMinus">Allow moving Classic Widgets to \"App Vault\"</string>
     <string name="Yes">Yes</string>
     <string name="EnableIconShadow">Show Icon Shadow and Reflection</string>
-    <string name="res_hooked">Resource Injection Success!</string>
     <string name="SmallWindow">Allow all apps to use Floating Windows</string>
     <string name="LowEndDeviceUseMIUIWidgets">Enable New Widget Store on Low-End Devices</string>
     <string name="RecommendServer">Disable Recommend Server</string>

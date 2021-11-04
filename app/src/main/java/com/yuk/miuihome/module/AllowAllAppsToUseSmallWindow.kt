@@ -11,7 +11,7 @@ class AllowAllAppsToUseSmallWindow {
             "com.miui.home.launcher.RecentsAndFSGestureUtils".setReturnConstant(
                 "isTaskSupportSmallWindow",
                 Context::class.java,
-                Int::class.java,
+                Int::class.javaPrimitiveType,
                 result = true
             )
 

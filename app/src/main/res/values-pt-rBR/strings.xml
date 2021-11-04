@@ -67,7 +67,6 @@
     <string name="WidgetToMinus">Permitir Mover Widgets Clássicos para o \"Assistente\"</string>
     <string name="Yes">Sim</string>
     <string name="EnableIconShadow">Mostrar Sombra do Ícone e Reflexo</string>
-    <string name="res_hooked">Sucesso na injeção de Recursos!</string>
     <string name="SmallWindow">Permitar que todos apps usem a Janela Flutuante</string>
     <string name="LowEndDeviceUseMIUIWidgets">Habilitar novos Widgets em celulares sem suporte</string>
     <string name="RecommendServer">Desativar servidor recomendado</string>

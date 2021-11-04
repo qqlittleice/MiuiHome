@@ -67,7 +67,6 @@
     <string name="WidgetToMinus">ჩვეულებრივი Widget-ების App Vault-ში ჩასმა</string>
     <string name="Yes">დიახ</string>
     <string name="EnableIconShadow">ნახატების ჩრდილის გამოჩენა</string>
-    <string name="res_hooked">რესურსების ინჯექცია წარმატებულია!</string>
     <string name="SmallWindow">ნება მიეცეს ყველა აპლიკაციას "მოტივტივე ფანჯრების" გამოყენების უფლება"</string>
     <string name="LowEndDeviceUseMIUIWidgets">ახალი Widget-ების ფუნქციის ჩართვა სუსტ ტელეფონებზე</string>
     <string name="RecommendServer">რეკომენდაციების სერვერის გათიშვა</string>

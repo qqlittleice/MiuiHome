@@ -67,7 +67,6 @@
     <string name="WidgetToMinus">Zezwól przesuwanie klasycznych widgetow do \"Sejfu aplikacji\"</string>
     <string name="Yes">Tak</string>
     <string name="EnableIconShadow">Pokaż cień ikonyi odbicie</string>
-    <string name="res_hooked">Udane wstrzykiwanie zasobów!</string>
     <string name="SmallWindow">Zezwól wszystkim aplikacjom używać pływających okien</string>
     <string name="LowEndDeviceUseMIUIWidgets">Włącz nowy sklep z widżetami na urządzeniach z niższej półki</string>
     <string name="RecommendServer">Wyłącz rekomendowany serwer</string>

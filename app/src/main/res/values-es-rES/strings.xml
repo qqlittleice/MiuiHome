@@ -61,7 +61,6 @@
     <string name="Widget">Funciones de los Widgets</string>
     <string name="WidgetToMinus">Permitir mover widgets clásicos a \"App Vault \"</string>
     <string name="EnableIconShadow">Mostrar sombra y reflejo de los iconos</string>
-    <string name="res_hooked">Inyección de recursos finalizada exitosamente!</string>
     <string name="SmallWindow">Permitir que todas las aplicaciones usen ventanas flotantes</string>
     <string name="LowEndDeviceUseMIUIWidgets">Habilitar nueva Tienda de Widgets en dispositivos de gama baja</string>
     <string name="RecommendServer">Deshabilitar Recomendar Servidor</string>
