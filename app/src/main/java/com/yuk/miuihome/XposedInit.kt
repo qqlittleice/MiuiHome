@@ -16,6 +16,11 @@ import de.robv.android.xposed.XposedHelpers.ClassNotFoundError
 
 class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookInitPackageResources {
 
+    override fun initZygote(startupParam: IXposedHookZygoteInit.StartupParam) {
+        modulePath = startupParam.modulePath
+        moduleRes = getModuleRes(modulePath)
+    }
+
     @Keep
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
         when (lpparam.packageName) {
@@ -56,7 +61,14 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         }
     }
 
-    fun startOnlineLog() {
+    @Keep
+    override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam) {
+        if (resparam.packageName != Config.hookPackage) return
+        hasHookPackageResources = true
+        ResHook(resparam).init()
+    }
+
+    private fun startOnlineLog() {
         AppCenter.start(
             HomeContext.application,
             "fd3fd6d6-bc0d-40d1-bc1b-63b6835f9581",
@@ -65,7 +77,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         )
     }
 
-    fun checkAlpha() {
+    private fun checkAlpha() {
         val pkgInfo =
             HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0)
         HomeContext.isAlpha = if (!pkgInfo.versionName.contains("RELEASE", ignoreCase = true)) {
@@ -75,7 +87,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         }
     }
 
-    fun checkVersionCode() {
+    private fun checkVersionCode() {
         try {
             val packageManager: PackageManager = HomeContext.context.packageManager
             HomeContext.versionCode =
@@ -86,7 +98,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         }
     }
 
-    fun checkWidgetLauncher() {
+    private fun checkWidgetLauncher() {
         val checkList = arrayListOf(
             "com.miui.home.launcher.widget.MIUIAppWidgetInfo",
             "com.miui.home.launcher.LauncherAppWidgetInfo",
@@ -102,24 +114,13 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         }
     }
 
-    override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam) {
-        if (resparam.packageName != Config.hookPackage) return
-        hasHookPackageResources = true
-        ResHook(resparam).init()
-    }
-
-    override fun initZygote(startupParam: IXposedHookZygoteInit.StartupParam) {
-        modulePath = startupParam.modulePath
-        myRes = getModuleRes(modulePath)
-    }
-
     private fun getModuleRes(path: String): Resources {
         return XModuleResources.createInstance(path, null)
     }
 
     companion object {
         lateinit var modulePath: String
-        lateinit var myRes: Resources
+        lateinit var moduleRes: Resources
         var hasHookPackageResources = false
     }
 }

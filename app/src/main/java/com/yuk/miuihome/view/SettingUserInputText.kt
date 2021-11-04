@@ -8,7 +8,7 @@ import android.widget.LinearLayout
 import android.widget.ScrollView
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
-import com.yuk.miuihome.XposedInit.Companion.myRes
+import com.yuk.miuihome.XposedInit.Companion.moduleRes
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.OwnSP.remove
@@ -52,8 +52,8 @@ class SettingUserInputText(
             })
         })
         dialogBuilder.apply {
-            setPositiveButton(myRes.getString(R.string.Save), null)
-            setNeutralButton(myRes.getString(R.string.Reset1)) { dialog, _ ->
+            setPositiveButton(moduleRes.getString(R.string.Save), null)
+            setNeutralButton(moduleRes.getString(R.string.Reset1)) { dialog, _ ->
                 remove(mKey)
                 dialog.dismiss()
             }
@@ -62,11 +62,11 @@ class SettingUserInputText(
             this.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
                 try {
                     if (saveValue(editText.text.toString())) {
-                        LogUtil.toast("「${mText}」" + myRes.getString(R.string.SetSuccessfully))
+                        LogUtil.toast("「${mText}」" + moduleRes.getString(R.string.SetSuccessfully))
                         this.dismiss()
                     }
                 } catch (e: NumberFormatException) {
-                    LogUtil.toast(myRes.getString(R.string.OutOfInput))
+                    LogUtil.toast(moduleRes.getString(R.string.OutOfInput))
                 }
             }
             return this

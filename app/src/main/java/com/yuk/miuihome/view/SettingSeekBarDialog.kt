@@ -10,7 +10,7 @@ import android.widget.SeekBar
 import android.widget.TextView
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
-import com.yuk.miuihome.XposedInit.Companion.myRes
+import com.yuk.miuihome.XposedInit.Companion.moduleRes
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.dip2px
@@ -31,7 +31,7 @@ class SettingSeekBarDialog(
 
     fun saveValue(value: Float): Boolean {
         if ((value < (minValue.toFloat() / divide)) or (value > (maxValue.toFloat() / divide))) {
-            LogUtil.toast(myRes.getString(R.string.OutOfInput))
+            LogUtil.toast(moduleRes.getString(R.string.OutOfInput))
             return false
         }
         editor.putFloat(mKey, value)
@@ -108,7 +108,7 @@ class SettingSeekBarDialog(
                 if (canUserInput) {
                     addView(
                         SettingTextView.FastBuilder(
-                            mText = myRes.getString(R.string.ManualInput)
+                            mText = moduleRes.getString(R.string.ManualInput)
                         ) {
                             dialog.dismiss()
                             SettingUserInputNumber(

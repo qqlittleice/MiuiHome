@@ -8,7 +8,7 @@ import android.widget.LinearLayout
 import android.widget.ScrollView
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
-import com.yuk.miuihome.XposedInit.Companion.myRes
+import com.yuk.miuihome.XposedInit.Companion.moduleRes
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.OwnSP.remove
@@ -55,21 +55,21 @@ class SettingUserInputNumber(
                     })
                 addView(
                     SettingTextView.FastBuilder(
-                        mText = myRes.getString(R.string.Defaults) + " : $defValue"
+                        mText = moduleRes.getString(R.string.Defaults) + " : $defValue"
                     )
                         .build()
                 )
                 addView(
                     SettingTextView.FastBuilder(
-                        mText = myRes.getString(R.string.Scope) + " : $minValue ~ $maxValue"
+                        mText = moduleRes.getString(R.string.Scope) + " : $minValue ~ $maxValue"
                     )
                         .build()
                 )
             })
         })
         dialogBuilder.apply {
-            setPositiveButton(myRes.getString(R.string.Save), null)
-            setNeutralButton(myRes.getString(R.string.Reset1)) { dialog, _ ->
+            setPositiveButton(moduleRes.getString(R.string.Save), null)
+            setNeutralButton(moduleRes.getString(R.string.Reset1)) { dialog, _ ->
                 remove(mKey)
                 dialog.dismiss()
             }
@@ -78,11 +78,11 @@ class SettingUserInputNumber(
             this.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
                 try {
                     if (saveValue(editText.text.toString().toFloat() / divide)) {
-                        LogUtil.toast("「${mText}」" + myRes.getString(R.string.SetSuccessfully))
+                        LogUtil.toast("「${mText}」" + moduleRes.getString(R.string.SetSuccessfully))
                         this.dismiss()
                     }
                 } catch (e: NumberFormatException) {
-                    LogUtil.toast(myRes.getString(R.string.OutOfInput))
+                    LogUtil.toast(moduleRes.getString(R.string.OutOfInput))
                 }
             }
             return this
@@ -91,7 +91,7 @@ class SettingUserInputNumber(
 
     private fun saveValue(value: Float): Boolean {
         if ((value < (minValue.toFloat() / divide)) or (value > (maxValue.toFloat() / divide)) or (value == -1f)) {
-            LogUtil.toast(myRes.getString(R.string.OutOfInput))
+            LogUtil.toast(moduleRes.getString(R.string.OutOfInput))
             return false
         }
         editor.putFloat(mKey, value)

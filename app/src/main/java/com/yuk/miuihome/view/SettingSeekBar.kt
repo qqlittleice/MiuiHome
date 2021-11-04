@@ -9,7 +9,7 @@ import android.widget.SeekBar
 import android.widget.TextView
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
-import com.yuk.miuihome.XposedInit.Companion.myRes
+import com.yuk.miuihome.XposedInit.Companion.moduleRes
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.dip2px
@@ -81,7 +81,7 @@ class SettingSeekBar(
                 setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
             })
             addView(TextView(HomeContext.context).apply {
-                text = myRes.getString(R.string.Defaults) + " : $defValue"
+                text = moduleRes.getString(R.string.Defaults) + " : $defValue"
                 textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
                 layoutParams =
                     LayoutParams(300, LayoutParams.MATCH_PARENT)
@@ -145,7 +145,7 @@ class SettingSeekBar(
 
     fun saveValue(value: Float): Boolean {
         if ((value < (minValue.toFloat() / divide)) or (value > (maxValue.toFloat() / divide))) {
-            LogUtil.toast(myRes.getString(R.string.OutOfInput))
+            LogUtil.toast(moduleRes.getString(R.string.OutOfInput))
             return false
         }
         editor.putFloat(mKey, value)

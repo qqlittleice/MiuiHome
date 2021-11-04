@@ -20,8 +20,7 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--repackageclasses "l"
-
+-repackageclasses "余空"
 -obfuscationdictionary ../dict.txt
 -classobfuscationdictionary ../dict.txt
 -packageobfuscationdictionary ../dict.txt
