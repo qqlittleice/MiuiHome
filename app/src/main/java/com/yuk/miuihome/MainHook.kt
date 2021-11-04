@@ -8,6 +8,7 @@ import android.widget.*
 import androidx.annotation.Keep
 import com.yuk.miuihome.Config.AndroidSDK
 import com.yuk.miuihome.HomeContext.isAlpha
+import com.yuk.miuihome.XposedInit.Companion.myRes
 import com.yuk.miuihome.module.*
 import com.yuk.miuihome.utils.*
 import com.yuk.miuihome.utils.OwnSP.ownSP
@@ -22,7 +23,6 @@ import kotlin.system.exitProcess
 class MainHook {
 
     private val editor by lazy { ownSP.edit() }
-    private val myRes by lazy { HomeContext.resInstance.moduleRes.resources }
 
     fun doHook() {
         "com.miui.home.settings.MiuiHomeSettingActivity".hookAfterMethod(

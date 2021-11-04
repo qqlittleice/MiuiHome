@@ -3,6 +3,8 @@ package com.yuk.miuihome
 import android.app.Application
 import android.content.Context
 import android.content.pm.PackageManager
+import android.content.res.Resources
+import android.content.res.XModuleResources
 import androidx.annotation.Keep
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
@@ -40,7 +42,6 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                             HomeContext.context = param.args[0] as Context
                             HomeContext.classLoader = HomeContext.context.classLoader
                             HomeContext.application = param.thisObject as Application
-                            HomeContext.resInstance = ResInject().init()
                             startOnlineLog()
                             checkAlpha()
                             checkVersionCode()
@@ -109,10 +110,16 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
 
     override fun initZygote(startupParam: IXposedHookZygoteInit.StartupParam) {
         modulePath = startupParam.modulePath
+        myRes = getModuleRes(modulePath)
+    }
+
+    private fun getModuleRes(path: String): Resources {
+        return XModuleResources.createInstance(path, null)
     }
 
     companion object {
         lateinit var modulePath: String
+        lateinit var myRes: Resources
         var hasHookPackageResources = false
     }
 }

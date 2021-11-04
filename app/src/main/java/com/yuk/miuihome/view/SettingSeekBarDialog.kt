@@ -10,6 +10,7 @@ import android.widget.SeekBar
 import android.widget.TextView
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
+import com.yuk.miuihome.XposedInit.Companion.myRes
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.dip2px
@@ -27,7 +28,6 @@ class SettingSeekBarDialog(
 ) {
 
     private val editor by lazy { ownSP.edit() }
-    private val myRes by lazy { HomeContext.resInstance.moduleRes.resources }
 
     fun saveValue(value: Float): Boolean {
         if ((value < (minValue.toFloat() / divide)) or (value > (maxValue.toFloat() / divide))) {

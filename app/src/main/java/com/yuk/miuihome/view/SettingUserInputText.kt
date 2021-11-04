@@ -8,6 +8,7 @@ import android.widget.LinearLayout
 import android.widget.ScrollView
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
+import com.yuk.miuihome.XposedInit.Companion.myRes
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.OwnSP.remove
@@ -20,7 +21,6 @@ class SettingUserInputText(
 ) {
 
     private val editor by lazy { ownSP.edit() }
-    private val myRes by lazy { HomeContext.resInstance.moduleRes.resources }
 
     fun build(): AlertDialog {
         lateinit var editText: EditText
