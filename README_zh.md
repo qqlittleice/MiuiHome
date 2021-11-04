@@ -60,7 +60,6 @@ __新仓库：[1767523953/MiuiHome](https://github.com/1767523953/MiuiHome)__
 - [AppCenter](https://github.com/microsoft/appcenter)
 - [BiliRoaming](https://github.com/yujincheng08/BiliRoaming)
 - [CustoMIUIzer](https://code.highspec.ru/Mikanoshi/CustoMIUIzer)
-- [EzXHelper](https://github.com/KyuubiRan/EzXHelper)
 - [FuckCoolapk](https://github.com/ejiaogl/FuckCoolapk)
 - [LSPosed](https://github.com/LSPosed/LSPosed)
 - [MIDock](https://github.com/lamprose/MIDock)
