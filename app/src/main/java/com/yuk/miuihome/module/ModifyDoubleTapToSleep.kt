@@ -31,11 +31,10 @@ class ModifyDoubleTapToSleep {
                 "dispatchTouchEvent",
                 MotionEvent::class.java
             ) {
-                val mDoubleTapControllerEx =
-                    XposedHelpers.getAdditionalInstanceField(
-                        it.thisObject,
-                        "mDoubleTapControllerEx"
-                    ) as DoubleTapController
+                val mDoubleTapControllerEx = XposedHelpers.getAdditionalInstanceField(
+                    it.thisObject,
+                    "mDoubleTapControllerEx"
+                ) as DoubleTapController
                 if (!mDoubleTapControllerEx.isDoubleTapEvent(it.args[0] as MotionEvent)) return@hookBeforeMethod
                 val mCurrentScreenIndex = XposedHelpers.getIntField(
                     it.thisObject,
@@ -54,8 +53,7 @@ class ModifyDoubleTapToSleep {
                     ) as Boolean
                 ) return@hookBeforeMethod
                 mDoubleTapControllerEx.onDoubleTapEvent()
-                val context =
-                    XposedHelpers.callMethod(it.thisObject, "getContext") as Context
+                val context = XposedHelpers.callMethod(it.thisObject, "getContext") as Context
                 context.sendBroadcast(
                     Intent("com.miui.app.ExtraStatusBarManager.action_TRIGGER_TOGGLE")
                         .putExtra("com.miui.app.ExtraStatusBarManager.extra_TOGGLE_ID", 10)

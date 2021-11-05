@@ -19,7 +19,6 @@ class ModifyTaskVertical {
             RectF::class.java
         ) {
             val context = it.thisObject.getObjectField("mContext") as Context
-
             "com.miui.home.recents.util.Utilities".callStaticMethod(
                 "scaleRectAboutCenter",
                 it.args[0],

@@ -26,7 +26,6 @@ class SettingSeekBarDialog(
     private val defValue: Int,
     private val canUserInput: Boolean
 ) {
-
     private val editor by lazy { ownSP.edit() }
 
     fun saveValue(value: Float): Boolean {

@@ -26,34 +26,34 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         when (lpparam.packageName) {
             Config.packageName -> {
                 XposedHelpers.findAndHookMethod(
-                    "com.yuk.miuihome.activity.MainActivity",
-                    lpparam.classLoader,
-                    "moduleEnable",
-                    object : XC_MethodHook() {
-                        override fun afterHookedMethod(lpparam: MethodHookParam) {
-                            lpparam.result = true
+                        "com.yuk.miuihome.activity.MainActivity",
+                        lpparam.classLoader,
+                        "moduleEnable",
+                        object : XC_MethodHook() {
+                            override fun afterHookedMethod(lpparam: MethodHookParam) {
+                                lpparam.result = true
+                            }
                         }
-                    }
                 )
             }
             Config.hookPackage -> {
                 XposedHelpers.findAndHookMethod(
-                    "com.miui.home.launcher.Application",
-                    lpparam.classLoader,
-                    "attachBaseContext",
-                    Context::class.java,
-                    object : XC_MethodHook() {
-                        override fun afterHookedMethod(param: MethodHookParam) {
-                            HomeContext.context = param.args[0] as Context
-                            HomeContext.classLoader = HomeContext.context.classLoader
-                            HomeContext.application = param.thisObject as Application
-                            startOnlineLog()
-                            checkAlpha()
-                            checkVersionCode()
-                            checkWidgetLauncher()
-                            MainHook().doHook()
-                        }
-                    })
+                        "com.miui.home.launcher.Application",
+                        lpparam.classLoader,
+                        "attachBaseContext",
+                        Context::class.java,
+                        object : XC_MethodHook() {
+                            override fun afterHookedMethod(param: MethodHookParam) {
+                                HomeContext.context = param.args[0] as Context
+                                HomeContext.classLoader = HomeContext.context.classLoader
+                                HomeContext.application = param.thisObject as Application
+                                startOnlineLog()
+                                checkAlpha()
+                                checkVersionCode()
+                                checkWidgetLauncher()
+                                MainHook().doHook()
+                            }
+                        })
             }
             else -> {
                 return
@@ -70,16 +70,16 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
 
     private fun startOnlineLog() {
         AppCenter.start(
-            HomeContext.application,
-            "fd3fd6d6-bc0d-40d1-bc1b-63b6835f9581",
-            Analytics::class.java,
-            Crashes::class.java
+                HomeContext.application,
+                "fd3fd6d6-bc0d-40d1-bc1b-63b6835f9581",
+                Analytics::class.java,
+                Crashes::class.java
         )
     }
 
     private fun checkAlpha() {
         val pkgInfo =
-            HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0)
+                HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0)
         HomeContext.isAlpha = if (!pkgInfo.versionName.contains("RELEASE", ignoreCase = true)) {
             pkgInfo.versionName.contains("ALPHA", ignoreCase = true)
         } else {
@@ -91,7 +91,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         try {
             val packageManager: PackageManager = HomeContext.context.packageManager
             HomeContext.versionCode =
-                packageManager.getPackageInfo(HomeContext.context.packageName, 0).longVersionCode
+                    packageManager.getPackageInfo(HomeContext.context.packageName, 0).longVersionCode
         } catch (e: Exception) {
             Logger.log(e)
             HomeContext.versionCode = -1L
@@ -100,9 +100,9 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
 
     private fun checkWidgetLauncher() {
         val checkList = arrayListOf(
-            "com.miui.home.launcher.widget.MIUIAppWidgetInfo",
-            "com.miui.home.launcher.LauncherAppWidgetInfo",
-            "com.miui.home.launcher.MIUIWidgetUtil"
+                "com.miui.home.launcher.widget.MIUIAppWidgetInfo",
+                "com.miui.home.launcher.LauncherAppWidgetInfo",
+                "com.miui.home.launcher.MIUIWidgetUtil"
         )
         try {
             for (item in checkList) {

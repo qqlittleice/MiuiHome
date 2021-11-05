@@ -24,7 +24,8 @@ class ModifyShowDockIconTitles {
             ) {
                 val height = it.result as Int
                 val sIsImmersiveNavigationBar = XposedHelpers.getStaticBooleanField(
-                    "com.miui.home.launcher.DeviceConfig".findClass(), "sIsImmersiveNavigationBar"
+                    "com.miui.home.launcher.DeviceConfig".findClass(),
+                    "sIsImmersiveNavigationBar"
                 )
                 if (sIsImmersiveNavigationBar) it.result =
                     (height + 8 * HomeContext.context.resources.displayMetrics.density).roundToInt()

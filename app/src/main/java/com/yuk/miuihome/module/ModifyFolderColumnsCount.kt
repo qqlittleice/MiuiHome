@@ -15,8 +15,7 @@ class ModifyFolderColumnsCount {
             "onFinishInflate"
         ) {
             val columns: Int = value.toInt()
-            val mContent =
-                XposedHelpers.getObjectField(it.thisObject, "mContent") as GridView
+            val mContent = XposedHelpers.getObjectField(it.thisObject, "mContent") as GridView
             mContent.numColumns = columns
             if (ownSP.getBoolean("folderWidth", false) && (columns > 3)) {
                 val lp = mContent.layoutParams
@@ -24,10 +23,8 @@ class ModifyFolderColumnsCount {
                 mContent.layoutParams = lp
             }
             if (columns > 3) {
-                val mBackgroundView = XposedHelpers.getObjectField(
-                    it.thisObject,
-                    "mBackgroundView"
-                ) as ViewGroup
+                val mBackgroundView =
+                    XposedHelpers.getObjectField(it.thisObject, "mBackgroundView") as ViewGroup
                 mBackgroundView.setPadding(
                     mBackgroundView.paddingLeft / 3,
                     mBackgroundView.paddingTop,

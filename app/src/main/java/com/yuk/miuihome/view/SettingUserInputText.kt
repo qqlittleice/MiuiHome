@@ -19,7 +19,6 @@ class SettingUserInputText(
     private val mText: String,
     private val mKey: String
 ) {
-
     private val editor by lazy { ownSP.edit() }
 
     fun build(): AlertDialog {
@@ -29,26 +28,19 @@ class SettingUserInputText(
             overScrollMode = 2
             addView(LinearLayout(HomeContext.activity).apply {
                 orientation = LinearLayout.VERTICAL
-                setPadding(
-                    dip2px(10),
-                    dip2px(6),
-                    dip2px(10),
-                    dip2px(6)
-                )
+                setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
                 addView(
                     SettingTextView.FastBuilder(
                         mText = "「${mText}」",
                         mSize = SettingTextView.text2Size,
                         mColor = "#0C84FF"
-                    )
-                        .build()
+                    ).build()
                 )
-                addView(
-                    EditText(HomeContext.context).apply {
-                        editText = this
-                        inputType = EditorInfo.TYPE_CLASS_TEXT
-                        setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
-                    })
+                addView(EditText(HomeContext.context).apply {
+                    editText = this
+                    inputType = EditorInfo.TYPE_CLASS_TEXT
+                    setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
+                })
             })
         })
         dialogBuilder.apply {
@@ -72,7 +64,6 @@ class SettingUserInputText(
             return this
         }
     }
-
 
     private fun saveValue(value: String): Boolean {
         editor.putString(mKey, value)

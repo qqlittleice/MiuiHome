@@ -24,5 +24,4 @@ object Logger {
             XposedBridge.log(content)
         }
     }
-
 }

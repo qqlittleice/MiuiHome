@@ -8,6 +8,7 @@ import com.yuk.miuihome.utils.OwnSP.ownSP
 import kotlin.math.abs
 
 class DoubleTapController internal constructor(mContext: Context) {
+
     private val maxDuration: Long = 500
     private var mActionDownRawX: Float = 0f
     private var mActionDownRawY: Float = 0f

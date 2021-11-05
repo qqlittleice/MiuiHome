@@ -30,12 +30,7 @@ class SettingSwitch(context: Context) : Switch(context) {
         }
 
     init {
-        setPadding(
-            dip2px(10),
-            dip2px(7),
-            dip2px(10),
-            dip2px(7)
-        )
+        setPadding(dip2px(10), dip2px(7), dip2px(10), dip2px(7))
         setTextColor(Color.parseColor(color))
     }
 

@@ -23,7 +23,6 @@ class SettingUserInputNumber(
     private val defValue: Int,
     private val divide: Int = 100
 ) {
-
     private val editor by lazy { ownSP.edit() }
 
     fun build(): AlertDialog {
@@ -33,36 +32,25 @@ class SettingUserInputNumber(
             overScrollMode = 2
             addView(LinearLayout(HomeContext.activity).apply {
                 orientation = LinearLayout.VERTICAL
-                setPadding(
-                    dip2px(10),
-                    dip2px(6),
-                    dip2px(10),
-                    dip2px(6)
-                )
+                setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
                 addView(
                     SettingTextView.FastBuilder(
                         mText = "「${mText}」",
                         mSize = SettingTextView.text2Size,
                         mColor = "#0C84FF"
-                    )
+                    ).build()
+                )
+                addView(EditText(HomeContext.context).apply {
+                    editText = this
+                    inputType = EditorInfo.TYPE_CLASS_NUMBER
+                    setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
+                })
+                addView(
+                    SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.Defaults) + " : $defValue")
                         .build()
                 )
                 addView(
-                    EditText(HomeContext.context).apply {
-                        editText = this
-                        inputType = EditorInfo.TYPE_CLASS_NUMBER
-                        setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
-                    })
-                addView(
-                    SettingTextView.FastBuilder(
-                        mText = moduleRes.getString(R.string.Defaults) + " : $defValue"
-                    )
-                        .build()
-                )
-                addView(
-                    SettingTextView.FastBuilder(
-                        mText = moduleRes.getString(R.string.Scope) + " : $minValue ~ $maxValue"
-                    )
+                    SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.Scope) + " : $minValue ~ $maxValue")
                         .build()
                 )
             })

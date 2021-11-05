@@ -10,7 +10,6 @@ import com.yuk.miuihome.utils.OwnSP.ownSP
 import android.util.Log as ALog
 
 object LogUtil {
-
     private val handler by lazy { Handler(Looper.getMainLooper()) }
 
     @JvmOverloads

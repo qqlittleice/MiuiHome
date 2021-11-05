@@ -42,8 +42,7 @@ class ModifyHideSeekPoints {
         if ("Workspace" != workspace.javaClass.simpleName) return
         val isInEditingMode =
             XposedHelpers.callMethod(workspace, "isInNormalEditingMode") as Boolean
-        val mScreenSeekBar =
-            XposedHelpers.getObjectField(workspace, "mScreenSeekBar") as View
+        val mScreenSeekBar = XposedHelpers.getObjectField(workspace, "mScreenSeekBar") as View
         mScreenSeekBar.animate().cancel()
         if (!isInEditingMode && ownSP.getBoolean("hideSeekPoints", false)) {
             mScreenSeekBar.alpha = 0.0f

@@ -56,8 +56,7 @@ class ModifyDockHook {
                 Context::class.java
             ) {
                 val deviceWidth = px2dip(HomeContext.context.resources.displayMetrics.widthPixels)
-                it.result =
-                    dip2px(deviceWidth - (ownSP.getFloat("dockSide", 3.0f) * 10).toInt())
+                it.result = dip2px(deviceWidth - (ownSP.getFloat("dockSide", 3.0f) * 10).toInt())
             }
             // Dock距屏幕底部
             deviceConfigClass.hookBeforeMethod(
