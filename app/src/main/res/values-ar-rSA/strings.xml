@@ -92,4 +92,13 @@
     <string name="CustomRecentText">تخصيص النص الظاهر في التطبيقات الاخيرة عندما لا يكون هناك تطبيقات</string>
     <string name="DoubleTap">الضغط مرتين لقفل الشاشة</string>
     <string name="CategoryPagingHideEdit">اخفاء زر \"تعديل\" في تصنيفات التطبيقات</string>
+    <string name="About">حساباتنا</string>
+    <string name="DockIconTop">المسافة بين مؤشر الشاشة والايقونات</string>
+    <string name="HorizontalScreen">الشاشة الافقية</string>
+    <string name="LowEndAnim">السماح للايقونات المتحركة بالعمل علي الاجهزة الضعيفة</string>
+    <string name="Reset2">اعادة تعين حجم التطبيقات الاخيرة الافقية</string>
+    <string name="SimpleWarn">لقد قمت بتفعيل الانيميشن البسيطة، هذا سيقوم بإخفاء بعض الاعدادات.</string>
+    <string name="Tips3">سيتم اعادة تعيين حجم التطبيقات الاخيرة الافقية واعادة تشغيل مشغل التطبيقات.</string>
+    <string name="UnlockIcons">السماح بعدد لا نهائي في حوض التطبيقات</string>
+    <string name="VerticalScreen">الشاشة الرأسية</string>
 </resources>
