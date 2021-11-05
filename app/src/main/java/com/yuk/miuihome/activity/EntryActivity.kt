@@ -49,7 +49,7 @@ class EntryActivity : ComponentActivity() {
     )
 
     @Composable
-    fun MessageCard() {
+    private fun MessageCard() {
         Column(
             modifier = Modifier
                 .fillMaxWidth()

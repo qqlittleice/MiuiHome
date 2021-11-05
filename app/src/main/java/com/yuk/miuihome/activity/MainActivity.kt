@@ -12,7 +12,6 @@ import android.view.WindowManager
 import com.yuk.miuihome.R
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.annotation.Keep
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -54,7 +53,7 @@ class MainActivity : ComponentActivity() {
     )
 
     @Composable
-    fun MessageCard() {
+    private fun MessageCard() {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -169,7 +168,7 @@ class MainActivity : ComponentActivity() {
                         Modifier.padding(0.dp, 10.dp),
                         fontSize = 14.sp,
                     )
-                    if (moduleEnable()) {
+                    if (isModuleEnable()) {
                         Text(
                             stringResource(R.string.ModuleEnable),
                             Modifier.padding(0.dp, 10.dp),
@@ -265,8 +264,7 @@ class MainActivity : ComponentActivity() {
         return getSharedPreferences("settings", Context.MODE_PRIVATE)
     }
 
-    @Keep
-    private fun moduleEnable(): Boolean {
+    private fun isModuleEnable(): Boolean {
         return false
     }
 

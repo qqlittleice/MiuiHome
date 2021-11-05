@@ -5,10 +5,10 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.content.res.XModuleResources
-import androidx.annotation.Keep
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
+import com.yuk.miuihome.utils.LogUtil
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
 import de.robv.android.xposed.callbacks.XC_LoadPackage
@@ -20,15 +20,13 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         modulePath = startupParam.modulePath
         moduleRes = getModuleRes(modulePath)
     }
-
-    @Keep
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
         when (lpparam.packageName) {
             Config.packageName -> {
                 XposedHelpers.findAndHookMethod(
                         "com.yuk.miuihome.activity.MainActivity",
                         lpparam.classLoader,
-                        "moduleEnable",
+                        "isModuleEnable",
                         object : XC_MethodHook() {
                             override fun afterHookedMethod(lpparam: MethodHookParam) {
                                 lpparam.result = true
@@ -61,7 +59,6 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         }
     }
 
-    @Keep
     override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam) {
         if (resparam.packageName != Config.hookPackage) return
         hasHookPackageResources = true
@@ -93,7 +90,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
             HomeContext.versionCode =
                     packageManager.getPackageInfo(HomeContext.context.packageName, 0).longVersionCode
         } catch (e: Exception) {
-            Logger.log(e)
+            LogUtil.e(e)
             HomeContext.versionCode = -1L
         }
     }

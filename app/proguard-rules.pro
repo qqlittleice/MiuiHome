@@ -24,3 +24,15 @@
 -obfuscationdictionary ../dict.txt
 -classobfuscationdictionary ../dict.txt
 -packageobfuscationdictionary ../dict.txt
+
+-keep class * implements de.robv.android.xposed.IXposedHookLoadPackage {
+    public void *(de.robv.android.xposed.callbacks.XC_LoadPackage$LoadPackageParam);
+}
+
+-keep class * implements de.robv.android.xposed.IXposedHookInitPackageResources {
+    public void *(de.robv.android.xposed.callbacks.XC_InitPackageResources$InitPackageResourcesParam);
+}
+
+-keepclassmembers class com.yuk.miuihome.activity.MainActivity {
+    boolean isModuleEnable();
+}
