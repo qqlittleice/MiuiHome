@@ -94,4 +94,11 @@
     <string name="CategoryPagingHideEdit"> Ẩn nút \"Chỉnh sửa \" trong Phân trang của Danh mục Ứng dụng</string>
     <string name="LowEndAnim">Cho phép bật hoạt ảnh icons cho thiết bị đời thấp</string>
     <string name="About">Liên Hệ Với Chúng Tôi</string>
+    <string name="VerticalScreen">Màn hình dọc</string>
+    <string name="HorizontalScreen">Màn hình ngang</string>
+    <string name="Reset2">Đặt lại kích thước hình thu nhỏ cho các thông số trên màn hình gần đây theo chiều ngang</string>
+    <string name="Tips3">Thao tác này sẽ đặt lại kích thước Hình thu nhỏ cho các tham số Màn hình gần đây theo chiều ngang về giá trị mặc định của nó và khởi động lại Trình khởi chạy hệ thống.</string>
+    <string name="UnlockIcons">Mở khóa giới hạn số icons ghế nóng(hotseat)</string>
+    <string name="DockIconTop">Khoảng cách giữa Icons và chỉ báo trang</string>
+    <string name="SimpleWarn">Bạn đã bật hoạt ảnh đơn giản, điều này sẽ ẩn một số cài đặt.</string>
 </resources>
