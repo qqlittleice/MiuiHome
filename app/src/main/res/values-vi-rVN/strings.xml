@@ -34,7 +34,7 @@
     <string name="ModuleSettings">Cài đặt mô-đun</string>
     <string name="ResHook">Tài nguyên Hook√</string>
     <string name="NoneBlur">Không làm mờ</string>
-    <string name="OpenMiuiHomeSettings">Mở cài dặt \"Màn hình chính\"</string>
+    <string name="OpenMiuiHomeSettings">Mở cài đặt \"Màn hình chính\"</string>
     <string name="OtherFeature">Các tính năng khác</string>
     <string name="OutOfInput">Vui lòng nhập một giá trị trong phạm vi cho phép!</string>
     <string name="RealTaskViewHorizontal">Đúng · Màn hình gần đây theo chiều ngang</string>
