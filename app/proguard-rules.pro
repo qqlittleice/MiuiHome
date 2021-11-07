@@ -33,6 +33,8 @@
     public void *(de.robv.android.xposed.callbacks.XC_InitPackageResources$InitPackageResourcesParam);
 }
 
+-keep class com.yuk.miuihome.MainHook { *; }
+
 -keepclassmembers class com.yuk.miuihome.activity.MainActivity {
     boolean isModuleEnable();
 }

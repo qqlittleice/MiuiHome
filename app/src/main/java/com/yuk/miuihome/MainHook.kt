@@ -5,9 +5,7 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
 import android.widget.*
-import androidx.annotation.Keep
 import com.yuk.miuihome.Config.AndroidSDK
-import com.yuk.miuihome.HomeContext.isAlpha
 import com.yuk.miuihome.XposedInit.Companion.moduleRes
 import com.yuk.miuihome.module.*
 import com.yuk.miuihome.utils.*
@@ -19,7 +17,6 @@ import com.yuk.miuihome.view.*
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
-@Keep
 class MainHook {
 
     private val editor by lazy { ownSP.edit() }
@@ -271,7 +268,7 @@ class MainHook {
     }
 
     private fun showDockDialog() {
-        var dialogBuilder = SettingBaseDialog().get()
+        val dialogBuilder = SettingBaseDialog().get()
         lateinit var dialog: AlertDialog
         dialogBuilder.apply {
             setView(ScrollView(HomeContext.activity).apply {
@@ -330,7 +327,7 @@ class MainHook {
     }
 
     private fun showModifyHorizontal() {
-        var dialogBuilder = SettingBaseDialog().get()
+        val dialogBuilder = SettingBaseDialog().get()
         dialogBuilder.apply {
             setView(ScrollView(HomeContext.activity).apply {
                 overScrollMode = 2
