@@ -186,8 +186,6 @@ class MainHook {
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.InfiniteScroll), mKey = "infiniteScroll").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.RecommendServer), mKey = "recommendServer").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.HideSeekPoints), mKey = "hideSeekPoints").build())
-                addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.RealTaskViewHorizontal), mKey = "horizontal").build())
-                addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.EnableIconShadow), mKey = "isEnableIconShadow").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.SmallWindow), mKey = "supportSmallWindow").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.LowEndAnim), mKey = "lowEndAnim").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.LowEndDeviceUseMIUIWidgets), mKey = "useMIUIWidgets").build())
@@ -199,6 +197,9 @@ class MainHook {
                 }
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.DockSettings)) { showDockDialog() }.build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.EveryThingBuild)) { BuildWithEverything().init() }.build())
+                addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.BrokenFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
+                addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.RealTaskViewHorizontal), mKey = "horizontal").build())
+                addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.EnableIconShadow), mKey = "isEnableIconShadow").build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.ModuleFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
 //              if (BuildConfig.DEBUG) {
 //                  addView(SettingTextView.FastBuilder(mText = "自定义Hook") { customHookDialog() }.build())

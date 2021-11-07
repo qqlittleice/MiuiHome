@@ -102,4 +102,5 @@
     <string name="UnlockIcons">Unlock hotseat icon number limit</string>
     <string name="DockIconTop">Page Indicator and Icon Spacing</string>
     <string name="SimpleWarn">You have enabled simple animation, this will hide some settings.</string>
+    <string name="BrokenFeature">Obsolete Feature</string>
 </resources>

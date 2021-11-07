@@ -33,6 +33,10 @@
     public void *(de.robv.android.xposed.callbacks.XC_InitPackageResources$InitPackageResourcesParam);
 }
 
+-keep class * implements de.robv.android.xposed.IXposedHookZygoteInit {
+    public void *(de.robv.android.xposed.IXposedHookZygoteInit$StartupParam);
+}
+
 -keep class com.yuk.miuihome.MainHook { *; }
 
 -keepclassmembers class com.yuk.miuihome.activity.MainActivity {

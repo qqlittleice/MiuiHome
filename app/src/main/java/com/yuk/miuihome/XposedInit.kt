@@ -20,6 +20,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         modulePath = startupParam.modulePath
         moduleRes = getModuleRes(modulePath)
     }
+
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
         when (lpparam.packageName) {
             Config.packageName -> {
@@ -36,9 +37,8 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
             }
             Config.hookPackage -> {
                 XposedHelpers.findAndHookMethod(
-                        "com.miui.home.launcher.Application",
-                        lpparam.classLoader,
-                        "attachBaseContext",
+                        Application::class.java,
+                        "attach",
                         Context::class.java,
                         object : XC_MethodHook() {
                             override fun afterHookedMethod(param: MethodHookParam) {
