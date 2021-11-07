@@ -1,0 +1,39 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="1080"
+    android:viewportHeight="1080">
+    <path
+        android:fillColor="#fff"
+        android:pathData="M200,0L880,0A200,200 0,0 1,1080 200L1080,880A200,200 0,0 1,880 1080L200,1080A200,200 0,0 1,0 880L0,200A200,200 0,0 1,200 0z" />
+    <group>
+        <clip-path android:pathData="M290,290h500v500h-500z" />
+        <path android:pathData="M773.82,506.15 L584.31,309.08A61.42,61.42 0,0 0,495.56 309.08l-189.51,197c-19.55,20.34 -17,37.92 -13.8,45.26 2.3,5.21 10.08,19.53 32.49,19.53h27.77L352.51,722.52c0,34.41 24.75,66.81 59.91,66.81L493.06,789.33L493.06,628.92c0,-17.2 -2.61,-26.78 15,-26.78h63.76c17.59,0 15,9.58 15,26.78L586.82,789.33h80.68c35.16,0 59.9,-32.4 59.9,-66.81L727.4,570.94h27.78c22.41,0 30.18,-14.32 32.49,-19.53 3.23,-7.34 5.75,-24.92 -13.81,-45.26Z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:endX="771.56"
+                    android:endY="293.87"
+                    android:startX="326.44"
+                    android:startY="874.33"
+                    android:type="linear">
+                    <item
+                        android:color="#FF7DC5EE"
+                        android:offset="0" />
+                    <item
+                        android:color="#FF81C7EE"
+                        android:offset="0.04" />
+                    <item
+                        android:color="#FFD6EDF8"
+                        android:offset="0.79" />
+                    <item
+                        android:color="#FFE8F5F9"
+                        android:offset="1" />
+                </gradient>
+            </aapt:attr>
+        </path>
+        <path
+            android:fillColor="#fff"
+            android:pathData="M727.36,539.6a31.37,31.37 0,0 0,-31.39 31.34L695.97,722.52c0,17.13 -11.45,35.47 -28.51,35.47h-49.29L618.17,628.92c0,-1.78 0,-3.57 0.06,-5.3 0.23,-11.49 0.53,-27.23 -12.05,-40 -8.33,-8.48 -19.9,-12.78 -34.38,-12.78L508.04,570.84c-14.48,0 -26.05,4.3 -34.38,12.78 -12.58,12.81 -12.27,28.55 -12.05,40 0,1.73 0.07,3.52 0.07,5.3L461.68,757.99L412.39,757.99c-17.06,0 -28.52,-18.34 -28.52,-35.47L383.87,570.94a31.36,31.36 0,0 0,-31.39 -31.34l-31,-0.37 7.21,-11.37 189.51,-197a30,30 0,0 1,43.51 0S751.31,527.97 751.36,528.08l7,11.2Z" />
+    </group>
+</vector>
