@@ -101,4 +101,5 @@
     <string name="UnlockIcons">Mở khóa giới hạn số icons ghế nóng(hotseat)</string>
     <string name="DockIconTop">Khoảng cách giữa Icons và chỉ báo trang</string>
     <string name="SimpleWarn">Bạn đã bật hoạt ảnh đơn giản, điều này sẽ ẩn một số cài đặt.</string>
+    <string name="BrokenFeature">Tính Năng Lỗi Thời</string>
 </resources>
