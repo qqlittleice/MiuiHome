@@ -61,7 +61,7 @@ class EntryActivity : ComponentActivity() {
                 modifier = Modifier.size(width = 100.dp, height = 100.dp)
             ) {
                 Image(
-                    painter = painterResource(R.drawable.miuihome),
+                    painter = painterResource(R.drawable.ic_miuihome),
                     contentDescription = "miuihome"
                 )
             }

@@ -1,0 +1,37 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="1080"
+    android:viewportHeight="1080">
+    <path android:pathData="M200,0L880,0A200,200 0,0 1,1080 200L1080,880A200,200 0,0 1,880 1080L200,1080A200,200 0,0 1,0 880L0,200A200,200 0,0 1,200 0z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="983.22"
+                android:endY="983.22"
+                android:startX="74.37"
+                android:startY="74.37"
+                android:type="linear">
+                <item
+                    android:color="#FFE94F4F"
+                    android:offset="0" />
+                <item
+                    android:color="#FFEA584C"
+                    android:offset="0.11" />
+                <item
+                    android:color="#FFEC6B46"
+                    android:offset="0.25" />
+                <item
+                    android:color="#FFF2A435"
+                    android:offset="0.75" />
+                <item
+                    android:color="#FFF0CB2E"
+                    android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path
+        android:fillColor="#fff"
+        android:pathData="M799.71,502.65 L589.29,283.59a68.14,68.14 0,0 0,-98.58 0L280.29,502.65c-21.71,22.61 -18.92,42.16 -15.33,50.32 2.56,5.8 11.2,21.72 36.08,21.72h30.84L331.88,743.21c0,38.26 27.47,74.29 66.51,74.29h89.58L487.97,639.15c0,-19.12 -2.9,-29.77 16.63,-29.77h70.8c19.52,0 16.63,10.65 16.63,29.77L592.03,817.5h89.58c39,0 66.51,-36 66.51,-74.29L748.12,574.69L778.96,574.69c24.88,0 33.52,-15.92 36.08,-21.72 3.59,-8.16 6.38,-27.71 -15.33,-50.32ZM706.76,533.27L706.76,743.21C706.76,759.08 696.65,776.08 681.61,776.08L633.39,776.08L633.39,639.15c0,-2 0,-4 0.08,-5.76 0.25,-13.16 0.64,-33 -15.24,-49.25 -10.52,-10.74 -24.93,-16.18 -42.83,-16.18L504.56,567.96c-17.9,0 -32.31,5.44 -42.83,16.18 -15.88,16.22 -15.49,36.09 -15.24,49.24 0,1.82 0.08,3.74 0.08,5.77L446.57,776.08L398.39,776.08c-15,0 -25.15,-17 -25.15,-32.87L373.24,533.27L308.37,533.27c0.53,-0.61 1.1,-1.24 1.74,-1.91L520.56,312.3a26.82,26.82 0,0 1,39 0L770.21,531.7c0.52,0.54 1,1.06 1.42,1.57Z" />
+</vector>
+
