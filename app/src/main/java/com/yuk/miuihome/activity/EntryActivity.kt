@@ -32,7 +32,7 @@ class EntryActivity : ComponentActivity() {
             MessageCard()
         }
         thread {
-            Thread.sleep(1000)
+            Thread.sleep(500)
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }

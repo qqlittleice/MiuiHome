@@ -39,7 +39,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             MessageCard()
         }
-
     }
 
     @Preview(
