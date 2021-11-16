@@ -8,10 +8,7 @@ import com.yuk.miuihome.Config.AndroidSDK
 import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.dip2px
-import com.yuk.miuihome.utils.ktx.findClass
-import com.yuk.miuihome.utils.ktx.hookAfterMethod
-import com.yuk.miuihome.utils.ktx.hookBeforeMethod
-import com.yuk.miuihome.utils.ktx.setReturnConstant
+import com.yuk.miuihome.utils.ktx.*
 import com.yuk.miuihome.utils.px2dip
 import de.robv.android.xposed.XposedHelpers.callMethod
 import java.io.BufferedReader
@@ -34,40 +31,41 @@ class ModifyDockHook {
             val deviceConfigClass = "com.miui.home.launcher.DeviceConfig".findClass()
             val launcherClass = "com.miui.home.launcher.Launcher".findClass()
             // 页面指示器距离图标距离
-            deviceConfigClass.hookBeforeMethod(
+            deviceConfigClass.replaceMethod(
                 "calcHotSeatsMarginTop",
                 Context::class.java,
                 Boolean::class.java
             ) {
-                it.result = dip2px((ownSP.getFloat("dockIconTop", 0.6f) * 10).toInt())
+                dip2px((ownSP.getFloat("dockIconTop", 0.6f) * 10).toInt())
             }
+
             // 图标距屏幕底部
-            deviceConfigClass.hookBeforeMethod(
+            deviceConfigClass.replaceMethod(
                 "calcHotSeatsMarginBottom",
                 Context::class.java,
                 Boolean::class.java,
                 Boolean::class.java
             ) {
-                it.result = dip2px((ownSP.getFloat("dockIconBottom", 3.5f) * 10).toInt())
+                dip2px((ownSP.getFloat("dockIconBottom", 3.5f) * 10).toInt())
             }
             // Dock距屏幕两侧
-            deviceConfigClass.hookBeforeMethod(
+            deviceConfigClass.replaceMethod(
                 "calcSearchBarWidth",
                 Context::class.java
             ) {
                 val deviceWidth = px2dip(HomeContext.context.resources.displayMetrics.widthPixels)
-                it.result = dip2px(deviceWidth - (ownSP.getFloat("dockSide", 3.0f) * 10).toInt())
+                dip2px(deviceWidth - (ownSP.getFloat("dockSide", 3.0f) * 10).toInt())
             }
             // Dock距屏幕底部
-            deviceConfigClass.hookBeforeMethod(
+            deviceConfigClass.replaceMethod(
                 "calcSearchBarMarginBottom",
                 Context::class.java,
                 Boolean::class.java
             ) {
-                it.result = dip2px((ownSP.getFloat("dockBottom", 2.3f) * 10).toInt())
+                dip2px((ownSP.getFloat("dockBottom", 2.3f) * 10).toInt())
             }
             // 宽度变化量
-            deviceConfigClass.setReturnConstant("getSearchBarWidthDelta", result = 0)
+            deviceConfigClass.replaceMethod("getSearchBarWidthDelta") { 0 }
             launcherClass.hookAfterMethod(
                 "onCreate",
                 Bundle::class.java

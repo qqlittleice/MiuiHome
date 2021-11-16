@@ -192,7 +192,7 @@ class MainHook {
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.OtherFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.AlwaysShowStatusBarClock), mKey = "clockGadget").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.DoubleTap), mKey = "doubleTap").build())
-                if (!ownSP.getBoolean("dockSettings", false) && (AndroidSDK == 30)) {
+                if (!ownSP.getBoolean("dockSettings", false) && (AndroidSDK >= 30)) {
                     addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.SearchBarBlur), mKey = "searchBarBlur").build())
                 }
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.DockSettings)) { showDockDialog() }.build())
@@ -283,7 +283,7 @@ class MainHook {
                         showDockDialog()
                     }.build())
                     if (ownSP.getBoolean("dockSettings", false)) {
-                        if (AndroidSDK == 30) {
+                        if (AndroidSDK >= 30) {
                             addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.EnableDockBlur), mKey = "searchBarBlur").build())
                         }
                         if (!XposedInit.hasHookPackageResources) {

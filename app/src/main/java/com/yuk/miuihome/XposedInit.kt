@@ -2,7 +2,6 @@ package com.yuk.miuihome
 
 import android.app.Application
 import android.content.Context
-import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.content.res.XModuleResources
 import com.microsoft.appcenter.AppCenter
@@ -12,7 +11,6 @@ import com.yuk.miuihome.utils.LogUtil
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
 import de.robv.android.xposed.callbacks.XC_LoadPackage
-import de.robv.android.xposed.XposedHelpers.ClassNotFoundError
 
 class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookInitPackageResources {
 
@@ -86,9 +84,8 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
 
     private fun checkVersionCode() {
         try {
-            val packageManager: PackageManager = HomeContext.context.packageManager
             HomeContext.versionCode =
-                    packageManager.getPackageInfo(HomeContext.context.packageName, 0).longVersionCode
+                HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0).longVersionCode
         } catch (e: Exception) {
             LogUtil.e(e)
             HomeContext.versionCode = -1L
@@ -106,7 +103,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                 XposedHelpers.findClass(item, HomeContext.classLoader)
             }
             HomeContext.isWidgetLauncher = true
-        } catch (e: ClassNotFoundError) {
+        } catch (e: XposedHelpers.ClassNotFoundError) {
             HomeContext.isWidgetLauncher = false
         }
     }
