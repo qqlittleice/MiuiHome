@@ -6,7 +6,7 @@ import de.robv.android.xposed.XposedHelpers
 
 object CustomHook {
 
-    private fun hookResult(className: String, methodName: String, args: Array<Object>) {
+    private fun hookResult(className: String, methodName: String, args: Array<Any>) {
         try {
             XposedHelpers.findAndHookMethod(className, HomeContext.classLoader, methodName, args)
         } catch (e: Exception) {

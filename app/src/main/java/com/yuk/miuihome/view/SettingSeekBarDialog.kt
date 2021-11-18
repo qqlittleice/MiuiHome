@@ -48,18 +48,14 @@ class SettingSeekBarDialog(
             addView(LinearLayout(HomeContext.activity).apply {
                 orientation = LinearLayout.VERTICAL
                 setPadding(
-                    dip2px(10),
-                    dip2px(6),
-                    dip2px(10),
-                    dip2px(6)
+                    dip2px(10), dip2px(6), dip2px(10), dip2px(6)
                 )
                 addView(
                     SettingTextView.FastBuilder(
                         mText = "「${mText}」",
                         mSize = SettingTextView.text2Size,
                         mColor = "#0C84FF"
-                    )
-                        .build()
+                    ).build()
                 )
                 addView(SeekBar(HomeContext.context).apply {
                     min = minValue
