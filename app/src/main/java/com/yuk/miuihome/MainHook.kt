@@ -341,7 +341,7 @@ class MainHook {
                 })
             })
             setPositiveButton(moduleRes.getString(R.string.Save), null)
-            setNeutralButton(moduleRes.getString(R.string.Reset1)) { _, _ -> showModifyReset2() }
+            setNeutralButton(moduleRes.getString(R.string.Reset2)) { _, _ -> showModifyReset2() }
         }
         dialogBuilder.show()
     }
@@ -413,8 +413,8 @@ class MainHook {
                 addView(LinearLayout(HomeContext.activity).apply {
                     orientation = LinearLayout.VERTICAL
                     setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
-                    addView(SettingTextView.FastBuilder(mText = "「" + moduleRes.getString(R.string.Reset2) + "」", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
-                    addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.Tips3)).build())
+                    addView(SettingTextView.FastBuilder(mText = "「" + moduleRes.getString(R.string.Reset) + "」", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
+                    addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.Tips1)).build())
                 })
             })
             setNeutralButton(moduleRes.getString(R.string.Yes)) { _, _ ->
@@ -445,7 +445,7 @@ class MainHook {
                     orientation = LinearLayout.VERTICAL
                     setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
                     addView(SettingTextView.FastBuilder(mText = "「" + moduleRes.getString(R.string.Reset1) + "」", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
-                    addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.Tips2)).build())
+                    addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.Tips3)).build())
                 })
             })
             setNeutralButton(moduleRes.getString(R.string.Yes)) { _, _ ->

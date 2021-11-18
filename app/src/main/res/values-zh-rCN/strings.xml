@@ -5,7 +5,6 @@
   <string name="AlwaysShowStatusBarClock">时钟常显</string>
   <string name="AnimationLevel">手势动画速度</string>
   <string name="AppTextSize">应用图标与标题间距</string>
-  <string name="Back">返回</string>
   <string name="BaseFeature">基础设定</string>
   <string name="BlurWhenOpenFolder">文件夹打开背景模糊</string>
   <string name="Cancel">取消</string>
