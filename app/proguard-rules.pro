@@ -37,8 +37,14 @@
     public void *(de.robv.android.xposed.IXposedHookZygoteInit$StartupParam);
 }
 
--keep class com.yuk.miuihome.MainHook { *; }
+-assumenosideeffects class kotlin.jvm.internal.Intrinsics {
+    public static void check*(...);
+    public static void throw*(...);
+}
 
 -keepclassmembers class com.yuk.miuihome.activity.MainActivity {
     boolean isModuleEnable();
 }
+
+-allowaccessmodification
+-overloadaggressively

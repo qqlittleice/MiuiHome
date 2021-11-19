@@ -14,6 +14,14 @@ buildscript {
     }
 }
 
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
 tasks.register<Delete>("clean").configure {
     delete(rootProject.buildDir)
 }

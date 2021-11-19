@@ -10,7 +10,7 @@ android {
     compileSdk = 31
     buildToolsVersion = "31.0.0"
 
-    val verCode = 4135
+    val verCode = 4136
     val verName = "4.1.3"
 
     defaultConfig {
@@ -26,19 +26,19 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             setProguardFiles(
-                    listOf(
-                            getDefaultProguardFile("proguard-android-optimize.txt"),
-                            "proguard-rules.pro",
-                            "proguard-log.pro"
-                    )
+                listOf(
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro",
+                    "proguard-log.pro"
+                )
             )
         }
     }
 
     androidComponents.onVariants { appVariant ->
         val variant: ApplicationVariantImpl =
-                if (appVariant is ApplicationVariantImpl) appVariant
-                else (appVariant as AnalyticsEnabledApplicationVariant).delegate as ApplicationVariantImpl
+            if (appVariant is ApplicationVariantImpl) appVariant
+            else (appVariant as AnalyticsEnabledApplicationVariant).delegate as ApplicationVariantImpl
         variant.outputs.forEach {
             it.outputFileName.set("MiuiHome_${verName}(${verCode}).apk")
         }
@@ -64,6 +64,9 @@ android {
             excludes += "kotlin/**"
             excludes += "**.bin"
         }
+    }
+    dependenciesInfo {
+        includeInApk = false
     }
 }
 
