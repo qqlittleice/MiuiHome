@@ -21,9 +21,9 @@
 #-renamesourcefileattribute SourceFile
 
 -repackageclasses "余空"
--obfuscationdictionary ../dict.txt
--classobfuscationdictionary ../dict.txt
--packageobfuscationdictionary ../dict.txt
+-obfuscationdictionary dict.txt
+-classobfuscationdictionary dict.txt
+-packageobfuscationdictionary dict.txt
 
 -keep class * implements de.robv.android.xposed.IXposedHookLoadPackage {
     public void *(de.robv.android.xposed.callbacks.XC_LoadPackage$LoadPackageParam);
