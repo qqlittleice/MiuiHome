@@ -15,7 +15,7 @@ android {
 
     defaultConfig {
         applicationId = "com.yuk.miuihome"
-        minSdk = 28
+        minSdk = 27
         targetSdk = 31
         versionCode = verCode
         versionName = verName

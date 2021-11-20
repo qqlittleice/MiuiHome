@@ -1,5 +1,4 @@
 buildscript {
-    val kotlinVersion = "1.5.31"
     repositories {
         google()
         mavenCentral()
@@ -7,7 +6,7 @@ buildscript {
     dependencies {
         //noinspection AndroidGradlePluginVersion,GradleDependency
         classpath("com.android.tools.build:gradle:7.0.3")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+        classpath(kotlin("gradle-plugin", "1.5.31"))
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module settings.gradle.kts files
@@ -18,10 +17,10 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        gradlePluginPortal()
+        maven("https://api.xposed.info")
     }
 }
 
-tasks.register<Delete>("clean").configure {
+tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }
