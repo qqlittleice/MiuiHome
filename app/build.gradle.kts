@@ -8,7 +8,6 @@ plugins {
 
 android {
     compileSdk = 31
-    buildToolsVersion = "31.0.0"
 
     val verCode = 4136
     val verName = "4.1.3"

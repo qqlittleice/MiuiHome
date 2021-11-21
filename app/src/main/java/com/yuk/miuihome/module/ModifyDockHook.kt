@@ -1,6 +1,7 @@
 package com.yuk.miuihome.module
 
 import android.content.Context
+import android.content.res.Resources
 import android.os.Bundle
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
@@ -36,9 +37,14 @@ class ModifyDockHook {
                 Context::class.java,
                 Boolean::class.java
             ) {
-                dip2px((ownSP.getFloat("dockIconTop", 0.6f) * 10).toInt())
+                dip2px((ownSP.getFloat("dockMarginTop", 0.6f) * 10).toInt())
             }
-
+            // 页面指示器距离屏幕底部
+            deviceConfigClass.replaceMethod(
+                "getWorkspaceIndicatorMarginBottom",
+            ) {
+                dip2px((ownSP.getFloat("dockMarginBottom", 11.0f) * 10).toInt())
+            }
             // 图标距屏幕底部
             deviceConfigClass.replaceMethod(
                 "calcHotSeatsMarginBottom",

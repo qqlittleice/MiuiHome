@@ -98,7 +98,8 @@
   <string name="Reset2">重置横向(平铺)卡片大小配置参数</string>
   <string name="Tips3">这将重置横向(平铺)卡片大小配置参数到默认值并重启系统桌面。</string>
   <string name="UnlockIcons">解锁底栏图标数量限制</string>
-  <string name="DockIconTop">页面指示器距图标</string>
+  <string name="DockMarginTop">页面指示器距图标</string>
+  <string name="DockMarginBottom">页面指示器距屏幕底部</string>
   <string name="SimpleWarn">你启用了简单动画，这会禁用一些功能设置。</string>
   <string name="BrokenFeature">废弃功能</string>
 </resources>
