@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+  <string name="app_name" translatable="false">MiuiHome</string>
   <string name="AdvancedFeature">Cài đặt nâng cao</string>
   <string name="AlwaysShowMIUIWidget">Cho phép các tiện ích MIUI được hiển thị trong các tiện ích Cổ điển</string>
   <string name="AlwaysShowStatusBarClock">Luôn hiển thị đồng hồ trên thanh trạng thái</string>
@@ -86,7 +87,7 @@
   <string name="HideSeekPoints">Loại bỏ Chỉ báo Trang</string>
   <string name="CategoryHideAll">Ẩn \"Tất cả \" trong Danh mục ứng dụng</string>
   <string name="FolderColumnsCount">Số lượng cột thư mục</string>
-  <string name="FolderWidth">Sử dụng toàn bộ chiều rộng của thư mục\'s </string>
+  <string name="FolderWidth">Sử dụng toàn bộ chiều rộng của thư mục</string>
   <string name="IconTitleFontSize">Kích thước văn bản tiêu đề ứng dụng</string>
   <string name="CustomRecentText">Hiển thị văn bản khi không có ứng dụng trong nền</string>
   <string name="DoubleTap">Nhấp đôi để tắt màn hình</string>
@@ -99,6 +100,7 @@
   <string name="Tips3">Thao tác này sẽ đặt lại kích thước Hình thu nhỏ cho các tham số Màn hình gần đây theo chiều ngang về giá trị mặc định của nó và khởi động lại Trình khởi chạy hệ thống.</string>
   <string name="UnlockIcons">Mở khóa giới hạn số icons ghế nóng(hotseat)</string>
   <string name="DockMarginTop">Khoảng cách giữa Icons và chỉ báo trang</string>
+  <string name="DockMarginBottom">Chỉ báo trang và khoảng cách ở cuối màn hình</string>
   <string name="SimpleWarn">Bạn đã bật hoạt ảnh đơn giản, điều này sẽ ẩn một số cài đặt.</string>
   <string name="BrokenFeature">Tính Năng Lỗi Thời</string>
 </resources>
