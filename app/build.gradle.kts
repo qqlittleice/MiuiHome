@@ -8,13 +8,12 @@ plugins {
 
 android {
     compileSdk = 31
-
-    val verCode = 4136
-    val verName = "4.1.3"
+    val verCode = 4140
+    val verName = "4.1.4"
 
     defaultConfig {
         applicationId = "com.yuk.miuihome"
-        minSdk = 27
+        minSdk = 28
         targetSdk = 31
         versionCode = verCode
         versionName = verName
@@ -43,7 +42,6 @@ android {
         }
     }
 
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -54,7 +52,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.1.0-beta02"
+        kotlinCompilerExtensionVersion = "1.0.5"
     }
 
     packagingOptions {
@@ -64,6 +62,7 @@ android {
             excludes += "**.bin"
         }
     }
+
     dependenciesInfo {
         includeInApk = false
     }
@@ -71,16 +70,18 @@ android {
 
 dependencies {
     val appCenterSdkVersion = "4.3.1"
-    val composeVersion = "1.1.0-beta02"
+    val composeVersion = "1.0.5"
 
     compileOnly("de.robv.android.xposed:api:82")
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.3.1")
     implementation("androidx.activity:activity-compose:1.4.0")
+    implementation("com.google.android.material:material:1.4.0")
     implementation("androidx.compose.material3:material3:1.0.0-alpha01")
-    implementation("androidx.compose.ui:ui:${composeVersion}")
-    implementation("androidx.compose.ui:ui-tooling:${composeVersion}")
-    implementation("androidx.compose.animation:animation:${composeVersion}")
-    implementation("com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}")
-    implementation("com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}")
+
+    implementation("androidx.compose.ui:ui:$composeVersion")
+    implementation("androidx.compose.ui:ui-tooling:$composeVersion")
+    implementation("androidx.compose.material:material:$composeVersion")
+    implementation("com.microsoft.appcenter:appcenter-analytics:$appCenterSdkVersion")
+    implementation("com.microsoft.appcenter:appcenter-crashes:$appCenterSdkVersion")
 }
