@@ -21,6 +21,8 @@
   <string name="DockFeature">Включить функцию \"Док-бар\"</string>
   <string name="DockHeight">Высота док-бара</string>
   <string name="DockIconBottom">Иконки в нижней части экрана</string>
+  <string name="DockMarginBottom">Индикатор страницы и Интервал в нижней части</string>
+  <string name="DockMarginTop">Индикатор страницы и Интервал между значками</string>
   <string name="DockRoundedCorners">Закругленные углы док-бара</string>
   <string name="DockSettings">Настройки док-бара</string>
   <string name="DockSide">Док-бар по бокам экрана</string>
