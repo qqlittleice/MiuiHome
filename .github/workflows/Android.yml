@@ -42,14 +42,14 @@ jobs:
       - name: Upload Release APK
         uses: actions/upload-artifact@v2
         with:
-          name: MiuiHome.apk
-          path: "app/build/outputs/apk/release/*.apk"
+          name: MiuiHome_release
+          path: "app/build/outputs/apk/release/*-signed.apk"
           
       - name: Upload Debug APK
         uses: actions/upload-artifact@v2
         with:
-          name: MiuiHome_debug.apk
-          path: "app/build/outputs/apk/debug/*.apk"
+          name: MiuiHome_debug
+          path: "app/build/outputs/apk/debug/*-singed.apk"
           
       - name: Post to channel
         if: contains(github.event.head_commit.message, '[skip post]') == false
@@ -57,8 +57,8 @@ jobs:
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           FILE: |
-            ${{ steps.sign.outputs.signedReleaseFile }}
-            "app/build/outputs/apk/debug/*.apk"
+            "app/build/outputs/apk/release/*-singed.apk"
+            "app/build/outputs/apk/debug/*-singed.apk"
           COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
         run: |
           ESCAPED=`python3 -c 'import json,os,urllib.parse; print(urllib.parse.quote(json.dumps(os.environ["COMMIT_MESSAGE"])))'`
