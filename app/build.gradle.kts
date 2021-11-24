@@ -38,7 +38,7 @@ android {
             if (appVariant is ApplicationVariantImpl) appVariant
             else (appVariant as AnalyticsEnabledApplicationVariant).delegate as ApplicationVariantImpl
         variant.outputs.forEach {
-            if  (appVariant.buildType == "release") it.outputFileName.set("MiuiHome_${verName}(${verCode})_release.apk") else it.outputFileName.set("MiuiHome_${verName}(${verCode})_debug.apk")
+            if  (appVariant.buildType == "release") it.outputFileName.set("MiuiHome-${verName}(${verCode})-release.apk") else it.outputFileName.set("MiuiHome-${verName}(${verCode})-debug.apk")
         }
     }
 
