@@ -75,7 +75,7 @@ jobs:
           COMMIT_MESSAGE: |+
             New push in Github\!
             ```
-            ${{ github.event.head_commit.message }}\.
+            ${{ github.event.head_commit.message }}
             ```
         run: |
           ESCAPED=`python3 -c 'import json,os,urllib.parse; print(urllib.parse.quote(json.dumps(os.environ["COMMIT_MESSAGE"])))'`
