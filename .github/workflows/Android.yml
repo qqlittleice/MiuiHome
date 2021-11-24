@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: Setup JDK
+      - name: Setup JDK 11
         uses: actions/setup-java@v1
         with:
           java-version: 11
@@ -19,12 +19,12 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
         
-      - name: Build APK
+      - name: Build app APK
         run: |
           bash ./gradlew -PappVerName=${{ env.VERSION }} assembleRelease
           bash ./gradlew assembleDebug
         
-      - name: Sign APK
+      - name: Sign app APK
         if: success()
         id: sign
         uses: r0adkll/sign-android-release@v1
@@ -54,10 +54,9 @@ jobs:
         env:
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          FILE: |
-            "app/build/outputs/apk/release/*-singed.apk"
-            "app/build/outputs/apk/debug/*.apk"
           COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
         run: |
-          ESCAPED=`python3 -c 'import json,os,urllib.parse; print(urllib.parse.quote(json.dumps(os.environ["COMMIT_MESSAGE"])))'`
-          curl -v "https://api.telegram.org/bot${BOT_TOKEN}/sendMediaGroup?chat_id=${CHANNEL_ID}&media=%5B%7B%22type%22:%22document%22,%20%22media%22:%22attach://release%22,%22caption%22:${ESCAPED}%7D%5D"  -F release="@$FILE"
+          export Release="app/build/outputs/apk/release/*-signed.apk"
+          export Debug="app/build/outputs/apk/debug/*.apk"
+          ESCAPED=`python3 -c 'import json,os,urllib.parse; msg = json.dumps(os.environ["COMMIT_MESSAGE"]); print(urllib.parse.quote(msg if len(msg) <= 1024 else json.dumps(os.environ["COMMIT_URL"])))'`
+          curl -v "https://api.telegram.org/bot${BOT_TOKEN}/sendMediaGroup?chat_id=${CHANNEL_ID}&media=%5B%7B%22type%22%3A%22document%22%2C%20%22media%22%3A%22attach%3A%2F%2FriruRelease%22%7D%2C%7B%22type%22%3A%22document%22%2C%20%22media%22%3A%22attach%3A%2F%2FzygiskRelease%22%7D%2C%7B%22type%22%3A%22document%22%2C%20%22media%22%3A%22attach%3A%2F%2FriruDebug%22%7D%2C%7B%22type%22%3A%22document%22%2C%20%22media%22%3A%22attach%3A%2F%2FzygiskDebug%22%2C%22caption%22:${ESCAPED}%7D%5D" -F release="@$Release" -F debug="@$Debug"
