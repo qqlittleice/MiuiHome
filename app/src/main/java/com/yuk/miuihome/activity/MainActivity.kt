@@ -4,7 +4,6 @@ import android.content.*
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.Color
-import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import com.yuk.miuihome.R
@@ -19,8 +18,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color.Companion.Green
-import androidx.compose.ui.graphics.Color.Companion.Red
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -28,8 +25,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import android.content.Intent
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.ui.graphics.Color.Companion.Green
+import androidx.compose.ui.graphics.Color.Companion.Red
 import com.yuk.miuihome.activity.ui.theme.OwnTheme
 
 class MainActivity : ComponentActivity() {
@@ -40,7 +41,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             OwnTheme {
                 Surface(color = MaterialTheme.colors.background) {
-                    MessageCard()
+                    Main()
                 }
             }
         }
@@ -57,7 +58,7 @@ class MainActivity : ComponentActivity() {
     )
 
     @Composable
-    private fun MessageCard() {
+    private fun Main() {
         OwnTheme {
             Column(
                 modifier = Modifier
@@ -117,69 +118,15 @@ class MainActivity : ComponentActivity() {
                         }
                         Spacer(Modifier.size(10.dp))
                         if (!getSP().getBoolean("shouldHide", false)) {
-                            ElevatedButton(
-                                onClick = {
-                                    packageManager.setComponentEnabledSetting(
-                                        ComponentName(
-                                            packageName,
-                                            "com.yuk.miuihome.activity.EntryActivity"
-                                        ),
-                                        PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
-                                        PackageManager.DONT_KILL_APP
-                                    )
-                                    getSP().edit().putBoolean("shouldHide", true).apply()
-                                    finish()
-                                    val intent = Intent()
-                                    intent.component =
-                                        ComponentName(
-                                            packageName,
-                                            "com.yuk.miuihome.activity.EntryActivityAlias"
-                                        )
-                                    startActivity(intent)
-                                }, contentPadding = PaddingValues(
-                                    start = 20.dp,
-                                    top = 15.dp,
-                                    end = 20.dp,
-                                    bottom = 15.dp
-                                )
-                            ) {
-                                Text(
-                                    stringResource(R.string.HideAppIcon),
-                                    fontSize = 14.sp,
-                                )
-                            }
+                            IconButtonItem(
+                                "com.yuk.miuihome.activity.EntryActivity", true,
+                                "com.yuk.miuihome.activity.EntryActivityAlias", R.string.HideAppIcon
+                            )
                         } else {
-                            ElevatedButton(
-                                onClick = {
-                                    packageManager.setComponentEnabledSetting(
-                                        ComponentName(
-                                            packageName,
-                                            "com.yuk.miuihome.activity.EntryActivity"
-                                        ),
-                                        PackageManager.COMPONENT_ENABLED_STATE_DEFAULT,
-                                        PackageManager.DONT_KILL_APP
-                                    )
-                                    getSP().edit().putBoolean("shouldHide", false).apply()
-                                    finish()
-                                    val intent = Intent()
-                                    intent.component =
-                                        ComponentName(
-                                            packageName,
-                                            "com.yuk.miuihome.activity.EntryActivity"
-                                        )
-                                    startActivity(intent)
-                                }, contentPadding = PaddingValues(
-                                    start = 20.dp,
-                                    top = 15.dp,
-                                    end = 20.dp,
-                                    bottom = 15.dp
-                                )
-                            ) {
-                                Text(
-                                    stringResource(R.string.ShowAppIcon),
-                                    fontSize = 14.sp,
-                                )
-                            }
+                            IconButtonItem(
+                                "com.yuk.miuihome.activity.EntryActivity", false,
+                                "com.yuk.miuihome.activity.EntryActivity", R.string.ShowAppIcon
+                            )
                         }
                     }
                     Row {
@@ -222,86 +169,85 @@ class MainActivity : ComponentActivity() {
                         )
                     }
                     Row(Modifier.padding(13.dp, 5.dp, 13.dp, 5.dp)) {
-                        ElevatedButton(
-                            onClick = {
-                                val intent = Intent(Intent.ACTION_VIEW)
-                                intent.addCategory(Intent.CATEGORY_BROWSABLE)
-                                intent.data = Uri.parse("https://github.com/1767523953/MiuiHome")
-                                startActivity(intent)
-                            }, contentPadding = PaddingValues(
-                                start = 20.dp,
-                                top = 15.dp,
-                                end = 20.dp,
-                                bottom = 15.dp
-                            )
-                        ) {
-                            Icon(
-                                painter = painterResource(R.drawable.github),
-                                contentDescription = "Github"
-                            )
-                        }
+                        AboutButtonItem(
+                            "https://github.com/1767523953/MiuiHome", R.drawable.github, "Github"
+                        )
                         Spacer(Modifier.size(10.dp))
-                        ElevatedButton(
-                            onClick = {
-                                val intent = Intent(Intent.ACTION_VIEW)
-                                intent.addCategory(Intent.CATEGORY_BROWSABLE)
-                                intent.data =
-                                    Uri.parse("coolmarket://www.coolapk.com/apk/com.yuk.miuihome")
-                                startActivity(intent)
-                            }, contentPadding = PaddingValues(
-                                start = 20.dp,
-                                top = 15.dp,
-                                end = 20.dp,
-                                bottom = 15.dp
-                            )
-                        ) {
-                            Icon(
-                                painter = painterResource(R.drawable.coolapk),
-                                contentDescription = "Coolapk"
-                            )
-                        }
+                        AboutButtonItem(
+                            "https://t.me/MiuiHome_Xposed",
+                            R.drawable.telegram, "Telegram"
+                        )
                         Spacer(Modifier.size(10.dp))
-                        ElevatedButton(
-                            onClick = {
-                                val intent = Intent(Intent.ACTION_VIEW)
-                                intent.addCategory(Intent.CATEGORY_BROWSABLE)
-                                intent.data = Uri.parse("https://t.me/MiuiHome_Xposed")
-                                startActivity(intent)
-                            }, contentPadding = PaddingValues(
-                                start = 20.dp,
-                                top = 15.dp,
-                                end = 20.dp,
-                                bottom = 15.dp
-                            )
-                        ) {
-                            Icon(
-                                painter = painterResource(R.drawable.telegram),
-                                contentDescription = "Telegram"
-                            )
-                        }
-                        Spacer(Modifier.size(10.dp))
-                        ElevatedButton(
-                            onClick = {
-                                val intent = Intent(Intent.ACTION_VIEW)
-                                intent.addCategory(Intent.CATEGORY_BROWSABLE)
-                                intent.data =
-                                    Uri.parse("https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&inviteCode=1PHunU&from=246610&biz=ka")
-                                startActivity(intent)
-                            }, contentPadding = PaddingValues(
-                                start = 20.dp,
-                                top = 15.dp,
-                                end = 20.dp,
-                                bottom = 15.dp
-                            )
-                        ) {
-                            Icon(
-                                painter = painterResource(R.drawable.qq),
-                                contentDescription = "QQ"
-                            )
-                        }
+                        AboutButtonItem(
+                            "https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&inviteCode=1PHunU&from=246610&biz=ka",
+                            R.drawable.qq, "QQ"
+                        )
                     }
                 }
             }
+        }
+    }
+
+    @Composable
+    fun IconButtonItem(
+        Activity: String,
+        Status: Boolean,
+        Activity1: String,
+        @StringRes textId: Int
+    ) {
+        ElevatedButton(
+            onClick = {
+                packageManager.setComponentEnabledSetting(
+                    ComponentName(
+                        packageName,
+                        Activity
+                    ),
+                    PackageManager.COMPONENT_ENABLED_STATE_DEFAULT,
+                    PackageManager.DONT_KILL_APP
+                )
+                getSP().edit().putBoolean("shouldHide", Status).apply()
+                finish()
+                val intent = Intent()
+                intent.component =
+                    ComponentName(
+                        packageName,
+                        Activity1
+                    )
+                startActivity(intent)
+            }, contentPadding = PaddingValues(
+                start = 20.dp,
+                top = 15.dp,
+                end = 20.dp,
+                bottom = 15.dp
+            )
+        ) {
+            Text(
+                stringResource(textId),
+                fontSize = 14.sp
+            )
+        }
+    }
+
+    @Composable
+    fun AboutButtonItem(Uri: String, @DrawableRes iconId: Int, title: String) {
+        ElevatedButton(
+            onClick = {
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.addCategory(Intent.CATEGORY_BROWSABLE)
+                intent.data =
+                    android.net.Uri.parse(Uri)
+                startActivity(intent)
+            }, contentPadding = PaddingValues(
+                start = 20.dp,
+                top = 15.dp,
+                end = 20.dp,
+                bottom = 15.dp
+            )
+        ) {
+            Icon(
+                painterResource(iconId),
+                contentDescription = title
+            )
         }
     }
 

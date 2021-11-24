@@ -70,11 +70,11 @@ android {
 
 dependencies {
     val appCenterSdkVersion = "4.3.1"
-    val composeVersion = "1.0.5"
+    val composeVersion = "1.1.0-beta02"
 
     compileOnly("de.robv.android.xposed:api:82")
     implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.appcompat:appcompat:1.3.1")
+    implementation("androidx.appcompat:appcompat:1.4.0")
     implementation("androidx.activity:activity-compose:1.4.0")
     implementation("com.google.android.material:material:1.4.0")
     implementation("androidx.compose.material3:material3:1.0.0-alpha01")

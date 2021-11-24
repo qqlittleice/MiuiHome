@@ -32,7 +32,7 @@ class EntryActivity : ComponentActivity() {
         setContent {
             OwnTheme {
                 Surface(color = MaterialTheme.colors.background) {
-                    MessageCard()
+                    Entry()
                 }
             }
         }
@@ -54,7 +54,7 @@ class EntryActivity : ComponentActivity() {
     )
 
     @Composable
-    private fun MessageCard() {
+    private fun Entry() {
         OwnTheme {
             Column(
                 modifier = Modifier
@@ -68,7 +68,7 @@ class EntryActivity : ComponentActivity() {
                 ) {
                     Image(
                         painter = painterResource(R.drawable.ic_miuihome),
-                        contentDescription = "miuihome"
+                        contentDescription = "MiuiHome"
                     )
                 }
             }
@@ -87,11 +87,6 @@ class EntryActivity : ComponentActivity() {
                     Text(
                         stringResource(R.string.app_name),
                         fontSize = 28.sp,
-                        color = MaterialTheme.colors.onBackground
-                    )
-                    Text(
-                        "Hook for MIUI Launcher",
-                        fontSize = 12.sp,
                         color = MaterialTheme.colors.onBackground
                     )
                 }
