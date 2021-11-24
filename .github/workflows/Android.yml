@@ -32,9 +32,6 @@ jobs:
           key: gradle-builds-${{ github.sha }}
       - name: Build with Gradle
         run: |
-          echo 'org.gradle.caching=true' >> gradle.properties
-          echo 'org.gradle.parallel=true' >> gradle.properties
-          echo 'org.gradle.vfs.watch=true' >> gradle.properties
           bash ./gradlew  -PappVerName=${{ env.VERSION }} assembleRelease
           bash ./gradlew  -PappVerName=${{ env.VERSION }} assembleDebug
       - name: Sign Release APK
