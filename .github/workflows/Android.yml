@@ -21,8 +21,8 @@ jobs:
         
       - name: Build APK
         run: |
-          ./gradlew assembleRelease
-          ./gradlew assembleDebug
+          bash ./gradlew -PappVerName=${{ env.VERSION }} assembleRelease
+          bash ./gradlew -PappVerName=${{ env.VERSION }} assembleDebug
         
       - name: Sign APK
         if: success()
