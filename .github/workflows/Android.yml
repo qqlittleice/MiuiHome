@@ -19,34 +19,39 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
         
-      - name: Build with Gradle
+      - name: BuildRelease
         run: |
-             bash ./gradlew assembleRelease
-             bash ./gradlew assembleDebug
-
-      - name: Sign Android release
+          ./gradlew assembleRelease
+        
+      - name: BuildDebug
+        run: |
+          ./gradlew assembleDebug
+        
+      - name: SignedAPK
         if: success()
         id: sign
         uses: r0adkll/sign-android-release@v1
         env:
           BUILD_TOOLS_VERSION: "31.0.0"
         with:
-          releaseDirectory: app/build/outputs/apk/release
+          releaseDirectory: |
+             app/build/outputs/apk/release
+             app/build/outputs/apk/debug
           signingKeyBase64: ${{ secrets.SIGNING_KEY }}
           alias: ${{ secrets.ALIAS }}
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
           
-      - name: Upload Signed APK
+      - name: Upload Release APK
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ steps.buildRelease.outputs.signedReleaseName }}
+          name: MiuiHome.apk
           path: app/build/outputs/apk/release/*.apk
           
-      - name: Upload Signed APK
+      - name: Upload Debug APK
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ steps.buildRelease.outputs.debugName }}_debug
+          name: MiuiHome_debug.apk
           path: app/build/outputs/apk/debug/*.apk
           
       - name: Post to channel
@@ -54,9 +59,10 @@ jobs:
         env:
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          MODULE: ${{ steps.sign.outputs.signedReleaseFile }}
-          COMMIT_MESSAGE: |+
-            ${{ github.event.head_commit.message }}
+          FILE: |
+            "app/build/outputs/apk/release/*.apk"
+            "app/build/outputs/apk/debug/*.apk"
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
         run: |
           ESCAPED=`python3 -c 'import json,os,urllib.parse; print(urllib.parse.quote(json.dumps(os.environ["COMMIT_MESSAGE"])))'`
-          curl -v "https://api.telegram.org/bot${BOT_TOKEN}/sendMediaGroup?chat_id=${CHANNEL_ID}&media=%5B%7B%22type%22:%22document%22,%20%22media%22:%22attach://module%22,%22caption%22:${ESCAPED}%7D%5D"  -F module="@$MODULE"
+          curl -v "https://api.telegram.org/bot${BOT_TOKEN}/sendMediaGroup?chat_id=${CHANNEL_ID}&media=%5B%7B%22type%22:%22document%22,%20%22media%22:%22attach://release%22,%22caption%22:${ESCAPED}%7D%5D"  -F release="@$FILE"
