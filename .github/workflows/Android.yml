@@ -31,7 +31,9 @@ jobs:
         env:
           BUILD_TOOLS_VERSION: "31.0.0"
         with:
-          releaseDirectory: app/build/outputs/apk/release
+          releaseDirectory: |
+            app/build/outputs/apk/release
+            app/build/outputs/apk/debug
           signingKeyBase64: ${{ secrets.SIGNING_KEY }}
           alias: ${{ secrets.ALIAS }}
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
@@ -55,7 +57,7 @@ jobs:
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           FILE: |
-            "app/build/outputs/apk/release/*.apk"
+            ${{ steps.sign.outputs.signedReleaseFile }}
             "app/build/outputs/apk/debug/*.apk"
           COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
         run: |
