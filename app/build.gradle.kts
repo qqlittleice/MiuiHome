@@ -47,12 +47,17 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 
+
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+
     buildFeatures {
         compose = true
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.0.5"
+        kotlinCompilerExtensionVersion = "1.1.0-beta02"
     }
 
     packagingOptions {
