@@ -18,21 +18,8 @@ jobs:
           
       - name: Build with Gradle
         run: chmod +x gradlew && bash ./gradlew assembleDebug
-
-      - name: Sign Android release
-        if: success()
-        id: sign
-        uses: r0adkll/sign-android-release@v1
-        env:
-          BUILD_TOOLS_VERSION: "31.0.0"
-        with:
-          releaseDirectory: app/build/outputs/apk/release
-          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-          alias: ${{ secrets.ALIAS }}
-          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
-
-      - name: Upload Debud APK
+        
+      - name: Upload Debug APK
         uses: actions/upload-artifact@v2
         with:
           name: ${{ steps.buildRelease.outputs.debugName }}_debug
