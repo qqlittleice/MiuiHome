@@ -31,9 +31,7 @@ jobs:
         env:
           BUILD_TOOLS_VERSION: "31.0.0"
         with:
-          releaseDirectory: |
-             "app/release"
-             "app/build/outputs/apk/debug"
+          releaseDirectory: app/build/outputs/apk/release
           signingKeyBase64: ${{ secrets.SIGNING_KEY }}
           alias: ${{ secrets.ALIAS }}
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
