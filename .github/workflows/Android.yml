@@ -32,8 +32,8 @@ jobs:
           BUILD_TOOLS_VERSION: "31.0.0"
         with:
           releaseDirectory: |
-             app/build/outputs/apk/release
-             app/build/outputs/apk/debug
+             "app/release"
+             "app/build/outputs/apk/debug"
           signingKeyBase64: ${{ secrets.SIGNING_KEY }}
           alias: ${{ secrets.ALIAS }}
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
@@ -43,13 +43,13 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: MiuiHome.apk
-          path: app/build/outputs/apk/release/*.apk
+          path: "app/build/outputs/apk/release/*.apk"
           
       - name: Upload Debug APK
         uses: actions/upload-artifact@v2
         with:
           name: MiuiHome_debug.apk
-          path: app/build/outputs/apk/debug/*.apk
+          path: "app/build/outputs/apk/debug/*.apk"
           
       - name: Post to channel
         if: contains(github.event.head_commit.message, '[skip post]') == false
