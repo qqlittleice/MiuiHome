@@ -73,7 +73,7 @@ jobs:
           RELEASE: ${{ steps.sign_release.outputs.signedReleaseFile }}
           DEBUG: ${{ steps.sign_debug.outputs.signedReleaseFile }}
           COMMIT_MESSAGE: |+
-            New push in Github\,
+            New push in Github\!
             ```
             ${{ github.event.head_commit.message }}\.
             ```
