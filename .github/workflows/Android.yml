@@ -22,7 +22,7 @@ jobs:
       - name: Build APK
         run: |
           bash ./gradlew -PappVerName=${{ env.VERSION }} assembleRelease
-          bash ./gradlew -PappVerName=${{ env.VERSION }} assembleDebug
+          bash ./gradlew assembleDebug
         
       - name: Sign APK
         if: success()
@@ -31,9 +31,7 @@ jobs:
         env:
           BUILD_TOOLS_VERSION: "31.0.0"
         with:
-          releaseDirectory: |
-            app/build/outputs/apk/release
-            app/build/outputs/apk/debug
+          releaseDirectory: app/build/outputs/apk/release
           signingKeyBase64: ${{ secrets.SIGNING_KEY }}
           alias: ${{ secrets.ALIAS }}
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
@@ -49,7 +47,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: MiuiHome_debug
-          path: "app/build/outputs/apk/debug/*-singed.apk"
+          path: "app/build/outputs/apk/debug/*.apk"
           
       - name: Post to channel
         if: contains(github.event.head_commit.message, '[skip post]') == false
@@ -58,7 +56,7 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           FILE: |
             "app/build/outputs/apk/release/*-singed.apk"
-            "app/build/outputs/apk/debug/*-singed.apk"
+            "app/build/outputs/apk/debug/*.apk"
           COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
         run: |
           ESCAPED=`python3 -c 'import json,os,urllib.parse; print(urllib.parse.quote(json.dumps(os.environ["COMMIT_MESSAGE"])))'`
