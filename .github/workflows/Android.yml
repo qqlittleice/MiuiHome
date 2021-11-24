@@ -16,9 +16,6 @@ jobs:
           java-version: 11
       - name: Build app APK
         run: |
-          echo 'org.gradle.caching=true' >> gradle.properties
-          echo 'org.gradle.parallel=true' >> gradle.properties
-          echo 'org.gradle.vfs.watch=true' >> gradle.properties
           bash ./gradlew assembleRelease
           bash ./gradlew assembleDebug
       - name: Sign Release APK
