@@ -14,9 +14,6 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: Retrieve version
-        run: |
-          echo VERSION=$(echo ${{ github.event.head_commit.id }} | head -c 10) >> $GITHUB_ENV
       - uses: actions/cache@v2
         with:
           path: |
@@ -32,8 +29,8 @@ jobs:
           key: gradle-builds-${{ github.sha }}
       - name: Build with Gradle
         run: |
-          bash ./gradlew  -PappVerName=${{ env.VERSION }} assembleRelease
-          bash ./gradlew  -PappVerName=${{ env.VERSION }} assembleDebug
+          bash ./gradlew assembleRelease
+          bash ./gradlew assembleDebug
       - name: Sign Release APK
         if: success()
         id: sign_release
@@ -77,7 +74,9 @@ jobs:
           DEBUG: ${{ steps.sign_debug.outputs.signedReleaseFile }}
           COMMIT_MESSAGE: |+
             New push in Github, 
-            ```${{ github.event.head_commit.message }}```.
+            ```
+            ${{ github.event.head_commit.message }}
+            ```.
         run: |
           ESCAPED=`python3 -c 'import json,os,urllib.parse; print(urllib.parse.quote(json.dumps(os.environ["COMMIT_MESSAGE"])))'`
           curl -v "https://api.telegram.org/bot${BOT_TOKEN}/sendMediaGroup?chat_id=${CHANNEL_ID}&media=%5B%7B%22type%22%3A%22document%22%2C%20%22media%22%3A%22attach%3A%2F%2Frelease%22%7D%2C%7B%22type%22%3A%22document%22%2C%20%22media%22%3A%22attach%3A%2F%2Fdebug%22%2C%22caption%22:${ESCAPED}%7D%5D" -F release="@$RELEASE" -F debug="@$DEBUG"
