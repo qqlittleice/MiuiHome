@@ -34,6 +34,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                         HomeContext.context = param.args[0] as Context
                         HomeContext.classLoader = HomeContext.context.classLoader
                         HomeContext.application = param.thisObject as Application
+                        CrashRecord.init(HomeContext.context)
                         startOnlineLog()
                         checkAlpha()
                         checkVersionCode()
