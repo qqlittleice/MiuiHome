@@ -119,13 +119,19 @@ class MainActivity : ComponentActivity() {
                         Spacer(Modifier.size(10.dp))
                         if (!getSP().getBoolean("shouldHide", false)) {
                             IconButtonItem(
-                                "com.yuk.miuihome.activity.EntryActivity", true,
-                                "com.yuk.miuihome.activity.EntryActivityAlias", R.string.HideAppIcon
+                                "com.yuk.miuihome.activity.EntryActivity",
+                                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                                true,
+                                "com.yuk.miuihome.activity.EntryActivityAlias",
+                                R.string.HideAppIcon
                             )
                         } else {
                             IconButtonItem(
-                                "com.yuk.miuihome.activity.EntryActivity", false,
-                                "com.yuk.miuihome.activity.EntryActivity", R.string.ShowAppIcon
+                                "com.yuk.miuihome.activity.EntryActivity",
+                                PackageManager.COMPONENT_ENABLED_STATE_DEFAULT,
+                                false,
+                                "com.yuk.miuihome.activity.EntryActivity",
+                                R.string.ShowAppIcon
                             )
                         }
                     }
@@ -191,7 +197,8 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun IconButtonItem(
         Activity: String,
-        Status: Boolean,
+        Status: Int,
+        Status1: Boolean,
         Activity1: String,
         @StringRes textId: Int
     ) {
@@ -202,10 +209,10 @@ class MainActivity : ComponentActivity() {
                         packageName,
                         Activity
                     ),
-                    PackageManager.COMPONENT_ENABLED_STATE_DEFAULT,
+                    Status,
                     PackageManager.DONT_KILL_APP
                 )
-                getSP().edit().putBoolean("shouldHide", Status).apply()
+                getSP().edit().putBoolean("shouldHide", Status1).apply()
                 finish()
                 val intent = Intent()
                 intent.component =
