@@ -89,4 +89,6 @@ dependencies {
     implementation("androidx.compose.material:material:$composeVersion")
     implementation("com.microsoft.appcenter:appcenter-analytics:$appCenterSdkVersion")
     implementation("com.microsoft.appcenter:appcenter-crashes:$appCenterSdkVersion")
+    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
 }

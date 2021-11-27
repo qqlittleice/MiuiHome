@@ -1,37 +1,46 @@
 package com.yuk.miuihome.activity
 
-import android.content.*
+import android.content.ComponentName
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import com.yuk.miuihome.R
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.AlertDialog
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color.Companion.Green
+import androidx.compose.ui.graphics.Color.Companion.Red
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import android.content.Intent
-import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.ui.graphics.Color.Companion.Green
-import androidx.compose.ui.graphics.Color.Companion.Red
+import com.yuk.miuihome.R
+import com.yuk.miuihome.UpdatesInfo
+import com.yuk.miuihome.UpdatesManager
 import com.yuk.miuihome.activity.ui.theme.OwnTheme
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : ComponentActivity() {
 
@@ -59,6 +68,7 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     private fun Main() {
+        val coroutineScope = rememberCoroutineScope()
         OwnTheme {
             Column(
                 modifier = Modifier
@@ -187,6 +197,86 @@ class MainActivity : ComponentActivity() {
                         AboutButtonItem(
                             "https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&inviteCode=1PHunU&from=246610&biz=ka",
                             R.drawable.qq, "QQ"
+                        )
+                    }
+                    var info: UpdatesInfo? by remember {
+                        mutableStateOf(null)
+                    }
+                    var showUpdatesDialog by remember {
+                        mutableStateOf(false)
+                    }
+                    Row(Modifier.padding(13.dp, 5.dp, 13.dp, 5.dp)) {
+                        ElevatedButton(
+                            onClick = {
+                                coroutineScope.launch {
+                                    withContext(Dispatchers.IO) {
+                                        val updatesInfo = UpdatesManager.checkUpdates()
+                                        if (updatesInfo.error) {
+                                            withContext(Dispatchers.Main) {
+                                                Toast.makeText(this@MainActivity, R.string.CheckUpdatesError, Toast.LENGTH_SHORT).show()
+                                            }
+                                        }
+                                        if (updatesInfo.hasUpdates) {
+                                            info = updatesInfo
+                                            showUpdatesDialog = true
+                                        } else {
+                                            withContext(Dispatchers.Main) {
+                                                Toast.makeText(this@MainActivity, R.string.CheckUpdatesNotFound, Toast.LENGTH_SHORT).show()
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ) {
+                            Text(
+                                text = stringResource(id = R.string.CheckUpdates),
+                                fontSize = 14.sp
+                            )
+                        }
+                    }
+                    if (showUpdatesDialog) {
+                        AlertDialog(
+                            onDismissRequest = { showUpdatesDialog = false },
+                            title = { Text(text = stringResource(id = R.string.CheckUpdatesFound)) },
+                            text = {
+                                Column {
+                                    Text(
+                                        text = "${stringResource(id = R.string.app_name)}${info!!.versionName}(${info!!.versionCode})",
+                                        fontSize = 14.sp
+                                    )
+                                    Text(
+                                        text = "${info!!.content}",
+                                        fontSize = 14.sp
+                                    )
+                                }
+                            },
+                            confirmButton = {
+                                Column {
+                                    ElevatedButton(onClick = {
+                                        val intent = Intent(Intent.ACTION_VIEW)
+                                        intent.addCategory(Intent.CATEGORY_BROWSABLE)
+                                        intent.data =
+                                            android.net.Uri.parse(info!!.downloadLink)
+                                        startActivity(intent)
+                                    }) {
+                                        Text(text = stringResource(id = R.string.Download))
+                                    }
+                                    ElevatedButton(onClick = {
+                                        val intent = Intent(Intent.ACTION_VIEW)
+                                        intent.addCategory(Intent.CATEGORY_BROWSABLE)
+                                        intent.data =
+                                            android.net.Uri.parse(info!!.downloadLink!!.replace("github.com", "github.com.cnpmjs.org"))
+                                        startActivity(intent)
+                                    }) {
+                                        Text(text = stringResource(id = R.string.DownloadWithCDN))
+                                    }
+                                }
+                            },
+                            dismissButton = {
+                                ElevatedButton(onClick = { showUpdatesDialog = false }) {
+                                    Text(text = stringResource(id = R.string.Dismiss))
+                                }
+                            }
                         )
                     }
                 }

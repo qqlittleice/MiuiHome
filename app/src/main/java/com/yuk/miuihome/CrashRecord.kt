@@ -27,7 +27,7 @@ object CrashRecord: Thread.UncaughtExceptionHandler {
                 XposedBridge.log("${System.currentTimeMillis() - pref.getLong("last_time", 0L)}")
             }
             if (System.currentTimeMillis() - pref.getLong("last_time", 0L) < 60 * 1000L) {
-                XposedBridge.log("Crash happened in one minute")
+                XposedBridge.log("Crash happened again in one minute")
                 if (pref.getInt("times", 0) >= 3) {
                     it.createDeviceProtectedStorageContext().getSharedPreferences(Config.SP_NAME, Context.MODE_PRIVATE).edit().apply {
                         clear()

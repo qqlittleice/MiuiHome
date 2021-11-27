@@ -103,4 +103,11 @@
   <string name="DockMarginBottom">Page Indicator and the bottom of the Screen Spacing</string>
   <string name="SimpleWarn">You have enabled simple animation, this will hide some settings.</string>
   <string name="BrokenFeature">Obsolete Feature</string>
+  <string name="CheckUpdates">Check Updates</string>
+  <string name="CheckUpdatesError">Error happened when checking updates</string>
+  <string name="CheckUpdatesNotFound">No updates found</string>
+  <string name="CheckUpdatesFound">Updates found</string>
+  <string name="Download">Download</string>
+  <string name="Dismiss">Dismiss</string>
+  <string name="DownloadWithCDN">DownloadWithCDN</string>
 </resources>
