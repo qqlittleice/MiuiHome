@@ -8,8 +8,8 @@ plugins {
 
 android {
     compileSdk = 31
-    val verCode = 4140
-    val verName = "4.1.4"
+    val verCode = 4150
+    val verName = "4.1.5"
 
     defaultConfig {
         applicationId = "com.yuk.miuihome"
