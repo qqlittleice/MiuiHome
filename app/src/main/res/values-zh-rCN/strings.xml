@@ -102,4 +102,11 @@
   <string name="DockMarginBottom">页面指示器距屏幕底部</string>
   <string name="SimpleWarn">你启用了简单动画，这会禁用一些功能设置。</string>
   <string name="BrokenFeature">废弃功能</string>
+  <string name="CheckUpdates">检查更新</string>
+  <string name="CheckUpdatesError">检查更新时出错</string>
+  <string name="CheckUpdatesNotFound">未找到更新</string>
+  <string name="CheckUpdatesFound">找到更新</string>
+  <string name="Download">下载</string>
+  <string name="Dismiss">关闭</string>
+  <string name="DownloadWithCDN">使用CDN下载</string>
 </resources>
