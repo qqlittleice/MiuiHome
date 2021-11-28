@@ -208,22 +208,16 @@ class MainActivity : ComponentActivity() {
                     Row(Modifier.padding(13.dp, 5.dp, 13.dp, 5.dp)) {
                         ElevatedButton(
                             onClick = {
-                                coroutineScope.launch {
-                                    withContext(Dispatchers.IO) {
-                                        val updatesInfo = UpdatesManager.checkUpdates()
-                                        if (updatesInfo.error) {
-                                            withContext(Dispatchers.Main) {
-                                                Toast.makeText(this@MainActivity, R.string.CheckUpdatesError, Toast.LENGTH_SHORT).show()
-                                            }
-                                        }
-                                        if (updatesInfo.hasUpdates) {
-                                            info = updatesInfo
-                                            showUpdatesDialog = true
-                                        } else {
-                                            withContext(Dispatchers.Main) {
-                                                Toast.makeText(this@MainActivity, R.string.CheckUpdatesNotFound, Toast.LENGTH_SHORT).show()
-                                            }
-                                        }
+                                coroutineScope.launch(Dispatchers.Main) {
+                                    val updatesInfo = withContext(Dispatchers.IO) { UpdatesManager.checkUpdates() }
+                                    if (updatesInfo.error) {
+                                        Toast.makeText(this@MainActivity, R.string.CheckUpdatesError, Toast.LENGTH_SHORT).show()
+                                    }
+                                    if (updatesInfo.hasUpdates) {
+                                        info = updatesInfo
+                                        showUpdatesDialog = true
+                                    } else {
+                                        Toast.makeText(this@MainActivity, R.string.CheckUpdatesNotFound, Toast.LENGTH_SHORT).show()
                                     }
                                 }
                             }
