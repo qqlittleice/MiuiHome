@@ -18,7 +18,7 @@ __Module settings are not in the APP attached to this software!!! Please go to S
 
 __Old：[YuKongA/MiuiHome](https://github.com/YuKongA/MiuiHome)__
 
-__Now：[1767523953/MiuiHome](https://github.com/1767523953/MiuiHome)__
+__Now：[qqlittleice/MiuiHome](https://github.com/qqlittleice/MiuiHome)__
 
 ## Module Features
 

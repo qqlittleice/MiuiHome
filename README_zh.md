@@ -18,7 +18,7 @@ __模块设置不在本软件附带的APP内!!!请到"设置"-"桌面"-点击"�
 
 __原仓库：[YuKongA/MiuiHome](https://github.com/YuKongA/MiuiHome)__
 
-__新仓库：[1767523953/MiuiHome](https://github.com/1767523953/MiuiHome)__
+__新仓库：[qqlittleice/MiuiHome](https://github.com/qqlittleice/MiuiHome)__
 
 ## 模块内容
 
