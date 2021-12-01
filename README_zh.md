@@ -6,7 +6,7 @@ __[English](https://github.com/1767523953/MiuiHome/blob/main/README.md)  丨 简
 
 Hook for MIUI Launcher - Xposed
 
-[![Android CI](https://github.com/1767523953/MiuiHome/actions/workflows/main.yml/badge.svg)](https://github.com/1767523953/MiuiHome/actions/workflows/main.yml) [![Download](https://img.shields.io/github/downloads/Xposed-Modules-Repo/com.yuk.miuihome/total)](https://github.com/Xposed-Modules-Repo/com.yuk.miuihome/releases) [![Release](https://img.shields.io/github/v/release/Xposed-Modules-Repo/com.yuk.miuihome?label=release)](https://github.com/Xposed-Modules-Repo/com.yuk.miuihome/releases/latest) [![Chat](https://img.shields.io/badge/Telegram-Chat-blue.svg?logo=telegram)](https://t.me/MiuiHome_Xposed)
+[![Android CI](https://github.com/qqlittleice/MiuiHome/actions/workflows/android.yml/badge.svg)](https://github.com/qqlittleice/MiuiHome/actions/workflows/android.yml) [![Download](https://img.shields.io/github/downloads/Xposed-Modules-Repo/com.yuk.miuihome/total)](https://github.com/Xposed-Modules-Repo/com.yuk.miuihome/releases) [![Release](https://img.shields.io/github/v/release/Xposed-Modules-Repo/com.yuk.miuihome?label=release)](https://github.com/Xposed-Modules-Repo/com.yuk.miuihome/releases/latest) [![Chat](https://img.shields.io/badge/Telegram-Chat-blue.svg?logo=telegram)](https://t.me/MiuiHome_Xposed)
 
 ## 如何使用
 
