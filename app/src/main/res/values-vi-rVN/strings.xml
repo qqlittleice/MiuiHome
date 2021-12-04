@@ -102,4 +102,11 @@
   <string name="DockMarginBottom">Chỉ báo trang và khoảng cách ở cuối màn hình</string>
   <string name="SimpleWarn">Bạn đã bật hoạt ảnh đơn giản, điều này sẽ ẩn một số cài đặt.</string>
   <string name="BrokenFeature">Tính Năng Lỗi Thời</string>
+  <string name="CheckUpdates">Kiểm tra cập nhật</string>
+  <string name="CheckUpdatesError">Đã xảy ra lỗi khi kiểm tra các bản cập nhật</string>
+  <string name="CheckUpdatesNotFound">Không tìm thấy bản cập nhật</string>
+  <string name="CheckUpdatesFound">Đã có phiên bản mới</string>
+  <string name="Download">Download</string>
+  <string name="Dismiss">Bỏ qua</string>
+  <string name="DownloadWithCDN">Download bằng CDN</string>
 </resources>
