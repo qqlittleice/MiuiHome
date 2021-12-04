@@ -7,32 +7,7 @@
     android:icon="@drawable/ic_launcher"
     android:label="@string/app_name"
     android:roundIcon="@drawable/ic_launcher"
-    android:supportsRtl="true"
-    android:theme="@style/Theme.OwnTheme">
-    <activity
-      android:exported="true"
-      android:name=".activity.EntryActivity"
-      android:theme="@style/Theme.OwnTheme.NoActionBar">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
-    </activity>
-
-    <activity
-      android:name=".activity.MainActivity"
-      android:theme="@style/Theme.OwnTheme.NoActionBar" />
-
-    <activity-alias
-      android:exported="true"
-      android:name=".activity.EntryActivityAlias"
-      android:targetActivity=".activity.EntryActivity"
-      android:theme="@style/Theme.OwnTheme.NoActionBar">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
-      </intent-filter>
-    </activity-alias>
+    android:supportsRtl="true">
 
     <meta-data
       android:name="xposedscope"
@@ -43,8 +18,5 @@
     <meta-data
       android:name="xposedminversion"
       android:value="93" />
-    <meta-data
-      android:name="xposedsharedprefs"
-      android:value="true" />
   </application>
 </manifest>
