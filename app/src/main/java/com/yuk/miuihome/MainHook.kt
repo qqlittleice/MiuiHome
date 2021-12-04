@@ -8,8 +8,10 @@ import android.widget.*
 import com.yuk.miuihome.Config.AndroidSDK
 import com.yuk.miuihome.XposedInit.Companion.moduleRes
 import com.yuk.miuihome.module.*
-import com.yuk.miuihome.utils.*
+import com.yuk.miuihome.utils.LogUtil
+import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.dip2px
 import com.yuk.miuihome.utils.ktx.getObjectField
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import com.yuk.miuihome.utils.ktx.setObjectField
@@ -130,7 +132,6 @@ class MainHook {
                 } else {
                     addView(SettingTextView.FastBuilder(mText = "${BuildConfig.VERSION_NAME} - ${BuildConfig.VERSION_CODE}(${BuildConfig.BUILD_TYPE})", mColor = "#01b17b").build())
                 }
-                addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.Warn), mColor = "#ff0c0c").build())
                 if (ownSP.getBoolean("simpleAnimation", false)) {
                     addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.SimpleWarn), mColor = "#ff0c0c").build())
                 }

@@ -1,9 +1,11 @@
 package com.yuk.miuihome
 
+import android.annotation.TargetApi
 import android.app.Application
 import android.content.Context
 import android.content.res.Resources
 import android.content.res.XModuleResources
+import android.os.Build
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
@@ -68,6 +70,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.P)
     private fun checkVersionCode() {
         try {
             HomeContext.versionCode = HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0).longVersionCode

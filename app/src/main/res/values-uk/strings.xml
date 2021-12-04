@@ -15,7 +15,6 @@
   <string name="Defaults">За замовчуванням</string>
   <string name="Description">Хук для MIUI Launcher</string>
   <string name="Folder">Налаштування папок</string>
-  <string name="HideAppIcon">Приховати значок додатку</string>
   <string name="HideStatusBar">Приховату статусбар у диспетчері задач</string>
   <string name="HideTaskViewAppIcon">Приховати значок додадку у диспетчері задач</string>
   <string name="HideTaskViewCleanUpIcon">Приховати кнопку "закрити все" у диспетчері задач</string>
@@ -23,17 +22,12 @@
   <string name="HideWidgetTitles">Приховати назви віджетів</string>
   <string name="HorizontalTaskViewOfAppCardSize">Розмір ескізу для нещодавніх по горизонталі</string>
   <string name="InfiniteScroll">Нескінченна прокрутка MIUI Launcher</string>
-  <string name="MainActivity1">Будь ласка, активуйте цей модуль у LSPosed Manager і один раз перезапустіть програму Launcher MIUI.\n\nНалаштування модуля знаходяться в налаштуваннях \ "Головний екран \"! \ N \ nКонкретне розташування: Налаштування - Головний екран - Там, де раніше був \ "Запуск за замовчуванням \".</string>
-  <string name="MainActivity2">Діагностика: \ n1.Цей модуль наразі підтримує лише LSPosed 5606 або вище, наразі він не підтримує жодних інших фреймворків Xposed. \ N \ n2. Якщо у вас виникли проблеми з активацією модуля, дотримуйтесь наведених нижче порад: повторно оптимізуйте MIUI панель запуску - вимкніть цей модуль - увімкніть цей модуль - примусово зупиніть програму запуску MIUI. \ n \ n3. Якщо деякі параметри недійсні, перевірте, чи встановлена вами програма запуску MIUI є останньою версією ALPHA. Якщо це так, спробуйте заново оптимізувати програму запуску MIUI у LSPosed Manager і перезапустити її. \ N \ n4. Остаточний ефект залежить від вашого SoC, версії MIUI, версії лаунчера тощо. Будь ласка, зверніться до фактичної продуктивності.</string>
   <string name="MamlDownload">Ефект завантаження водної пульсації</string>
   <string name="ManualInput">Ручне введення</string>
-  <string name="ModuleEnable">Модуль активовано</string>
   <string name="ModuleFeature">Фішки модуля</string>
-  <string name="ModuleNotEnable">Модуль не активований</string>
   <string name="ModuleSettings">Налаштування модулю</string>
   <string name="ResHook">Хук ресурсів√</string>
   <string name="NoneBlur">Без розмиття</string>
-  <string name="OpenMiuiHomeSettings">Відкрити \"Домашній екран\" Налаштування</string>
   <string name="OtherFeature">Інші фішки</string>
   <string name="OutOfInput">Будь ласка, введіть значення в межах дозволеного діапазону!</string>
   <string name="RealTaskViewHorizontal">Правда · Горизонтальні нещодавні</string>
@@ -45,12 +39,10 @@
   <string name="Scope">Дозволений діапазон введення</string>
   <string name="SearchBarBlur">Увімкнути розмиття у вікні пошуку</string>
   <string name="SetSuccessfully">Успішно встановлено</string>
-  <string name="ShowAppIcon">Показати значок додатка</string>
   <string name="ShowDockIconTitles">Показувати назву програми в Dock</string>
   <string name="SimpleAnimation">Проста анімація</string>
   <string name="SimpleBlur">Просте розмиття</string>
   <string name="SmoothAnimation">Плавна анімація</string>
-  <string name="State">Поточний стан</string>
   <string name="TaskViewAppCardTextSize">Розмір тексту міток ескізів</string>
   <string name="TaskViewBlurLevel">Рівень розмиття диспетчеру задач</string>
   <string name="TaskViewBlurSetTo">Встановіть рівень розмиття для нещодавніх на</string>
@@ -60,7 +52,6 @@
   <string name="UnlockGrids">Розблокувати обмеження сітки</string>
   <string name="VerticalTaskViewOfAppCardSize">Розмір мініатюри для вертикальних нещодавніх</string>
   <string name="WallpaperDarken">Вимкнути функцію затемнення шпалер в диспетчері завдань</string>
-  <string name="Warn">Будь ласка, зверніться до доданого додатка, щоб побачити примітки щодо цього модуля.</string>
   <string name="Welcome">Вітаю!</string>
   <string name="Widget">Фішки віджетів</string>
   <string name="WidgetToMinus">Дозволити переміщення класичних віджетів в \"Ассистент\"</string>

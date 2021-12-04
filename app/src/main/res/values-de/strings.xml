@@ -30,7 +30,6 @@
   <string name="Folder">Ordnereinstellungen</string>
   <string name="FolderColumnsCount">Anzahl der Spalten des Ordners</string>
   <string name="FolderWidth">Die gesamte Breite des Ordners nutzen</string>
-  <string name="HideAppIcon">App Icon verstecken</string>
   <string name="HideSeekPoints">Seitenindikator entfernen</string>
   <string name="HideStatusBar">Statusleiste in letzte Apps verstecken</string>
   <string name="HideTaskViewAppIcon">App Icon in letzte Apps verstecken</string>
@@ -41,16 +40,11 @@
   <string name="IconTitleFontSize">Icon Beschriftung Schriftgröße</string>
   <string name="InfiniteScroll">Unendliches scrollen im Startbildschirm</string>
   <string name="LowEndDeviceUseMIUIWidgets">Neuen Widget-Store auf Low-End Geräten aktivieren</string>
-  <string name="MainActivity1">Bitte aktiviere dieses Modul im LSPosed Manager und starte den MIUI Launcher neu.\n\nDie Moduleinstellungen befinden sich in den Einstellungen vom \"Startbildschirm\"!\n\nSpezifischer Pfad: Einstellungen – Startbildschirm – wo der \"Standard-Launcher\" ursprünglich war.</string>
-  <string name="MainActivity2">Diagnose:\n1. Dieses Modul unterstützt nur LSPosed 5606 oder höher, momentan unterstützt es keine anderen Xposed frameworks.\n2.Falls du Probleme mit dem Aktivieren des Moduls haben solltest, folge folgenden Schritten: Optimiere den MIUI launcher neu – deaktiviere dieses Modul – aktiviere dieses Modul – Beenden erzwingen des MIUI launchers.\n3.Wenn einige Optionen nicht funktionieren , prüfe ob die letzte ALPHA Version des MIUI Launchers installiert ist. Falls ja, optimiere den MIUI launcher im LSPosed Manager neu und starte es neu.\n4.Der letzendliche Effekt liegt am SoC, der MIUI-Version, Launcher version oder Ähnlichem. Bitte beachte die tatsächliche Leistung.</string>
   <string name="MamlDownload">App Icon download Effekt</string>
   <string name="ManualInput">Manueller Input</string>
-  <string name="ModuleEnable">Modul ist aktiviert</string>
   <string name="ModuleFeature">Modul Features</string>
-  <string name="ModuleNotEnable">Modul ist nicht aktiviert</string>
   <string name="ModuleSettings">Moduleinstellungen</string>
   <string name="NoneBlur">Kein Weichzeichnen</string>
-  <string name="OpenMiuiHomeSettings">Öffne \"Home screen\" Einstellungen</string>
   <string name="OtherFeature">Andere Features</string>
   <string name="OutOfInput">Bitte gib einen Wert innerhalb des zulässigen Bereichs ein!</string>
   <string name="RealTaskViewHorizontal">Wahr· Horizontale letzte Apps</string>
@@ -66,13 +60,11 @@
   <string name="Scope">Zulässiger Eingangsbereich</string>
   <string name="SearchBarBlur">Weichzeichnen in der Suchbox aktivieren</string>
   <string name="SetSuccessfully">Erfolgreich eingestellt</string>
-  <string name="ShowAppIcon">APP Icon anzeigen</string>
   <string name="ShowDockIconTitles">Appnamen im Dock anzeigen</string>
   <string name="SimpleAnimation">EInfache Animation</string>
   <string name="SimpleBlur">Einfaches Weichzeichnen</string>
   <string name="SmallWindow">Erlaube allen Apps schwebende Fenster zu benutzen</string>
   <string name="SmoothAnimation">Flüssige Animation</string>
-  <string name="State">Mementaner Status</string>
   <string name="TaskViewAppCardTextSize">Größe der Miniaturansicht-Beschriftung</string>
   <string name="TaskViewBlurLevel">Letzte Apps Weichzeichnen-stärke</string>
   <string name="TaskViewBlurSetTo">Setze die Wichzeichnen-Stärke der letzten Apps auf</string>
@@ -84,7 +76,6 @@
   <string name="UnlockGrids">Schalte Rasterbeschränkungen frei</string>
   <string name="VerticalTaskViewOfAppCardSize">Miniaturansichtsgröße für vertikale letzte Apps</string>
   <string name="WallpaperDarken">Hintergrundbild in letzte Apps nicht verdunkeln</string>
-  <string name="Warn">Hinweise zu diesem Modul entnehmen Sie bitte der beigefügten APP.</string>
   <string name="Welcome">Willkommen!</string>
   <string name="Widget">Widget Features</string>
   <string name="WidgetToMinus">Erlauben, klassische Widgets zur \"App Vault\" zu verschieben</string>

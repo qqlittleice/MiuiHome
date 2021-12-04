@@ -15,7 +15,6 @@
   <string name="Defaults">默认值</string>
   <string name="Description">针对MIUI桌面的自定义扩展</string>
   <string name="Folder">文件夹相关</string>
-  <string name="HideAppIcon">隐藏桌面图标</string>
   <string name="HideStatusBar">后台界面隐藏状态栏</string>
   <string name="HideTaskViewAppIcon">隐藏后台应用图标</string>
   <string name="HideTaskViewCleanUpIcon">隐藏后台清理图标</string>
@@ -23,17 +22,12 @@
   <string name="HideWidgetTitles">隐藏桌面小部件标题</string>
   <string name="HorizontalTaskViewOfAppCardSize">横向(平铺)应用卡片大小</string>
   <string name="InfiniteScroll">桌面无限滚动</string>
-  <string name="MainActivity1">请先在LSPosed管理器中激活本模块，并重启一次系统桌面。模块的设置界面在MIUI系统桌面的设置中！\n\n具体位置：设置-桌面-原“默认桌面”处。</string>
-  <string name="MainActivity2">提示：\n1. 本模块现只支持LSPosed 5606及以上版本，不支持也暂不打算支持其他任何Xposed框架。\n\n2. 如遇激活问题，请尝试以下操作：重新优化系统桌面-关闭本模块-启用本模块-强行停止系统桌面。\n\n3. 遇到部分选项无效时，请先检查您当前设备安装的桌面版本是否为最新ALPHA版本。如果确认无误，请尝试到LSPosed管理器重新优化并重启系统桌面。\n\n4. 最终呈现效果会因您设备的SoC平台、性能水平、系统版本、桌面版本等而异，请以实际表现为准！</string>
   <string name="MamlDownload">水波纹应用下载特效</string>
   <string name="ManualInput">手动输入</string>
-  <string name="ModuleEnable">模块已激活</string>
   <string name="ModuleFeature">模块相关</string>
-  <string name="ModuleNotEnable">模块未激活</string>
   <string name="ModuleSettings">模块设置</string>
   <string name="ResHook">资源钩子√</string>
   <string name="NoneBlur">无模糊</string>
-  <string name="OpenMiuiHomeSettings">打开桌面设置</string>
   <string name="OtherFeature">其他功能</string>
   <string name="OutOfInput">请输入允许范围内的值！</string>
   <string name="RealTaskViewHorizontal">真·横屏最近任务</string>
@@ -45,12 +39,10 @@
   <string name="Scope">可输入范围</string>
   <string name="SearchBarBlur">搜索框模糊</string>
   <string name="SetSuccessfully">设置成功</string>
-  <string name="ShowAppIcon">显示桌面图标</string>
   <string name="ShowDockIconTitles">显示底栏应用标题</string>
   <string name="SimpleAnimation">简单动画</string>
   <string name="SimpleBlur">简单模糊</string>
   <string name="SmoothAnimation">平滑动画</string>
-  <string name="State">当前状态</string>
   <string name="TaskViewAppCardTextSize">后台卡片文字大小</string>
   <string name="TaskViewBlurLevel">后台模糊级别</string>
   <string name="TaskViewBlurSetTo">后台模糊级别已设为</string>
@@ -60,7 +52,6 @@
   <string name="UnlockGrids">解锁桌面布局限制</string>
   <string name="VerticalTaskViewOfAppCardSize">纵向(瀑布)应用卡片大小</string>
   <string name="WallpaperDarken">取消后台壁纸压暗效果</string>
-  <string name="Warn">模块注意事项请查阅附带APP。</string>
   <string name="Welcome">欢迎！</string>
   <string name="Widget">小部件相关</string>
   <string name="WidgetToMinus">允许将安卓小部件移到负一屏</string>
@@ -92,7 +83,6 @@
   <string name="CustomRecentText">后台无应用时的文本显示</string>
   <string name="DoubleTap">双击锁屏</string>
   <string name="LowEndAnim">允许低端机使用动画图标</string>
-  <string name="About">关于我们</string>
   <string name="VerticalScreen">竖屏</string>
   <string name="HorizontalScreen">横屏</string>
   <string name="Reset2">重置横向(平铺)卡片大小配置参数</string>
@@ -102,11 +92,4 @@
   <string name="DockMarginBottom">页面指示器距屏幕底部</string>
   <string name="SimpleWarn">你启用了简单动画，这会禁用一些功能设置。</string>
   <string name="BrokenFeature">废弃功能</string>
-  <string name="CheckUpdates">检查更新</string>
-  <string name="CheckUpdatesError">检查更新时出错</string>
-  <string name="CheckUpdatesNotFound">未找到更新</string>
-  <string name="CheckUpdatesFound">找到更新</string>
-  <string name="Download">下载</string>
-  <string name="Dismiss">关闭</string>
-  <string name="DownloadWithCDN">使用CDN下载</string>
 </resources>

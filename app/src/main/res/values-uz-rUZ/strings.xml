@@ -15,7 +15,6 @@
   <string name="Defaults">Boshlang\'ich holat</string>
   <string name="Description">MIUI ish stoli uchun qo\'shimcha sozlamalar</string>
   <string name="Folder">Papkalar sozlamalari</string>
-  <string name="HideAppIcon">Ilova belgisini yashirish</string>
   <string name="HideStatusBar">So\'nggi ilovalar oynasida holat satrini yashirish</string>
   <string name="HideTaskViewAppIcon">So\'nggi ilovalar oynasida Ilova belgilarini yashirish</string>
   <string name="HideTaskViewCleanUpIcon">So\'nggi ilovalar oynasida \"Hammasini yopish\" tugmasini yashirish</string>
@@ -23,17 +22,12 @@
   <string name="HideWidgetTitles">Vidjet yorliqlarini yashirish</string>
   <string name="HorizontalTaskViewOfAppCardSize">Gorizontal holatdagi so\'nggi ilovalar oynasida eskizlar hajmi</string>
   <string name="InfiniteScroll">Ish stolini cheksiz o\'tkazish</string>
-  <string name="MainActivity1">Iltimos, ushbu modulni LSPosed menejerida faollashtiring va MIUI ish stolini qayta ishga tushiring. \n\nModul sozlamalari \"Bosh ekran\" sozlamalarida! \n\nJoylashuv: Sozlamalar - Asosiy ekran - oldingi \'Standart ish stoli\' yozuvi o\'rnida.</string>
-  <string name="MainActivity2">Diagnostika: \n1.Ushbu modul hozirda faqat LSPosed 5606 yoki undan yuqori versiyasini qo\'llab-quvvatlaydi, hozirda modul boshqa Xposed freymvorklarini qo\'llab-quvvatlamaydi. \n2. Agar modulni faollashtirishda muammo bo\'lsa, quyidagi maslahatlarga amal qiling: Ish stolini qayta ishga tushiring - ushbu modulni o\'chiring - modulni yoqing - MIUI ish stolini majburan to\'xtating. \n\n3. Agar ba\'zi funksiyalar ishlamayotgan bo\'lsa, iltimos, siz o\'rnatgan MIUI ish stoli so\'nggi ALPHA versiya ekanligini tekshiring. Agar shunday bo\'lsa, LSPosed menejerida MIUI ish stolini qayta ishga tushiring. \ N \ n4. Yakuniy effekt sizning SoC, MIUI versiyangiz, ish stoli versiyasi va boshqalarga bog\'liq.</string>
   <string name="MamlDownload">Yuklashda \"Suv to\'lqinlari\"  effektini yoqish</string>
   <string name="ManualInput">Qo\'lda kiritish</string>
-  <string name="ModuleEnable">Modul faollashtirilgan</string>
   <string name="ModuleFeature">Modul xususiyatlari</string>
-  <string name="ModuleNotEnable">Modul yoqilmagan</string>
   <string name="ModuleSettings">Modul sozlamalari</string>
   <string name="ResHook">Resurslarni ushlab qolish√</string>
   <string name="NoneBlur">xiralashtirmaslik</string>
-  <string name="OpenMiuiHomeSettings">\"Bosh ekran\" sozlamalarini ochish</string>
   <string name="OtherFeature">Boshqa xususiyatlar</string>
   <string name="OutOfInput">Iltimos, ruxsat berilgan diapazondagi qiymatni kiriting!</string>
   <string name="RealTaskViewHorizontal">So\'nggi ilovalar oynasi gorizontal ko\'rinishda</string>
@@ -45,12 +39,10 @@
   <string name="Scope">Ruxsat etilgan kiritish diapazoni</string>
   <string name="SearchBarBlur">Qidiruv maydonida xiralashtirishni yoqish</string>
   <string name="SetSuccessfully">Muvaffaqiyatli sozlandi</string>
-  <string name="ShowAppIcon">Ilova belgisini ko\'rsatish</string>
   <string name="ShowDockIconTitles">Dok-barda dasturlar nomini ko\'rsatish</string>
   <string name="SimpleAnimation">Oddiy animatsiya</string>
   <string name="SimpleBlur">Oddiy xiralashtirish</string>
   <string name="SmoothAnimation">Tekis animatsiya</string>
-  <string name="State">Hozirgi holat</string>
   <string name="TaskViewAppCardTextSize">Eskizlar matni o\'lchami</string>
   <string name="TaskViewBlurLevel">So\'nggi ilovalar oynasida xiralik darajasi</string>
   <string name="TaskViewBlurSetTo">So\'nggi ilovalar oynasida xiralik darajasini belgilash</string>
@@ -60,7 +52,6 @@
   <string name="UnlockGrids">Maket cheklovlarini olib tashlash</string>
   <string name="VerticalTaskViewOfAppCardSize">Vertikal So\'nggi ilovalar oynasi uchun eskiz hajmi</string>
   <string name="WallpaperDarken">So\'nggi ilovalar oynasi fonini qoraytirishni o\'chirish</string>
-  <string name="Warn">Please refer to the attached APP for notes on this module.</string>
   <string name="Welcome">Xush kelibsiz!</string>
   <string name="Widget">Vidjet xususiyatlari</string>
   <string name="WidgetToMinus">Klassik vidjetlarni \"Ilovalar qutisiga\" ga ko\'chirishga ruxsat berish</string>

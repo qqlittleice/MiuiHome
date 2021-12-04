@@ -8,13 +8,13 @@ plugins {
 
 android {
     compileSdk = 31
-    val verCode = 4150
+    val verCode = 4155
     val verName = "4.1.5"
 
     defaultConfig {
         applicationId = "com.yuk.miuihome"
         minSdk = 27
-        targetSdk = 31
+        targetSdk = 32
         versionCode = verCode
         versionName = verName
     }
@@ -48,11 +48,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
-    }
-
-
-    kotlinOptions {
-        jvmTarget = "11"
     }
 
     packagingOptions {

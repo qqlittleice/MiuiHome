@@ -15,7 +15,6 @@
   <string name="Defaults">الافتراضي</string>
   <string name="Description">تعديلات لمشغل تطبيقات Miui</string>
   <string name="Folder">اعدادات المجلدات</string>
-  <string name="HideAppIcon">اخفاء ايقونة التطبيق</string>
   <string name="HideStatusBar">اخفاء شريط الحالة في قائمة التطبيقات الاخيرة</string>
   <string name="HideTaskViewAppIcon">اخفاء ايقونة التطبيقات في قائمة التطبيقات الاخيرة</string>
   <string name="HideTaskViewCleanUpIcon">اخفاء زر مسح الكل في قائمة التطبيقات الاخيرة</string>
@@ -23,17 +22,12 @@
   <string name="HideWidgetTitles">اخفاء اسم الاضافة</string>
   <string name="HorizontalTaskViewOfAppCardSize">حجم التطبيق في التطبيقات الاخيرة الأفقية</string>
   <string name="InfiniteScroll">تمرير لا نهائي</string>
-  <string name="MainActivity1">من فضلك قم بتفعيل الاضافة في Lsposed وقم بإعادة تشغيل مشغل التطبيقات.\n\nاعدادات الاضافة موجودة في اعدادات \"الشاشة الرئيسية\"!\n\nالمكان بالتفصيل: الاعدادات - الشاشة الرئيسية - في مكان  \"مشغل التطبيقات الافتراضي\".</string>
-  <string name="MainActivity2">Diagnostics:\n1.هذه الاضافة تدعم فقط Lsposed 5606 او اعلي، ولن تدعم اي نظام xposed اخر في الوقت الحالي.\n\n2.اذا واجهتك مشكلة في تفعيل الاضافة, اتبع الخطوات الآتية: قم باعادة تحسين مشغل تطبيقات Miui - قم بتعطيل الاضافة - قم بتفعيل الاضافة - قم بعمل ايقاف اجباري لمشغل التطبيقات.\n\n3.في حالة ان بعض الخيارات لا تعمل قم بالتحقق من كون اصدار مشغل التطبيقات الذي تستخدمه هو اخر اصدار Alpha. لو كان كذلك، من فضلك قم بعمل اعادة تحسين لمشغل التطبيقات في Lsposed ثم قم بإعادة تشغيل مشغل التطبيقات.\n\n4.التأثير النهائي لهذه الاضافة يعتمد علي قوة معالج هاتفك واصدار Miui واصدار مشغل التطبيقات وهكذا.....</string>
   <string name="MamlDownload">تأثير تموج المياه للتنزيلات</string>
   <string name="ManualInput">ادخال يدوي</string>
-  <string name="ModuleEnable">الاضافة مفعلة</string>
   <string name="ModuleFeature">مميزات الاضافة</string>
-  <string name="ModuleNotEnable">الاضافة غير مفعلة</string>
   <string name="ModuleSettings">اعدادات الاضافة</string>
   <string name="ResHook">Resource Hook√</string>
   <string name="NoneBlur">بلا تأثير ضبابي</string>
-  <string name="OpenMiuiHomeSettings">فتح اعدادات \"الشاشة الرئيسية\"</string>
   <string name="OtherFeature">مميزات اخري</string>
   <string name="OutOfInput">من فضلك ادخل قيمة ضمن الحد المسموح!</string>
   <string name="RealTaskViewHorizontal">تطبيقات اخيرة أفقية حقيقية</string>
@@ -45,12 +39,10 @@
   <string name="Scope">حد الادخال المسموح به</string>
   <string name="SearchBarBlur">تفعيل ضبابية صندوق البحث</string>
   <string name="SetSuccessfully">تم الضبط بنجاح</string>
-  <string name="ShowAppIcon">اظهار ايقونة التطبيق</string>
   <string name="ShowDockIconTitles">إظهار اسماء التطبيقات في حوض التطبيقات</string>
   <string name="SimpleAnimation">انيميشن بسيطة</string>
   <string name="SimpleBlur">ضبابية بسيطة</string>
   <string name="SmoothAnimation">انيميشن سلسة</string>
-  <string name="State">الحالة الحالية</string>
   <string name="TaskViewAppCardTextSize">حجم اسم التطبيق في التطبيقات الاخيرة</string>
   <string name="TaskViewBlurLevel">مستوي الضبابية في التطبيقات الاخيرة</string>
   <string name="TaskViewBlurSetTo">ضبط مستوي الضبابية في التطبيقات الاخيرة ل</string>
@@ -60,7 +52,6 @@
   <string name="UnlockGrids">الغاء حد تنسيق الشاشة الرئيسية</string>
   <string name="VerticalTaskViewOfAppCardSize">حجم التطبيق في التطبيقات الاخيرة الرأسية</string>
   <string name="WallpaperDarken">تعطيل الخلفية الداكنة في التطبيقات الاخيرة</string>
-  <string name="Warn">قم بالرجوع للتطبيق المرفق لملاحظات عن هذه الاضافة.</string>
   <string name="Welcome">مرحبا!</string>
   <string name="Widget">مميزات الاضافات</string>
   <string name="WidgetToMinus">السماح بنقل الاضافات العادية الي \"منصة التطبيقات\"</string>
@@ -91,7 +82,6 @@
   <string name="CustomRecentText">تخصيص النص الظاهر في التطبيقات الاخيرة عندما لا يكون هناك تطبيقات</string>
   <string name="DoubleTap">الضغط مرتين لقفل الشاشة</string>
   <string name="CategoryPagingHideEdit">اخفاء زر \"تعديل\" في تصنيفات التطبيقات</string>
-  <string name="About">حساباتنا</string>
   <string name="DockMarginTop">المسافة بين مؤشر الشاشة والايقونات</string>
   <string name="HorizontalScreen">الشاشة الافقية</string>
   <string name="LowEndAnim">السماح للايقونات المتحركة بالعمل علي الاجهزة الضعيفة</string>

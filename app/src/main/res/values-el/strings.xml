@@ -15,7 +15,6 @@
   <string name="Defaults">Προεπιλογή</string>
   <string name="Description">Hook για τον MIUI εκκινητή</string>
   <string name="Folder">Ρυθμίσεις φακέλων</string>
-  <string name="HideAppIcon">Απόκρυψη εικονιδίου εφαρμογής</string>
   <string name="HideStatusBar">Απόκρυψη της γραμμής εργασιών στην οθόνη εφαρμογών παρασκηνίου</string>
   <string name="HideTaskViewAppIcon">Απόκρυψη των εικονιδίων στην οθόνη εφαρμογών παρασκηνίου</string>
   <string name="HideTaskViewCleanUpIcon">Απόκρυψη του κουμπιού “εκκαθάριση όλων” στην οθόνη εφαρμογών παρασκηνίου</string>
@@ -23,17 +22,12 @@
   <string name="HideWidgetTitles">Απόκρυψη των ονομάτων των γραφικών στοιχείων</string>
   <string name="HorizontalTaskViewOfAppCardSize">Μέγεθος μικρογραφίας για την κάθετη προβολή στην οθόνη εφαρμογών παρασκηνίου</string>
   <string name="InfiniteScroll">Άπειρο σύρσιμο στον εκκινητή</string>
-  <string name="MainActivity1">Παρακαλώ ενεργοποιήστε το πρόσθετο LSPosed Manager και επανεκκινήστε τον εκκινητή MIUI.\n\nΟι ρυθμίσεις του πρόσθετου βρίσκονται στις ρυθμίσεις της\"Αρχικής Οθόνης\"!\n\nΠοιό συγκεκριμένα: Ρυθμίσεις – Αρχική Οθόνη – Εκεί που η επιλογή \"Προεπιλεγμένος εκκινητής\" ήταν.</string>
-  <string name="MainActivity2">Διαγνωστικά:\n1.Αυτό το πρόσθετο υποστηρίζει μόνο το LSPosed 5606 και ύστερα, δε θα υποστηρίξει άλλο Xposed πρόσθετο μέχρι στιγμής.\n\n2.Αν αντιμετωπίζεται προβλήματα, παρακαλώ δοκιμάστε τα παρακάτω: επαναβελτιστοποίηση του MIUI εκκινητή – απενεργοποιήστε αυτό το πρόσθετο – ενεργοποιήστε αυτό το πρόσθετο ξανά – Τερματίστε την λειτουργιά του MIUI εκκινητή.\n\n3.Αν μερικές ρυθμίσεις δεν είναι διαθέσιμες, παρακαλώ ελέγξτε αν βρίσκεστε  στην τελευταία έκδοση alpha του MIUI εκκινητή. Αν ναι, τότε δοκιμάστε να επαναβελτιστοποίησετε τον MIUI εκκινητή στο LSPosed Manager και επανεκκινήστε το.\n\n4.Πολλά από τα εφέ εξαρτώνται από τον SoC, έκδοση MIUI, έκδοση εκκινητή κοκ. Παρακαλώ κοιτάξτε την πραγματική απόδοση.</string>
   <string name="MamlDownload">Εφέ σταγόνας νερού</string>
   <string name="ManualInput">Χειροκίνητη εισαγωγή</string>
-  <string name="ModuleEnable">Το πρόσθετο είναι ενεργοποιημένο</string>
   <string name="ModuleFeature">Χαρακτηριστικά Πρόσθετου</string>
-  <string name="ModuleNotEnable">Το πρόσθετο δεν είναι ενεργοποιημένο</string>
   <string name="ModuleSettings">Ρυθμίσεις πρόσθετου</string>
   <string name="ResHook">Resource Hook√</string>
   <string name="NoneBlur">Χωρίς θάμπωμα</string>
-  <string name="OpenMiuiHomeSettings">Άνοιγμα \"Αρχική Οθόνη\" ρυθμίσεις</string>
   <string name="OtherFeature">Άλλα χαρακτηριστικά</string>
   <string name="OutOfInput">Παρακαλώ εισάγεται μια μεταβλητή μέσα στα όρια!</string>
   <string name="RealTaskViewHorizontal">Αληθής · Οριζόντια προβολή παρασκηνίου εφαρμογών</string>
@@ -45,12 +39,10 @@
   <string name="Scope">Επιτρεπτές τιμές εισαγωγής</string>
   <string name="SearchBarBlur">Ενεργοποίηση θαμπώματος στην αναζήτηση</string>
   <string name="SetSuccessfully">Εφαρμόστηκε με επιτυχία</string>
-  <string name="ShowAppIcon">Εμφάνιση εικονιδίου εφαρμογής</string>
   <string name="ShowDockIconTitles">Εμφάνιση ονομάτων εφαρμογών στην γραμμή γρήγορης πρόσβασης</string>
   <string name="SimpleAnimation">Απλή κίνηση</string>
   <string name="SimpleBlur">Απλό θάμπωμα</string>
   <string name="SmoothAnimation">Ομαλή κίνηση</string>
-  <string name="State">Κατάσταση</string>
   <string name="TaskViewAppCardTextSize">Μέγεθος χαρακτήρων στις μικρογραφίες</string>
   <string name="TaskViewBlurLevel">Επίπεδο θαμπώματος στην οθόνη εφαρμογών παρασκηνίου</string>
   <string name="TaskViewBlurSetTo">Ορισμός επιπέδου θαμπώματος στην οθόνη παρασκηνίου σε</string>
@@ -60,7 +52,6 @@
   <string name="UnlockGrids">Ξεκλείδωμα περιορισμών πλέγματος</string>
   <string name="VerticalTaskViewOfAppCardSize">Μέγεθος κάθετης προβολής της οθόνης εφαρμογών παρασκηνίου</string>
   <string name="WallpaperDarken">Απενεργοποιήστε την συσκότιση της ταπετσαρίας σας</string>
-  <string name="Warn">Παρακαλω κοιταξτε τις σημειώσεις της συγκεκριμένης εφαρμογής.</string>
   <string name="Welcome">Κάλως ορίσατε!</string>
   <string name="Widget">Χαρακτηριστικά γραφικών στοιχείων</string>
   <string name="WidgetToMinus">Επιτρέψτε την μεταφορά των κλασικών γραφικών στοιχείων στην \"Αποθήκη εφαρμογών\"</string>

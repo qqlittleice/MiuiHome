@@ -15,7 +15,6 @@
   <string name="Defaults">Predefinito</string>
   <string name="Description">Hook per il Launcher MIUI</string>
   <string name="Folder">Impostazioni cartella</string>
-  <string name="HideAppIcon">Nascondi icona dell\'app</string>
   <string name="HideStatusBar">Nascondi la barra di stato nella schermata delle app recenti</string>
   <string name="HideTaskViewAppIcon">Nascondi l\'icona dell\'applicazione nelle app recenti</string>
   <string name="HideTaskViewCleanUpIcon">Nascondi il pulsante cancella tutto dalla schermata delle app recenti</string>
@@ -23,17 +22,12 @@
   <string name="HideWidgetTitles">Nascondi etichette dei widget</string>
   <string name="HorizontalTaskViewOfAppCardSize">Grandezza anteprima per le app recenti orizzontali</string>
   <string name="InfiniteScroll">Scorrimento infinito nel launcher</string>
-  <string name="MainActivity1">Per favore attiva questo modulo da LSPosed Manager e riavvia il Launcher MIUI.\n\nLe opzioni del modulo sono nelle impostazioni della \"Schermata Home\"!\n\nPosizione dettagliata: Impostazioni - Schermata Home - Dove si trovava \"Launcher predefinito\".</string>
-  <string name="MainActivity2">Diagnostica:\n1.Questo modulo attualmente supporta solo LSPosed 5606 o superiori, non supporta altri Framework Xposed al momento.\n\n2. Se hai problemi con l\'attivazione del modulo, segui i passaggi sottostanti: ri-ottimizza il Launcher MIUI - disabilita questo modulo - abilita questo modulo - chiudi forzatamente il Launcher MIUI.\n\n3.Quando alcune opzioni non sono valide, per favore controlla se il Launcher MIUI installato è l\'ultima versione ALPHA. Se è cosi, prova a ri-ottimizzare il Launcher MIUI da LSPosed Manager e riavvialo.\n\n4.L\'effetto finale dipende dal tuo SoC, la versione della MIUI, la versione del launcher e altro ancora. Si prega di fare riferimento alle prestazioni effettive.</string>
   <string name="MamlDownload">Effetto Ripple del download</string>
   <string name="ManualInput">Input manuale</string>
-  <string name="ModuleEnable">Il modulo è attivo</string>
   <string name="ModuleFeature">Funzioni del modulo</string>
-  <string name="ModuleNotEnable">Il modulo non è attivo</string>
   <string name="ModuleSettings">Impostazioni del modulo</string>
   <string name="ResHook">Hook Risorse√</string>
   <string name="NoneBlur">Nessuna sfocatura</string>
-  <string name="OpenMiuiHomeSettings">Apri \"Schermata Home\" Impostazioni</string>
   <string name="OtherFeature">Altre opzioni</string>
   <string name="OutOfInput">Per favore inserisci un valore tra l\'intervallo consentito!</string>
   <string name="RealTaskViewHorizontal">Vero · recenti orizzontali</string>
@@ -45,12 +39,10 @@
   <string name="Scope">Intervallo di Input consentito</string>
   <string name="SearchBarBlur">Abilita sfocatura nella barra di ricerca</string>
   <string name="SetSuccessfully">Impostato correttamente</string>
-  <string name="ShowAppIcon">Mostra icona dell\'app</string>
   <string name="ShowDockIconTitles">Mostra nome dell\'applicazione nella Dock</string>
   <string name="SimpleAnimation">Animazione semplice</string>
   <string name="SimpleBlur">Sfocatura semplice</string>
   <string name="SmoothAnimation">Animazione fluida</string>
-  <string name="State">Stato corrente</string>
   <string name="TaskViewAppCardTextSize">Dimensione del testo delle anteprime</string>
   <string name="TaskViewBlurLevel">Livello Sfocatura Recenti</string>
   <string name="TaskViewBlurSetTo">Imposta il livello di sfocatura dei Recenti a</string>
@@ -60,7 +52,6 @@
   <string name="UnlockGrids">Sblocca limiti griglia</string>
   <string name="VerticalTaskViewOfAppCardSize">Dimensioni anteprime per i recenti verticali</string>
   <string name="WallpaperDarken">Disattiva la funzione oscuramento sfondo dei recenti</string>
-  <string name="Warn">Per favore fai riferimento all\'app allegata per le note su questo modulo.</string>
   <string name="Welcome">Benvenuto!</string>
   <string name="Widget">Funzioni widget</string>
   <string name="WidgetToMinus">Abilita lo spostamento dei widget classici alla \"App Vault\"</string>

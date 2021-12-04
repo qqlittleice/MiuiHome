@@ -15,7 +15,6 @@
   <string name="Defaults">സ്ഥിരസ്ഥിതി</string>
   <string name="Description">മിയൂഐ ലോഞ്ചറിനുള്ള ഹുക്ക്</string>
   <string name="Folder">ഫോൾഡർ ക്രമീകരണങ്ങൾ</string>
-  <string name="HideAppIcon">ആപ്പ് ഐക്കൺ മറയ്ക്കുക</string>
   <string name="HideStatusBar">രീസെൻ്റ് സ്ക്രീനിൽ സ്റ്റാറ്റസ് ബാർ മറയ്ക്കുക</string>
   <string name="HideTaskViewAppIcon">രീസെൻ്റ് സ്ക്രീനിൽ ആപ്ലിക്കേഷൻ ഐക്കൺ മറയ്ക്കുക</string>
   <string name="HideTaskViewCleanUpIcon">രീസെൻ്റ് സ്ക്രീനിൽ എല്ലാം വൃത്തിയാക്കുക ബട്ടൺ മറയ്ക്കുക</string>
@@ -23,17 +22,12 @@
   <string name="HideWidgetTitles">വിജറ്റ് ലേബലുകൾ മറയ്ക്കുക</string>
   <string name="HorizontalTaskViewOfAppCardSize">തിരശ്ചീന റീസന്റിനുള്ള ലഘുചിത്ര വലുപ്പം</string>
   <string name="InfiniteScroll">ലോഞ്ചർ ഇൻഫിന്റ് സ്ക്രോൾ</string>
-  <string name="MainActivity1">എൽ‌സ്‌പോസ്ഡ് മാനേജറിൽ ഈ മൊഡ്യൂൾ സജീവമാക്കുകയും മിയൂഐ ലോഞ്ചർ ഒരിക്കൽ പുനരാരംഭിക്കുകയും ചെയ്യുക .\n\n മൊഡ്യൂൾ ക്രമീകരണങ്ങൾ ഇതിന്റെ ക്രമീകരണങ്ങളിലാണ്\"Home screen\"!\n\n ക്രമീകരണങ്ങൾ - ഹോം സ്ക്രീൻ - എവിടെ\"Default launcher\" ഉപയോഗിച്ചിരുന്ന.</string>
-  <string name="MainActivity2">ഡയഗ്നോസ്റ്റിക്സ്:\n1.ഈ മൊഡ്യൂൾ നിലവിൽ എൽ‌എസ്‌പോസ്ഡ് 5606 അല്ലെങ്കിൽ അതിന് മുകളിലുള്ളവയെ മാത്രമേ പിന്തുണയ്‌ക്കൂ, ഇത് നിലവിൽ മറ്റ് എക്സ്പോസ്ഡ് ചട്ടക്കൂടുകളെ പിന്തുണയ്‌ക്കാൻ പോകുന്നില്ല.\n\n2.മൊഡ്യൂൾ സജീവമാക്കുന്നതിൽ നിങ്ങൾക്ക് പ്രശ്നമുണ്ടെങ്കിൽ, ചുവടെയുള്ള അഭിപ്രായങ്ങൾ പിന്തുടരുക: മിയൂഐ ലോഞ്ചർ വീണ്ടും ഒപ്റ്റിമൈസ് ചെയ്യുക - ഈ മൊഡ്യൂൾ പ്രവർത്തനരഹിതമാക്കുക - ഈ മൊഡ്യൂൾ പ്രവർത്തനക്ഷമമാക്കുക - MIUI ലോഞ്ചർ നിർത്തുക.\n\n3.ചില ഓപ്ഷനുകൾ അസാധുവായിരിക്കുമ്പോൾ, നിങ്ങൾ ഇൻസ്റ്റാൾ ചെയ്ത മിയൂഐ ലോഞ്ചർ ഏറ്റവും പുതിയ ALPHA പതിപ്പാണോയെന്ന് പരിശോധിക്കുക. അങ്ങനെയെങ്കിൽ, എൽ‌സ്‌പോസ്ഡ് മാനേജറിൽ MIUI ലോഞ്ചർ വീണ്ടും ഒപ്റ്റിമൈസ് ചെയ്യാൻ ശ്രമിക്കുക, അത് പുനരാരംഭിക്കുക.\n\n4.അന്തിമ ഫലം നിങ്ങളുടെ ചിപ്, മി യൂ ഐ പതിപ്പ്, ലോഞ്ചർ പതിപ്പ് മുതലായവയെ ആശ്രയിച്ചിരിക്കുന്നു. യഥാർത്ഥ പ്രകടനം കാണുക..</string>
   <string name="MamlDownload">വാട്ടർ റിപ്പിൾ ഡൗൺലോഡ് പ്രഭാവം</string>
   <string name="ManualInput">മാനുവൽ ഇൻപുട്ട്</string>
-  <string name="ModuleEnable">മൊഡ്യൂൾ പ്രവർത്തനം ആക്കി</string>
   <string name="ModuleFeature">മൊഡ്യൂൾ സവിശേഷതകൾ</string>
-  <string name="ModuleNotEnable">മൊഡ്യൂൾ പ്രവർത്തനം ആക്കിയിറ്റില</string>
   <string name="ModuleSettings">മൊഡ്യൂൾ ക്രമീകരണങ്ങൾ</string>
   <string name="ResHook">വിഭവ ഹുക്ക്√</string>
   <string name="NoneBlur">മങ്ങലില്ല</string>
-  <string name="OpenMiuiHomeSettings"> \"Home screen\" സെറ്റിംഗ്സ് തുറക്കുക</string>
   <string name="OtherFeature">മറ്റ് സവിചേഷ്തകൾ </string>
   <string name="OutOfInput">അനുവദനീയമായ പരിധിക്കുള്ളിൽ ഒരു മൂല്യം നൽകുക</string>
   <string name="RealTaskViewHorizontal">തിരശ്ചീനമായി സമീപകാലത്ത് ശരിയായത്</string>
@@ -45,12 +39,10 @@
   <string name="Scope">അനുവദനീയമായ ഇൻപുട്ട് ശ്രേണി</string>
   <string name="SearchBarBlur">തിരയൽ ബോക്സിൽ മങ്ങൽ പ്രവർത്തനക്ഷമമാക്കുക</string>
   <string name="SetSuccessfully">വിജയകരമായി സജ്ജമാക്കി</string>
-  <string name="ShowAppIcon">ആപ്പ് ഐക്കൺ കാണിക്കുക</string>
   <string name="ShowDockIconTitles">ആപ്ലിക്കേഷന്റെ പേര് ഡോക്കിൽ കാണിക്കുക</string>
   <string name="SimpleAnimation">ലളിതമായ ആനിമേഷൻ</string>
   <string name="SimpleBlur">ലളിതമായ മങ്ങൽ</string>
   <string name="SmoothAnimation">സുഗമമായ ആനിമേഷൻ</string>
-  <string name="State">നിലവിലെ അവസ്ഥ</string>
   <string name="TaskViewAppCardTextSize">ലഘുചിത്ര ലേബലുകൾ ടെക്സ്റ്റിന്റെ വലുപ്പംt</string>
   <string name="TaskViewBlurLevel">സമീപകാല മങ്ങൽ നില</string>
   <string name="TaskViewBlurSetTo">സമീപകാലത്തിന്റെ മങ്ങൽ നില സജ്ജമാക്കുക</string>
@@ -60,7 +52,6 @@
   <string name="UnlockGrids">ഗ്രിഡ് നിയന്ത്രണങ്ങൾ അൺലോക്ക് ചെയ്യുക</string>
   <string name="VerticalTaskViewOfAppCardSize">ലംബമായ സമീപകാലത്തെ ലഘുചിത്ര വലുപ്പം</string>
   <string name="WallpaperDarken">സമീപകാല വാൾപേപ്പർ ഇരുണ്ടതാക്കൽ സവിശേഷത ഓഫാക്കുക</string>
-  <string name="Warn">ഈ മൊഡ്യൂളിനായി കുറിപ്പുകൾക്കായി അറ്റാച്ചുചെയ്‌ത അപ്ലിക്കേഷൻ നോക്കുക.</string>
   <string name="Welcome">സ്വാഗതം!</string>
   <string name="Widget">വിഡ്ജറ്റ് ഫീച്ചറുകൾ</string>
   <string name="WidgetToMinus">ക്ലാസിക് വിഡ്ജറ്റുകൾ നീക്കാൻ അനുവദിക്കുക ഇവിടേയ്ക്ക്\"App Vault\"</string>

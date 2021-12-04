@@ -15,7 +15,6 @@
   <string name="Defaults">Domyślne</string>
   <string name="Description">Hook for MIUI Launcher</string>
   <string name="Folder">Ustawienia folderów</string>
-  <string name="HideAppIcon">Ukryj ikonę aplikacji</string>
   <string name="HideStatusBar">Ukryj pasek statusu w widoku ostatnich aplikacji</string>
   <string name="HideTaskViewAppIcon">Ukryj ikonę aplikacji w widoku ostatnich aplikacji</string>
   <string name="HideTaskViewCleanUpIcon">Ukryj przycisk \"Zamknij wszystko\" na ekranie ostatnich aplikacji</string>
@@ -23,17 +22,12 @@
   <string name="HideWidgetTitles">Ukryj etykiety widżetów</string>
   <string name="HorizontalTaskViewOfAppCardSize">Rozmiar miniatury w poziomym widoku ostatnich aplikacji</string>
   <string name="InfiniteScroll">Nieskończone scrollowanie Launchera</string>
-  <string name="MainActivity1">Aktywuj ten moduł w LSPosed Manager i zrestartuj MIUI launcher.\n\nUstawienia modułu znajdują się w \"Ekran główny\"!\n\nDokładna lokalizacja: Ustawienia - ekran główny - tam gdzie znajdowal się \"Domyślny launcher\".</string>
-  <string name="MainActivity2">Diagnoza:\n1.Tem moduł wspiera LSPosed 5606 lub nowszy, nie będzie wspierał innych frameworków Xposed.\n\n2.Jeśli masz problem z aktywacją modułu sprawdź poniżej: zoptymalizuj MIUI launcher ponownie  - wyłącz ten moduł - włącz ten moduł - wymuś zatrzymanie MIUI launcher.\n\n3.Jeśli jakieś opcje są nieprawidłowe sprawdź czy zainstalowano najnowszą wersję MIUI launcher ALPHA. Jeśli tak, spróbuj ponownie zoptymalizować MIUI launcher w LSPosed Manager i zrestartować go.\n\n4.Finalny efekt zależy od twojego SoC, wersji MIUI, wersji launchera i tak dalej. Proszę odnieść się do rzeczywistej wydajności.</string>
   <string name="MamlDownload">Animacja pobierania - falowanie wody</string>
   <string name="ManualInput">Wprowadzenie ręczne</string>
-  <string name="ModuleEnable">Module jest aktywowany</string>
   <string name="ModuleFeature">Funkcje modułu</string>
-  <string name="ModuleNotEnable">Moduł nie jest aktywowany</string>
   <string name="ModuleSettings">Ustawienia modułu</string>
   <string name="ResHook">Resource Hook√</string>
   <string name="NoneBlur">Bez rozmyciar</string>
-  <string name="OpenMiuiHomeSettings">Otwórz ustawienia  \"Ekran Główny\"</string>
   <string name="OtherFeature">Inne funkcje</string>
   <string name="OutOfInput">Wprowadź wartość mieszczącą się określonym zakresie!</string>
   <string name="RealTaskViewHorizontal">Prawdziwy horyzontalny widok ostatnich aplikacji</string>
@@ -45,12 +39,10 @@
   <string name="Scope">Akceptowalna wartość</string>
   <string name="SearchBarBlur">Włącz rozmycie na pasku wyszukiwania</string>
   <string name="SetSuccessfully">Ustawiono pomyślnie</string>
-  <string name="ShowAppIcon">Pokaż ikonę aplikacji</string>
   <string name="ShowDockIconTitles">Pokaż nazwę aplikacji w docku</string>
   <string name="SimpleAnimation">Prosta animacja</string>
   <string name="SimpleBlur">Proste rozmycie</string>
   <string name="SmoothAnimation">Płynna animacja</string>
-  <string name="State">Aktualnh Status</string>
   <string name="TaskViewAppCardTextSize">Rozmiar tekstu miniatur</string>
   <string name="TaskViewBlurLevel">Poziom rozmycia widoku ostatnich aplikacji</string>
   <string name="TaskViewBlurSetTo">Ustawiono poziom rozmycia widoku ostatnich aplikacji na</string>
@@ -60,7 +52,6 @@
   <string name="UnlockGrids">Udblokuj ograniczenia siatki</string>
   <string name="VerticalTaskViewOfAppCardSize">Rozmiar miniatur w pionowym widoku ostatnich aplikacji</string>
   <string name="WallpaperDarken">Wyłącz funkcje przyciemniania.tapety w wifoku ostatnich aplikacji</string>
-  <string name="Warn">Proszę odnieść się do załączonej aplikacji, aby uzyskać informacje na temat tego modułu.</string>
   <string name="Welcome">Witaj!</string>
   <string name="Widget">Funkcje widgetu</string>
   <string name="WidgetToMinus">Zezwól przesuwanie klasycznych widgetow do \"Sejfu aplikacji\"</string>

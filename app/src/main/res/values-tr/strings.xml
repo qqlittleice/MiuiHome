@@ -15,7 +15,6 @@
   <string name="Defaults">Varsayilan</string>
   <string name="Description">Miui Baslatici Icin Resource Hook</string>
   <string name="Folder">Klasor Ayarlari</string>
-  <string name="HideAppIcon">Uygulama Ikonunu Gizle</string>
   <string name="HideStatusBar">Son Uygulamalar Ekraninda Durum cubugunu Gizle</string>
   <string name="HideTaskViewAppIcon">Son Uygulamalardaki Uygulama Ikonunu Gizle</string>
   <string name="HideTaskViewCleanUpIcon">Son Uygulamalardaki Tum Uygulamalari Kapat Ikonunu Gizle</string>
@@ -23,17 +22,12 @@
   <string name="HideWidgetTitles">Widget Isimlerini Gizle</string>
   <string name="HorizontalTaskViewOfAppCardSize">Yatay Son Kullanilanlar Icin Uygulama Boyutu</string>
   <string name="InfiniteScroll">Sonsuz Kaydirma</string>
-  <string name="MainActivity1">Lutfen bu modulu LSPosed Yoneticisinde etkinlestirin ve MIUI baslaticisini bir kez yeniden baslatin.</string>
-  <string name="MainActivity2">Teshis:Bu modul su anda yalnizca LSPosed 5606 veya ustunu desteklemektedir, su anda diger Xposed cercevelerini desteklemeyecektir.Modul etkinlestirmeyle ilgili sorun yasiyorsaniz, asagidaki gorusleri izleyin: MIUIyi yeniden optimize edin baslatici - bu modulu devre disi birak - bu modulu etkinlestir - MIUI baslaticisini zorla durdur.Bazi secenekler gecersiz oldugunda, lutfen yuklediginiz MIUI baslaticisinin en son ALPHA surumu olup olmadigini kontrol edin. oyleyse, lutfen MIUI baslaticisini LSPosed Yoneticisinde yeniden optimize etmeyi deneyin ve yeniden baslatin.Son etki SoC, MIUI surumunuze, baslatici surumunuze vb. baglidir. Lutfen gercek performansa bakin..</string>
   <string name="MamlDownload">Su Dalgalanmasi Indirme Efekti</string>
   <string name="ManualInput">Manual Giris</string>
-  <string name="ModuleEnable">Modul Aktif</string>
   <string name="ModuleFeature">Modul ozellikleri</string>
-  <string name="ModuleNotEnable">Modul Aktif Degil</string>
   <string name="ModuleSettings">Modul Ayarlari</string>
   <string name="ResHook">Resource Hook√</string>
   <string name="NoneBlur">Bulaniklik Kapali</string>
-  <string name="OpenMiuiHomeSettings">Miui Baslatici Ayarlarini Ac</string>
   <string name="OtherFeature">Diger ozellikler</string>
   <string name="OutOfInput">Lutfen kabul edilebilir deger icerisinde bir sayi girin!</string>
   <string name="RealTaskViewHorizontal">Dogru · Son Kullanilanlar Gorunumu</string>
@@ -45,12 +39,10 @@
   <string name="Scope">Kabul Edilebilir Giris Boyutu</string>
   <string name="SearchBarBlur">Arama cubugu Bulanikligi</string>
   <string name="SetSuccessfully">Basariyla Ayarlandi</string>
-  <string name="ShowAppIcon">Uygulama Ismini Goster</string>
   <string name="ShowDockIconTitles">Docktaki Uygulama Isimlerini Goster</string>
   <string name="SimpleAnimation">Basit Animasyon</string>
   <string name="SimpleBlur">Basit Bulaniklik</string>
   <string name="SmoothAnimation">Akici Animasyon</string>
-  <string name="State">suanki Durum</string>
   <string name="TaskViewAppCardTextSize">Kucuk resim etiketleri metninin boyutu</string>
   <string name="TaskViewBlurLevel">Son Uygulamalar Bulaniklik Seviyesi</string>
   <string name="TaskViewBlurSetTo">Son uygulamalar bulaniklik duzeyini buna ayarla </string>
@@ -60,7 +52,6 @@
   <string name="UnlockGrids">Izgara Kisitlamalarinin Kilidini Acin</string>
   <string name="VerticalTaskViewOfAppCardSize">Dikey son uygulamalar icin kucuk resim boyutu</string>
   <string name="WallpaperDarken">Son uygulamalar duvar kagidi karartma ozelligini kapatin</string>
-  <string name="Warn">Bu modulle ilgili notlar icin lutfen ekteki uygulamaya bakin</string>
   <string name="Welcome">Merhaba!</string>
   <string name="Widget">Widget Islevleri</string>
   <string name="WidgetToMinus">Klasik Widgetlerin Uygulama Kasasina Tasinmasina Izin Ver</string>

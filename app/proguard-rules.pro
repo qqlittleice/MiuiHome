@@ -42,9 +42,5 @@
     public static void throw*(...);
 }
 
--keepclassmembers class com.yuk.miuihome.activity.MainActivity {
-    boolean isModuleEnable();
-}
-
 -allowaccessmodification
 -overloadaggressively

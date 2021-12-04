@@ -15,7 +15,6 @@
   <string name="Defaults">پیش فرض</string>
   <string name="Description">قالب برای لانچر شیائومی</string>
   <string name="Folder">تنظیمات پوشه</string>
-  <string name="HideAppIcon">مخفی کردن آیکون برنامه</string>
   <string name="HideStatusBar">موقع رفتن به برنامه های اخیر نوار وضعیت را مخفی کنید</string>
   <string name="HideTaskViewAppIcon">آیکون برنامه را در برنامه های اخیر مخفی کنید</string>
   <string name="HideTaskViewCleanUpIcon">پنهان کردن دکمه (پاک کردن همه) در برنامه های اخیر</string>
@@ -23,17 +22,12 @@
   <string name="HideWidgetTitles">پنهان کردن دکمه ویجت</string>
   <string name="HorizontalTaskViewOfAppCardSize">اندازه تصاویر کوچک به هنگام رفتن در برنامه های اخیر به صورت افقی</string>
   <string name="InfiniteScroll">پیمایش بی نهایت لانچر</string>
-  <string name="MainActivity1">لطفاً این ماژول را در LSPosed Manager فعال کرده و یکبار لانچر را راه اندازی مجدد کنید. تنظیمات ماژول در تنظیمات "صفحه اصلی" است! مکان دقیق: تنظیمات- صفحه اصلی - "لانچر پیش فرض".</string>
-  <string name="MainActivity2"> نکات: ۱-این ماژول در حال حاضر فقط از LSPosed 5606 یا بالاتر پشتیبانی می کند ، در حال حاضر هیچ فریمورک اکسپوزد دیگری را پشتیبانی نمی کند. ۲-اگر با فعال کردن ماژول مشکل دارید ، راهکار های زیر را دنبال کنید: لانچر شیائومی را دوباره بهینه کنید - این ماژول را غیرفعال کنید - این ماژول را فعال کنید - لانچر شیائومی را توقف اجباری کنید. ۳-هنگامی که برخی از گزینه ها کار نمیکنند ، لطفاً بررسی کنید که آیا لانچری که نصب کرده اید آخرین نسخه آلفا است یا خیر. در این صورت ، لطفاً لانچر را در LSPosed Manager مجدداً بهینه کنید و آن را راه اندازی مجدد کنید. ۴-عملکرد نهایی به بخش امنیت و نسخه می یو آی و نسخه لانچر و غیره بستگی دارد.</string>
   <string name="MamlDownload"> بارگیری افکت موج آب</string>
   <string name="ManualInput">وارد کردن دستی</string>
-  <string name="ModuleEnable">ماژول فعال شد</string>
   <string name="ModuleFeature">ویژگی های ماژول</string>
-  <string name="ModuleNotEnable">ماژول فعال نشده است</string>
   <string name="ModuleSettings">تنظیمات ماژول</string>
   <string name="ResHook">منبع قالب ها√</string>
   <string name="NoneBlur">بدون تاری</string>
-  <string name="OpenMiuiHomeSettings">باز کردن \"صفحه اصلی\" Settings</string>
   <string name="OtherFeature">ویژگی های دیگر</string>
   <string name="OutOfInput">لطفاً مقداری را در محدوده مجاز وارد کنید!</string>
   <string name="RealTaskViewHorizontal">صحیح · افقی اخیر</string>
@@ -45,12 +39,10 @@
   <string name="Scope">محدوده ورودی مجاز</string>
   <string name="SearchBarBlur">فعال کردن تاری در قسمت جستجو</string>
   <string name="SetSuccessfully">با موفقیت تنظیم شد</string>
-  <string name="ShowAppIcon">نشان دادن نماد برنامه</string>
   <string name="ShowDockIconTitles">نشان دادن نماد برنامه در پایین </string>
   <string name="SimpleAnimation">انیمیشن های ساده</string>
   <string name="SimpleBlur">تاری ساده</string>
   <string name="SmoothAnimation">انیمیشن های روان</string>
-  <string name="State">:وضعیت فعلی</string>
   <string name="TaskViewAppCardTextSize">اندازه متن برچسب های تصویر کوچک شده</string>
   <string name="TaskViewBlurLevel">میزان تاری برنامه های اخیر</string>
   <string name="TaskViewBlurSetTo">تنظیم میزان تاری در برنامه های اخیر به</string>
@@ -60,7 +52,6 @@
   <string name="UnlockGrids">قفل محدودیت های شبکه را باز کنید</string>
   <string name="VerticalTaskViewOfAppCardSize">اندازه تصاویر کوچک برای برنامه های اخیر عمودی</string>
   <string name="WallpaperDarken">خاموش کردن مشکی شدن پس زمینه هنگام ورود به برنامه های اخیر</string>
-  <string name="Warn">لطفاً برای یادداشت های مربوط به این ماژول به برنامه پیوست مراجعه کنید.</string>
   <string name="Welcome">خوش آمدید!</string>
   <string name="Widget">ویژگی های ویجت</string>
   <string name="WidgetToMinus">اجازه دادن به آوردن ویجت های کلاسیک به \"App Vault\"</string>

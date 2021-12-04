@@ -15,7 +15,6 @@
   <string name="Defaults">ڈیفالٹ</string>
   <string name="Description">MIUI لانچر کے لیے ہک۔</string>
   <string name="Folder">فولڈر کی ترتیبات</string>
-  <string name="HideAppIcon">ایپلیکیشن آئیکن چھپائیں</string>
   <string name="HideStatusBar">ٹاسک ویو اسکرین میں اسٹیٹس بار چھپائیں۔</string>
   <string name="HideTaskViewAppIcon">ٹاسک ویو میں ایپلیکیشن آئیکن کو چھپائیں۔</string>
   <string name="HideTaskViewCleanUpIcon">ٹاسک ویو میں کلین آل بٹن چھپائیں</string>
@@ -23,17 +22,12 @@
   <string name="HideWidgetTitles">ویجیٹ لیبلز چھپائیں۔</string>
   <string name="HorizontalTaskViewOfAppCardSize">افقی منظر کے لیے تھمب نیل سائز۔</string>
   <string name="InfiniteScroll">لانچر لامحدود سکرول۔</string>
-  <string name="MainActivity1">براہ کرم LSPosed مینیجر میں اس ماڈیول کو چالو کریں اور MIUI لانچر کو ایک بار دوبارہ شروع کریں۔ ماڈیول کی ترتیبات کی ترتیبات میں ہیں۔ ہوم اسکرین مخصوص مقام: ترتیبات - ہوم اسکرین - جہاں ڈیفالٹ لانچر ہوا کرتا تھا۔</string>
-  <string name="MainActivity2">تشخیص: یہ ماڈیول فی الحال صرف LSPosed 5606 یا اس سے اوپر کی حمایت کرتا ہے ، یہ فی الحال کسی دوسرے Xposed فریم ورک کی حمایت نہیں کرے گا۔ اگر آپ کو ماڈیول ایکٹیویٹ کرنے میں دشواری ہے تو ، نیچے دی گئی رائے پر عمل کریں: MIUI لانچر کو دوبارہ بہتر بنائیں - اس ماڈیول کو غیر فعال کریں - اس ماڈیول کو فعال کریں - MIUI لانچر کو زبردستی روکیں۔ 3. جب کچھ آپشنز غلط ہوں ، براہ کرم چیک کریں کہ آپ نے جو MIUI لانچر انسٹال کیا ہے وہ ALPHA کا تازہ ترین ورژن ہے۔ اگر ایسا ہے تو ، براہ کرم LSPosed مینیجر میں MIUI لانچر کو دوبارہ بہتر بنانے کی کوشش کریں اور اسے دوبارہ شروع کریں۔ 4. حتمی اثر آپ کے ایس او سی ، ایم آئی یو آئی ورژن ، لانچر ورژن وغیرہ پر منحصر ہے۔ براہ کرم اصل کارکردگی کا حوالہ دیں۔</string>
   <string name="MamlDownload">ڈاؤن لوڈ کرتے وقت پانی کی لہر کا منظر۔</string>
   <string name="ManualInput">خود اندراج کرو</string>
-  <string name="ModuleEnable">ماڈیول چالو ہے۔</string>
   <string name="ModuleFeature">ماڈیول کی خصوصیات</string>
-  <string name="ModuleNotEnable">ماڈیول چالو نہیں ہے۔</string>
   <string name="ModuleSettings">ماڈیول کی ترتیبات۔</string>
   <string name="ResHook">ریسورس ہک√</string>
   <string name="NoneBlur">کوئی دھندلاپن نہیں۔</string>
-  <string name="OpenMiuiHomeSettings">ہوم اسکرین کی ترتیبات کھولیں۔</string>
   <string name="OtherFeature">دیگر خصوصیات</string>
   <string name="OutOfInput">براہ کرم حد کے اندر ایک قدر درج کریں!</string>
   <string name="RealTaskViewHorizontal">سچ · افقی حالیہ۔</string>
@@ -45,12 +39,10 @@
   <string name="Scope">اجازت شدہ ان پٹ رینج۔</string>
   <string name="SearchBarBlur">سرچ باکس میں دھندلاپن کو فعال کریں۔</string>
   <string name="SetSuccessfully">یہ کامیابی سے کیا گیا ہے</string>
-  <string name="ShowAppIcon">اے پی پی آئیکن دکھائیں۔</string>
   <string name="ShowDockIconTitles">گودی میں درخواست کا نام دکھائیں۔</string>
   <string name="SimpleAnimation">سادہ حرکت پذیری۔</string>
   <string name="SimpleBlur">سادہ دھندلاپن۔</string>
   <string name="SmoothAnimation">ہموار حرکت پذیری۔</string>
-  <string name="State">موجودہ صورت حال</string>
   <string name="TaskViewAppCardTextSize">تھمب نیل لیبل ٹیکسٹ کا سائز۔</string>
   <string name="TaskViewBlurLevel">حالیہ دھندلا لیول۔</string>
   <string name="TaskViewBlurSetTo">حالیہ کی دھندلی سطح کو مقرر کریں۔</string>
@@ -60,7 +52,6 @@
   <string name="UnlockGrids">گرڈ کی پابندیوں کو غیر مقفل کریں۔</string>
   <string name="VerticalTaskViewOfAppCardSize">عمودی حالیہ کے لیے تھمب نیل سائز۔</string>
   <string name="WallpaperDarken">حالیہ وال پیپر ڈارکنگ فیچر کو بند کردیں۔</string>
-  <string name="Warn">براہ کرم اس ماڈیول پر نوٹس کے لیے منسلک اے پی پی سے رجوع کریں۔</string>
   <string name="Welcome">خوش آمدید!</string>
   <string name="Widget">ویجیٹ کی خصوصیات</string>
   <string name="WidgetToMinus">کلاسک ویجٹ کو ایپ والٹ میں منتقل کرنے کی اجازت دیں۔</string>

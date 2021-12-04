@@ -15,7 +15,6 @@
   <string name="Defaults">Standaard</string>
   <string name="Description">Hook voor MIUI Launcher</string>
   <string name="Folder">Mapinstellingen</string>
-  <string name="HideAppIcon">APP-pictogram verbergen</string>
   <string name="HideStatusBar">Verberg de statusbalk in recente</string>
   <string name="HideTaskViewAppIcon">Verberg het applicatiepictogram in recente</string>
   <string name="HideTaskViewCleanUpIcon">Verberg de knop Alles opschonen in recente</string>
@@ -23,17 +22,12 @@
   <string name="HideWidgetTitles">Widgetlabels verbergen</string>
   <string name="HorizontalTaskViewOfAppCardSize">Miniatuurgrootte voor horizontaal recent</string>
   <string name="InfiniteScroll">Launcher Oneindige Scroll</string>
-  <string name="MainActivity1">Activeer deze module in de LSPosed Manager en start het MIUI-opstartprogramma eenmaal opnieuw.\n\nDe module-instellingen bevinden zich in de instellingen van het \"Startscherm\"!\n\nSpecifieke locatie: Instellingen - Startscherm - Waar de \"Standaard launcher\" was.</string>
-  <string name="MainActivity2">Diagnostiek:\n1.Deze module ondersteunt momenteel alleen LSPosed 5606 of hoger, het ondersteunt momenteel geen andere Xposed-frameworks.\n\n2.Als je problemen hebt met het activeren van de module, volg dan de onderstaande meningen: optimaliseer MIUI-opstartprogramma opnieuw - schakel deze module uit - schakel deze module in - stop MIUI-opstartprogramma geforceerd.\n\n3.Als sommige opties ongeldig zijn, controleer dan of het MIUI-opstartprogramma dat u hebt geïnstalleerd de nieuwste ALPHA-versie is. Als dit het geval is, probeer dan het MIUI-opstartprogramma opnieuw te optimaliseren in LSPosed Manager en start het opnieuw.\n\n4. Het uiteindelijke effect hangt af van uw SoC, MIUI-versie, launcher-versie enzovoort. Raadpleeg de werkelijke prestaties.</string>
   <string name="MamlDownload">Waterrimpel-downloadeffect</string>
   <string name="ManualInput">Handmatige invoer</string>
-  <string name="ModuleEnable">Module is geactiveerd</string>
   <string name="ModuleFeature">Module functies</string>
-  <string name="ModuleNotEnable">Module is niet geactiveerd</string>
   <string name="ModuleSettings">Module-instellingen</string>
   <string name="ResHook">Resource Hook√</string>
   <string name="NoneBlur">Geen vervaging</string>
-  <string name="OpenMiuiHomeSettings">Open \"Startscherm\" Instellingen</string>
   <string name="OtherFeature">Andere features</string>
   <string name="OutOfInput">Voer een waarde in binnen het toegestane bereik!</string>
   <string name="RealTaskViewHorizontal">Waar · Horizontaal Recent</string>
@@ -45,12 +39,10 @@
   <string name="Scope">Toegestaan invoerbereik</string>
   <string name="SearchBarBlur">Vervaging in zoekvak inschakelen</string>
   <string name="SetSuccessfully">Succesvol ingesteld</string>
-  <string name="ShowAppIcon">Toon APP-pictogram</string>
   <string name="ShowDockIconTitles">Toon applicatienaam in het Dock</string>
   <string name="SimpleAnimation">Eenvoudige animatie</string>
   <string name="SimpleBlur">Eenvoudige vervaging</string>
   <string name="SmoothAnimation">Vloeiende animatie</string>
-  <string name="State">Huidige status</string>
   <string name="TaskViewAppCardTextSize">Grootte van de tekst van miniatuurlabels</string>
   <string name="TaskViewBlurLevel">Recent vervagingsniveau</string>
   <string name="TaskViewBlurSetTo">Stel het vervagingsniveau van de recente in op</string>
@@ -60,7 +52,6 @@
   <string name="UnlockGrids">Rasterbeperkingen ontgrendelen</string>
   <string name="VerticalTaskViewOfAppCardSize">Miniatuurgrootte voor verticaal recent</string>
   <string name="WallpaperDarken">Schakel de functie Recente achtergrond donkerder maken uit</string>
-  <string name="Warn">Raadpleeg de bijgevoegde APP voor opmerkingen over deze module.</string>
   <string name="Welcome">Welkom!</string>
   <string name="Widget">Widget functies</string>
   <string name="WidgetToMinus">Sta het verplaatsen van klassieke widgets toe naar \"App Vault\"</string>

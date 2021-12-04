@@ -34,7 +34,6 @@
   <string name="Folder">Папки</string>
   <string name="FolderColumnsCount">Число колонок в папках</string>
   <string name="FolderWidth">Использовать всю ширину папки</string>
-  <string name="HideAppIcon">Выкл. иконку</string>
   <string name="HideSeekPoints">Скрыть индикатор страниц рабочего стола</string>
   <string name="HideStatusBar">Скрывать строку состояния в меню недавних</string>
   <string name="HideTaskViewAppIcon">Скрыть иконки приложений в меню недавних</string>
@@ -45,16 +44,11 @@
   <string name="IconTitleFontSize">Размер шрифта подписи иконок</string>
   <string name="InfiniteScroll">Бесконечная прокрутка рабочего стола</string>
   <string name="LowEndDeviceUseMIUIWidgets">Low-end уст-ва могут использовать виджеты MIUI</string>
-  <string name="MainActivity1">Пожалуйста, активируйте этот модуль в LSPosed Manager и перезапустите раб. стол MIUI один раз.\n\nНастройки модуля находятся в настройках раб. стола.Конкретное местоположение: Настройки - Раб. стол - Там, где раньше находилась строка \"Рабочий стол\" по умолчанию.</string>
-  <string name="MainActivity2">Диагностика:\n1. Этот модуль в настоящее время поддерживает только LSPosed 5606 или выше, не поддерживает любые другие Xposed фреймворки в настоящее время.\n\n2. Если у вас есть проблемы с активацией модуля, следуйте советам ниже: Перезагрузить раб. стол MIUI - Отключить этот модуль - Включить этот модуль - Принудительно остановить раб. стол MIUI.\n\n3. Когда некоторые опции не работают, пожалуйста, проверьте, является ли раб. стол MIUI, который Вы установили, последней версией ALPHA.Если да, попробуйте выбрать раб. стол MIUI в LSPosed Manager и перезапустить его.\n\n4. Конечный эффект зависит от вашей SoC, версии MIUI, версии рабочего стола и так далее.</string>
   <string name="MamlDownload">Эффект \"Водная рябь\" при загрузке</string>
   <string name="ManualInput">Нажми, чтобы ввести вручную</string>
-  <string name="ModuleEnable">Модуль активирован</string>
   <string name="ModuleFeature">Доп. настройки модуля</string>
-  <string name="ModuleNotEnable">Модуль не активирован</string>
   <string name="ModuleSettings">Настройки модуля</string>
   <string name="NoneBlur">Без размытия</string>
-  <string name="OpenMiuiHomeSettings">Перейти в настройки</string>
   <string name="OtherFeature">Другие функции</string>
   <string name="OutOfInput">Пожалуйста, введите значение в пределах допустимого диапазона!</string>
   <string name="RealTaskViewHorizontal">Меню недавних приложений по горизонтали</string>
@@ -70,13 +64,11 @@
   <string name="Scope">Диапазон ввода</string>
   <string name="SearchBarBlur">Размытие поля поиска</string>
   <string name="SetSuccessfully">Установка прошла успешно</string>
-  <string name="ShowAppIcon">Вкл. иконку</string>
   <string name="ShowDockIconTitles">Отображать названия приложений в док-баре</string>
   <string name="SimpleAnimation">Простые анимации</string>
   <string name="SimpleBlur">Простое размытие</string>
   <string name="SmallWindow">Все приложения могут использовать \"Плавающее окно\"</string>
   <string name="SmoothAnimation">Плавная анимация</string>
-  <string name="State">Текущее состояние</string>
   <string name="TaskViewAppCardTextSize">Размер текста заголовка миниатюры</string>
   <string name="TaskViewBlurLevel">Уровень размытия меню недавних</string>
   <string name="TaskViewBlurSetTo">Установите уровень размытия меню недавних</string>
@@ -88,13 +80,11 @@
   <string name="UnlockGrids">Разблокировать ограничения макета</string>
   <string name="VerticalTaskViewOfAppCardSize">Размер миниатюры в меню недавних по верт.</string>
   <string name="WallpaperDarken">Отключить затемнение обоев</string>
-  <string name="Warn">Пожалуйста, ознакомьтесь с прилагаемым приложением для принятия мер предосторожности при работе с модулем.</string>
   <string name="Welcome">Добро пожаловать!</string>
   <string name="Widget">Виджеты</string>
   <string name="WidgetToMinus">Позволить перемещать классические виджеты в \"Ленту виджетов\"</string>
   <string name="Yes">Да</string>
   <string name="LowEndAnim">Low-end уст-ва могут использовать анимированные иконки</string>
-  <string name="About">О проекте</string>
   <string name="UnlockIcons">Откл. ограничение кол-ва иконок в док-баре</string>
   <string name="BrokenFeature">Устаревшие функции</string>
 </resources>

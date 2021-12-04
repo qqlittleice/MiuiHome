@@ -32,9 +32,9 @@ object CrashRecord : Thread.UncaughtExceptionHandler {
                 if (pref.getInt("times", 0) >= 3) {
                     it.createDeviceProtectedStorageContext()
                         .getSharedPreferences(Config.SP_NAME, Context.MODE_PRIVATE).edit().apply {
-                        clear()
-                        apply()
-                    }
+                            clear()
+                            apply()
+                        }
                     pref.edit().putInt("times", 0).apply()
                 }
                 pref.edit().putInt("times", pref.getInt("times", 0) + 1).apply()

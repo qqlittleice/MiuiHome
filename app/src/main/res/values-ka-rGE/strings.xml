@@ -15,7 +15,6 @@
   <string name="Defaults">ძირითადი</string>
   <string name="Description">MIUI Launcher-ის ჰუკირებული ვერსია</string>
   <string name="Folder">ფოლდერის პარამეტრები</string>
-  <string name="HideAppIcon">აპლიკაციის ნახატის დამალვა</string>
   <string name="HideStatusBar">Status Bar-ის დამალვა მოქმედ აპლიკაციების ფანჯარაში</string>
   <string name="HideTaskViewAppIcon">აპლიკაციის ნახატის დამალვა მოქმედ აპლიკაციების ფანჯარაში</string>
   <string name="HideTaskViewCleanUpIcon">გაწმინდვის ღილაკის დამალვა მოქმედ აპლიკაციების ფანჯარაში</string>
@@ -23,17 +22,12 @@
   <string name="HideWidgetTitles">Widget-ების სახელების დამალვა</string>
   <string name="HorizontalTaskViewOfAppCardSize">აპლიკაციების ზომა ჰორიზონტალურ მოქმედ აპლიკაციების ფანჯარაში </string>
   <string name="InfiniteScroll">Launcher-ზე ულიმიტოთ სქროლი</string>
-  <string name="MainActivity1">\nგთხოვთ, რომ გააქტიუროთ ეს მოდული LSPosed Manager-ში და დაარესტარტოთ  MIUI launcher-ი. მოდულის პარამეტრები ჩვეულებრივ პარამეტრებშია, სადაც Launcher-ის არჩევა შეგეძლოთ.</string>
-  <string name="MainActivity2">\nდიაგნოსტიკა: ეს მოდული მხოლოდ LSPosed 5606 ვერსიაზე და ზემოთ მუშაობს, ის სხვა არცერთ ვერსიაზე მუშაობს. თუ ვერ ააქტიურებთ მოდულს, გათიშეთ Launcher-ი. თუ კიდევ გაქვთ პრობლემები, მოდული ჩართეთ და გათიშეთ. Alpha ვერსიებზე პრობლემები აქვს მოდულს. დანარჩენი პრობლემები ტელეფონის ბრალია.</string>
   <string name="MamlDownload">წყლის წვეთვის ეფექტი</string>
   <string name="ManualInput">მექანიკურად შეყვანა</string>
-  <string name="ModuleEnable">მოდული ჩართულია</string>
   <string name="ModuleFeature">მოდულის ფუნქციები</string>
-  <string name="ModuleNotEnable">მოდული გათიშულია</string>
   <string name="ModuleSettings">მოდულის პარამეტრები</string>
   <string name="ResHook">რესურსების Hook√</string>
   <string name="NoneBlur">არანაირი დაბურვა</string>
-  <string name="OpenMiuiHomeSettings">გახსენით Home Screen-ის პარამეტრები</string>
   <string name="OtherFeature">სხვა ფუნქციები</string>
   <string name="OutOfInput">გთხოვთ შეიყვანოთ დაშვებული ოდენობა!</string>
   <string name="RealTaskViewHorizontal">ჰორიზონტალური მოქმედ აპლიკაციების ფანჯარა</string>
@@ -45,12 +39,10 @@
   <string name="Scope">დაშვებული პარამეტრები</string>
   <string name="SearchBarBlur">საძიებო ველის დაბურვა</string>
   <string name="SetSuccessfully">წარმატებულად დაყენდა</string>
-  <string name="ShowAppIcon">აპლიკაციის ნახატის გამოჩვენება</string>
   <string name="ShowDockIconTitles">აპლიკაციის სახელის გამოჩენა Dock-ში</string>
   <string name="SimpleAnimation">მარტივი ანიმაცია</string>
   <string name="SimpleBlur">მარტივი დაბურვა</string>
   <string name="SmoothAnimation">ნელი ანიმაცია</string>
-  <string name="State">სტატუსი</string>
   <string name="TaskViewAppCardTextSize">Size of thumbnail labels text</string>
   <string name="TaskViewBlurLevel">მოქმედ აპლიკაციების ფანჯარის დაბურვა</string>
   <string name="TaskViewBlurSetTo">მოქმედ აპლიკაციების ფანჯარაში დაბურვის დონე</string>
@@ -60,7 +52,6 @@
   <string name="UnlockGrids">მენიუში სვეტების ოდენობის გაზრდა</string>
   <string name="VerticalTaskViewOfAppCardSize">აპლიკაციების ზომა ვერტიკალურ მოქმედ აპლიკაციების ფანჯარაში</string>
   <string name="WallpaperDarken">ფონის ჩაბნელების ფუნქციის გამორთვა</string>
-  <string name="Warn">გთხოვთ შეამოწმოთ აპლიკაციის წინასიტყვაობა აპლიკაციაშივე.</string>
   <string name="Welcome">კეთილი იყოს თქვენი მოძრაობა!</string>
   <string name="Widget">Widget-ების ფუნქციები</string>
   <string name="WidgetToMinus">ჩვეულებრივი Widget-ების App Vault-ში ჩასმა</string>
