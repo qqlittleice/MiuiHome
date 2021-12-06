@@ -50,11 +50,18 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+
     packagingOptions {
         resources {
-            excludes += "META-INF/**"
-            excludes += "kotlin/**"
-            excludes += "**.bin"
+            excludes += "/META-INF/**"
+            excludes += "/kotlin/**"
+            excludes += "/kotlinx/**"
+            excludes += "/okhttp3/**"
+            excludes += "/*.txt"
+            excludes += "/*.bin"
         }
     }
 
@@ -66,7 +73,7 @@ android {
 dependencies {
 
     compileOnly("de.robv.android.xposed:api:82")
-    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.2")
+    //implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.2")
     implementation("com.microsoft.appcenter:appcenter-crashes:4.3.1")
     implementation("com.microsoft.appcenter:appcenter-analytics:4.3.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
