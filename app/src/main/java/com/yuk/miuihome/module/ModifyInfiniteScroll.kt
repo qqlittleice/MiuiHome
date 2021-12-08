@@ -1,13 +1,13 @@
 package com.yuk.miuihome.module
 
-import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import de.robv.android.xposed.XposedHelpers
 
 class ModifyInfiniteScroll {
 
     fun init() {
-        if (ownSP.getBoolean("infiniteScroll", false)) {
+        if (OwnSP.ownSP.getBoolean("infiniteScroll", false)) {
             "com.miui.home.launcher.ScreenView".hookAfterMethod(
                 "getSnapToScreenIndex",
                 Int::class.javaPrimitiveType,

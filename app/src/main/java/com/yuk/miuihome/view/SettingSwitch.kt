@@ -8,7 +8,7 @@ import android.widget.CompoundButton
 import com.yuk.miuihome.HomeContext
 import android.widget.Switch
 import com.yuk.miuihome.utils.LogUtil
-import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.dip2px
 import com.yuk.miuihome.utils.isNightMode
 
@@ -16,12 +16,12 @@ import com.yuk.miuihome.utils.isNightMode
 class SettingSwitch(context: Context) : Switch(context) {
     private var color = if (isNightMode(getContext())) "#ffffff" else "#000000"
         set(value) = setTextColor(Color.parseColor(value))
-    private val editor by lazy { ownSP.edit() }
+    private val editor by lazy { OwnSP.ownSP.edit() }
     var toastText = ""
     var defState = false
     var key = ""
         set(value) {
-            isChecked = ownSP.getBoolean(value, defState)
+            isChecked = OwnSP.ownSP.getBoolean(value, defState)
             setOnCheckedChangeListener { _: CompoundButton, b: Boolean ->
                 if (b and (toastText != "")) LogUtil.toast(toastText)
                 editor.putBoolean(value, b)

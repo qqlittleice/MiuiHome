@@ -12,7 +12,7 @@ import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit.Companion.moduleRes
 import com.yuk.miuihome.utils.LogUtil
-import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.dip2px
 import com.yuk.miuihome.utils.isNightMode
 
@@ -26,7 +26,7 @@ class SettingSeekBarDialog(
     private val defValue: Int,
     private val canUserInput: Boolean
 ) {
-    private val editor by lazy { ownSP.edit() }
+    private val editor by lazy { OwnSP.ownSP.edit() }
 
     fun saveValue(value: Float): Boolean {
         if ((value < (minValue.toFloat() / divide)) or (value > (maxValue.toFloat() / divide))) {
@@ -40,7 +40,7 @@ class SettingSeekBarDialog(
 
     fun build(): AlertDialog {
         val dialogBuilder = SettingBaseDialog().get()
-        var tempValue: Float = ownSP.getFloat(mKey, 0f)
+        var tempValue: Float = OwnSP.ownSP.getFloat(mKey, 0f)
         lateinit var valueTextView: TextView
         lateinit var dialog: AlertDialog
         dialogBuilder.setView(ScrollView(HomeContext.activity).apply {

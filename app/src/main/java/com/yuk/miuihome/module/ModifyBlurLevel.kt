@@ -1,13 +1,13 @@
 package com.yuk.miuihome.module
 
-import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 
 class ModifyBlurLevel {
 
     fun init() {
-        val string = ownSP.getString("blurLevel", "")
-        if (ownSP.getBoolean("simpleAnimation", false)) {
+        val string = OwnSP.ownSP.getString("blurLevel", "")
+        if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
             "com.miui.home.launcher.common.BlurUtils".hookBeforeMethod("getBlurType") {
                 it.result = 0
             }

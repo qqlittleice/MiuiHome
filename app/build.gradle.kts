@@ -6,14 +6,15 @@ plugins {
     kotlin("android")
 }
 
+val verCode = 4156
+val verName = "4.1.5"
+
 android {
     compileSdk = 31
-    val verCode = 4155
-    val verName = "4.1.5"
 
     defaultConfig {
         applicationId = "com.yuk.miuihome"
-        minSdk = 27
+        minSdk = 28
         targetSdk = 32
         versionCode = verCode
         versionName = verName
@@ -24,10 +25,7 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             setProguardFiles(
-                listOf(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro",
-                    "proguard-log.pro"
+                listOf(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro", "proguard-log.pro"
                 )
             )
         }
@@ -73,7 +71,6 @@ android {
 dependencies {
 
     compileOnly("de.robv.android.xposed:api:82")
-    //implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.2")
     implementation("com.microsoft.appcenter:appcenter-crashes:4.3.1")
     implementation("com.microsoft.appcenter:appcenter-analytics:4.3.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")

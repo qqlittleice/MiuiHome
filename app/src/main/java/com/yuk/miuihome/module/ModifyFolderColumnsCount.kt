@@ -3,13 +3,13 @@ package com.yuk.miuihome.module
 import de.robv.android.xposed.XposedHelpers
 import android.widget.GridView
 import android.view.ViewGroup
-import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 
 class ModifyFolderColumnsCount {
 
     fun init() {
-        val value = ownSP.getFloat("folderColumns", -1f)
+        val value = OwnSP.ownSP.getFloat("folderColumns", -1f)
         if (value == -1f || value == 3f) return
         "com.miui.home.launcher.Folder".hookAfterMethod(
             "onFinishInflate"
@@ -17,7 +17,7 @@ class ModifyFolderColumnsCount {
             val columns: Int = value.toInt()
             val mContent = XposedHelpers.getObjectField(it.thisObject, "mContent") as GridView
             mContent.numColumns = columns
-            if (ownSP.getBoolean("folderWidth", false) && (columns > 3)) {
+            if (OwnSP.ownSP.getBoolean("folderWidth", false) && (columns > 3)) {
                 val lp = mContent.layoutParams
                 lp.width = ViewGroup.LayoutParams.MATCH_PARENT
                 mContent.layoutParams = lp

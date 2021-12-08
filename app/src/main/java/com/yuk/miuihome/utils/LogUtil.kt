@@ -4,9 +4,8 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
 import com.yuk.miuihome.Config.TAG
-import de.robv.android.xposed.XposedBridge
 import com.yuk.miuihome.HomeContext
-import com.yuk.miuihome.utils.OwnSP.ownSP
+import de.robv.android.xposed.XposedBridge
 import android.util.Log as ALog
 
 object LogUtil {
@@ -14,7 +13,7 @@ object LogUtil {
 
     @JvmOverloads
     fun toast(msg: String, force: Boolean = true) {
-        if (!force && !ownSP.getBoolean("showLogToast", false)) return
+        if (!force && !OwnSP.ownSP.getBoolean("showLogToast", false)) return
         handler.post {
             Toast.makeText(HomeContext.context, msg, Toast.LENGTH_SHORT).show()
         }

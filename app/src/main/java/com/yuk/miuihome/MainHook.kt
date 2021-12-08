@@ -1,124 +1,24 @@
 package com.yuk.miuihome
 
-import android.app.Activity
 import android.app.AlertDialog
-import android.os.Bundle
 import android.view.View
 import android.widget.*
 import com.yuk.miuihome.Config.AndroidSDK
 import com.yuk.miuihome.XposedInit.Companion.moduleRes
-import com.yuk.miuihome.module.*
+import com.yuk.miuihome.module.BuildWithEverything
+import com.yuk.miuihome.module.EnableBlurWhenOpenFolder
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.OwnSP.ownSP
 import com.yuk.miuihome.utils.dip2px
-import com.yuk.miuihome.utils.ktx.getObjectField
-import com.yuk.miuihome.utils.ktx.hookAfterMethod
-import com.yuk.miuihome.utils.ktx.setObjectField
 import com.yuk.miuihome.view.*
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
 class MainHook {
 
-    private val editor by lazy { ownSP.edit() }
+    private val editor by lazy { OwnSP.ownSP.edit() }
 
-    fun doHook() {
-        "com.miui.home.settings.MiuiHomeSettingActivity".hookAfterMethod("onCreate", Bundle::class.java) { HomeContext.activity = it.thisObject as Activity }
-        "com.miui.home.settings.MiuiHomeSettings".hookAfterMethod("onCreatePreferences", Bundle::class.java, String::class.java) {
-            (it.thisObject.getObjectField("mDefaultHomeSetting")).apply {
-                setObjectField("mTitle", moduleRes.getString(R.string.ModuleSettings))
-                setObjectField("mClickListener", object : View.OnClickListener {
-                    override fun onClick(v: View?) {
-                        showSettingDialog()
-                    }
-                })
-            }
-        }
-
-        // 修改设备分级
-        SetDeviceLevel().init()
-        // 修改模糊等级
-        ModifyBlurLevel().init()
-        // 开启平滑动画
-        EnableSmoothAnimation().init()
-        // 开启文件夹模糊
-        EnableBlurWhenOpenFolder().init()
-        // 开启水波纹
-        EnableMamlDownload().init()
-        // 开启时钟常显
-        EnableClockGadget().init()
-        // 动画速度调节
-        ModifyAnimDurationRatio().init()
-        // 后台卡片圆角大小调节
-        ModifyRoundedCorners().init()
-        // 后台卡片图标文字间距调节
-        ModifyHeaderHeight().init()
-        // 进入后台是否隐藏状态栏
-        EnableHideStatusBarWhenEnterRecents().init()
-        // 禁用Log
-        DisableLog().init()
-        // 桌面搜索框模糊
-        EnableSearchBarBlur().init()
-        // 允许最近任务横屏
-        EnableRecentsViewHorizontal().init()
-        // 取消最近任务壁纸压暗
-        DisableRecentsViewWallpaperDarken().init()
-        // 隐藏桌面小部件标题
-        ModifyHideWidgetTitles().init()
-        // 允许桌面安卓小部件移到负一屏
-        AllowWidgetToMinus().init()
-        // 允许在安卓小部件显示MIUI组件
-        AlwaysShowMIUIWidget().init()
-        // 纵向后台卡片大小
-        ModifyTaskVertical().init()
-        // 横向后台卡片大小
-        ModifyTaskHorizontal().init()
-        // 开启简单动画
-        EnableSimpleAnimation().init()
-        // 屏幕无限滚动
-        ModifyInfiniteScroll().init()
-        // 解锁桌面布局限制
-        ModifyUnlockGrids().init()
-        // 打开应用时关闭文件夹
-        ModifyCloseFolderOnLaunch().init()
-        // 显示底栏应用标题
-        ModifyShowDockIconTitles().init()
-        // 显示底栏应用阴影
-        EnableDockIconShadow().init()
-        // 允许所有应用使用小窗口
-        AllowAllAppsToUseSmallWindow().init()
-        // 允许低端机使用MIUI小组件
-        EnableLowEndDeviceUseMIUIWidgets().init()
-        // 禁用今日推荐
-        DisableRecommendServer().init()
-        // 移除非抽屉模式下桌面指示器
-        ModifyHideSeekPoints().init()
-        // 移除应用分组中"全部"选项卡
-        ModifyCategoryHideAll().init()
-        // 文件夹列数
-        ModifyFolderColumnsCount().init()
-        // 桌面标题字体大小
-        ModifyIconTitleFontSize().init()
-        // Prop
-        HookSystemProperties().init()
-        // Dock
-        ModifyDockHook().init()
-        // 双击锁屏
-        ModifyDoubleTapToSleep().init()
-        //
-        ModifyUnlockHotseatIcon().init()
-        // CustomHook
-        //CustomHook.init()
-        // ResHook
-        ResourcesHook().init()
-    }
-
-    private fun showSettingDialog() {
-        if (ownSP.getBoolean("isFirstUse", true)) {
-            firstUseDialog()
-            return
-        }
+    fun showSettingDialog() {
         lateinit var dialog: AlertDialog
         val dialogBuilder = SettingBaseDialog().get()
         dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
@@ -132,11 +32,11 @@ class MainHook {
                 } else {
                     addView(SettingTextView.FastBuilder(mText = "${BuildConfig.VERSION_NAME} - ${BuildConfig.VERSION_CODE}(${BuildConfig.BUILD_TYPE})", mColor = "#01b17b").build())
                 }
-                if (ownSP.getBoolean("simpleAnimation", false)) {
+                if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                     addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.SimpleWarn), mColor = "#ff0c0c").build())
                 }
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.BaseFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
-                if (!ownSP.getBoolean("simpleAnimation", false)) {
+                if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                     addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.SmoothAnimation), mKey = "smoothAnimation").build())
                     addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.TaskViewBlurLevel)) { showModifyBlurLevel() }.build())
                 }
@@ -144,11 +44,10 @@ class MainHook {
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.AdvancedFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.UnlockGrids), mKey = "unlockGrids").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.ShowDockIconTitles), mKey = "showDockIconTitles").build())
-                addView(
-                        SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.HideStatusBar), mKey = "hideStatusBar").build())
+                addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.HideStatusBar), mKey = "hideStatusBar").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.MamlDownload), mKey = "mamlDownload").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.UnlockIcons), mKey = "unlockIcons").build())
-                if (!ownSP.getBoolean("simpleAnimation", false)) {
+                if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                     addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.WallpaperDarken), mKey = "wallpaperDarken").build())
                 }
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.CategoryHideAll), mKey = "categoryHideAll").build())
@@ -159,7 +58,7 @@ class MainHook {
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.VerticalTaskViewOfAppCardSize)) { showModifyVertical() }.build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.HorizontalTaskViewOfAppCardSize)) { showModifyHorizontal() }.build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.Folder), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
-                if (!ownSP.getBoolean("simpleAnimation", false)) {
+                if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                     addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.BlurWhenOpenFolder), mKey = "blurWhenOpenFolder", show = EnableBlurWhenOpenFolder.checked).build())
                 }
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.CloseFolder), mKey = "closeFolder").build())
@@ -193,7 +92,7 @@ class MainHook {
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.OtherFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.AlwaysShowStatusBarClock), mKey = "clockGadget").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.DoubleTap), mKey = "doubleTap").build())
-                if (!ownSP.getBoolean("dockSettings", false) && (AndroidSDK >= 30)) {
+                if (!OwnSP.ownSP.getBoolean("dockSettings", false) && (AndroidSDK >= 30)) {
                     addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.SearchBarBlur), mKey = "searchBarBlur").build())
                 }
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.DockSettings)) { showDockDialog() }.build())
@@ -255,7 +154,7 @@ class MainHook {
                     addView(SettingTextView.FastBuilder(mText = "arg(s):").build())
                     addView(argsLinearLayout)
                     addView(Button(HomeContext.activity).apply {
-                        text = "Add arg"
+                        text = "X"
                         setOnClickListener { argsLinearLayout.addView(createArgsEditText()) }
                     })
                     addView(SettingTextView.FastBuilder(mText = "result(null直接不输入即可):").build())
@@ -283,7 +182,7 @@ class MainHook {
                         dialog.cancel()
                         showDockDialog()
                     }.build())
-                    if (ownSP.getBoolean("dockSettings", false)) {
+                    if (OwnSP.ownSP.getBoolean("dockSettings", false)) {
                         if (AndroidSDK >= 30) {
                             addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.EnableDockBlur), mKey = "searchBarBlur").build())
                         }
@@ -301,7 +200,7 @@ class MainHook {
                     }
                 })
             })
-            if (ownSP.getBoolean("dockSettings", false)) {
+            if (OwnSP.ownSP.getBoolean("dockSettings", false)) {
                 setPositiveButton(moduleRes.getString(R.string.Save), null)
                 setNeutralButton(moduleRes.getString(R.string.Reset1)) { _, _ -> showModifyReset1() }
             }
@@ -481,18 +380,7 @@ class MainHook {
             setNeutralButton(moduleRes.getString(R.string.Yes)) { _, _ ->
                 editor.clear()
                 editor.commit()
-                OwnSP.set("isFirstUse", false)
-                OwnSP.set("animationLevel", 1.25f)
-                OwnSP.set("dockRadius", 2.5f)
-                OwnSP.set("dockHeight", 7.9f)
-                OwnSP.set("dockSide", 3.0f)
-                OwnSP.set("dockBottom", 2.3f)
-                OwnSP.set("dockIconBottom", 3.5f)
-                OwnSP.set("dockMarginTop", 0.6f)
-                OwnSP.set("dockMarginBottom", 11.0f)
-                OwnSP.set("folderColumns", 3f)
-                OwnSP.set("task_horizontal1", 1.0f)
-                OwnSP.set("task_horizontal2", 1.0f)
+                OwnSP.set("isFirstUse", true)
                 thread {
                     LogUtil.toast(moduleRes.getString(R.string.Reboot2))
                     Thread.sleep(1000)
@@ -504,7 +392,7 @@ class MainHook {
         dialogBuilder.show()
     }
 
-    private fun firstUseDialog() {
+    fun firstUseDialog() {
         val dialogBuilder = SettingBaseDialog().get()
         dialogBuilder.apply {
             setView(ScrollView(HomeContext.activity).apply {

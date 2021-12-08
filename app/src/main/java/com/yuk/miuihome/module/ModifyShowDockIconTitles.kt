@@ -2,7 +2,7 @@ package com.yuk.miuihome.module
 
 import android.content.Context
 import com.yuk.miuihome.HomeContext
-import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import com.yuk.miuihome.utils.ktx.setReturnConstant
@@ -12,7 +12,7 @@ import kotlin.math.roundToInt
 class ModifyShowDockIconTitles {
 
     fun init() {
-        if (ownSP.getBoolean("showDockIconTitles", false)) {
+        if (OwnSP.ownSP.getBoolean("showDockIconTitles", false)) {
             "com.miui.home.launcher.DeviceConfig".setReturnConstant(
                 "isHotseatsAppTitleHided",
                 result = false

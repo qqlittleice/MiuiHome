@@ -1,15 +1,16 @@
 package com.yuk.miuihome.module
 
 import android.content.Context
-import android.content.res.Resources
 import android.os.Bundle
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import com.yuk.miuihome.Config.AndroidSDK
 import com.yuk.miuihome.HomeContext
-import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.dip2px
-import com.yuk.miuihome.utils.ktx.*
+import com.yuk.miuihome.utils.ktx.findClass
+import com.yuk.miuihome.utils.ktx.hookAfterMethod
+import com.yuk.miuihome.utils.ktx.replaceMethod
 import com.yuk.miuihome.utils.px2dip
 import de.robv.android.xposed.XposedHelpers.callMethod
 import java.io.BufferedReader
@@ -19,7 +20,7 @@ import java.io.InputStreamReader
 class ModifyDockHook {
 
     fun init() {
-        if (ownSP.getBoolean("dockSettings", false)) {
+        if (OwnSP.ownSP.getBoolean("dockSettings", false)) {
             if (AndroidSDK >= 30) {
                 try {
                     readStream(
@@ -37,13 +38,13 @@ class ModifyDockHook {
                 Context::class.java,
                 Boolean::class.java
             ) {
-                dip2px((ownSP.getFloat("dockMarginTop", 0.6f) * 10).toInt())
+                dip2px((OwnSP.ownSP.getFloat("dockMarginTop", 0.6f) * 10).toInt())
             }
             // 页面指示器距离屏幕底部
             deviceConfigClass.replaceMethod(
                 "getWorkspaceIndicatorMarginBottom",
             ) {
-                dip2px((ownSP.getFloat("dockMarginBottom", 11.0f) * 10).toInt())
+                dip2px((OwnSP.ownSP.getFloat("dockMarginBottom", 11.0f) * 10).toInt())
             }
             // 图标距屏幕底部
             deviceConfigClass.replaceMethod(
@@ -52,7 +53,7 @@ class ModifyDockHook {
                 Boolean::class.java,
                 Boolean::class.java
             ) {
-                dip2px((ownSP.getFloat("dockIconBottom", 3.5f) * 10).toInt())
+                dip2px((OwnSP.ownSP.getFloat("dockIconBottom", 3.5f) * 10).toInt())
             }
             // Dock距屏幕两侧
             deviceConfigClass.replaceMethod(
@@ -60,7 +61,7 @@ class ModifyDockHook {
                 Context::class.java
             ) {
                 val deviceWidth = px2dip(HomeContext.context.resources.displayMetrics.widthPixels)
-                dip2px(deviceWidth - (ownSP.getFloat("dockSide", 3.0f) * 10).toInt())
+                dip2px(deviceWidth - (OwnSP.ownSP.getFloat("dockSide", 3.0f) * 10).toInt())
             }
             // Dock距屏幕底部
             deviceConfigClass.replaceMethod(
@@ -68,7 +69,7 @@ class ModifyDockHook {
                 Context::class.java,
                 Boolean::class.java
             ) {
-                dip2px((ownSP.getFloat("dockBottom", 2.3f) * 10).toInt())
+                dip2px((OwnSP.ownSP.getFloat("dockBottom", 2.3f) * 10).toInt())
             }
             // 宽度变化量
             deviceConfigClass.replaceMethod("getSearchBarWidthDelta") { 0 }
@@ -88,7 +89,7 @@ class ModifyDockHook {
                 searchBarDesktop.removeAllViews()
                 // 修改高度
                 searchBarObject.layoutParams.height =
-                    dip2px((ownSP.getFloat("dockHeight", 7.9f) * 10).toInt())
+                    dip2px((OwnSP.ownSP.getFloat("dockHeight", 7.9f) * 10).toInt())
                 // 修改应用列表搜索框
                 val mAllAppViewField = launcherClass.getDeclaredField("mAppsView")
                 mAllAppViewField.isAccessible = true

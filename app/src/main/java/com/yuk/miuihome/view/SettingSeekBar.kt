@@ -11,7 +11,7 @@ import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit.Companion.moduleRes
 import com.yuk.miuihome.utils.LogUtil
-import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.dip2px
 import com.yuk.miuihome.utils.isNightMode
 
@@ -33,9 +33,9 @@ class SettingSeekBar(
         }
     private val seekBar: SeekBar
     private val textView: TextView
-    private val editor by lazy { ownSP.edit() }
+    private val editor by lazy { OwnSP.ownSP.edit() }
     lateinit var valueTextView: TextView
-    var tempValue: Float = ownSP.getFloat(mKey, 0f)
+    var tempValue: Float = OwnSP.ownSP.getFloat(mKey, 0f)
     var key = ""
 
     init {

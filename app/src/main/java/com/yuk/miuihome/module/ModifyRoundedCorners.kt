@@ -3,14 +3,14 @@ package com.yuk.miuihome.module
 import android.content.res.Resources
 import com.yuk.miuihome.Config
 import com.yuk.miuihome.HomeContext
-import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.dp2px
 import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 
 class ModifyRoundedCorners {
 
     fun init() {
-        val value = ownSP.getFloat("recents_task_view_rounded_corners_radius", -1f)
+        val value = OwnSP.ownSP.getFloat("recents_task_view_rounded_corners_radius", -1f)
         if (value == -1f || value == 20f) return
         Resources::class.java.hookBeforeMethod(
             "getDimensionPixelSize",

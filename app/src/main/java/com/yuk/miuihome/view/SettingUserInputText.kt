@@ -10,7 +10,7 @@ import com.yuk.miuihome.HomeContext
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit.Companion.moduleRes
 import com.yuk.miuihome.utils.LogUtil
-import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.OwnSP.remove
 import com.yuk.miuihome.utils.dip2px
 import com.yuk.miuihome.utils.isNightMode
@@ -19,7 +19,7 @@ class SettingUserInputText(
     private val mText: String,
     private val mKey: String
 ) {
-    private val editor by lazy { ownSP.edit() }
+    private val editor by lazy { OwnSP.ownSP.edit() }
 
     fun build(): AlertDialog {
         lateinit var editText: EditText

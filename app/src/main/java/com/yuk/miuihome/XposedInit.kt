@@ -1,16 +1,25 @@
 package com.yuk.miuihome
 
-import android.annotation.TargetApi
+import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.content.res.Resources
 import android.content.res.XModuleResources
-import android.os.Build
+import android.os.Bundle
+import android.view.View
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
+import com.yuk.miuihome.module.*
 import com.yuk.miuihome.utils.LogUtil
-import de.robv.android.xposed.*
+import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.ktx.getObjectField
+import com.yuk.miuihome.utils.ktx.hookAfterMethod
+import com.yuk.miuihome.utils.ktx.setObjectField
+import de.robv.android.xposed.IXposedHookInitPackageResources
+import de.robv.android.xposed.IXposedHookLoadPackage
+import de.robv.android.xposed.IXposedHookZygoteInit
+import de.robv.android.xposed.XposedHelpers
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
 import de.robv.android.xposed.callbacks.XC_LoadPackage
 
@@ -22,33 +31,81 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
     }
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
-        when (lpparam.packageName) {
-            Config.packageName -> {
-                XposedHelpers.findAndHookMethod("com.yuk.miuihome.activity.MainActivity", lpparam.classLoader, "isModuleEnable", object : XC_MethodHook() {
-                    override fun afterHookedMethod(lpparam: MethodHookParam) {
-                        lpparam.result = true
+        if (lpparam.packageName != Config.hookPackage) return
+        Application::class.java.hookAfterMethod(
+            "attach",
+            Context::class.java
+        ) {
+            HomeContext.context = it.args[0] as Context
+            HomeContext.classLoader = HomeContext.context.classLoader
+            HomeContext.application = it.thisObject as Application
+            CrashRecord.init(HomeContext.context)
+            doHook()
+            startOnlineLog()
+            checkAlpha()
+            checkVersionCode()
+            checkWidgetLauncher()
+        }
+    }
+
+    private fun doHook() {
+        "com.miui.home.settings.MiuiHomeSettingActivity".hookAfterMethod(
+            "onCreate",
+            Bundle::class.java
+        ) { HomeContext.activity = it.thisObject as Activity }
+        "com.miui.home.settings.MiuiHomeSettings".hookAfterMethod(
+            "onCreatePreferences", Bundle::class.java, String::class.java
+        ) {
+            (it.thisObject.getObjectField("mDefaultHomeSetting")).apply {
+                setObjectField("mTitle", moduleRes.getString(R.string.ModuleSettings))
+                setObjectField("mClickListener", object : View.OnClickListener {
+                    override fun onClick(v: View?) {
+                        if (OwnSP.ownSP.getBoolean("isFirstUse", true))
+                            MainHook().firstUseDialog()
+                        else
+                            MainHook().showSettingDialog()
                     }
                 })
-            }
-            Config.hookPackage -> {
-                XposedHelpers.findAndHookMethod(Application::class.java, "attach", Context::class.java, object : XC_MethodHook() {
-                    override fun afterHookedMethod(param: MethodHookParam) {
-                        HomeContext.context = param.args[0] as Context
-                        HomeContext.classLoader = HomeContext.context.classLoader
-                        HomeContext.application = param.thisObject as Application
-                        CrashRecord.init(HomeContext.context)
-                        startOnlineLog()
-                        checkAlpha()
-                        checkVersionCode()
-                        checkWidgetLauncher()
-                        MainHook().doHook()
-                    }
-                })
-            }
-            else -> {
-                return
             }
         }
+        DisableLog().init()
+        SetDeviceLevel().init()
+        ModifyBlurLevel().init()
+        EnableSmoothAnimation().init()
+        EnableBlurWhenOpenFolder().init()
+        EnableMamlDownload().init()
+        EnableClockGadget().init()
+        ModifyAnimDurationRatio().init()
+        ModifyRoundedCorners().init()
+        ModifyHeaderHeight().init()
+        EnableHideStatusBarWhenEnterRecents().init()
+        EnableSearchBarBlur().init()
+        EnableRecentsViewHorizontal().init()
+        DisableRecentsViewWallpaperDarken().init()
+        ModifyHideWidgetTitles().init()
+        AllowWidgetToMinus().init()
+        AlwaysShowMIUIWidget().init()
+        ModifyTaskVertical().init()
+        ModifyTaskHorizontal().init()
+        EnableSimpleAnimation().init()
+        ModifyInfiniteScroll().init()
+        ResourcesHook().init()
+        ModifyCloseFolderOnLaunch().init()
+        ModifyShowDockIconTitles().init()
+        EnableDockIconShadow().init()
+        AllowAllAppsToUseSmallWindow().init()
+        EnableLowEndDeviceUseMIUIWidgets().init()
+        DisableRecommendServer().init()
+        ModifyHideSeekPoints().init()
+        ModifyCategoryHideAll().init()
+        ModifyFolderColumnsCount().init()
+        ModifyIconTitleFontSize().init()
+        ModifyDockHook().init()
+        ModifyDoubleTapToSleep().init()
+        ModifyUnlockHotseatIcon().init()
+        ModifyUnlockGrids().init()
+        HookSystemProperties().init()
+        //CustomHook.init()
     }
 
     override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam) {
@@ -70,7 +127,6 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.P)
     private fun checkVersionCode() {
         try {
             HomeContext.versionCode = HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0).longVersionCode

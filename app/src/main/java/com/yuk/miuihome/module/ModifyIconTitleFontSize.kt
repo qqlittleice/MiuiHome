@@ -2,7 +2,7 @@ package com.yuk.miuihome.module
 
 import android.util.TypedValue
 import android.widget.TextView
-import com.yuk.miuihome.utils.OwnSP.ownSP
+import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import de.robv.android.xposed.XposedHelpers
 
@@ -10,7 +10,7 @@ import de.robv.android.xposed.XposedHelpers
 class ModifyIconTitleFontSize {
 
     fun init() {
-        val value = ownSP.getFloat("iconTitleFontSize", -1f)
+        val value = OwnSP.ownSP.getFloat("iconTitleFontSize", -1f)
         if (value == -1f || value == 12f) return
         "com.miui.home.launcher.ItemIcon".hookAfterMethod("onFinishInflate") {
             val mTitle = XposedHelpers.getObjectField(it.thisObject, "mTitle") as TextView
