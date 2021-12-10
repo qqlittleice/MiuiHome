@@ -5,11 +5,13 @@ plugins {
     id("com.android.application")
     kotlin("android")
 }
-val verCode = 4156
+
+val verCode = 4158
 val verName = "4.1.5"
 
 android {
-    compileSdk = 31
+    compileSdk = 32
+
     defaultConfig {
         applicationId = "com.yuk.miuihome"
         minSdk = 28
@@ -23,8 +25,7 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             setProguardFiles(
-                listOf(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro", "proguard-log.pro"
-                )
+                listOf(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro", "proguard-log.pro")
             )
         }
     }
