@@ -2,10 +2,10 @@ package com.yuk.miuihome.utils
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.yuk.miuihome.Config
-import com.yuk.miuihome.HomeContext
+
 
 object OwnSP {
+
     val ownSP: SharedPreferences by lazy {
         HomeContext.context.createDeviceProtectedStorageContext()
             .getSharedPreferences(Config.SP_NAME, Context.MODE_PRIVATE)
@@ -24,6 +24,11 @@ object OwnSP {
 
     fun remove(key: String) {
         ownEditor.remove(key)
+        ownEditor.apply()
+    }
+
+    fun clear() {
+        ownEditor.clear()
         ownEditor.apply()
     }
 }

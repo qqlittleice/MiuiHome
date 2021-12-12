@@ -1,8 +1,8 @@
 package com.yuk.miuihome.view
 
 import android.app.AlertDialog
-import com.yuk.miuihome.HomeContext
-import com.yuk.miuihome.utils.isNightMode
+import com.yuk.miuihome.utils.HomeContext
+import com.yuk.miuihome.utils.ktx.isNightMode
 
 class SettingBaseDialog {
 

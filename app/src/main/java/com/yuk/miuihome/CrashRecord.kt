@@ -2,6 +2,7 @@ package com.yuk.miuihome
 
 import android.annotation.SuppressLint
 import android.content.Context
+import com.yuk.miuihome.utils.Config
 import de.robv.android.xposed.XposedBridge
 
 @SuppressLint("StaticFieldLeak")

@@ -1,6 +1,6 @@
 package com.yuk.miuihome.custom.hook
 
-import com.yuk.miuihome.HomeContext
+import com.yuk.miuihome.utils.HomeContext
 import com.yuk.miuihome.utils.LogUtil
 import de.robv.android.xposed.XposedHelpers
 

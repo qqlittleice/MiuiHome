@@ -1,6 +1,7 @@
 package com.yuk.miuihome
 
 import android.content.res.Resources
+import com.yuk.miuihome.utils.HomeContext
 import com.yuk.miuihome.utils.ResourcesHookData
 import com.yuk.miuihome.utils.ResourcesHookMap
 import com.yuk.miuihome.utils.ktx.hookBeforeMethod

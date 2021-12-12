@@ -6,14 +6,14 @@ import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.ScrollView
-import com.yuk.miuihome.HomeContext
+import com.yuk.miuihome.utils.HomeContext
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit.Companion.moduleRes
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.OwnSP.remove
-import com.yuk.miuihome.utils.dip2px
-import com.yuk.miuihome.utils.isNightMode
+import com.yuk.miuihome.utils.ktx.dip2px
+import com.yuk.miuihome.utils.ktx.isNightMode
 
 class SettingUserInputText(
     private val mText: String,

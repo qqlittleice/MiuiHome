@@ -3,20 +3,19 @@ package com.yuk.miuihome
 import android.app.AlertDialog
 import android.view.View
 import android.widget.*
-import com.yuk.miuihome.Config.AndroidSDK
+import com.yuk.miuihome.utils.Config.AndroidSDK
 import com.yuk.miuihome.XposedInit.Companion.moduleRes
 import com.yuk.miuihome.module.BuildWithEverything
 import com.yuk.miuihome.module.EnableBlurWhenOpenFolder
+import com.yuk.miuihome.utils.HomeContext
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.dip2px
+import com.yuk.miuihome.utils.ktx.dip2px
 import com.yuk.miuihome.view.*
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
 class MainHook {
-
-    private val editor by lazy { OwnSP.ownSP.edit() }
 
     fun showSettingDialog() {
         lateinit var dialog: AlertDialog
@@ -261,13 +260,8 @@ class MainHook {
 
     private fun showModifyBlurLevel() {
         val dialogBuilder = SettingBaseDialog().get()
-        val mKey = "blurLevel"
         lateinit var dialog: AlertDialog
         lateinit var onClick: View
-        fun saveValue(value: String) {
-            editor.putString(mKey, value)
-            editor.apply()
-        }
         dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
             overScrollMode = 2
             addView(LinearLayout(HomeContext.activity).apply {
@@ -275,22 +269,21 @@ class MainHook {
                 setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
                 addView(SettingTextView.FastBuilder(mText = "「" + moduleRes.getString(R.string.TaskViewBlurLevel) + "」", mSize = SettingTextView.text2Size, mColor = "#0C84FF").build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.CompleteBlur)) {
-                    saveValue("COMPLETE")
-                    onClick = it
+                    OwnSP.set("blurLevel", 0f)
                     dialog.dismiss()
                 }.build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.TestBlur)) {
-                    saveValue("TEST")
+                    OwnSP.set("blurLevel", 3f)
                     onClick = it
                     dialog.dismiss()
                 }.build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.SimpleBlur)) {
-                    saveValue("SIMPLE")
+                    OwnSP.set("blurLevel", 1f)
                     onClick = it
                     dialog.dismiss()
                 }.build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.NoneBlur)) {
-                    saveValue("NONE")
+                    OwnSP.set("blurLevel", 2f)
                     onClick = it
                     dialog.dismiss()
                 }.build())
@@ -378,8 +371,7 @@ class MainHook {
                 })
             })
             setNeutralButton(moduleRes.getString(R.string.Yes)) { _, _ ->
-                editor.clear()
-                editor.commit()
+                OwnSP.clear()
                 OwnSP.set("isFirstUse", true)
                 thread {
                     LogUtil.toast(moduleRes.getString(R.string.Reboot2))

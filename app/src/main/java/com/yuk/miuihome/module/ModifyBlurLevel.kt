@@ -6,7 +6,7 @@ import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 class ModifyBlurLevel {
 
     fun init() {
-        val string = OwnSP.ownSP.getString("blurLevel", "")
+        val blurLevel = OwnSP.ownSP.getFloat("blurLevel", 2f)
         if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
             "com.miui.home.launcher.common.BlurUtils".hookBeforeMethod("getBlurType") {
                 it.result = 0
@@ -15,23 +15,22 @@ class ModifyBlurLevel {
                 it.result = false
             }
         } else {
-            if (string == "") return
             "com.miui.home.launcher.common.BlurUtils".hookBeforeMethod("getBlurType") {
-                when (string) {
-                    "COMPLETE" -> {
+                when (blurLevel) {
+                    2f -> {
                         it.result = 2
                     }
-                    "SIMPLE" -> {
+                    1f -> {
                         it.result = 1
                     }
-                    "NONE" -> {
+                    0f -> {
                         it.result = 0
                     }
                 }
             }
             "com.miui.home.launcher.common.BlurUtils".hookBeforeMethod("isUseCompleteBlurOnDev") {
-                when (string) {
-                    "TEST" -> {
+                when (blurLevel) {
+                    3f -> {
                         it.result = true
                     }
                 }

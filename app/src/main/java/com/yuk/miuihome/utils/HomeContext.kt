@@ -1,4 +1,4 @@
-package com.yuk.miuihome
+package com.yuk.miuihome.utils
 
 import android.annotation.SuppressLint
 import android.app.Activity

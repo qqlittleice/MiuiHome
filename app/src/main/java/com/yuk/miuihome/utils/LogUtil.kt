@@ -3,8 +3,7 @@ package com.yuk.miuihome.utils
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
-import com.yuk.miuihome.Config.TAG
-import com.yuk.miuihome.HomeContext
+import com.yuk.miuihome.utils.Config.TAG
 import de.robv.android.xposed.XposedBridge
 import android.util.Log as ALog
 

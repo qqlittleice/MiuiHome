@@ -5,6 +5,9 @@ plugins {
     id("com.android.application")
     kotlin("android")
 }
+apply {
+    plugin("kotlin-android")
+}
 
 val verCode = 4158
 val verName = "4.1.5"
@@ -24,9 +27,7 @@ android {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
-            setProguardFiles(
-                listOf(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro", "proguard-log.pro")
-            )
+            setProguardFiles(listOf(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro", "proguard-log.pro"))
         }
     }
 
@@ -35,10 +36,8 @@ android {
             if (appVariant is ApplicationVariantImpl) appVariant
             else (appVariant as AnalyticsEnabledApplicationVariant).delegate as ApplicationVariantImpl
         variant.outputs.forEach {
-            if (appVariant.buildType == "release")
-                it.outputFileName.set("MiuiHome-${verName}(${verCode})-release.apk")
-            else
-                it.outputFileName.set("MiuiHome-${verName}(${verCode})-debug.apk")
+            if (appVariant.buildType == "release") it.outputFileName.set("MiuiHome-${verName}(${verCode})-release.apk")
+            else it.outputFileName.set("MiuiHome-${verName}(${verCode})-debug.apk")
         }
     }
 
@@ -56,7 +55,6 @@ android {
             excludes += "/META-INF/**"
             excludes += "/kotlin/**"
             excludes += "/kotlinx/**"
-            excludes += "/okhttp3/**"
             excludes += "/*.txt"
             excludes += "/*.bin"
         }
@@ -72,6 +70,4 @@ dependencies {
     compileOnly("de.robv.android.xposed:api:82")
     implementation("com.microsoft.appcenter:appcenter-crashes:4.4.1")
     implementation("com.microsoft.appcenter:appcenter-analytics:4.4.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
 }

@@ -1,10 +1,10 @@
 package com.yuk.miuihome.module
 
 import android.content.res.Resources
-import com.yuk.miuihome.Config
-import com.yuk.miuihome.HomeContext
+import com.yuk.miuihome.utils.Config
+import com.yuk.miuihome.utils.HomeContext
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.dp2px
+import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 
 class ModifyHeaderHeight {

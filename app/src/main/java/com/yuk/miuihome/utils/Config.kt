@@ -1,6 +1,7 @@
-package com.yuk.miuihome
+package com.yuk.miuihome.utils
 
 import android.os.Build
+import com.yuk.miuihome.BuildConfig
 
 object Config {
     const val packageName = BuildConfig.APPLICATION_ID

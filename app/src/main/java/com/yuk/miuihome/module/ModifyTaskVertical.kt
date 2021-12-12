@@ -2,7 +2,7 @@ package com.yuk.miuihome.module
 
 import android.content.Context
 import android.graphics.RectF
-import com.yuk.miuihome.Config
+import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.callMethod
 import com.yuk.miuihome.utils.ktx.callStaticMethod

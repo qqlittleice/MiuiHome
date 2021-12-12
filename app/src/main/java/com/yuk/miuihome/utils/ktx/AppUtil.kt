@@ -1,8 +1,8 @@
-package com.yuk.miuihome.utils
+package com.yuk.miuihome.utils.ktx
 
 import android.content.Context
 import android.content.res.Configuration
-import com.yuk.miuihome.HomeContext
+import com.yuk.miuihome.utils.HomeContext
 
 fun dp2px(dpValue: Float): Int =
     (dpValue * HomeContext.context.resources.displayMetrics.density + 0.5f).toInt()

@@ -7,13 +7,14 @@ import android.content.res.XResources
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.RippleDrawable
-import com.yuk.miuihome.Config.DrawableNameList
-import com.yuk.miuihome.Config.DrawableNameNewList
-import com.yuk.miuihome.HomeContext.isAlpha
-import com.yuk.miuihome.HomeContext.versionCode
+import com.yuk.miuihome.utils.Config
+import com.yuk.miuihome.utils.Config.DrawableNameList
+import com.yuk.miuihome.utils.Config.DrawableNameNewList
+import com.yuk.miuihome.utils.HomeContext.isAlpha
+import com.yuk.miuihome.utils.HomeContext.versionCode
 import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.ktx.dip2px
 import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResourcesParam
-import com.yuk.miuihome.utils.dip2px
 import com.yuk.miuihome.utils.ktx.setTryReplacement
 import de.robv.android.xposed.callbacks.XC_LayoutInflated
 import kotlin.concurrent.thread
@@ -38,6 +39,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 }
             }
         })
+
         thread {
             if (!hasLoad) {
                 Thread.sleep(500) // 这里项目经理要求运行缓慢，好让客户充钱，让其速度得到明显提升。 hasLoad = true

@@ -7,10 +7,10 @@ import android.graphics.Color
 import android.net.Uri
 import android.view.View
 import android.widget.TextView
-import com.yuk.miuihome.HomeContext
-import com.yuk.miuihome.utils.dip2px
-import com.yuk.miuihome.utils.isNightMode
-import com.yuk.miuihome.utils.sp2px
+import com.yuk.miuihome.utils.HomeContext
+import com.yuk.miuihome.utils.ktx.dip2px
+import com.yuk.miuihome.utils.ktx.isNightMode
+import com.yuk.miuihome.utils.ktx.sp2px
 
 @SuppressLint("AppCompatCustomView")
 class SettingTextView(context: Context) : TextView(context) {
