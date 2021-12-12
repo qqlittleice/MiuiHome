@@ -269,7 +269,7 @@ class MainHook {
                 setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
                 addView(SettingTextView.FastBuilder(mText = "「" + moduleRes.getString(R.string.TaskViewBlurLevel) + "」", mSize = SettingTextView.text2Size, mColor = "#0C84FF").build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.CompleteBlur)) {
-                    OwnSP.set("blurLevel", 0f)
+                    OwnSP.set("blurLevel", 2f)
                     dialog.dismiss()
                 }.build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.TestBlur)) {
@@ -283,7 +283,7 @@ class MainHook {
                     dialog.dismiss()
                 }.build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.NoneBlur)) {
-                    OwnSP.set("blurLevel", 2f)
+                    OwnSP.set("blurLevel", 0f)
                     onClick = it
                     dialog.dismiss()
                 }.build())
