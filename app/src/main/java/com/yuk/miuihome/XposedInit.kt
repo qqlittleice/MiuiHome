@@ -3,6 +3,7 @@ package com.yuk.miuihome
 import android.app.Activity
 import android.app.Application
 import android.content.Context
+import android.content.pm.PackageInfo
 import android.content.res.Resources
 import android.content.res.XModuleResources
 import android.os.Bundle
@@ -15,7 +16,10 @@ import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.HomeContext
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.*
+import com.yuk.miuihome.utils.ktx.getObjectField
+import com.yuk.miuihome.utils.ktx.hookAfterMethod
+import com.yuk.miuihome.utils.ktx.hookBeforeMethod
+import com.yuk.miuihome.utils.ktx.setObjectField
 import de.robv.android.xposed.IXposedHookInitPackageResources
 import de.robv.android.xposed.IXposedHookLoadPackage
 import de.robv.android.xposed.IXposedHookZygoteInit
@@ -47,6 +51,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
             Context::class.java
         ) {
             startOnlineLog()
+            checkVersionName()
             checkAlpha()
             checkVersionCode()
             checkWidgetLauncher()
@@ -123,10 +128,13 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         AppCenter.start(HomeContext.application, "fd3fd6d6-bc0d-40d1-bc1b-63b6835f9581", Analytics::class.java, Crashes::class.java)
     }
 
+    fun checkVersionName(): String {
+        return HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0).versionName
+    }
+
     private fun checkAlpha() {
-        val pkgInfo = HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0)
-        HomeContext.isAlpha = if (!pkgInfo.versionName.contains("RELEASE", ignoreCase = true)) {
-            pkgInfo.versionName.contains("ALPHA", ignoreCase = true)
+        HomeContext.isAlpha = if (!checkVersionName().contains("RELEASE", ignoreCase = true)) {
+            checkVersionName().contains("ALPHA", ignoreCase = true)
         } else {
             false
         }

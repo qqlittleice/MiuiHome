@@ -26,6 +26,7 @@ class MainHook {
                 orientation = LinearLayout.VERTICAL
                 setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.app_name), mSize = SettingTextView.titleSize).build())
+                addView(SettingTextView.FastBuilder(mText = "${XposedInit().checkVersionName()}", mColor = "#01b17b").build())
                 if (XposedInit.hasHookPackageResources) {
                     addView(SettingTextView.FastBuilder(mText = "${BuildConfig.VERSION_NAME} - " + "${BuildConfig.VERSION_CODE}(${BuildConfig.BUILD_TYPE}) - " + moduleRes.getString(R.string.ResHook), mColor = "#01b17b").build())
                 } else {
