@@ -6,6 +6,7 @@ import com.yuk.miuihome.utils.ResourcesHookData
 import com.yuk.miuihome.utils.ResourcesHookMap
 import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 import de.robv.android.xposed.XC_MethodHook
+import de.robv.android.xposed.XposedBridge
 
 class ResourcesHook {
 
@@ -17,7 +18,7 @@ class ResourcesHook {
             if (hookMap.isKeyExist(resName)) {
                 if (hookMap[resName]?.type == resType) {
                     param.result = hookMap[resName]?.afterValue
-                    // XposedBridge.log("$resName hooked! after value = ${hookMap[resName]?.afterValue}")
+                    XposedBridge.log("$resName hooked! after value = ${hookMap[resName]?.afterValue}")
                 }
             }
         } catch (ignore: Exception) {
@@ -25,10 +26,12 @@ class ResourcesHook {
     }
 
     fun init() {
-        Resources::class.java.hookBeforeMethod("getDimensionPixelSize", Int::class.java) { hook(it) }
-        Resources::class.java.hookBeforeMethod("getDimension", Int::class.java) { hook(it) }
-        Resources::class.java.hookBeforeMethod("getInteger", Int::class.java) { hook(it) }
-        Resources::class.java.hookBeforeMethod("getBoolean", Int::class.java) { hook(it) }
+        Resources::class.java.hookBeforeMethod("getBoolean", Int::class.javaPrimitiveType) { hook(it) }
+        Resources::class.java.hookBeforeMethod("getDimension", Int::class.javaPrimitiveType) { hook(it) }
+        Resources::class.java.hookBeforeMethod("getDimensionPixelOffset", Int::class.javaPrimitiveType) { hook(it) }
+        Resources::class.java.hookBeforeMethod("getDimensionPixelSize", Int::class.javaPrimitiveType) { hook(it) }
+        Resources::class.java.hookBeforeMethod("getInteger", Int::class.javaPrimitiveType) { hook(it) }
+        Resources::class.java.hookBeforeMethod("getText", Int::class.javaPrimitiveType) { hook(it) }
     }
 
     companion object {

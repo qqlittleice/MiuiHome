@@ -4,15 +4,14 @@ import com.yuk.miuihome.ResourcesHook
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ResourcesHookData
 import com.yuk.miuihome.utils.ktx.findClass
-import com.yuk.miuihome.utils.ktx.hookAllMethods
-import de.robv.android.xposed.XC_MethodReplacement
+import com.yuk.miuihome.utils.ktx.hookBeforeAllMethods
 
 class ModifyUnlockGrids {
 
     fun init() {
         if (OwnSP.ownSP.getBoolean("unlockGrids", false)) {
             "com.miui.home.launcher.compat.LauncherCellCountCompatDevice".findClass()
-                .hookAllMethods("shouldUseDeviceValue", XC_MethodReplacement.returnConstant(false))
+                .hookBeforeAllMethods("shouldUseDeviceValue") { it.result = false }
             ResourcesHook.hookMap["config_cell_count_x"] = ResourcesHookData("integer", 3)
             ResourcesHook.hookMap["config_cell_count_y"] = ResourcesHookData("integer", 4)
             ResourcesHook.hookMap["config_cell_count_x_min"] = ResourcesHookData("integer", 3)
