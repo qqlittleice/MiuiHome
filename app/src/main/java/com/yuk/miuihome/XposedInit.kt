@@ -44,7 +44,6 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
             HomeContext.classLoader = HomeContext.context.classLoader
             HomeContext.application = it.thisObject as Application
             CrashRecord.init(HomeContext.context)
-            doHook()
         }
         Application::class.java.hookAfterMethod(
             "attach",
@@ -55,6 +54,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
             checkAlpha()
             checkVersionCode()
             checkWidgetLauncher()
+            doHook()
         }
     }
 

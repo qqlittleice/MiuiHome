@@ -5,7 +5,7 @@ import android.content.SharedPreferences
 
 object OwnSP {
 
-    val ownSP: SharedPreferences = HomeContext.context.getSharedPreferences(Config.SP_NAME, Context.MODE_PRIVATE)
+    val ownSP: SharedPreferences = HomeContext.context.createDeviceProtectedStorageContext().getSharedPreferences(Config.SP_NAME, Context.MODE_PRIVATE)
 
     private val ownEditor: SharedPreferences.Editor = ownSP.edit()
 
