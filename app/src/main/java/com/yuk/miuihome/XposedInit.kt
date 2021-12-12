@@ -41,6 +41,11 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
             HomeContext.application = it.thisObject as Application
             CrashRecord.init(HomeContext.context)
             doHook()
+        }
+        Application::class.java.hookAfterMethod(
+            "attach",
+            Context::class.java
+        ) {
             startOnlineLog()
             checkAlpha()
             checkVersionCode()

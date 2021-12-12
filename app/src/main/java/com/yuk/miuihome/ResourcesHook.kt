@@ -18,7 +18,6 @@ class ResourcesHook {
             if (hookMap.isKeyExist(resName)) {
                 if (hookMap[resName]?.type == resType) {
                     param.result = hookMap[resName]?.afterValue
-                    XposedBridge.log("$resName hooked! after value = ${hookMap[resName]?.afterValue}")
                 }
             }
         } catch (ignore: Exception) {

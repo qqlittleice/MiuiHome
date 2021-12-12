@@ -22,16 +22,7 @@ class ModifyDockHook {
                     "calcSearchBarWidth",
                     Context::class.java
                 ) {
-                    val deviceWidth =
-                        px2dip(HomeContext.context.resources.displayMetrics.widthPixels)
-                    it.result =
-                        dip2px(deviceWidth - (OwnSP.ownSP.getFloat("dockSide", 3.0f) * 10).toInt())
-                }
-                deviceConfigClass.hookBeforeMethod(
-                    "getSearchBarWidth"
-                ) {
-                    val deviceWidth =
-                        px2dip(HomeContext.context.resources.displayMetrics.widthPixels)
+                    val deviceWidth = px2dip(HomeContext.context.resources.displayMetrics.widthPixels)
                     it.result =
                         dip2px(deviceWidth - (OwnSP.ownSP.getFloat("dockSide", 3.0f) * 10).toInt())
                 }
@@ -43,22 +34,12 @@ class ModifyDockHook {
                 ) {
                     it.result = dip2px((OwnSP.ownSP.getFloat("dockBottom", 2.3f) * 10).toInt())
                 }
-                deviceConfigClass.hookBeforeMethod(
-                    "getSearchBarMarginBottom"
-                ) {
-                    it.result = dip2px((OwnSP.ownSP.getFloat("dockBottom", 2.3f) * 10).toInt())
-                }
                 // 图标距屏幕底部
                 deviceConfigClass.hookBeforeMethod(
                     "calcHotSeatsMarginBottom",
                     Context::class.java,
                     Boolean::class.java,
                     Boolean::class.java
-                ) {
-                    it.result = dip2px((OwnSP.ownSP.getFloat("dockIconBottom", 3.5f) * 10).toInt())
-                }
-                deviceConfigClass.hookBeforeMethod(
-                    "getHotSeatsMarginBottom"
                 ) {
                     it.result = dip2px((OwnSP.ownSP.getFloat("dockIconBottom", 3.5f) * 10).toInt())
                 }
