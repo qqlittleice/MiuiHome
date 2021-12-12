@@ -21,8 +21,7 @@ object CrashRecord : Thread.UncaughtExceptionHandler {
     override fun uncaughtException(p0: Thread, p1: Throwable) {
         XposedBridge.log("Crash happened")
         mContext?.let {
-            val pref = it.createDeviceProtectedStorageContext()
-                .getSharedPreferences("Crash_Handler", Context.MODE_PRIVATE)
+            val pref = it.getSharedPreferences("Crash_Handler", Context.MODE_PRIVATE)
             if (BuildConfig.DEBUG) {
                 XposedBridge.log("${System.currentTimeMillis()}")
                 XposedBridge.log("${pref.getLong("last_time", 0L)}")
@@ -31,8 +30,7 @@ object CrashRecord : Thread.UncaughtExceptionHandler {
             if (System.currentTimeMillis() - pref.getLong("last_time", 0L) < 60 * 1000L) {
                 XposedBridge.log("Crash happened again in one minute")
                 if (pref.getInt("times", 0) >= 3) {
-                    it.createDeviceProtectedStorageContext()
-                        .getSharedPreferences(Config.SP_NAME, Context.MODE_PRIVATE).edit().apply {
+                    it.getSharedPreferences(Config.SP_NAME, Context.MODE_PRIVATE).edit().apply {
                             clear()
                             apply()
                         }

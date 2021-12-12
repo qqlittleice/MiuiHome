@@ -10,8 +10,8 @@ apply {
     plugin("kotlin-android")
 }
 
-val verCode = 4158
-val verName = "4.1.5"
+val verCode = 4160
+val verName = "4.1.6"
 
 android {
     compileSdk = 32
