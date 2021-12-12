@@ -3,8 +3,9 @@ import com.android.build.api.variant.impl.ApplicationVariantImpl
 
 plugins {
     id("com.android.application")
-    kotlin("android")
+
 }
+
 apply {
     plugin("kotlin-android")
 }
@@ -46,10 +47,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 
-    kotlinOptions {
-        jvmTarget = "11"
-    }
-
     packagingOptions {
         resources {
             excludes += "/META-INF/**"
@@ -66,7 +63,6 @@ android {
 }
 
 dependencies {
-
     compileOnly("de.robv.android.xposed:api:82")
     implementation("com.microsoft.appcenter:appcenter-crashes:4.4.1")
     implementation("com.microsoft.appcenter:appcenter-analytics:4.4.1")
