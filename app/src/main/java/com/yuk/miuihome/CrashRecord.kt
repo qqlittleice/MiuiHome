@@ -36,6 +36,7 @@ object CrashRecord : Thread.UncaughtExceptionHandler {
                             clear()
                             apply()
                         }
+                    XposedBridge.log("More than three times, clear MODULE CONFIG")
                     pref.edit().putInt("times", 0).apply()
                 }
                 pref.edit().putInt("times", pref.getInt("times", 0) + 1).apply()
