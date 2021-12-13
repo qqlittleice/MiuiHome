@@ -3,7 +3,6 @@ package com.yuk.miuihome
 import android.app.Activity
 import android.app.Application
 import android.content.Context
-import android.content.pm.PackageInfo
 import android.content.res.Resources
 import android.content.res.XModuleResources
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package com.yuk.miuihome
+package com.yuk.miuihome.module
 
 import android.content.res.Resources
 import com.yuk.miuihome.utils.HomeContext
@@ -6,7 +6,6 @@ import com.yuk.miuihome.utils.ResourcesHookData
 import com.yuk.miuihome.utils.ResourcesHookMap
 import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 import de.robv.android.xposed.XC_MethodHook
-import de.robv.android.xposed.XposedBridge
 
 class ResourcesHook {
 
