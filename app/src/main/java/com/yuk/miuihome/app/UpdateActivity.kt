@@ -38,8 +38,9 @@ class UpdateActivity: Activity() {
 
         val checkUpdatesButton = Button(this)
         checkUpdatesButton.text = "Check Updates"
-        checkUpdatesButton.setOnClickListener {
+        checkUpdatesButton.setOnClickListener { button ->
             progress.visibility = View.VISIBLE
+            button.isClickable = false
             thread {
                 okHttpClient.newCall(
                     Request.Builder()
@@ -53,6 +54,7 @@ class UpdateActivity: Activity() {
                             progress.visibility = View.GONE
                             errorText.text = e.message
                             errorText.visibility = View.VISIBLE
+                            button.isClickable = true
                         }
                     }
 
@@ -90,6 +92,7 @@ class UpdateActivity: Activity() {
                         runOnUiThread {
                             progress.visibility = View.GONE
                             errorText.visibility = View.GONE
+                            button.isClickable = true
                         }
                     }
                 })
