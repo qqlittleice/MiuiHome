@@ -70,9 +70,9 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                 setObjectField("mClickListener", object : View.OnClickListener {
                     override fun onClick(v: View?) {
                         if (OwnSP.ownSP.getBoolean("isFirstUse", true))
-                            MainHook().firstUseDialog()
+                            SettingDialog().firstUseDialog()
                         else
-                            MainHook().showSettingDialog()
+                            SettingDialog().showSettingDialog()
                     }
                 })
             }

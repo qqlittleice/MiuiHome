@@ -15,7 +15,7 @@ import com.yuk.miuihome.view.*
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
-class MainHook {
+class SettingDialog {
 
     fun showSettingDialog() {
         lateinit var dialog: AlertDialog
