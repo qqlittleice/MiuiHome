@@ -9,6 +9,15 @@
     android:roundIcon="@drawable/ic_launcher"
     android:supportsRtl="true">
 
+    <activity
+      android:name=".app.UpdateActivity"
+      android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS"/>
+      </intent-filter>
+    </activity>
+
     <meta-data
       android:name="xposedscope"
       android:resource="@array/xposed_scope" />
