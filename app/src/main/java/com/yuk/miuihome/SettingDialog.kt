@@ -83,6 +83,7 @@ class SettingDialog {
                     dialog.cancel()
                     showSettingDialog()
                 }.build())
+                addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.AppReturnAmin),  mKey = "appReturnAmin").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.InfiniteScroll), mKey = "infiniteScroll").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.RecommendServer), mKey = "recommendServer").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.HideSeekPoints), mKey = "hideSeekPoints").build())

@@ -114,6 +114,8 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         ModifyUnlockHotseatIcon().init()
         ModifyUnlockGrids().init()
         HookSystemProperties().init()
+        //ModifyAppReturnAmin().init()
+        //ModifyBlurRadius().init()
         //CustomHook.init()
     }
 

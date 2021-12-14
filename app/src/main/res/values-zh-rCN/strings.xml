@@ -92,4 +92,5 @@
   <string name="DockMarginBottom">页面指示器距屏幕底部</string>
   <string name="SimpleWarn">你启用了简单动画，这会禁用一些功能设置。</string>
   <string name="BrokenFeature">废弃功能</string>
+  <string name="AppReturnAmin">应用模糊</string>
 </resources>

@@ -29,7 +29,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
     }
 
     fun init() {
-        hookedRes.res.hookLayout("com.miui.home", "layout", "layout_search_bar", object : XC_LayoutInflated() {
+        hookedRes.res.hookLayout(Config.hookPackage, "layout", "layout_search_bar", object : XC_LayoutInflated() {
             override fun handleLayoutInflated(liparam: LayoutInflatedParam) {
                 //替换资源圆角
                 val targetView = liparam.view
@@ -76,10 +76,10 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
 
     private fun resetDockRadius(res: XResources, context: Context, drawableName: String) {
         if (OwnSP.ownSP.getBoolean("dockSettings", false)) {
-            res.setReplacement("com.miui.home", "drawable", drawableName, object : XResources.DrawableLoader() {
+            res.setReplacement(Config.hookPackage, "drawable", drawableName, object : XResources.DrawableLoader() {
                 @SuppressLint("UseCompatLoadingForDrawables")
                 override fun newDrawable(xres: XResources, id: Int): Drawable {
-                    val background = context.getDrawable(xres.getIdentifier(drawableName, "drawable", "com.miui.home")) as RippleDrawable
+                    val background = context.getDrawable(xres.getIdentifier(drawableName, "drawable", Config.hookPackage)) as RippleDrawable
                     val backgroundShape = background.getDrawable(0) as GradientDrawable
                     backgroundShape.cornerRadius = dip2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10).toInt()).toFloat()
                     backgroundShape.setStroke(0, 0)

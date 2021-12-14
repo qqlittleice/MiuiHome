@@ -7,10 +7,7 @@ class ModifyUnlockHotseatIcon {
 
     fun init() {
         if (OwnSP.ownSP.getBoolean("unlockIcons", false)) {
-            "com.miui.home.launcher.DeviceConfig".setReturnConstant(
-                "getHotseatMaxCount",
-                result = 99
-            )
+            "com.miui.home.launcher.DeviceConfig".setReturnConstant("getHotseatMaxCount", result = 99)
         }
     }
 }
