@@ -1,7 +1,7 @@
 package com.yuk.miuihome.module
 
-import android.animation.ValueAnimator
 import android.view.Window
+import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
 import kotlin.math.max
 import kotlin.math.min
@@ -9,7 +9,8 @@ import kotlin.math.min
 class ModifyBlurRadius {
 
     fun init() {
-        val value = 1.0f
+        val value = OwnSP.ownSP.getFloat("blurRadius", -1f)
+        if (value == -1f || value == 1f) return
 
         "com.miui.home.launcher.common.BlurUtils".replaceMethod(
             "fastBlur",
@@ -25,16 +26,15 @@ class ModifyBlurRadius {
             var min: Float = min(value, max(0.0f, float))
             val blurClass = "com.miui.home.launcher.common.BlurUtils".findClass()
             val getCurrentBlurRatio = blurClass.callStaticMethod("getCurrentBlurRatio") as Float
-            val sBlurAmin: ValueAnimator  = blurClass.getStaticObjectField("sBlurAnim") as ValueAnimator
+            //val sBlurAnim  = blurClass.getStaticObjectField("sBlurAnim") as ValueAnimator
             val sBlurRatioValue: Float = blurClass.getStaticObjectField("sBlurRatioValue") as Float
             val sMinusOneBlurRatio: Float = blurClass.getStaticObjectField("sMinusOneBlurRatio") as Float
             if (min.toDouble() < 0.01) min = 0.0f
-            val valueAnimator: ValueAnimator = sBlurAmin
-            if (valueAnimator.isRunning) sBlurAmin.cancel()
+            //if (sBlurAnim.isRunning) sBlurAnim.cancel()
             if (sBlurRatioValue == min && sMinusOneBlurRatio == min) return@replaceMethod null
             if (boolean) {
                 blurClass.callStaticMethod("startBlurAnim", window, getCurrentBlurRatio, min, long)
-                return@replaceMethod sBlurAmin
+                //return@replaceMethod sBlurAnim
             }
             blurClass.callStaticMethod("fastBlurDirectly", min, window)
             return@replaceMethod null

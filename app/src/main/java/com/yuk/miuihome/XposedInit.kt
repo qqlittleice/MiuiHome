@@ -99,7 +99,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         EnableLowEndDeviceUseMIUIWidgets().init()
         DisableRecommendServer().init()
         ModifyHideSeekPoints().init()
-        ModifyCategoryHideAll().init()
+        ModifyCategory().init()
         ModifyFolderColumnsCount().init()
         ModifyIconTitleFontSize().init()
         ModifyDockHook().init()
@@ -108,7 +108,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         ModifyUnlockGrids().init()
         HookSystemProperties().init()
         ModifyAppReturnBlur().init()
-        //ModifyBlurRadius().init()
+        ModifyBlurRadius().init()
         //CustomHook.init()
     }
 

@@ -94,4 +94,5 @@
   <string name="SimpleWarn">You have enabled simple animation, this will hide some settings.</string>
   <string name="BrokenFeature">Obsolete Feature</string>
   <string name="AppReturnAmin">App Return Blur</string>
+  <string name="BlurRadius">Blur Radius</string>
 </resources>

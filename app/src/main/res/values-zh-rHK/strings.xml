@@ -93,4 +93,5 @@
   <string name="SimpleWarn">你啟用了簡單動畫，這會禁用一些功能設置。</string>
   <string name="BrokenFeature">廢棄功能</string>
   <string name="AppReturnAmin">應用返回模糊</string>
+  <string name="BlurRadius">模糊半徑</string>
 </resources>

@@ -90,6 +90,7 @@ class SettingDialog {
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.SmallWindow), mKey = "supportSmallWindow").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.LowEndAnim), mKey = "lowEndAnim").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.LowEndDeviceUseMIUIWidgets), mKey = "useMIUIWidgets").build())
+                addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.BlurRadius)) { showBlurRadius() }.build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.OtherFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.AlwaysShowStatusBarClock), mKey = "clockGadget").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.DoubleTap), mKey = "doubleTap").build())
@@ -223,6 +224,10 @@ class SettingDialog {
 
     private fun showModifyBackgroundTextSize() {
         SettingUserInputNumber(moduleRes.getString(R.string.TaskViewAppCardTextSize), "backgroundTextSize", 0, 100, 13, 1).build()
+    }
+
+    private fun showBlurRadius() {
+        SettingUserInputNumber(moduleRes.getString(R.string.BlurRadius), "blurRadius", 0, 200, 100, 100).build()
     }
 
     private fun showModifyVertical() {
