@@ -83,14 +83,19 @@ class SettingDialog {
                     dialog.cancel()
                     showSettingDialog()
                 }.build())
-                addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.AppReturnAmin),  mKey = "appReturnAmin").build())
+                addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.AppReturnAmin),  mKey = "appReturnAmin") {
+                    dialog.cancel()
+                    showSettingDialog()
+                }.build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.InfiniteScroll), mKey = "infiniteScroll").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.RecommendServer), mKey = "recommendServer").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.HideSeekPoints), mKey = "hideSeekPoints").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.SmallWindow), mKey = "supportSmallWindow").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.LowEndAnim), mKey = "lowEndAnim").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.LowEndDeviceUseMIUIWidgets), mKey = "useMIUIWidgets").build())
-                addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.BlurRadius)) { showBlurRadius() }.build())
+                if (!OwnSP.ownSP.getBoolean("appReturnAmin", false)) {
+                    addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.BlurRadius)) { showBlurRadius() }.build())
+                }
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.OtherFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.AlwaysShowStatusBarClock), mKey = "clockGadget").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.DoubleTap), mKey = "doubleTap").build())

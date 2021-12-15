@@ -31,7 +31,7 @@ class ModifyAppReturnBlur {
                     XposedBridge.log("$isFolderShowing")
                     navStubViewClass.hookAfterMethod("startAppToHomeAnim"
                     ) {
-                        launcherClass.callStaticMethod("getLauncher", handler.postDelayed(runnable,0))
+                        launcherClass.callStaticMethod("getLauncher", handler.postDelayed(runnable, 100))
                     }
                 }
             }
