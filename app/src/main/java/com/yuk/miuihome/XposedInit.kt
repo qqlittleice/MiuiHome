@@ -15,14 +15,8 @@ import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.HomeContext
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.getObjectField
-import com.yuk.miuihome.utils.ktx.hookAfterMethod
-import com.yuk.miuihome.utils.ktx.hookBeforeMethod
-import com.yuk.miuihome.utils.ktx.setObjectField
-import de.robv.android.xposed.IXposedHookInitPackageResources
-import de.robv.android.xposed.IXposedHookLoadPackage
-import de.robv.android.xposed.IXposedHookZygoteInit
-import de.robv.android.xposed.XposedHelpers
+import com.yuk.miuihome.utils.ktx.*
+import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
 import de.robv.android.xposed.callbacks.XC_LoadPackage
 
@@ -59,8 +53,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
 
     private fun doHook() {
         "com.miui.home.settings.MiuiHomeSettingActivity".hookAfterMethod(
-            "onCreate",
-            Bundle::class.java
+            "onCreate", Bundle::class.java
         ) { HomeContext.activity = it.thisObject as Activity }
         "com.miui.home.settings.MiuiHomeSettings".hookAfterMethod(
             "onCreatePreferences", Bundle::class.java, String::class.java
@@ -114,7 +107,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         ModifyUnlockHotseatIcon().init()
         ModifyUnlockGrids().init()
         HookSystemProperties().init()
-        //ModifyAppReturnAmin().init()
+        ModifyAppReturnBlur().init()
         //ModifyBlurRadius().init()
         //CustomHook.init()
     }
