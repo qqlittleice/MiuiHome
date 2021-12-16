@@ -52,9 +52,8 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
     }
 
     private fun doHook() {
-        "com.miui.home.settings.MiuiHomeSettingActivity".hookAfterMethod(
-            "onCreate", Bundle::class.java
-        ) { HomeContext.activity = it.thisObject as Activity }
+        "android.app.Instrumentation".findClass().hookAfterAllMethods(
+            "newActivity") { HomeContext.activity = it.result as Activity }
         "com.miui.home.settings.MiuiHomeSettings".hookAfterMethod(
             "onCreatePreferences", Bundle::class.java, String::class.java
         ) {
