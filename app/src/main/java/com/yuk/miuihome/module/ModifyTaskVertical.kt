@@ -30,12 +30,7 @@ class ModifyTaskVertical {
             "com.miui.home.recents.util.Utilities".callStaticMethod(
                 "scaleRectAboutCenter",
                 it.args[0],
-                value - (context.resources.getDimensionPixelSize(
-                    context.resources.getIdentifier(
-                        "recents_task_view_padding",
-                        "dimen",
-                        Config.hookPackage
-                    )
+                value - (context.resources.getDimensionPixelSize(context.resources.getIdentifier("recents_task_view_padding", "dimen", Config.hookPackage)
                 ) * value / it.args[0].callMethod("width") as Float)
             )
         }
