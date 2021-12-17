@@ -13,7 +13,7 @@ class ModifyTaskVertical {
 
     fun init() {
         val value = OwnSP.ownSP.getFloat("task_vertical", -1f)
-        if (value == -1f || value == 1f) return
+        if (value == -1f) return
         "com.miui.home.recents.views.TaskStackViewsAlgorithmVertical".replaceMethod(
             "scaleTaskView",
             RectF::class.java
@@ -30,8 +30,7 @@ class ModifyTaskVertical {
             "com.miui.home.recents.util.Utilities".callStaticMethod(
                 "scaleRectAboutCenter",
                 it.args[0],
-                value - (context.resources.getDimensionPixelSize(context.resources.getIdentifier("recents_task_view_padding", "dimen", Config.hookPackage)
-                ) * value / it.args[0].callMethod("width") as Float)
+                value - (context.resources.getDimensionPixelSize(context.resources.getIdentifier("recents_task_view_padding", "dimen", Config.hookPackage)) * value / it.args[0].callMethod("width") as Float)
             )
         }
     }
