@@ -50,12 +50,12 @@ class ResourcesHook {
             hookMap["config_cell_count_y_max"] = ResourcesHookData("integer", 18)
         }
 
-        if (value != -1f || value != 20f) {
+        if (value != -1f && value != 20f) {
             hookMap["recents_task_view_rounded_corners_radius_min"] = ResourcesHookData("dimen", dp2px(value))
             hookMap["recents_task_view_rounded_corners_radius_max"] = ResourcesHookData("dimen", dp2px(value))
         }
 
-        if (value1 != -1f || value1 != 40f) {
+        if (value1 != -1f && value1 != 40f) {
             hookMap["recents_task_view_header_height"] = ResourcesHookData("dimen", dp2px(value1))
         }
     }

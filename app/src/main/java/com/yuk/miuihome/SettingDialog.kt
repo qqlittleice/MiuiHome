@@ -282,6 +282,7 @@ class SettingDialog {
                 addView(SettingTextView.FastBuilder(mText = "「" + moduleRes.getString(R.string.TaskViewBlurLevel) + "」", mSize = SettingTextView.text2Size, mColor = "#0C84FF").build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.CompleteBlur)) {
                     OwnSP.set("blurLevel", 2f)
+                    onClick = it
                     dialog.dismiss()
                 }.build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.TestBlur)) {
