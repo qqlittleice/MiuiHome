@@ -88,4 +88,5 @@
   <string name="UnlockIcons">Откл. ограничение кол-ва иконок в док-баре</string>
   <string name="BrokenFeature">Устаревшие функции</string>
   <string name="BlurRadius">Степень размытия</string>
+  <string name="AppReturnAmin">Размытие при сворачивании</string>
 </resources>
