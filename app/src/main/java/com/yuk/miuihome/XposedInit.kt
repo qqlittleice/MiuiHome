@@ -86,7 +86,6 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         AlwaysShowMIUIWidget().init()
         ModifyTaskVertical().init()
         ModifyTaskHorizontal().init()
-        ModifyHeaderHeight().init()
         EnableSimpleAnimation().init()
         ModifyInfiniteScroll().init()
         ResourcesHook().init()
