@@ -55,9 +55,6 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 hookedRes.res.setTryReplacement(Config.hookPackage, "drawable", "btn_clear_all", modRes.fwd(R.drawable.a))
                 hookedRes.res.setTryReplacement(Config.hookPackage, "drawable", "notifications_clear_all", modRes.fwd(R.drawable.a))
             }
-            if (OwnSP.ownSP.getFloat("iconTitleFontSize", -1f) != -1f) {
-                hookedRes.res.setTryReplacement(Config.hookPackage, "dimen", "workspace_icon_text_size", modRes.fwd(getResId("dimen", "dp${OwnSP.ownSP.getFloat("iconTitleFontSize", -1f).toInt()}")))
-            }
             if (OwnSP.ownSP.getString("recentText", "YuKongADisable") != "YuKongADisable") {
                 val message: String = OwnSP.ownSP.getString("recentText", "YuKongADisable").toString()
                 hookedRes.res.setTryReplacement(Config.hookPackage, "string", "recents_empty_message", message)
