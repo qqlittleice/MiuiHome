@@ -15,7 +15,6 @@ class SetDeviceLevel {
             "com.miui.home.launcher.DeviceConfig".setReturnConstant("isMiuiLiteVersion", result = false)
         } catch (e: Throwable) {
             LogUtil.e(e)
-            throw e
         }
     }
 }

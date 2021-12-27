@@ -13,17 +13,10 @@ class ModifyDoubleTapToSleep {
         if (OwnSP.ownSP.getBoolean("doubleTap", false)) {
             val workspace = "com.miui.home.launcher.Workspace".findClass()
             workspace.hookAfterAllConstructors {
-                var mDoubleTapControllerEx = XposedHelpers.getAdditionalInstanceField(
-                    it.thisObject,
-                    "mDoubleTapControllerEx"
-                )
+                var mDoubleTapControllerEx = XposedHelpers.getAdditionalInstanceField(it.thisObject, "mDoubleTapControllerEx")
                 if (mDoubleTapControllerEx != null) return@hookAfterAllConstructors
                 mDoubleTapControllerEx = DoubleTapController((it.args[0] as Context))
-                XposedHelpers.setAdditionalInstanceField(
-                    it.thisObject,
-                    "mDoubleTapControllerEx",
-                    mDoubleTapControllerEx
-                )
+                XposedHelpers.setAdditionalInstanceField(it.thisObject, "mDoubleTapControllerEx", mDoubleTapControllerEx)
             }
             "com.miui.home.launcher.Workspace".hookBeforeMethod(
                 "dispatchTouchEvent",
@@ -39,10 +32,7 @@ class ModifyDoubleTapToSleep {
                 if (it.thisObject.callMethod("isInNormalEditingMode") as Boolean) return@hookBeforeMethod
                 mDoubleTapControllerEx.onDoubleTapEvent()
                 val context = it.thisObject.callMethod("getContext") as Context
-                context.sendBroadcast(
-                    Intent("com.miui.app.ExtraStatusBarManager.action_TRIGGER_TOGGLE")
-                        .putExtra("com.miui.app.ExtraStatusBarManager.extra_TOGGLE_ID", 10)
-                )
+                context.sendBroadcast(Intent("com.miui.app.ExtraStatusBarManager.action_TRIGGER_TOGGLE").putExtra("com.miui.app.ExtraStatusBarManager.extra_TOGGLE_ID", 10))
             }
         }
     }

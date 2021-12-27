@@ -28,7 +28,6 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
     }
 
     fun init() {
-
         thread {
             if (!hasLoad) {
                 Thread.sleep(400)

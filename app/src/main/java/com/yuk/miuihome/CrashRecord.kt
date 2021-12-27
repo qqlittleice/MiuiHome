@@ -15,11 +15,11 @@ object CrashRecord : Thread.UncaughtExceptionHandler {
         mContext = context
         mDefaultHandler = Thread.getDefaultUncaughtExceptionHandler()
         Thread.setDefaultUncaughtExceptionHandler(this)
-        XposedBridge.log("CrashRecord Loaded")
+        XposedBridge.log("MiuiHome: CrashRecord Loaded")
     }
 
     override fun uncaughtException(p0: Thread, p1: Throwable) {
-        XposedBridge.log("Crash happened")
+        XposedBridge.log("MiuiHome: Crash happened")
         mContext?.let {
             val pref = it.createDeviceProtectedStorageContext().getSharedPreferences("Crash_Handler", Context.MODE_PRIVATE)
             if (BuildConfig.DEBUG) {
@@ -28,13 +28,13 @@ object CrashRecord : Thread.UncaughtExceptionHandler {
                 XposedBridge.log("${System.currentTimeMillis() - pref.getLong("last_time", 0L)}")
             }
             if (System.currentTimeMillis() - pref.getLong("last_time", 0L) < 60 * 1000L) {
-                XposedBridge.log("Crash happened again in one minute")
+                XposedBridge.log("MiuiHome: Crash happened again in one minute")
                 if (pref.getInt("times", 0) >= 3) {
                     it.createDeviceProtectedStorageContext().getSharedPreferences(Config.SP_NAME, Context.MODE_PRIVATE).edit().apply {
                             clear()
                             apply()
                         }
-                    XposedBridge.log("More than three times, clear MODULE CONFIG")
+                    XposedBridge.log("MiuiHome: More than three times, clear MODULE_CONFIG")
                     pref.edit().putInt("times", 0).apply()
                 }
                 pref.edit().putInt("times", pref.getInt("times", 0) + 1).apply()

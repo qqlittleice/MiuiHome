@@ -1,15 +1,13 @@
 package com.yuk.miuihome.module
 
 import android.content.res.Resources
-import com.yuk.miuihome.utils.HomeContext
-import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ResourcesHookData
-import com.yuk.miuihome.utils.ResourcesHookMap
+import com.yuk.miuihome.utils.*
 import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.ktx.hookBeforeAllMethods
 import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 import de.robv.android.xposed.XC_MethodHook
+import de.robv.android.xposed.XposedBridge
 
 class ResourcesHook {
 
@@ -21,7 +19,7 @@ class ResourcesHook {
             if (hookMap.isKeyExist(resName)) {
                 if (hookMap[resName]?.type == resType) {
                     param.result = hookMap[resName]?.afterValue
-                    //XposedBridge.log("$resName hooked! after value = ${hookMap[resName]?.afterValue}")
+                    XposedBridge.log("MiuiHome: $resName hooked! after value = ${hookMap[resName]?.afterValue}")
                 }
             }
         } catch (ignore: Exception) {
