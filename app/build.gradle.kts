@@ -56,6 +56,9 @@ android {
             excludes += "/*.bin"
             excludes += "/okhttp3/**"
         }
+        dex {
+            useLegacyPackaging = true
+        }
     }
 
     dependenciesInfo {
