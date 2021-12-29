@@ -133,8 +133,8 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         }
     }
 
-    fun checkMiuiVersion():String {
-        return getProp("ro.miui.ui.version.name").toString()
+    fun checkMiuiVersion(): String {
+        return getProp("ro.miui.ui.version.name")
     }
 
     private fun checkVersionCode() {
@@ -174,8 +174,8 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
 }
 
 @SuppressLint("PrivateApi")
-fun getProp(key: String?): String? {
-    var value: String? = null
+fun getProp(key: String): String {
+    lateinit var value: String
     try {
         val clazz = Class.forName("android.os.SystemProperties")
         val get: Method = clazz.getMethod("get", String::class.java)
