@@ -3,7 +3,11 @@ package com.yuk.miuihome.module
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 
-class ModifyBlurLevel {
+class ModifyBlurLevel : BaseClassAndMethodCheck {
+
+    companion object {
+        var checked = false
+    }
 
     fun init() {
         val blurLevel = OwnSP.ownSP.getFloat("blurLevel", 2f)
@@ -35,6 +39,20 @@ class ModifyBlurLevel {
                     }
                 }
             }
+            runWithChecked {
+                checked = true
+                "com.miui.home.launcher.common.BlurUtils".hookBeforeMethod("isUseBasicBlur") {
+                    when (blurLevel) {
+                        4f -> {
+                            it.result = true
+                        }
+                    }
+                }
+            }
         }
     }
+
+    override fun classAndMethodList(): ArrayList<String> = arrayListOf(
+        "com.miui.home.launcher.common.BlurUtils", "isUseBasicBlur"
+    )
 }

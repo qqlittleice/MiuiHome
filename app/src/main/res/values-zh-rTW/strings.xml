@@ -94,4 +94,5 @@
   <string name="BrokenFeature">廢棄功能</string>
   <string name="AppReturnAmin">應用返回模糊</string>
   <string name="BlurRadius">模糊半徑</string>
+  <string name="BasicBlur">基礎模糊</string>
 </resources>

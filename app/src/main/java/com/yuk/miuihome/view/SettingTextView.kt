@@ -42,6 +42,7 @@ class SettingTextView(context: Context) : TextView(context) {
         private val mSize: Float? = null,
         private val mColor: String? = null,
         private val mUrl: String? = null,
+        private val show: Boolean = true,
         private val mOnClickListener: ((View) -> Unit)? = null
     ) {
         fun build() = SettingTextView(mContext).apply {
@@ -50,6 +51,7 @@ class SettingTextView(context: Context) : TextView(context) {
             mColor?.let { color = it }
             mUrl?.let { url = it }
             mOnClickListener?.let { setOnClickListener(it) }
+            if (!show) visibility = View.GONE
         }
     }
 

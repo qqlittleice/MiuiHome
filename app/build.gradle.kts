@@ -51,7 +51,6 @@ android {
         resources {
             excludes += "/META-INF/**"
             excludes += "/kotlin/**"
-            excludes += "/kotlinx/**"
             excludes += "/*.txt"
             excludes += "/*.bin"
             excludes += "/okhttp3/**"

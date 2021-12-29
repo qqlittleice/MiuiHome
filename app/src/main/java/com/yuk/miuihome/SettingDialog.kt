@@ -7,6 +7,7 @@ import com.yuk.miuihome.utils.Config.AndroidSDK
 import com.yuk.miuihome.XposedInit.Companion.moduleRes
 import com.yuk.miuihome.module.BuildWithEverything
 import com.yuk.miuihome.module.EnableBlurWhenOpenFolder
+import com.yuk.miuihome.module.ModifyBlurLevel
 import com.yuk.miuihome.utils.HomeContext
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
@@ -287,6 +288,11 @@ class SettingDialog {
                 }.build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.TestBlur)) {
                     OwnSP.set("blurLevel", 3f)
+                    onClick = it
+                    dialog.dismiss()
+                }.build())
+                addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.BasicBlur), show = ModifyBlurLevel.checked) {
+                    OwnSP.set("blurLevel", 4f)
                     onClick = it
                     dialog.dismiss()
                 }.build())
