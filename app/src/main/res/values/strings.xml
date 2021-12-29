@@ -27,7 +27,7 @@
   <string name="ManualInput">Manual Input</string>
   <string name="ModuleFeature">Module Features</string>
   <string name="ModuleSettings">Module Settings</string>
-  <string name="ResHook">Resource Hook√</string>
+  <string name="ResHook">Resource Hook</string>
   <string name="NoneBlur">No Blur</string>
   <string name="OtherFeature">Other Features</string>
   <string name="OutOfInput">Please enter a value within the allowed range!</string>

@@ -55,7 +55,7 @@
   <string name="Reboot">Перезагрузить</string>
   <string name="Reboot2">Рабочий стол перезагрузится через 1 секунды!</string>
   <string name="RecommendServer">Отключить сервер рекомендаций</string>
-  <string name="ResHook">Перехват ресурсов√</string>
+  <string name="ResHook">Перехват ресурсов</string>
   <string name="Reset">Сброс параметров док-бара</string>
   <string name="Reset1">Сброс</string>
   <string name="ResourceHooks">Внедрение ресурсов</string>

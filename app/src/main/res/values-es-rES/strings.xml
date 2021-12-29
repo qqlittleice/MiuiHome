@@ -23,7 +23,7 @@
   <string name="ManualInput">Entrada manual</string>
   <string name="ModuleFeature">Características del módulo</string>
   <string name="ModuleSettings">Configuración del módulo</string>
-  <string name="ResHook">Resource Hook / Enlace de recursos√</string>
+  <string name="ResHook">Enlace de recursos</string>
   <string name="NoneBlur">Sin desenfoque</string>
   <string name="OtherFeature">Otras funciones</string>
   <string name="OutOfInput">¡Por favor, ingresa un valor dentro del rango permitido!</string>

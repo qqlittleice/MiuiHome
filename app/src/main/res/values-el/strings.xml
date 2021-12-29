@@ -26,7 +26,7 @@
   <string name="ManualInput">Χειροκίνητη εισαγωγή</string>
   <string name="ModuleFeature">Χαρακτηριστικά Πρόσθετου</string>
   <string name="ModuleSettings">Ρυθμίσεις πρόσθετου</string>
-  <string name="ResHook">Resource Hook√</string>
+  <string name="ResHook">Resource Hook</string>
   <string name="NoneBlur">Χωρίς θάμπωμα</string>
   <string name="OtherFeature">Άλλα χαρακτηριστικά</string>
   <string name="OutOfInput">Παρακαλώ εισάγεται μια μεταβλητή μέσα στα όρια!</string>

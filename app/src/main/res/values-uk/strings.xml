@@ -26,7 +26,7 @@
   <string name="ManualInput">Ручне введення</string>
   <string name="ModuleFeature">Фішки модуля</string>
   <string name="ModuleSettings">Налаштування модулю</string>
-  <string name="ResHook">Хук ресурсів√</string>
+  <string name="ResHook">Хук ресурсів</string>
   <string name="NoneBlur">Без розмиття</string>
   <string name="OtherFeature">Інші фішки</string>
   <string name="OutOfInput">Будь ласка, введіть значення в межах дозволеного діапазону!</string>

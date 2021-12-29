@@ -1,5 +1,6 @@
 package com.yuk.miuihome
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Application
 import android.content.Context
@@ -19,6 +20,7 @@ import com.yuk.miuihome.utils.ktx.*
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
 import de.robv.android.xposed.callbacks.XC_LoadPackage
+import java.lang.reflect.Method
 
 class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookInitPackageResources {
 
@@ -48,6 +50,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
             checkAlpha()
             checkVersionCode()
             checkWidgetLauncher()
+            checkMiuiVersion()
         }
     }
 
@@ -130,6 +133,10 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         }
     }
 
+    fun checkMiuiVersion():String {
+        return getProp("ro.miui.ui.version.name").toString()
+    }
+
     private fun checkVersionCode() {
         try {
             HomeContext.versionCode = HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0).longVersionCode
@@ -164,4 +171,16 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         lateinit var moduleRes: Resources
         var hasHookPackageResources = false
     }
+}
+
+@SuppressLint("PrivateApi")
+fun getProp(key: String?): String? {
+    var value: String? = null
+    try {
+        val clazz = Class.forName("android.os.SystemProperties")
+        val get: Method = clazz.getMethod("get", String::class.java)
+        value = get.invoke(clazz, key).toString()
+    } catch (e: Exception) {
+    }
+    return value
 }

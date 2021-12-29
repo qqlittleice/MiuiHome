@@ -26,7 +26,7 @@
   <string name="ManualInput">Nhập thủ công</string>
   <string name="ModuleFeature">Tính năng mô-đun</string>
   <string name="ModuleSettings">Cài đặt mô-đun</string>
-  <string name="ResHook">Tài nguyên Hook√</string>
+  <string name="ResHook">Tài nguyên Hook</string>
   <string name="NoneBlur">Không làm mờ</string>
   <string name="OtherFeature">Các tính năng khác</string>
   <string name="OutOfInput">Vui lòng nhập một giá trị trong phạm vi cho phép!</string>

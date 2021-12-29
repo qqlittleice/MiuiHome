@@ -26,7 +26,7 @@
   <string name="ManualInput">Entrada Manual</string>
   <string name="ModuleFeature">Recursos do módulo</string>
   <string name="ModuleSettings">Configurações do Módulo</string>
-  <string name="ResHook">Modificações de Recursos√</string>
+  <string name="ResHook">Modificações de Recursos</string>
   <string name="NoneBlur">Sem Blur</string>
   <string name="OtherFeature">Outros Recursos</string>
   <string name="OutOfInput">Por favor, coloque um valor dentro do limite!</string>

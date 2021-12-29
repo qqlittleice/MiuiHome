@@ -26,7 +26,7 @@
   <string name="ManualInput">手动输入</string>
   <string name="ModuleFeature">模块相关</string>
   <string name="ModuleSettings">模块设置</string>
-  <string name="ResHook">资源钩子√</string>
+  <string name="ResHook">资源钩子</string>
   <string name="NoneBlur">无模糊</string>
   <string name="OtherFeature">其他功能</string>
   <string name="OutOfInput">请输入允许范围内的值！</string>
