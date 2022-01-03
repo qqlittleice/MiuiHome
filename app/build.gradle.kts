@@ -30,6 +30,13 @@ android {
             isShrinkResources = true
             setProguardFiles(listOf(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro", "proguard-log.pro"))
         }
+        create("noResHook") {
+            initWith(getByName("release"))
+        }
+    }
+
+    sourceSets.getByName("main") {
+        java.setSrcDirs(java.srcDirs + File(projectDir, "src/noResHook/java"))
     }
 
     androidComponents.onVariants { appVariant ->
@@ -37,8 +44,11 @@ android {
             if (appVariant is ApplicationVariantImpl) appVariant
             else (appVariant as AnalyticsEnabledApplicationVariant).delegate as ApplicationVariantImpl
         variant.outputs.forEach {
-            if (appVariant.buildType == "release") it.outputFileName.set("MiuiHome-${verName}(${verCode})-Release.apk")
-            else it.outputFileName.set("MiuiHome-${verName}(${verCode})-Debug.apk")
+            when (appVariant.buildType) {
+                "release" -> it.outputFileName.set("MiuiHome-${verName}(${verCode})-Release.apk")
+                "debug" -> it.outputFileName.set("MiuiHome-${verName}(${verCode})-Debug.apk")
+                "noResHook" -> it.outputFileName.set("MiuiHome-${verName}(${verCode})-NoResHook.apk")
+            }
         }
     }
 

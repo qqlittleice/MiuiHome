@@ -33,15 +33,9 @@ jobs:
 
       - name: Build with Gradle
         run: |
-          mkdir -p /tmp/repo
-          cp -rf ${GITHUB_WORKSPACE}/* /tmp/repo
           bash ./gradlew assembleRelease
           bash ./gradlew assembleDebug
-          cd /tmp/repo
-          sed -i 's/, IXposedHookInitPackageResources//g' app/src/main/java/com/yuk/miuihome/XposedInit.kt
-          sed -i '/override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam) {/,+5d' app/src/main/java/com/yuk/miuihome/XposedInit.kt
-          sed -i 's/Release.apk/NoResHook.apk/g' app/build.gradle.kts
-          bash ./gradlew assembleRelease
+          bash ./gradlew assembleNoResHook
 
       - name: Sign Release APK
         if: success()
@@ -76,7 +70,7 @@ jobs:
         env:
           BUILD_TOOLS_VERSION: "31.0.0"
         with:
-          releaseDirectory: /tmp/repo/app/build/outputs/apk/release
+          releaseDirectory: app/build/outputs/apk/noResHook
           signingKeyBase64: ${{ secrets.SIGNING_KEY }}
           alias: ${{ secrets.ALIAS }}
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
