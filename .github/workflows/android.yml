@@ -40,7 +40,7 @@ jobs:
           cd /tmp/repo
           sed -i 's/, IXposedHookInitPackageResources//g' app/src/main/java/com/yuk/miuihome/XposedInit.kt
           sed -i '/override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam) {/,+5d' app/src/main/java/com/yuk/miuihome/XposedInit.kt
-          sed -i 's/release.apk/NoResHook.apk/g' app/build.gradle.kts
+          sed -i 's/Release.apk/NoResHook.apk/g' app/build.gradle.kts
           bash ./gradlew assembleRelease
 
       - name: Sign Release APK
