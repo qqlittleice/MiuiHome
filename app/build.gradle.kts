@@ -29,15 +29,14 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             setProguardFiles(listOf(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro", "proguard-log.pro"))
-            buildConfigField("boolean","useResHook","true")
-        }
-        debug {
-            buildConfigField("boolean","useResHook","true")
         }
         create("noResHook") {
             initWith(getByName("release"))
-            buildConfigField("boolean","useResHook","false")
         }
+    }
+
+    sourceSets.getByName("main") {
+        java.setSrcDirs(java.srcDirs + File(projectDir, "src/noResHook/java"))
     }
 
     androidComponents.onVariants { appVariant ->
