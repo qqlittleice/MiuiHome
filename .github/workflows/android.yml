@@ -40,7 +40,7 @@ jobs:
           cd /tmp/repo
           sed -i 's/, IXposedHookInitPackageResources//g' app/src/main/java/com/yuk/miuihome/XposedInit.kt
           sed -i '/override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam) {/,+5d' app/src/main/java/com/yuk/miuihome/XposedInit.kt
-          sed -i 's/release.apk/NoResHock.apk/g' app/build.gradle.kts
+          sed -i 's/release.apk/NoResHook.apk/g' app/build.gradle.kts
           bash ./gradlew assembleRelease
 
       - name: Sign Release APK
@@ -69,9 +69,9 @@ jobs:
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
 
-      - name: Sign NoResHock APK
+      - name: Sign NoResHook APK
         if: success()
-        id: sign_noreshock
+        id: sign_noreshook
         uses: r0adkll/sign-android-release@v1.0.4
         env:
           BUILD_TOOLS_VERSION: "31.0.0"
@@ -98,7 +98,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: MiuiHome_NoResHock
-          path: ${{ steps.sign_noreshock.outputs.signedReleaseFile }}
+          path: ${{ steps.sign_noreshook.outputs.signedReleaseFile }}
 
       - name: Post to channel
         if: contains(github.event.head_commit.message, '[skip post]') == false
@@ -107,7 +107,7 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           RELEASE: ${{ steps.sign_release.outputs.signedReleaseFile }}
           DEBUG: ${{ steps.sign_debug.outputs.signedReleaseFile }}
-          NORESHOCK: ${{ steps.sign_noreshock.outputs.signedReleaseFile }}
+          NORESHOOK: ${{ steps.sign_noreshook.outputs.signedReleaseFile }}
           COMMIT_MESSAGE: |+
             New push in Github\!
             ```
@@ -115,4 +115,4 @@ jobs:
             ```
         run: |
           ESCAPED=`python3 -c 'import json,os,urllib.parse; print(urllib.parse.quote(json.dumps(os.environ["COMMIT_MESSAGE"])))'`
-          curl -v "https://api.telegram.org/bot${BOT_TOKEN}/sendMediaGroup?chat_id=${CHANNEL_ID}&media=%5B%7B%22type%22%3A%22document%22%2C%20%22media%22%3A%22attach%3A%2F%2Frelease%22%7D%2C%7B%22type%22%3A%22document%22%2C%20%22media%22%3A%22attach%3A%2F%2Fnoreshock%22%7D%2C%7B%22type%22%3A%22document%22%2C%20%22media%22%3A%22attach%3A%2F%2Fdebug%22%2C%22parse_mode%22%3A%22MarkdownV2%22%2C%22caption%22%3A${ESCAPED}%7D%5D" -F release="@$RELEASE" -F debug="@$DEBUG"
+          curl -v "https://api.telegram.org/bot${BOT_TOKEN}/sendMediaGroup?chat_id=${CHANNEL_ID}&media=%5B%7B%22type%22%3A%22document%22%2C%20%22media%22%3A%22attach%3A%2F%2Frelease%22%7D%2C%7B%22type%22%3A%22document%22%2C%20%22media%22%3A%22attach%3A%2F%2Fnoreshock%22%7D%2C%7B%22type%22%3A%22document%22%2C%20%22media%22%3A%22attach%3A%2F%2Fdebug%22%2C%22parse_mode%22%3A%22MarkdownV2%22%2C%22caption%22%3A${ESCAPED}%7D%5D" -F release="@$RELEASE" -F debug="@$DEBUG"-F noreshook="@$NORESHOOK"
