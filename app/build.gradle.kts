@@ -29,6 +29,14 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             setProguardFiles(listOf(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro", "proguard-log.pro"))
+            buildConfigField("boolean","useResHook","true")
+        }
+        debug {
+            buildConfigField("boolean","useResHook","true")
+        }
+        create("noResHook") {
+            initWith(getByName("release"))
+            buildConfigField("boolean","useResHook","false")
         }
     }
 
@@ -37,8 +45,11 @@ android {
             if (appVariant is ApplicationVariantImpl) appVariant
             else (appVariant as AnalyticsEnabledApplicationVariant).delegate as ApplicationVariantImpl
         variant.outputs.forEach {
-            if (appVariant.buildType == "release") it.outputFileName.set("MiuiHome-${verName}(${verCode})-Release.apk")
-            else it.outputFileName.set("MiuiHome-${verName}(${verCode})-Debug.apk")
+            when (appVariant.buildType) {
+                "release" -> it.outputFileName.set("MiuiHome-${verName}(${verCode})-Release.apk")
+                "debug" -> it.outputFileName.set("MiuiHome-${verName}(${verCode})-Debug.apk")
+                "noResHook" -> it.outputFileName.set("MiuiHome-${verName}(${verCode})-NoResHook.apk")
+            }
         }
     }
 
