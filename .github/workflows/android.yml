@@ -85,13 +85,13 @@ jobs:
       - name: Upload Release APK
         uses: actions/upload-artifact@v2
         with:
-          name: MiuiHome_release
+          name: MiuiHome_Release
           path: ${{ steps.sign_release.outputs.signedReleaseFile }}
 
       - name: Upload Debug APK
         uses: actions/upload-artifact@v2
         with:
-          name: MiuiHome_debug
+          name: MiuiHome_Debug
           path: ${{ steps.sign_debug.outputs.signedReleaseFile }}
 
       - name: Upload NoResHock APK
