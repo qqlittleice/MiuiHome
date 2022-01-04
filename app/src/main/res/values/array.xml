@@ -2,5 +2,6 @@
 <resources>
   <string-array name="xposed_scope">
     <item>com.miui.home</item>
+    <item>com.milink.service</item>
   </string-array>
 </resources>

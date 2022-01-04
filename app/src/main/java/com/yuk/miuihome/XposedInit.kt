@@ -30,6 +30,20 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
     }
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
+        if (lpparam.packageName == "com.milink.service") {
+                XposedHelpers.findAndHookMethod(
+            "com.miui.circulate.world.auth.AuthUtil", lpparam.classLoader, "doPermissionCheck", String::class.java, String::class.java,
+                    object : XC_MethodHook() {
+                        override fun beforeHookedMethod(param: MethodHookParam) {
+                            param.result = null
+                        }})
+                XposedHelpers.findAndHookMethod(
+            "com.miui.circulate.world.utils.GetKeyUtil", lpparam.classLoader, "doWhiteListAuth", String::class.java, String::class.java,
+                    object : XC_MethodHook() {
+                        override fun beforeHookedMethod(param: MethodHookParam) {
+                            param.result = true
+                        }})
+        }
         if (lpparam.packageName != Config.hookPackage) return
         Application::class.java.hookBeforeMethod(
             "attach",
