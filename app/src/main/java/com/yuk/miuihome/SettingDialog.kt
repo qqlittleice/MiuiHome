@@ -21,9 +21,9 @@ class SettingDialog {
     fun showSettingDialog() {
         lateinit var dialog: AlertDialog
         val dialogBuilder = SettingBaseDialog().get()
-        dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
+        dialogBuilder.setView(ScrollView(HomeContext.settingActivity).apply {
             overScrollMode = 2
-            addView(LinearLayout(HomeContext.activity).apply {
+            addView(LinearLayout(HomeContext.settingActivity).apply {
                 orientation = LinearLayout.VERTICAL
                 setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.app_name), mSize = SettingTextView.titleSize).build())
@@ -430,9 +430,9 @@ class SettingDialog {
     fun firstUseDialog() {
         val dialogBuilder = SettingBaseDialog().get()
         dialogBuilder.apply {
-            setView(ScrollView(HomeContext.activity).apply {
+            setView(ScrollView(HomeContext.settingActivity).apply {
                 overScrollMode = 2
-                addView(LinearLayout(HomeContext.activity).apply {
+                addView(LinearLayout(HomeContext.settingActivity).apply {
                     orientation = LinearLayout.VERTICAL
                     setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
                     addView(SettingTextView.FastBuilder(mText = "「" + moduleRes.getString(R.string.Welcome) + "」", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
