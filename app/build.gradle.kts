@@ -79,5 +79,5 @@ dependencies {
     compileOnly("de.robv.android.xposed:api:82")
     implementation("com.microsoft.appcenter:appcenter-crashes:4.4.1")
     implementation("com.microsoft.appcenter:appcenter-analytics:4.4.1")
-    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.2")
+    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.3")
 }
