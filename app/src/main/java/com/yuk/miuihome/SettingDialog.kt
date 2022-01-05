@@ -29,9 +29,9 @@ class SettingDialog {
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.app_name), mSize = SettingTextView.titleSize).build())
                 addView(SettingTextView.FastBuilder(mText = XposedInit().checkVersionName(), mColor = "#01b17b").build())
                 if (XposedInit.hasHookPackageResources) {
-                    addView(SettingTextView.FastBuilder(mText = showMiuiVersion()+ " / "+"${BuildConfig.VERSION_NAME}-${BuildConfig.VERSION_CODE}(${BuildConfig.BUILD_TYPE}) / " + moduleRes.getString(R.string.ResHook) + " √", mColor = "#01b17b").build())
+                    addView(SettingTextView.FastBuilder(mText = showMiuiVersion()+ "/"+"${BuildConfig.VERSION_NAME}(${BuildConfig.VERSION_CODE})-${BuildConfig.BUILD_TYPE}/" + moduleRes.getString(R.string.ResHook) + "√", mColor = "#01b17b").build())
                 } else {
-                    addView(SettingTextView.FastBuilder(mText = showMiuiVersion()+ " / "+"${BuildConfig.VERSION_NAME}-${BuildConfig.VERSION_CODE}(${BuildConfig.BUILD_TYPE}) / " + moduleRes.getString(R.string.ResHook) + " ×", mColor = "#01b17b").build())
+                    addView(SettingTextView.FastBuilder(mText = showMiuiVersion()+ "/"+"${BuildConfig.VERSION_NAME}(${BuildConfig.VERSION_CODE})-${BuildConfig.BUILD_TYPE}/" + moduleRes.getString(R.string.ResHook) + "×", mColor = "#01b17b").build())
                 }
                 if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                     addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.SimpleWarn), mColor = "#ff0c0c").build())

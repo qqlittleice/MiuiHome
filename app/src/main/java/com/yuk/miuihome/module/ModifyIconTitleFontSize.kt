@@ -5,7 +5,6 @@ import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.yuk.miuihome.XposedInit.Companion.hasHookPackageResources
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
@@ -17,7 +16,6 @@ import com.yuk.miuihome.utils.ktx.hookAfterMethod
 class ModifyIconTitleFontSize {
 
     fun init() {
-        if (!hasHookPackageResources) return
         val value = OwnSP.ownSP.getFloat("iconTitleFontSize", -1f)
         val launcherClass = "com.miui.home.launcher.Launcher".findClass()
         val shortcutInfoClass = "com.miui.home.launcher.ShortcutInfo".findClass()
