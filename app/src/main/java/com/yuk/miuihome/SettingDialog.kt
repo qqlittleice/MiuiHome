@@ -122,18 +122,18 @@ class SettingDialog {
 
     private fun customHookDialog() {
         val argsEditText = arrayListOf<EditText>()
-        val argsLinearLayout = LinearLayout(HomeContext.activity).also { it.orientation = LinearLayout.VERTICAL }
+        val argsLinearLayout = LinearLayout(HomeContext.settingActivity).also { it.orientation = LinearLayout.VERTICAL }
 
         fun createArgsEditText(): View {
-            val linearView = LinearLayout(HomeContext.activity).also { layout ->
+            val linearView = LinearLayout(HomeContext.settingActivity).also { layout ->
                 lateinit var editText: EditText
                 layout.orientation = LinearLayout.HORIZONTAL
-                layout.addView(EditText(HomeContext.activity).apply {
+                layout.addView(EditText(HomeContext.settingActivity).apply {
                     argsEditText.add(this)
                     layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
                     editText = this
                 })
-                layout.addView(Button(HomeContext.activity).apply {
+                layout.addView(Button(HomeContext.settingActivity).apply {
                     text = "X"
                     setOnClickListener {
                         argsEditText.remove(editText)
@@ -148,28 +148,28 @@ class SettingDialog {
         val dialogBuilder = SettingBaseDialog().get()
         dialogBuilder.apply {
             setTitle("自定义Hook")
-            setView(ScrollView(HomeContext.activity).apply {
+            setView(ScrollView(HomeContext.settingActivity).apply {
                 overScrollMode = 2
-                addView(LinearLayout(HomeContext.activity).apply {
+                addView(LinearLayout(HomeContext.settingActivity).apply {
                     orientation = LinearLayout.VERTICAL
                     setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
                     addView(SettingTextView.FastBuilder(mText = "Class:").build())
-                    val classEditText = EditText(HomeContext.activity)
+                    val classEditText = EditText(HomeContext.settingActivity)
                     addView(classEditText)
                     addView(SettingTextView.FastBuilder(mText = "Method name:").build())
-                    val methodEditText = EditText(HomeContext.activity)
+                    val methodEditText = EditText(HomeContext.settingActivity)
                     addView(methodEditText)
                     addView(SettingTextView.FastBuilder(mText = "arg(s):").build())
                     addView(argsLinearLayout)
-                    addView(Button(HomeContext.activity).apply {
+                    addView(Button(HomeContext.settingActivity).apply {
                         text = "X"
                         setOnClickListener { argsLinearLayout.addView(createArgsEditText()) }
                     })
                     addView(SettingTextView.FastBuilder(mText = "result(null直接不输入即可):").build())
-                    val resultEditText = EditText(HomeContext.activity)
+                    val resultEditText = EditText(HomeContext.settingActivity)
                     addView(resultEditText)
                     addView(SettingTextView.FastBuilder(mText = "result type(null直接不输入即可):").build())
-                    val resultTypeEditText = EditText(HomeContext.activity)
+                    val resultTypeEditText = EditText(HomeContext.settingActivity)
                     addView(resultTypeEditText)
                 })
             })
@@ -180,9 +180,9 @@ class SettingDialog {
         val dialogBuilder = SettingBaseDialog().get()
         lateinit var dialog: AlertDialog
         dialogBuilder.apply {
-            setView(ScrollView(HomeContext.activity).apply {
+            setView(ScrollView(HomeContext.settingActivity).apply {
                 overScrollMode = 2
-                addView(LinearLayout(HomeContext.activity).apply {
+                addView(LinearLayout(HomeContext.settingActivity).apply {
                     orientation = LinearLayout.VERTICAL
                     setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
                     addView(SettingTextView.FastBuilder(mText = "「" + moduleRes.getString(R.string.DockSettings) + "」", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
@@ -243,9 +243,9 @@ class SettingDialog {
     private fun showModifyHorizontal() {
         val dialogBuilder = SettingBaseDialog().get()
         dialogBuilder.apply {
-            setView(ScrollView(HomeContext.activity).apply {
+            setView(ScrollView(HomeContext.settingActivity).apply {
                 overScrollMode = 2
-                addView(LinearLayout(HomeContext.activity).apply {
+                addView(LinearLayout(HomeContext.settingActivity).apply {
                     orientation = LinearLayout.VERTICAL
                     setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
                     addView(SettingTextView.FastBuilder(mText = "「" + moduleRes.getString(R.string.HorizontalTaskViewOfAppCardSize) + "」", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
@@ -275,9 +275,9 @@ class SettingDialog {
         val dialogBuilder = SettingBaseDialog().get()
         lateinit var dialog: AlertDialog
         lateinit var onClick: View
-        dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
+        dialogBuilder.setView(ScrollView(HomeContext.settingActivity).apply {
             overScrollMode = 2
-            addView(LinearLayout(HomeContext.activity).apply {
+            addView(LinearLayout(HomeContext.settingActivity).apply {
                 orientation = LinearLayout.VERTICAL
                 setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
                 addView(SettingTextView.FastBuilder(mText = "「" + moduleRes.getString(R.string.TaskViewBlurLevel) + "」", mSize = SettingTextView.text2Size, mColor = "#0C84FF").build())
@@ -321,9 +321,9 @@ class SettingDialog {
     private fun showModifyReset1() {
         val dialogBuilder = SettingBaseDialog().get()
         dialogBuilder.apply {
-            setView(ScrollView(HomeContext.activity).apply {
+            setView(ScrollView(HomeContext.settingActivity).apply {
                 overScrollMode = 2
-                addView(LinearLayout(HomeContext.activity).apply {
+                addView(LinearLayout(HomeContext.settingActivity).apply {
                     orientation = LinearLayout.VERTICAL
                     setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
                     addView(SettingTextView.FastBuilder(mText = "「" + moduleRes.getString(R.string.Reset) + "」", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
@@ -353,9 +353,9 @@ class SettingDialog {
     private fun showModifyReset2() {
         val dialogBuilder = SettingBaseDialog().get()
         dialogBuilder.apply {
-            setView(ScrollView(HomeContext.activity).apply {
+            setView(ScrollView(HomeContext.settingActivity).apply {
                 overScrollMode = 2
-                addView(LinearLayout(HomeContext.activity).apply {
+                addView(LinearLayout(HomeContext.settingActivity).apply {
                     orientation = LinearLayout.VERTICAL
                     setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
                     addView(SettingTextView.FastBuilder(mText = "「" + moduleRes.getString(R.string.Reset1) + "」", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
@@ -380,9 +380,9 @@ class SettingDialog {
     private fun showCleanModuleSettingsDialog() {
         val dialogBuilder = SettingBaseDialog().get()
         dialogBuilder.apply {
-            setView(ScrollView(HomeContext.activity).apply {
+            setView(ScrollView(HomeContext.settingActivity).apply {
                 overScrollMode = 2
-                addView(LinearLayout(HomeContext.activity).apply {
+                addView(LinearLayout(HomeContext.settingActivity).apply {
                     orientation = LinearLayout.VERTICAL
                     setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
                     addView(SettingTextView.FastBuilder(mText = "「" + moduleRes.getString(R.string.CleanModuleSettings) + "」", mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())

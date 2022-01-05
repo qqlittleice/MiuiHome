@@ -10,7 +10,6 @@ object HomeContext {
     lateinit var application: Application
     lateinit var context: Context
     lateinit var classLoader: ClassLoader
-    lateinit var activity: Activity
     lateinit var settingActivity: Activity
     var isAlpha = false
     var isWidgetLauncher = false

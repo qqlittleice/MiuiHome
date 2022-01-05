@@ -43,9 +43,9 @@ class SettingSeekBarDialog(
         var tempValue: Float = OwnSP.ownSP.getFloat(mKey, 0f)
         lateinit var valueTextView: TextView
         lateinit var dialog: AlertDialog
-        dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
+        dialogBuilder.setView(ScrollView(HomeContext.settingActivity).apply {
             overScrollMode = 2
-            addView(LinearLayout(HomeContext.activity).apply {
+            addView(LinearLayout(HomeContext.settingActivity).apply {
                 orientation = LinearLayout.VERTICAL
                 setPadding(
                     dip2px(10), dip2px(6), dip2px(10), dip2px(6)

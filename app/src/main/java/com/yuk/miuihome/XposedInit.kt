@@ -30,47 +30,45 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
     }
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
-        if (lpparam.packageName == "com.milink.service") {
-                XposedHelpers.findAndHookMethod(
-            "com.miui.circulate.world.auth.AuthUtil", lpparam.classLoader, "doPermissionCheck", String::class.java, String::class.java,
+        when (lpparam.packageName) {
+            Config.hookPackage -> {
+                Application::class.java.hookBeforeMethod("attach", Context::class.java
+                ) {
+                    HomeContext.context = it.args[0] as Context
+                    HomeContext.classLoader = HomeContext.context.classLoader
+                    HomeContext.application = it.thisObject as Application
+                    CrashRecord.init(HomeContext.context)
+                    doHook()
+                }
+                Application::class.java.hookAfterMethod("attach", Context::class.java
+                ) {
+                    startOnlineLog()
+                    checkVersionName()
+                    checkAlpha()
+                    checkVersionCode()
+                    checkWidgetLauncher()
+                    checkMiuiVersion()
+                }
+            }
+            "com.milink.service" -> {
+                XposedHelpers.findAndHookMethod("com.miui.circulate.world.auth.AuthUtil", lpparam.classLoader, "doPermissionCheck", String::class.java, String::class.java,
                     object : XC_MethodHook() {
                         override fun beforeHookedMethod(param: MethodHookParam) {
                             param.result = null
-                        }})
-                XposedHelpers.findAndHookMethod(
-            "com.miui.circulate.world.utils.GetKeyUtil", lpparam.classLoader, "doWhiteListAuth", String::class.java, String::class.java,
+                        }
+                    })
+                XposedHelpers.findAndHookMethod("com.miui.circulate.world.utils.GetKeyUtil", lpparam.classLoader, "doWhiteListAuth", String::class.java, String::class.java,
                     object : XC_MethodHook() {
                         override fun beforeHookedMethod(param: MethodHookParam) {
                             param.result = true
-                        }})
-        }
-        if (lpparam.packageName != Config.hookPackage) return
-        Application::class.java.hookBeforeMethod(
-            "attach",
-            Context::class.java
-        ) {
-            HomeContext.context = it.args[0] as Context
-            HomeContext.classLoader = HomeContext.context.classLoader
-            HomeContext.application = it.thisObject as Application
-            CrashRecord.init(HomeContext.context)
-            doHook()
-        }
-        Application::class.java.hookAfterMethod(
-            "attach",
-            Context::class.java
-        ) {
-            startOnlineLog()
-            checkVersionName()
-            checkAlpha()
-            checkVersionCode()
-            checkWidgetLauncher()
-            checkMiuiVersion()
+                        }
+                    })
+            }
+            else -> return
         }
     }
 
     private fun doHook() {
-        "android.app.Instrumentation".findClass().hookAfterAllMethods(
-            "newActivity") { HomeContext.activity = it.result as Activity }
         "com.miui.home.settings.MiuiHomeSettingActivity".hookAfterMethod("onCreate", Bundle::class.java) {
             HomeContext.settingActivity = it.thisObject as Activity
         }

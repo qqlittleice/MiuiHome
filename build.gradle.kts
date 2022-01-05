@@ -1,6 +1,6 @@
 buildscript {
     var kotlin_version: String by extra
-    kotlin_version = "1.6.0"
+    kotlin_version = "1.6.10"
     repositories {
         google()
         mavenCentral()

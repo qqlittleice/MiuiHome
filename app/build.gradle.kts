@@ -3,7 +3,6 @@ import com.android.build.api.variant.impl.ApplicationVariantImpl
 
 plugins {
     id("com.android.application")
-
 }
 
 apply {
@@ -15,6 +14,7 @@ val verName = "4.1.8"
 
 android {
     compileSdk = 32
+    buildToolsVersion = "31.0.0"
 
     defaultConfig {
         applicationId = "com.yuk.miuihome"

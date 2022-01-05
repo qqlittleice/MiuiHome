@@ -24,9 +24,9 @@ class SettingUserInputText(
     fun build(): AlertDialog {
         lateinit var editText: EditText
         val dialogBuilder = SettingBaseDialog().get()
-        dialogBuilder.setView(ScrollView(HomeContext.activity).apply {
+        dialogBuilder.setView(ScrollView(HomeContext.settingActivity).apply {
             overScrollMode = 2
-            addView(LinearLayout(HomeContext.activity).apply {
+            addView(LinearLayout(HomeContext.settingActivity).apply {
                 orientation = LinearLayout.VERTICAL
                 setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
                 addView(
