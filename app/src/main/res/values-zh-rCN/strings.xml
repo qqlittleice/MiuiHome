@@ -95,4 +95,5 @@
   <string name="AppReturnAmin">应用返回模糊</string>
   <string name="BlurRadius">模糊半径</string>
   <string name="BasicBlur">基础模糊</string>
+  <string name="CustomTitleColor">自定义应用图标标题颜色</string>
 </resources>

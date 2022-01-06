@@ -88,5 +88,11 @@
   <string name="UnlockIcons">Откл. ограничение кол-ва иконок в док-баре</string>
   <string name="BrokenFeature">Устаревшие функции</string>
   <string name="BlurRadius">Степень размытия</string>
+  <string name="SimpleWarn">Вы включили простую анимацию, это скроет некоторые настройки.</string>
+  <string name="BasicBlur">Простое размытие</string>
   <string name="AppReturnAmin">Размытие при сворачивании</string>
+  <string name="VerticalScreen">Вертикальный экран</string>
+  <string name="HorizontalScreen">Горизонтальный экран</string>
+  <string name="Reset2">Сброс размера миниатюры для горизонтального меню недавних</string>
+  <string name="Tips3">Это приведет к сбросу параметров Размера миниатюры для горизонтального меню недавних на значение по умолчанию и перезапуску рабочего стола.</string>
 </resources>

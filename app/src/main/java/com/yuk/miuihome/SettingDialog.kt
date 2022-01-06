@@ -78,6 +78,7 @@ class SettingDialog {
                     addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.HideTaskViewSmallWindowIcon), mKey = "smallWindow").build())
                     addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.TaskViewAppCardTextSize)) { showModifyBackgroundTextSize() }.build())
                     addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.CustomRecentText)) { showModifyRecentText() }.build())
+                    //addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.CustomTitleColor)) { showModifyTitleColor() }.build())
                 }
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.TestFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.SimpleAnimation), mKey = "simpleAnimation") {
@@ -269,6 +270,10 @@ class SettingDialog {
 
     private fun showModifyRecentText() {
         SettingUserInputText(moduleRes.getString(R.string.CustomRecentText), "recentText").build()
+    }
+
+    private fun showModifyTitleColor() {
+        SettingUserInputText(moduleRes.getString(R.string.CustomTitleColor), "titleColor").build()
     }
 
     private fun showModifyBlurLevel() {
