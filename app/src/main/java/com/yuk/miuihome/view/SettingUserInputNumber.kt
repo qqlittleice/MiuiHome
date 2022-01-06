@@ -21,7 +21,8 @@ class SettingUserInputNumber(
     private val minValue: Int,
     private val maxValue: Int,
     private val defValue: Int,
-    private val divide: Int = 100
+    private val divide: Int = 100,
+    private val tips: String = ""
 ) {
     private val editor by lazy { OwnSP.ownSP.edit() }
 
@@ -35,7 +36,7 @@ class SettingUserInputNumber(
                 setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
                 addView(
                     SettingTextView.FastBuilder(
-                        mText = "「${mText}」",
+                        mText = "「$mText」",
                         mSize = SettingTextView.text2Size,
                         mColor = "#0C84FF"
                     ).build()
@@ -45,14 +46,9 @@ class SettingUserInputNumber(
                     inputType = EditorInfo.TYPE_CLASS_NUMBER
                     setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
                 })
-                addView(
-                    SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.Defaults) + " : $defValue")
-                        .build()
-                )
-                addView(
-                    SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.Scope) + " : $minValue ~ $maxValue")
-                        .build()
-                )
+                addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.Defaults) + " : $defValue").build())
+                addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.Scope) + " : $minValue ~ $maxValue").build())
+                if (tips != "") addView(SettingTextView.FastBuilder(mText = tips).build())
             })
         })
         dialogBuilder.apply {

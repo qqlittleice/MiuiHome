@@ -123,6 +123,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         HookSystemProperties().init()
         ModifyAppReturnBlur().init()
         ModifyBlurRadius().init()
+        ModifyIconTitleFontColor().init()
         //CustomHook.init()
     }
 
@@ -157,7 +158,6 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
             HomeContext.versionCode = HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0).longVersionCode
         } catch (e: Exception) {
             LogUtil.e(e)
-            HomeContext.versionCode = -1L
         }
     }
 

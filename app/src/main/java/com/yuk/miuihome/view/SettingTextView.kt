@@ -23,12 +23,7 @@ class SettingTextView(context: Context) : TextView(context) {
         set(value) = setTextColor(Color.parseColor(value))
     var url = ""
         set(value) = setOnClickListener {
-            HomeContext.settingActivity.startActivity(
-                Intent(
-                    Intent.ACTION_VIEW,
-                    Uri.parse(value)
-                )
-            )
+            HomeContext.settingActivity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(value)))
         }
 
     init {
