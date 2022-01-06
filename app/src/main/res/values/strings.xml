@@ -97,5 +97,5 @@
   <string name="BlurRadius">Blur Radius</string>
   <string name="BasicBlur">Basic Blur</string>
   <string name="CustomTitleColor">Customize the App icon title color</string>
-  <string name="Tips4">1 to 6 corresponds to White, Black, Blue, Red, Green, Yellow</string>
+  <string name="Tips4">Support hexadecimal color value, for example #FFFFFF is White, #000000 is Black</string>
 </resources>

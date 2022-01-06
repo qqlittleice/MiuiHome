@@ -17,7 +17,8 @@ import com.yuk.miuihome.utils.ktx.isNightMode
 
 class SettingUserInputText(
     private val mText: String,
-    private val mKey: String
+    private val mKey: String,
+    private val tips: String = ""
 ) {
     private val editor by lazy { OwnSP.ownSP.edit() }
 
@@ -41,6 +42,7 @@ class SettingUserInputText(
                     inputType = EditorInfo.TYPE_CLASS_TEXT
                     setTextColor(Color.parseColor(if (isNightMode(context)) "#ffffff" else "#000000"))
                 })
+                if (tips != "") addView(SettingTextView.FastBuilder(mText = tips).build())
             })
         })
         dialogBuilder.apply {

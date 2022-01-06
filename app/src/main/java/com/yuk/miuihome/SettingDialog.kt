@@ -273,7 +273,7 @@ class SettingDialog {
     }
 
     private fun showModifyTitleColor() {
-        SettingUserInputNumber(moduleRes.getString(R.string.CustomTitleColor), "iconTitleFontColor", 1, 6, -1, 1,moduleRes.getString(R.string.Tips4)).build()
+        SettingUserInputText(moduleRes.getString(R.string.CustomTitleColor), "iconTitleFontColor", moduleRes.getString(R.string.Tips4)).build()
     }
 
     private fun showModifyBlurLevel() {

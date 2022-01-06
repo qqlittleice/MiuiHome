@@ -12,60 +12,38 @@ import com.yuk.miuihome.utils.ktx.callMethod
 import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.ktx.getObjectField
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
-import kotlin.properties.Delegates
 
 class ModifyIconTitleFontColor {
 
     fun init() {
-        val value = OwnSP.ownSP.getFloat("iconTitleFontColor", -1f)
+        val value = OwnSP.ownSP.getString("iconTitleFontColor", "")
         val launcherClass = "com.miui.home.launcher.Launcher".findClass()
         val shortcutInfoClass = "com.miui.home.launcher.ShortcutInfo".findClass()
-        if (value == -1f) return
-        var color by Delegates.notNull<Int>()
-        when (value) {
-            1f -> {
-                color = Color.WHITE
-            }
-            2f -> {
-                color = Color.BLACK
-            }
-            3f -> {
-                color = Color.BLUE
-            }
-            4f -> {
-                color = Color.RED
-            }
-            5f -> {
-                color = Color.GREEN
-            }
-            6f -> {
-                color = Color.YELLOW
-            }
-        }
+        if (value == "") return
         try {
             "com.miui.home.launcher.ItemIcon".hookAfterMethod(
                 "onFinishInflate"
             ) {
                 val mTitle = it.thisObject.getObjectField("mTitle") as TextView
-                mTitle.setTextColor(color)
+                mTitle.setTextColor(Color.parseColor(value))
             }
             "com.miui.home.launcher.maml.MaMlWidgetView".hookAfterMethod(
                 "onFinishInflate"
             ) {
                 val mTitle = it.thisObject.getObjectField("mTitleTextView") as TextView
-                mTitle.setTextColor(color)
+                mTitle.setTextColor(Color.parseColor(value))
             }
             "com.miui.home.launcher.LauncherMtzGadgetView".hookAfterMethod(
                 "onFinishInflate"
             ) {
                 val mTitle = it.thisObject.getObjectField("mTitleTextView") as TextView
-                mTitle.setTextColor(color)
+                mTitle.setTextColor(Color.parseColor(value))
             }
             "com.miui.home.launcher.LauncherWidgetView".hookAfterMethod(
                 "onFinishInflate"
             ) {
                 val mTitle = it.thisObject.getObjectField("mTitleTextView") as TextView
-                mTitle.setTextColor(color)
+                mTitle.setTextColor(Color.parseColor(value))
             }
             "com.miui.home.launcher.ShortcutIcon".hookAfterMethod(
                 "fromXml",
@@ -76,7 +54,7 @@ class ModifyIconTitleFontColor {
             ) {
                 val buddyIconView = it.args[3].callMethod("getBuddyIconView", it.args[2]) as View
                 val mTitle = buddyIconView.getObjectField("mTitle") as TextView
-                mTitle.setTextColor(color)
+                mTitle.setTextColor(Color.parseColor(value))
             }
             "com.miui.home.launcher.ShortcutIcon".hookAfterMethod(
                 "createShortcutIcon",
@@ -86,7 +64,7 @@ class ModifyIconTitleFontColor {
             ) {
                 val buddyIcon = it.result as View
                 val mTitle = buddyIcon.getObjectField("mTitle") as TextView
-                mTitle.setTextColor(color)
+                mTitle.setTextColor(Color.parseColor(value))
             }
             "com.miui.home.launcher.common.Utilities".hookAfterMethod(
                 "adaptTitleStyleToWallpaper",
@@ -97,7 +75,7 @@ class ModifyIconTitleFontColor {
             ) {
                 val mTitle = it.args[1] as TextView
                 if (mTitle.id == mTitle.resources.getIdentifier("icon_title", "id", Config.hookPackage))
-                    mTitle.setTextColor(color)
+                    mTitle.setTextColor(Color.parseColor(value))
             }
         } catch (e: Throwable) {
             LogUtil.e(e)
