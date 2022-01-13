@@ -19,7 +19,7 @@ class ResourcesHook {
             if (hookMap.isKeyExist(resName)) {
                 if (hookMap[resName]?.type == resType) {
                     param.result = hookMap[resName]?.afterValue
-                    XposedBridge.log("MiuiHome: $resName hooked! after value = ${hookMap[resName]?.afterValue}")
+                    //XposedBridge.log("MiuiHome: $resName hooked! after value = ${hookMap[resName]?.afterValue}")
                 }
             }
         } catch (ignore: Exception) {

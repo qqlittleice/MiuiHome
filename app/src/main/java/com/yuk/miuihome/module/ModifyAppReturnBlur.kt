@@ -32,9 +32,9 @@ class ModifyAppReturnBlur {
                     val isFolderShowing = activity.callMethod("isFolderShowing") as Boolean
                     val isInEditing = activity.callMethod("isInEditing") as Boolean
                     val isUserBlurWhenOpenFolder = blurClass.callStaticMethod("isUserBlurWhenOpenFolder") as Boolean
-                    XposedBridge.log("IsFolderShowing now is $isFolderShowing")
-                    XposedBridge.log("IsInEditing now is $isInEditing")
-                    XposedBridge.log("IsUserBlurWhenOpenFolder now is $isUserBlurWhenOpenFolder")
+                    //XposedBridge.log("IsFolderShowing now is $isFolderShowing")
+                    //XposedBridge.log("IsInEditing now is $isInEditing")
+                    //XposedBridge.log("IsUserBlurWhenOpenFolder now is $isUserBlurWhenOpenFolder")
                     if (view.visibility == View.GONE && !isInEditing) {
                         if ((isUserBlurWhenOpenFolder && !isFolderShowing) or (!isUserBlurWhenOpenFolder && isFolderShowing))
                             handler.postDelayed(runnable, 100)
