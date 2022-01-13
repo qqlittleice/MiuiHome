@@ -20,8 +20,7 @@ class ModifyCategory {
             }
         }
         if (OwnSP.ownSP.getBoolean("CategoryPagingHideEdit", false)) {
-            "com.miui.home.launcher.allapps.AllAppsGridAdapter"
-                .hookAfterMethod(
+            "com.miui.home.launcher.allapps.AllAppsGridAdapter".hookAfterMethod(
                     "onBindViewHolder",
                     "com.miui.home.launcher.allapps.AllAppsGridAdapter.ViewHolder".findClass(),
                     Int::class.javaPrimitiveType

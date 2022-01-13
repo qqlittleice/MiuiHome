@@ -28,10 +28,10 @@ class ModifyAppReturnBlur {
                 val runnable = Runnable { blurClass.callStaticMethod("fastBlur", 0.0f, activity.window, true, value) }
                 val isFolderShowing = activity.callMethod("isFolderShowing") as Boolean
                 val isInEditing = activity.callMethod("isInEditing") as Boolean
-                if ((view.visibility == View.GONE) && !isFolderShowing && !isInEditing)
+                if (view.visibility == View.GONE && !isFolderShowing && !isInEditing)
                     navStubViewClass.hookAfterMethod("performAppToHome"
                 ) {
-                    launcherClass.callStaticMethod("getLauncher", handler.postDelayed(runnable, 100))
+                    handler.postDelayed(runnable, 100)
                 }
             }
         }

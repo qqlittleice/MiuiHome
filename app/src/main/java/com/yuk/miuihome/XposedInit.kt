@@ -188,6 +188,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
     }
 }
 
+@Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 @SuppressLint("PrivateApi")
 fun getProp(key: String): String {
     lateinit var value: String
