@@ -30,11 +30,8 @@ object LogUtil {
             val chunkCount: Int = str.length / maxLength
             for (i in 0..chunkCount) {
                 val max: Int = 4000 * (i + 1)
-                if (max >= str.length) {
-                    doLog(f, str.substring(maxLength * i))
-                } else {
-                    doLog(f, str.substring(maxLength * i, max))
-                }
+                if (max >= str.length) doLog(f, str.substring(maxLength * i))
+                else doLog(f, str.substring(maxLength * i, max))
             }
         } else {
             f(TAG, str)

@@ -21,7 +21,5 @@ class SetDeviceLevel : BaseClassAndMethodCheck {
         }
     }
 
-    override fun classAndMethodList(): ArrayList<String> = arrayListOf(
-        "com.miui.home.launcher.util.noword.NoWordSettingHelperKt", "isNoWordAvailable"
-    )
+    override fun classAndMethodList(): ArrayList<String> = arrayListOf("com.miui.home.launcher.util.noword.NoWordSettingHelperKt", "isNoWordAvailable")
 }

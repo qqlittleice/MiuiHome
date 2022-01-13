@@ -16,12 +16,11 @@ class ResourcesHook {
             val res = HomeContext.context.resources
             val resName = res.getResourceEntryName(param.args[0] as Int)
             val resType = res.getResourceTypeName(param.args[0] as Int)
-            if (hookMap.isKeyExist(resName)) {
+            if (hookMap.isKeyExist(resName))
                 if (hookMap[resName]?.type == resType) {
                     param.result = hookMap[resName]?.afterValue
                     //XposedBridge.log("MiuiHome: $resName hooked! after value = ${hookMap[resName]?.afterValue}")
                 }
-            }
         } catch (ignore: Exception) {
         }
     }
@@ -53,9 +52,9 @@ class ResourcesHook {
             hookMap["recents_task_view_rounded_corners_radius_max"] = ResourcesHookData("dimen", dp2px(value))
         }
 
-        if (value1 != -1f && value1 != 40f) {
+        if (value1 != -1f && value1 != 40f)
             hookMap["recents_task_view_header_height"] = ResourcesHookData("dimen", dp2px(value1))
-        }
+
     }
 
     companion object {

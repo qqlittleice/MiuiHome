@@ -12,9 +12,7 @@ interface BaseClassAndMethodCheck {
         val methodNameList = ArrayList<String>()
         var loopCls = cls
         while (loopCls != Any::class.java) {
-            for (item in cls.methods) {
-                methodNameList.add(item.name)
-            }
+            for (item in cls.methods) methodNameList.add(item.name)
             loopCls = cls.superclass
         }
         return methodNameList
@@ -22,15 +20,12 @@ interface BaseClassAndMethodCheck {
 
     fun checkClassAndMethodExist(): Boolean {
         val list = classAndMethodList()
-        if (list.size % 2 != 0) {
+        if (list.size % 2 != 0)
             throw RuntimeException("checkClassAndMethodExist() -> ClassAndMethodList.size should be an even number")
-        }
         try {
             for (i in 0 until list.size step 2) {
                 val cls = XposedHelpers.findClass(list[i], HomeContext.classLoader)
-                if (list[i + 1] !in getAllMethods(cls)) {
-                    return false
-                }
+                if (list[i + 1] !in getAllMethods(cls)) return false
             }
         } catch (e: ClassNotFoundError) {
             return false

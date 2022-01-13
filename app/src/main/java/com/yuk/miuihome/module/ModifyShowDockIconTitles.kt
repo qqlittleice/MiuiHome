@@ -9,19 +9,12 @@ import com.yuk.miuihome.utils.ktx.setReturnConstant
 class ModifyShowDockIconTitles {
 
     fun init() {
-        if (OwnSP.ownSP.getBoolean("showDockIconTitles", false)) {
-            "com.miui.home.launcher.DeviceConfig".setReturnConstant(
-                "isHotseatsAppTitleHided",
-                result = false
-            )
-            "com.miui.home.launcher.DeviceConfig".hookAfterMethod(
-                "calcHotSeatsHeight",
-                Context::class.java,
-                Boolean::class.java
-            ) {
-                val height = it.result as Int
-                it.result = (height + 8 * HomeContext.context.resources.displayMetrics.density).toInt()
-            }
+        if (!OwnSP.ownSP.getBoolean("showDockIconTitles", false)) return
+        "com.miui.home.launcher.DeviceConfig".setReturnConstant("isHotseatsAppTitleHided", result = false)
+        "com.miui.home.launcher.DeviceConfig".hookAfterMethod("calcHotSeatsHeight", Context::class.java, Boolean::class.java
+        ) {
+            val height = it.result as Int
+            it.result = (height + 8 * HomeContext.context.resources.displayMetrics.density).toInt()
         }
     }
 }

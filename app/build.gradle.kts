@@ -3,10 +3,7 @@ import com.android.build.api.variant.impl.ApplicationVariantImpl
 
 plugins {
     id("com.android.application")
-}
-
-apply {
-    plugin("kotlin-android")
+    id("kotlin-android")
 }
 
 val verCode = 4180
@@ -15,7 +12,6 @@ val verName = "4.1.8"
 android {
     compileSdk = 32
     buildToolsVersion = "31.0.0"
-
     defaultConfig {
         applicationId = "com.yuk.miuihome"
         minSdk = 28
@@ -23,7 +19,6 @@ android {
         versionCode = verCode
         versionName = verName
     }
-
     buildTypes {
         release {
             isMinifyEnabled = true
@@ -34,11 +29,9 @@ android {
             initWith(getByName("release"))
         }
     }
-
     sourceSets.getByName("main") {
         java.setSrcDirs(java.srcDirs + File(projectDir, "src/noResHook/java"))
     }
-
     androidComponents.onVariants { appVariant ->
         val variant: ApplicationVariantImpl =
             if (appVariant is ApplicationVariantImpl) appVariant
@@ -51,12 +44,10 @@ android {
             }
         }
     }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-
     packagingOptions {
         resources {
             excludes += "/META-INF/**"
@@ -68,10 +59,6 @@ android {
         dex {
             useLegacyPackaging = true
         }
-    }
-
-    dependenciesInfo {
-        includeInApk = false
     }
 }
 

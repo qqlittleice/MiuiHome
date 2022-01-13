@@ -8,15 +8,9 @@ class SettingBaseDialog {
 
     fun get(): AlertDialog.Builder {
         return if (isNightMode(HomeContext.settingActivity)) {
-            AlertDialog.Builder(
-                HomeContext.settingActivity,
-                android.R.style.Theme_Material_Dialog_Alert
-            )
+            AlertDialog.Builder(HomeContext.settingActivity, android.R.style.Theme_Material_Dialog_Alert)
         } else {
-            AlertDialog.Builder(
-                HomeContext.settingActivity,
-                android.R.style.Theme_Material_Light_Dialog_Alert
-            )
+            AlertDialog.Builder(HomeContext.settingActivity, android.R.style.Theme_Material_Light_Dialog_Alert)
         }
     }
 }

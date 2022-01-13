@@ -142,11 +142,9 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
     }
 
     private fun checkAlpha() {
-        HomeContext.isAlpha = if (!checkVersionName().contains("RELEASE", ignoreCase = true)) {
+        HomeContext.isAlpha = if (!checkVersionName().contains("RELEASE", ignoreCase = true))
             checkVersionName().contains("ALPHA", ignoreCase = true)
-        } else {
-            false
-        }
+        else false
     }
 
     fun checkMiuiVersion(): String {
@@ -168,9 +166,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                 "com.miui.home.launcher.MIUIWidgetUtil"
         )
         try {
-            for (item in checkList) {
-                XposedHelpers.findClass(item, HomeContext.classLoader)
-            }
+            for (item in checkList) XposedHelpers.findClass(item, HomeContext.classLoader)
             HomeContext.isWidgetLauncher = true
         } catch (e: XposedHelpers.ClassNotFoundError) {
             HomeContext.isWidgetLauncher = false

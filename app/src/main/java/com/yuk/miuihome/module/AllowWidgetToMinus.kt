@@ -9,12 +9,11 @@ import com.yuk.miuihome.utils.ktx.setBooleanField
 class AllowWidgetToMinus {
 
     fun init() {
-        if (OwnSP.ownSP.getBoolean("widgetToMinus", false)) {
-            "com.miui.home.launcher.Workspace".hookBeforeMethod("canDragToPa") {
-                val currentDragObject = it.thisObject.getObjectField("mDragController")?.callMethod("getCurrentDragObject")
-                val dragInfo = currentDragObject?.callMethod("getDragInfo")
-                dragInfo?.setBooleanField("isMIUIWidget", true)
-            }
+        if (!OwnSP.ownSP.getBoolean("widgetToMinus", false)) return
+        "com.miui.home.launcher.Workspace".hookBeforeMethod("canDragToPa") {
+            val currentDragObject = it.thisObject.getObjectField("mDragController")?.callMethod("getCurrentDragObject")
+            val dragInfo = currentDragObject?.callMethod("getDragInfo")
+            dragInfo?.setBooleanField("isMIUIWidget", true)
         }
     }
 }

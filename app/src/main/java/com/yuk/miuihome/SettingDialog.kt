@@ -3,11 +3,11 @@ package com.yuk.miuihome
 import android.app.AlertDialog
 import android.view.View
 import android.widget.*
-import com.yuk.miuihome.utils.Config.AndroidSDK
 import com.yuk.miuihome.XposedInit.Companion.moduleRes
 import com.yuk.miuihome.module.BuildWithEverything
 import com.yuk.miuihome.module.EnableBlurWhenOpenFolder
 import com.yuk.miuihome.module.ModifyBlurLevel
+import com.yuk.miuihome.utils.Config.AndroidSDK
 import com.yuk.miuihome.utils.HomeContext
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
@@ -28,14 +28,12 @@ class SettingDialog {
                 setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.app_name), mSize = SettingTextView.titleSize).build())
                 addView(SettingTextView.FastBuilder(mText = XposedInit().checkVersionName(), mColor = "#01b17b").build())
-                if (XposedInit.hasHookPackageResources) {
+                if (XposedInit.hasHookPackageResources)
                     addView(SettingTextView.FastBuilder(mText = showMiuiVersion()+ "/"+"${BuildConfig.VERSION_NAME}(${BuildConfig.VERSION_CODE})-${BuildConfig.BUILD_TYPE}/" + moduleRes.getString(R.string.ResHook) + "√", mColor = "#01b17b").build())
-                } else {
+                else
                     addView(SettingTextView.FastBuilder(mText = showMiuiVersion()+ "/"+"${BuildConfig.VERSION_NAME}(${BuildConfig.VERSION_CODE})-${BuildConfig.BUILD_TYPE}/" + moduleRes.getString(R.string.ResHook) + "×", mColor = "#01b17b").build())
-                }
-                if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
+                if (OwnSP.ownSP.getBoolean("simpleAnimation", false))
                     addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.SimpleWarn), mColor = "#ff0c0c").build())
-                }
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.BaseFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
                 if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                     addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.SmoothAnimation), mKey = "smoothAnimation").build())
@@ -48,9 +46,8 @@ class SettingDialog {
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.HideStatusBar), mKey = "hideStatusBar").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.MamlDownload), mKey = "mamlDownload").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.UnlockIcons), mKey = "unlockIcons").build())
-                if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
+                if (!OwnSP.ownSP.getBoolean("simpleAnimation", false))
                     addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.WallpaperDarken), mKey = "wallpaperDarken").build())
-                }
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.CategoryHideAll), mKey = "categoryHideAll").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.CategoryPagingHideEdit), mKey = "CategoryPagingHideEdit").build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.IconTitleFontSize)) { showModifyIconTitleFontSize() }.build())
@@ -60,9 +57,8 @@ class SettingDialog {
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.VerticalTaskViewOfAppCardSize)) { showModifyVertical() }.build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.HorizontalTaskViewOfAppCardSize)) { showModifyHorizontal() }.build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.Folder), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
-                if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
+                if (!OwnSP.ownSP.getBoolean("simpleAnimation", false))
                     addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.BlurWhenOpenFolder), mKey = "blurWhenOpenFolder", show = EnableBlurWhenOpenFolder.checked).build())
-                }
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.CloseFolder), mKey = "closeFolder").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.FolderWidth), mKey = "folderWidth").build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.FolderColumnsCount)) { showModifyFolderColumnsCount() }.build())
@@ -95,15 +91,13 @@ class SettingDialog {
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.SmallWindow), mKey = "supportSmallWindow").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.LowEndAnim), mKey = "lowEndAnim").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.LowEndDeviceUseMIUIWidgets), mKey = "useMIUIWidgets").build())
-                if (!OwnSP.ownSP.getBoolean("appReturnAmin", false)) {
+                if (!OwnSP.ownSP.getBoolean("appReturnAmin", false))
                     addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.BlurRadius)) { showBlurRadius() }.build())
-                }
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.OtherFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.AlwaysShowStatusBarClock), mKey = "clockGadget").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.DoubleTap), mKey = "doubleTap").build())
-                if (!OwnSP.ownSP.getBoolean("dockSettings", false) && (AndroidSDK >= 30)) {
+                if (!OwnSP.ownSP.getBoolean("dockSettings", false) && (AndroidSDK == 30))
                     addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.SearchBarBlur), mKey = "searchBarBlur").build())
-                }
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.DockSettings)) { showDockDialog() }.build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.EveryThingBuild)) { BuildWithEverything().init() }.build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.BrokenFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
@@ -192,14 +186,12 @@ class SettingDialog {
                         showDockDialog()
                     }.build())
                     if (OwnSP.ownSP.getBoolean("dockSettings", false)) {
-                        if (AndroidSDK >= 30) {
+                        if (AndroidSDK == 30)
                             addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.EnableDockBlur), mKey = "searchBarBlur").build())
-                        }
-                        if (!XposedInit.hasHookPackageResources) {
+                        if (!XposedInit.hasHookPackageResources)
                             addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.DockWarn), mColor = "#ff0c0c", mSize = SettingTextView.textSize).build())
-                        } else {
+                        else
                             addView(SettingSeekBar.FastBuilder(mText = moduleRes.getString(R.string.DockRoundedCorners), mKey = "dockRadius", minValue = 0, maxValue = 50, defValue = 25).build())
-                        }
                         addView(SettingSeekBar.FastBuilder(mText = moduleRes.getString(R.string.DockHeight), mKey = "dockHeight", minValue = 50, maxValue = 150, defValue = 79).build())
                         addView(SettingSeekBar.FastBuilder(mText = moduleRes.getString(R.string.DockSide), mKey = "dockSide", minValue = 0, maxValue = 100, defValue = 30).build())
                         addView(SettingSeekBar.FastBuilder(mText = moduleRes.getString(R.string.DockBottom), mKey = "dockBottom", minValue = 0, maxValue = 150, defValue = 23).build())
@@ -412,21 +404,11 @@ class SettingDialog {
     private fun showMiuiVersion():String {
         lateinit var value: String
         when (XposedInit().checkMiuiVersion()) {
-            "V130" -> {
-                value = "MIUI 13"
-            }
-            "V125" -> {
-                value = "MIUI 12.5"
-            }
-            "V12" -> {
-                value = "MIUI 12"
-            }
-            "V11" -> {
-                value = "MIUI 11"
-            }
-            "V10" -> {
-                value = "MIUI 10"
-            }
+            "V130" -> value = "MIUI 13"
+            "V125" -> value = "MIUI 12.5"
+            "V12" -> value = "MIUI 12"
+            "V11" -> value = "MIUI 11"
+            "V10" -> value = "MIUI 10"
         }
         return value
     }

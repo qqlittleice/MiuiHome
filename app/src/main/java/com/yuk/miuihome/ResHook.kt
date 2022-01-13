@@ -29,35 +29,28 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
 
     fun init() {
         thread {
-            if (!hasLoad) {
-                Thread.sleep(400)
-            }
+            if (!hasLoad) Thread.sleep(400)
             if (OwnSP.ownSP.getBoolean("dockSettings", false)) {
                 hookedRes.res.hookLayout(Config.hookPackage, "layout", "layout_search_bar") {
                     val targetView = it.view
-                    (if (isAlpha || versionCode >= 421153106L) DrawableNameNewList else DrawableNameList).forEach { drawableName ->
-                        resetDockRadius(targetView.context, drawableName)
+                    (if (isAlpha || versionCode >= 421153106L)
+                        DrawableNameNewList else DrawableNameList).forEach { drawableName -> resetDockRadius(targetView.context, drawableName)
                     }
                 }
             }
             val backgroundTextSize = OwnSP.ownSP.getFloat("backgroundTextSize", 13f)
-            if (!(backgroundTextSize == -1f || backgroundTextSize == 13f)) {
+            val message: String = OwnSP.ownSP.getString("recentText", "YuKongADisable").toString()
+            if (!(backgroundTextSize == -1f || backgroundTextSize == 13f))
                 hookedRes.res.setTryReplacement(Config.hookPackage, "dimen", "recents_task_view_header_title_text_size", modRes.fwd(getResId("dimen", "sp${backgroundTextSize.toInt()}")))
-            }
-            if (OwnSP.ownSP.getBoolean("buttonPadding", false)) {
+            if (OwnSP.ownSP.getBoolean("buttonPadding", false))
                 hookedRes.res.setTryReplacement(Config.hookPackage, "dimen", "recents_task_view_header_button_padding", modRes.fwd(getResId("dimen", "sp100")))
-            }
-            if (OwnSP.ownSP.getBoolean("smallWindow", false)) {
+            if (OwnSP.ownSP.getBoolean("smallWindow", false))
                 hookedRes.res.setTryReplacement(Config.hookPackage, "dimen", "recent_tv_small_window_margin_start", modRes.fwd(getResId("dimen", "dp_200")))
-            }
-            if (OwnSP.ownSP.getBoolean("cleanUp", false)) {
+            if (OwnSP.ownSP.getBoolean("cleanUp", false))
                 hookedRes.res.setTryReplacement(Config.hookPackage, "drawable", "btn_clear_all", modRes.fwd(R.drawable.a))
                 hookedRes.res.setTryReplacement(Config.hookPackage, "drawable", "notifications_clear_all", modRes.fwd(R.drawable.a))
-            }
-            if (OwnSP.ownSP.getString("recentText", "YuKongADisable") != "YuKongADisable") {
-                val message: String = OwnSP.ownSP.getString("recentText", "YuKongADisable").toString()
+            if (OwnSP.ownSP.getString("recentText", "YuKongADisable") != "YuKongADisable")
                 hookedRes.res.setTryReplacement(Config.hookPackage, "string", "recents_empty_message", message)
-            }
         }
     }
 

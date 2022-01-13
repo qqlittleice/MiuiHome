@@ -11,8 +11,7 @@ class ModifyFolderColumnsCount {
     fun init() {
         val value = OwnSP.ownSP.getFloat("folderColumns", -1f)
         if (value == -1f || value == 3f) return
-        "com.miui.home.launcher.Folder".hookAfterMethod(
-            "onFinishInflate"
+        "com.miui.home.launcher.Folder".hookAfterMethod("onFinishInflate"
         ) {
             val columns: Int = value.toInt()
             val mContent = XposedHelpers.getObjectField(it.thisObject, "mContent") as GridView
@@ -23,14 +22,8 @@ class ModifyFolderColumnsCount {
                 mContent.layoutParams = lp
             }
             if (columns > 3) {
-                val mBackgroundView =
-                    XposedHelpers.getObjectField(it.thisObject, "mBackgroundView") as ViewGroup
-                mBackgroundView.setPadding(
-                    mBackgroundView.paddingLeft / 3,
-                    mBackgroundView.paddingTop,
-                    mBackgroundView.paddingRight / 3,
-                    mBackgroundView.paddingBottom
-                )
+                val mBackgroundView = XposedHelpers.getObjectField(it.thisObject, "mBackgroundView") as ViewGroup
+                mBackgroundView.setPadding(mBackgroundView.paddingLeft / 3, mBackgroundView.paddingTop, mBackgroundView.paddingRight / 3, mBackgroundView.paddingBottom)
             }
         }
     }

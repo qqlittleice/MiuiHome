@@ -10,15 +10,11 @@ import com.yuk.miuihome.utils.ktx.hookAfterMethod
 class ModifyCloseFolderOnLaunch {
 
     fun init() {
-        if (OwnSP.ownSP.getBoolean("closeFolder", false)) {
-            "com.miui.home.launcher.Launcher".hookAfterMethod(
-                "launch",
-                "com.miui.home.launcher.ShortcutInfo",
-                View::class.java
-            ) {
-                val mHasLaunchedAppFromFolder = it.thisObject.getBooleanField("mHasLaunchedAppFromFolder")
-                if (mHasLaunchedAppFromFolder) it.thisObject.callMethod("closeFolder")
-            }
+        if (!OwnSP.ownSP.getBoolean("closeFolder", false)) return
+        "com.miui.home.launcher.Launcher".hookAfterMethod("launch", "com.miui.home.launcher.ShortcutInfo", View::class.java
+        ) {
+            val mHasLaunchedAppFromFolder = it.thisObject.getBooleanField("mHasLaunchedAppFromFolder")
+            if (mHasLaunchedAppFromFolder) it.thisObject.callMethod("closeFolder")
         }
     }
 }
