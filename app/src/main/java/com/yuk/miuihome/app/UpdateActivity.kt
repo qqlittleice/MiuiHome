@@ -141,67 +141,6 @@ class UpdateActivity: Activity() {
                 bindService()
             }
         }
-//        checkUpdatesButton.setOnClickListener { button ->
-//            progress.visibility = View.VISIBLE
-//            button.isClickable = false
-//            thread {
-//                okHttpClient.newCall(
-//                    Request.Builder()
-//                        .url(api)
-//                        .get()
-//                        .build()
-//                ).enqueue(object : Callback {
-//                    override fun onFailure(call: Call, e: IOException) {
-//                        runOnUiThread {
-//                            Toast.makeText(this@UpdateActivity, "error", Toast.LENGTH_SHORT).show()
-//                            progress.visibility = View.GONE
-//                            errorText.text = e.message
-//                            errorText.visibility = View.VISIBLE
-//                            button.isClickable = true
-//                        }
-//                    }
-//
-//                    override fun onResponse(call: Call, response: Response) {
-//                        val data = JSONObject(response.body!!.string())
-//                        val tag = data.get("tag_name") as String
-//                        val versionCode = tag.split("-")[0].toInt()
-//                        val versionName = tag.split("-")[1]
-//                        if (versionCode <= BuildConfig.VERSION_CODE) {
-//                            runOnUiThread { Toast.makeText(this@UpdateActivity, "No Updates", Toast.LENGTH_SHORT).show() }
-//                        } else {
-//                            val content = data.get("body") as String
-//                            val downloadLink = ((data.get("assets") as JSONArray).get(0) as JSONObject).getString("browser_download_url")
-//                            runOnUiThread {
-//                                AlertDialog.Builder(this@UpdateActivity).apply {
-//                                    setTitle("${getString(R.string.app_name)} ${versionName}(${versionCode})")
-//                                    setMessage(content)
-//                                    setPositiveButton("Download") { _, _ ->
-//                                        val intent = Intent(Intent.ACTION_VIEW)
-//                                        intent.addCategory(Intent.CATEGORY_BROWSABLE)
-//                                        intent.data = Uri.parse(downloadLink)
-//                                        startActivity(intent)
-//                                    }
-//                                    setNegativeButton("Dismiss", null)
-//                                    setNeutralButton("Download With CDN") { _, _ ->
-//                                        val intent = Intent(Intent.ACTION_VIEW)
-//                                        intent.addCategory(Intent.CATEGORY_BROWSABLE)
-//                                        intent.data = Uri.parse(downloadLink.replace("github.com", "github.com.cnpmjs.org"))
-//                                        startActivity(intent)
-//                                    }
-//                                    show()
-//                                }
-//                            }
-//                        }
-//                        runOnUiThread {
-//                            progress.visibility = View.GONE
-//                            errorText.visibility = View.GONE
-//                            button.isClickable = true
-//                        }
-//                    }
-//                })
-//            }
-//        }
-
         baseView.addView(checkUpdatesButton)
         baseView.addView(errorText)
 
