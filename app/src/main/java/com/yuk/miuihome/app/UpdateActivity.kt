@@ -2,26 +2,75 @@ package com.yuk.miuihome.app
 
 import android.app.Activity
 import android.app.AlertDialog
+import android.content.ComponentName
+import android.content.Context
 import android.content.Intent
+import android.content.ServiceConnection
 import android.net.Uri
 import android.os.Bundle
+import android.os.IBinder
 import android.view.View
 import android.widget.*
 import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.R
-import okhttp3.*
-import org.json.JSONArray
-import org.json.JSONObject
-import java.io.IOException
-import kotlin.concurrent.thread
 
 class UpdateActivity: Activity() {
 
-    private val okHttpClient by lazy { OkHttpClient.Builder().build() }
-    private val api = "https://api.github.com/repos/Xposed-Modules-Repo/com.yuk.miuihome/releases/latest"
+    lateinit var mService: UpdateService
+    private var mBound = false
+    private val serviceConnection = object : ServiceConnection {
+        override fun onServiceConnected(p0: ComponentName, p1: IBinder) {
+            mService = (p1 as UpdateService.UpdateBinder).getService()
+            mBound = true
+        }
+
+        override fun onServiceDisconnected(p0: ComponentName?) {
+            mBound = false
+        }
+    }
+
+    private fun dip2px(dpValue: Int): Int = (dpValue * resources.displayMetrics.density + 0.5f).toInt()
+    private fun sp2px(spValue: Float): Float = (spValue * resources.displayMetrics.scaledDensity + 0.5f)
+
+    private fun bindService() {
+        Intent(this, UpdateService::class.java).also { intent ->
+            bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE)
+        }
+    }
+
+    private fun safeToast(string: CharSequence, duration: Int) = runOnUiThread { Toast.makeText(this, string, duration).show() }
+
+    private fun downloadLinkViewParser(map: Map<String, String>, useCDN: Boolean = false): View {
+        val scrollView = ScrollView(this)
+        scrollView.overScrollMode = 2
+        scrollView.addView(LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            setPadding(
+                dip2px(14),
+                dip2px(10),
+                dip2px(14),
+                dip2px(10)
+            )
+            for ((name, link) in map) {
+                addView(TextView(this@UpdateActivity).apply {
+                    text = name
+                    textSize = sp2px(6f)
+                    setOnClickListener {
+                        val intent = Intent(Intent.ACTION_VIEW)
+                        intent.addCategory(Intent.CATEGORY_BROWSABLE)
+                        intent.data = Uri.parse(if (useCDN) link.replace("github.com", "github.com.cnpmjs.org") else link)
+                        startActivity(intent)
+                    }
+                })
+            }
+        })
+        return scrollView
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        bindService()
+
         val baseView = LinearLayout(this)
         baseView.orientation = LinearLayout.VERTICAL
 
@@ -34,74 +83,135 @@ class UpdateActivity: Activity() {
         baseView.addView(progress)
 
         val errorText = TextView(this)
-        errorText.visibility = View.GONE
 
         val checkUpdatesButton = Button(this)
         checkUpdatesButton.text = "Check Updates"
         checkUpdatesButton.setOnClickListener { button ->
-            progress.visibility = View.VISIBLE
-            button.isClickable = false
-            thread {
-                okHttpClient.newCall(
-                    Request.Builder()
-                        .url(api)
-                        .get()
-                        .build()
-                ).enqueue(object : Callback {
-                    override fun onFailure(call: Call, e: IOException) {
+            if (mBound) {
+                mService.checkHasUpdates(object : UpdateService.UpdateCallback {
+                    override fun onStart() {
+                        button.isClickable = false
                         runOnUiThread {
-                            Toast.makeText(this@UpdateActivity, "error", Toast.LENGTH_SHORT).show()
-                            progress.visibility = View.GONE
-                            errorText.text = e.message
-                            errorText.visibility = View.VISIBLE
-                            button.isClickable = true
+                            progress.visibility = View.VISIBLE
+                            errorText.text = ""
                         }
                     }
 
-                    override fun onResponse(call: Call, response: Response) {
-                        val data = JSONObject(response.body!!.string())
-                        val tag = data.get("tag_name") as String
-                        val versionCode = tag.split("-")[0].toInt()
-                        val versionName = tag.split("-")[1]
-                        if (versionCode <= BuildConfig.VERSION_CODE) {
-                            runOnUiThread { Toast.makeText(this@UpdateActivity, "No Updates", Toast.LENGTH_SHORT).show() }
-                        } else {
-                            val content = data.get("body") as String
-                            val downloadLink = ((data.get("assets") as JSONArray).get(0) as JSONObject).getString("browser_download_url")
-                            runOnUiThread {
-                                AlertDialog.Builder(this@UpdateActivity).apply {
-                                    setTitle("${getString(R.string.app_name)} ${versionName}(${versionCode})")
-                                    setMessage(content)
-                                    setPositiveButton("Download") { _, _ ->
-                                        val intent = Intent(Intent.ACTION_VIEW)
-                                        intent.addCategory(Intent.CATEGORY_BROWSABLE)
-                                        intent.data = Uri.parse(downloadLink)
-                                        startActivity(intent)
+                    override fun onFinish() {
+                        button.isClickable = true
+                        runOnUiThread { progress.visibility = View.GONE }
+                    }
+
+                    override fun hasUpdates(info: UpdateService.UpdateInfo) {
+                        runOnUiThread {
+                            AlertDialog.Builder(this@UpdateActivity).apply {
+                                setTitle("${getString(R.string.app_name)} ${info.versionName}(${info.versionCode})")
+                                setMessage(info.content)
+                                setNegativeButton("Dismiss", null)
+                                setPositiveButton("Download") { dialog, _ ->
+                                    dialog.dismiss()
+                                    AlertDialog.Builder(this@UpdateActivity).also {
+                                        it.setView(downloadLinkViewParser(info.assets))
+                                        it.show()
                                     }
-                                    setNegativeButton("Dismiss", null)
-                                    setNeutralButton("Download With CDN") { _, _ ->
-                                        val intent = Intent(Intent.ACTION_VIEW)
-                                        intent.addCategory(Intent.CATEGORY_BROWSABLE)
-                                        intent.data = Uri.parse(downloadLink.replace("github.com", "github.com.cnpmjs.org"))
-                                        startActivity(intent)
-                                    }
-                                    show()
                                 }
+                                setNeutralButton("Download With CDN") { dialog, _ ->
+                                    dialog.dismiss()
+                                    AlertDialog.Builder(this@UpdateActivity).also {
+                                        it.setView(downloadLinkViewParser(info.assets, true))
+                                        it.show()
+                                    }
+                                }
+                                show()
                             }
                         }
-                        runOnUiThread {
-                            progress.visibility = View.GONE
-                            errorText.visibility = View.GONE
-                            button.isClickable = true
-                        }
+                    }
+
+                    override fun noUpdates() {
+                        safeToast("No Updates", Toast.LENGTH_SHORT)
+                    }
+
+                    override fun onError(e: Exception) {
+                        safeToast("error", Toast.LENGTH_SHORT)
+                        runOnUiThread { errorText.text = e.message }
                     }
                 })
+            } else {
+                safeToast("Service doesn't bind", Toast.LENGTH_SHORT)
+                bindService()
             }
         }
+//        checkUpdatesButton.setOnClickListener { button ->
+//            progress.visibility = View.VISIBLE
+//            button.isClickable = false
+//            thread {
+//                okHttpClient.newCall(
+//                    Request.Builder()
+//                        .url(api)
+//                        .get()
+//                        .build()
+//                ).enqueue(object : Callback {
+//                    override fun onFailure(call: Call, e: IOException) {
+//                        runOnUiThread {
+//                            Toast.makeText(this@UpdateActivity, "error", Toast.LENGTH_SHORT).show()
+//                            progress.visibility = View.GONE
+//                            errorText.text = e.message
+//                            errorText.visibility = View.VISIBLE
+//                            button.isClickable = true
+//                        }
+//                    }
+//
+//                    override fun onResponse(call: Call, response: Response) {
+//                        val data = JSONObject(response.body!!.string())
+//                        val tag = data.get("tag_name") as String
+//                        val versionCode = tag.split("-")[0].toInt()
+//                        val versionName = tag.split("-")[1]
+//                        if (versionCode <= BuildConfig.VERSION_CODE) {
+//                            runOnUiThread { Toast.makeText(this@UpdateActivity, "No Updates", Toast.LENGTH_SHORT).show() }
+//                        } else {
+//                            val content = data.get("body") as String
+//                            val downloadLink = ((data.get("assets") as JSONArray).get(0) as JSONObject).getString("browser_download_url")
+//                            runOnUiThread {
+//                                AlertDialog.Builder(this@UpdateActivity).apply {
+//                                    setTitle("${getString(R.string.app_name)} ${versionName}(${versionCode})")
+//                                    setMessage(content)
+//                                    setPositiveButton("Download") { _, _ ->
+//                                        val intent = Intent(Intent.ACTION_VIEW)
+//                                        intent.addCategory(Intent.CATEGORY_BROWSABLE)
+//                                        intent.data = Uri.parse(downloadLink)
+//                                        startActivity(intent)
+//                                    }
+//                                    setNegativeButton("Dismiss", null)
+//                                    setNeutralButton("Download With CDN") { _, _ ->
+//                                        val intent = Intent(Intent.ACTION_VIEW)
+//                                        intent.addCategory(Intent.CATEGORY_BROWSABLE)
+//                                        intent.data = Uri.parse(downloadLink.replace("github.com", "github.com.cnpmjs.org"))
+//                                        startActivity(intent)
+//                                    }
+//                                    show()
+//                                }
+//                            }
+//                        }
+//                        runOnUiThread {
+//                            progress.visibility = View.GONE
+//                            errorText.visibility = View.GONE
+//                            button.isClickable = true
+//                        }
+//                    }
+//                })
+//            }
+//        }
+
         baseView.addView(checkUpdatesButton)
         baseView.addView(errorText)
 
         setContentView(baseView)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        unbindService(serviceConnection)
+        mBound = false
     }
 
 }

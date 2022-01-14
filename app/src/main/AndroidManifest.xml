@@ -18,6 +18,11 @@
       </intent-filter>
     </activity>
 
+    <service
+      android:enabled="true"
+      android:name=".app.UpdateService"
+      android:exported="true"/>
+
     <meta-data
       android:name="xposedscope"
       android:resource="@array/xposed_scope" />
