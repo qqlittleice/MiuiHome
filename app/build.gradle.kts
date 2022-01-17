@@ -6,12 +6,12 @@ plugins {
     id("kotlin-android")
 }
 
-val verCode = 4180
+val verCode = 4185
 val verName = "4.1.8"
 
 android {
     compileSdk = 32
-    buildToolsVersion = "31.0.0"
+    buildToolsVersion = "32.0.0"
     defaultConfig {
         applicationId = "com.yuk.miuihome"
         minSdk = 28

@@ -31,10 +31,12 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
         thread {
             if (!hasLoad) Thread.sleep(400)
             if (OwnSP.ownSP.getBoolean("dockSettings", false))
-                hookedRes.res.hookLayout(Config.hookPackage, "layout", "layout_search_bar") {
+                hookedRes.res.hookLayout(Config.hookPackage, "layout", "layout_search_bar"
+                ) {
                     val targetView = it.view
                     (if (isAlpha || versionCode >= 421153106L)
-                        DrawableNameNewList else DrawableNameList).forEach { drawableName -> resetDockRadius(targetView.context, drawableName)
+                        DrawableNameNewList else DrawableNameList).forEach {
+                            drawableName -> resetDockRadius(targetView.context, drawableName)
                         }
                 }
             val backgroundTextSize = OwnSP.ownSP.getFloat("backgroundTextSize", 13f)
