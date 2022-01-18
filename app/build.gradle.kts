@@ -1,13 +1,9 @@
-import com.android.build.api.component.analytics.AnalyticsEnabledApplicationVariant
-import com.android.build.api.variant.impl.ApplicationVariantImpl
+import com.android.build.gradle.internal.api.BaseVariantOutputImpl
 
 plugins {
     id("com.android.application")
     id("kotlin-android")
 }
-
-val verCode = 4185
-val verName = "4.1.8"
 
 android {
     compileSdk = 32
@@ -16,32 +12,21 @@ android {
         applicationId = "com.yuk.miuihome"
         minSdk = 28
         targetSdk = 32
-        versionCode = verCode
-        versionName = verName
+        versionCode = 4185
+        versionName = "4.1.8"
     }
     buildTypes {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
+            isZipAlignEnabled = true
             setProguardFiles(listOf(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro", "proguard-log.pro"))
         }
         create("noResHook") {
             initWith(getByName("release"))
         }
-    }
-    sourceSets.getByName("main") {
-        java.setSrcDirs(java.srcDirs + File(projectDir, "src/noResHook/java"))
-    }
-    androidComponents.onVariants { appVariant ->
-        val variant: ApplicationVariantImpl =
-            if (appVariant is ApplicationVariantImpl) appVariant
-            else (appVariant as AnalyticsEnabledApplicationVariant).delegate as ApplicationVariantImpl
-        variant.outputs.forEach {
-            when (appVariant.buildType) {
-                "release" -> it.outputFileName.set("MiuiHome-${verName}(${verCode})-Release.apk")
-                "debug" -> it.outputFileName.set("MiuiHome-${verName}(${verCode})-Debug.apk")
-                "noResHook" -> it.outputFileName.set("MiuiHome-${verName}(${verCode})-NoResHook.apk")
-            }
+        sourceSets.getByName("main") {
+            java.setSrcDirs(java.srcDirs + File(projectDir, "src/noResHook/java"))
         }
     }
     compileOptions {
@@ -59,12 +44,17 @@ android {
         dex {
             useLegacyPackaging = true
         }
+        applicationVariants.all {
+            outputs.all {
+                (this as BaseVariantOutputImpl).outputFileName = "MiuiHome-$versionName($versionCode)-$name.apk"
+            }
+        }
     }
 }
 
 dependencies {
     compileOnly("de.robv.android.xposed:api:82")
-    implementation("com.microsoft.appcenter:appcenter-crashes:4.4.1")
-    implementation("com.microsoft.appcenter:appcenter-analytics:4.4.1")
+    implementation("com.microsoft.appcenter:appcenter-crashes:4.4.2")
+    implementation("com.microsoft.appcenter:appcenter-analytics:4.4.2")
     implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.3")
 }
