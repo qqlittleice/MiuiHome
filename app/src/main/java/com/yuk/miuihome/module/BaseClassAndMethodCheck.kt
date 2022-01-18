@@ -1,6 +1,8 @@
 package com.yuk.miuihome.module
 
+import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.utils.HomeContext
+import de.robv.android.xposed.XposedBridge
 import de.robv.android.xposed.XposedHelpers
 import de.robv.android.xposed.XposedHelpers.ClassNotFoundError
 
@@ -28,8 +30,12 @@ interface BaseClassAndMethodCheck {
                 if (list[i + 1] !in getAllMethods(cls)) return false
             }
         } catch (e: ClassNotFoundError) {
+            if (BuildConfig.DEBUG) {
+                XposedBridge.log("MiuiHome: $list Class not found")
+            }
             return false
         }
+        if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: $list Class found successfully")
         return true
     }
 }

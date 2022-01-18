@@ -9,8 +9,6 @@ import android.graphics.drawable.RippleDrawable
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.Config.DrawableNameList
 import com.yuk.miuihome.utils.Config.DrawableNameNewList
-import com.yuk.miuihome.utils.HomeContext.isAlpha
-import com.yuk.miuihome.utils.HomeContext.versionCode
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.dip2px
 import com.yuk.miuihome.utils.ktx.hookLayout
@@ -34,7 +32,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 hookedRes.res.hookLayout(Config.hookPackage, "layout", "layout_search_bar"
                 ) {
                     val targetView = it.view
-                    (if (isAlpha || versionCode >= 421153106L)
+                    (if (XposedInit().checkAlpha() || XposedInit().checkVersionCode() >= 421153106L)
                         DrawableNameNewList else DrawableNameList).forEach {
                             drawableName -> resetDockRadius(targetView.context, drawableName)
                         }

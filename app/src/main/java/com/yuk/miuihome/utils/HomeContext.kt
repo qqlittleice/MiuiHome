@@ -11,7 +11,4 @@ object HomeContext {
     lateinit var context: Context
     lateinit var classLoader: ClassLoader
     lateinit var settingActivity: Activity
-    var isAlpha = false
-    var isWidgetLauncher = false
-    var versionCode: Long = -1L
 }

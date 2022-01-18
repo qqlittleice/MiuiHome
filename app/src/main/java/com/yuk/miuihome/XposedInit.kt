@@ -14,15 +14,18 @@ import com.microsoft.appcenter.crashes.Crashes
 import com.yuk.miuihome.module.*
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.HomeContext
-import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
 import de.robv.android.xposed.callbacks.XC_LoadPackage
-import java.lang.reflect.Method
 
 class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookInitPackageResources {
+    companion object {
+        lateinit var modulePath: String
+        lateinit var moduleRes: Resources
+        var hasHookPackageResources = false
+    }
 
     override fun initZygote(startupParam: IXposedHookZygoteInit.StartupParam) {
         modulePath = startupParam.modulePath
@@ -49,6 +52,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                     checkWidgetLauncher()
                     checkMiuiVersion()
                 }
+                if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: [com.miui.home] hook success")
             }
             "com.milink.service" -> {
                 XposedHelpers.findAndHookMethod("com.miui.circulate.world.auth.AuthUtil", lpparam.classLoader, "doPermissionCheck", String::class.java, String::class.java,
@@ -63,12 +67,14 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                             param.result = true
                         }
                     })
+                if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: [com.milink.service] hook success")
             }
             else -> return
         }
     }
 
     private fun doHook() {
+        if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: MiuiLauncher version = ${checkVersionName()}(${checkVersionCode()})")
         "com.miui.home.settings.MiuiHomeSettingActivity".hookAfterMethod("onCreate", Bundle::class.java) {
             HomeContext.settingActivity = it.thisObject as Activity
         }
@@ -78,7 +84,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
             (it.thisObject.getObjectField("mDefaultHomeSetting")).apply {
                 setObjectField("mTitle", moduleRes.getString(R.string.ModuleSettings))
                 setObjectField("mClickListener", object : View.OnClickListener {
-                    override fun onClick(v: View?) {
+                    override fun onClick(v: View) {
                         if (OwnSP.ownSP.getBoolean("isFirstUse", true))
                             SettingDialog().firstUseDialog()
                         else
@@ -131,6 +137,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         if (resparam.packageName != Config.hookPackage) return
         hasHookPackageResources = true
         ResHook(resparam).init()
+        if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: Resources hook success")
     }
 
     private fun startOnlineLog() {
@@ -139,11 +146,11 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
 
     fun checkVersionName(): String {
         return HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0).versionName
+
     }
 
-    private fun checkAlpha() {
-        HomeContext.isAlpha = if (!checkVersionName().contains("RELEASE", ignoreCase = true))
-            checkVersionName().contains("ALPHA", ignoreCase = true)
+    fun checkAlpha(): Boolean {
+        return if (!checkVersionName().contains("RELEASE", ignoreCase = true)) checkVersionName().contains("ALPHA", ignoreCase = true)
         else false
     }
 
@@ -151,48 +158,34 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         return getProp("ro.miui.ui.version.name")
     }
 
-    private fun checkVersionCode() {
-        try {
-            HomeContext.versionCode = HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0).longVersionCode
-        } catch (e: Exception) {
-            LogUtil.e(e)
-        }
+    fun checkVersionCode(): Long {
+        return HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0).longVersionCode
+
     }
 
-    private fun checkWidgetLauncher() {
+    fun checkWidgetLauncher(): Boolean {
         val checkList = arrayListOf(
                 "com.miui.home.launcher.widget.MIUIAppWidgetInfo",
                 "com.miui.home.launcher.LauncherAppWidgetInfo",
                 "com.miui.home.launcher.MIUIWidgetUtil"
         )
-        try {
+        return try {
             for (item in checkList) XposedHelpers.findClass(item, HomeContext.classLoader)
-            HomeContext.isWidgetLauncher = true
+            if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: Widget version launcher")
+            true
         } catch (e: XposedHelpers.ClassNotFoundError) {
-            HomeContext.isWidgetLauncher = false
+            if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: Not widget version launcher")
+            false
         }
     }
 
     private fun getModuleRes(path: String): Resources {
         return XModuleResources.createInstance(path, null)
     }
-
-    companion object {
-        lateinit var modulePath: String
-        lateinit var moduleRes: Resources
-        var hasHookPackageResources = false
-    }
 }
 
 @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 @SuppressLint("PrivateApi")
 fun getProp(key: String): String {
-    lateinit var value: String
-    try {
-        val clazz = Class.forName("android.os.SystemProperties")
-        val get: Method = clazz.getMethod("get", String::class.java)
-        value = get.invoke(clazz, key).toString()
-    } catch (e: Exception) {
-    }
-    return value
+    return Class.forName("android.os.SystemProperties").getMethod("get", String::class.java).invoke(Class.forName("android.os.SystemProperties"), key).toString()
 }

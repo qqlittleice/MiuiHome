@@ -62,7 +62,7 @@ class SettingDialog {
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.CloseFolder), mKey = "closeFolder").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.FolderWidth), mKey = "folderWidth").build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.FolderColumnsCount)) { showModifyFolderColumnsCount() }.build())
-                if (HomeContext.isWidgetLauncher) {
+                if (XposedInit().checkWidgetLauncher()) {
                     addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.Widget), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
                     addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.HideWidgetTitles), mKey = "hideWidgetTitles").build())
                     addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.WidgetToMinus), mKey = "widgetToMinus").build())

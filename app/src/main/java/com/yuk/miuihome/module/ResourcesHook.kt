@@ -1,6 +1,7 @@
 package com.yuk.miuihome.module
 
 import android.content.res.Resources
+import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.utils.*
 import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.findClass
@@ -19,7 +20,7 @@ class ResourcesHook {
             if (hookMap.isKeyExist(resName))
                 if (hookMap[resName]?.type == resType) {
                     param.result = hookMap[resName]?.afterValue
-                    //XposedBridge.log("MiuiHome: $resName hooked! after value = ${hookMap[resName]?.afterValue}")
+                    if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: [$resName] hooked, now it's ${hookMap[resName]?.afterValue}")
                 }
         } catch (ignore: Exception) {
         }
