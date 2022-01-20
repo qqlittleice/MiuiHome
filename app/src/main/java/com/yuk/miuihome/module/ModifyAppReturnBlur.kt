@@ -4,7 +4,6 @@ import android.app.Activity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.service.autofill.Validators.or
 import android.view.View
 import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.XposedInit
