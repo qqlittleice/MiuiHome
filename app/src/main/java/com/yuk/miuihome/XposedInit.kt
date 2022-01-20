@@ -150,8 +150,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
     }
 
     fun checkAlpha(): Boolean {
-        return if (!checkVersionName().contains("RELEASE", ignoreCase = true)) checkVersionName().contains("ALPHA", ignoreCase = true)
-        else false
+        return (checkVersionName().contains("ALPHA", ignoreCase = true))
     }
 
     fun checkMiuiVersion(): String {

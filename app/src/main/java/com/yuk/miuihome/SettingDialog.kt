@@ -58,7 +58,7 @@ class SettingDialog {
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.HorizontalTaskViewOfAppCardSize)) { showModifyHorizontal() }.build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.Folder), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
                 if (!OwnSP.ownSP.getBoolean("simpleAnimation", false))
-                    addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.BlurWhenOpenFolder), mKey = "blurWhenOpenFolder", show = EnableBlurWhenOpenFolder.checked).build())
+                    addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.BlurWhenOpenFolder), mKey = "blurWhenOpenFolder").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.CloseFolder), mKey = "closeFolder").build())
                 addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.FolderWidth), mKey = "folderWidth").build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.FolderColumnsCount)) { showModifyFolderColumnsCount() }.build())

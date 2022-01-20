@@ -4,14 +4,13 @@ import android.app.Activity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.service.autofill.Validators.or
 import android.view.View
 import com.yuk.miuihome.BuildConfig
+import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.callMethod
-import com.yuk.miuihome.utils.ktx.callStaticMethod
-import com.yuk.miuihome.utils.ktx.findClass
-import com.yuk.miuihome.utils.ktx.hookAfterMethod
+import com.yuk.miuihome.utils.ktx.*
 import de.robv.android.xposed.XposedBridge
 
 class ModifyAppReturnBlur {
@@ -32,14 +31,23 @@ class ModifyAppReturnBlur {
             ) {
                 val isFolderShowing = activity.callMethod("isFolderShowing") as Boolean
                 val isInEditing = activity.callMethod("isInEditing") as Boolean
-                val isUserBlurWhenOpenFolder = blurClass.callStaticMethod("isUserBlurWhenOpenFolder") as Boolean
                 if (BuildConfig.DEBUG) {
                     XposedBridge.log("MiuiHome: callMethod [isFolderShowing] succeeded, now it's $isFolderShowing")
                     XposedBridge.log("MiuiHome: callMethod [isInEditing] succeeded, now it's $isInEditing")
-                    XposedBridge.log("MiuiHome: callMethod [isUserBlurWhenOpenFolder] succeeded, now it's $isUserBlurWhenOpenFolder")
                 }
-                if (view.visibility == View.GONE && !isInEditing) {
-                    if ((isUserBlurWhenOpenFolder && !isFolderShowing) or (!isUserBlurWhenOpenFolder && isFolderShowing))
+                if (XposedInit().checkAlpha()) {
+                    val isUserBlurWhenOpenFolder = blurClass.callStaticMethod("isUserBlurWhenOpenFolder") as Boolean
+                   if (BuildConfig.DEBUG) {
+                        XposedBridge.log("MiuiHome: callMethod [isUserBlurWhenOpenFolder] succeeded, now it's $isUserBlurWhenOpenFolder")
+                    }
+                    if (view.visibility == View.GONE && !isInEditing)
+                        if ((isUserBlurWhenOpenFolder && !isFolderShowing) or (!isUserBlurWhenOpenFolder && isFolderShowing))
+                            handler.postDelayed(runnable, 100)
+                } else if (!XposedInit().checkAlpha() && OwnSP.ownSP.getBoolean("blurWhenOpenFolder", false)) {
+                    if  (view.visibility == View.GONE && !isInEditing  && !isFolderShowing)
+                        handler.postDelayed(runnable, 100)
+                } else if (!XposedInit().checkAlpha() && !OwnSP.ownSP.getBoolean("blurWhenOpenFolder", false)){
+                    if (view.visibility == View.GONE && !isInEditing)
                         handler.postDelayed(runnable, 100)
                 }
             }

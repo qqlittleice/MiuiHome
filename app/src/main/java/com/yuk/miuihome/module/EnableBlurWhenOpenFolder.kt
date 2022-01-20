@@ -1,29 +1,48 @@
 package com.yuk.miuihome.module
 
+import android.app.Activity
+import android.os.Bundle
+import android.view.View
+import com.yuk.miuihome.BuildConfig
+import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.setReturnConstant
+import com.yuk.miuihome.utils.ktx.*
+import de.robv.android.xposed.XposedBridge
 
-class EnableBlurWhenOpenFolder : BaseClassAndMethodCheck {
-
-    companion object {
-        var checked = false
-    }
+class EnableBlurWhenOpenFolder {
 
     fun init() {
-        runWithChecked {
-            checked = true
-            if (OwnSP.ownSP.getBoolean("simpleAnimation", false))
-                "com.miui.home.launcher.common.BlurUtils".setReturnConstant("isUserBlurWhenOpenFolder", result = false)
-            else {
-                if (OwnSP.ownSP.getBoolean("blurWhenOpenFolder", false)) {
-                    "com.miui.home.launcher.common.BlurUtils".setReturnConstant("isUserBlurWhenOpenFolder", result = true)
-                } else {
+            if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
+                if (XposedInit().checkAlpha()) {
                     "com.miui.home.launcher.common.BlurUtils".setReturnConstant("isUserBlurWhenOpenFolder", result = false)
                 }
             }
-        }
+            else {
+                if (OwnSP.ownSP.getBoolean("blurWhenOpenFolder", false)) {
+                    if (XposedInit().checkAlpha()) {
+                        "com.miui.home.launcher.common.BlurUtils".setReturnConstant("isUserBlurWhenOpenFolder", result = true)
+                    }
+                    else {
+                        val blurClass = "com.miui.home.launcher.common.BlurUtils".findClass()
+                        val folderInfo = "com.miui.home.launcher.FolderInfo".findClass()
+                        val launcherClass = "com.miui.home.launcher.Launcher".findClass()
+                        launcherClass.hookAfterMethod("onCreate", Bundle::class.java
+                        ) {
+                            val activity = it.thisObject as Activity
+                            launcherClass.hookAfterMethod("openFolder", folderInfo,View::class.java
+                            ) {
+                                blurClass.callStaticMethod("fastBlur", 1.0f, activity.window, true)
+                            }
+                            launcherClass.hookAfterMethod("closeFolder", Boolean::class.java
+                            ) {
+                                blurClass.callStaticMethod("fastBlur", 0.0f, activity.window, true)
+                            }
+                        }
+                    }
+                } else {
+                    if (XposedInit().checkAlpha())
+                        "com.miui.home.launcher.common.BlurUtils".setReturnConstant("isUserBlurWhenOpenFolder", result = false)
+                }
+            }
     }
-
-    override fun classAndMethodList(): ArrayList<String> =
-        arrayListOf("com.miui.home.launcher.common.BlurUtils", "isUserBlurWhenOpenFolder")
 }
