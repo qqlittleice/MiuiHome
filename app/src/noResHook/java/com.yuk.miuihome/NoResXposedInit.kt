@@ -6,7 +6,7 @@ import de.robv.android.xposed.IXposedHookZygoteInit
 import de.robv.android.xposed.IXposedHookZygoteInit.StartupParam
 import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam
 
-class HotXposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
+class NoResXposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
 
     override fun initZygote(startupParam: StartupParam) {
         moduleInstance?.run {
@@ -29,7 +29,7 @@ class HotXposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
 
         val moduleInstance: Any?
             get() {
-                val classLoader = HotXposedInit::class.java.classLoader
+                val classLoader = NoResXposedInit::class.java.classLoader
                 return classLoader!!.loadClass(REAL_XPOSED_INIT)?.newInstance()
             }
     }
