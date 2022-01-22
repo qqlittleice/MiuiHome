@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Application
 import android.content.Context
+import android.content.Intent
 import android.content.res.Resources
 import android.content.res.XModuleResources
 import android.os.Bundle
@@ -12,9 +13,10 @@ import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
 import com.yuk.miuihome.module.*
+import com.yuk.miuihome.module.view.HookSettingsActivity
+import com.yuk.miuihome.module.view.utils.ActivityHelper
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.HomeContext
-import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
@@ -52,6 +54,9 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                     checkWidgetLauncher()
                     checkMiuiVersion()
                 }
+                Application::class.java.hookAfterMethod("onCreate") {
+                    ActivityHelper.initSubActivity()
+                }
                 if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: [com.miui.home] hook success")
             }
             "com.milink.service" -> {
@@ -85,10 +90,9 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                 setObjectField("mTitle", moduleRes.getString(R.string.ModuleSettings))
                 setObjectField("mClickListener", object : View.OnClickListener {
                     override fun onClick(v: View) {
-                        if (OwnSP.ownSP.getBoolean("isFirstUse", true))
-                            SettingDialog().firstUseDialog()
-                        else
-                            SettingDialog().showSettingDialog()
+                        val intent = Intent(HomeContext.context, HookSettingsActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                        HomeContext.context.startActivity(intent)
                     }
                 })
             }

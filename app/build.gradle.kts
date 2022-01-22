@@ -50,6 +50,7 @@ android {
             }
         }
     }
+    androidResources.additionalParameters("--allow-reserved-package-id", "--package-id", "0x64")
 }
 
 dependencies {
@@ -57,4 +58,5 @@ dependencies {
     implementation("com.microsoft.appcenter:appcenter-crashes:4.4.2")
     implementation("com.microsoft.appcenter:appcenter-analytics:4.4.2")
     implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.3")
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
 }

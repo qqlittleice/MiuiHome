@@ -13,6 +13,8 @@ import com.yuk.miuihome.utils.HomeContext
 import com.yuk.miuihome.utils.LogUtil
 import java.lang.reflect.Field
 import java.lang.reflect.Member
+import java.lang.reflect.Method
+import java.lang.reflect.Modifier
 import java.util.Collections.emptySet
 
 typealias MethodHookParam = MethodHookParam
@@ -538,4 +540,26 @@ fun getHookField(clazz: Class<*>, name: String): Any? {
     val field: Field = clazz.getDeclaredField(name)
     field.isAccessible = true
     return field.get(clazz)
+}
+
+fun Any.getFieldByClassOrObject(
+    fieldName: String,
+    isStatic: Boolean = false,
+    fieldType: Class<*>? = null
+): Field {
+    if (fieldName.isEmpty()) throw IllegalArgumentException("Field name must not be null or empty!")
+    var clz: Class<*> = if (this is Class<*>) this else this.javaClass
+    do {
+        clz.declaredFields
+            .filter { !(isStatic && !Modifier.isStatic(it.modifiers)) || !(!isStatic && Modifier.isStatic(it.modifiers)) }
+            .firstOrNull {
+                (fieldType == null || it.type == fieldType) && (it.name == fieldName)
+            }?.let { it.isAccessible = true;return it }
+    } while (clz.superclass.also { clz = it } != null)
+    throw NoSuchFieldError()
+}
+
+fun Class<*>.getStaticFiledByClass(fieldName: String, type: Class<*>? = null): Field {
+    if (fieldName.isEmpty()) throw IllegalArgumentException("Field name must not be null or empty!")
+    return this.getFieldByClassOrObject(fieldName, true, type)
 }
