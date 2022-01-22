@@ -489,6 +489,7 @@ class MyHandler(private val mDefault: Handler.Callback?) : Handler.Callback {
                         //获取列表
                         val mGetCallbacks =
                             Class.forName("android.app.servertransaction.ClientTransaction").getDeclaredMethod("getCallbacks")
+                        mGetCallbacks.isAccessible = true
                         val cTransItems = mGetCallbacks.invoke(cTrans) as List<*>?
                         if (!cTransItems.isNullOrEmpty()) {
                             for (item in cTransItems) {
