@@ -26,6 +26,7 @@ class HookSettingsActivity: TransferActivity() {
         super.onCreate(savedInstanceState)
         itemList.addAll(DataHelper.getItems())
         setContentView(R.layout.settings_activity)
+        DataHelper.currentActivity = this
         menu = findViewById(R.id.settings_menu)
         menu.setOnClickListener(menuOnClicked)
         if (DataHelper.isMenu) {
