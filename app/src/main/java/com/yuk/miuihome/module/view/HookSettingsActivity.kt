@@ -2,6 +2,8 @@ package com.yuk.miuihome.module.view
 
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
+import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.yuk.miuihome.R
@@ -19,10 +21,16 @@ class HookSettingsActivity: TransferActivity() {
     private val itemList = arrayListOf<Item>()
     private lateinit var recyclerView: RecyclerView
 
+    private val menuOnClicked = View.OnClickListener {
+
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         loadItems()
         setContentView(R.layout.settings_activity)
+        val menu = findViewById<ImageView>(R.id.settings_menu)
+        menu.setOnClickListener(menuOnClicked)
         recyclerView = findViewById(R.id.settings_recycler)
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
