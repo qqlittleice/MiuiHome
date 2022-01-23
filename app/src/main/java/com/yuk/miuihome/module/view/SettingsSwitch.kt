@@ -7,15 +7,10 @@ import android.widget.CompoundButton
 import android.widget.Switch
 import com.yuk.miuihome.utils.OwnSP
 
-val emptyCheckChangedListener = CompoundButton.OnCheckedChangeListener { _, _ -> }
-val emptyTextClickListener = View.OnClickListener { }
-
 class SettingsSwitch(context: Context, attributeSet: AttributeSet): Switch(context, attributeSet) {
 
     private val editor by lazy { OwnSP.ownSP.edit() }
-    private var customCheckedChangeListener: OnCheckedChangeListener? = null
-
-    fun setCustomCheckedChangeListener(listener: OnCheckedChangeListener) = run { customCheckedChangeListener = listener }
+    var customCheckedChangeListener: OnCheckedChangeListener? = null
 
     var key = ""
         set(value) {

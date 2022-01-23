@@ -16,7 +16,7 @@ import com.yuk.miuihome.module.view.data.Item
 class ItemAdapter(private val itemList: List<Item>): RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        val settingsTitle: TextView = view.findViewById(R.id.settings_text)
+        val settingsText: TextView = view.findViewById(R.id.settings_text)
         val settingSwitch: SettingsSwitch = view.findViewById(R.id.settings_switch)
     }
 
@@ -25,17 +25,34 @@ class ItemAdapter(private val itemList: List<Item>): RecyclerView.Adapter<ItemAd
         return ViewHolder(view)
     }
 
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = itemList[position]
-        holder.settingsTitle.text = item.text
-        if (item.switchKey.isNotEmpty()) {
-            holder.settingSwitch.setCustomCheckedChangeListener(item.onSwitchCheckedChangeListener)
-            holder.settingSwitch.key = item.switchKey
-            holder.settingSwitch.visibility = View.VISIBLE
+        val textInfo = item.text
+        val switchInfo = item.switch
+        val context = holder.settingsText.context
+
+        textInfo?.let {
+            textInfo.text?.let { holder.settingsText.text = it }
+            textInfo.resId?.let { holder.settingsText.setText(it) }
+            textInfo.textSize?.let { holder.settingsText.textSize = sp2px(context, it) }
+            textInfo.textColor?.let { holder.settingsText.setTextColor(it) }
+            textInfo.onClickListener?.let { holder.settingsText.setOnClickListener(it) }
+            if (textInfo.isTitle) {
+                holder.settingsText.textSize = sp2px(context, 5f)
+                holder.settingsText.setTextColor(Color.parseColor("#ffb8c6"))
+            }
         }
-        if (item.isTitle) {
-            holder.settingsTitle.setTextColor(Color.parseColor("#ffb8c6"))
-            holder.settingsTitle.textSize = sp2px(holder.settingsTitle.context, 5f)
+
+        switchInfo?.let {
+            switchInfo.onCheckedChangeListener?.let { holder.settingSwitch.customCheckedChangeListener = it }
+            if (! switchInfo.key.isNullOrEmpty()) {
+                holder.settingSwitch.key = switchInfo.key
+                holder.settingSwitch.visibility = View.VISIBLE
+            }
         }
     }
 
