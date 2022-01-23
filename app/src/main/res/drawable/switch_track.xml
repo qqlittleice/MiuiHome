@@ -6,6 +6,6 @@
     android:state_checked="true" />
 
   <item
-    android:drawable="@drawable/switch_gray_track" />
+    android:drawable="@drawable/switch_lite_pink_track" />
 
 </selector>
