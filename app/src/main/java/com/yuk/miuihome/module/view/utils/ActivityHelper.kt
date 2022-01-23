@@ -325,7 +325,6 @@ class MyInstrumentation(private val mBase: Instrumentation) : Instrumentation() 
         if (clzName.startsWith(Config.packageName)) {
             val assets = activity.resources.assets
             val method = assets.javaClass.getDeclaredMethod("addAssetPath", String::class.java)
-            method.isAccessible = true
             method.invoke(assets, XposedInit.modulePath)
         }
     }
