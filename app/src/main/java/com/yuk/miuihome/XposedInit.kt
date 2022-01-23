@@ -14,6 +14,7 @@ import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
 import com.yuk.miuihome.module.*
 import com.yuk.miuihome.module.view.HookSettingsActivity
+import com.yuk.miuihome.module.view.data.DataHelper
 import com.yuk.miuihome.module.view.utils.ActivityHelper
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.HomeContext
@@ -90,6 +91,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                 setObjectField("mTitle", moduleRes.getString(R.string.ModuleSettings))
                 setObjectField("mClickListener", object : View.OnClickListener {
                     override fun onClick(v: View) {
+                        DataHelper.isMenu = false
                         val intent = Intent(HomeContext.context, HookSettingsActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
                         HomeContext.context.startActivity(intent)
