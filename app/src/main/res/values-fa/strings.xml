@@ -5,7 +5,6 @@
   <string name="AlwaysShowStatusBarClock">همیشه ساعت را در نوار وضعیت نشان بده</string>
   <string name="AnimationLevel">سرعت حرکت اشاره ها</string>
   <string name="AppTextSize">فاصله گذاری بین نوار وظیفه برنامه ها و نمادشان</string>
-  <string name="BaseFeature">تنظیمات پایه</string>
   <string name="BlurWhenOpenFolder">فعال کردن تار شدن پوشه</string>
   <string name="Cancel">لغو</string>
   <string name="CleanModuleSettings">برگشت به تنظیمات پیش فرض</string>

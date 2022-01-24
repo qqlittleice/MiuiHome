@@ -28,7 +28,7 @@ class SettingDialog {
                 setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
                 if (OwnSP.ownSP.getBoolean("simpleAnimation", false))
                     addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.SimpleWarn), mColor = "#ff0c0c").build())
-                addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.BaseFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
+                //addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.BaseFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
                 if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                     addView(SettingSwitch.FastBuilder(mText = moduleRes.getString(R.string.SmoothAnimation), mKey = "smoothAnimation").build())
                     addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.TaskViewBlurLevel)) { showModifyBlurLevel() }.build())

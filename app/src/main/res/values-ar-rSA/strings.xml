@@ -5,7 +5,6 @@
   <string name="AlwaysShowStatusBarClock">إظهار الساعة في شريط الحالة دائما</string>
   <string name="AnimationLevel">سرعة الانيميشن</string>
   <string name="AppTextSize">المسافة بين التطبيق واسمه وايقونته في التطبيقات الاخيرة</string>
-  <string name="BaseFeature">اعدادات أساسية</string>
   <string name="BlurWhenOpenFolder">تفعيل الخلفية الضبابية للمجلدات</string>
   <string name="Cancel">الغاء</string>
   <string name="CleanModuleSettings">اعادة ضبط الاعدادات</string>

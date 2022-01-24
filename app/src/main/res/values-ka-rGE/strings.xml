@@ -5,7 +5,6 @@
   <string name="AlwaysShowStatusBarClock">ყოველთვის ჩანდეს დრო Status Bar-ზე</string>
   <string name="AnimationLevel">ჟესტების ანიმაციის სიჩქარე</string>
   <string name="AppTextSize">მანძილი მოქმედ აპლიკაციების ფანჯარაში სახელსა და ნახატის შორის</string>
-  <string name="BaseFeature">ძირითადი პარამეტრები</string>
   <string name="BlurWhenOpenFolder">ფოლდეში ბურვის ჩართვა</string>
   <string name="Cancel">შეწყვეტა</string>
   <string name="CleanModuleSettings">მოდულის პარამეტრების გაწმინდვა</string>

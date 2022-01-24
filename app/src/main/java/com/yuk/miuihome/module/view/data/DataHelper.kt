@@ -35,7 +35,6 @@ object DataHelper {
             if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                 add(Item(Text(resId = R.string.SimpleWarn, textColor = Color.parseColor("#ff0c0c"), textSize = 4.5f), null))
             }
-            add(Item(Text(resId = R.string.BaseFeature, isTitle = true), null))
             if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                 add(Item(Text(resId = R.string.SmoothAnimation), Switch("smoothAnimation")))
                 add(Item(Text(resId = R.string.TaskViewBlurLevel, onClickListener = {}), null)) // TODO Fix Dialog

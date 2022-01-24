@@ -43,7 +43,7 @@ class ItemAdapter(private val itemList: List<Item>): RecyclerView.Adapter<ItemAd
             textInfo.textColor?.let { holder.settingsText.setTextColor(it) }
             textInfo.onClickListener?.let { holder.settingsText.setOnClickListener(it) }
             if (textInfo.isTitle) {
-                holder.settingsText.textSize = sp2px(context, 4f)
+                holder.settingsText.textSize = sp2px(context, 4.5f)
                 holder.settingsText.setTextColor(Color.parseColor("#9399b3"))
             }
             holder.settingsText.visibility = View.VISIBLE

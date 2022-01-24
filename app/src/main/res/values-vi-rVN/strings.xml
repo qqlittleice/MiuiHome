@@ -5,7 +5,6 @@
   <string name="AlwaysShowStatusBarClock">Luôn hiển thị đồng hồ trên thanh trạng thái</string>
   <string name="AnimationLevel">Tốc độ hoạt ảnh cử chỉ</string>
   <string name="AppTextSize">Khoảng cách giữa các biểu tượng và tên ứng dụng ở chế độ xem tác vụ</string>
-  <string name="BaseFeature">Cài đặt cơ bản</string>
   <string name="BlurWhenOpenFolder">Bật làm mờ thư mục</string>
   <string name="Cancel">Hủy bỏ</string>
   <string name="CleanModuleSettings">Đặt lại về Cài đặt mặc định</string>

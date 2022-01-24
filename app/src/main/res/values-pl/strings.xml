@@ -5,7 +5,6 @@
   <string name="AlwaysShowStatusBarClock">Zawsze pokazuj zegar na pasku statusu</string>
   <string name="AnimationLevel">Prędkość animacji gestów</string>
   <string name="AppTextSize">Odległość między ikonami aplikacji w widoku zadań a nazwami</string>
-  <string name="BaseFeature">Podstawowe ustawienia</string>
   <string name="BlurWhenOpenFolder">Włącz rozmycie folderów</string>
   <string name="Cancel">Anuluj</string>
   <string name="CleanModuleSettings">Przywróć ustawienia domyślne</string>

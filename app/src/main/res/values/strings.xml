@@ -6,7 +6,6 @@
   <string name="AlwaysShowStatusBarClock">Always show the status bar clock</string>
   <string name="AnimationLevel">Gesture animation speed</string>
   <string name="AppTextSize">Distance between task view application icons and names</string>
-  <string name="BaseFeature">Basic Settings</string>
   <string name="BlurWhenOpenFolder">Enable Folder Blur</string>
   <string name="Cancel">Cancel</string>
   <string name="CleanModuleSettings">Reset to Default Settings</string>

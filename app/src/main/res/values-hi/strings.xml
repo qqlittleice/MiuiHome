@@ -5,7 +5,6 @@
   <string name="AlwaysShowStatusBarClock">स्टेटस बार क्लॉक हमेशा दिखाएं</string>
   <string name="AnimationLevel">जेस्चर एनीमेशन गति</string>
   <string name="AppTextSize">टास्क व्यू एप्लिकेशन आइकन और नामों के बीच की दूरी</string>
-  <string name="BaseFeature">मूल सेटिंग्स</string>
   <string name="BlurWhenOpenFolder">फोल्डर ब्लर इनेबल करें</string>
   <string name="Cancel">कैंसिल करें</string>
   <string name="CleanModuleSettings">सारी सेटिंग्स रीसेट करें </string>
