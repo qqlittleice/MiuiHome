@@ -20,7 +20,7 @@
       android:paddingStart="0dp"
       android:paddingEnd="5dp"
       android:text=""
-      android:textFontWeight="500"
+      android:textFontWeight="700"
       android:textSize="18sp"
       android:visibility="gone" />
     <com.yuk.miuihome.module.view.SettingsSwitch
