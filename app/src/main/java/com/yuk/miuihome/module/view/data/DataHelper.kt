@@ -21,9 +21,9 @@ object DataHelper {
     private fun loadMenuItems(): ArrayList<Item> {
         val itemList = arrayListOf<Item>()
         itemList.apply {
-            add(Item(Text("Launcher Version", isTitle = true), null))
+            add(Item(Text("Launcher Version", isTitle = true), null, line = true))
             add(Item(Text(XposedInit().checkVersionName()), null))
-            add(Item(Text("Module Version", isTitle = true), null))
+            add(Item(Text("Module Version", isTitle = true), null, line = true))
             add(Item(Text(showMiuiVersion()+ "/"+"${BuildConfig.VERSION_NAME}(${BuildConfig.VERSION_CODE})-${BuildConfig.BUILD_TYPE}"), null))
         }
         return itemList
