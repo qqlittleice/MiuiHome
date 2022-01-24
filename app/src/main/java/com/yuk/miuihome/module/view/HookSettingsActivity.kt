@@ -17,21 +17,12 @@ class HookSettingsActivity: TransferActivity() {
     private lateinit var adapter: ItemAdapter
     private lateinit var menu: ImageView
 
-    private val menuOnClicked = View.OnClickListener {
-        DataHelper.isMenu = true
-        recreate()
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         itemList.addAll(DataHelper.getItems())
         setContentView(R.layout.settings_activity)
         DataHelper.currentActivity = this
-        menu = findViewById(R.id.settings_menu)
-        menu.setOnClickListener(menuOnClicked)
-        if (DataHelper.isMenu) {
-            menu.visibility = View.GONE
-        }
+        initMenu()
         recyclerView = findViewById(R.id.settings_recycler)
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
@@ -39,6 +30,15 @@ class HookSettingsActivity: TransferActivity() {
 
         recyclerView.adapter = adapter
 
+    }
+
+    private fun initMenu() {
+        menu = findViewById(R.id.settings_menu)
+        menu.setOnClickListener {
+            DataHelper.isMenu = !DataHelper.isMenu
+            recreate()
+        }
+        menu.setImageResource(if (DataHelper.isMenu) R.drawable.abc_ic_ab_back_material else R.drawable.abc_ic_menu_overflow_material)
     }
 
 }
