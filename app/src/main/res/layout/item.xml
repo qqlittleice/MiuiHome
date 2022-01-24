@@ -18,6 +18,7 @@
       android:layout_gravity="center_vertical"
       android:paddingTop="15dp"
       android:paddingBottom="15dp"
+      android:paddingRight="5dp"
       android:text=""
       android:textSize="18sp"
       android:visibility="gone" />
