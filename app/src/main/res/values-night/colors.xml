@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <color name="colorTrack">#333333</color>
-  <color name="menu">#FFFFFF</color>
+  <color name="black">#FFFFFF</color>
+  <color name="white">#000000</color>
   <color name="line">#333333</color>
 </resources>

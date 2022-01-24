@@ -3,6 +3,7 @@ package com.yuk.miuihome.module.view.data
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.graphics.Color
+import android.widget.EditText
 import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit
@@ -38,7 +39,7 @@ object DataHelper {
             }
             if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                 add(Item(Text(resId = R.string.SmoothAnimation), Switch("smoothAnimation")))
-                add(Item(Text(resId = R.string.TaskViewBlurLevel, onClickListener = { SettingsDialog().showModifyBlurLevel() }), null)) // TODO Fix Dialog
+                add(Item(Text(resId = R.string.TaskViewBlurLevel, onClickListener = {}), null))
             }
             add(Item(Text(resId = R.string.AnimationLevel, onClickListener = {}), null, line = true)) // TODO Fix Dialog
 
@@ -53,7 +54,7 @@ object DataHelper {
             }
             add(Item(Text(resId = R.string.CategoryHideAll), Switch("categoryHideAll")))
             add(Item(Text(resId = R.string.CategoryPagingHideEdit), Switch("CategoryPagingHideEdit")))
-            add(Item(Text(resId = R.string.IconTitleFontSize, onClickListener = {}), null)) // TODO Fix Dialog
+            add(Item(Text(resId = R.string.IconTitleFontSize, onClickListener = { showIconTitleFontSize() }), null)) // TODO Fix Dialog
             add(Item(Text(resId = R.string.CustomTitleColor, onClickListener = {}), null)) // TODO Fix Dialog
             add(Item(Text(resId = R.string.RoundCorner, onClickListener = {}), null)) // TODO Fix Dialog
             add(Item(Text(resId = R.string.AppTextSize, onClickListener = {}), null)) // TODO Fix Dialog
@@ -117,6 +118,7 @@ object DataHelper {
         }
         return itemList
     }
+
     private fun showMiuiVersion():String {
         lateinit var value: String
         when (XposedInit().checkMiuiVersion()) {
@@ -128,4 +130,15 @@ object DataHelper {
         }
         return value
     }
+
+    private fun showIconTitleFontSize() {
+        SettingsDialog(currentActivity).apply {
+            setTitle(XposedInit.moduleRes.getString(R.string.IconTitleFontSize))
+            addView(EditText(currentActivity))
+            setRBText("Yes")
+            setLBText("No")
+            show()
+        }
+    }
 }
+
