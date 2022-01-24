@@ -15,17 +15,17 @@
       android:layout_height="wrap_content"
       android:layout_weight="1"
       android:layout_gravity="center_vertical"
-      android:paddingTop="10dp"
-      android:paddingBottom="10dp"
-      android:text="test"
-      android:textSize="20sp"
-      android:visibility="gone"/>
+      android:paddingTop="12dp"
+      android:paddingBottom="12dp"
+      android:text=""
+      android:textSize="18sp"
+      android:visibility="gone" />
     <com.yuk.miuihome.module.view.SettingsSwitch
       android:id="@+id/settings_switch"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center_vertical"
-      android:switchMinWidth="20dp"
+      android:switchMinWidth="25dp"
       android:thumb="@drawable/switch_thumb"
       android:track="@drawable/switch_track"
       android:visibility="gone" />
@@ -36,7 +36,9 @@
     android:id="@+id/settings_line"
     android:layout_width="wrap_content"
     android:layout_height="1dp"
+    android:layout_marginTop="12dp"
+    android:layout_marginBottom="12dp"
     android:background="@color/line"
-    android:visibility="gone"/>
+    android:visibility="gone" />
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:padding="25dp"
@@ -10,7 +11,8 @@
     android:layout_height="wrap_content"
     android:paddingTop="15dp"
     android:paddingBottom="15dp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    tools:ignore="UseCompoundDrawables">
 
     <TextView
       android:layout_width="0dp"
@@ -23,7 +25,8 @@
       android:id="@+id/settings_menu"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_gravity="center_vertical|end" />
+      android:layout_gravity="center_vertical|end"
+      tools:ignore="ContentDescription" />
 
   </LinearLayout>
 
