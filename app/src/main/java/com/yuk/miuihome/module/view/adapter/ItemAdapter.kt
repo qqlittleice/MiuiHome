@@ -18,6 +18,7 @@ class ItemAdapter(private val itemList: List<Item>): RecyclerView.Adapter<ItemAd
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val settingsText: TextView = view.findViewById(R.id.settings_text)
         val settingSwitch: SettingsSwitch = view.findViewById(R.id.settings_switch)
+        val settingLine: View = view.findViewById(R.id.settings_line)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -45,6 +46,7 @@ class ItemAdapter(private val itemList: List<Item>): RecyclerView.Adapter<ItemAd
                 holder.settingsText.textSize = sp2px(context, 5f)
                 holder.settingsText.setTextColor(Color.parseColor("#9399b3"))
             }
+            holder.settingsText.visibility = View.VISIBLE
         }
 
         switchInfo?.let {
@@ -53,6 +55,10 @@ class ItemAdapter(private val itemList: List<Item>): RecyclerView.Adapter<ItemAd
                 holder.settingSwitch.key = switchInfo.key
                 holder.settingSwitch.visibility = View.VISIBLE
             }
+        }
+
+        if (item.line) {
+            holder.settingLine.visibility = View.VISIBLE
         }
     }
 

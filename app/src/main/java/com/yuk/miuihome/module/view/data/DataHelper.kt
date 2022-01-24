@@ -41,6 +41,7 @@ object DataHelper {
                 add(Item(Text(resId = R.string.TaskViewBlurLevel, onClickListener = {}), null)) // TODO Fix Dialog
             }
             add(Item(Text(resId = R.string.AnimationLevel, onClickListener = {}), null)) // TODO Fix Dialog
+            add(Item(line = true))
 
             add(Item(Text(resId = R.string.AdvancedFeature, isTitle = true), null))
             add(Item(Text(resId = R.string.UnlockGrids), Switch("unlockGrids")))
