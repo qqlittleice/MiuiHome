@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="colorTrack">#e6e6e6</color>
+  <color name="colorTrack">#E6E6e6</color>
   <color name="menu">#000000</color>
-  <color name="line">#1a000000</color>
+  <color name="line">#1A000000</color>
+  <color name="miui">#0C84FF</color>
 </resources>

@@ -2,17 +2,17 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
   <item android:state_checked="true">
     <shape>
-      <solid android:color="#0c84ff" />
       <corners android:radius="25dp" />
       <size android:height="15dp" android:width="25dp" />
+      <solid android:color="@color/miui" />
     </shape>
   </item>
 
-  <item android:state_checked="false">
+  <item>
     <shape>
-      <solid android:color="@color/colorTrack" />
       <corners android:radius="25dp" />
       <size android:height="15dp" android:width="25dp" />
+      <solid android:color="@color/colorTrack" />
     </shape>
   </item>
 </selector>

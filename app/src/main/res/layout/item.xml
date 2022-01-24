@@ -28,7 +28,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center_vertical"
-      android:switchMinWidth="25dp"
+      android:background="@null"
       android:thumb="@drawable/switch_thumb"
       android:track="@drawable/switch_track"
       android:visibility="gone" />
@@ -38,7 +38,7 @@
   <View
     android:id="@+id/settings_line"
     android:layout_width="wrap_content"
-    android:layout_height="1dp"
+    android:layout_height="0.8dp"
     android:layout_marginTop="15dp"
     android:layout_marginBottom="15dp"
     android:background="@color/line"

@@ -2,8 +2,6 @@ package com.yuk.miuihome.module.view
 
 import android.content.Context
 import android.util.AttributeSet
-import android.view.View
-import android.widget.CompoundButton
 import android.widget.Switch
 import com.yuk.miuihome.utils.OwnSP
 
