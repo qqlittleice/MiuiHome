@@ -21,6 +21,7 @@
       android:layout_weight="1"
       android:layout_gravity="center_vertical"
       android:text="@string/app_name"
+      android:textFontWeight="300"
       android:textSize="30sp" />
     <ImageView
       android:id="@+id/settings_menu"
