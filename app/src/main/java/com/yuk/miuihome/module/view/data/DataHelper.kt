@@ -60,6 +60,7 @@ object DataHelper {
             add(Item(Text(resId = R.string.AppTextSize, onClickListener = {}), null)) // TODO Fix Dialog
             add(Item(Text(resId = R.string.VerticalTaskViewOfAppCardSize, onClickListener = {}), null)) // TODO Fix Dialog
             add(Item(Text(resId = R.string.HorizontalTaskViewOfAppCardSize, onClickListener = {}), null)) // TODO Fix Dialog
+            add(Item(line = true))
 
             add(Item(Text(resId = R.string.Folder, isTitle = true), null))
             if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
@@ -68,12 +69,14 @@ object DataHelper {
             add(Item(Text(resId = R.string.CloseFolder), Switch("closeFolder")))
             add(Item(Text(resId = R.string.FolderWidth), Switch("folderWidth")))
             add(Item(Text(resId = R.string.FolderColumnsCount, onClickListener = {}), null)) // TODO Fix Dialog
+            add(Item(line = true))
 
             if (XposedInit().checkWidgetLauncher()) {
                 add(Item(Text(resId = R.string.Widget, isTitle = true), null))
                 add(Item(Text(resId = R.string.HideWidgetTitles), Switch("hideWidgetTitles")))
                 add(Item(Text(resId = R.string.WidgetToMinus), Switch("widgetToMinus")))
                 add(Item(Text(resId = R.string.AlwaysShowMIUIWidget), Switch("alwaysShowMIUIWidget")))
+                add(Item(line = true))
             }
 
             if (XposedInit.hasHookPackageResources) {
@@ -83,6 +86,7 @@ object DataHelper {
                 add(Item(Text(resId = R.string.HideTaskViewSmallWindowIcon), Switch("smallWindow")))
                 add(Item(Text(resId = R.string.TaskViewAppCardTextSize, onClickListener = {}), null)) // TODO Fix Dialog
                 add(Item(Text(resId = R.string.CustomRecentText, onClickListener = {}), null)) // TODO Fix Dialog
+                add(Item(line = true))
             }
 
             add(Item(Text(resId = R.string.TestFeature, isTitle = true), null))
@@ -97,6 +101,7 @@ object DataHelper {
             if (!OwnSP.ownSP.getBoolean("appReturnAmin", false)) {
                 add(Item(Text(resId = R.string.BlurRadius, onClickListener = {}), null)) // TODO Fix Dialog
             }
+            add(Item(line = true))
 
             add(Item(Text(resId = R.string.OtherFeature, isTitle = true), null))
             add(Item(Text(resId = R.string.AlwaysShowStatusBarClock), Switch("clockGadget")))
@@ -106,10 +111,12 @@ object DataHelper {
             }
             add(Item(Text(resId = R.string.DockSettings, onClickListener = {}), null)) // TODO Fix Dialog
             add(Item(Text(resId = R.string.EveryThingBuild, onClickListener = { BuildWithEverything().init() }), null))
+            add(Item(line = true))
 
             add(Item(Text(resId = R.string.BrokenFeature, isTitle = true), null))
             add(Item(Text(resId = R.string.RealTaskViewHorizontal), Switch("horizontal")))
             add(Item(Text(resId = R.string.EnableIconShadow), Switch("isEnableIconShadow")))
+            add(Item(line = true))
 
             add(Item(Text(resId = R.string.ModuleFeature, isTitle = true), null))
             add(Item(Text(resId = R.string.CleanModuleSettings, onClickListener = {}), null)) // TODO Fix Dialog

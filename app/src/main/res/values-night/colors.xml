@@ -2,4 +2,5 @@
 <resources>
   <color name="colorTrack">#333333</color>
   <color name="menu">#FFFFFF</color>
+  <color name="line">#333333</color>
 </resources>
