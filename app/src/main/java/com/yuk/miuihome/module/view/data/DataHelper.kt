@@ -7,6 +7,7 @@ import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.module.BuildWithEverything
+import com.yuk.miuihome.module.view.SettingsDialog
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.OwnSP
 import kotlin.system.exitProcess
@@ -14,7 +15,7 @@ import kotlin.system.exitProcess
 @SuppressLint("StaticFieldLeak")
 object DataHelper {
     var isMenu = false
-    var currentActivity: Activity? = null
+    lateinit var currentActivity: Activity
 
     fun getItems(): ArrayList<Item> = if (isMenu) loadMenuItems() else loadItems()
 
@@ -37,7 +38,7 @@ object DataHelper {
             }
             if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                 add(Item(Text(resId = R.string.SmoothAnimation), Switch("smoothAnimation")))
-                add(Item(Text(resId = R.string.TaskViewBlurLevel, onClickListener = {}), null)) // TODO Fix Dialog
+                add(Item(Text(resId = R.string.TaskViewBlurLevel, onClickListener = { SettingsDialog().showModifyBlurLevel() }), null)) // TODO Fix Dialog
             }
             add(Item(Text(resId = R.string.AnimationLevel, onClickListener = {}), null, line = true)) // TODO Fix Dialog
 
@@ -84,8 +85,8 @@ object DataHelper {
             }
 
             add(Item(Text(resId = R.string.TestFeature, isTitle = true), null))
-            add(Item(Text(resId = R.string.SimpleAnimation), Switch("simpleAnimation", onCheckedChangeListener = { _, _ -> currentActivity?.recreate() })))
-            add(Item(Text(resId = R.string.AppReturnAmin), Switch("appReturnAmin", onCheckedChangeListener = { _, _ -> currentActivity?.recreate()})))
+            add(Item(Text(resId = R.string.SimpleAnimation), Switch("simpleAnimation", onCheckedChangeListener = { _, _ -> currentActivity.recreate() })))
+            add(Item(Text(resId = R.string.AppReturnAmin), Switch("appReturnAmin", onCheckedChangeListener = { _, _ -> currentActivity.recreate() })))
             add(Item(Text(resId = R.string.InfiniteScroll), Switch("infiniteScroll")))
             add(Item(Text(resId = R.string.RecommendServer), Switch("recommendServer")))
             add(Item(Text(resId = R.string.HideSeekPoints), Switch("hideSeekPoints")))
