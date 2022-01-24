@@ -1,7 +1,9 @@
 package com.yuk.miuihome.module.view.data
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.graphics.Color
+import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.module.BuildWithEverything
@@ -9,6 +11,7 @@ import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.OwnSP
 import kotlin.system.exitProcess
 
+@SuppressLint("StaticFieldLeak")
 object DataHelper {
     var isMenu = false
     var currentActivity: Activity? = null
@@ -18,7 +21,10 @@ object DataHelper {
     private fun loadMenuItems(): ArrayList<Item> {
         val itemList = arrayListOf<Item>()
         itemList.apply {
-            add(Item(Text(resId = R.string.Reboot, onClickListener = { exitProcess(0) }), null))
+            add(Item(Text("Launcher Version", isTitle = true), null))
+            add(Item(Text(XposedInit().checkVersionName()), null))
+            add(Item(Text("Module Version", isTitle = true), null))
+            add(Item(Text(showMiuiVersion()+ "/"+"${BuildConfig.VERSION_NAME}(${BuildConfig.VERSION_CODE})-${BuildConfig.BUILD_TYPE}"), null))
         }
         return itemList
     }
@@ -106,8 +112,19 @@ object DataHelper {
 
             add(Item(Text(resId = R.string.ModuleFeature, isTitle = true), null))
             add(Item(Text(resId = R.string.CleanModuleSettings, onClickListener = {}), null)) // TODO Fix Dialog
+            add(Item(Text(resId = R.string.Reboot, onClickListener = { exitProcess(0) }), null))
         }
         return itemList
     }
-
+    private fun showMiuiVersion():String {
+        lateinit var value: String
+        when (XposedInit().checkMiuiVersion()) {
+            "V130" -> value = "MIUI 13"
+            "V125" -> value = "MIUI 12.5"
+            "V12" -> value = "MIUI 12"
+            "V11" -> value = "MIUI 11"
+            "V10" -> value = "MIUI 10"
+        }
+        return value
+    }
 }

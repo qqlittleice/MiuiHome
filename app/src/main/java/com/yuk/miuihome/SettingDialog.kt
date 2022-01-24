@@ -26,12 +26,6 @@ class SettingDialog {
             addView(LinearLayout(HomeContext.settingActivity).apply {
                 orientation = LinearLayout.VERTICAL
                 setPadding(dip2px(10), dip2px(6), dip2px(10), dip2px(6))
-                addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.app_name), mSize = SettingTextView.titleSize).build())
-                addView(SettingTextView.FastBuilder(mText = XposedInit().checkVersionName(), mColor = "#01b17b").build())
-                if (XposedInit.hasHookPackageResources)
-                    addView(SettingTextView.FastBuilder(mText = showMiuiVersion()+ "/"+"${BuildConfig.VERSION_NAME}(${BuildConfig.VERSION_CODE})-${BuildConfig.BUILD_TYPE}/" + moduleRes.getString(R.string.ResHook) + "√", mColor = "#01b17b").build())
-                else
-                    addView(SettingTextView.FastBuilder(mText = showMiuiVersion()+ "/"+"${BuildConfig.VERSION_NAME}(${BuildConfig.VERSION_CODE})-${BuildConfig.BUILD_TYPE}/" + moduleRes.getString(R.string.ResHook) + "×", mColor = "#01b17b").build())
                 if (OwnSP.ownSP.getBoolean("simpleAnimation", false))
                     addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.SimpleWarn), mColor = "#ff0c0c").build())
                 addView(SettingTextView.FastBuilder(mText = moduleRes.getString(R.string.BaseFeature), mColor = "#0C84FF", mSize = SettingTextView.text2Size).build())
@@ -399,20 +393,6 @@ class SettingDialog {
         }
         dialogBuilder.show()
     }
-
-
-    private fun showMiuiVersion():String {
-        lateinit var value: String
-        when (XposedInit().checkMiuiVersion()) {
-            "V130" -> value = "MIUI 13"
-            "V125" -> value = "MIUI 12.5"
-            "V12" -> value = "MIUI 12"
-            "V11" -> value = "MIUI 11"
-            "V10" -> value = "MIUI 10"
-        }
-        return value
-    }
-
 
     fun firstUseDialog() {
         val dialogBuilder = SettingBaseDialog().get()

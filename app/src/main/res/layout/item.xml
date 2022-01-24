@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:orientation="horizontal"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
-  android:padding="10dp">
+  android:orientation="horizontal">
 
   <TextView
     android:id="@+id/settings_text"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:textSize="20sp"
-    android:text="test"
+    android:layout_weight="1"
     android:layout_gravity="center_vertical"
-    android:layout_weight="1"/>
-
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:text="test"
+    android:textSize="20sp" />
   <com.yuk.miuihome.module.view.SettingsSwitch
     android:id="@+id/settings_switch"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:switchMinWidth="20dp"
-    android:visibility="gone"
     android:layout_gravity="center_vertical"
+    android:switchMinWidth="20dp"
+    android:thumb="@drawable/switch_thumb"
     android:track="@drawable/switch_track"
-    android:thumb="@drawable/switch_thumb"/>
+    android:visibility="gone" />
 
 </LinearLayout>
