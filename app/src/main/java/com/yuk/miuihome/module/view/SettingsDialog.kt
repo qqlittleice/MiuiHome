@@ -2,10 +2,7 @@ package com.yuk.miuihome.module.view
 
 import android.app.Dialog
 import android.content.Context
-import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.View
-import android.view.WindowManager
+import android.view.*
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
@@ -29,6 +26,19 @@ class SettingsDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
 
     fun addView(mView: View) {
         view.findViewById<LinearLayout>(R.id.View).addView(mView)
+    }
+
+    fun addView(mView: View, index: Int) {
+        view.findViewById<LinearLayout>(R.id.View).addView(mView, index)
+    }
+    fun addView(mView: View, width: Int, height: Int) {
+        view.findViewById<LinearLayout>(R.id.View).addView(mView, width, height)
+    }
+    fun addView(mView: View, params: ViewGroup.LayoutParams) {
+        view.findViewById<LinearLayout>(R.id.View).addView(mView, params)
+    }
+    fun addView(mView: View, index: Int, params: ViewGroup.LayoutParams) {
+        view.findViewById<LinearLayout>(R.id.View).addView(mView, index, params)
     }
 
     override fun setTitle(title: CharSequence?) {

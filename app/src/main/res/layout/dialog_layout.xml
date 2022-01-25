@@ -42,8 +42,8 @@
         android:id="@+id/EditText"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
         android:layout_marginTop="10dp"
         android:padding="8dp"
         android:textSize="16sp"
@@ -62,7 +62,7 @@
 
       <Button
         android:id="@+id/LButton"
-        android:layout_width="165dp"
+        android:layout_width="160dp"
         android:layout_height="55dp"
         android:layout_gravity="center"
         android:paddingStart="35dp"
@@ -75,7 +75,7 @@
 
       <Button
         android:id="@+id/RButton"
-        android:layout_width="165dp"
+        android:layout_width="160dp"
         android:layout_height="55dp"
         android:layout_marginStart="15dp"
         android:layout_gravity="center"
