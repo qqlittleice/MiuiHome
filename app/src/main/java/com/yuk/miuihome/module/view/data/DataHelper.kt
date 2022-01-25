@@ -134,7 +134,7 @@ object DataHelper {
     private fun showIconTitleFontSize() {
         SettingsDialog(currentActivity).apply {
             setTitle(XposedInit.moduleRes.getString(R.string.IconTitleFontSize))
-            setEditText("", "提示文本")
+            setEditText("", "  提示文本")
             setRButton("Yes") {}
             setLButton("No") { dismiss() }
             show()

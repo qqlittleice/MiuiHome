@@ -16,12 +16,13 @@
       android:id="@+id/Title"
       android:layout_width="fill_parent"
       android:layout_height="wrap_content"
-      android:layout_margin="13dp"
+      android:layout_marginTop="11dp"
+      android:layout_marginBottom="20dp"
       android:paddingTop="20dp"
       android:gravity="center"
       android:text=""
       android:textColor="@color/black"
-      android:textSize="20sp" />
+      android:textSize="18sp" />
     <LinearLayout
       android:id="@+id/View"
       android:layout_width="fill_parent"
@@ -41,15 +42,14 @@
       <EditText
         android:id="@+id/EditText"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginRight="18dp"
+        android:layout_height="58dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
         android:layout_marginTop="10dp"
         android:padding="8dp"
         android:textSize="16sp"
         android:background="@drawable/edit_view_background"
-        android:visibility="gone" />
-
+        />
 
     </LinearLayout>
 
@@ -57,13 +57,13 @@
       android:layout_width="fill_parent"
       android:layout_height="wrap_content"
       android:paddingTop="15dp"
-      android:paddingBottom="35dp"
+      android:paddingBottom="27dp"
       android:gravity="center_horizontal">
 
       <Button
         android:id="@+id/LButton"
         android:layout_width="160dp"
-        android:layout_height="55dp"
+        android:layout_height="52dp"
         android:layout_gravity="center"
         android:paddingStart="35dp"
         android:paddingEnd="35dp"
@@ -76,7 +76,7 @@
       <Button
         android:id="@+id/RButton"
         android:layout_width="160dp"
-        android:layout_height="55dp"
+        android:layout_height="52dp"
         android:layout_marginStart="15dp"
         android:layout_gravity="center"
         android:paddingStart="35dp"
