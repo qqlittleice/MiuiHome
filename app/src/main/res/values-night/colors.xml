@@ -10,4 +10,5 @@
   <color name="rightButton">#2688E3</color>
   <color name="background">#242424</color>
   <color name="whiteClick">#292929</color>
+  <color name="editView">#252525</color>
 </resources>
