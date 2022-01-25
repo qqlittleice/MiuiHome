@@ -3,7 +3,9 @@ package com.yuk.miuihome.module.view.data
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.graphics.Color
+import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.LinearLayout
 import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit
@@ -134,7 +136,7 @@ object DataHelper {
     private fun showIconTitleFontSize() {
         SettingsDialog(currentActivity).apply {
             setTitle(XposedInit.moduleRes.getString(R.string.IconTitleFontSize))
-            addView(EditText(currentActivity))
+            addView(EditText(currentActivity), ViewGroup.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT))
             setRBText("Yes")
             setLBText("No")
             show()

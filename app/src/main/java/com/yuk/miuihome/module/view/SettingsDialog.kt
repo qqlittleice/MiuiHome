@@ -27,6 +27,22 @@ class SettingsDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
         view.findViewById<LinearLayout>(R.id.View).addView(mView)
     }
 
+    fun addView(mView: View, index: Int) {
+        view.findViewById<LinearLayout>(R.id.View).addView(mView, index)
+    }
+
+    fun addView(mView: View, width: Int, height: Int) {
+        view.findViewById<LinearLayout>(R.id.View).addView(mView, width, height)
+    }
+
+    fun addView(mView: View, params: ViewGroup.LayoutParams) {
+        view.findViewById<LinearLayout>(R.id.View).addView(mView, params)
+    }
+
+    fun addView(mView: View, index: Int, params: ViewGroup.LayoutParams) {
+        view.findViewById<LinearLayout>(R.id.View).addView(mView, index, params)
+    }
+
     override fun setTitle(title: CharSequence?) {
         view.findViewById<TextView>(R.id.Title).text = title
     }
@@ -49,6 +65,14 @@ class SettingsDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
 
     fun setRBText(textId: Int) {
         view.findViewById<Button>(R.id.RButton).setText(textId)
+    }
+
+    fun setLBListener(listener: View.OnClickListener) {
+        view.findViewById<Button>(R.id.LButton).setOnClickListener(listener)
+    }
+
+    fun setRBListener(listener: View.OnClickListener) {
+        view.findViewById<Button>(R.id.RButton).setOnClickListener(listener)
     }
 
     override fun show() {

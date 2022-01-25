@@ -26,6 +26,7 @@
       android:id="@+id/View"
       android:layout_width="fill_parent"
       android:layout_height="wrap_content"
+      android:padding="30dp"
       android:orientation="horizontal" />
 
     <LinearLayout

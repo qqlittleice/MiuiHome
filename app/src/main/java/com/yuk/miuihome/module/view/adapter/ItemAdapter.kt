@@ -7,6 +7,7 @@ import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.yuk.miuihome.R
@@ -18,6 +19,7 @@ class ItemAdapter(private val itemList: List<Item>): RecyclerView.Adapter<ItemAd
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val settingsText: TextView = view.findViewById(R.id.settings_text)
         val settingSwitch: SettingsSwitch = view.findViewById(R.id.settings_switch)
+        val settingsCustomView: LinearLayout = view.findViewById(R.id.settings_custom_view)
         val settingLine: View = view.findViewById(R.id.settings_line)
     }
 
@@ -34,6 +36,7 @@ class ItemAdapter(private val itemList: List<Item>): RecyclerView.Adapter<ItemAd
         val item = itemList[position]
         val textInfo = item.text
         val switchInfo = item.switch
+        val customItems = item.customItems
         val context = holder.settingsText.context
 
         textInfo?.let {
@@ -55,6 +58,10 @@ class ItemAdapter(private val itemList: List<Item>): RecyclerView.Adapter<ItemAd
                 holder.settingSwitch.key = switchInfo.key
                 holder.settingSwitch.visibility = View.VISIBLE
             }
+        }
+
+        for (view: View in customItems) {
+            holder.settingsCustomView.addView(view)
         }
 
         if (item.line) {
