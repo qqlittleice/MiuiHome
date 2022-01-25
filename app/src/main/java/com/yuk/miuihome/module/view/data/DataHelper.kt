@@ -10,7 +10,9 @@ import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.module.BuildWithEverything
 import com.yuk.miuihome.module.view.SettingsDialog
 import com.yuk.miuihome.utils.Config
+import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
+import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
 @SuppressLint("StaticFieldLeak")
@@ -54,7 +56,7 @@ object DataHelper {
             }
             add(Item(Text(resId = R.string.CategoryHideAll), Switch("categoryHideAll")))
             add(Item(Text(resId = R.string.CategoryPagingHideEdit), Switch("CategoryPagingHideEdit")))
-            add(Item(Text(resId = R.string.IconTitleFontSize, onClickListener = { showIconTitleFontSize() }), null)) // TODO Fix Dialog
+            add(Item(Text(resId = R.string.IconTitleFontSize), null, seekBar = SeekBar(0, 30, 1, OwnSP.ownSP.getFloat("iconTitleFontSize", -1f).toInt(), "iconTitleFontSize")))
             add(Item(Text(resId = R.string.CustomTitleColor, onClickListener = {}), null)) // TODO Fix Dialog
             add(Item(Text(resId = R.string.RoundCorner, onClickListener = {}), null)) // TODO Fix Dialog
             add(Item(Text(resId = R.string.AppTextSize, onClickListener = {}), null)) // TODO Fix Dialog
@@ -114,7 +116,7 @@ object DataHelper {
 
             add(Item(Text(resId = R.string.ModuleFeature, isTitle = true), null))
             add(Item(Text(resId = R.string.CleanModuleSettings, onClickListener = {}), null)) // TODO Fix Dialog
-            add(Item(Text(resId = R.string.Reboot, onClickListener = { exitProcess(0) }), null))
+            add(Item(Text(resId = R.string.Reboot, onClickListener = { showRestartDialog() }), null))
         }
         return itemList
     }
@@ -131,14 +133,34 @@ object DataHelper {
         return value
     }
 
-    private fun showIconTitleFontSize() {
+    private fun showRestartDialog() {
         SettingsDialog(currentActivity).apply {
-            setTitle(XposedInit.moduleRes.getString(R.string.IconTitleFontSize))
-            setEditText("", "  提示文本")
-            setRButton("Yes") {}
-            setLButton("No") { dismiss() }
+            setTitle(XposedInit.moduleRes.getString(R.string.Reboot))
+            setMessage(XposedInit.moduleRes.getString(R.string.Reboot1))
+            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+                thread {
+                    LogUtil.toast(XposedInit.moduleRes.getString(R.string.Reboot2))
+                    Thread.sleep(1000)
+                    exitProcess(0)
+                }
+                dismiss()
+            }
+            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            show()
+        }
+    }
+
+    private fun showModifyTitleColorDialog() {
+        SettingsDialog(currentActivity).apply {
+            setTitle(XposedInit.moduleRes.getString(R.string.CustomTitleColor))
+            setMessage(XposedInit.moduleRes.getString(R.string.Tips4))
+            setEditText(OwnSP.ownSP.getString("iconTitleFontColor", "").toString(), "#FFFFFF")
+            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+
+                dismiss()
+            }
+            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
             show()
         }
     }
 }
-

@@ -119,4 +119,5 @@ class SettingsDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
     }
 
     fun getEditText(): String = view.findViewById<EditText>(R.id.EditText).text.toString()
+
 }

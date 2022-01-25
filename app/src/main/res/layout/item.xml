@@ -28,7 +28,6 @@
       android:textSize="18sp"
       android:visibility="gone" />
 
-
     <ImageView
       android:id="@+id/RightArrow"
       android:layout_width="wrap_content"
@@ -57,25 +56,25 @@
 
   <SeekBar
     android:id="@+id/settings_seekbar"
+    style="@style/CustomSeekbarStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center_vertical"
-    android:thumb="@null"
+    android:paddingBottom="15dp"
     android:paddingStart="25dp"
     android:paddingEnd="25dp"
-    android:paddingBottom="5dp"
     android:background="@null"
-    style="@style/CustomSeekbarStyle"
+    android:thumb="@null"
     android:visibility="gone" />
 
   <View
     android:id="@+id/settings_line"
     android:layout_width="wrap_content"
     android:layout_height="0.8dp"
-    android:layout_marginTop="5dp"
+    android:layout_marginTop="18dp"
     android:layout_marginStart="25dp"
     android:layout_marginEnd="25dp"
-    android:layout_marginBottom="5dp"
+    android:layout_marginBottom="18dp"
     android:background="@color/line"
     android:visibility="gone" />
 

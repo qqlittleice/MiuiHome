@@ -15,10 +15,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.yuk.miuihome.R
 import com.yuk.miuihome.module.view.SettingsSwitch
 import com.yuk.miuihome.module.view.data.Item
+import com.yuk.miuihome.utils.OwnSP
 
-class ItemAdapter(private val itemList: List<Item>): RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
+class ItemAdapter(private val itemList: List<Item>) :
+    RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 
-    inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    private val editor by lazy { OwnSP.ownSP.edit() }
+
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val settingsText: TextView = view.findViewById(R.id.settings_text)
         val settingSwitch: SettingsSwitch = view.findViewById(R.id.settings_switch)
         val settingsCustomView: LinearLayout = view.findViewById(R.id.settings_custom_view)
@@ -63,7 +67,7 @@ class ItemAdapter(private val itemList: List<Item>): RecyclerView.Adapter<ItemAd
 
         switchInfo?.let {
             switchInfo.onCheckedChangeListener?.let { holder.settingSwitch.customCheckedChangeListener = it }
-            if (! switchInfo.key.isNullOrEmpty()) {
+            if (!switchInfo.key.isNullOrEmpty()) {
                 holder.settingSwitch.key = switchInfo.key
                 holder.settingSwitch.visibility = View.VISIBLE
             }
@@ -74,26 +78,28 @@ class ItemAdapter(private val itemList: List<Item>): RecyclerView.Adapter<ItemAd
         }
 
         seekBarInfo?.let {
-            seekBarInfo.callBacks?.let { holder.settingSeekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
-                override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
-                    it(p1, holder.settingsText)
-                }
-
-                override fun onStartTrackingTouch(p0: SeekBar?) {
-                }
-
-                override fun onStopTrackingTouch(p0: SeekBar?) {
-                }
-            }) }
+            seekBarInfo.callBacks?.let {
+                holder.settingSeekBar.setOnSeekBarChangeListener(
+                    object : SeekBar.OnSeekBarChangeListener {
+                        override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                            it(progress, holder.settingsText)
+                            editor.putFloat(seekBarInfo.key, progress.toFloat() / seekBarInfo.divide)
+                            editor.apply()
+                        }
+                        override fun onStartTrackingTouch(p0: SeekBar?) { }
+                        override fun onStopTrackingTouch(p0: SeekBar?) { }
+                    })
+            }
             seekBarInfo.min?.let { holder.settingSeekBar.min = it }
             seekBarInfo.max?.let { holder.settingSeekBar.max = it }
-            seekBarInfo.progress?.let { holder.settingSeekBar.progress = it }
+            seekBarInfo.progress?.let {  holder.settingSeekBar.progress = it }
             holder.settingSeekBar.visibility = View.VISIBLE
         }
 
         if (item.line) {
             holder.settingLine.visibility = View.VISIBLE
         }
+
     }
 
     override fun getItemCount(): Int = itemList.size

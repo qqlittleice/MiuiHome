@@ -32,6 +32,7 @@
   <string name="OutOfInput">Please enter a value within the allowed range!</string>
   <string name="RealTaskViewHorizontal">True · Horizontal Recent</string>
   <string name="Reboot">Restart Launcher</string>
+  <string name="Reboot1">Are you sure you want to restart?</string>
   <string name="Reboot2">The Launcher will restart in 1 seconds!</string>
   <string name="ResourceHooks">ResourceHook Features</string>
   <string name="RoundCorner">Size of Thumbnail Rounded Corners</string>

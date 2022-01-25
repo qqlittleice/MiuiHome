@@ -23,6 +23,7 @@
       android:text=""
       android:textColor="@color/black"
       android:textSize="18sp" />
+
     <LinearLayout
       android:id="@+id/View"
       android:layout_width="fill_parent"
@@ -36,7 +37,7 @@
         android:textSize="15sp"
         android:textColor="@color/black"
         android:gravity="center"
-        android:layout_margin="13dp"
+        android:layout_marginTop="13dp"
         android:visibility="gone" />
 
       <EditText
@@ -49,7 +50,7 @@
         android:padding="8dp"
         android:textSize="16sp"
         android:background="@drawable/edit_view_background"
-        />
+        android:visibility="gone" />
 
     </LinearLayout>
 
@@ -86,6 +87,7 @@
         android:windowFrame="@null"
         android:textColor="@color/whiteA"
         tools:ignore="ButtonStyle" />
+
     </LinearLayout>
 
   </LinearLayout>
