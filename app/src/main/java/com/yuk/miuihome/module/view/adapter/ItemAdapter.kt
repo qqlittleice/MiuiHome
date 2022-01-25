@@ -7,7 +7,9 @@ import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.SeekBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.yuk.miuihome.R
@@ -21,6 +23,9 @@ class ItemAdapter(private val itemList: List<Item>): RecyclerView.Adapter<ItemAd
         val settingSwitch: SettingsSwitch = view.findViewById(R.id.settings_switch)
         val settingsCustomView: LinearLayout = view.findViewById(R.id.settings_custom_view)
         val settingLine: View = view.findViewById(R.id.settings_line)
+        val settingSeekBar: SeekBar = view.findViewById(R.id.settings_seekbar)
+        val rightArrow: ImageView = view.findViewById(R.id.RightArrow)
+        val layout: LinearLayout = view.findViewById(R.id.layout)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -36,6 +41,7 @@ class ItemAdapter(private val itemList: List<Item>): RecyclerView.Adapter<ItemAd
         val item = itemList[position]
         val textInfo = item.text
         val switchInfo = item.switch
+        val seekBarInfo = item.seekBar
         val customItems = item.customItems
         val context = holder.settingsText.context
 
@@ -44,7 +50,10 @@ class ItemAdapter(private val itemList: List<Item>): RecyclerView.Adapter<ItemAd
             textInfo.resId?.let { holder.settingsText.setText(it) }
             textInfo.textSize?.let { holder.settingsText.textSize = sp2px(context, it) }
             textInfo.textColor?.let { holder.settingsText.setTextColor(it) }
-            textInfo.onClickListener?.let { holder.settingsText.setOnClickListener(it) }
+            textInfo.onClickListener?.let { holder.layout.setOnClickListener(it) }
+            if (textInfo.showArrow && switchInfo == null && seekBarInfo == null) {
+                holder.rightArrow.visibility = View.VISIBLE
+            }
             if (textInfo.isTitle) {
                 holder.settingsText.textSize = sp2px(context, 4.5f)
                 holder.settingsText.setTextColor(Color.parseColor("#9399b3"))
@@ -62,6 +71,24 @@ class ItemAdapter(private val itemList: List<Item>): RecyclerView.Adapter<ItemAd
 
         for (view: View in customItems) {
             holder.settingsCustomView.addView(view)
+        }
+
+        seekBarInfo?.let {
+            seekBarInfo.callBacks?.let { holder.settingSeekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
+                override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
+                    it(p1, holder.settingsText)
+                }
+
+                override fun onStartTrackingTouch(p0: SeekBar?) {
+                }
+
+                override fun onStopTrackingTouch(p0: SeekBar?) {
+                }
+            }) }
+            seekBarInfo.min?.let { holder.settingSeekBar.min = it }
+            seekBarInfo.max?.let { holder.settingSeekBar.max = it }
+            seekBarInfo.progress?.let { holder.settingSeekBar.progress = it }
+            holder.settingSeekBar.visibility = View.VISIBLE
         }
 
         if (item.line) {

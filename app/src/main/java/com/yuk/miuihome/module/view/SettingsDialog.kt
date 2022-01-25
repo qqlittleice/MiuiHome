@@ -2,8 +2,12 @@ package com.yuk.miuihome.module.view
 
 import android.app.Dialog
 import android.content.Context
-import android.view.*
+import android.view.Gravity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.WindowManager
 import android.widget.Button
+import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.yuk.miuihome.R
@@ -27,22 +31,6 @@ class SettingsDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
         view.findViewById<LinearLayout>(R.id.View).addView(mView)
     }
 
-    fun addView(mView: View, index: Int) {
-        view.findViewById<LinearLayout>(R.id.View).addView(mView, index)
-    }
-
-    fun addView(mView: View, width: Int, height: Int) {
-        view.findViewById<LinearLayout>(R.id.View).addView(mView, width, height)
-    }
-
-    fun addView(mView: View, params: ViewGroup.LayoutParams) {
-        view.findViewById<LinearLayout>(R.id.View).addView(mView, params)
-    }
-
-    fun addView(mView: View, index: Int, params: ViewGroup.LayoutParams) {
-        view.findViewById<LinearLayout>(R.id.View).addView(mView, index, params)
-    }
-
     override fun setTitle(title: CharSequence?) {
         view.findViewById<TextView>(R.id.Title).text = title
     }
@@ -51,36 +39,74 @@ class SettingsDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
         view.findViewById<TextView>(R.id.Title).setText(titleId)
     }
 
-    fun setLBText(text: CharSequence?) {
-        view.findViewById<Button>(R.id.LButton).text = text
+    fun setRButton(text: CharSequence?, callBacks: (it: View) -> Unit) {
+        view.findViewById<Button>(R.id.RButton).apply {
+            setText(text)
+            setOnClickListener {
+                callBacks(it)
+            }
+        }
     }
 
-    fun setLBText(textId: Int) {
-        view.findViewById<Button>(R.id.LButton).setText(textId)
+    fun setRButton(textId: Int, callBacks: () -> Unit) {
+        view.findViewById<Button>(R.id.RButton).apply {
+            setText(textId)
+            setOnClickListener {
+                callBacks()
+            }
+        }
     }
 
-    fun setRBText(text: CharSequence?) {
-        view.findViewById<Button>(R.id.RButton).text = text
+    fun setLButton(text: CharSequence?, callBacks: (it: View) -> Unit) {
+        view.findViewById<Button>(R.id.LButton).apply {
+            setText(text)
+            setOnClickListener {
+                callBacks(it)
+            }
+            visibility = View.VISIBLE
+        }
     }
 
-    fun setRBText(textId: Int) {
-        view.findViewById<Button>(R.id.RButton).setText(textId)
-    }
-
-    fun setLBListener(listener: View.OnClickListener) {
-        view.findViewById<Button>(R.id.LButton).setOnClickListener(listener)
-    }
-
-    fun setRBListener(listener: View.OnClickListener) {
-        view.findViewById<Button>(R.id.RButton).setOnClickListener(listener)
+    fun setLButton(textId: Int, callBacks: () -> Unit) {
+        view.findViewById<Button>(R.id.LButton).apply {
+            setText(textId)
+            setOnClickListener {
+                callBacks()
+            }
+            visibility = View.VISIBLE
+        }
     }
 
     override fun show() {
         super.show()
         val layoutParams = window!!.attributes
-        layoutParams.dimAmount = 0.3f
+        layoutParams.dimAmount = 0.3F
         layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT
         layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT
         window!!.attributes = layoutParams
     }
+
+    fun setMessage(textId: Int) {
+        view.findViewById<TextView>(R.id.Message).apply {
+            setText(textId)
+            visibility = View.VISIBLE
+        }
+    }
+
+    fun setMessage(text: CharSequence?) {
+        view.findViewById<TextView>(R.id.Message).apply {
+            this.text = text
+            visibility = View.VISIBLE
+        }
+    }
+
+    fun setEditText(text: String, hint: String) {
+        view.findViewById<EditText>(R.id.EditText).apply {
+            setText(text.toCharArray(), 0, text.length)
+            this.hint = hint
+            visibility = View.VISIBLE
+        }
+    }
+
+    fun getEditText(): String = view.findViewById<EditText>(R.id.EditText).text.toString()
 }

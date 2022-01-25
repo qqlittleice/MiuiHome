@@ -3,8 +3,7 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:paddingStart="25dp"
-  android:paddingEnd="25dp"
+  android:background="@color/white"
   android:orientation="vertical">
 
   <LinearLayout
@@ -13,9 +12,11 @@
     android:paddingTop="30dp"
     android:paddingBottom="15dp"
     android:orientation="horizontal"
-    tools:ignore="UseCompoundDrawables">
+    tools:ignore="RtlSymmetry,UseCompoundDrawables">
 
     <TextView
+      android:id="@+id/Title"
+      android:paddingStart="25dp"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:layout_weight="1"
@@ -25,6 +26,7 @@
       android:textSize="30sp" />
     <ImageView
       android:id="@+id/settings_menu"
+      android:paddingEnd="25dp"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center_vertical|end"

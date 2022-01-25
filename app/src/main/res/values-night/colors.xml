@@ -4,4 +4,10 @@
   <color name="black">#FFFFFF</color>
   <color name="white">#000000</color>
   <color name="line">#333333</color>
+  <color name="leftButtonN">#353535</color>
+  <color name="leftButton">#373737</color>
+  <color name="rightButtonN">#0173DD</color>
+  <color name="rightButton">#2688E3</color>
+  <color name="background">#242424</color>
+  <color name="whiteClick">#292929</color>
 </resources>
