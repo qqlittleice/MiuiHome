@@ -156,7 +156,6 @@ object DataHelper {
             setMessage(XposedInit.moduleRes.getString(R.string.Tips4))
             setEditText(OwnSP.ownSP.getString("iconTitleFontColor", "").toString(), "#FFFFFF")
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
-
                 dismiss()
             }
             setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }

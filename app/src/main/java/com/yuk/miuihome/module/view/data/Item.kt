@@ -7,5 +7,6 @@ data class Item(
     val switch: Switch? = null,
     val customItems: List<View> = arrayListOf(),
     val line: Boolean = false,
-    val seekBar: SeekBar? = null
+    val seekBar: SeekBar? = null,
+    val spinner: Spinner? = null
 )

@@ -47,11 +47,7 @@ class SettingSeekBar(
             max = maxValue
             progress = (tempValue * divide).toInt()
             setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-                override fun onProgressChanged(
-                    seekBar: SeekBar?,
-                    progress: Int,
-                    fromUser: Boolean
-                ) {
+                override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                     saveValue(progress.toFloat() / divide)
                     valueTextView.text = "$progress"
                     tempValue = (progress.toFloat() / divide)

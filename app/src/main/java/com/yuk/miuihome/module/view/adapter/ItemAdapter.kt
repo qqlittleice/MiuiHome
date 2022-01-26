@@ -1,19 +1,15 @@
 package com.yuk.miuihome.module.view.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.util.TypedValue
-import android.view.ContextThemeWrapper
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.SeekBar
-import android.widget.TextView
+import android.view.*
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.yuk.miuihome.R
 import com.yuk.miuihome.module.view.SettingsSwitch
+import com.yuk.miuihome.module.view.data.DataHelper.currentActivity
 import com.yuk.miuihome.module.view.data.Item
 import com.yuk.miuihome.utils.OwnSP
 
@@ -30,6 +26,8 @@ class ItemAdapter(private val itemList: List<Item>) :
         val settingSeekBar: SeekBar = view.findViewById(R.id.settings_seekbar)
         val rightArrow: ImageView = view.findViewById(R.id.RightArrow)
         val layout: LinearLayout = view.findViewById(R.id.layout)
+        val spinnerSelect: TextView = view.findViewById(R.id.settings_select)
+        val spinnerLayout: LinearLayout = view.findViewById(R.id.settings_select_layout)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -41,11 +39,13 @@ class ItemAdapter(private val itemList: List<Item>) :
         return position
     }
 
+    @SuppressLint("RtlHardcoded", "UseCompatLoadingForDrawables")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = itemList[position]
         val textInfo = item.text
         val switchInfo = item.switch
         val seekBarInfo = item.seekBar
+        val spinnerInfo = item.spinner
         val customItems = item.customItems
         val context = holder.settingsText.context
 
@@ -55,7 +55,7 @@ class ItemAdapter(private val itemList: List<Item>) :
             textInfo.textSize?.let { holder.settingsText.textSize = sp2px(context, it) }
             textInfo.textColor?.let { holder.settingsText.setTextColor(it) }
             textInfo.onClickListener?.let { holder.layout.setOnClickListener(it) }
-            if (textInfo.showArrow && switchInfo == null && seekBarInfo == null) {
+            if (textInfo.showArrow && switchInfo == null && seekBarInfo == null && spinnerInfo == null) {
                 holder.rightArrow.visibility = View.VISIBLE
             }
             if (textInfo.isTitle) {
@@ -86,14 +86,44 @@ class ItemAdapter(private val itemList: List<Item>) :
                             editor.putFloat(seekBarInfo.key, progress.toFloat() / seekBarInfo.divide)
                             editor.apply()
                         }
-                        override fun onStartTrackingTouch(p0: SeekBar?) { }
-                        override fun onStopTrackingTouch(p0: SeekBar?) { }
+                        override fun onStartTrackingTouch(seekBar: SeekBar?) { }
+                        override fun onStopTrackingTouch(seekBar: SeekBar?) { }
                     })
             }
             seekBarInfo.min?.let { holder.settingSeekBar.min = it }
             seekBarInfo.max?.let { holder.settingSeekBar.max = it }
-            seekBarInfo.progress?.let {  holder.settingSeekBar.progress = it }
+            seekBarInfo.progress?.let { holder.settingSeekBar.progress = it }
             holder.settingSeekBar.visibility = View.VISIBLE
+        }
+
+        spinnerInfo?.let {
+            val mListPop = ListPopupWindow(spinnerInfo.context)
+            mListPop.setBackgroundDrawable(spinnerInfo.context.getDrawable(R.drawable.rounded_corners_pop))
+            mListPop.setAdapter(ArrayAdapter(spinnerInfo.context, android.R.layout.simple_list_item_1, spinnerInfo.array))
+            mListPop.verticalOffset = -dp2px(currentActivity,100F)
+            mListPop.width = dp2px(currentActivity,150F)
+            mListPop.height = ViewGroup.LayoutParams.WRAP_CONTENT
+            mListPop.isModal = true
+
+            mListPop.setOnItemClickListener { parent, _, position, _ ->
+                holder.spinnerSelect.text = parent.getItemAtPosition(position).toString()
+                spinnerInfo.callBacks?.let { it1 -> it1(parent.getItemAtPosition(position).toString()) }
+                mListPop.dismiss()
+            }
+            holder.spinnerLayout.setOnClickListener {
+                mListPop.horizontalOffset = 0
+                mListPop.setDropDownGravity(Gravity.RIGHT)
+                mListPop.anchorView = it
+                mListPop.show()
+            }
+            holder.layout.setOnClickListener {
+                mListPop.horizontalOffset = dp2px(currentActivity,24F)
+                mListPop.setDropDownGravity(Gravity.LEFT)
+                mListPop.anchorView = it
+                mListPop.show()
+            }
+            spinnerInfo.select?.let { it1 -> holder.spinnerSelect.text = it1 }
+            holder.spinnerLayout.visibility = View.VISIBLE
         }
 
         if (item.line) {
@@ -104,6 +134,7 @@ class ItemAdapter(private val itemList: List<Item>) :
 
     override fun getItemCount(): Int = itemList.size
 
+    private fun dp2px(context: Context, dpValue: Float): Int = (context.resources.displayMetrics.scaledDensity * dpValue + 0.5f).toInt()
     private fun sp2px(context: Context, spValue: Float): Float = (context.resources.displayMetrics.scaledDensity * spValue + 0.5f)
 
     private fun getSystemColor(context: Context): Int {
