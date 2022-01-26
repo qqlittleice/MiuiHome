@@ -55,9 +55,8 @@ class ItemAdapter(private val itemList: List<Item>) :
             textInfo.textSize?.let { holder.settingsText.textSize = sp2px(context, it) }
             textInfo.textColor?.let { holder.settingsText.setTextColor(it) }
             textInfo.onClickListener?.let { holder.layout.setOnClickListener(it) }
-            if (textInfo.showArrow && switchInfo == null && seekBarInfo == null && spinnerInfo == null) {
+            if (textInfo.showArrow && switchInfo == null && seekBarInfo == null && spinnerInfo == null)
                 holder.rightArrow.visibility = View.VISIBLE
-            }
             if (textInfo.isTitle) {
                 holder.settingsText.textSize = sp2px(context, 4.5f)
                 holder.settingsText.setTextColor(Color.parseColor("#9399b3"))
@@ -73,9 +72,8 @@ class ItemAdapter(private val itemList: List<Item>) :
             }
         }
 
-        for (view: View in customItems) {
-            holder.settingsCustomView.addView(view)
-        }
+        for (view: View in customItems) holder.settingsCustomView.addView(view)
+
 
         seekBarInfo?.let {
             seekBarInfo.callBacks?.let {
@@ -100,14 +98,13 @@ class ItemAdapter(private val itemList: List<Item>) :
             val mListPop = ListPopupWindow(spinnerInfo.context)
             mListPop.setBackgroundDrawable(spinnerInfo.context.getDrawable(R.drawable.rounded_corners_pop))
             mListPop.setAdapter(ArrayAdapter(spinnerInfo.context, android.R.layout.simple_list_item_1, spinnerInfo.array))
-            mListPop.verticalOffset = -dp2px(currentActivity,100F)
+            mListPop.verticalOffset = dp2px(currentActivity,-100F)
             mListPop.width = dp2px(currentActivity,150F)
             mListPop.height = ViewGroup.LayoutParams.WRAP_CONTENT
             mListPop.isModal = true
-
             mListPop.setOnItemClickListener { parent, _, position, _ ->
                 holder.spinnerSelect.text = parent.getItemAtPosition(position).toString()
-                spinnerInfo.callBacks?.let { it1 -> it1(parent.getItemAtPosition(position).toString()) }
+                spinnerInfo.callBacks?.let { it -> it(parent.getItemAtPosition(position).toString()) }
                 mListPop.dismiss()
             }
             holder.spinnerLayout.setOnClickListener {
@@ -122,14 +119,11 @@ class ItemAdapter(private val itemList: List<Item>) :
                 mListPop.anchorView = it
                 mListPop.show()
             }
-            spinnerInfo.select?.let { it1 -> holder.spinnerSelect.text = it1 }
+            spinnerInfo.select?.let { holder.spinnerSelect.text = it }
             holder.spinnerLayout.visibility = View.VISIBLE
         }
 
-        if (item.line) {
-            holder.settingLine.visibility = View.VISIBLE
-        }
-
+        if (item.line) holder.settingLine.visibility = View.VISIBLE
     }
 
     override fun getItemCount(): Int = itemList.size

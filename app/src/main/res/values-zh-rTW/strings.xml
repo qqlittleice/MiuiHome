@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="AdvancedFeature">進階設定</string>
-  <string name="AlwaysShowMIUIWidget">允許在安卓小部件中顯示MIUI小部件</string>
+  <string name="AlwaysShowMIUIWidget">在安卓小部件中顯示MIUI小部件</string>
   <string name="AlwaysShowStatusBarClock">時鐘常顯</string>
   <string name="AnimationLevel">手勢動畫速度</string>
   <string name="AppTextSize">後台應用圖標與標題間距</string>

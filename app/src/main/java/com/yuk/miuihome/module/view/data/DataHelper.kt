@@ -3,11 +3,13 @@ package com.yuk.miuihome.module.view.data
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.graphics.Color
+import android.widget.ImageView
 import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.R
 import com.yuk.miuihome.SettingDialog
 import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.module.BuildWithEverything
+import com.yuk.miuihome.module.ModifyBlurLevel
 import com.yuk.miuihome.module.view.SettingsDialog
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.LogUtil
@@ -17,10 +19,32 @@ import kotlin.system.exitProcess
 
 @SuppressLint("StaticFieldLeak")
 object DataHelper {
-    var isMenu = false
+    var thisItems = "Main"
+    var main = "Main"
+    const val menu = "Menu"
+    var backView: ImageView? = null
     lateinit var currentActivity: Activity
+
     private val editor by lazy { OwnSP.ownSP.edit() }
-    fun getItems(): ArrayList<Item> = if (isMenu) loadMenuItems() else loadItems()
+
+    fun setItems(string: String, goto: Boolean) {
+        backView?.setImageResource(if (string != main) R.drawable.abc_ic_ab_back_material else R.drawable.abc_ic_menu_overflow_material)
+        thisItems = string
+        val intent = currentActivity.intent
+        currentActivity.finish()
+        if (goto) currentActivity.overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left)
+        else currentActivity.overridePendingTransition(R.anim.in_from_left, R.anim.out_to_right)
+        currentActivity.startActivity(intent)
+    }
+
+    fun getItems(): ArrayList<Item> = when (thisItems) {
+        menu -> loadMenuItems()
+        else -> loadItems()
+    }
+
+    fun setBackButton() {
+        backView?.setImageResource(if (thisItems != main) R.drawable.abc_ic_ab_back_material else R.drawable.abc_ic_menu_overflow_material)
+    }
 
     private fun loadMenuItems(): ArrayList<Item> {
         val itemList = arrayListOf<Item>()
@@ -36,12 +60,27 @@ object DataHelper {
     private fun loadItems(): ArrayList<Item> {
         val itemList = arrayListOf<Item>()
         itemList.apply {
-            if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
+            if (OwnSP.ownSP.getBoolean("simpleAnimation", false))
                 add(Item(Text(resId = R.string.SimpleWarn, textColor = Color.parseColor("#ff0c0c"), textSize = 4.5f), null))
-            }
             if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                 add(Item(Text(resId = R.string.SmoothAnimation), Switch("smoothAnimation")))
-                add(Item(Text(resId = R.string.TaskViewBlurLevel, onClickListener = { SettingDialog().showModifyBlurLevel() }), null)) // TODO Fix Dialog
+                val blurLevel = arrayListOf(currentActivity.getString(R.string.CompleteBlur), currentActivity.getString(R.string.TestBlur), currentActivity.getString(R.string.BasicBlur), currentActivity.getString(R.string.SimpleBlur), currentActivity.getString(R.string.NoneBlur))
+                val blurLevel0 = arrayListOf(currentActivity.getString(R.string.CompleteBlur), currentActivity.getString(R.string.TestBlur), currentActivity.getString(R.string.SimpleBlur), currentActivity.getString(R.string.NoneBlur))
+                val dict0: HashMap<String, String> = hashMapOf()
+                dict0["CompleteBlur"] = currentActivity.getString(R.string.CompleteBlur)
+                dict0["TestBlur"] = currentActivity.getString(R.string.TestBlur)
+                dict0["BasicBlur"] = currentActivity.getString(R.string.BasicBlur)
+                dict0["SimpleBlur"] = currentActivity.getString(R.string.SimpleBlur)
+                dict0["NoneBlur"] = currentActivity.getString(R.string.NoneBlur)
+                dict0[currentActivity.getString(R.string.CompleteBlur)] = "CompleteBlur"
+                dict0[currentActivity.getString(R.string.TestBlur)] = "TestBlur"
+                dict0[currentActivity.getString(R.string.BasicBlur)] = "BasicBlur"
+                dict0[currentActivity.getString(R.string.SimpleBlur)] = "SimpleBlur"
+                dict0[currentActivity.getString(R.string.NoneBlur)] = "NoneBlur"
+                if (ModifyBlurLevel.checked)
+                    add(Item(Text(resId = R.string.TaskViewBlurLevel), spinner = Spinner(array = blurLevel, select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], context = currentActivity, callBacks = { editor.putString("blurLevel", dict0[it]) })))
+                else
+                    add(Item(Text(resId = R.string.TaskViewBlurLevel), spinner = Spinner(array = blurLevel0, select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], context = currentActivity, callBacks = { editor.putString("blurLevel", dict0[it]) })))
             }
             add(Item(Text(resId = R.string.AnimationLevel, onClickListener = { showAnimationLevelDialog() }), null, line = true))
 
@@ -51,9 +90,8 @@ object DataHelper {
             add(Item(Text(resId = R.string.HideStatusBar), Switch("hideStatusBar")))
             add(Item(Text(resId = R.string.MamlDownload), Switch("mamlDownload")))
             add(Item(Text(resId = R.string.UnlockIcons), Switch("unlockIcons")))
-            if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
+            if (!OwnSP.ownSP.getBoolean("simpleAnimation", false))
                 add(Item(Text(resId = R.string.WallpaperDarken), Switch("wallpaperDarken")))
-            }
             add(Item(Text(resId = R.string.CategoryHideAll), Switch("categoryHideAll")))
             add(Item(Text(resId = R.string.CategoryPagingHideEdit), Switch("CategoryPagingHideEdit")))
             add(Item(Text(resId = R.string.IconTitleFontSize, onClickListener = { showIconTitleFontSizeDialog() }), null))
@@ -61,12 +99,11 @@ object DataHelper {
             add(Item(Text(resId = R.string.RoundCorner, onClickListener = { showRoundCornerDialog() }), null))
             add(Item(Text(resId = R.string.AppTextSize, onClickListener = { showAppTextSizeDialog() }), null))
             add(Item(Text(resId = R.string.VerticalTaskViewOfAppCardSize, onClickListener = { showVerticalTaskViewOfAppCardSizeDialog() }), null))
-            add(Item(Text(resId = R.string.HorizontalTaskViewOfAppCardSize, onClickListener = { SettingDialog().showModifyHorizontal() }), null, line = true)) // TODO Fix Dialog
+            add(Item(Text(resId = R.string.HorizontalTaskViewOfAppCardSize, onClickListener = { SettingDialog().showModifyHorizontal() }), null, line = true)) // TODO Fix
 
             add(Item(Text(resId = R.string.Folder, isTitle = true), null))
-            if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
+            if (!OwnSP.ownSP.getBoolean("simpleAnimation", false))
                 add(Item(Text(resId = R.string.BlurWhenOpenFolder), Switch("blurWhenOpenFolder")))
-            }
             add(Item(Text(resId = R.string.CloseFolder), Switch("closeFolder")))
             add(Item(Text(resId = R.string.FolderWidth), Switch("folderWidth")))
             add(Item(Text(resId = R.string.FolderColumnsCount, onClickListener = { showFolderColumnsCountDialog() }), null, line = true))
@@ -96,18 +133,16 @@ object DataHelper {
             add(Item(Text(resId = R.string.SmallWindow), Switch("supportSmallWindow")))
             add(Item(Text(resId = R.string.LowEndAnim), Switch("lowEndAnim")))
             add(Item(Text(resId = R.string.LowEndDeviceUseMIUIWidgets), Switch("useMIUIWidgets")))
-            if (!OwnSP.ownSP.getBoolean("appReturnAmin", false)) {
+            if (!OwnSP.ownSP.getBoolean("appReturnAmin", false))
                 add(Item(Text(resId = R.string.BlurRadius, onClickListener = { showBlurRadiusDialog() }), null))
-            }
             add(Item(line = true))
 
             add(Item(Text(resId = R.string.OtherFeature, isTitle = true), null))
             add(Item(Text(resId = R.string.AlwaysShowStatusBarClock), Switch("clockGadget")))
             add(Item(Text(resId = R.string.DoubleTap), Switch("doubleTap")))
-            if (!OwnSP.ownSP.getBoolean("dockSettings", false) && (Config.AndroidSDK == 30)) {
+            if (!OwnSP.ownSP.getBoolean("dockSettings", false) && (Config.AndroidSDK == 30))
                 add(Item(Text(resId = R.string.SearchBarBlur), Switch("searchBarBlur")))
-            }
-            add(Item(Text(resId = R.string.DockSettings, onClickListener = { SettingDialog().showDockDialog() }), null)) // TODO Fix Dialog
+            add(Item(Text(resId = R.string.DockSettings, onClickListener = { SettingDialog().showDockDialog() }), null)) // TODO Fix
             add(Item(Text(resId = R.string.EveryThingBuild, onClickListener = { BuildWithEverything().init() }), null, line = true))
 
             add(Item(Text(resId = R.string.BrokenFeature, isTitle = true), null))
@@ -156,7 +191,7 @@ object DataHelper {
             setMessage(XposedInit.moduleRes.getString(R.string.Tips2))
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
                 OwnSP.clear()
-                OwnSP.set("animationLevel", 1.25f)
+                OwnSP.set("animationLevel", 1.0f)
                 OwnSP.set("dockRadius", 2.5f)
                 OwnSP.set("dockHeight", 7.9f)
                 OwnSP.set("dockSide", 3.0f)
@@ -164,9 +199,9 @@ object DataHelper {
                 OwnSP.set("dockIconBottom", 3.5f)
                 OwnSP.set("dockMarginTop", 0.6f)
                 OwnSP.set("dockMarginBottom", 11.0f)
-                OwnSP.set("folderColumns", 3f)
                 OwnSP.set("task_horizontal1", 1.0f)
                 OwnSP.set("task_horizontal2", 1.0f)
+                OwnSP.set("folderColumns", 3)
                 dismiss()
                 thread {
                     LogUtil.toast(XposedInit.moduleRes.getString(R.string.Reboot2))
@@ -185,7 +220,7 @@ object DataHelper {
             setMessage(XposedInit.moduleRes.getString(R.string.Tips))
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
                 OwnSP.clear()
-                OwnSP.set("animationLevel", 1.25f)
+                OwnSP.set("animationLevel", 1.0f)
                 OwnSP.set("dockRadius", 2.5f)
                 OwnSP.set("dockHeight", 7.9f)
                 OwnSP.set("dockSide", 3.0f)
@@ -193,9 +228,9 @@ object DataHelper {
                 OwnSP.set("dockIconBottom", 3.5f)
                 OwnSP.set("dockMarginTop", 0.6f)
                 OwnSP.set("dockMarginBottom", 11.0f)
-                OwnSP.set("folderColumns", 3f)
                 OwnSP.set("task_horizontal1", 1.0f)
                 OwnSP.set("task_horizontal2", 1.0f)
+                OwnSP.set("folderColumns", 3)
                 dismiss()
                 thread {
                     LogUtil.toast(XposedInit.moduleRes.getString(R.string.Reboot2))

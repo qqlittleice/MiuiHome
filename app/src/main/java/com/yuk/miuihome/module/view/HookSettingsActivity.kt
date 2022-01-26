@@ -18,26 +18,30 @@ class HookSettingsActivity: TransferActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        itemList.addAll(DataHelper.getItems())
         setContentView(R.layout.settings_activity)
         DataHelper.currentActivity = this
+        itemList.addAll(DataHelper.getItems())
         initMenu()
         recyclerView = findViewById(R.id.settings_recycler)
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
         adapter = ItemAdapter(itemList)
-
         recyclerView.adapter = adapter
-
     }
 
     private fun initMenu() {
         menu = findViewById(R.id.settings_menu)
+        DataHelper.backView = menu
         menu.setOnClickListener {
-            DataHelper.isMenu = !DataHelper.isMenu
-            recreate()
+            if (DataHelper.thisItems == DataHelper.main) DataHelper.setItems(DataHelper.menu,true)
+            else DataHelper.setItems(DataHelper.main,false)
         }
-        menu.setImageResource(if (DataHelper.isMenu) R.drawable.abc_ic_ab_back_material else R.drawable.abc_ic_menu_overflow_material)
+        DataHelper.setBackButton()
+    }
+
+    override fun onBackPressed() {
+        if (DataHelper.thisItems != DataHelper.main) DataHelper.setItems(DataHelper.main,false)
+        else super.onBackPressed()
     }
 
 }

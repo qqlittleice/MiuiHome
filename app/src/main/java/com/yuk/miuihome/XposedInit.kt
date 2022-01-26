@@ -93,7 +93,6 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                 setObjectField("mTitle", moduleRes.getString(R.string.ModuleSettings))
                 setObjectField("mClickListener", object : View.OnClickListener {
                     override fun onClick(v: View) {
-                        DataHelper.isMenu = false
                         val intent = Intent(HomeContext.context, HookSettingsActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
                         HomeContext.context.startActivity(intent)
