@@ -14,10 +14,12 @@ import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
 import com.yuk.miuihome.module.*
 import com.yuk.miuihome.module.view.HookSettingsActivity
+import com.yuk.miuihome.module.view.SettingsDialog
 import com.yuk.miuihome.module.view.data.DataHelper
 import com.yuk.miuihome.module.view.utils.ActivityHelper
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.HomeContext
+import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
