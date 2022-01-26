@@ -95,5 +95,5 @@
   <string name="BlurRadius">模糊半徑</string>
   <string name="BasicBlur">基礎模糊</string>
   <string name="CustomTitleColor">應用圖標標題顔色</string>
-  <string name="Tips4">支持十六進制顏色值，例如#FFFFFF為白</string>
+  <string name="Tips4">支持十六進制顏色值，例如#FFFFFF為白，#000000為黑</string>
 </resources>

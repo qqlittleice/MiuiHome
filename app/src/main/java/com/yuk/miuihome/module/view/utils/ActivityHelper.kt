@@ -25,6 +25,7 @@ import java.lang.reflect.*
 
 object ActivityHelper {
 
+    @SuppressLint("PrivateApi", "DiscouragedPrivateApi")
     fun initSubActivity() {
         try {
             val cActivityThread = Class.forName("android.app.ActivityThread")
