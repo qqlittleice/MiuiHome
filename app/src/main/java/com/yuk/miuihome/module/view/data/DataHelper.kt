@@ -11,9 +11,11 @@ import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.module.BuildWithEverything
 import com.yuk.miuihome.module.ModifyBlurLevel
 import com.yuk.miuihome.module.view.SettingsDialog
+import com.yuk.miuihome.module.view.base.*
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.ktx.dp2px
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
@@ -152,6 +154,15 @@ object DataHelper {
             add(Item(Text(resId = R.string.ModuleFeature, isTitle = true), null))
             add(Item(Text(resId = R.string.CleanModuleSettings, onClickListener = { showCleanModuleSettingsDialog() }), null))
             add(Item(Text(resId = R.string.Reboot, onClickListener = { showRestartDialog() }), null))
+
+            add(Item(test = arrayListOf(
+                LineV(),
+                TitleTextV("Test Title"),
+                TextWithSwitchV(TextV("Testing"), SwitchV("test")),
+                TextWithSwitchV(TextV("Testing2"), SwitchV("test2")),
+                TextV("Test SeekBar", padding = Padding(0, dp2px(currentActivity, 15f), 0, 0)),
+                SeekBarWithTextV("testSeekBar", 0, 100, 1, 0)
+            )))
         }
         return itemList
     }

@@ -9,8 +9,10 @@ import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.yuk.miuihome.R
 import com.yuk.miuihome.module.view.SettingsSwitch
+import com.yuk.miuihome.module.view.base.BaseView
 import com.yuk.miuihome.module.view.data.DataHelper.currentActivity
 import com.yuk.miuihome.module.view.data.Item
+import com.yuk.miuihome.module.view.utils.ViewBuilder
 import com.yuk.miuihome.utils.OwnSP
 
 class ItemAdapter(private val itemList: List<Item>) :
@@ -19,6 +21,7 @@ class ItemAdapter(private val itemList: List<Item>) :
     private val editor by lazy { OwnSP.ownSP.edit() }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val settingsBaseLinearLayout: LinearLayout = view.findViewById(R.id.settings_linear_base)
         val settingsText: TextView = view.findViewById(R.id.settings_text)
         val settingSwitch: SettingsSwitch = view.findViewById(R.id.settings_switch)
         val settingsCustomView: LinearLayout = view.findViewById(R.id.settings_custom_view)
@@ -47,6 +50,7 @@ class ItemAdapter(private val itemList: List<Item>) :
         val seekBarInfo = item.seekBar
         val spinnerInfo = item.spinner
         val customItems = item.customItems
+        val testItems = item.test
         val context = holder.settingsText.context
 
         textInfo?.let {
@@ -73,7 +77,13 @@ class ItemAdapter(private val itemList: List<Item>) :
         }
 
         for (view: View in customItems) holder.settingsCustomView.addView(view)
-
+        for (view: BaseView in testItems) {
+            if (view.outside) {
+                ViewBuilder.build(context, view)?.let { holder.settingsBaseLinearLayout.addView(it) }
+            } else {
+                ViewBuilder.build(context, view)?.let { holder.settingsCustomView.addView(it) }
+            }
+        }
 
         seekBarInfo?.let {
             seekBarInfo.callBacks?.let {
