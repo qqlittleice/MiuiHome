@@ -5,6 +5,8 @@
   android:id="@+id/settings_linear_base"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
+  android:paddingTop="12dp"
+  android:paddingBottom="12dp"
   android:orientation="vertical">
 
   <LinearLayout
@@ -22,8 +24,6 @@
       android:layout_height="wrap_content"
       android:layout_weight="1"
       android:layout_gravity="center_vertical"
-      android:paddingTop="15dp"
-      android:paddingBottom="15dp"
       android:paddingStart="0dp"
       android:paddingEnd="5dp"
       android:text=""
@@ -43,7 +43,6 @@
       android:id="@+id/settings_select_layout"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:paddingTop="1dp"
       android:layout_weight="1"
       android:visibility="gone" >
 
@@ -51,19 +50,17 @@
         android:id="@+id/settings_select"
         android:textStyle="bold"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center_vertical|right"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
         android:text=""
         android:textSize="14sp"
-        tools:ignore="NestedWeights,RtlHardcoded,SmallSp"/>
+        tools:ignore="NestedWeights,RtlHardcoded,SmallSp" />
 
       <ImageView
         android:layout_width="28dp"
         android:layout_height="28dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="1dp"
         android:background="@drawable/ic_up_down" />
 
     </LinearLayout>
@@ -84,7 +81,6 @@
     android:id="@+id/settings_custom_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="15dp"
     android:paddingStart="25dp"
     android:paddingEnd="25dp"
     android:orientation="vertical"/>
@@ -105,10 +101,8 @@
     android:id="@+id/settings_line"
     android:layout_width="wrap_content"
     android:layout_height="0.8dp"
-    android:layout_marginTop="18dp"
     android:layout_marginStart="25dp"
     android:layout_marginEnd="25dp"
-    android:layout_marginBottom="18dp"
     android:background="@color/line"
     android:visibility="gone" />
 

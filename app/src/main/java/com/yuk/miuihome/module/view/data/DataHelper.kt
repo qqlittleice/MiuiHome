@@ -16,7 +16,6 @@ import com.yuk.miuihome.module.view.base.*
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.dp2px
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
@@ -52,10 +51,12 @@ object DataHelper {
     private fun loadMenuItems(): ArrayList<Item> {
         val itemList = arrayListOf<Item>()
         itemList.apply {
-            add(Item(Text("Launcher Version", isTitle = true), null, line = true))
-            add(Item(Text(XposedInit().checkVersionName()), null))
-            add(Item(Text("Module Version", isTitle = true), null, line = true))
-            add(Item(Text(showMiuiVersion()+ "/"+"${BuildConfig.VERSION_NAME}(${BuildConfig.VERSION_CODE})-${BuildConfig.BUILD_TYPE}"), null))
+            add(Item(test = arrayListOf(TitleTextV("Launcher Version"))))
+            add(Item(test = arrayListOf(LineV())))
+            add(Item(test = arrayListOf(TextV(XposedInit().checkVersionName()))))
+            add(Item(test = arrayListOf(TitleTextV("Module Version"))))
+            add(Item(test = arrayListOf(LineV())))
+            add(Item(test = arrayListOf(TextV(showMiuiVersion()+ "/"+"${BuildConfig.VERSION_NAME}(${BuildConfig.VERSION_CODE})-${BuildConfig.BUILD_TYPE}"))))
         }
         return itemList
     }
@@ -63,10 +64,10 @@ object DataHelper {
     private fun loadItems(): ArrayList<Item> {
         val itemList = arrayListOf<Item>()
         itemList.apply {
-            if (OwnSP.ownSP.getBoolean("simpleAnimation", false))
-                add(Item(Text(resId = R.string.SimpleWarn, textColor = Color.parseColor("#ff0c0c"), textSize = 4.5f), null))
-            if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
-                add(Item(Text(resId = R.string.SmoothAnimation), Switch("smoothAnimation")))
+            if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
+                add(Item(test = arrayListOf(TextV(resId = R.string.SimpleWarn, textColor = Color.parseColor("#ff0c0c")))))
+            } else {
+                add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.SmoothAnimation), SwitchV("smoothAnimation")))))
                 val blurLevel = arrayListOf(currentActivity.getString(R.string.CompleteBlur), currentActivity.getString(R.string.TestBlur), currentActivity.getString(R.string.BasicBlur), currentActivity.getString(R.string.SimpleBlur), currentActivity.getString(R.string.NoneBlur))
                 val blurLevel0 = arrayListOf(currentActivity.getString(R.string.CompleteBlur), currentActivity.getString(R.string.TestBlur), currentActivity.getString(R.string.SimpleBlur), currentActivity.getString(R.string.NoneBlur))
                 val dict0: HashMap<String, String> = hashMapOf()
@@ -85,92 +86,91 @@ object DataHelper {
                 else
                     add(Item(Text(resId = R.string.TaskViewBlurLevel), spinner = Spinner(array = blurLevel0, select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], context = currentActivity, callBacks = { editor.putString("blurLevel", dict0[it]) })))
             }
-            add(Item(Text(resId = R.string.AnimationLevel, onClickListener = { showAnimationLevelDialog() }), null, line = true))
+            add(Item(test = arrayListOf(TextV(resId = R.string.AnimationLevel, onClickListener = { showAnimationLevelDialog() }))))
+            add(Item(test = arrayListOf(LineV())))
 
-            add(Item(Text(resId = R.string.AdvancedFeature, isTitle = true), null))
-            add(Item(Text(resId = R.string.UnlockGrids), Switch("unlockGrids")))
-            add(Item(Text(resId = R.string.ShowDockIconTitles), Switch("showDockIconTitles")))
-            add(Item(Text(resId = R.string.HideStatusBar), Switch("hideStatusBar")))
-            add(Item(Text(resId = R.string.MamlDownload), Switch("mamlDownload")))
-            add(Item(Text(resId = R.string.UnlockIcons), Switch("unlockIcons")))
-            if (!OwnSP.ownSP.getBoolean("simpleAnimation", false))
-                add(Item(Text(resId = R.string.WallpaperDarken), Switch("wallpaperDarken")))
-            add(Item(Text(resId = R.string.CategoryHideAll), Switch("categoryHideAll")))
-            add(Item(Text(resId = R.string.CategoryPagingHideEdit), Switch("CategoryPagingHideEdit")))
-            add(Item(Text(resId = R.string.IconTitleFontSize, onClickListener = { showIconTitleFontSizeDialog() }), null))
-            add(Item(Text(resId = R.string.CustomTitleColor, onClickListener = { showCustomTitleColorDialog() }), null))
-            add(Item(Text(resId = R.string.RoundCorner, onClickListener = { showRoundCornerDialog() }), null))
-            add(Item(Text(resId = R.string.AppTextSize, onClickListener = { showAppTextSizeDialog() }), null))
-            add(Item(Text(resId = R.string.VerticalTaskViewOfAppCardSize, onClickListener = { showVerticalTaskViewOfAppCardSizeDialog() }), null))
-            add(Item(Text(resId = R.string.HorizontalTaskViewOfAppCardSize, onClickListener = { SettingDialog().showModifyHorizontal() }), null, line = true)) // TODO Fix
+            add(Item(test = arrayListOf(TitleTextV(resId = R.string.AdvancedFeature))))
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.UnlockGrids), SwitchV("unlockGrids")))))
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.ShowDockIconTitles), SwitchV("showDockIconTitles")))))
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideStatusBar), SwitchV("hideStatusBar")))))
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.MamlDownload), SwitchV("mamlDownload")))))
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.UnlockIcons), SwitchV("unlockIcons")))))
+            if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
+                add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.WallpaperDarken), SwitchV("wallpaperDarken")))))
+            }
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.CategoryHideAll), SwitchV("categoryHideAll")))))
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.CategoryPagingHideEdit), SwitchV("CategoryPagingHideEdit")))))
+            add(Item(test = arrayListOf(TextV(resId = R.string.IconTitleFontSize, onClickListener = { showIconTitleFontSizeDialog() }))))
+            add(Item(test = arrayListOf(TextV(resId = R.string.CustomTitleColor, onClickListener = { showCustomTitleColorDialog() }))))
+            add(Item(test = arrayListOf(TextV(resId = R.string.RoundCorner, onClickListener = { showRoundCornerDialog() }))))
+            add(Item(test = arrayListOf(TextV(resId = R.string.AppTextSize, onClickListener = { showAppTextSizeDialog() }))))
+            add(Item(test = arrayListOf(TextV(resId = R.string.VerticalTaskViewOfAppCardSize, onClickListener = { showVerticalTaskViewOfAppCardSizeDialog() }))))
+            add(Item(test = arrayListOf(TextV(resId = R.string.HorizontalTaskViewOfAppCardSize, onClickListener = { SettingDialog().showModifyHorizontal() }))))
+            add(Item(test = arrayListOf(LineV())))
 
-            add(Item(Text(resId = R.string.Folder, isTitle = true), null))
-            if (!OwnSP.ownSP.getBoolean("simpleAnimation", false))
-                add(Item(Text(resId = R.string.BlurWhenOpenFolder), Switch("blurWhenOpenFolder")))
-            add(Item(Text(resId = R.string.CloseFolder), Switch("closeFolder")))
-            add(Item(Text(resId = R.string.FolderWidth), Switch("folderWidth")))
-            add(Item(Text(resId = R.string.FolderColumnsCount, onClickListener = { showFolderColumnsCountDialog() }), null, line = true))
+            add(Item(test = arrayListOf(TitleTextV(resId = R.string.Folder))))
+            if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
+                add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.BlurWhenOpenFolder), SwitchV("blurWhenOpenFolder")))))
+            }
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.CloseFolder), SwitchV("closeFolder")))))
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.FolderWidth), SwitchV("folderWidth")))))
+            add(Item(test = arrayListOf(TextV(resId = R.string.FolderColumnsCount, onClickListener = { showFolderColumnsCountDialog() }))))
+            add(Item(test = arrayListOf(LineV())))
 
             if (XposedInit().checkWidgetLauncher()) {
-                add(Item(Text(resId = R.string.Widget, isTitle = true), null))
-                add(Item(Text(resId = R.string.HideWidgetTitles), Switch("hideWidgetTitles")))
-                add(Item(Text(resId = R.string.WidgetToMinus), Switch("widgetToMinus")))
-                add(Item(Text(resId = R.string.AlwaysShowMIUIWidget), Switch("alwaysShowMIUIWidget"), line = true))
+                add(Item(test = arrayListOf(TitleTextV(resId = R.string.Widget))))
+                add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideWidgetTitles), SwitchV("hideWidgetTitles")))))
+                add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.WidgetToMinus), SwitchV("widgetToMinus")))))
+                add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.AlwaysShowMIUIWidget), SwitchV("alwaysShowMIUIWidget")))))
+                add(Item(test = arrayListOf(LineV())))
             }
 
-            if (XposedInit.hasHookPackageResources) {
-                add(Item(Text(resId = R.string.ResourceHooks, isTitle = true), null))
-                add(Item(Text(resId = R.string.HideTaskViewAppIcon), Switch("buttonPadding")))
-                add(Item(Text(resId = R.string.HideTaskViewCleanUpIcon), Switch("cleanUp")))
-                add(Item(Text(resId = R.string.HideTaskViewSmallWindowIcon), Switch("smallWindow")))
-                add(Item(Text(resId = R.string.TaskViewAppCardTextSize, onClickListener = { showTaskViewAppCardTextSizeDialog() }), null))
-                add(Item(Text(resId = R.string.CustomRecentText, onClickListener = { showCustomRecentTextDialog() }), null, line = true))
+            if (XposedInit().checkWidgetLauncher()) {
+                add(Item(test = arrayListOf(TitleTextV(resId = R.string.ResourceHooks))))
+                add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideTaskViewAppIcon), SwitchV("buttonPadding")))))
+                add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideTaskViewCleanUpIcon), SwitchV("cleanUp")))))
+                add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideTaskViewSmallWindowIcon), SwitchV("smallWindow")))))
+                add(Item(test = arrayListOf(TextV(resId = R.string.TaskViewAppCardTextSize, onClickListener = { showTaskViewAppCardTextSizeDialog() }))))
+                add(Item(test = arrayListOf(TextV(resId = R.string.CustomRecentText, onClickListener = { showCustomRecentTextDialog() }))))
+                add(Item(test = arrayListOf(LineV())))
             }
 
-            add(Item(Text(resId = R.string.TestFeature, isTitle = true), null))
-            add(Item(Text(resId = R.string.SimpleAnimation), Switch("simpleAnimation", onCheckedChangeListener = { _, _ -> currentActivity.recreate() })))
-            add(Item(Text(resId = R.string.AppReturnAmin), Switch("appReturnAmin", onCheckedChangeListener = { _, _ -> currentActivity.recreate() })))
-            add(Item(Text(resId = R.string.InfiniteScroll), Switch("infiniteScroll")))
-            add(Item(Text(resId = R.string.RecommendServer), Switch("recommendServer")))
-            add(Item(Text(resId = R.string.HideSeekPoints), Switch("hideSeekPoints")))
-            add(Item(Text(resId = R.string.SmallWindow), Switch("supportSmallWindow")))
-            add(Item(Text(resId = R.string.LowEndAnim), Switch("lowEndAnim")))
-            add(Item(Text(resId = R.string.LowEndDeviceUseMIUIWidgets), Switch("useMIUIWidgets")))
+            add(Item(test = arrayListOf(TitleTextV(resId = R.string.TestFeature))))
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.SimpleAnimation), SwitchV("simpleAnimation", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() }))))) //To Do Fix
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.AppReturnAmin), SwitchV("appReturnAmin", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.InfiniteScroll), SwitchV("infiniteScroll")))))
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.RecommendServer), SwitchV("recommendServer")))))
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideSeekPoints), SwitchV("hideSeekPoints")))))
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.SmallWindow), SwitchV("supportSmallWindow")))))
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.LowEndAnim), SwitchV("lowEndAnim")))))
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.LowEndDeviceUseMIUIWidgets), SwitchV("useMIUIWidgets")))))
             if (!OwnSP.ownSP.getBoolean("appReturnAmin", false))
-                add(Item(Text(resId = R.string.BlurRadius, onClickListener = { showBlurRadiusDialog() }), null))
-            add(Item(line = true))
+                add(Item(test = arrayListOf(TextV(resId = R.string.BlurRadius, onClickListener = { showBlurRadiusDialog() }))))
+            add(Item(test = arrayListOf(LineV())))
 
-            add(Item(Text(resId = R.string.OtherFeature, isTitle = true), null))
-            add(Item(Text(resId = R.string.AlwaysShowStatusBarClock), Switch("clockGadget")))
-            add(Item(Text(resId = R.string.DoubleTap), Switch("doubleTap")))
+            add(Item(test = arrayListOf(TitleTextV(resId = R.string.OtherFeature))))
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.AlwaysShowStatusBarClock), SwitchV("clockGadget")))))
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.DoubleTap), SwitchV("doubleTap")))))
             if (!OwnSP.ownSP.getBoolean("dockSettings", false) && (Config.AndroidSDK == 30))
-                add(Item(Text(resId = R.string.SearchBarBlur), Switch("searchBarBlur")))
-            add(Item(Text(resId = R.string.DockSettings, onClickListener = { SettingDialog().showDockDialog() }), null)) // TODO Fix
-            add(Item(Text(resId = R.string.EveryThingBuild, onClickListener = { BuildWithEverything().init() }), null, line = true))
+                add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.SearchBarBlur), SwitchV("searchBarBlur")))))
+            add(Item(test = arrayListOf(TextV(resId = R.string.DockSettings, onClickListener = { SettingDialog().showDockDialog() }))))  // TODO Fix
+            add(Item(test = arrayListOf(TextV(resId = R.string.EveryThingBuild, onClickListener = { BuildWithEverything().init() }))))
+            add(Item(test = arrayListOf(LineV())))
 
-            add(Item(Text(resId = R.string.BrokenFeature, isTitle = true), null))
-            add(Item(Text(resId = R.string.RealTaskViewHorizontal), Switch("horizontal")))
-            add(Item(Text(resId = R.string.EnableIconShadow), Switch("isEnableIconShadow"), line = true))
+            add(Item(test = arrayListOf(TitleTextV(resId = R.string.BrokenFeature))))
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.RealTaskViewHorizontal), SwitchV("horizontal")))))
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.EnableIconShadow), SwitchV("isEnableIconShadow")))))
+            add(Item(test = arrayListOf(LineV())))
 
-            add(Item(Text(resId = R.string.ModuleFeature, isTitle = true), null))
-            add(Item(Text(resId = R.string.CleanModuleSettings, onClickListener = { showCleanModuleSettingsDialog() }), null))
-            add(Item(Text(resId = R.string.Reboot, onClickListener = { showRestartDialog() }), null))
-
-//            add(Item(test = arrayListOf(
-//                LineV(),
-//                TitleTextV("Test Title"),
-//                TextWithSwitchV(TextV("Testing"), SwitchV("test")),
-//                TextWithSwitchV(TextV("Testing2"), SwitchV("test2")),
-//                TextV("Test SeekBar", padding = Padding(0, dp2px(currentActivity, 15f), 0, 0)),
-//                SeekBarWithTextV("testSeekBar", 0, 100, 1, 0)
-//            )))
+            add(Item(test = arrayListOf(TitleTextV(resId = R.string.ModuleFeature))))
+            add(Item(test = arrayListOf(TextV(resId = R.string.CleanModuleSettings, onClickListener = { showCleanModuleSettingsDialog() }))))
+            add(Item(test = arrayListOf(TextV(resId = R.string.Reboot, onClickListener = { showRestartDialog() }))))
 
             add(Item(test = arrayListOf(LineV())))
             add(Item(test = arrayListOf(TitleTextV("TestTitle"))))
             add(Item(test = arrayListOf(TextV("Test Function", onClickListener = { Toast.makeText(currentActivity, "Test", Toast.LENGTH_SHORT).show() }))))
-            add(Item(test = arrayListOf(TextWithSwitchV(TextV("Testing"), SwitchV("test")))))
             add(Item(test = arrayListOf(SeekBarWithTextV("Test Seekbar", "testSeekBar", 0, 100, 1, 0))))
-
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV("Testing"), SwitchV("test")))))
 
         }
         return itemList
