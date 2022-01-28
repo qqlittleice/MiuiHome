@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.graphics.Color
 import android.widget.ImageView
+import android.widget.Toast
 import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.R
 import com.yuk.miuihome.SettingDialog
@@ -166,6 +167,7 @@ object DataHelper {
 
             add(Item(test = arrayListOf(LineV())))
             add(Item(test = arrayListOf(TitleTextV("TestTitle"))))
+            add(Item(test = arrayListOf(TextV("Test Function", onClickListener = { Toast.makeText(currentActivity, "Test", Toast.LENGTH_SHORT).show() }))))
             add(Item(test = arrayListOf(TextWithSwitchV(TextV("Testing"), SwitchV("test")))))
             add(Item(test = arrayListOf(SeekBarWithTextV("Test Seekbar", "testSeekBar", 0, 100, 1, 0))))
 
