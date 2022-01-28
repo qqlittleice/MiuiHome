@@ -155,14 +155,21 @@ object DataHelper {
             add(Item(Text(resId = R.string.CleanModuleSettings, onClickListener = { showCleanModuleSettingsDialog() }), null))
             add(Item(Text(resId = R.string.Reboot, onClickListener = { showRestartDialog() }), null))
 
-            add(Item(test = arrayListOf(
-                LineV(),
-                TitleTextV("Test Title"),
-                TextWithSwitchV(TextV("Testing"), SwitchV("test")),
-                TextWithSwitchV(TextV("Testing2"), SwitchV("test2")),
-                TextV("Test SeekBar", padding = Padding(0, dp2px(currentActivity, 15f), 0, 0)),
-                SeekBarWithTextV("testSeekBar", 0, 100, 1, 0)
-            )))
+//            add(Item(test = arrayListOf(
+//                LineV(),
+//                TitleTextV("Test Title"),
+//                TextWithSwitchV(TextV("Testing"), SwitchV("test")),
+//                TextWithSwitchV(TextV("Testing2"), SwitchV("test2")),
+//                TextV("Test SeekBar", padding = Padding(0, dp2px(currentActivity, 15f), 0, 0)),
+//                SeekBarWithTextV("testSeekBar", 0, 100, 1, 0)
+//            )))
+
+            add(Item(test = arrayListOf(LineV())))
+            add(Item(test = arrayListOf(TitleTextV("TestTitle"))))
+            add(Item(test = arrayListOf(TextWithSwitchV(TextV("Testing"), SwitchV("test")))))
+            add(Item(test = arrayListOf(SeekBarWithTextV("Test Seekbar", "testSeekBar", 0, 100, 1, 0))))
+
+
         }
         return itemList
     }

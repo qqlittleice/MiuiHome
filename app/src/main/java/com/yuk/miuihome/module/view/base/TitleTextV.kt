@@ -13,9 +13,7 @@ class TitleTextV(val text: String? = null, val resId: Int? = null, val onClickLi
     }
 
     override fun create(context: Context): View {
-        return TextV(text, resId, sp2px(context,4.5f), onClickListener = onClickListener).create(context).also {
-            (it as TextView).setTextColor(Color.parseColor("#9399b3"))
-        }
+        return TextV(text, resId, sp2px(context,4.5f), Color.parseColor("#9399b3"), onClickListener = onClickListener).create(context)
     }
 
 }

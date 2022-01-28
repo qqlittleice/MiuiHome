@@ -7,17 +7,11 @@ import com.yuk.miuihome.module.view.data.Padding
 import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.sp2px
 
-class TextV(val text: String? = null, val resId: Int? = null, val textSize: Float? = null, val padding: Padding? = null, val onClickListener: View.OnClickListener? = null): BaseView() {
+class TextV(val text: String? = null, val resId: Int? = null, val textSize: Float? = null, val textColor: Int? = null, val padding: Padding? = null, val onClickListener: View.OnClickListener? = null): BaseView() {
 
-    private var myView: View? = null
+    override fun getType(): BaseView = this
 
-    fun getMyView(context: Context): View = myView ?: innerCreate(context)
-
-    override fun getType(): BaseView {
-        return this
-    }
-
-    private fun innerCreate(context: Context): View {
+    override fun create(context: Context): View {
         return TextView(context).also { view ->
             text?.let { view.text = it }
             resId?.let { view.setText(it) }
@@ -26,14 +20,10 @@ class TextV(val text: String? = null, val resId: Int? = null, val textSize: Floa
             } else {
                 view.textSize = textSize
             }
+            textColor?.let { view.setTextColor(it) }
             view.setPadding(0, dp2px(context, 15f), dp2px(context, 5f), dp2px(context, 15f))
             padding?.let { view.setPadding(it.left, it.top, it.right, it.bottom) }
             onClickListener?.let { view.setOnClickListener(it) }
-            myView = view
         }
-    }
-
-    override fun create(context: Context): View {
-        return getMyView(context)
     }
 }

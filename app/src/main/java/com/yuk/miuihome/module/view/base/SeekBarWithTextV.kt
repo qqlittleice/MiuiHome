@@ -11,7 +11,7 @@ import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.sp2px
 
-class SeekBarWithTextV(val key: String = "", val min: Int, val max: Int, val divide: Int = 1, val defaultProgress: Int, val callBacks: ((Int, TextView) -> Unit)? = null): BaseView() {
+class SeekBarWithTextV(val title: String, val key: String, val min: Int, val max: Int, val divide: Int = 1, val defaultProgress: Int, val callBacks: ((Int, TextView) -> Unit)? = null): BaseView() {
 
     override var outside = true
 
@@ -55,6 +55,7 @@ class SeekBarWithTextV(val key: String = "", val min: Int, val max: Int, val div
         return LinearContainerV(
             LinearContainerV.VERTICAL,
             arrayOf(
+                LayoutPair(TextV(title).create(context).also { it.setPadding(dp2px(context, 25f), 0, dp2px(context, 25f), dp2px(context, 10f)) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)),
                 LayoutPair(seekBar, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)),
                 LayoutPair(LinearContainerV(LinearContainerV.HORIZONTAL, arrayOf(LayoutPair(minText, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)), LayoutPair(mutableText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_CENTER }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)), LayoutPair(maxText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_VIEW_END }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)))).create(context).also { it.setPadding(dp2px(context, 25f), 0, dp2px(context, 25f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT))
             )
