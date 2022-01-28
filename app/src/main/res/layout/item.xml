@@ -5,8 +5,8 @@
   android:id="@+id/settings_linear_base"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
-  android:paddingTop="12dp"
-  android:paddingBottom="12dp"
+  android:paddingTop="13dp"
+  android:paddingBottom="13dp"
   android:orientation="vertical">
 
   <LinearLayout

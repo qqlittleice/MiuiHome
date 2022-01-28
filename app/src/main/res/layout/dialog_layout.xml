@@ -38,9 +38,9 @@
         android:textSize="15sp"
         android:layout_marginLeft="17dp"
         android:layout_marginRight="17dp"
+        android:layout_marginBottom="13dp"
         android:textColor="@color/black"
         android:gravity="center"
-        android:layout_marginTop="13dp"
         android:visibility="gone" />
 
       <EditText
@@ -50,10 +50,11 @@
         android:layout_marginLeft="17dp"
         android:layout_marginRight="17dp"
         android:layout_marginTop="10dp"
-        android:padding="8dp"
+        android:paddingStart="18dp"
         android:textSize="16sp"
         android:background="@drawable/edit_view_background"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:ignore="RtlSymmetry" />
 
     </LinearLayout>
 
