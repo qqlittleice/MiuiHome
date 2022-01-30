@@ -158,7 +158,7 @@ object DataHelper {
                 add(Item(test = arrayListOf(LineV())))
             }
 
-            if (XposedInit().checkWidgetLauncher()) {
+            if (XposedInit.hasHookPackageResources) {
                 add(Item(test = arrayListOf(TitleTextV(resId = R.string.ResourceHooks))))
                 add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideTaskViewAppIcon), SwitchV("buttonPadding")))))
                 add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideTaskViewCleanUpIcon), SwitchV("cleanUp")))))
