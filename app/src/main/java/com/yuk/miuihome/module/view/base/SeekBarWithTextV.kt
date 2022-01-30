@@ -11,7 +11,7 @@ import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.sp2px
 
-class SeekBarWithTextV(val title: String, val key: String, val min: Int, val max: Int, val divide: Int = 1, val defaultProgress: Int, val callBacks: ((Int, TextView) -> Unit)? = null): BaseView() {
+class SeekBarWithTextV(val title: String? = null, private val resId: Int? = null, val key: String, private val min: Int, private val max: Int, val divide: Int = 1, private val defaultProgress: Int, val callBacks: ((Int, TextView) -> Unit)? = null): BaseView() {
 
     override var outside = true
 
@@ -32,8 +32,8 @@ class SeekBarWithTextV(val title: String, val key: String, val min: Int, val max
             view.max = max
             OwnSP.ownSP.getFloat(key, -2333f).let {
                 if (it != -2333f) {
-                    view.progress = it.toInt()
-                    (mutableText as TextView).text = it.toInt().toString()
+                    view.progress = (it * divide).toInt()
+                    (mutableText as TextView).text = view.progress.toString()
                 } else {
                     view.progress = defaultProgress
                     (mutableText as TextView).text = defaultProgress.toString()
@@ -52,13 +52,24 @@ class SeekBarWithTextV(val title: String, val key: String, val min: Int, val max
                 override fun onStopTrackingTouch(p0: SeekBar?) {}
             })
         }
-        return LinearContainerV(
-            LinearContainerV.VERTICAL,
-            arrayOf(
-                LayoutPair(TextV(title).create(context).also { it.setPadding(dp2px(context, 25f), 0, dp2px(context, 25f), dp2px(context, 10f)) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)),
-                LayoutPair(seekBar.also { it.setPadding(dp2px(context, 25f), 0, dp2px(context, 25f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)),
-                LayoutPair(LinearContainerV(LinearContainerV.HORIZONTAL, arrayOf(LayoutPair(minText, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)), LayoutPair(mutableText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_CENTER }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)), LayoutPair(maxText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_VIEW_END }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)))).create(context).also { it.setPadding(dp2px(context, 25f), dp2px(context, 5f), dp2px(context, 25f), dp2px(context, 5f)) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT))
-            )
-        ).create(context)
+        if (title != null) {
+            return LinearContainerV(
+                LinearContainerV.VERTICAL,
+                arrayOf(
+                    LayoutPair(TextV(title).create(context).also { it.setPadding(dp2px(context, 25f), 0, dp2px(context, 25f), dp2px(context, 10f)) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)),
+                    LayoutPair(seekBar.also { it.setPadding(dp2px(context, 25f), 0, dp2px(context, 25f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)),
+                    LayoutPair(LinearContainerV(LinearContainerV.HORIZONTAL, arrayOf(LayoutPair(minText, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)), LayoutPair(mutableText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_CENTER }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)), LayoutPair(maxText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_VIEW_END }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)))).create(context).also { it.setPadding(dp2px(context, 25f), dp2px(context, 5f), dp2px(context, 25f), dp2px(context, 5f)) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT))
+                )
+            ).create(context)
+        } else {
+            return LinearContainerV(
+                LinearContainerV.VERTICAL,
+                arrayOf(
+                    LayoutPair(TextV(resId = resId).create(context).also { it.setPadding(dp2px(context, 25f), 0, dp2px(context, 25f), dp2px(context, 10f)) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)),
+                    LayoutPair(seekBar.also { it.setPadding(dp2px(context, 25f), 0, dp2px(context, 25f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)),
+                    LayoutPair(LinearContainerV(LinearContainerV.HORIZONTAL, arrayOf(LayoutPair(minText, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)), LayoutPair(mutableText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_CENTER }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)), LayoutPair(maxText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_VIEW_END }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)))).create(context).also { it.setPadding(dp2px(context, 25f), dp2px(context, 5f), dp2px(context, 25f), dp2px(context, 5f)) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT))
+                )
+            ).create(context)
+        }
     }
 }

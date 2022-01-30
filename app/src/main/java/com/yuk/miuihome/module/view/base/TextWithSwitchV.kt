@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.LinearLayout
 import com.yuk.miuihome.module.view.data.LayoutPair
 
-class TextWithSwitchV(val textV: TextV, val switchV: SwitchV): BaseView() {
+class TextWithSwitchV(private val textV: TextV, private val switchV: SwitchV): BaseView() {
 
     override fun getType(): BaseView = this
 

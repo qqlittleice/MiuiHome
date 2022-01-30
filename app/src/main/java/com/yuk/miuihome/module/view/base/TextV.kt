@@ -1,11 +1,9 @@
 package com.yuk.miuihome.module.view.base
 
 import android.content.Context
-import android.graphics.Color
 import android.graphics.Typeface
 import android.view.View
 import android.widget.TextView
-import com.yuk.miuihome.R
 import com.yuk.miuihome.module.view.data.Padding
 import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.sp2px
@@ -23,8 +21,6 @@ class TextV(val text: String? = null, val resId: Int? = null, val textSize: Floa
             else
                 view.textSize = textSize
             textColor?.let { view.setTextColor(it) }
-            if (textColor != null)
-                view.setTextColor(textColor)
             view.paint.typeface = Typeface.defaultFromStyle(Typeface.BOLD)
             view.setPadding(0, 0, dp2px(context, 5f), 0)
             padding?.let { view.setPadding(it.left, it.top, it.right, it.bottom) }

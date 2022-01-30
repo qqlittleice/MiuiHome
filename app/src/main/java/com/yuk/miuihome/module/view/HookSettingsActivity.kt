@@ -14,14 +14,14 @@ class HookSettingsActivity: TransferActivity() {
     private val itemList = arrayListOf<Item>()
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ItemAdapter
-    private lateinit var menu: ImageView
+    private lateinit var back: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.settings_activity)
         DataHelper.currentActivity = this
         itemList.addAll(DataHelper.getItems())
-        initMenu()
+        initBack()
         recyclerView = findViewById(R.id.settings_recycler)
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
@@ -29,14 +29,12 @@ class HookSettingsActivity: TransferActivity() {
         recyclerView.adapter = adapter
     }
 
-    private fun initMenu() {
-        menu = findViewById(R.id.settings_menu)
-        DataHelper.backView = menu
-        menu.setOnClickListener {
-            if (DataHelper.thisItems == DataHelper.main) DataHelper.setItems(DataHelper.menu,true)
+    private fun initBack() {
+        back = findViewById(R.id.settings_back)
+        back.setOnClickListener {
+            if (DataHelper.thisItems == DataHelper.main) DataHelper.currentActivity.finish()
             else DataHelper.setItems(DataHelper.main,false)
         }
-        DataHelper.setBackButton()
     }
 
     override fun onBackPressed() {

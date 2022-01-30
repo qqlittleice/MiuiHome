@@ -15,4 +15,5 @@
   <color name="whiteA">#FFFFFF</color>
   <color name="editView">#F0F0F0</color>
   <color name="rounded_pop">#F0F0F0</color>
+  <color name="back">#333333</color>
 </resources>

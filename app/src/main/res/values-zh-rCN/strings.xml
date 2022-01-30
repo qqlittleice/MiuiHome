@@ -97,4 +97,5 @@
   <string name="BasicBlur">基础模糊</string>
   <string name="CustomTitleColor">应用图标标题颜色</string>
   <string name="Tips4">支持十六进制颜色值，例如#FFFFFF为白，#000000为黑</string>
+  <string name="About">关于模块</string>
 </resources>

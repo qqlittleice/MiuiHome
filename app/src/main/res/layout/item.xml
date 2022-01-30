@@ -14,8 +14,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:paddingStart="25dp"
-    android:paddingEnd="25dp"
     android:background="@drawable/ic_click_check">
 
     <TextView
@@ -44,7 +42,10 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_weight="1"
-      android:visibility="gone" >
+      android:paddingStart="25dp"
+      android:paddingEnd="25dp"
+      android:visibility="gone"
+      tools:ignore="RtlSymmetry">
 
       <TextView
         android:id="@+id/settings_select"
@@ -60,20 +61,10 @@
       <ImageView
         android:layout_width="28dp"
         android:layout_height="28dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="-2dp"
         android:background="@drawable/ic_up_down" />
 
     </LinearLayout>
-
-    <com.yuk.miuihome.module.view.SettingsSwitch
-      android:id="@+id/settings_switch"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center_vertical"
-      android:background="@null"
-      android:thumb="@drawable/switch_thumb"
-      android:track="@drawable/switch_track"
-      android:visibility="gone" />
 
   </LinearLayout>
 
