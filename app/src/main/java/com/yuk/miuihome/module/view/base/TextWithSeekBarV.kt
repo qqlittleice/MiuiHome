@@ -11,7 +11,7 @@ import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.sp2px
 
-class SeekBarWithTextV(val title: String? = null, private val resId: Int? = null, val key: String, private val min: Int, private val max: Int, val divide: Int = 1, private val defaultProgress: Int, val callBacks: ((Int, TextView) -> Unit)? = null): BaseView() {
+class TextWithSeekBarV(val title: String? = null, private val resId: Int? = null, val key: String, private val min: Int, private val max: Int, val divide: Int = 1, private val defaultProgress: Int, val callBacks: ((Int, TextView) -> Unit)? = null): BaseView() {
 
     override var outside = true
 

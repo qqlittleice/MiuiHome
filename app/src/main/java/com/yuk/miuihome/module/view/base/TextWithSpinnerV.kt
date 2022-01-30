@@ -5,7 +5,7 @@ import android.view.View
 import android.widget.Spinner
 import android.widget.TextView
 
-class SpinnerWithTextV(val title: String, val key: String, val callBacks: ((Int, TextView) -> Unit)? = null): BaseView() {
+class TextWithSpinnerV(val title: String, val key: String, val callBacks: ((Int, TextView) -> Unit)? = null): BaseView() {
 
     override var outside = true
 
@@ -16,7 +16,7 @@ class SpinnerWithTextV(val title: String, val key: String, val callBacks: ((Int,
             //TODO
         }
         return LinearContainerV(
-            LinearContainerV.VERTICAL,
+            LinearContainerV.HORIZONTAL,
             arrayOf(
                 //TODO
               )

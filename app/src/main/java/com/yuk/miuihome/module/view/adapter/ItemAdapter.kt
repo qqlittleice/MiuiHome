@@ -36,7 +36,6 @@ class ItemAdapter(private val itemList: List<Item>) :
         val testItems = item.test
         val context = holder.settingsText.context
 
-
         for (view: View in customItems) holder.settingsCustomView.addView(view)
         for (view: BaseView in testItems) {
             if (view.outside) {
