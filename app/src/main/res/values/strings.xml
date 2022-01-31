@@ -13,6 +13,10 @@
   <string name="CloseFolder">Close folder when opening applications inside folder</string>
   <string name="CompleteBlur">Complete blur</string>
   <string name="Defaults">Default</string>
+  <string name="Recommend">Recommend</string>
+  <string name="setDefaults">Leave blank to restore the default</string>
+  <string name="setRecentString">Leave blank to restore the default, and type a space to remove text</string>
+  <string name="current">Current</string>
   <string name="Description">Hook for MIUI Launcher</string>
   <string name="Folder">Folder Settings</string>
   <string name="HideStatusBar">Hide the Status Bar in the Recent Screen</string>

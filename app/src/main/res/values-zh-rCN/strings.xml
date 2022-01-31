@@ -12,6 +12,10 @@
   <string name="CloseFolder">打开应用时关闭文件夹</string>
   <string name="CompleteBlur">完整模糊</string>
   <string name="Defaults">默认值</string>
+  <string name="Recommend">推荐值</string>
+  <string name="setDefaults">留空为恢复默认</string>
+  <string name="setRecentString">留空为恢复默认, 键入空格表示移除文本</string>
+  <string name="current">当前</string>
   <string name="Description">针对MIUI桌面的自定义扩展</string>
   <string name="Folder">文件夹相关</string>
   <string name="HideStatusBar">后台界面隐藏状态栏</string>

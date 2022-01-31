@@ -297,8 +297,8 @@ object DataHelper {
     private fun showCustomTitleColorDialog() {
         SettingsDialog(currentActivity).apply {
             setTitle(XposedInit.moduleRes.getString(R.string.CustomTitleColor))
-            setMessage(XposedInit.moduleRes.getString(R.string.Tips4)+ ", 留空为恢复默认")
-            setEditText("", "当前为: ${OwnSP.ownSP.getString("iconTitleFontColor", "").toString()}")
+            setMessage(XposedInit.moduleRes.getString(R.string.Tips4)+ ", ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getString("iconTitleFontColor", "").toString()}")
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
                 editor.putString("iconTitleFontColor", getEditText())
                 editor.apply()
@@ -313,8 +313,8 @@ object DataHelper {
     private fun showCustomRecentTextDialog() {
         SettingsDialog(currentActivity).apply {
             setTitle(XposedInit.moduleRes.getString(R.string.CustomRecentText))
-            setMessage("留空为恢复默认, 键入空格表示移除文本")
-            setEditText("", "当前为: ${OwnSP.ownSP.getString("recentText", "").toString()}")
+            setMessage("${XposedInit.moduleRes.getString(R.string.setRecentString)}")
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getString("recentText", "").toString()}")
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
                 editor.putString("recentText", getEditText())
                 editor.apply()
@@ -328,8 +328,8 @@ object DataHelper {
     private fun showTaskViewAppCardTextSizeDialog() {
         SettingsDialog(currentActivity).apply {
             setTitle(XposedInit.moduleRes.getString(R.string.TaskViewAppCardTextSize))
-            setMessage("默认值: 13, 推荐值：0-30, 留空为恢复默认")
-            setEditText("", "当前值: ${OwnSP.ownSP.getInt("backgroundTextSize", 13).toString()}")
+            setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 13, ${XposedInit.moduleRes.getString(R.string.Recommend)}：0-30, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getInt("backgroundTextSize", 13).toString()}")
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
                 if (getEditText() == "") editor.putInt("backgroundTextSize", 13)
                 else editor.putInt("backgroundTextSize", getEditText().toInt())
@@ -345,8 +345,8 @@ object DataHelper {
     private fun showAnimationLevelDialog() {
         SettingsDialog(currentActivity).apply {
             setTitle(XposedInit.moduleRes.getString(R.string.AnimationLevel))
-            setMessage("默认值: 1.0, 推荐值: 0.1-5.0, 留空为恢复默认")
-            setEditText("", "当前值: ${OwnSP.ownSP.getFloat("animationLevel", 1f).toString()}")
+            setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 1.0, ${XposedInit.moduleRes.getString(R.string.Recommend)}: 0.1-5.0, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("animationLevel", 1f).toString()}")
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
                 if (getEditText() == "") editor.putFloat("animationLevel", 1f)
                 else editor.putFloat("animationLevel", getEditText().toFloat())
@@ -361,8 +361,8 @@ object DataHelper {
     private fun showRoundCornerDialog() {
         SettingsDialog(currentActivity).apply {
             setTitle(XposedInit.moduleRes.getString(R.string.RoundCorner))
-            setMessage("默认值: 20.0, 推荐值: 0.0-50.0, 留空为恢复默认")
-            setEditText("", "当前值: ${OwnSP.ownSP.getFloat("recents_task_view_rounded_corners_radius", 20f).toString()}")
+            setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 20.0, ${XposedInit.moduleRes.getString(R.string.Recommend)}: 0.0-50.0, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("recents_task_view_rounded_corners_radius", 20f).toString()}")
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
                 if (getEditText() == "") editor.putFloat("recents_task_view_rounded_corners_radius", 20f)
                 else editor.putFloat("recents_task_view_rounded_corners_radius", getEditText().toFloat())
@@ -377,8 +377,8 @@ object DataHelper {
     private fun showAppTextSizeDialog() {
         SettingsDialog(currentActivity).apply {
             setTitle(XposedInit.moduleRes.getString(R.string.AppTextSize))
-            setMessage("默认值: 40.0, 推荐值: 0.0-100.0, 留空为恢复默认")
-            setEditText("", "当前值: ${OwnSP.ownSP.getFloat("recents_task_view_header_height", 40f).toString()}")
+            setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 40.0, ${XposedInit.moduleRes.getString(R.string.Recommend)}: 0.0-100.0, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("recents_task_view_header_height", 40f).toString()}")
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
                 if (getEditText() == "") editor.putFloat("recents_task_view_header_height", 40f)
                 else editor.putFloat("recents_task_view_header_height", getEditText().toFloat())
@@ -393,8 +393,8 @@ object DataHelper {
     private fun showVerticalTaskViewOfAppCardSizeDialog() {
         SettingsDialog(currentActivity).apply {
             setTitle(XposedInit.moduleRes.getString(R.string.VerticalTaskViewOfAppCardSize))
-            setMessage("默认值: 100.0, 推荐值: 50.0-150.0, 留空为恢复默认")
-            setEditText("", "当前值: ${OwnSP.ownSP.getFloat("task_vertical", 100f).toString()}")
+            setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 100.0, ${XposedInit.moduleRes.getString(R.string.Recommend)}: 50.0-150.0, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("task_vertical", 100f).toString()}")
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
                 if (getEditText() == "") editor.putFloat("task_vertical", 100f)
                 else editor.putFloat("task_vertical", getEditText().toFloat())
@@ -409,8 +409,8 @@ object DataHelper {
     private fun showIconTitleFontSizeDialog() {
         SettingsDialog(currentActivity).apply {
             setTitle(XposedInit.moduleRes.getString(R.string.IconTitleFontSize))
-            setMessage("默认值: 1.0, 推荐值: 0.0-10.0, 留空为恢复默认")
-            setEditText("", "当前值: ${OwnSP.ownSP.getFloat("iconTitleFontSize", 1f).toString()}")
+            setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 1.0, ${XposedInit.moduleRes.getString(R.string.Recommend)}: 0.0-10.0, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("iconTitleFontSize", 1f).toString()}")
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
                 if (getEditText() == "") editor.putFloat("iconTitleFontSize", 1f)
                 else editor.putFloat("iconTitleFontSize", getEditText().toFloat())
@@ -425,8 +425,8 @@ object DataHelper {
     private fun showFolderColumnsCountDialog() {
         SettingsDialog(currentActivity).apply {
             setTitle(XposedInit.moduleRes.getString(R.string.FolderColumnsCount))
-            setMessage("默认值: 3, 推荐值: 1-6, 留空为恢复默认")
-            setEditText("", "当前值: ${OwnSP.ownSP.getInt("folderColumns", 3).toString()}")
+            setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 3, ${XposedInit.moduleRes.getString(R.string.Recommend)}: 1-6, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getInt("folderColumns", 3).toString()}")
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
                 if (getEditText() == "") editor.putInt("folderColumns", 3)
                 else editor.putInt("folderColumns", getEditText().toInt())
@@ -441,8 +441,8 @@ object DataHelper {
     private fun showBlurRadiusDialog() {
         SettingsDialog(currentActivity).apply {
             setTitle(XposedInit.moduleRes.getString(R.string.BlurRadius))
-            setMessage("默认值: 1.0, 推荐值: 0.0-2.0, 留空为恢复默认")
-            setEditText("", "当前值: ${OwnSP.ownSP.getFloat("blurRadius", 1f).toString()}")
+            setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 1.0, ${XposedInit.moduleRes.getString(R.string.Recommend)}: 0.0-2.0, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("blurRadius", 1f).toString()}")
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
                 if (getEditText() == "") editor.putFloat("blurRadius", 1f)
                 else editor.putFloat("blurRadius", getEditText().toFloat())
