@@ -5,7 +5,6 @@
   <string name="AlwaysShowStatusBarClock">Selalu tampilkan jam statusbar</string>
   <string name="AnimationLevel">Kecepatan animasi gesture</string>
   <string name="AppTextSize">Kejauhan antara nama aplikasi dan ikon aplikasi di recent</string>
-  <string name="BaseFeature">Fitur basic</string>
   <string name="BlurWhenOpenFolder">Aktifkan blur pada saat dalam folder</string>
   <string name="Cancel">Batalkan</string>
   <string name="CleanModuleSettings">Reset ke pengaturan awal</string>

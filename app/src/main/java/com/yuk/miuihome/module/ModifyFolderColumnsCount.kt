@@ -9,11 +9,11 @@ import com.yuk.miuihome.utils.ktx.hookAfterMethod
 class ModifyFolderColumnsCount {
 
     fun init() {
-        val value = OwnSP.ownSP.getFloat("folderColumns", -1f)
-        if (value == -1f || value == 3f) return
+        val value = OwnSP.ownSP.getInt("folderColumns", -1)
+        if (value == -1 || value == 3) return
         "com.miui.home.launcher.Folder".hookAfterMethod("onFinishInflate"
         ) {
-            val columns: Int = value.toInt()
+            val columns: Int = value
             val mContent = XposedHelpers.getObjectField(it.thisObject, "mContent") as GridView
             mContent.numColumns = columns
             if (OwnSP.ownSP.getBoolean("folderWidth", false) && (columns > 3)) {

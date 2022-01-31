@@ -5,7 +5,6 @@
   <string name="AlwaysShowStatusBarClock">Εμφάνισε πάντα το ρολόι στην γραμμή εργασίας</string>
   <string name="AnimationLevel">Ταχύτητα χειρονομιών μπάρας ελέγχου</string>
   <string name="AppTextSize">Απόσταση μεταξύ εικονιδίων και τίτλων στην οθόνη εφαρμογών παρασκηνίου</string>
-  <string name="BaseFeature">Βασικές Ρυθμίσεις</string>
   <string name="BlurWhenOpenFolder">Ενεργοποίηση θαμπώματος φακέλων</string>
   <string name="Cancel">Ακύρωση</string>
   <string name="CleanModuleSettings">Επαναφορά ρυθμίσεων</string>

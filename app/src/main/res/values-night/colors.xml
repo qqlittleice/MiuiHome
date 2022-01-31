@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorTrack">#333333</color>
+  <color name="black">#FFFFFF</color>
+  <color name="white">#000000</color>
+  <color name="line">#333333</color>
+  <color name="leftButtonN">#353535</color>
+  <color name="leftButton">#373737</color>
+  <color name="rightButtonN">#0173DD</color>
+  <color name="rightButton">#2688E3</color>
+  <color name="background">#242424</color>
+  <color name="whiteClick">#2E2E2E</color>
+  <color name="editView">#252525</color>
+  <color name="rounded_pop">#333333</color>
+  <color name="back">#CCCCCC</color>
+</resources>

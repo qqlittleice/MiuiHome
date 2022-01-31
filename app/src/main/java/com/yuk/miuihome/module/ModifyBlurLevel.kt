@@ -10,7 +10,7 @@ class ModifyBlurLevel : BaseClassAndMethodCheck {
     }
 
     fun init() {
-        val blurLevel = OwnSP.ownSP.getFloat("blurLevel", 2f)
+        val blurLevel = OwnSP.ownSP.getString("blurLevel", "SimpleBlur")
         if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
             "com.miui.home.launcher.common.BlurUtils".hookBeforeMethod("getBlurType") {
                 it.result = 0
@@ -21,21 +21,21 @@ class ModifyBlurLevel : BaseClassAndMethodCheck {
         } else {
             "com.miui.home.launcher.common.BlurUtils".hookBeforeMethod("getBlurType") {
                 when (blurLevel) {
-                    2f -> it.result = 2
-                    1f -> it.result = 1
-                    0f -> it.result = 0
+                    "CompleteBlur" -> it.result = 2
+                    "SimpleBlur" -> it.result = 1
+                    "NoneBlur" -> it.result = 0
                 }
             }
             "com.miui.home.launcher.common.BlurUtils".hookBeforeMethod("isUseCompleteBlurOnDev") {
                 when (blurLevel) {
-                    3f -> it.result = true
+                    "TestBlur" -> it.result = true
                 }
             }
             runWithChecked {
                 checked = true
                 "com.miui.home.launcher.common.BlurUtils".hookBeforeMethod("isUseBasicBlur") {
                     when (blurLevel) {
-                        4f -> it.result = true
+                        "BasicBlur" -> it.result = true
                     }
                 }
             }

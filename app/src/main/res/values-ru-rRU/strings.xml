@@ -5,7 +5,6 @@
   <string name="AlwaysShowStatusBarClock">Всегда отображать часы в строке состояния</string>
   <string name="AnimationLevel">Скорость анимации жестов</string>
   <string name="AppTextSize">Расстояние между иконкой и именем приложения</string>
-  <string name="BaseFeature">Основные настройки</string>
   <string name="BlurWhenOpenFolder">Размытие при открытии папок</string>
   <string name="Cancel">Отмена</string>
   <string name="CategoryHideAll">Скрыть \"Все\" в категориях приложений</string>

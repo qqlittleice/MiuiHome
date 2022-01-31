@@ -5,7 +5,6 @@
   <string name="AlwaysShowStatusBarClock">Immer die Uhr in der Statusleiste anzeigen</string>
   <string name="AnimationLevel">Geschwindigkeit der Gestenanimation</string>
   <string name="AppTextSize">Distanz zwischen Task View App Icons und Namen</string>
-  <string name="BaseFeature">Grundeinstellungen</string>
   <string name="BlurWhenOpenFolder">Weichzeichnen in Ordnern aktivieren</string>
   <string name="Cancel">Abbrechen</string>
   <string name="CategoryHideAll">Verstecke \"Alle\" in App Kategorien</string>

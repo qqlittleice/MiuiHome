@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorTrack">#E6E6e6</color>
+  <color name="black">#000000</color>
+  <color name="white">#FFFFFF</color>
+  <color name="line">#1A000000</color>
+  <color name="miui">#0C84FF</color>
+  <color name="leftButtonN">#EFEFEF</color>
+  <color name="leftButton">#DCDCDC</color>
+  <color name="rightButtonN">#0C84FF</color>
+  <color name="rightButton">#0D7AEC</color>
+  <color name="background">#FFFFFF</color>
+  <color name="whiteClick">#EBEBEB</color>
+  <color name="colorAccent">#0374A7</color>
+  <color name="whiteA">#FFFFFF</color>
+  <color name="editView">#F0F0F0</color>
+  <color name="rounded_pop">#F0F0F0</color>
+  <color name="back">#333333</color>
+</resources>

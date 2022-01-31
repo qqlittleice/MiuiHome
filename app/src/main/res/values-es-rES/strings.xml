@@ -5,7 +5,6 @@
   <string name="AlwaysShowStatusBarClock">Mostrar siempre el reloj de la barra de estado</string>
   <string name="AnimationLevel">Velocidad de la animación de los gestos</string>
   <string name="AppTextSize">Distancia entre los iconos y los nombres de las aplicaciones en la vista de tareas</string>
-  <string name="BaseFeature">Configuración básica</string>
   <string name="BlurWhenOpenFolder">Activar desenfoque en carpetas</string>
   <string name="CleanModuleSettings">Restablecer la configuración predeterminada</string>
   <string name="CloseFolder">Cerrar carpeta al abrir aplicaciones dentro de la carpeta</string>

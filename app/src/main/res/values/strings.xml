@@ -6,7 +6,6 @@
   <string name="AlwaysShowStatusBarClock">Always show the status bar clock</string>
   <string name="AnimationLevel">Gesture animation speed</string>
   <string name="AppTextSize">Distance between task view application icons and names</string>
-  <string name="BaseFeature">Basic Settings</string>
   <string name="BlurWhenOpenFolder">Enable Folder Blur</string>
   <string name="Cancel">Cancel</string>
   <string name="CleanModuleSettings">Reset to Default Settings</string>
@@ -33,6 +32,7 @@
   <string name="OutOfInput">Please enter a value within the allowed range!</string>
   <string name="RealTaskViewHorizontal">True · Horizontal Recent</string>
   <string name="Reboot">Restart Launcher</string>
+  <string name="Reboot1">Are you sure you want to restart?</string>
   <string name="Reboot2">The Launcher will restart in 1 seconds!</string>
   <string name="ResourceHooks">ResourceHook Features</string>
   <string name="RoundCorner">Size of Thumbnail Rounded Corners</string>
@@ -98,4 +98,5 @@
   <string name="BasicBlur">Basic Blur</string>
   <string name="CustomTitleColor">Customize the App icon title color</string>
   <string name="Tips4">Support hexadecimal color value, for example #FFFFFF is White, #000000 is Black</string>
+  <string name="About">About Module</string>
 </resources>
