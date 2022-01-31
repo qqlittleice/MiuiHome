@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:orientation="vertical"
   android:layout_width="match_parent"
-  android:layout_height="match_parent">
-
+  android:layout_height="match_parent"
+  android:orientation="vertical">
 
   <SeekBar
     android:id="@+id/settings_seekbar"
@@ -29,22 +28,22 @@
       android:layout_height="wrap_content"
       android:layout_weight="1"
       android:layout_gravity="start"
-      android:text="0"/>
+      android:text="0" />
 
     <TextView
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:layout_weight="1"
-      android:textAlignment="center"
-      android:text="50"/>
+      android:text="50"
+      android:textAlignment="center" />
 
     <TextView
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:layout_weight="1"
       android:layout_gravity="end"
-      android:textAlignment="viewEnd"
-      android:text="100"/>
+      android:text="100"
+      android:textAlignment="viewEnd" />
   </LinearLayout>
 
 </LinearLayout>

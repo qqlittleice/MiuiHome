@@ -6,7 +6,6 @@ import android.graphics.Color
 import android.widget.Toast
 import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.R
-import com.yuk.miuihome.SettingDialog
 import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.module.BuildWithEverything
 import com.yuk.miuihome.module.ModifyBlurLevel
@@ -23,7 +22,7 @@ import kotlin.system.exitProcess
 object DataHelper {
     var thisItems = "Main"
     var main = "Main"
-    const val menu = "Menu"
+    private const val menu = "Menu"
     const val dock = "Dock"
     const val horizontal = "Horizontal"
     lateinit var currentActivity: Activity
@@ -112,12 +111,8 @@ object DataHelper {
                 dict0[currentActivity.getString(R.string.NoneBlur)] = "NoneBlur"
                 if (ModifyBlurLevel.checked)
                     add(Item(test = arrayListOf(TextWithSpinnerV(TextV(resId = R.string.TaskViewBlurLevel) ,"blurLevel", select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], array = blurLevel, callBacks = { OwnSP.set("blurLevel", dict0[it].toString()) }))))
-                //TODO
-                    //spinner = Spinner(array = blurLevel, select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], context = currentActivity, callBacks = { editor.putString("blurLevel", dict0[it]) })))
                 else
                     add(Item(test = arrayListOf(TextWithSpinnerV(TextV(resId = R.string.TaskViewBlurLevel), "blurLevel", select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], array = blurLevel0, callBacks = { OwnSP.set("blurLevel", dict0[it].toString()) }))))
-                //TODO
-                    //spinner = Spinner(array = blurLevel0, select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], context = currentActivity, callBacks = { editor.putString("blurLevel", dict0[it]) })))
             }
             add(Item(test = arrayListOf(TextV(resId = R.string.AnimationLevel, onClickListener = { showAnimationLevelDialog() }))))
             add(Item(test = arrayListOf(LineV())))
@@ -200,11 +195,11 @@ object DataHelper {
             add(Item(test = arrayListOf(TextV(resId = R.string.Reboot, onClickListener = { showRestartDialog() }))))
             add(Item(test = arrayListOf(TextV(resId = R.string.About, onClickListener = { setItems(menu, true) }))))
 
-            add(Item(test = arrayListOf(LineV())))
-            add(Item(test = arrayListOf(TitleTextV("Test Title"))))
-            add(Item(test = arrayListOf(TextV("Test Function", onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
-            add(Item(test = arrayListOf(TextWithSeekBarV(TextV("Test Seekbar"), key = "testSeekBar", min = 0, max = 100, divide = 1, defaultProgress = 0))))
-            add(Item(test = arrayListOf(TextWithSwitchV(TextV("Test Switch"), SwitchV("testSwitch")))))
+            //add(Item(test = arrayListOf(LineV())))
+            //add(Item(test = arrayListOf(TitleTextV("Test Title"))))
+            //add(Item(test = arrayListOf(TextV("Test Function", onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
+            //add(Item(test = arrayListOf(TextWithSeekBarV(TextV("Test Seekbar"), key = "testSeekBar", min = 0, max = 100, divide = 1, defaultProgress = 0))))
+            //add(Item(test = arrayListOf(TextWithSwitchV(TextV("Test Switch"), SwitchV("testSwitch")))))
 
         }
         return itemList

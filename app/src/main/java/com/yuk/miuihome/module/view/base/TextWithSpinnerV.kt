@@ -2,15 +2,12 @@ package com.yuk.miuihome.module.view.base
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.os.Handler
-import android.os.Message
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.yuk.miuihome.R
 import com.yuk.miuihome.module.view.data.LayoutPair
-import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.sp2px
 
@@ -37,7 +34,6 @@ class TextWithSpinnerV(private val textV: TextV, val key: String, var select: St
             callBacks?.let { it -> it(a) }
             popup.dismiss()
         }
-
         val spinner = LinearContainerV(
             LinearContainerV.HORIZONTAL,
             arrayOf(
