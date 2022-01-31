@@ -90,4 +90,10 @@
   <string name="DockMarginBottom">Spaziatura tra l\'indicatore pagine e il fondo dello schermo</string>
   <string name="SimpleWarn">Hai abilitato "animazione semplice", questo nasconderà alcune impostazioni.</string>
   <string name="BrokenFeature">Funzioni obsolete</string>
+  <string name="AppReturnAmin">Sfocatura ritorno app</string>
+  <string name="BlurRadius">Raggio di sfocatura</string>
+  <string name="BasicBlur">Sfocatura di base</string>
+  <string name="CustomTitleColor">Personalizza il colore dell\'etichetta dell\'icona dell\'app</string>
+  <string name="Tips4">Supporta il valore del colore esadecimale, ad esempio #FFFFFF è bianco, #000000 è nero</string>
+  <string name="About">Informazioni sul modulo</string>
 </resources>
