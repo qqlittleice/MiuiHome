@@ -69,13 +69,13 @@ object DataHelper {
             if (!XposedInit.hasHookPackageResources)
                 add(Item(test = arrayListOf(TextV(resId = R.string.DockWarn, textColor = Color.parseColor("#ff0c0c"), textSize = sp2px(6f)))))
             else
-                add(Item(test = arrayListOf(TextWithSeekBarV(resId = R.string.DockRoundedCorners, key = "dockRadius", min = 0, max = 50, divide = 10, defaultProgress = 25))))
-            add(Item(test = arrayListOf(TextWithSeekBarV(resId = R.string.DockHeight, key = "dockHeight", min = 30, max = 150, divide = 10, defaultProgress = 79))))
-            add(Item(test = arrayListOf(TextWithSeekBarV(resId = R.string.DockSide, key = "dockSide", min = 0, max = 100, divide = 10, defaultProgress = 30))))
-            add(Item(test = arrayListOf(TextWithSeekBarV(resId = R.string.DockBottom, key = "dockBottom", min = 0, max = 150, divide = 10, defaultProgress = 23))))
-            add(Item(test = arrayListOf(TextWithSeekBarV(resId = R.string.DockIconBottom, key = "dockIconBottom", min = 0, max = 150, divide = 10, defaultProgress = 35))))
-            add(Item(test = arrayListOf(TextWithSeekBarV(resId = R.string.DockMarginTop, key = "dockMarginTop", min = 0, max = 100, divide = 10, defaultProgress = 6))))
-            add(Item(test = arrayListOf(TextWithSeekBarV(resId = R.string.DockMarginBottom, key = "dockMarginBottom", min = 0, max = 200, divide = 10, defaultProgress = 110))))
+                add(Item(test = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockRoundedCorners), key = "dockRadius", min = 0, max = 50, divide = 10, defaultProgress = 25))))
+            add(Item(test = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockHeight), key = "dockHeight", min = 30, max = 150, divide = 10, defaultProgress = 79))))
+            add(Item(test = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockSide), key = "dockSide", min = 0, max = 100, divide = 10, defaultProgress = 30))))
+            add(Item(test = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockBottom), key = "dockBottom", min = 0, max = 150, divide = 10, defaultProgress = 23))))
+            add(Item(test = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockIconBottom), key = "dockIconBottom", min = 0, max = 150, divide = 10, defaultProgress = 35))))
+            add(Item(test = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockMarginTop), key = "dockMarginTop", min = 0, max = 100, divide = 10, defaultProgress = 6))))
+            add(Item(test = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockMarginBottom), key = "dockMarginBottom", min = 0, max = 200, divide = 10, defaultProgress = 110))))
         }
         return itemList
     }
@@ -84,8 +84,8 @@ object DataHelper {
         val itemList = arrayListOf<Item>()
         itemList.apply {
             add(Item(test = arrayListOf(TitleTextV(resId = R.string.HorizontalTaskViewOfAppCardSize))))
-            add(Item(test = arrayListOf(TextWithSeekBarV(resId = R.string.VerticalScreen, key = "task_horizontal1", min = 10, max = 1500, divide = 1000, defaultProgress = 1000))))
-            add(Item(test = arrayListOf(TextWithSeekBarV(resId = R.string.HorizontalScreen, key = "task_horizontal2", min = 10, max = 1500, divide = 1000, defaultProgress = 1000))))
+            add(Item(test = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.VerticalScreen), key = "task_horizontal1", min = 10, max = 1500, divide = 1000, defaultProgress = 1000))))
+            add(Item(test = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.HorizontalScreen), key = "task_horizontal2", min = 10, max = 1500, divide = 1000, defaultProgress = 1000))))
         }
         return itemList
     }
@@ -97,25 +97,25 @@ object DataHelper {
                 add(Item(test = arrayListOf(TextV(resId = R.string.SimpleWarn, textColor = Color.parseColor("#ff0c0c")))))
             } else {
                 add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.SmoothAnimation), SwitchV("smoothAnimation")))))
-                //val blurLevel = arrayListOf(currentActivity.getString(R.string.CompleteBlur), currentActivity.getString(R.string.TestBlur), currentActivity.getString(R.string.BasicBlur), currentActivity.getString(R.string.SimpleBlur), currentActivity.getString(R.string.NoneBlur))
-                //val blurLevel0 = arrayListOf(currentActivity.getString(R.string.CompleteBlur), currentActivity.getString(R.string.TestBlur), currentActivity.getString(R.string.SimpleBlur), currentActivity.getString(R.string.NoneBlur))
-                //val dict0: HashMap<String, String> = hashMapOf()
-                //dict0["CompleteBlur"] = currentActivity.getString(R.string.CompleteBlur)
-                //dict0["TestBlur"] = currentActivity.getString(R.string.TestBlur)
-                //dict0["BasicBlur"] = currentActivity.getString(R.string.BasicBlur)
-                //dict0["SimpleBlur"] = currentActivity.getString(R.string.SimpleBlur)
-                //dict0["NoneBlur"] = currentActivity.getString(R.string.NoneBlur)
-                //dict0[currentActivity.getString(R.string.CompleteBlur)] = "CompleteBlur"
-                //dict0[currentActivity.getString(R.string.TestBlur)] = "TestBlur"
-                //dict0[currentActivity.getString(R.string.BasicBlur)] = "BasicBlur"
-                //dict0[currentActivity.getString(R.string.SimpleBlur)] = "SimpleBlur"
-                //dict0[currentActivity.getString(R.string.NoneBlur)] = "NoneBlur"
+                val blurLevel = arrayListOf(currentActivity.getString(R.string.CompleteBlur), currentActivity.getString(R.string.TestBlur), currentActivity.getString(R.string.BasicBlur), currentActivity.getString(R.string.SimpleBlur), currentActivity.getString(R.string.NoneBlur))
+                val blurLevel0 = arrayListOf(currentActivity.getString(R.string.CompleteBlur), currentActivity.getString(R.string.TestBlur), currentActivity.getString(R.string.SimpleBlur), currentActivity.getString(R.string.NoneBlur))
+                val dict0: HashMap<String, String> = hashMapOf()
+                dict0["CompleteBlur"] = currentActivity.getString(R.string.CompleteBlur)
+                dict0["TestBlur"] = currentActivity.getString(R.string.TestBlur)
+                dict0["BasicBlur"] = currentActivity.getString(R.string.BasicBlur)
+                dict0["SimpleBlur"] = currentActivity.getString(R.string.SimpleBlur)
+                dict0["NoneBlur"] = currentActivity.getString(R.string.NoneBlur)
+                dict0[currentActivity.getString(R.string.CompleteBlur)] = "CompleteBlur"
+                dict0[currentActivity.getString(R.string.TestBlur)] = "TestBlur"
+                dict0[currentActivity.getString(R.string.BasicBlur)] = "BasicBlur"
+                dict0[currentActivity.getString(R.string.SimpleBlur)] = "SimpleBlur"
+                dict0[currentActivity.getString(R.string.NoneBlur)] = "NoneBlur"
                 if (ModifyBlurLevel.checked)
-                    add(Item(test = arrayListOf(TextV(resId = R.string.TaskViewBlurLevel, onClickListener = { SettingDialog().showModifyBlurLevel() })))) //TODO Fix
+                    add(Item(test = arrayListOf(TextWithSpinnerV(TextV(resId = R.string.TaskViewBlurLevel) ,"blurLevel", select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], array = blurLevel, callBacks = { OwnSP.set("blurLevel", dict0[it].toString()) }))))
                 //TODO
                     //spinner = Spinner(array = blurLevel, select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], context = currentActivity, callBacks = { editor.putString("blurLevel", dict0[it]) })))
                 else
-                    add(Item(test = arrayListOf(TextV(resId = R.string.TaskViewBlurLevel, onClickListener = { SettingDialog().showModifyBlurLevel() })))) //TODO Fix
+                    add(Item(test = arrayListOf(TextWithSpinnerV(TextV(resId = R.string.TaskViewBlurLevel), "blurLevel", select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], array = blurLevel0, callBacks = { OwnSP.set("blurLevel", dict0[it].toString()) }))))
                 //TODO
                     //spinner = Spinner(array = blurLevel0, select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], context = currentActivity, callBacks = { editor.putString("blurLevel", dict0[it]) })))
             }
@@ -203,7 +203,7 @@ object DataHelper {
             add(Item(test = arrayListOf(LineV())))
             add(Item(test = arrayListOf(TitleTextV("Test Title"))))
             add(Item(test = arrayListOf(TextV("Test Function", onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
-            add(Item(test = arrayListOf(TextWithSeekBarV("Test Seekbar", key = "testSeekBar", min = 0, max = 100, divide = 1, defaultProgress = 0))))
+            add(Item(test = arrayListOf(TextWithSeekBarV(TextV("Test Seekbar"), key = "testSeekBar", min = 0, max = 100, divide = 1, defaultProgress = 0))))
             add(Item(test = arrayListOf(TextWithSwitchV(TextV("Test Switch"), SwitchV("testSwitch")))))
 
         }
@@ -454,6 +454,7 @@ object DataHelper {
                 editor.apply()
                 dismiss()
             }
+
             setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
             show()
         }

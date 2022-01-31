@@ -6,7 +6,7 @@ import android.view.View
 import com.yuk.miuihome.module.view.data.Padding
 import com.yuk.miuihome.utils.ktx.sp2px
 
-class TitleTextV(val text: String? = null, val resId: Int? = null, val onClickListener: View.OnClickListener? = null): BaseView() {
+class TitleTextV(val text: String? = null, val resId: Int? = null, private val onClickListener: View.OnClickListener? = null): BaseView() {
 
     override fun getType(): BaseView = this
 

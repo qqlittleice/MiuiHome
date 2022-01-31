@@ -1,25 +1,63 @@
 package com.yuk.miuihome.module.view.base
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.os.Handler
+import android.os.Message
+import android.view.Gravity
 import android.view.View
-import android.widget.Spinner
-import android.widget.TextView
+import android.view.ViewGroup
+import android.widget.*
+import com.yuk.miuihome.R
+import com.yuk.miuihome.module.view.data.LayoutPair
+import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.ktx.dp2px
+import com.yuk.miuihome.utils.ktx.sp2px
 
-class TextWithSpinnerV(val title: String, val key: String, val callBacks: ((Int, TextView) -> Unit)? = null): BaseView() {
+
+class TextWithSpinnerV(private val textV: TextV, val key: String, var select: String?, val array: ArrayList<String>, private val callBacks: ((String) -> Unit)? = null): BaseView() {
 
     override var outside = true
 
     override fun getType(): BaseView = this
 
+    @SuppressLint("RtlHardcoded")
     override fun create(context: Context): View {
-        val spinner = Spinner(context).also { view ->
-            //TODO
+        val text = TextView(context)
+        val popup = ListPopupWindow(context)
+        popup.setBackgroundDrawable(context.getDrawable(R.drawable.rounded_corners_pop))
+        popup.setAdapter(ArrayAdapter(context, android.R.layout.simple_list_item_1, array))
+        popup.verticalOffset = dp2px(context,-80f)
+        popup.width = dp2px(context, 120f)
+        popup.height = ViewGroup.LayoutParams.WRAP_CONTENT
+        popup.isModal = true
+        popup.setOnItemClickListener { parent, _, position, _ ->
+            val a = parent.getItemAtPosition(position).toString()
+            text.text = a
+            callBacks?.let { it -> it(a) }
+            popup.dismiss()
         }
+
+        val spinner = LinearContainerV(
+            LinearContainerV.HORIZONTAL,
+            arrayOf(
+                LayoutPair(text.also { it.text = select; it.setPadding(0, 0, 0, dp2px(context, 15f)); it.textSize = sp2px(context, 5f) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f).also { it.gravity = Gravity.CENTER_VERTICAL + Gravity.RIGHT}),
+                LayoutPair(ImageView(context).also { it.background = context.getDrawable(R.drawable.ic_up_down) }, LinearLayout.LayoutParams(dp2px(context, 20f), dp2px(context, 20f)))
+            )
+        )
         return LinearContainerV(
             LinearContainerV.HORIZONTAL,
             arrayOf(
-                //TODO
-              )
-        ).create(context)
+                LayoutPair(textV.create(context).also { it.setPadding(dp2px(context, 25f), 0, dp2px(context, 10f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)),
+                LayoutPair(spinner.create(context).also { it.setPadding(0, 0, dp2px(context, 9f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).also { it.gravity = Gravity.CENTER_VERTICAL; it.setMargins(0, dp2px(context, 1f), dp2px(context, 10f),0) })
+            )
+        ).create(context).also { view ->
+            view.setOnClickListener {
+                popup.horizontalOffset = dp2px(context,-24f)
+                popup.setDropDownGravity(Gravity.RIGHT)
+                popup.anchorView = it
+                popup.show()
+            }
+        }
     }
 }
