@@ -37,7 +37,7 @@ class TextWithSpinnerV(private val textV: TextV, val key: String, var select: St
         val spinner = LinearContainerV(
             LinearContainerV.HORIZONTAL,
             arrayOf(
-                LayoutPair(text.also { it.text = select; it.setPadding(0, 0, 0, dp2px(context, 15f)); it.textSize = sp2px(context, 5f) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f).also { it.gravity = Gravity.CENTER_VERTICAL + Gravity.RIGHT}),
+                LayoutPair(text.also { it.text = select; it.setPadding(0, 0, 0, 0); it.textSize = sp2px(context, 5f) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f).also { it.gravity = Gravity.CENTER_VERTICAL + Gravity.RIGHT}),
                 LayoutPair(ImageView(context).also { it.background = context.getDrawable(R.drawable.ic_up_down) }, LinearLayout.LayoutParams(dp2px(context, 20f), dp2px(context, 20f)))
             )
         )
@@ -45,7 +45,7 @@ class TextWithSpinnerV(private val textV: TextV, val key: String, var select: St
             LinearContainerV.HORIZONTAL,
             arrayOf(
                 LayoutPair(textV.create(context).also { it.setPadding(dp2px(context, 25f), 0, dp2px(context, 10f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)),
-                LayoutPair(spinner.create(context).also { it.setPadding(0, 0, dp2px(context, 9f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).also { it.gravity = Gravity.CENTER_VERTICAL; it.setMargins(0, dp2px(context, 1f), dp2px(context, 10f),0) })
+                LayoutPair(spinner.create(context).also { it.setPadding(0, 0, dp2px(context, 9f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).also { it.gravity = Gravity.CENTER_VERTICAL })
             )
         ).create(context).also { view ->
             view.setOnClickListener {
