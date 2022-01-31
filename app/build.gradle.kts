@@ -10,7 +10,7 @@ android {
     buildToolsVersion = "32.0.0"
     defaultConfig {
         applicationId = "com.yuk.miuihome"
-        minSdk = 28
+        minSdk = 29
         targetSdk = 32
         versionCode = 4200
         versionName = "4.2.0"

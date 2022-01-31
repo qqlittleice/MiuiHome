@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/settings_linear_base"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
+  android:paddingTop="13dp"
+  android:paddingBottom="13dp"
   android:orientation="vertical">
 
   <LinearLayout
     android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:paddingStart="25dp"
-    android:paddingEnd="25dp"
-    android:background="@drawable/ic_click_check">
+    android:background="@drawable/ic_click_check"
+    android:orientation="horizontal">
 
     <TextView
       android:id="@+id/settings_text"
@@ -21,60 +20,11 @@
       android:layout_height="wrap_content"
       android:layout_weight="1"
       android:layout_gravity="center_vertical"
-      android:paddingTop="15dp"
-      android:paddingBottom="15dp"
       android:paddingStart="0dp"
       android:paddingEnd="5dp"
       android:text=""
       android:textFontWeight="700"
       android:textSize="18sp"
-      android:visibility="gone" />
-
-    <ImageView
-      android:id="@+id/RightArrow"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="13dp"
-      android:background="@drawable/ic_right_arrow"
-      android:visibility="gone" />
-
-    <LinearLayout
-      android:id="@+id/settings_select_layout"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:paddingTop="1dp"
-      android:layout_weight="1"
-      android:visibility="gone" >
-
-      <TextView
-        android:id="@+id/settings_select"
-        android:textStyle="bold"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center_vertical|right"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:text=""
-        android:textSize="14sp"
-        tools:ignore="NestedWeights,RtlHardcoded,SmallSp"/>
-
-      <ImageView
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/ic_up_down" />
-
-    </LinearLayout>
-
-    <com.yuk.miuihome.module.view.SettingsSwitch
-      android:id="@+id/settings_switch"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center_vertical"
-      android:background="@null"
-      android:thumb="@drawable/switch_thumb"
-      android:track="@drawable/switch_track"
       android:visibility="gone" />
 
   </LinearLayout>
@@ -83,30 +33,8 @@
     android:id="@+id/settings_custom_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"/>
-
-  <SeekBar
-    android:id="@+id/settings_seekbar"
-    style="@style/CustomSeekbarStyle"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_vertical"
-    android:paddingBottom="15dp"
     android:paddingStart="25dp"
     android:paddingEnd="25dp"
-    android:background="@null"
-    android:thumb="@null"
-    android:visibility="gone" />
-
-  <View
-    android:id="@+id/settings_line"
-    android:layout_width="wrap_content"
-    android:layout_height="0.8dp"
-    android:layout_marginTop="18dp"
-    android:layout_marginStart="25dp"
-    android:layout_marginEnd="25dp"
-    android:layout_marginBottom="18dp"
-    android:background="@color/line"
-    android:visibility="gone" />
+    android:orientation="vertical" />
 
 </LinearLayout>
