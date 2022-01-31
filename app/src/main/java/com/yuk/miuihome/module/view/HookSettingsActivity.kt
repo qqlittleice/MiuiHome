@@ -1,6 +1,7 @@
 package com.yuk.miuihome.module.view
 
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +20,7 @@ class HookSettingsActivity: TransferActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.settings_activity)
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
         DataHelper.currentActivity = this
         itemList.addAll(DataHelper.getItems())
         initBack()
