@@ -12,8 +12,8 @@
   <string name="BlurWhenOpenFolder">Размытие при открытии папок</string>
   <string name="BrokenFeature">Устаревшие функции</string>
   <string name="Cancel">Отмена</string>
-  <string name="CategoryHideAll">Скрыть "Все" в категориях приложений</string>
-  <string name="CategoryPagingHideEdit">Скрыть "Редактировать" в меню категорий приложений</string>
+  <string name="CategoryHideAll">Скрыть \"Все\" в категориях приложений</string>
+  <string name="CategoryPagingHideEdit">Скрыть \"Редактировать\" в меню категорий приложений</string>
   <string name="CleanModuleSettings">Очистка конфигурации пользователя</string>
   <string name="Close">Закрыть</string>
   <string name="CloseFolder">Закрывать папку при открытии приложения</string>
@@ -23,7 +23,7 @@
   <string name="Defaults">По умолчанию</string>
   <string name="Description">Дополнительные настройки для рабочего стола MIUI</string>
   <string name="DockBottom">Док-бар в нижней части экрана</string>
-  <string name="DockFeature">Включить функцию "Док-бар"</string>
+  <string name="DockFeature">Включить функцию \"Док-бар\"</string>
   <string name="DockHeight">Высота док-бара</string>
   <string name="DockIconBottom">Иконки в нижней части экрана</string>
   <string name="DockMarginBottom">Индикатор страницы и Интервал в нижней части</string>
@@ -35,7 +35,7 @@
   <string name="DoubleTap">Двойное нажатие для блокировки экрана</string>
   <string name="EnableDockBlur">Включить размытие панели док-бара</string>
   <string name="EnableIconShadow">Показывать тень и отражение иконок</string>
-  <string name="EveryThingBuild">Скомпилировать раб. стол MIUI, используя режим "Everything"</string>
+  <string name="EveryThingBuild">Скомпилировать раб. стол MIUI, используя режим \"Everything\"</string>
   <string name="Folder">Папки</string>
   <string name="FolderColumnsCount">Число колонок в папках</string>
   <string name="FolderWidth">Использовать всю ширину папки</string>
@@ -43,7 +43,7 @@
   <string name="HideStatusBar">Скрывать строку состояния в меню недавних</string>
   <string name="HideTaskViewAppIcon">Скрыть иконки приложений в меню недавних</string>
   <string name="HideTaskViewCleanUpIcon">Скрыть иконку очистки в меню недавних</string>
-  <string name="HideTaskViewSmallWindowIcon">Скрыть кнопку "Плавающие окна" в меню недавних</string>
+  <string name="HideTaskViewSmallWindowIcon">Скрыть кнопку \"Плавающие окна\" в меню недавних</string>
   <string name="HideWidgetTitles">Скрыть заголовки виджетов</string>
   <string name="HorizontalScreen">Горизонтальный экран</string>
   <string name="HorizontalTaskViewOfAppCardSize">Размер миниатюры в меню недавних по гор.</string>
@@ -51,7 +51,7 @@
   <string name="InfiniteScroll">Бесконечная прокрутка рабочего стола</string>
   <string name="LowEndAnim">Low-end уст-ва могут использовать анимированные иконки</string>
   <string name="LowEndDeviceUseMIUIWidgets">Low-end уст-ва могут использовать виджеты MIUI</string>
-  <string name="MamlDownload">Эффект "Водная рябь" при загрузке</string>
+  <string name="MamlDownload">Эффект \"Водная рябь\" при загрузке</string>
   <string name="ManualInput">Нажми, чтобы ввести вручную</string>
   <string name="ModuleFeature">Доп. настройки модуля</string>
   <string name="ModuleSettings">Настройки модуля</string>
@@ -77,15 +77,15 @@
   <string name="SimpleAnimation">Простые анимации</string>
   <string name="SimpleBlur">Простое размытие</string>
   <string name="SimpleWarn">Вы включили простую анимацию, это скроет некоторые настройки.</string>
-  <string name="SmallWindow">Все приложения могут использовать "Плавающее окно"</string>
+  <string name="SmallWindow">Все приложения могут использовать \"Плавающее окно\"</string>
   <string name="SmoothAnimation">Плавная анимация</string>
   <string name="TaskViewAppCardTextSize">Размер текста заголовка миниатюры</string>
   <string name="TaskViewBlurLevel">Уровень размытия меню недавних</string>
   <string name="TaskViewBlurSetTo">Установите уровень размытия меню недавних</string>
   <string name="TestBlur">Тестовое размытие</string>
   <string name="TestFeature">Экспериментальные функции</string>
-  <string name="Tips">Если Вы используете этот модуль впервые, модуль установит значение по умолчанию, а затем перезапустит раб. стол MIUI. Если Вам нужны дополнительные настройки, пожалуйста, дождитесь перезапуска рабочего стола MIUI и снова откройте настройки "Рабочего стола".</string>
-  <string name="Tips1">Это приведет к сбросу параметров "Док-бара" на значения по умолчанию и перезагрузке рабочего стола.</string>
+  <string name="Tips">Если Вы используете этот модуль впервые, модуль установит значение по умолчанию, а затем перезапустит раб. стол MIUI. Если Вам нужны дополнительные настройки, пожалуйста, дождитесь перезапуска рабочего стола MIUI и снова откройте настройки \"Рабочего стола\".</string>
+  <string name="Tips1">Это приведет к сбросу параметров \"Док-бара\" на значения по умолчанию и перезагрузке рабочего стола.</string>
   <string name="Tips2">Это восстановит настройки модуля по умолчанию и перезагрузит раб. стол системы.</string>
   <string name="Tips3">Это приведет к сбросу параметров Размера миниатюры для горизонтального меню недавних на значение по умолчанию и перезапуску рабочего стола.</string>
   <string name="Tips4">Поддержка шестнадцатеричного значения цвета, например, #FFFFFF - белый, #000000 - черный.</string>
@@ -96,6 +96,6 @@
   <string name="WallpaperDarken">Отключить затемнение обоев</string>
   <string name="Welcome">Добро пожаловать!</string>
   <string name="Widget">Виджеты</string>
-  <string name="WidgetToMinus">Позволить перемещать классические виджеты в "Ленту виджетов"</string>
+  <string name="WidgetToMinus">Позволить перемещать классические виджеты в \"Ленту виджетов\"</string>
   <string name="Yes">Ок</string>
 </resources>

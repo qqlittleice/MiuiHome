@@ -17,7 +17,7 @@
   <string name="HideStatusBar">後台界面隱藏狀態欄</string>
   <string name="HideTaskViewAppIcon">隱藏後台應用圖標</string>
   <string name="HideTaskViewCleanUpIcon">隱藏後台清理圖標</string>
-  <string name="HideTaskViewSmallWindowIcon">移除後台“小窗應用”圖標</string>
+  <string name="HideTaskViewSmallWindowIcon">移除後台\"小窗應用\"圖標</string>
   <string name="HideWidgetTitles">隱藏桌面小部件標題</string>
   <string name="HorizontalTaskViewOfAppCardSize">橫向(瀑布)後台卡片大小</string>
   <string name="InfiniteScroll">桌面無限滾動</string>
@@ -47,7 +47,7 @@
   <string name="TaskViewBlurSetTo">後台模糊級別已設為</string>
   <string name="TestBlur">測試模糊</string>
   <string name="TestFeature">實驗性功能</string>
-  <string name="Tips">檢測到你是第一次使用本模塊，模塊會進行默認值設定，並隨後重啟桌面。\n如需進一步設置，請待桌面重啟後再次打開桌面設置。</string>
+  <string name="Tips">檢測到你是第一次使用本模塊，模塊會進行默認值設定，並隨後重啟桌面。如需進一步設置，請待桌面重啟後再次打開桌面設置。</string>
   <string name="UnlockGrids">解鎖桌面佈局限制</string>
   <string name="VerticalTaskViewOfAppCardSize">縱向(平鋪)後台卡片大小</string>
   <string name="WallpaperDarken">取消後台壁紙壓暗效果</string>
