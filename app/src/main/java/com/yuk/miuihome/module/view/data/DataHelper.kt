@@ -133,7 +133,7 @@ object DataHelper {
             add(Item(test = arrayListOf(TextV(resId = R.string.RoundCorner, onClickListener = { showRoundCornerDialog() }))))
             add(Item(test = arrayListOf(TextV(resId = R.string.AppTextSize, onClickListener = { showAppTextSizeDialog() }))))
             add(Item(test = arrayListOf(TextV(resId = R.string.VerticalTaskViewOfAppCardSize, onClickListener = { showVerticalTaskViewOfAppCardSizeDialog() }))))
-            add(Item(test = arrayListOf(TextV(resId = R.string.HorizontalTaskViewOfAppCardSize, onClickListener = { setItems(horizontal,true) }))))  // SettingDialog().showModifyHorizontal()
+            add(Item(test = arrayListOf(TextWithArrowV(TextV(resId = R.string.HorizontalTaskViewOfAppCardSize), onClickListener = { setItems(horizontal,true) }))))  // SettingDialog().showModifyHorizontal()
             add(Item(test = arrayListOf(LineV())))
 
             add(Item(test = arrayListOf(TitleTextV(resId = R.string.Folder))))
@@ -181,7 +181,7 @@ object DataHelper {
             add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.DoubleTap), SwitchV("doubleTap")))))
             if (!OwnSP.ownSP.getBoolean("dockSettings", false) && (Config.AndroidSDK == 30))
                 add(Item(test = arrayListOf(TextWithSwitchV(TextV(resId = R.string.SearchBarBlur), SwitchV("searchBarBlur")))))
-            add(Item(test = arrayListOf(TextV(resId = R.string.DockSettings, onClickListener = { setItems(dock,true) }))))  // SettingDialog().showDockDialog()
+            add(Item(test = arrayListOf(TextWithArrowV(TextV(resId = R.string.DockSettings), onClickListener = { setItems(dock,true) }))))
             add(Item(test = arrayListOf(TextV(resId = R.string.EveryThingBuild, onClickListener = { BuildWithEverything().init() }))))
             add(Item(test = arrayListOf(LineV())))
 
@@ -193,7 +193,7 @@ object DataHelper {
             add(Item(test = arrayListOf(TitleTextV(resId = R.string.ModuleFeature))))
             add(Item(test = arrayListOf(TextV(resId = R.string.CleanModuleSettings, onClickListener = { showCleanModuleSettingsDialog() }))))
             add(Item(test = arrayListOf(TextV(resId = R.string.Reboot, onClickListener = { showRestartDialog() }))))
-            add(Item(test = arrayListOf(TextV(resId = R.string.About, onClickListener = { setItems(menu, true) }))))
+            add(Item(test = arrayListOf(TextWithArrowV(TextV(resId = R.string.About), onClickListener = { setItems(menu, true) }))))
 
             //add(Item(test = arrayListOf(LineV())))
             //add(Item(test = arrayListOf(TitleTextV("Test Title"))))
