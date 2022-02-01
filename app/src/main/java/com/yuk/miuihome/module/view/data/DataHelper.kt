@@ -409,10 +409,10 @@ object DataHelper {
     private fun showIconTitleFontSizeDialog() {
         SettingsDialog(currentActivity).apply {
             setTitle(XposedInit.moduleRes.getString(R.string.IconTitleFontSize))
-            setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 1.0, ${XposedInit.moduleRes.getString(R.string.Recommend)}: 0.0-10.0, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
-            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("iconTitleFontSize", 1f).toString()}")
+            setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 12.0, ${XposedInit.moduleRes.getString(R.string.Recommend)}: 0.0-50.0, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("iconTitleFontSize", 12f).toString()}")
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
-                if (getEditText() == "") editor.putFloat("iconTitleFontSize", 1f)
+                if (getEditText() == "") editor.putFloat("iconTitleFontSize", 12f)
                 else editor.putFloat("iconTitleFontSize", getEditText().toFloat())
                 editor.apply()
                 dismiss()
