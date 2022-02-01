@@ -75,6 +75,7 @@ object DataHelper {
             add(Item(test = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockIconBottom), key = "dockIconBottom", min = 0, max = 150, divide = 10, defaultProgress = 35))))
             add(Item(test = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockMarginTop), key = "dockMarginTop", min = 0, max = 100, divide = 10, defaultProgress = 6))))
             add(Item(test = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockMarginBottom), key = "dockMarginBottom", min = 0, max = 200, divide = 10, defaultProgress = 110))))
+            add(Item(test = arrayListOf(TextV(resId = R.string.Reset, onClickListener = { showResetDockDialog() }))))
         }
         return itemList
     }
@@ -83,8 +84,9 @@ object DataHelper {
         val itemList = arrayListOf<Item>()
         itemList.apply {
             add(Item(test = arrayListOf(TitleTextV(resId = R.string.HorizontalTaskViewOfAppCardSize))))
-            add(Item(test = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.VerticalScreen), key = "task_horizontal1", min = 10, max = 1500, divide = 1000, defaultProgress = 1000))))
-            add(Item(test = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.HorizontalScreen), key = "task_horizontal2", min = 10, max = 1500, divide = 1000, defaultProgress = 1000))))
+            add(Item(test = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.VerticalScreen), key = "task_horizontal1", min = 500, max = 1500, divide = 1000, defaultProgress = 1000))))
+            add(Item(test = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.HorizontalScreen), key = "task_horizontal2", min = 500, max = 1500, divide = 1000, defaultProgress = 1000))))
+            add(Item(test = arrayListOf(TextV(resId = R.string.Reset2, onClickListener = { showResetHorizontalDialog() }))))
         }
         return itemList
     }
@@ -294,6 +296,47 @@ object DataHelper {
         }
     }
 
+    private fun showResetHorizontalDialog() {
+        SettingsDialog(currentActivity).apply {
+            setTitle(XposedInit.moduleRes.getString(R.string.Reset2))
+            setMessage(XposedInit.moduleRes.getString(R.string.Tips3))
+            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+                OwnSP.set("task_horizontal1", 1.0f)
+                OwnSP.set("task_horizontal2", 1.0f)
+                thread {
+                    LogUtil.toast(XposedInit.moduleRes.getString(R.string.Reboot2))
+                    Thread.sleep(1000)
+                    exitProcess(0)
+                }
+            }
+            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            show()
+        }
+    }
+
+    private fun showResetDockDialog() {
+        SettingsDialog(currentActivity).apply {
+            setTitle(XposedInit.moduleRes.getString(R.string.Reset))
+            setMessage(XposedInit.moduleRes.getString(R.string.Tips1))
+            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+                OwnSP.set("dockRadius", 2.5f)
+                OwnSP.set("dockHeight", 7.9f)
+                OwnSP.set("dockSide", 3.0f)
+                OwnSP.set("dockBottom", 2.3f)
+                OwnSP.set("dockIconBottom", 3.5f)
+                OwnSP.set("dockMarginTop", 0.6f)
+                OwnSP.set("dockMarginBottom", 11.0f)
+                thread {
+                    LogUtil.toast(XposedInit.moduleRes.getString(R.string.Reboot2))
+                    Thread.sleep(1000)
+                    exitProcess(0)
+                }
+            }
+            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            show()
+        }
+    }
+
     private fun showCustomTitleColorDialog() {
         SettingsDialog(currentActivity).apply {
             setTitle(XposedInit.moduleRes.getString(R.string.CustomTitleColor))
@@ -313,7 +356,7 @@ object DataHelper {
     private fun showCustomRecentTextDialog() {
         SettingsDialog(currentActivity).apply {
             setTitle(XposedInit.moduleRes.getString(R.string.CustomRecentText))
-            setMessage("${XposedInit.moduleRes.getString(R.string.setRecentString)}")
+            setMessage(XposedInit.moduleRes.getString(R.string.setRecentString))
             setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getString("recentText", "").toString()}")
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
                 editor.putString("recentText", getEditText())
@@ -393,10 +436,10 @@ object DataHelper {
     private fun showVerticalTaskViewOfAppCardSizeDialog() {
         SettingsDialog(currentActivity).apply {
             setTitle(XposedInit.moduleRes.getString(R.string.VerticalTaskViewOfAppCardSize))
-            setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 100.0, ${XposedInit.moduleRes.getString(R.string.Recommend)}: 50.0-150.0, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
-            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("task_vertical", 100f).toString()}")
+            setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 1000.0, ${XposedInit.moduleRes.getString(R.string.Recommend)}: 500.0-1500.0, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("task_vertical", 1000f).toString()}")
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
-                if (getEditText() == "") editor.putFloat("task_vertical", 100f)
+                if (getEditText() == "") editor.putFloat("task_vertical", 1000f)
                 else editor.putFloat("task_vertical", getEditText().toFloat())
                 editor.apply()
                 dismiss()
@@ -449,7 +492,6 @@ object DataHelper {
                 editor.apply()
                 dismiss()
             }
-
             setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
             show()
         }

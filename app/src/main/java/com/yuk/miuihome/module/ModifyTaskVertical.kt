@@ -12,8 +12,8 @@ import com.yuk.miuihome.utils.ktx.replaceMethod
 class ModifyTaskVertical {
 
     fun init() {
-        val value = OwnSP.ownSP.getFloat("task_vertical", -1f)
-        if (value == -1f) return
+        val value = OwnSP.ownSP.getFloat("task_vertical", -1f) / 1000f
+        if (value == -1f || value == 1f) return
         "com.miui.home.recents.views.TaskStackViewsAlgorithmVertical".replaceMethod("scaleTaskView", RectF::class.java
         ) {
             val context = it.thisObject.getObjectField("mContext") as Context
