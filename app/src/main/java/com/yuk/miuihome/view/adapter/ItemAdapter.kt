@@ -1,15 +1,19 @@
-package com.yuk.miuihome.module.view.adapter
+package com.yuk.miuihome.view.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.util.TypedValue
-import android.view.*
-import android.widget.*
+import android.view.ContextThemeWrapper
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.yuk.miuihome.R
-import com.yuk.miuihome.module.view.base.BaseView
-import com.yuk.miuihome.module.view.data.Item
-import com.yuk.miuihome.module.view.utils.ViewBuilder
+import com.yuk.miuihome.view.base.BaseView
+import com.yuk.miuihome.view.data.Item
+import com.yuk.miuihome.view.utils.ViewBuilder
 
 class ItemAdapter(private val itemList: List<Item>) :
     RecyclerView.Adapter<ItemAdapter.ViewHolder>() {

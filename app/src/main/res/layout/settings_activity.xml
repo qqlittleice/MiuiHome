@@ -9,19 +9,25 @@
   <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="50dp"
+    android:paddingTop="43dp"
     android:paddingBottom="18dp"
     android:orientation="vertical"
     tools:ignore="RtlSymmetry,UseCompoundDrawables">
 
-    <ImageView
+    <LinearLayout
       android:id="@+id/settings_back"
-      android:layout_width="20dp"
-      android:layout_height="20dp"
-      android:layout_marginStart="28dp"
-      android:layout_gravity="center_vertical|start"
-      android:src="@drawable/back_btn"
-      tools:ignore="ContentDescription" />
+      android:layout_width="38dp"
+      android:layout_height="38dp"
+      android:layout_marginStart="18dp">
+
+      <ImageView
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back_btn"
+        tools:ignore="ContentDescription" />
+
+    </LinearLayout>
 
     <TextView
       android:id="@+id/Title"
@@ -29,11 +35,11 @@
       android:layout_height="0dp"
       android:layout_weight="1"
       android:layout_gravity="center_vertical"
-      android:paddingTop="20dp"
+      android:paddingTop="8dp"
       android:paddingStart="25dp"
       android:text="@string/app_name"
       android:textFontWeight="300"
-      android:textSize="30sp" />
+      android:textSize="32sp" />
 
   </LinearLayout>
 

@@ -22,9 +22,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
     private val modRes = XModuleResources.createInstance(XposedInit.modulePath, hookedRes.res)
     private fun getResId(type: String, name: String): Int = modRes.getIdentifier(name, type, Config.packageName)
 
-    companion object {
-        private var hasLoad = false
-    }
+    companion object { private var hasLoad = false }
 
     fun init() {
         thread {
@@ -33,10 +31,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 hookedRes.res.hookLayout(Config.hookPackage, "layout", "layout_search_bar"
                 ) {
                     val targetView = it.view
-                    (if (XposedInit().checkAlpha() || XposedInit().checkVersionCode() >= 421153106L)
-                        DrawableNameNewList else DrawableNameList).forEach {
-                            drawableName -> resetDockRadius(targetView.context, drawableName)
-                        }
+                    (if (XposedInit().checkAlpha() || XposedInit().checkVersionCode() >= 421153106L) DrawableNameNewList else DrawableNameList).forEach { drawableName -> resetDockRadius(targetView.context, drawableName) }
                 }
             val backgroundTextSize = OwnSP.ownSP.getInt("backgroundTextSize", 13)
             val message: String = OwnSP.ownSP.getString("recentText", "").toString()

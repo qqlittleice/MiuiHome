@@ -1,4 +1,4 @@
-package com.yuk.miuihome.module.view.base
+package com.yuk.miuihome.view.base
 
 import android.content.Context
 import android.view.View
@@ -7,7 +7,10 @@ import android.widget.Switch
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.OwnSP
 
-class SwitchV(private val key: String, val customOnCheckedChangeListener: CompoundButton.OnCheckedChangeListener? = null): BaseView() {
+class SwitchV(
+    private val key: String,
+    val customOnCheckedChangeListener: CompoundButton.OnCheckedChangeListener? = null
+) : BaseView() {
 
     override fun getType(): BaseView = this
 

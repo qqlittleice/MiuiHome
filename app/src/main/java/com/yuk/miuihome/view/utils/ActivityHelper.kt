@@ -1,4 +1,4 @@
-package com.yuk.miuihome.module.view.utils
+package com.yuk.miuihome.view.utils
 
 import android.annotation.SuppressLint
 import android.annotation.TargetApi
@@ -64,23 +64,14 @@ object ActivityHelper {
             val cSingleton = Class.forName("android.util.Singleton")
             val fmInstance = cSingleton.getFieldByClassOrObject("mInstance")
             val mInstance = fmInstance.get(gDefault)
-            val proxy = Proxy.newProxyInstance(
-                XposedInit::class.java.classLoader,
-                arrayOf(Class.forName("android.app.IActivityManager")),
-                IActivityManagerHandler(mInstance!!)
-            )
+            val proxy = Proxy.newProxyInstance(XposedInit::class.java.classLoader, arrayOf(Class.forName("android.app.IActivityManager")), IActivityManagerHandler(mInstance!!))
             fmInstance.set(gDefault, proxy)
             try {
                 val cActivityTaskManager = Class.forName("android.app.ActivityTaskManager")
-                val singleton =
-                    cActivityTaskManager.getStaticObjectField("IActivityTaskManagerSingleton")
+                val singleton = cActivityTaskManager.getStaticObjectField("IActivityTaskManagerSingleton")
                 cSingleton.getMethod("get").invoke(singleton)
                 val mDefaultTaskMgr = fmInstance.get(singleton)
-                val proxy2 = Proxy.newProxyInstance(
-                    XposedInit::class.java.classLoader,
-                    arrayOf(Class.forName("android.app.IActivityTaskManager")),
-                    IActivityManagerHandler(mDefaultTaskMgr!!)
-                )
+                val proxy2 = Proxy.newProxyInstance(XposedInit::class.java.classLoader, arrayOf(Class.forName("android.app.IActivityTaskManager")), IActivityManagerHandler(mDefaultTaskMgr!!))
                 fmInstance.set(singleton, proxy2)
             } catch (ignored: Exception) {
             }
@@ -99,8 +90,7 @@ class MyInstrumentation(private val mBase: Instrumentation) : Instrumentation() 
             return mBase.newActivity(cl, className, intent)
         } catch (e: Exception) {
             if (className!!.startsWith(Config.packageName)) {
-                return ActivityHelper::class.java.classLoader!!.loadClass(className)
-                    .newInstance() as Activity
+                return ActivityHelper::class.java.classLoader!!.loadClass(className).newInstance() as Activity
             }
             throw e
         }
@@ -474,8 +464,7 @@ class MyHandler(private val mDefault: Handler.Callback?) : Handler.Callback {
                     bundle?.let {
                         it.classLoader = HomeContext.context.classLoader
                         if (intent.hasExtra("com_yuk_miuihome_intent_proxy")) {
-                            val rIntent =
-                                intent.getParcelableExtra<Intent>("com_yuk_miuihome_intent_proxy")
+                            val rIntent = intent.getParcelableExtra<Intent>("com_yuk_miuihome_intent_proxy")
                             fIntent.set(record, rIntent)
                         }
                     }
@@ -488,8 +477,7 @@ class MyHandler(private val mDefault: Handler.Callback?) : Handler.Callback {
                 try {
                     clientTranslation?.let { cTrans ->
                         //获取列表
-                        val mGetCallbacks =
-                            Class.forName("android.app.servertransaction.ClientTransaction").getDeclaredMethod("getCallbacks")
+                        val mGetCallbacks = Class.forName("android.app.servertransaction.ClientTransaction").getDeclaredMethod("getCallbacks")
                         mGetCallbacks.isAccessible = true
                         val cTransItems = mGetCallbacks.invoke(cTrans) as List<*>?
                         if (!cTransItems.isNullOrEmpty()) {
@@ -501,8 +489,7 @@ class MyHandler(private val mDefault: Handler.Callback?) : Handler.Callback {
                                     //获取Bundle
                                     var bundle: Bundle? = null
                                     try {
-                                        val fExtras =
-                                            Intent::class.java.getFieldByClassOrObject("mExtras")
+                                        val fExtras = Intent::class.java.getFieldByClassOrObject("mExtras")
                                         bundle = fExtras.get(wrapper) as Bundle?
                                     } catch (e: Exception) {
                                         LogUtil.e(e)
@@ -511,25 +498,14 @@ class MyHandler(private val mDefault: Handler.Callback?) : Handler.Callback {
                                     bundle?.let {
                                         it.classLoader = HomeContext.classLoader
                                         if (wrapper.hasExtra("com_yuk_miuihome_intent_proxy")) {
-                                            val rIntent =
-                                                wrapper.getParcelableExtra<Intent>(
-                                                    "com_yuk_miuihome_intent_proxy"
-                                                )
+                                            val rIntent = wrapper.getParcelableExtra<Intent>("com_yuk_miuihome_intent_proxy")
                                             fmIntent.set(item, rIntent)
                                             if (Build.VERSION.SDK_INT >= 31) {
                                                 val cActivityThread = Class.forName("android.app.ActivityThread")
-                                                val currentActivityThread =
-                                                    cActivityThread.getDeclaredMethod("currentActivityThread")
+                                                val currentActivityThread = cActivityThread.getDeclaredMethod("currentActivityThread")
                                                 currentActivityThread.isAccessible = true
                                                 val activityThread = currentActivityThread.invoke(null)
-                                                val acr = activityThread.javaClass.getMethod(
-                                                    "getLaunchingActivity",
-                                                    IBinder::class.java
-                                                ).invoke(
-                                                    activityThread,
-                                                    cTrans.javaClass.getMethod("getActivityToken")
-                                                        .invoke(cTrans)
-                                                )
+                                                val acr = activityThread.javaClass.getMethod("getLaunchingActivity", IBinder::class.java).invoke(activityThread, cTrans.javaClass.getMethod("getActivityToken").invoke(cTrans))
                                                 if (acr != null) {
                                                     val fAcrIntent = acr.javaClass.getDeclaredField("intent")
                                                     fAcrIntent.isAccessible = true
@@ -572,10 +548,7 @@ class IActivityManagerHandler(private val mOrigin: Any) : InvocationHandler {
                         component.className.startsWith(Config.packageName)
                     ) {
                         val wrapper = Intent()
-                        wrapper.setClassName(
-                            component.packageName,
-                            "com.miui.home.settings.DefaultHomeSettings"
-                        )
+                        wrapper.setClassName(component.packageName, "com.miui.home.settings.DefaultHomeSettings")
                         wrapper.putExtra("com_yuk_miuihome_intent_proxy", raw)
                         it[index] = wrapper
                     }

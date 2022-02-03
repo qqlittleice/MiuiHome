@@ -1,4 +1,4 @@
-package com.yuk.miuihome.module.view
+package com.yuk.miuihome.view
 
 import android.app.Activity
 import android.content.Context
@@ -45,5 +45,4 @@ open class TransferActivity: Activity() {
         }
         super.onRestoreInstanceState(savedInstanceState)
     }
-
 }

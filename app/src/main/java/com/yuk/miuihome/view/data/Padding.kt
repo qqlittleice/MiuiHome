@@ -1,4 +1,4 @@
-package com.yuk.miuihome.module.view.data
+package com.yuk.miuihome.view.data
 
 data class Padding(
     val left: Int,

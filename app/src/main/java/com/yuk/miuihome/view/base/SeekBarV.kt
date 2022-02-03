@@ -1,4 +1,4 @@
-package com.yuk.miuihome.module.view.base
+package com.yuk.miuihome.view.base
 
 import android.content.Context
 import android.view.View
@@ -8,7 +8,14 @@ import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.dp2px
 
-class SeekBarV(val key: String = "", private val min: Int, private val max: Int, val divide: Int = 1, private val defaultProgress: Int, val callBacks: ((Int, TextView) -> Unit)? = null): BaseView() {
+class SeekBarV(
+    val key: String = "",
+    private val min: Int,
+    private val max: Int,
+    val divide: Int = 1,
+    private val defaultProgress: Int,
+    val callBacks: ((Int, TextView) -> Unit)? = null
+) : BaseView() {
 
     override var outside = true
 
@@ -36,6 +43,7 @@ class SeekBarV(val key: String = "", private val min: Int, private val max: Int,
                 }
 
                 override fun onStartTrackingTouch(p0: SeekBar?) {}
+
                 override fun onStopTrackingTouch(p0: SeekBar?) {}
             })
         }

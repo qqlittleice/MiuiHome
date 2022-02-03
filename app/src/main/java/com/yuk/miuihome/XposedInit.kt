@@ -13,13 +13,10 @@ import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
 import com.yuk.miuihome.module.*
-import com.yuk.miuihome.module.view.HookSettingsActivity
-import com.yuk.miuihome.module.view.SettingsDialog
-import com.yuk.miuihome.module.view.data.DataHelper
-import com.yuk.miuihome.module.view.utils.ActivityHelper
+import com.yuk.miuihome.view.HookSettingsActivity
+import com.yuk.miuihome.view.utils.ActivityHelper
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.HomeContext
-import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
@@ -84,7 +81,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
     private fun doHook() {
         if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: MiuiLauncher version = ${checkVersionName()}(${checkVersionCode()})")
         "com.miui.home.settings.MiuiHomeSettingActivity".hookAfterMethod("onCreate", Bundle::class.java) {
-            HomeContext.settingActivity = it.thisObject as Activity
+            HomeContext.Activity = it.thisObject as Activity
         }
         "com.miui.home.settings.MiuiHomeSettings".hookAfterMethod(
             "onCreatePreferences", Bundle::class.java, String::class.java
@@ -171,9 +168,9 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
 
     fun checkWidgetLauncher(): Boolean {
         val checkList = arrayListOf(
-                "com.miui.home.launcher.widget.MIUIAppWidgetInfo",
-                "com.miui.home.launcher.LauncherAppWidgetInfo",
-                "com.miui.home.launcher.MIUIWidgetUtil"
+            "com.miui.home.launcher.widget.MIUIAppWidgetInfo",
+            "com.miui.home.launcher.LauncherAppWidgetInfo",
+            "com.miui.home.launcher.MIUIWidgetUtil"
         )
         return try {
             for (item in checkList) XposedHelpers.findClass(item, HomeContext.classLoader)

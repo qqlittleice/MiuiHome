@@ -1,8 +1,8 @@
-package com.yuk.miuihome.module.view.utils
+package com.yuk.miuihome.view.utils
 
 import android.content.Context
 import android.view.View
-import com.yuk.miuihome.module.view.base.BaseView
+import com.yuk.miuihome.view.base.BaseView
 
 object ViewBuilder {
 
@@ -10,5 +10,4 @@ object ViewBuilder {
         if (view.hasLoad) return null
         return view.create(context).also { view.hasLoad = true }
     }
-
 }

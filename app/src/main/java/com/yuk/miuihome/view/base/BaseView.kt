@@ -1,9 +1,9 @@
-package com.yuk.miuihome.module.view.base
+package com.yuk.miuihome.view.base
 
 import android.content.Context
 import android.view.View
 
-abstract class BaseView: BaseProperties {
+abstract class BaseView : BaseProperties {
 
     var hasLoad = false
 

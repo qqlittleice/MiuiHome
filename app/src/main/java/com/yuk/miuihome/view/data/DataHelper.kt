@@ -1,4 +1,4 @@
-package com.yuk.miuihome.module.view.data
+package com.yuk.miuihome.view.data
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -9,8 +9,8 @@ import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.module.BuildWithEverything
 import com.yuk.miuihome.module.ModifyBlurLevel
-import com.yuk.miuihome.module.view.SettingsDialog
-import com.yuk.miuihome.module.view.base.*
+import com.yuk.miuihome.view.SettingsDialog
+import com.yuk.miuihome.view.base.*
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
@@ -26,7 +26,6 @@ object DataHelper {
     const val dock = "Dock"
     const val horizontal = "Horizontal"
     lateinit var currentActivity: Activity
-
     private val editor by lazy { OwnSP.ownSP.edit() }
 
     fun setItems(string: String) {
@@ -110,9 +109,9 @@ object DataHelper {
                 dict0[currentActivity.getString(R.string.SimpleBlur)] = "SimpleBlur"
                 dict0[currentActivity.getString(R.string.NoneBlur)] = "NoneBlur"
                 if (ModifyBlurLevel.checked)
-                    add(Item(test = arrayListOf(TextWithSpinnerV(TextV(resId = R.string.TaskViewBlurLevel) ,"blurLevel", select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], array = blurLevel, callBacks = { OwnSP.set("blurLevel", dict0[it].toString()) }))))
+                    add(Item(test = arrayListOf(TextWithSpinnerV(TextV(resId = R.string.TaskViewBlurLevel), select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], array = blurLevel, callBacks = { OwnSP.set("blurLevel", dict0[it].toString()) }))))
                 else
-                    add(Item(test = arrayListOf(TextWithSpinnerV(TextV(resId = R.string.TaskViewBlurLevel), "blurLevel", select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], array = blurLevel0, callBacks = { OwnSP.set("blurLevel", dict0[it].toString()) }))))
+                    add(Item(test = arrayListOf(TextWithSpinnerV(TextV(resId = R.string.TaskViewBlurLevel), select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], array = blurLevel0, callBacks = { OwnSP.set("blurLevel", dict0[it].toString()) }))))
             }
             add(Item(test = arrayListOf(TextV(resId = R.string.AnimationLevel, onClickListener = { showAnimationLevelDialog() }))))
             add(Item(test = arrayListOf(LineV())))
@@ -249,6 +248,7 @@ object DataHelper {
                 OwnSP.set("dockIconBottom", 3.5f)
                 OwnSP.set("dockMarginTop", 0.6f)
                 OwnSP.set("dockMarginBottom", 11.0f)
+                OwnSP.set("task_vertical", 1000.0f)
                 OwnSP.set("task_horizontal1", 1.0f)
                 OwnSP.set("task_horizontal2", 1.0f)
                 OwnSP.set("folderColumns", 3)
@@ -279,6 +279,7 @@ object DataHelper {
                 OwnSP.set("dockIconBottom", 3.5f)
                 OwnSP.set("dockMarginTop", 0.6f)
                 OwnSP.set("dockMarginBottom", 11.0f)
+                OwnSP.set("task_vertical", 1000.0f)
                 OwnSP.set("task_horizontal1", 1.0f)
                 OwnSP.set("task_horizontal2", 1.0f)
                 OwnSP.set("folderColumns", 3)

@@ -10,5 +10,5 @@ object HomeContext {
     lateinit var application: Application
     lateinit var context: Context
     lateinit var classLoader: ClassLoader
-    lateinit var settingActivity: Activity
+    lateinit var Activity: Activity
 }
