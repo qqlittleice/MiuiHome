@@ -14,8 +14,8 @@ class TextV(
     val resId: Int? = null,
     val textSize: Float? = null,
     val textColor: Int? = null,
-    val padding: Padding? = null,
-    val typeface: Typeface? = null,
+    private val padding: Padding? = null,
+    private val typeface: Typeface? = null,
     val onClickListener: View.OnClickListener? = null
 ) : BaseView() {
 

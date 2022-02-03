@@ -100,4 +100,8 @@
   <string name="CustomTitleColor">應用圖標標題顔色</string>
   <string name="Tips4">支持十六進制顏色值，例如#FFFFFF為白，#000000為黑</string>
   <string name="About">關於模塊</string>
+  <string name="MiuiVersion">系統版本</string>
+  <string name="LauncherVersion">啓動器版本</string>
+  <string name="ModuleVersion">模塊版本</string>
+  <string name="AboutUs">關於我們</string>
 </resources>

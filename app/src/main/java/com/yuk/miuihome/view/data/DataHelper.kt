@@ -2,8 +2,9 @@ package com.yuk.miuihome.view.data
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Intent
 import android.graphics.Color
-import android.widget.Toast
+import android.view.View
 import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit
@@ -45,12 +46,15 @@ object DataHelper {
     private fun loadMenuItems(): ArrayList<Item> {
         val itemList = arrayListOf<Item>()
         itemList.apply {
-            add(Item(list = arrayListOf(TitleTextV("Launcher Version"))))
+            add(Item(list = arrayListOf(TitleTextV(resId = R.string.MiuiVersion))))
+            add(Item(list = arrayListOf(LineV())))
+            add(Item(list = arrayListOf(TextV( "Android " + XposedInit().checkAndroidVersion()+ " / MIUI " + showMiuiVersion()))))
+            add(Item(list = arrayListOf(TitleTextV(resId = R.string.LauncherVersion))))
             add(Item(list = arrayListOf(LineV())))
             add(Item(list = arrayListOf(TextV(XposedInit().checkVersionName()))))
-            add(Item(list = arrayListOf(TitleTextV("Module Version"))))
+            add(Item(list = arrayListOf(TitleTextV(resId = R.string.ModuleVersion))))
             add(Item(list = arrayListOf(LineV())))
-            add(Item(list = arrayListOf(TextV(showMiuiVersion()+ "/"+"${BuildConfig.VERSION_NAME}(${BuildConfig.VERSION_CODE})-${BuildConfig.BUILD_TYPE}"))))
+            add(Item(list = arrayListOf(TextV("${BuildConfig.VERSION_NAME}(${BuildConfig.VERSION_CODE})-${BuildConfig.BUILD_TYPE}"))))
         }
         return itemList
     }
@@ -207,11 +211,11 @@ object DataHelper {
     private fun showMiuiVersion():String {
         lateinit var value: String
         when (XposedInit().checkMiuiVersion()) {
-            "V130" -> value = "MIUI 13"
-            "V125" -> value = "MIUI 12.5"
-            "V12" -> value = "MIUI 12"
-            "V11" -> value = "MIUI 11"
-            "V10" -> value = "MIUI 10"
+            "V130" -> value = "13"
+            "V125" -> value = "12.5"
+            "V12" -> value = "12"
+            "V11" -> value = "11"
+            "V10" -> value = "10"
         }
         return value
     }

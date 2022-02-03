@@ -53,6 +53,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                     checkVersionCode()
                     checkWidgetLauncher()
                     checkMiuiVersion()
+                    checkAndroidVersion()
                 }
                 Application::class.java.hookAfterMethod("onCreate") {
                     ActivityHelper.initSubActivity()
@@ -159,6 +160,10 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
 
     fun checkMiuiVersion(): String {
         return getProp("ro.miui.ui.version.name")
+    }
+
+    fun checkAndroidVersion(): String {
+        return getProp("ro.build.version.release")
     }
 
     fun checkVersionCode(): Long {

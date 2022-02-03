@@ -103,4 +103,8 @@
   <string name="CustomTitleColor">Customize the App icon title color</string>
   <string name="Tips4">Support hexadecimal color value, for example #FFFFFF is White, #000000 is Black</string>
   <string name="About">About Module</string>
+  <string name="MiuiVersion">MIUI Version</string>
+  <string name="LauncherVersion">Launcher Version</string>
+  <string name="ModuleVersion">Module Version</string>
+  <string name="AboutUs">About Us</string>
 </resources>
