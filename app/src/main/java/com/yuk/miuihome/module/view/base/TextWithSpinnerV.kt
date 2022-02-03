@@ -55,7 +55,7 @@ class TextWithSpinnerV(private val textV: TextV, val key: String, var select: St
                 popup.setDropDownGravity(Gravity.RIGHT)
                 popup.anchorView = it
                 popup.show()
-            }
+            }; view.background = context.getDrawable(R.drawable.ic_click_check); view.setPadding(0, dp2px(context, 14f), 0, dp2px(context, 14f))
         }
     }
 }

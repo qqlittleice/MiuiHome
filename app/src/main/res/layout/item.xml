@@ -3,8 +3,6 @@
   android:id="@+id/settings_linear_base"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
-  android:paddingTop="13dp"
-  android:paddingBottom="13dp"
   android:orientation="vertical">
 
   <LinearLayout
@@ -33,8 +31,6 @@
     android:id="@+id/settings_custom_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingStart="25dp"
-    android:paddingEnd="25dp"
     android:orientation="vertical" />
 
 </LinearLayout>

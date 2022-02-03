@@ -35,12 +35,12 @@ class HookSettingsActivity: TransferActivity() {
         back = findViewById(R.id.settings_back)
         back.setOnClickListener {
             if (DataHelper.thisItems == DataHelper.main) DataHelper.currentActivity.finish()
-            else DataHelper.setItems(DataHelper.main,false)
+            else DataHelper.setItems(DataHelper.main)
         }
     }
 
     override fun onBackPressed() {
-        if (DataHelper.thisItems != DataHelper.main) DataHelper.setItems(DataHelper.main,false)
+        if (DataHelper.thisItems != DataHelper.main) DataHelper.setItems(DataHelper.main)
         else super.onBackPressed()
     }
 

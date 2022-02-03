@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import com.yuk.miuihome.R
 import com.yuk.miuihome.module.view.data.LayoutPair
+import com.yuk.miuihome.utils.ktx.dp2px
 
 class TextWithArrowV(private val textV: TextV, val onClickListener: View.OnClickListener? = null): BaseView() {
 
@@ -20,7 +21,6 @@ class TextWithArrowV(private val textV: TextV, val onClickListener: View.OnClick
                 LayoutPair(ImageView(context).also { it.background = context.getDrawable(R.drawable.ic_right_arrow) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).also { it.gravity = Gravity.CENTER_VERTICAL })
             )
         ).create(context).also { view ->
-            onClickListener?.let { view.setOnClickListener(it) }
-        }
+            onClickListener?.let { view.setOnClickListener(it); view.background = context.getDrawable(R.drawable.ic_click_check) }; view.setPadding(0, 0, dp2px(context, 25f), 0)}
     }
 }
