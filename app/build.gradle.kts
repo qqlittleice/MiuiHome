@@ -19,14 +19,10 @@ android {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
-            isZipAlignEnabled = true
             setProguardFiles(listOf(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro", "proguard-log.pro"))
         }
         create("noResHook") {
             initWith(getByName("release"))
-        }
-        sourceSets.getByName("main") {
-            java.setSrcDirs(java.srcDirs + File(projectDir, "src/noResHook/java"))
         }
     }
     compileOptions {
