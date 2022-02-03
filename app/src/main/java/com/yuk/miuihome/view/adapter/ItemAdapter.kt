@@ -37,7 +37,7 @@ class ItemAdapter(private val itemList: List<Item>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = itemList[position]
         val customItems = item.customItems
-        val testItems = item.test
+        val testItems = item.list
         val context = holder.settingsText.context
 
         for (view: View in customItems) holder.settingsCustomView.addView(view)

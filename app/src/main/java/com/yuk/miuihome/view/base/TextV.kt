@@ -34,7 +34,7 @@ class TextV(
             else
                 view.paint.typeface = typeface
             textColor?.let { view.setTextColor(it) }
-            view.setPadding(dp2px(context, 25f), dp2px(context, 16f), dp2px(context, 5f), dp2px(context, 16f))
+            view.setPadding(dp2px(context, 25f), dp2px(context, 16f), dp2px(context, 25f), dp2px(context, 16f))
             padding?.let { view.setPadding(it.left, it.top, it.right, it.bottom) }
             onClickListener?.let { view.setOnClickListener(it); view.background = context.getDrawable(R.drawable.ic_click_check) }
         }

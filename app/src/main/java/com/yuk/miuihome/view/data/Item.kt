@@ -5,5 +5,5 @@ import com.yuk.miuihome.view.base.BaseView
 
 data class Item(
     val customItems: List<View> = arrayListOf(),
-    val test: List<BaseView> = arrayListOf()
+    val list: List<BaseView> = arrayListOf()
 )

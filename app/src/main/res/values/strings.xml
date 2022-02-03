@@ -15,7 +15,7 @@
   <string name="Defaults">Default</string>
   <string name="Recommend">Recommend</string>
   <string name="setDefaults">Leave blank to restore the default</string>
-  <string name="setRecentString">Leave blank to restore the default, and type a space to remove text</string>
+  <string name="setRecentString">Leave blank to restore default, type a space to remove text</string>
   <string name="current">Current</string>
   <string name="Description">Hook for MIUI Launcher</string>
   <string name="Folder">Folder Settings</string>
@@ -92,7 +92,7 @@
   <string name="HorizontalScreen">Horizontal Screen</string>
   <string name="Reset2">Reset Thumbnail size for Horizontal Recent Parameters</string>
   <string name="Tips3">This will reset the Thumbnail size for Horizontal Recent parameters to its default value and restart the System Launcher.</string>
-  <string name="UnlockIcons">Unlock hotseat icon number limit</string>
+  <string name="UnlockIcons">Unlock hot seat icon number limit</string>
   <string name="DockMarginTop">Page Indicator and Icon Spacing</string>
   <string name="DockMarginBottom">Page Indicator and the bottom of the Screen Spacing</string>
   <string name="SimpleWarn">You have enabled simple animation, this will hide some settings.</string>
