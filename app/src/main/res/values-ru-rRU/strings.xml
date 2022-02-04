@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+  <string name="ModuleVersion">Версия модуля</string>
+  <string name="LauncherVersion">Версия лаунчера</string>
   <string name="About">О модуле</string>
   <string name="AdvancedFeature">Расширенные настройки</string>
   <string name="AlwaysShowMIUIWidget">Отображать виджеты MIUI в классических виджетах</string>
@@ -62,6 +64,7 @@
   <string name="Reboot">Перезагрузить</string>
   <string name="Reboot1">Вы уверены, что хотите перезапустить?</string>
   <string name="Reboot2">Рабочий стол перезагрузится через 1 секунды!</string>
+  <string name="Recommend">Рекомендуемое</string>
   <string name="RecommendServer">Отключить сервер рекомендаций</string>
   <string name="ResHook">Перехват ресурсов</string>
   <string name="Reset">Сброс параметров док-бара</string>
@@ -88,7 +91,7 @@
   <string name="Tips1">Это приведет к сбросу параметров \"Док-бара\" на значения по умолчанию и перезагрузке рабочего стола.</string>
   <string name="Tips2">Это восстановит настройки модуля по умолчанию и перезагрузит раб. стол системы.</string>
   <string name="Tips3">Это приведет к сбросу параметров Размера миниатюры для горизонтального меню недавних на значение по умолчанию и перезапуску рабочего стола.</string>
-  <string name="Tips4">Поддержка шестнадцатеричного значения цвета, например, #FFFFFF - белый, #000000 - черный.</string>
+  <string name="Tips4">Поддержка шестнадцатеричного значения цвета, например, #FFFFFF - белый, #000000 - черный</string>
   <string name="UnlockGrids">Разблокировать ограничения макета</string>
   <string name="UnlockIcons">Откл. ограничение кол-ва иконок в док-баре</string>
   <string name="VerticalScreen">Вертикальный экран</string>
@@ -98,4 +101,7 @@
   <string name="Widget">Виджеты</string>
   <string name="WidgetToMinus">Позволить перемещать классические виджеты в \"Ленту виджетов\"</string>
   <string name="Yes">Ок</string>
+  <string name="current">Текущее значение</string>
+  <string name="setDefaults">Оставьте поле пустым, чтобы восстановить значение по умолчанию</string>
+  <string name="setRecentString">Оставьте поле пустым, чтобы восстановить значение по умолчанию, и введите пробел, чтобы удалить текст</string>
 </resources>
