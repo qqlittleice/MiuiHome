@@ -51,7 +51,7 @@ class TextWithSpinnerV(
             setOnDismissListener {
                 val animator = ValueAnimator.ofFloat(0.7f, 1f).setDuration(300)
                 animator.addUpdateListener { animation -> setBackgroundAlpha(animation.animatedValue as Float) }
-                animator.start() 
+                animator.start()
             }
         }
         val spinner = LinearContainerV(

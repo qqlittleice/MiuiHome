@@ -15,5 +15,3 @@ fun sp2px(context: Context, spValue: Float): Float = (spValue * context.resource
 fun sp2px(spValue: Float): Float = (spValue * HomeContext.context.resources.displayMetrics.scaledDensity + 0.5f)
 
 fun px2dip(pxValue: Int): Int = (pxValue / HomeContext.context.resources.displayMetrics.density + 0.5f).toInt()
-
-fun isNightMode(context: Context): Boolean = (context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
