@@ -22,7 +22,7 @@
   <string name="HideTaskViewCleanUpIcon">隱藏後台清理圖標</string>
   <string name="HideTaskViewSmallWindowIcon">移除後台\"小窗應用\"圖標</string>
   <string name="HideWidgetTitles">隱藏桌面小部件標題</string>
-  <string name="HorizontalTaskViewOfAppCardSize">橫向(瀑布)後台卡片大小</string>
+  <string name="HorizontalTaskViewOfAppCardSize">橫向（瀑布）後台卡片大小</string>
   <string name="InfiniteScroll">桌面無限滾動</string>
   <string name="MamlDownload">水波紋應用下載特效</string>
   <string name="ManualInput">手動輸入</string>

@@ -62,9 +62,9 @@
   <string name="Yes">确定</string>
   <string name="EnableIconShadow">显示应用阴影和倒影</string>
   <string name="SmallWindow">允许所有应用使用小窗口</string>
-  <string name="LowEndDeviceUseMIUIWidgets">允许低端机添加MIUI小组件</string>
+  <string name="LowEndDeviceUseMIUIWidgets">允许低端机添加 MIUI 小组件</string>
   <string name="RecommendServer">禁用今日推荐</string>
-  <string name="EveryThingBuild">使用Everything模式编译桌面</string>
+  <string name="EveryThingBuild">使用 Everything 模式编译桌面</string>
   <string name="DockHeight">底栏高度</string>
   <string name="DockRoundedCorners">底栏圆角</string>
   <string name="DockSide">底栏距屏幕两侧</string>
@@ -89,8 +89,8 @@
   <string name="LowEndAnim">允许低端机使用动画图标</string>
   <string name="VerticalScreen">竖屏</string>
   <string name="HorizontalScreen">横屏</string>
-  <string name="Reset2">重置横向(平铺)卡片大小配置参数</string>
-  <string name="Tips3">这将重置横向(平铺)卡片大小配置参数到默认值并重启系统桌面.</string>
+  <string name="Reset2">重置横向（平铺）卡片大小配置参数</string>
+  <string name="Tips3">这将重置横向（平铺）卡片大小配置参数到默认值并重启系统桌面.</string>
   <string name="UnlockIcons">解锁底栏图标数量限制</string>
   <string name="DockMarginTop">页面指示器距图标</string>
   <string name="DockMarginBottom">页面指示器距屏幕底部</string>
