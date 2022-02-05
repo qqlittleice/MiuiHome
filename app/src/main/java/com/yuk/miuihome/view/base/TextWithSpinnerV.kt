@@ -36,26 +36,28 @@ class TextWithSpinnerV(
     override fun create(context: Context): View {
         val text = TextView(context)
         val popup = ListPopupWindow(context)
-        popup.setBackgroundDrawable(context.getDrawable(R.drawable.rounded_corners_pop))
-        popup.setAdapter(ArrayAdapter(context, android.R.layout.simple_list_item_1, array))
-        popup.verticalOffset = dp2px(context, -100f)
-        popup.width = dp2px(context, 150f)
-        popup.isModal = true
-        popup.setOnItemClickListener { parent, _, position, _ ->
-            val a = parent.getItemAtPosition(position).toString()
-            text.text = a
-            callBacks?.let { it -> it(a) }
-            popup.dismiss()
-        }
-        popup.setOnDismissListener {
-            val animator = ValueAnimator.ofFloat(0.7f, 1f).setDuration(300)
-            animator.addUpdateListener { animation -> setBackgroundAlpha(animation.animatedValue as Float) }
-            animator.start()
+        popup.apply {
+            setBackgroundDrawable(context.getDrawable(R.drawable.rounded_corners_pop))
+            setAdapter(ArrayAdapter(context, android.R.layout.simple_list_item_1, array))
+            verticalOffset = dp2px(context, -100f)
+            width = dp2px(context, 150f)
+            isModal = true
+            setOnItemClickListener { parent, _, position, _ ->
+                val a = parent.getItemAtPosition(position).toString()
+                text.text = a
+                callBacks?.let { it -> it(a) }
+                dismiss()
+            }
+            setOnDismissListener {
+                val animator = ValueAnimator.ofFloat(0.7f, 1f).setDuration(300)
+                animator.addUpdateListener { animation -> setBackgroundAlpha(animation.animatedValue as Float) }
+                animator.start() 
+            }
         }
         val spinner = LinearContainerV(
             LinearContainerV.HORIZONTAL,
             arrayOf(
-                LayoutPair(text.also {it.setTextColor(context.getColor(R.color.spinner)); it.text = select; it.setPadding(dp2px(context, 30f), 0, dp2px(context, 6f), 0); it.textSize = sp2px(context, 5.6f) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f).also { it.gravity = Gravity.CENTER_VERTICAL + Gravity.RIGHT }),
+                LayoutPair(text.also { it.setTextColor(context.getColor(R.color.spinner)); it.text = select; it.setPadding(dp2px(context, 30f), 0, dp2px(context, 6f), 0); it.textSize = sp2px(context, 5.6f) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f).also { it.gravity = Gravity.CENTER_VERTICAL + Gravity.RIGHT }),
                 LayoutPair(ImageView(context).also { it.background = context.getDrawable(R.drawable.ic_up_down) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).also { it.gravity = Gravity.CENTER_VERTICAL })
             )
         )
