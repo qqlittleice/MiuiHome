@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="AdvancedFeature">进阶设定</string>
-  <string name="AlwaysShowMIUIWidget">在安卓小部件中显示MIUI小部件</string>
+  <string name="AlwaysShowMIUIWidget">在安卓小部件中显示 MIUI 小部件</string>
   <string name="AlwaysShowStatusBarClock">时钟常显</string>
   <string name="AnimationLevel">手势动画速度</string>
   <string name="AppTextSize">后台应用图标与标题间距</string>
@@ -14,7 +14,7 @@
   <string name="Defaults">默认值</string>
   <string name="Recommend">推荐值</string>
   <string name="setDefaults">留空为恢复默认</string>
-  <string name="setRecentString">留空为恢复默认, 键入空格表示移除文本</string>
+  <string name="setRecentString">留空为恢复默认， 键入空格表示移除文本</string>
   <string name="current">当前</string>
   <string name="Description">针对MIUI桌面的自定义扩展</string>
   <string name="Folder">文件夹相关</string>
@@ -31,12 +31,12 @@
   <string name="ModuleSettings">模块设置</string>
   <string name="ResHook">资源钩子</string>
   <string name="NoneBlur">无模糊</string>
-  <string name="OtherFeature">其他功能</string>
+  <string name="OtherFeature">其它功能</string>
   <string name="OutOfInput">请输入允许范围内的值！</string>
   <string name="RealTaskViewHorizontal">真·横屏最近任务</string>
   <string name="Reboot">重启桌面</string>
-  <string name="Reboot1">确定要重启么?</string>
-  <string name="Reboot2">桌面将在1秒后重启!</string>
+  <string name="Reboot1">确定要重启吗</string>
+  <string name="Reboot2">桌面将在 1 秒后重启！</string>
   <string name="ResourceHooks">资源钩子功能</string>
   <string name="RoundCorner">后台卡片圆角大小</string>
   <string name="Save">保存</string>
