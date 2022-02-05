@@ -5,7 +5,7 @@ import android.view.View
 import android.widget.LinearLayout
 import com.yuk.miuihome.view.data.LayoutPair
 
-class LinearContainerV(val orientation: Int, private val pairs: Array<LayoutPair>) : BaseView() {
+class LinearContainerV(private val orientation: Int, private val pairs: Array<LayoutPair>) : BaseView() {
     companion object {
         const val VERTICAL = LinearLayout.VERTICAL
         const val HORIZONTAL = LinearLayout.HORIZONTAL
