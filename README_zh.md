@@ -59,12 +59,14 @@ __新仓库：[qqlittleice/MiuiHome](https://github.com/qqlittleice/MiuiHome)__
 - [androidx](https://android.googlesource.com/platform/frameworks/support)
 - [AppCenter](https://github.com/microsoft/appcenter)
 - [BiliRoaming](https://github.com/yujincheng08/BiliRoaming)
+- [blockmiui](https://github.com/577fkj/blockmiui)
 - [CustoMIUIzer](https://code.highspec.ru/Mikanoshi/CustoMIUIzer)
 - [FuckCoolapk](https://github.com/ejiaogl/FuckCoolapk)
 - [LSPosed](https://github.com/LSPosed/LSPosed)
 - [MIDock](https://github.com/lamprose/MIDock)
 - [MIUIDock](https://github.com/ouhoukyo/MIUIDock)
 - [MIUltra](https://github.com/lamprose/MIUltra)
+- [QNotified](https://github.com/ferredoxin/QNotified)
 - [XposedBridge](https://github.com/rovo89/XposedBridge)
 
 ## 屏幕截图

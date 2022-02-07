@@ -15,4 +15,8 @@
   <color name="back">#CCCCCC</color>
   <color name="spinner">#666666</color>
   <color name="title">#666666</color>
+  <color name="popup_background">#242424</color>
+  <color name="popup_background_click">#454545</color>
+  <color name="popup_select">#1F2F4C</color>
+  <color name="popup_select_click">#404E67</color>
 </resources>

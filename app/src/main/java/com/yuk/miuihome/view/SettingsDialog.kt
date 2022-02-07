@@ -87,15 +87,6 @@ class SettingsDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
         }
     }
 
-    override fun show() {
-        super.show()
-        val layoutParams = window!!.attributes
-        layoutParams.dimAmount = 0.3F
-        layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT
-        layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT
-        window!!.attributes = layoutParams
-    }
-
     fun setMessage(textId: Int) {
         view.findViewById<TextView>(R.id.Message).apply {
             setText(textId)
@@ -120,4 +111,12 @@ class SettingsDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
 
     fun getEditText(): String = view.findViewById<EditText>(R.id.EditText).text.toString()
 
+    override fun show() {
+        super.show()
+        val lp = window!!.attributes
+        lp.dimAmount = 0.3f
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT
+        window!!.attributes = lp
+    }
 }

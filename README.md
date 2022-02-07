@@ -64,12 +64,14 @@ and if you want to translate it into a new language, please place it in the appr
 - [androidx](https://android.googlesource.com/platform/frameworks/support)
 - [AppCenter](https://github.com/microsoft/appcenter)
 - [BiliRoaming](https://github.com/yujincheng08/BiliRoaming)
+- [blockmiui](https://github.com/577fkj/blockmiui)
 - [CustoMIUIzer](https://code.highspec.ru/Mikanoshi/CustoMIUIzer)
 - [FuckCoolapk](https://github.com/ejiaogl/FuckCoolapk)
 - [LSPosed](https://github.com/LSPosed/LSPosed)
 - [MIDock](https://github.com/lamprose/MIDock)
 - [MIUIDock](https://github.com/ouhoukyo/MIUIDock)
 - [MIUltra](https://github.com/lamprose/MIUltra)
+- [QNotified](https://github.com/ferredoxin/QNotified)
 - [XposedBridge](https://github.com/rovo89/XposedBridge)
 
 ## Screenshot

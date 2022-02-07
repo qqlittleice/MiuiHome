@@ -11,6 +11,7 @@ import android.widget.*
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.sp2px
+import com.yuk.miuihome.view.adapter.ListPopupWindowAdapter
 import com.yuk.miuihome.view.data.DataHelper
 import com.yuk.miuihome.view.data.LayoutPair
 import de.robv.android.xposed.XposedBridge
@@ -27,7 +28,7 @@ class TextWithSpinnerV(
     override fun getType(): BaseView = this
 
     private fun setBackgroundAlpha(bgAlpha: Float) {
-        val lp: WindowManager.LayoutParams = DataHelper.currentActivity.window.attributes
+        val lp = DataHelper.currentActivity.window.attributes
         lp.alpha = bgAlpha
         DataHelper.currentActivity.window.attributes = lp
     }
@@ -38,14 +39,15 @@ class TextWithSpinnerV(
         val popup = ListPopupWindow(context)
         popup.apply {
             setBackgroundDrawable(context.getDrawable(R.drawable.rounded_corners_pop))
-            setAdapter(ArrayAdapter(context, android.R.layout.simple_list_item_1, array))
+            setAdapter(ListPopupWindowAdapter(context, array, select.toString()))
             verticalOffset = dp2px(context, -100f)
-            width = dp2px(context, 150f)
+            width = dp2px(context, 180f)
             isModal = true
             setOnItemClickListener { parent, _, position, _ ->
-                val a = parent.getItemAtPosition(position).toString()
-                text.text = a
-                callBacks?.let { it -> it(a) }
+                val p0 = parent.getItemAtPosition(position).toString()
+                text.text = p0
+                setAdapter(ListPopupWindowAdapter(context,array,p0))
+                callBacks?.let { it -> it(p0) }
                 dismiss()
             }
             setOnDismissListener {
