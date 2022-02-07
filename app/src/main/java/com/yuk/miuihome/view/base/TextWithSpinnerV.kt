@@ -13,7 +13,7 @@ import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.sp2px
 import com.yuk.miuihome.view.data.DataHelper
 import com.yuk.miuihome.view.data.LayoutPair
-
+import de.robv.android.xposed.XposedBridge
 
 class TextWithSpinnerV(
     private val textV: TextV,
@@ -68,29 +68,42 @@ class TextWithSpinnerV(
                 LayoutPair(spinner.create(context).also { it.setPadding(0, 0, dp2px(context, 25f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).also { it.gravity = Gravity.CENTER_VERTICAL })
             )
         ).create(context).also {
-            it.setOnTouchListener { view: View, motionEvent: MotionEvent ->
-                val animator = ValueAnimator.ofFloat(1f, 0.7f).setDuration(300)
-                animator.addUpdateListener { animation -> setBackgroundAlpha(animation.animatedValue as Float) }
-                animator.start()
-                val halfWidth = view.width / 2
-                if (halfWidth >= motionEvent.x) {
-                    popup.apply {
-                        horizontalOffset = dp2px(context, 25f)
-                        setDropDownGravity(Gravity.LEFT)
-                        anchorView = view
-                        show()
+            it.setOnTouchListener { view, motionEvent ->
+                when (motionEvent.action) {
+                    MotionEvent.ACTION_UP -> {
+                        val animator = ValueAnimator.ofFloat(1f, 0.7f).setDuration(300)
+                        animator.addUpdateListener { animation -> setBackgroundAlpha(animation.animatedValue as Float) }
+                        animator.start()
+                        val halfWidth = view.width / 2
+                        if (halfWidth >= motionEvent.x) {
+                            popup.apply {
+                                horizontalOffset = dp2px(context, 25f)
+                                setDropDownGravity(Gravity.LEFT)
+                                anchorView = view
+                                show()
+                            }
+                        } else {
+                            popup.apply {
+                                horizontalOffset = dp2px(context, -25f)
+                                setDropDownGravity(Gravity.RIGHT)
+                                anchorView = view
+                                show()
+                            }
+                        }
+                        it.background = context.getDrawable(R.drawable.ic_main_bg)
                     }
-                } else {
-                    popup.apply {
-                        horizontalOffset = dp2px(context, -25f)
-                        setDropDownGravity(Gravity.RIGHT)
-                        anchorView = view
-                        show()
+                    MotionEvent.ACTION_DOWN -> {
+                        it.background = context.getDrawable(R.drawable.ic_main_down_bg)
+                    }
+                    MotionEvent.ACTION_MOVE -> {
+                        it.background = context.getDrawable(R.drawable.ic_main_down_bg)
+                    }
+                    MotionEvent.ACTION_CANCEL -> {
+                        it.background = context.getDrawable(R.drawable.ic_main_bg)
                     }
                 }
-                return@setOnTouchListener false
+                return@setOnTouchListener true
             }
-            it.background = context.getDrawable(R.drawable.ic_click_check)
             it.setPadding(0, dp2px(context, 16f), 0, dp2px(context, 16f))
         }
     }
