@@ -12,7 +12,7 @@
   <color name="whiteClick">#2E2E2E</color>
   <color name="editView">#252525</color>
   <color name="rounded_pop">#333333</color>
-  <color name="back">#CCCCCC</color>
+  <color name="back">#ccffffff</color>
   <color name="spinner">#666666</color>
   <color name="title">#666666</color>
   <color name="popup_background">#242424</color>

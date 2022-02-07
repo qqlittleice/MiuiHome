@@ -41,7 +41,7 @@ class TextWithSpinnerV(
             setBackgroundDrawable(context.getDrawable(R.drawable.rounded_corners_pop))
             setAdapter(ListPopupWindowAdapter(context, array, select.toString()))
             verticalOffset = dp2px(context, -100f)
-            width = dp2px(context, 180f)
+            width = dp2px(context, 160f)
             isModal = true
             setOnItemClickListener { parent, _, position, _ ->
                 val p0 = parent.getItemAtPosition(position).toString()

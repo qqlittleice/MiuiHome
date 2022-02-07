@@ -1,6 +1,7 @@
 package com.yuk.miuihome.view.adapter
 
 import android.content.Context
+import android.graphics.Typeface
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.StateListDrawable
 import android.view.Gravity
@@ -80,7 +81,7 @@ class ListPopupWindowAdapter(
         return convertView
             ?: LinearLayout(context).apply {
                 var radius = floatArrayOf(0f, 0f, 0f, 0f)
-                val radiusFloat = dp2px(context, 20f).toFloat()
+                val radiusFloat = dp2px(context, 16f).toFloat()
                 when (position) {
                     0 -> {
                         radius = floatArrayOf(radiusFloat, radiusFloat, 0f, 0f)
@@ -95,14 +96,16 @@ class ListPopupWindowAdapter(
                 addView(TextView(context).apply {
                     layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
                     textSize = sp2px(context, 5.5f)
-                    setPadding(dp2px(context, 25f), dp2px(context, 18f), 0, dp2px(context, 18f))
+                    setPadding(dp2px(context, 25f), dp2px(context, 20f), 0, dp2px(context, 20f))
                     isSingleLine = true
                     text = thisText
+                    paint.typeface = Typeface.defaultFromStyle(Typeface.BOLD)
+                    if (currentValue == thisText) setTextColor(context.getColor(R.color.popup_select_text))
                 })
                 addView(ImageView(context).apply {
                     layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).also {
                         it.gravity = Gravity.CENTER_VERTICAL
-                        it.setMargins(0, dp2px(context, 2f), dp2px(context, 25f), 0)
+                        it.setMargins(0, 0, dp2px(context, 25f), 0)
                     }
                     background = context.getDrawable(R.drawable.ic_popup_select)
                     if (currentValue != thisText) visibility = View.GONE
