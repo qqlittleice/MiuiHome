@@ -13,7 +13,7 @@ class SettingsDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
     var view: View
 
     init {
-        window?.setGravity(Gravity.BOTTOM)
+        window!!.setGravity(Gravity.BOTTOM)
         view = createView(context, R.layout.dialog_layout)
     }
 
@@ -53,6 +53,7 @@ class SettingsDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
         view.findViewById<Button>(R.id.RButton).apply {
             setText(text)
             setOnClickListener {
+                it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
                 callBacks(it)
             }
         }
@@ -62,6 +63,7 @@ class SettingsDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
         view.findViewById<Button>(R.id.RButton).apply {
             setText(textId)
             setOnClickListener {
+                it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
                 callBacks()
             }
         }

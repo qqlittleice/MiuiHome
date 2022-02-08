@@ -3,7 +3,6 @@
   <item android:state_checked="true">
     <shape>
       <corners android:radius="25dp" />
-      <size android:height="15dp" android:width="25dp" />
       <solid android:color="@color/miui" />
     </shape>
   </item>
@@ -11,8 +10,8 @@
   <item>
     <shape>
       <corners android:radius="25dp" />
-      <size android:height="15dp" android:width="25dp" />
       <solid android:color="@color/colorTrack" />
     </shape>
   </item>
+
 </selector>

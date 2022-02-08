@@ -3,10 +3,18 @@ package com.yuk.miuihome.view.base
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Context.VIBRATOR_SERVICE
+import android.media.AudioAttributes
+import android.os.Vibrator
 import android.view.Gravity
+import android.view.HapticFeedbackConstants
 import android.view.MotionEvent
 import android.view.View
-import android.widget.*
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.ListPopupWindow
+import android.widget.TextView
+import androidx.core.content.ContextCompat.getSystemService
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.sp2px
@@ -32,11 +40,10 @@ class TextWithSpinnerV(
         DataHelper.currentActivity.window.attributes = lp
     }
 
-    @SuppressLint("RtlHardcoded", "ClickableViewAccessibility")
+    @SuppressLint("RtlHardcoded", "ClickableViewAccessibility", "MissingPermission")
     override fun create(context: Context): View {
         val text = TextView(context)
-        val popup = ListPopupWindow(context)
-        popup.apply {
+        val popup = ListPopupWindow(context).apply {
             setBackgroundDrawable(context.getDrawable(R.drawable.rounded_corners_pop))
             setAdapter(ListPopupWindowAdapter(context, array, select.toString()))
             verticalOffset = dp2px(context, -100f)
@@ -46,6 +53,7 @@ class TextWithSpinnerV(
                 val p0 = parent.getItemAtPosition(position).toString()
                 text.text = p0
                 setAdapter(ListPopupWindowAdapter(context,array,p0))
+                parent.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
                 callBacks?.let { it -> it(p0) }
                 dismiss()
             }
@@ -72,6 +80,7 @@ class TextWithSpinnerV(
             it.setOnTouchListener { view, motionEvent ->
                 when (motionEvent.action) {
                     MotionEvent.ACTION_UP -> {
+                        it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
                         val animator = ValueAnimator.ofFloat(1f, 0.7f).setDuration(300)
                         animator.addUpdateListener { animation -> setBackgroundAlpha(animation.animatedValue as Float) }
                         animator.start()
