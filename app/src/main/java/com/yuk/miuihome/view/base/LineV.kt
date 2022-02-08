@@ -12,8 +12,8 @@ class LineV : BaseView() {
 
     override fun create(context: Context): View {
         return View(context).also {
-            val layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, dp2px(context, 0.9f))
-            layoutParams.setMargins(dp2px(context, 25f), dp2px(context, 16f), dp2px(context, 25f), dp2px(context, 16f))
+            val layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, dp2px(0.9f))
+            layoutParams.setMargins(dp2px(25f), dp2px(16f), dp2px(25f), dp2px(16f))
             it.layoutParams = layoutParams
             it.setBackgroundColor(context.resources.getColor(R.color.line, null))
         }

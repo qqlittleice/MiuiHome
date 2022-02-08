@@ -24,8 +24,8 @@ class SeekBarV(
     override fun create(context: Context): View {
         return SeekBar(context).also { view ->
             view.thumb = null
-            view.maxHeight = dp2px(context, 35f)
-            view.minHeight = dp2px(context, 35f)
+            view.maxHeight = dp2px(35f)
+            view.minHeight = dp2px(35f)
             view.isIndeterminate = false
             view.progressDrawable = context.getDrawable(R.drawable.seekbar_progress_drawable)
             view.indeterminateDrawable = context.getDrawable(R.color.colorAccent)

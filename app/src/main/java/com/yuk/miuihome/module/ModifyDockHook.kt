@@ -20,28 +20,28 @@ class ModifyDockHook {
             // Dock距屏幕两侧
             deviceConfigClass.hookBeforeMethod("calcSearchBarWidth", Context::class.java
             ) {
-                val deviceWidth = px2dip(HomeContext.context.resources.displayMetrics.widthPixels)
-                it.result = dip2px(deviceWidth - (OwnSP.ownSP.getFloat("dockSide", 3.0f) * 10).toInt())
+                val deviceWidth = px2dp(HomeContext.context.resources.displayMetrics.widthPixels)
+                it.result = dp2px(deviceWidth - (OwnSP.ownSP.getFloat("dockSide", 3.0f) * 10))
             }
             // Dock距屏幕底部
             deviceConfigClass.hookBeforeMethod("calcSearchBarMarginBottom", Context::class.java, Boolean::class.java
             ) {
-                it.result = dip2px((OwnSP.ownSP.getFloat("dockBottom", 2.3f) * 10).toInt())
+                it.result = dp2px((OwnSP.ownSP.getFloat("dockBottom", 2.3f) * 10))
             }
             // 图标距屏幕底部
             deviceConfigClass.hookBeforeMethod("calcHotSeatsMarginBottom", Context::class.java, Boolean::class.java, Boolean::class.java
             ) {
-                it.result = dip2px((OwnSP.ownSP.getFloat("dockIconBottom", 3.5f) * 10).toInt())
+                it.result = dp2px((OwnSP.ownSP.getFloat("dockIconBottom", 3.5f) * 10))
             }
             // 页面指示器距离图标距离
             deviceConfigClass.hookBeforeMethod("calcHotSeatsMarginTop", Context::class.java, Boolean::class.java
             ) {
-                it.result = dip2px((OwnSP.ownSP.getFloat("dockMarginTop", 0.6f) * 10).toInt())
+                it.result = dp2px((OwnSP.ownSP.getFloat("dockMarginTop", 0.6f) * 10))
             }
             // 页面指示器距离屏幕底部
             deviceConfigClass.hookBeforeMethod("getWorkspaceIndicatorMarginBottom",
             ) {
-                it.result = dip2px((OwnSP.ownSP.getFloat("dockMarginBottom", 11.0f) * 10).toInt())
+                it.result = dp2px((OwnSP.ownSP.getFloat("dockMarginBottom", 11.0f) * 10))
             }
             // 宽度变化量
             deviceConfigClass.hookBeforeMethod("getSearchBarWidthDelta"
@@ -61,7 +61,7 @@ class ModifyDockHook {
                 // 清空搜索图标和小爱同学
                 searchBarDesktop.removeAllViews()
                 // 修改高度
-                searchBarObject.layoutParams.height = dip2px((OwnSP.ownSP.getFloat("dockHeight", 7.9f) * 10).toInt())
+                searchBarObject.layoutParams.height = dp2px((OwnSP.ownSP.getFloat("dockHeight", 7.9f) * 10))
                 // 修改应用列表搜索框
                 val mAllAppViewField = launcherClass.getDeclaredField("mAppsView")
                 mAllAppViewField.isAccessible = true
@@ -71,9 +71,9 @@ class ModifyDockHook {
                 mAllAppSearchView.addView(searchBarDrawer)
                 searchBarDrawer.bringToFront()
                 val layoutParams = searchBarDrawer.layoutParams as FrameLayout.LayoutParams
-                searchBarDrawer.layoutParams.height = dip2px(45)
-                layoutParams.leftMargin = dip2px(15)
-                layoutParams.rightMargin = dip2px(15)
+                searchBarDrawer.layoutParams.height = dp2px(45f)
+                layoutParams.leftMargin = dp2px(15f)
+                layoutParams.rightMargin = dp2px(15f)
                 searchBarDrawer.layoutParams = layoutParams
             }
         } catch (e: XposedHelpers.ClassNotFoundError) {

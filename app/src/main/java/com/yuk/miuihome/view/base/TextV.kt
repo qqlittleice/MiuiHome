@@ -26,7 +26,7 @@ class TextV(
             text?.let { view.text = it }
             resId?.let { view.setText(it) }
             if (textSize == null)
-                view.textSize = sp2px(context, 6.5f)
+                view.textSize = sp2px(6.5f)
             else
                 view.textSize = textSize
             if (typeface == null)
@@ -34,7 +34,7 @@ class TextV(
             else
                 view.paint.typeface = typeface
             textColor?.let { view.setTextColor(it) }
-            view.setPadding(dp2px(context, 25f), dp2px(context, 16f), dp2px(context, 25f), dp2px(context, 16f))
+            view.setPadding(dp2px(25f), dp2px(16f), dp2px(25f), dp2px(16f))
             padding?.let { view.setPadding(it.left, it.top, it.right, it.bottom) }
             onClickListener?.let { view.setOnClickListener(it); view.background = context.getDrawable(R.drawable.ic_click_check) }
         }

@@ -1,12 +1,14 @@
 package com.yuk.miuihome.view
 
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.View
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit
+import com.yuk.miuihome.utils.HomeContext
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.view.adapter.ItemAdapter
@@ -48,6 +50,13 @@ class HookSettingsActivity: TransferActivity() {
     override fun onBackPressed() {
         if (DataHelper.thisItems != DataHelper.main) DataHelper.setItems(DataHelper.main)
         else super.onBackPressed()
+    }
+
+
+    fun getDensityDpi(): Int {
+        val dm = DisplayMetrics()
+        HomeContext.Activity.windowManager.defaultDisplay.getMetrics(dm)
+        return (dm.density * 160).toInt()
     }
 
     private fun showFirstUseDialog() {

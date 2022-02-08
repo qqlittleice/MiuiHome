@@ -11,7 +11,7 @@ import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.Config.DrawableNameList
 import com.yuk.miuihome.utils.Config.DrawableNameNewList
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.dip2px
+import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.hookLayout
 import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResourcesParam
 import com.yuk.miuihome.utils.ktx.setTryReplacement
@@ -56,7 +56,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
             override fun newDrawable(xres: XResources, id: Int): Drawable {
                 val background = context.getDrawable(xres.getIdentifier(drawableName, "drawable", Config.hookPackage)) as RippleDrawable
                 val backgroundShape = background.getDrawable(0) as GradientDrawable
-                backgroundShape.cornerRadius = dip2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10).toInt()).toFloat()
+                backgroundShape.cornerRadius = dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat()
                 backgroundShape.setStroke(0, 0)
                 background.setDrawable(0, backgroundShape)
                 return background

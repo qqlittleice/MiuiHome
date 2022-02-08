@@ -20,9 +20,9 @@ class TitleTextV(
         return TextV(
             text,
             resId,
-            sp2px(context, 4.5f),
+            sp2px(4.5f),
             context.getColor(R.color.title),
-            Padding(dp2px(context, 25f), dp2px(context, 13f), 0, dp2px(context, 13f)),
+            Padding(dp2px(25f), dp2px(13f), 0, dp2px(13f)),
             Typeface.defaultFromStyle(Typeface.NORMAL),
             onClickListener
         ).create(context)

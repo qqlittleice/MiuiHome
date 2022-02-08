@@ -46,8 +46,8 @@ class TextWithSpinnerV(
         val popup = ListPopupWindow(context).apply {
             setBackgroundDrawable(context.getDrawable(R.drawable.rounded_corners_pop))
             setAdapter(ListPopupWindowAdapter(context, array, select.toString()))
-            verticalOffset = dp2px(context, -100f)
-            width = ListPopupWindowAdapter(context, array, select.toString()).getWidth() + dp2px(context, 10f)
+            verticalOffset = dp2px(-100f)
+            width = ListPopupWindowAdapter(context, array, select.toString()).getWidth() + dp2px(10f)
             isModal = true
             setOnItemClickListener { parent, _, position, _ ->
                 val p0 = parent.getItemAtPosition(position).toString()
@@ -66,15 +66,15 @@ class TextWithSpinnerV(
         val spinner = LinearContainerV(
             LinearContainerV.HORIZONTAL,
             arrayOf(
-                LayoutPair(text.also { it.setTextColor(context.getColor(R.color.spinner)); it.text = select; it.setPadding(dp2px(context, 30f), 0, dp2px(context, 6f), 0); it.textSize = sp2px(context, 5.6f) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f).also { it.gravity = Gravity.CENTER_VERTICAL + Gravity.RIGHT }),
+                LayoutPair(text.also { it.setTextColor(context.getColor(R.color.spinner)); it.text = select; it.setPadding(dp2px(30f), 0, dp2px(6f), 0); it.textSize = sp2px(5.6f) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f).also { it.gravity = Gravity.CENTER_VERTICAL + Gravity.RIGHT }),
                 LayoutPair(ImageView(context).also { it.background = context.getDrawable(R.drawable.ic_up_down) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).also { it.gravity = Gravity.CENTER_VERTICAL })
             )
         )
         return LinearContainerV(
             LinearContainerV.HORIZONTAL,
             arrayOf(
-                LayoutPair(textV.create(context).also { it.setPadding(dp2px(context, 25f), 0, dp2px(context, 25f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)),
-                LayoutPair(spinner.create(context).also { it.setPadding(0, 0, dp2px(context, 25f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).also { it.gravity = Gravity.CENTER_VERTICAL })
+                LayoutPair(textV.create(context).also { it.setPadding(dp2px(25f), 0, dp2px(25f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)),
+                LayoutPair(spinner.create(context).also { it.setPadding(0, 0, dp2px(25f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).also { it.gravity = Gravity.CENTER_VERTICAL })
             )
         ).create(context).also {
             it.setOnTouchListener { view, motionEvent ->
@@ -87,14 +87,14 @@ class TextWithSpinnerV(
                         val halfWidth = view.width / 2
                         if (halfWidth >= motionEvent.x) {
                             popup.apply {
-                                horizontalOffset = dp2px(context, 25f)
+                                horizontalOffset = dp2px(25f)
                                 setDropDownGravity(Gravity.LEFT)
                                 anchorView = view
                                 show()
                             }
                         } else {
                             popup.apply {
-                                horizontalOffset = dp2px(context, -25f)
+                                horizontalOffset = dp2px(-25f)
                                 setDropDownGravity(Gravity.RIGHT)
                                 anchorView = view
                                 show()
@@ -114,7 +114,7 @@ class TextWithSpinnerV(
                 }
                 return@setOnTouchListener true
             }
-            it.setPadding(0, dp2px(context, 16f), 0, dp2px(context, 16f))
+            it.setPadding(0, dp2px(16f), 0, dp2px(16f))
         }
     }
 }

@@ -27,13 +27,13 @@ class TextWithSeekBarV(
     override fun getType(): BaseView = this
 
     override fun create(context: Context): View {
-        val minText = TextV(min.toString(), textSize = sp2px(context, 4.5f)).create(context)
-        val maxText = TextV(max.toString(), textSize = sp2px(context, 4.5f)).create(context)
-        val mutableText = TextV("", textSize = sp2px(context, 4.5f)).create(context)
+        val minText = TextV(min.toString(), textSize = sp2px(4.5f)).create(context)
+        val maxText = TextV(max.toString(), textSize = sp2px(4.5f)).create(context)
+        val mutableText = TextV("", textSize = sp2px(4.5f)).create(context)
         val seekBar = SeekBar(context).also { view ->
             view.thumb = null
-            view.maxHeight = dp2px(context, 30f)
-            view.minHeight = dp2px(context, 30f)
+            view.maxHeight = dp2px(30f)
+            view.minHeight = dp2px(30f)
             view.isIndeterminate = false
             view.progressDrawable = context.getDrawable(R.drawable.seekbar_progress_drawable)
             view.indeterminateDrawable = context.getDrawable(R.color.colorAccent)
@@ -65,17 +65,17 @@ class TextWithSeekBarV(
         return LinearContainerV(
             LinearContainerV.VERTICAL,
             arrayOf(
-                LayoutPair(textV.create(context).also { it.setPadding(dp2px(context, 25f), 0, dp2px(context, 25f), dp2px(context, 8f)) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)),
-                LayoutPair(seekBar.also { it.setPadding(dp2px(context, 25f), 0, dp2px(context, 25f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)),
+                LayoutPair(textV.create(context).also { it.setPadding(dp2px(25f), 0, dp2px(25f), dp2px(8f)) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)),
+                LayoutPair(seekBar.also { it.setPadding(dp2px(25f), 0, dp2px(25f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)),
                 LayoutPair(
                     LinearContainerV(
                         LinearContainerV.HORIZONTAL,
                         arrayOf(
-                        LayoutPair(minText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_VIEW_START; it.setPadding(0, dp2px(context, 8f), 0, dp2px(context, 16f)) }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)),
-                        LayoutPair(mutableText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_CENTER; it.setPadding(0, dp2px(context, 8f), 0, dp2px(context, 16f)) }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)),
-                        LayoutPair(maxText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_VIEW_END; it.setPadding(0, dp2px(context, 8f), 0, dp2px(context, 16f)) }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f))
+                        LayoutPair(minText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_VIEW_START; it.setPadding(0, dp2px(8f), 0, dp2px(16f)) }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)),
+                        LayoutPair(mutableText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_CENTER; it.setPadding(0, dp2px(8f), 0, dp2px(16f)) }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)),
+                        LayoutPair(maxText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_VIEW_END; it.setPadding(0, dp2px(8f), 0, dp2px(16f)) }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f))
                         )
-                ).create(context).also { it.setPadding(dp2px(context, 25f), 0, dp2px(context, 25f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT))
+                ).create(context).also { it.setPadding(dp2px(25f), 0, dp2px(25f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT))
             )
         ).create(context)
     }
