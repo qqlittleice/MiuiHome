@@ -18,7 +18,7 @@ class TextWithSwitchV(
         return LinearContainerV(
             LinearContainerV.HORIZONTAL,
             arrayOf(
-                LayoutPair(textV.create(context), LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)),
+                LayoutPair(textV.create(context).also { it.setPadding(dp2px(context, 25f), dp2px(context, 16f), dp2px(context, 5f), dp2px(context, 16f)) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)),
                 LayoutPair(switchV.create(context).also { it.setPadding(0, dp2px(context, 16f), 0, dp2px(context, 16f)) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).also { it.gravity = Gravity.CENTER_VERTICAL; it.setMargins(0, 0, dp2px(context, 25f), 0) })
             )
         ).create(context)

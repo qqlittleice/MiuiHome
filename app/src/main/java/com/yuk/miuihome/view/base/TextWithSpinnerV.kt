@@ -6,7 +6,6 @@ import android.content.Context
 import android.view.Gravity
 import android.view.MotionEvent
 import android.view.View
-import android.view.WindowManager
 import android.widget.*
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.ktx.dp2px
@@ -14,7 +13,7 @@ import com.yuk.miuihome.utils.ktx.sp2px
 import com.yuk.miuihome.view.adapter.ListPopupWindowAdapter
 import com.yuk.miuihome.view.data.DataHelper
 import com.yuk.miuihome.view.data.LayoutPair
-import de.robv.android.xposed.XposedBridge
+
 
 class TextWithSpinnerV(
     private val textV: TextV,
@@ -41,7 +40,7 @@ class TextWithSpinnerV(
             setBackgroundDrawable(context.getDrawable(R.drawable.rounded_corners_pop))
             setAdapter(ListPopupWindowAdapter(context, array, select.toString()))
             verticalOffset = dp2px(context, -100f)
-            width = dp2px(context, 160f)
+            width = ListPopupWindowAdapter(context, array, select.toString()).getWidth() + dp2px(context, 10f)
             isModal = true
             setOnItemClickListener { parent, _, position, _ ->
                 val p0 = parent.getItemAtPosition(position).toString()

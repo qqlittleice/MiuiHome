@@ -7,18 +7,16 @@ import android.graphics.drawable.StateListDrawable
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.*
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.sp2px
 
+
 class ListPopupWindowAdapter(
     context: Context,
     data: ArrayList<String>,
-    private val currentValue: String
+    private val currentValue: String?
 ) : BaseAdapter() {
     private val context: Context
     private val data: ArrayList<String>
@@ -62,6 +60,18 @@ class ListPopupWindowAdapter(
             addState(intArrayOf(android.R.attr.state_pressed), pressedDrawable)
             addState(intArrayOf(-android.R.attr.state_focused), normalDrawable)
         }
+    }
+
+    fun getWidth(): Int {
+        var maxWidth = 0
+        var view: View? = null
+        val count: Int = this@ListPopupWindowAdapter.count
+        for (i in 0 until count) {
+            view = this@ListPopupWindowAdapter.getView(i, view, null)
+            view.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
+            if (view.measuredWidth > maxWidth) maxWidth = view.measuredWidth
+        }
+        return maxWidth
     }
 
     override fun getCount(): Int {
