@@ -3,7 +3,7 @@
   <string name="app_name" translatable="false">MiuiHome</string>
   <string name="AdvancedFeature">Advanced Settings</string>
   <string name="AlwaysShowMIUIWidget">Allow MIUI widgets to be displayed in Classic widgets</string>
-  <string name="AlwaysShowStatusBarClock">Always show the status bar clock</string>
+  <string name="AlwaysShowStatusBarClock">Disable status bar clock hide</string>
   <string name="AnimationLevel">Gesture animation speed</string>
   <string name="AppTextSize">Distance between task view application icons and names</string>
   <string name="BlurWhenOpenFolder">Enable Folder Blur</string>
@@ -20,13 +20,13 @@
   <string name="Description">Hook for MIUI Launcher</string>
   <string name="Folder">Folder Settings</string>
   <string name="HideStatusBar">Hide the Status Bar in the Recent Screen</string>
-  <string name="HideTaskViewAppIcon">Hide the Application Icon in the Recent</string>
+  <string name="HideTaskViewAppIcon">Hide App Icon in the recent</string>
   <string name="HideTaskViewCleanUpIcon">Hide the Clean All Button in the Recent</string>
-  <string name="HideTaskViewSmallWindowIcon">Remove the \"Floating windows\" in the Recent</string>
+  <string name="HideTaskViewSmallWindowIcon">Remove the \"Floating windows\" button in the recent apps view</string>
   <string name="HideWidgetTitles">Hide widget labels</string>
   <string name="HorizontalTaskViewOfAppCardSize">Thumbnail size for Horizontal Recent</string>
-  <string name="InfiniteScroll">Launcher Infinite Scroll</string>
-  <string name="MamlDownload">Water Ripple Download Effect</string>
+  <string name="InfiniteScroll">Enable Launcher Infinite Scroll</string>
+  <string name="MamlDownload">Enable Water Ripple Download Effect</string>
   <string name="ManualInput">Manual Input</string>
   <string name="ModuleFeature">Module Features</string>
   <string name="ModuleSettings">Module Settings</string>
@@ -36,7 +36,7 @@
   <string name="OutOfInput">Please enter a value within the allowed range!</string>
   <string name="RealTaskViewHorizontal">True · Horizontal Recent</string>
   <string name="Reboot">Restart Launcher</string>
-  <string name="Reboot1">Are you sure you want to restart?</string>
+  <string name="Reboot1">Are you sure you want to restart the System Launcher?</string>
   <string name="Reboot2">The Launcher will restart in 1 seconds!</string>
   <string name="ResourceHooks">ResourceHook Features</string>
   <string name="RoundCorner">Size of Thumbnail Rounded Corners</string>
@@ -87,12 +87,12 @@
   <string name="IconTitleFontSize">Icon Labels Font Size</string>
   <string name="CustomRecentText">Customize the text display of Recent when there is no background</string>
   <string name="DoubleTap">Double Tap To Sleep</string>
-  <string name="LowEndAnim">Allow animated icons for low-end devices</string>
+  <string name="LowEndAnim">Enable animated icons for low-end devices</string>
   <string name="VerticalScreen">Vertical Screen</string>
   <string name="HorizontalScreen">Horizontal Screen</string>
   <string name="Reset2">Reset Thumbnail size for Horizontal Recent Parameters</string>
   <string name="Tips3">This will reset the Thumbnail size for Horizontal Recent parameters to its default value and restart the System Launcher.</string>
-  <string name="UnlockIcons">Unlock hot seat icon number limit</string>
+  <string name="UnlockIcons">Remove icon number restriction from dock</string>
   <string name="DockMarginTop">Page Indicator and Icon Spacing</string>
   <string name="DockMarginBottom">Page Indicator and the bottom of the Screen Spacing</string>
   <string name="SimpleWarn">You have enabled simple animation, this will hide some settings.</string>
