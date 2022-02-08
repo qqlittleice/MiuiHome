@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
+import android.os.Build
+import android.view.HapticFeedbackConstants
 import android.view.View
 import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.R
@@ -244,7 +246,6 @@ object DataHelper {
             setMessage(XposedInit.moduleRes.getString(R.string.Tips2))
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
                 OwnSP.clear()
-
                 dismiss()
                 thread {
                     LogUtil.toast(XposedInit.moduleRes.getString(R.string.Reboot2))
@@ -264,6 +265,7 @@ object DataHelper {
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
                 OwnSP.set("task_horizontal1", 1.0f)
                 OwnSP.set("task_horizontal2", 1.0f)
+                dismiss()
                 thread {
                     LogUtil.toast(XposedInit.moduleRes.getString(R.string.Reboot2))
                     Thread.sleep(1000)
@@ -287,6 +289,7 @@ object DataHelper {
                 OwnSP.set("dockIconBottom", 3.5f)
                 OwnSP.set("dockMarginTop", 0.6f)
                 OwnSP.set("dockMarginBottom", 11.0f)
+                dismiss()
                 thread {
                     LogUtil.toast(XposedInit.moduleRes.getString(R.string.Reboot2))
                     Thread.sleep(1000)

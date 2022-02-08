@@ -1,7 +1,6 @@
 package com.yuk.miuihome.view.base
 
 import android.content.Context
-import android.view.HapticFeedbackConstants
 import android.view.View
 import android.widget.CompoundButton
 import com.yuk.miuihome.R
@@ -22,7 +21,6 @@ class SwitchV(
             it.setTrackResource(R.drawable.switch_track)
             it.isChecked = OwnSP.ownSP.getBoolean(key, false)
             it.setOnCheckedChangeListener { compoundButton, b ->
-                it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
                 customOnCheckedChangeListener?.onCheckedChanged(compoundButton, b)
                 OwnSP.ownSP.edit().run {
                     putBoolean(key, b)

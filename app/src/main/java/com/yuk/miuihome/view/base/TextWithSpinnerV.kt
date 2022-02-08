@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Context.VIBRATOR_SERVICE
 import android.media.AudioAttributes
+import android.os.Build
 import android.os.Vibrator
 import android.view.Gravity
 import android.view.HapticFeedbackConstants
@@ -53,7 +54,8 @@ class TextWithSpinnerV(
                 val p0 = parent.getItemAtPosition(position).toString()
                 text.text = p0
                 setAdapter(ListPopupWindowAdapter(context,array,p0))
-                parent.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) parent.performHapticFeedback(HapticFeedbackConstants.CONFIRM, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
+                else parent.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
                 callBacks?.let { it -> it(p0) }
                 dismiss()
             }
@@ -80,7 +82,8 @@ class TextWithSpinnerV(
             it.setOnTouchListener { view, motionEvent ->
                 when (motionEvent.action) {
                     MotionEvent.ACTION_UP -> {
-                        it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) it.performHapticFeedback(HapticFeedbackConstants.CONTEXT_CLICK, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
+                        else it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
                         val animator = ValueAnimator.ofFloat(1f, 0.7f).setDuration(300)
                         animator.addUpdateListener { animation -> setBackgroundAlpha(animation.animatedValue as Float) }
                         animator.start()
