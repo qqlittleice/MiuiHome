@@ -13,13 +13,11 @@ import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
 import com.yuk.miuihome.module.*
-import com.yuk.miuihome.view.HookSettingsActivity
-import com.yuk.miuihome.view.utils.ActivityHelper
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.HomeContext
-import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
-import com.yuk.miuihome.view.data.DataHelper
+import com.yuk.miuihome.view.HookSettingsActivity
+import com.yuk.miuihome.view.utils.ActivityHelper
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
 import de.robv.android.xposed.callbacks.XC_LoadPackage
@@ -192,10 +190,11 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
     private fun getModuleRes(path: String): Resources {
         return XModuleResources.createInstance(path, null)
     }
+
+    @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
+    @SuppressLint("PrivateApi")
+    fun getProp(key: String): String {
+        return Class.forName("android.os.SystemProperties").getMethod("get", String::class.java).invoke(Class.forName("android.os.SystemProperties"), key).toString()
+    }
 }
 
-@Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
-@SuppressLint("PrivateApi")
-fun getProp(key: String): String {
-    return Class.forName("android.os.SystemProperties").getMethod("get", String::class.java).invoke(Class.forName("android.os.SystemProperties"), key).toString()
-}
