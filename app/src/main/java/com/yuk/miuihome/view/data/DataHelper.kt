@@ -13,6 +13,7 @@ import com.yuk.miuihome.module.ModifyBlurLevel
 import com.yuk.miuihome.view.SettingsDialog
 import com.yuk.miuihome.view.base.*
 import com.yuk.miuihome.utils.Config
+import com.yuk.miuihome.utils.HomeContext
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.sp2px
@@ -243,50 +244,7 @@ object DataHelper {
             setMessage(XposedInit.moduleRes.getString(R.string.Tips2))
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
                 OwnSP.clear()
-                OwnSP.set("isFirstUse",false)
-                OwnSP.set("animationLevel", 1.0f)
-                OwnSP.set("dockRadius", 2.5f)
-                OwnSP.set("dockHeight", 7.9f)
-                OwnSP.set("dockSide", 3.0f)
-                OwnSP.set("dockBottom", 2.3f)
-                OwnSP.set("dockIconBottom", 3.5f)
-                OwnSP.set("dockMarginTop", 0.6f)
-                OwnSP.set("dockMarginBottom", 11.0f)
-                OwnSP.set("task_vertical", 1000.0f)
-                OwnSP.set("task_horizontal1", 1.0f)
-                OwnSP.set("task_horizontal2", 1.0f)
-                OwnSP.set("folderColumns", 3)
-                dismiss()
-                thread {
-                    LogUtil.toast(XposedInit.moduleRes.getString(R.string.Reboot2))
-                    Thread.sleep(1000)
-                    exitProcess(0)
-                }
-            }
-            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
-            show()
-        }
-    }
 
-    private fun showFirstUseDialog() {
-        SettingsDialog(currentActivity).apply {
-            setTitle(XposedInit.moduleRes.getString(R.string.Welcome))
-            setMessage(XposedInit.moduleRes.getString(R.string.Tips))
-            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
-                OwnSP.clear()
-                OwnSP.set("isFirstUse",false)
-                OwnSP.set("animationLevel", 1.0f)
-                OwnSP.set("dockRadius", 2.5f)
-                OwnSP.set("dockHeight", 7.9f)
-                OwnSP.set("dockSide", 3.0f)
-                OwnSP.set("dockBottom", 2.3f)
-                OwnSP.set("dockIconBottom", 3.5f)
-                OwnSP.set("dockMarginTop", 0.6f)
-                OwnSP.set("dockMarginBottom", 11.0f)
-                OwnSP.set("task_vertical", 1000.0f)
-                OwnSP.set("task_horizontal1", 1.0f)
-                OwnSP.set("task_horizontal2", 1.0f)
-                OwnSP.set("folderColumns", 3)
                 dismiss()
                 thread {
                     LogUtil.toast(XposedInit.moduleRes.getString(R.string.Reboot2))
