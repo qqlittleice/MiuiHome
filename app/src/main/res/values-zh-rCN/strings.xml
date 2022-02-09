@@ -52,11 +52,11 @@
   <string name="TaskViewBlurSetTo">后台模糊级别已设为</string>
   <string name="TestBlur">测试模糊</string>
   <string name="TestFeature">实验性功能</string>
-  <string name="Tips">检测到你是第一次使用本模块，模块会进行默认值设定，并随后重启系统桌面。如需进一步设置，请待桌面重启后再次打开桌面设置。</string>
+  <string name="Tips">检测到你是第一次使用本模块，模块会进行默认值设定，并随后重启桌面。\n如需进一步设置，请待桌面重启后再次打开桌面设置。</string>
   <string name="UnlockGrids">解锁桌面布局限制</string>
   <string name="VerticalTaskViewOfAppCardSize">纵向(瀑布)后台卡片大小</string>
   <string name="WallpaperDarken">取消后台壁纸压暗效果</string>
-  <string name="Welcome">欢迎！</string>
+  <string name="Welcome">欢迎</string>
   <string name="Widget">小部件相关</string>
   <string name="WidgetToMinus">允许将安卓小部件移到负一屏</string>
   <string name="Yes">确定</string>
@@ -75,9 +75,9 @@
   <string name="DockFeature">启用底栏功能</string>
   <string name="EnableDockBlur">启用底栏模糊</string>
   <string name="Reset">重置底栏配置参数</string>
-  <string name="Tips1">这将重置底栏配置参数到默认值并重启系统桌面.</string>
+  <string name="Tips1">这将重置底栏配置参数到默认值并重启桌面.</string>
   <string name="Reset1">重置</string>
-  <string name="Tips2">这将还原模块默认值设定并重启系统桌面.</string>
+  <string name="Tips2">这将还原模块默认值设定并重启桌面.</string>
   <string name="HideSeekPoints">移除页面指示器</string>
   <string name="CategoryHideAll">隐藏应用分组中的 \"全部\"</string>
   <string name="CategoryPagingHideEdit">隐藏应用分页内的编辑按钮</string>
@@ -90,11 +90,11 @@
   <string name="VerticalScreen">竖屏</string>
   <string name="HorizontalScreen">横屏</string>
   <string name="Reset2">重置横向（平铺）卡片大小配置参数</string>
-  <string name="Tips3">这将重置横向（平铺）卡片大小配置参数到默认值并重启系统桌面.</string>
+  <string name="Tips3">这将重置横向（平铺）卡片大小配置参数到默认值并重启桌面</string>
   <string name="UnlockIcons">解锁底栏图标数量限制</string>
   <string name="DockMarginTop">页面指示器距图标</string>
   <string name="DockMarginBottom">页面指示器距屏幕底部</string>
-  <string name="SimpleWarn">你启用了简单动画，这会禁用一些功能设置.</string>
+  <string name="SimpleWarn">你启用了简单动画，这会禁用一些功能设置</string>
   <string name="BrokenFeature">废弃功能</string>
   <string name="AppReturnAmin">应用返回模糊</string>
   <string name="BlurRadius">模糊半径</string>
@@ -106,4 +106,5 @@
   <string name="LauncherVersion">桌面版本</string>
   <string name="ModuleVersion">模块版本</string>
   <string name="AboutUs">关于我们</string>
+  <string name="AlwaysBlur">始终模糊桌面壁纸</string>
 </resources>

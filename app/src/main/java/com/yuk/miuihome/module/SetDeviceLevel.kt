@@ -1,6 +1,7 @@
 package com.yuk.miuihome.module
 
 import com.yuk.miuihome.utils.LogUtil
+import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.setReturnConstant
 
 class SetDeviceLevel : BaseClassAndMethodCheck {
@@ -22,4 +23,6 @@ class SetDeviceLevel : BaseClassAndMethodCheck {
     }
 
     override fun classAndMethodList(): ArrayList<String> = arrayListOf("com.miui.home.launcher.util.noword.NoWordSettingHelperKt", "isNoWordAvailable")
+
+
 }

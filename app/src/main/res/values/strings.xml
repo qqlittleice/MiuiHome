@@ -57,7 +57,7 @@
   <string name="UnlockGrids">Unlock Grid Restrictions</string>
   <string name="VerticalTaskViewOfAppCardSize">Thumbnail size for Vertical Recent</string>
   <string name="WallpaperDarken">Turn off the Recent wallpaper darkening feature</string>
-  <string name="Welcome">Welcome!</string>
+  <string name="Welcome">Welcome</string>
   <string name="Widget">Widget Features</string>
   <string name="WidgetToMinus">Allow moving Classic Widgets to \"App Vault\"</string>
   <string name="Yes">Yes</string>
@@ -107,4 +107,5 @@
   <string name="LauncherVersion">Launcher Version</string>
   <string name="ModuleVersion">Module Version</string>
   <string name="AboutUs">About Us</string>
+  <string name="AlwaysBlur">Always blur launcher wallpaperpaper</string>
 </resources>

@@ -54,7 +54,7 @@
   <string name="UnlockGrids">解鎖桌面佈局限制</string>
   <string name="VerticalTaskViewOfAppCardSize">縱向（平鋪）後台卡片大小</string>
   <string name="WallpaperDarken">取消後台壁紙壓暗效果</string>
-  <string name="Welcome">歡迎！</string>
+  <string name="Welcome">歡迎</string>
   <string name="Widget">小部件相關</string>
   <string name="WidgetToMinus">允許將安卓小部件移到負一屏</string>
   <string name="Yes">確定</string>
@@ -73,9 +73,9 @@
   <string name="DockFeature">啟用底欄功能</string>
   <string name="EnableDockBlur">啟用底欄模糊</string>
   <string name="Reset">重置底欄配置參數</string>
-  <string name="Tips1">這將重置底欄配置參數到默認值並重啟系統桌面。</string>
+  <string name="Tips1">這將重置底欄配置參數到默認值並重啟桌面。</string>
   <string name="Reset1">重置</string>
-  <string name="Tips2">這將還原模塊默認值設定並重啟系統桌面。</string>
+  <string name="Tips2">這將還原模塊默認值設定並重啟桌面。</string>
   <string name="HideSeekPoints">移除頁面指示器</string>
   <string name="CategoryHideAll">隱藏應用分組中的 \"全部\"</string>
   <string name="CategoryPagingHideEdit">隱藏應用分頁內的編輯按鈕</string>
@@ -88,7 +88,7 @@
   <string name="VerticalScreen">豎屏</string>
   <string name="HorizontalScreen">橫屏</string>
   <string name="Reset2">重置橫向卡片大小配置參數</string>
-  <string name="Tips3">這將重置橫向卡片大小配置參數到默認值並重啟系統桌面。</string>
+  <string name="Tips3">這將重置橫向卡片大小配置參數到默認值並重啟桌面。</string>
   <string name="UnlockIcons">解鎖底欄圖標數量限制</string>
   <string name="DockMarginTop">頁面指示器距圖標</string>
   <string name="DockMarginBottom">頁面寬度屏幕底部</string>
@@ -101,7 +101,8 @@
   <string name="Tips4">支持十六進制顏色值，例如#FFFFFF為白，#000000為黑</string>
   <string name="About">關於模塊</string>
   <string name="MiuiVersion">系統版本</string>
-  <string name="LauncherVersion">啓動器版本</string>
+  <string name="LauncherVersion">桌面版本</string>
   <string name="ModuleVersion">模塊版本</string>
   <string name="AboutUs">關於我們</string>
+  <string name="AlwaysBlur">始終模糊桌面壁紙</string>
 </resources>

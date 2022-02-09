@@ -115,10 +115,12 @@ object DataHelper {
                 dict0[currentActivity.getString(R.string.BasicBlur)] = "BasicBlur"
                 dict0[currentActivity.getString(R.string.SimpleBlur)] = "SimpleBlur"
                 dict0[currentActivity.getString(R.string.NoneBlur)] = "NoneBlur"
-                if (ModifyBlurLevel.checked)
-                    add(Item(list = arrayListOf(TextWithSpinnerV(TextV(resId = R.string.TaskViewBlurLevel), select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], array = blurLevel, callBacks = { OwnSP.set("blurLevel", dict0[it].toString()) }))))
-                else
-                    add(Item(list = arrayListOf(TextWithSpinnerV(TextV(resId = R.string.TaskViewBlurLevel), select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], array = blurLevel0, callBacks = { OwnSP.set("blurLevel", dict0[it].toString()) }))))
+                if (!OwnSP.ownSP.getBoolean("alwaysBlur", false)) {
+                    if (ModifyBlurLevel.checked)
+                        add(Item(list = arrayListOf(TextWithSpinnerV(TextV(resId = R.string.TaskViewBlurLevel), select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], array = blurLevel, callBacks = { OwnSP.set("blurLevel", dict0[it].toString()) }))))
+                    else
+                        add(Item(list = arrayListOf(TextWithSpinnerV(TextV(resId = R.string.TaskViewBlurLevel), select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], array = blurLevel0, callBacks = { OwnSP.set("blurLevel", dict0[it].toString()) }))))
+                }
             }
             add(Item(list = arrayListOf(TextV(resId = R.string.AnimationLevel, onClickListener = { showAnimationLevelDialog() }))))
             add(Item(list = arrayListOf(LineV())))
@@ -143,7 +145,7 @@ object DataHelper {
             add(Item(list = arrayListOf(LineV())))
 
             add(Item(list = arrayListOf(TitleTextV(resId = R.string.Folder))))
-            if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
+            if (!OwnSP.ownSP.getBoolean("simpleAnimation", false) && !OwnSP.ownSP.getBoolean("alwaysBlur", false)) {
                 add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.BlurWhenOpenFolder), SwitchV("blurWhenOpenFolder")))))
             }
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.CloseFolder), SwitchV("closeFolder")))))
@@ -170,22 +172,25 @@ object DataHelper {
             }
 
             add(Item(list = arrayListOf(TitleTextV(resId = R.string.TestFeature))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.SimpleAnimation), SwitchV("simpleAnimation", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() }))))) //To Do Fix
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.AppReturnAmin), SwitchV("appReturnAmin", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.SimpleAnimation), SwitchV("simpleAnimation", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
+            if (!OwnSP.ownSP.getBoolean("alwaysBlur", false))
+                add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.AppReturnAmin), SwitchV("appReturnAmin", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
+            if (!OwnSP.ownSP.getBoolean("appReturnAmin", false) && !OwnSP.ownSP.getBoolean("simpleAnimation", false))
+                add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.AlwaysBlur), SwitchV("alwaysBlur", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.InfiniteScroll), SwitchV("infiniteScroll")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.RecommendServer), SwitchV("recommendServer")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideSeekPoints), SwitchV("hideSeekPoints")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.SmallWindow), SwitchV("supportSmallWindow")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.LowEndAnim), SwitchV("lowEndAnim")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.LowEndDeviceUseMIUIWidgets), SwitchV("useMIUIWidgets")))))
-            if (!OwnSP.ownSP.getBoolean("appReturnAmin", false))
+            if (!OwnSP.ownSP.getBoolean("appReturnAmin", false) && !OwnSP.ownSP.getBoolean("simpleAnimation", false))
                 add(Item(list = arrayListOf(TextV(resId = R.string.BlurRadius, onClickListener = { showBlurRadiusDialog() }))))
             add(Item(list = arrayListOf(LineV())))
 
             add(Item(list = arrayListOf(TitleTextV(resId = R.string.OtherFeature))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.AlwaysShowStatusBarClock), SwitchV("clockGadget")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.DoubleTap), SwitchV("doubleTap")))))
-            if (!OwnSP.ownSP.getBoolean("dockSettings", false) && (Config.AndroidSDK == 30))
+            if (!OwnSP.ownSP.getBoolean("dockSettings", false) && Config.AndroidSDK == 30)
                 add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.SearchBarBlur), SwitchV("searchBarBlur")))))
             add(Item(list = arrayListOf(TextWithArrowV(TextV(resId = R.string.DockSettings), onClickListener = { setItems(dock) }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.EveryThingBuild, onClickListener = { BuildWithEverything().init() }))))
