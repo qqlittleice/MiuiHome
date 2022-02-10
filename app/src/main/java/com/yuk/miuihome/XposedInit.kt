@@ -60,21 +60,6 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                 }
                 if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: [com.miui.home] hook success")
             }
-            "com.milink.service" -> {
-                XposedHelpers.findAndHookMethod("com.miui.circulate.world.auth.AuthUtil", lpparam.classLoader, "doPermissionCheck", String::class.java, String::class.java,
-                    object : XC_MethodHook() {
-                        override fun beforeHookedMethod(param: MethodHookParam) {
-                            param.result = null
-                        }
-                    })
-                XposedHelpers.findAndHookMethod("com.miui.circulate.world.utils.GetKeyUtil", lpparam.classLoader, "doWhiteListAuth", String::class.java, String::class.java,
-                    object : XC_MethodHook() {
-                        override fun beforeHookedMethod(param: MethodHookParam) {
-                            param.result = true
-                        }
-                    })
-                if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: [com.milink.service] hook success")
-            }
             else -> return
         }
     }
