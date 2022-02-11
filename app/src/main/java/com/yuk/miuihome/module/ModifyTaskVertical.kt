@@ -2,12 +2,12 @@ package com.yuk.miuihome.module
 
 import android.content.Context
 import android.graphics.RectF
-import com.yuk.miuihome.utils.Config
-import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.callMethod
-import com.yuk.miuihome.utils.ktx.callStaticMethod
-import com.yuk.miuihome.utils.ktx.getObjectField
-import com.yuk.miuihome.utils.ktx.replaceMethod
+import com.yuk.miuihome.view.utils.Config
+import com.yuk.miuihome.view.utils.OwnSP
+import com.yuk.miuihome.view.utils.ktx.callMethod
+import com.yuk.miuihome.view.utils.ktx.callStaticMethod
+import com.yuk.miuihome.view.utils.ktx.getObjectField
+import com.yuk.miuihome.view.utils.ktx.replaceMethod
 
 class ModifyTaskVertical {
 

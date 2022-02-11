@@ -4,10 +4,10 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
-import com.yuk.miuihome.utils.HomeContext
-import com.yuk.miuihome.utils.LogUtil
-import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.*
+import com.yuk.miuihome.view.utils.HomeContext
+import com.yuk.miuihome.view.utils.LogUtil
+import com.yuk.miuihome.view.utils.OwnSP
+import com.yuk.miuihome.view.utils.ktx.*
 import de.robv.android.xposed.XposedHelpers
 
 class ModifyDockHook {

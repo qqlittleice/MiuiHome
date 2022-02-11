@@ -7,9 +7,9 @@ import android.os.Looper
 import android.view.View
 import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.XposedInit
-import com.yuk.miuihome.utils.Config
-import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.*
+import com.yuk.miuihome.view.utils.Config
+import com.yuk.miuihome.view.utils.OwnSP
+import com.yuk.miuihome.view.utils.ktx.*
 import de.robv.android.xposed.XposedBridge
 
 class ModifyAppReturnBlur {

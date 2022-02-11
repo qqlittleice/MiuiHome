@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit
-import com.yuk.miuihome.utils.HomeContext
-import com.yuk.miuihome.utils.LogUtil
-import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.view.utils.HomeContext
+import com.yuk.miuihome.view.utils.LogUtil
+import com.yuk.miuihome.view.utils.OwnSP
 import com.yuk.miuihome.view.adapter.ItemAdapter
 import com.yuk.miuihome.view.data.DataHelper
 import com.yuk.miuihome.view.data.Item

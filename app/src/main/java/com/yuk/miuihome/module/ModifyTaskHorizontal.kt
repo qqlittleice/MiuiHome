@@ -1,8 +1,8 @@
 package com.yuk.miuihome.module
 
 import android.graphics.RectF
-import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.*
+import com.yuk.miuihome.view.utils.OwnSP
+import com.yuk.miuihome.view.utils.ktx.*
 
 class ModifyTaskHorizontal {
 

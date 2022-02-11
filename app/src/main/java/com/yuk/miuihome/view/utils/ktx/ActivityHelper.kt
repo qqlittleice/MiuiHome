@@ -1,4 +1,4 @@
-package com.yuk.miuihome.view.utils
+package com.yuk.miuihome.view.utils.ktx
 
 import android.annotation.SuppressLint
 import android.annotation.TargetApi
@@ -15,12 +15,9 @@ import android.os.*
 import android.view.KeyEvent
 import android.view.MotionEvent
 import com.yuk.miuihome.XposedInit
-import com.yuk.miuihome.utils.Config
-import com.yuk.miuihome.utils.HomeContext
-import com.yuk.miuihome.utils.LogUtil
-import com.yuk.miuihome.utils.ktx.getFieldByClassOrObject
-import com.yuk.miuihome.utils.ktx.getStaticFiledByClass
-import com.yuk.miuihome.utils.ktx.getStaticObjectField
+import com.yuk.miuihome.view.utils.Config
+import com.yuk.miuihome.view.utils.HomeContext
+import com.yuk.miuihome.view.utils.LogUtil
 import java.lang.reflect.*
 
 object ActivityHelper {
@@ -305,6 +302,7 @@ class MyInstrumentation(private val mBase: Instrumentation) : Instrumentation() 
         )
     }
 
+    @SuppressLint("DiscouragedPrivateApi")
     private fun inject(
         activity: Activity,
         icicle: Bundle?

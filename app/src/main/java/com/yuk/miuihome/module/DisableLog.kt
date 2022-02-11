@@ -2,7 +2,7 @@
 package com.yuk.miuihome.module
 
 import com.yuk.miuihome.XposedInit
-import com.yuk.miuihome.utils.ktx.setReturnConstant
+import com.yuk.miuihome.view.utils.ktx.setReturnConstant
 
 class DisableLog {
 

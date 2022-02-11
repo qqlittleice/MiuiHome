@@ -1,4 +1,4 @@
-package com.yuk.miuihome.utils
+package com.yuk.miuihome.view.utils
 
 import android.os.Build
 import com.yuk.miuihome.BuildConfig

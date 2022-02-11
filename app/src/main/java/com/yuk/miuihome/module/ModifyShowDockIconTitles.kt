@@ -1,10 +1,10 @@
 package com.yuk.miuihome.module
 
 import android.content.Context
-import com.yuk.miuihome.utils.HomeContext
-import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.hookAfterMethod
-import com.yuk.miuihome.utils.ktx.setReturnConstant
+import com.yuk.miuihome.view.utils.HomeContext
+import com.yuk.miuihome.view.utils.OwnSP
+import com.yuk.miuihome.view.utils.ktx.hookAfterMethod
+import com.yuk.miuihome.view.utils.ktx.setReturnConstant
 
 class ModifyShowDockIconTitles {
 

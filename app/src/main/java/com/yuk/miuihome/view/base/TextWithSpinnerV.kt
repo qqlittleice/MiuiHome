@@ -13,7 +13,7 @@ import android.widget.LinearLayout
 import android.widget.ListPopupWindow
 import android.widget.TextView
 import com.yuk.miuihome.R
-import com.yuk.miuihome.utils.ktx.dp2px
+import com.yuk.miuihome.view.utils.ktx.dp2px
 import com.yuk.miuihome.view.adapter.ListPopupWindowAdapter
 import com.yuk.miuihome.view.data.DataHelper
 import com.yuk.miuihome.view.data.LayoutPair
@@ -31,9 +31,9 @@ class TextWithSpinnerV(
     override fun getType(): BaseView = this
 
     private fun setBackgroundAlpha(bgAlpha: Float) {
-        val lp = DataHelper.currentActivity.window.attributes
+        val lp = DataHelper.currentActivity!!.window.attributes
         lp.alpha = bgAlpha
-        DataHelper.currentActivity.window.attributes = lp
+        DataHelper.currentActivity!!.window.attributes = lp
     }
 
     @SuppressLint("RtlHardcoded", "ClickableViewAccessibility", "MissingPermission")
@@ -85,14 +85,14 @@ class TextWithSpinnerV(
                         val halfWidth = view.width / 2
                         if (halfWidth >= motionEvent.x) {
                             popup.apply {
-                                horizontalOffset = dp2px(25f)
+                                horizontalOffset = dp2px(20f)
                                 setDropDownGravity(Gravity.LEFT)
                                 anchorView = view
                                 show()
                             }
                         } else {
                             popup.apply {
-                                horizontalOffset = dp2px(-25f)
+                                horizontalOffset = dp2px(-20f)
                                 setDropDownGravity(Gravity.RIGHT)
                                 anchorView = view
                                 show()

@@ -4,12 +4,14 @@ import android.content.Context
 import android.graphics.Typeface
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.StateListDrawable
+import android.util.TypedValue
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.yuk.miuihome.R
-import com.yuk.miuihome.utils.ktx.dp2px
+import com.yuk.miuihome.view.utils.HomeContext
+import com.yuk.miuihome.view.utils.ktx.dp2px
 
 
 class ListPopupWindowAdapter(
@@ -62,7 +64,7 @@ class ListPopupWindowAdapter(
     }
 
     fun getWidth(): Int {
-        var maxWidth = 0
+        var maxWidth = dp2px(120f)
         var view: View? = null
         val count: Int = this@ListPopupWindowAdapter.count
         for (i in 0 until count) {

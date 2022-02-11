@@ -1,7 +1,7 @@
 package com.yuk.miuihome.module
 
-import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.setReturnConstant
+import com.yuk.miuihome.view.utils.OwnSP
+import com.yuk.miuihome.view.utils.ktx.setReturnConstant
 
 class ModifyUnlockHotseatIcon {
 

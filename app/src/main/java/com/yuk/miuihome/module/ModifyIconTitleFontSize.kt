@@ -5,13 +5,13 @@ import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.yuk.miuihome.utils.Config
-import com.yuk.miuihome.utils.LogUtil
-import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.callMethod
-import com.yuk.miuihome.utils.ktx.findClass
-import com.yuk.miuihome.utils.ktx.getObjectField
-import com.yuk.miuihome.utils.ktx.hookAfterMethod
+import com.yuk.miuihome.view.utils.Config
+import com.yuk.miuihome.view.utils.LogUtil
+import com.yuk.miuihome.view.utils.OwnSP
+import com.yuk.miuihome.view.utils.ktx.callMethod
+import com.yuk.miuihome.view.utils.ktx.findClass
+import com.yuk.miuihome.view.utils.ktx.getObjectField
+import com.yuk.miuihome.view.utils.ktx.hookAfterMethod
 
 class ModifyIconTitleFontSize {
 

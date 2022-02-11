@@ -2,11 +2,7 @@ package com.yuk.miuihome.view.data
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.content.Intent
 import android.graphics.Color
-import android.os.Build
-import android.view.HapticFeedbackConstants
-import android.view.View
 import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit
@@ -14,9 +10,9 @@ import com.yuk.miuihome.module.BuildWithEverything
 import com.yuk.miuihome.module.ModifyBlurLevel
 import com.yuk.miuihome.view.SettingsDialog
 import com.yuk.miuihome.view.base.*
-import com.yuk.miuihome.utils.Config
-import com.yuk.miuihome.utils.LogUtil
-import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.view.utils.Config
+import com.yuk.miuihome.view.utils.LogUtil
+import com.yuk.miuihome.view.utils.OwnSP
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 

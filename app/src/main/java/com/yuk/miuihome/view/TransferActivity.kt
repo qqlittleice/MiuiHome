@@ -4,7 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import com.yuk.miuihome.XposedInit
-import com.yuk.miuihome.utils.HomeContext
+import com.yuk.miuihome.view.utils.HomeContext
 
 open class TransferActivity: Activity() {
 

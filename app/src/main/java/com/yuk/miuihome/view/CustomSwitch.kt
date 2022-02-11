@@ -3,6 +3,7 @@ package com.yuk.miuihome.view
 import android.annotation.SuppressLint
 import android.content.Context
 import android.widget.Switch
+import com.yuk.miuihome.view.utils.ktx.dp2px
 
 import java.lang.reflect.Field
 
@@ -13,6 +14,6 @@ class CustomSwitch(context: Context) : Switch(context) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         val switchWidth: Field = Switch::class.java.getDeclaredField("mSwitchWidth")
         switchWidth.isAccessible = true
-        if (HookSettingsActivity().getDensityDpi() >= 392) switchWidth.setInt(this, 130)
+        switchWidth.setInt(this, dp2px(48f))
     }
 }

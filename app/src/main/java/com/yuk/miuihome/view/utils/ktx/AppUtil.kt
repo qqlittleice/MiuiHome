@@ -1,7 +1,7 @@
-package com.yuk.miuihome.utils.ktx
+package com.yuk.miuihome.view.utils.ktx
 
 import android.util.TypedValue
-import com.yuk.miuihome.utils.HomeContext
+import com.yuk.miuihome.view.utils.HomeContext
 
 
 fun dp2px(dpValue: Float): Int = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpValue, HomeContext.context.resources.displayMetrics).toInt()

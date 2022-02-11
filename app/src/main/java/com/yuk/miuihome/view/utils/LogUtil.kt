@@ -1,9 +1,9 @@
-package com.yuk.miuihome.utils
+package com.yuk.miuihome.view.utils
 
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
-import com.yuk.miuihome.utils.Config.TAG
+import com.yuk.miuihome.view.utils.Config.TAG
 import de.robv.android.xposed.XposedBridge
 import android.util.Log as ALog
 

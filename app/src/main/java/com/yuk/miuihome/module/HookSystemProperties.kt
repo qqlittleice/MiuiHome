@@ -1,7 +1,7 @@
 package com.yuk.miuihome.module
 
-import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.hookBeforeMethod
+import com.yuk.miuihome.view.utils.OwnSP
+import com.yuk.miuihome.view.utils.ktx.hookBeforeMethod
 
 class HookSystemProperties {
 

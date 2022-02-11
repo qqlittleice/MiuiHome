@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.yuk.miuihome.utils.ktx
+package com.yuk.miuihome.view.utils.ktx
 
 import android.content.res.XResources
 import de.robv.android.xposed.XC_MethodHook
@@ -9,11 +9,10 @@ import de.robv.android.xposed.XC_MethodReplacement
 import de.robv.android.xposed.XposedBridge.*
 import de.robv.android.xposed.XposedHelpers.*
 import de.robv.android.xposed.callbacks.XC_LayoutInflated
-import com.yuk.miuihome.utils.HomeContext
-import com.yuk.miuihome.utils.LogUtil
+import com.yuk.miuihome.view.utils.HomeContext
+import com.yuk.miuihome.view.utils.LogUtil
 import java.lang.reflect.Field
 import java.lang.reflect.Member
-import java.lang.reflect.Method
 import java.lang.reflect.Modifier
 import java.util.Collections.emptySet
 

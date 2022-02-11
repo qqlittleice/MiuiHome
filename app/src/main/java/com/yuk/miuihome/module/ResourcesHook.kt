@@ -2,11 +2,11 @@ package com.yuk.miuihome.module
 
 import android.content.res.Resources
 import com.yuk.miuihome.BuildConfig
-import com.yuk.miuihome.utils.*
-import com.yuk.miuihome.utils.ktx.dp2px
-import com.yuk.miuihome.utils.ktx.findClass
-import com.yuk.miuihome.utils.ktx.hookBeforeAllMethods
-import com.yuk.miuihome.utils.ktx.hookBeforeMethod
+import com.yuk.miuihome.view.utils.*
+import com.yuk.miuihome.view.utils.ktx.dp2px
+import com.yuk.miuihome.view.utils.ktx.findClass
+import com.yuk.miuihome.view.utils.ktx.hookBeforeAllMethods
+import com.yuk.miuihome.view.utils.ktx.hookBeforeMethod
 import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XposedBridge
 
