@@ -12,8 +12,8 @@ android {
         applicationId = "com.yuk.miuihome"
         minSdk = 29
         targetSdk = 32
-        versionCode = 4200
-        versionName = "4.2.0" + (getGitHeadRefsSuffix(rootProject))
+        versionCode = 4210
+        versionName = "4.2.1" + (getGitHeadRefsSuffix(rootProject))
     }
     buildTypes {
         release {
