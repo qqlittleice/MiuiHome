@@ -16,14 +16,6 @@ class TitleTextV(
     override fun getType(): BaseView = this
 
     override fun create(context: Context): View {
-        return TextV(
-            text,
-            resId,
-            13f,
-            context.getColor(R.color.title),
-            Padding(dp2px(25f), dp2px(13f), 0, dp2px(13f)),
-            Typeface.defaultFromStyle(Typeface.NORMAL),
-            onClickListener
-        ).create(context)
+        return TextV(text, resId, 13f, context.getColor(R.color.title), Padding(dp2px(25f), dp2px(13f), 0, dp2px(13f)), Typeface.defaultFromStyle(Typeface.NORMAL), onClickListener).create(context)
     }
 }

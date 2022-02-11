@@ -31,9 +31,9 @@ class TextWithSpinnerV(
     override fun getType(): BaseView = this
 
     private fun setBackgroundAlpha(bgAlpha: Float) {
-        val lp = DataHelper.currentActivity!!.window.attributes
+        val lp = DataHelper.currentActivity.window.attributes
         lp.alpha = bgAlpha
-        DataHelper.currentActivity!!.window.attributes = lp
+        DataHelper.currentActivity.window.attributes = lp
     }
 
     @SuppressLint("RtlHardcoded", "ClickableViewAccessibility", "MissingPermission")

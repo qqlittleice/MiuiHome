@@ -10,12 +10,10 @@ abstract class BaseView : BaseProperties {
     abstract fun getType(): BaseView
 
     abstract fun create(context: Context): View
-
 }
 
 interface BaseProperties {
 
     val outside: Boolean
-        get() = false
-
+    get() = false
 }
