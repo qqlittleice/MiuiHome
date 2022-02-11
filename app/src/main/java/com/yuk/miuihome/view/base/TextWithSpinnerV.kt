@@ -3,10 +3,7 @@ package com.yuk.miuihome.view.base
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.Context.VIBRATOR_SERVICE
-import android.media.AudioAttributes
 import android.os.Build
-import android.os.Vibrator
 import android.view.Gravity
 import android.view.HapticFeedbackConstants
 import android.view.MotionEvent
@@ -15,10 +12,8 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ListPopupWindow
 import android.widget.TextView
-import androidx.core.content.ContextCompat.getSystemService
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.ktx.dp2px
-import com.yuk.miuihome.utils.ktx.sp2px
 import com.yuk.miuihome.view.adapter.ListPopupWindowAdapter
 import com.yuk.miuihome.view.data.DataHelper
 import com.yuk.miuihome.view.data.LayoutPair
@@ -48,7 +43,7 @@ class TextWithSpinnerV(
             setBackgroundDrawable(context.getDrawable(R.drawable.rounded_corners_pop))
             setAdapter(ListPopupWindowAdapter(context, array, select.toString()))
             verticalOffset = dp2px(-100f)
-            width = ListPopupWindowAdapter(context, array, select.toString()).getWidth() + dp2px(10f)
+            width = ListPopupWindowAdapter(context, array, select.toString()).getWidth() + dp2px(20f)
             isModal = true
             setOnItemClickListener { parent, _, position, _ ->
                 val p0 = parent.getItemAtPosition(position).toString()
@@ -68,7 +63,7 @@ class TextWithSpinnerV(
         val spinner = LinearContainerV(
             LinearContainerV.HORIZONTAL,
             arrayOf(
-                LayoutPair(text.also { it.setTextColor(context.getColor(R.color.spinner)); it.text = select; it.setPadding(dp2px(30f), 0, dp2px(6f), 0); it.textSize = sp2px(5.6f) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f).also { it.gravity = Gravity.CENTER_VERTICAL + Gravity.RIGHT }),
+                LayoutPair(text.also { it.setTextColor(context.getColor(R.color.spinner)); it.text = select; it.setPadding(dp2px(30f), 0, dp2px(6f), 0); it.textSize = 16f }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f).also { it.gravity = Gravity.CENTER_VERTICAL + Gravity.RIGHT }),
                 LayoutPair(ImageView(context).also { it.background = context.getDrawable(R.drawable.ic_up_down) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).also { it.gravity = Gravity.CENTER_VERTICAL })
             )
         )

@@ -1,10 +1,9 @@
 package com.yuk.miuihome.utils.ktx
 
+import android.util.TypedValue
 import com.yuk.miuihome.utils.HomeContext
-import kotlin.math.roundToInt
 
-fun dp2px(dpValue: Float): Int = (dpValue * HomeContext.context.resources.displayMetrics.density).roundToInt()
 
-fun px2dp(pxValue: Int): Int = (pxValue / HomeContext.context.resources.displayMetrics.density).roundToInt()
+fun dp2px(dpValue: Float): Int = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpValue, HomeContext.context.resources.displayMetrics).toInt()
 
-fun sp2px(spValue: Float): Float = (spValue * HomeContext.context.resources.displayMetrics.scaledDensity + 0.5f)
+fun px2dp(pxValue: Int): Int =  (pxValue / HomeContext.context.resources.displayMetrics.density + 0.5f * if (pxValue >= 0) 1 else -1).toInt()

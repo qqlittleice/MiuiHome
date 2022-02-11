@@ -15,10 +15,8 @@ import com.yuk.miuihome.module.ModifyBlurLevel
 import com.yuk.miuihome.view.SettingsDialog
 import com.yuk.miuihome.view.base.*
 import com.yuk.miuihome.utils.Config
-import com.yuk.miuihome.utils.HomeContext
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.sp2px
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
@@ -70,7 +68,7 @@ object DataHelper {
             if (Config.AndroidSDK == 30)
                 add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.EnableDockBlur), SwitchV("searchBarBlur")))))
             if (!XposedInit.hasHookPackageResources)
-                add(Item(list = arrayListOf(TextV(resId = R.string.DockWarn, textColor = Color.parseColor("#ff0c0c"), textSize = sp2px(6f)))))
+                add(Item(list = arrayListOf(TextV(resId = R.string.DockWarn, textColor = Color.parseColor("#ff0c0c"), textSize = 16f))))
             else
                 add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockRoundedCorners), key = "dockRadius", min = 0, max = 50, divide = 10, defaultProgress = 25))))
             add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockHeight), key = "dockHeight", min = 30, max = 150, divide = 10, defaultProgress = 79))))

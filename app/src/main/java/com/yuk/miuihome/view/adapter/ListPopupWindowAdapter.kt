@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import android.widget.*
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.ktx.dp2px
-import com.yuk.miuihome.utils.ktx.sp2px
 
 
 class ListPopupWindowAdapter(
@@ -105,7 +104,7 @@ class ListPopupWindowAdapter(
                 background = createStateListDrawable(pressedDrawable, normalDrawable)
                 addView(TextView(context).apply {
                     layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
-                    textSize = sp2px(5.5f)
+                    textSize = 16f
                     setPadding(dp2px(25f), dp2px(20f), 0, dp2px(20f))
                     isSingleLine = true
                     text = thisText

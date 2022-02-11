@@ -1,7 +1,6 @@
 package com.yuk.miuihome.view.base
 
 import android.content.Context
-import android.view.Gravity
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.SeekBar
@@ -10,7 +9,6 @@ import com.yuk.miuihome.R
 import com.yuk.miuihome.view.data.LayoutPair
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.dp2px
-import com.yuk.miuihome.utils.ktx.sp2px
 
 class TextWithSeekBarV(
     private val textV: TextV,
@@ -27,9 +25,9 @@ class TextWithSeekBarV(
     override fun getType(): BaseView = this
 
     override fun create(context: Context): View {
-        val minText = TextV(min.toString(), textSize = sp2px(4.5f)).create(context)
-        val maxText = TextV(max.toString(), textSize = sp2px(4.5f)).create(context)
-        val mutableText = TextV("", textSize = sp2px(4.5f)).create(context)
+        val minText = TextV(min.toString(), textSize = 12f, textColor = context.getColor(R.color.spinner)).create(context)
+        val maxText = TextV(max.toString(), textSize = 12f, textColor = context.getColor(R.color.spinner)).create(context)
+        val mutableText = TextV("", textSize = 12f, textColor = context.getColor(R.color.spinner)).create(context)
         val seekBar = SeekBar(context).also { view ->
             view.thumb = null
             view.maxHeight = dp2px(30f)

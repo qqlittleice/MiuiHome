@@ -2,12 +2,12 @@ package com.yuk.miuihome.view.base
 
 import android.content.Context
 import android.graphics.Typeface
+import android.util.TypedValue
 import android.view.View
 import android.widget.TextView
 import com.yuk.miuihome.R
 import com.yuk.miuihome.view.data.Padding
 import com.yuk.miuihome.utils.ktx.dp2px
-import com.yuk.miuihome.utils.ktx.sp2px
 
 class TextV(
     val text: String? = null,
@@ -26,9 +26,9 @@ class TextV(
             text?.let { view.text = it }
             resId?.let { view.setText(it) }
             if (textSize == null)
-                view.textSize = sp2px(6.5f)
+                view.setTextSize(TypedValue.COMPLEX_UNIT_SP,18f)
             else
-                view.textSize = textSize
+                view.setTextSize(TypedValue.COMPLEX_UNIT_SP,textSize)
             if (typeface == null)
                 view.paint.typeface = Typeface.defaultFromStyle(Typeface.BOLD)
             else
