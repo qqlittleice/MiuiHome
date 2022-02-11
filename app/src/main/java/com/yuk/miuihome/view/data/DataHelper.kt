@@ -48,13 +48,12 @@ object DataHelper {
         val itemList = arrayListOf<Item>()
         itemList.apply {
             add(Item(list = arrayListOf(TitleTextV(resId = R.string.MiuiVersion))))
-            add(Item(list = arrayListOf(LineV())))
             add(Item(list = arrayListOf(TextV( "Android " + XposedInit().checkAndroidVersion()+ " / MIUI " + showMiuiVersion()))))
+            add(Item(list = arrayListOf(LineV())))
             add(Item(list = arrayListOf(TitleTextV(resId = R.string.LauncherVersion))))
-            add(Item(list = arrayListOf(LineV())))
             add(Item(list = arrayListOf(TextV(XposedInit().checkVersionName()))))
-            add(Item(list = arrayListOf(TitleTextV(resId = R.string.ModuleVersion))))
             add(Item(list = arrayListOf(LineV())))
+            add(Item(list = arrayListOf(TitleTextV(resId = R.string.ModuleVersion))))
             add(Item(list = arrayListOf(TextV("${BuildConfig.VERSION_NAME}(${BuildConfig.VERSION_CODE})-${BuildConfig.BUILD_TYPE}"))))
         }
         return itemList
