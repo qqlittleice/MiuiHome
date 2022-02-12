@@ -4,16 +4,19 @@ import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit
-import com.yuk.miuihome.view.utils.HomeContext
-import com.yuk.miuihome.view.utils.LogUtil
-import com.yuk.miuihome.view.utils.OwnSP
 import com.yuk.miuihome.view.adapter.ItemAdapter
 import com.yuk.miuihome.view.data.DataHelper
 import com.yuk.miuihome.view.data.Item
+import com.yuk.miuihome.view.utils.HomeContext
+import com.yuk.miuihome.view.utils.LogUtil
+import com.yuk.miuihome.view.utils.OwnSP
+import com.yuk.miuihome.view.utils.ktx.dp2px
+import de.robv.android.xposed.XposedBridge
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
@@ -23,6 +26,7 @@ class HookSettingsActivity: TransferActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ItemAdapter
     private lateinit var back: ImageView
+    private lateinit var title: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,11 +36,21 @@ class HookSettingsActivity: TransferActivity() {
         itemList.addAll(DataHelper.getItems())
         initBack()
         recyclerView = findViewById(R.id.settings_recycler)
+        title = findViewById(R.id.title)
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
         adapter = ItemAdapter(itemList)
         recyclerView.adapter = adapter
         if (OwnSP.ownSP.getBoolean("isFirstUse", true)) showFirstUseDialog()
+        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                val y = recyclerView.computeVerticalScrollOffset()
+                val o = dp2px(100f)-y*2
+                if (o > dp2px(0f)) title.setPadding(0, o,0,0)
+                else title.setPadding(0, dp2px(0f),0,0)
+            }
+        })
     }
 
     private fun initBack() {
@@ -51,7 +65,6 @@ class HookSettingsActivity: TransferActivity() {
         if (DataHelper.thisItems != DataHelper.main) DataHelper.setItems(DataHelper.main)
         else super.onBackPressed()
     }
-
 
     fun getDensityDpi(): Int {
         val dm = DisplayMetrics()

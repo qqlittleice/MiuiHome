@@ -18,7 +18,6 @@ import com.yuk.miuihome.view.adapter.ListPopupWindowAdapter
 import com.yuk.miuihome.view.data.DataHelper
 import com.yuk.miuihome.view.data.LayoutPair
 
-
 class TextWithSpinnerV(
     private val textV: TextV,
     var select: String?,

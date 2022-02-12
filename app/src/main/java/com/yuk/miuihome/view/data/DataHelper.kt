@@ -3,6 +3,7 @@ package com.yuk.miuihome.view.data
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.graphics.Color
+import android.graphics.Typeface
 import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit
@@ -91,6 +92,7 @@ object DataHelper {
     private fun loadItems(): ArrayList<Item> {
         val itemList = arrayListOf<Item>()
         itemList.apply {
+            add(Item(list = arrayListOf(TextV(resId = R.string.app_name, typeface = Typeface.defaultFromStyle(Typeface.NORMAL), textSize = 28f))))
             if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                 add(Item(list = arrayListOf(TextV(resId = R.string.SimpleWarn, textColor = Color.parseColor("#ff0c0c")))))
             } else {

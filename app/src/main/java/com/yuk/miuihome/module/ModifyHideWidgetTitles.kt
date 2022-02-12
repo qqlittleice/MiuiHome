@@ -25,10 +25,5 @@ class ModifyHideWidgetTitles {
             val view = it.result as Any
             view.callMethod("getTitleView")?.callMethod("setVisibility", View.GONE)
         }
-        "com.miui.home.launcher.maml.MaMlWidgetView".hookAfterMethod("updateTitle", maMlWidgetInfo
-        ) {
-            val view = it.result as Any
-            view.callMethod("getTitleView")?.callMethod("setVisibility", View.GONE)
-        }
     }
 }
