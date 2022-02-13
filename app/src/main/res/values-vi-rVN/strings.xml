@@ -66,6 +66,7 @@
   <string name="DockBottom">Thanh Dock từ dưới cùng của Màn hình</string>
   <string name="DockIconBottom">Các biểu tượng từ cuối màn hình</string>
   <string name="DockSettings">Cài đặt Dock</string>
+  <string name="DockWarn">Vui lòng kích hoạt Tài nguyên Hooks nếu bạn cần sửa đổi các góc tròn.</string>
   <string name="DockFeature">Bật tính năng Dock</string>
   <string name="EnableDockBlur">Bật tính năng Làm mờ của thanh Dock</string>
   <string name="Reset">Đặt lại thông số Dock</string>

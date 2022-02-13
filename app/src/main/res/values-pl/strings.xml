@@ -66,6 +66,7 @@
   <string name="DockBottom">Dock z dołu ekranu</string>
   <string name="DockIconBottom">Ikony z dołu ekranu</string>
   <string name="DockSettings">Ustawienia docka</string>
+  <string name="DockWarn">Włącz Resource Hooks jeśli potrzebujesz modyfikować zaokrąglenie rogów.</string>
   <string name="DockFeature">Włącz Funkcjé Docka</string>
   <string name="EnableDockBlur">Włącz rozmycie docka</string>
   <string name="Reset">Zresetuj parametry docka</string>

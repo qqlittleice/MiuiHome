@@ -1,9 +1,6 @@
 package com.yuk.miuihome.module
 
 import android.content.Context
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.GradientDrawable
-import android.graphics.drawable.RippleDrawable
 import android.os.Bundle
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
@@ -11,7 +8,6 @@ import com.yuk.miuihome.view.utils.HomeContext
 import com.yuk.miuihome.view.utils.LogUtil
 import com.yuk.miuihome.view.utils.OwnSP
 import com.yuk.miuihome.view.utils.ktx.*
-import de.robv.android.xposed.XposedBridge
 import de.robv.android.xposed.XposedHelpers
 
 class ModifyDockHook {
@@ -21,7 +17,6 @@ class ModifyDockHook {
         try {
             val deviceConfigClass = "com.miui.home.launcher.DeviceConfig".findClass()
             val launcherClass = "com.miui.home.launcher.Launcher".findClass()
-            val searchBarClass = "com.miui.home.launcher.SearchBarStyleData".findClass()
             // Dock距屏幕两侧
             deviceConfigClass.hookBeforeMethod("calcSearchBarWidth", Context::class.java
             ) {
@@ -44,8 +39,7 @@ class ModifyDockHook {
                 it.result = dp2px((OwnSP.ownSP.getFloat("dockMarginTop", 0.6f) * 10))
             }
             // 页面指示器距离屏幕底部
-            deviceConfigClass.hookBeforeMethod(
-                "getWorkspaceIndicatorMarginBottom",
+            deviceConfigClass.hookBeforeMethod("getWorkspaceIndicatorMarginBottom",
             ) {
                 it.result = dp2px((OwnSP.ownSP.getFloat("dockMarginBottom", 11.0f) * 10))
             }
@@ -54,20 +48,9 @@ class ModifyDockHook {
             ) {
                 it.result = 0
             }
-
             launcherClass.hookAfterMethod("onCreate", Bundle::class.java
-            ) { param ->
-                searchBarClass.hookAfterMethod("getBackgroundDrawable"
-                ) {
-                    val rippleDrawable = it.thisObject.callMethod("getBackgroundDrawable") as RippleDrawable
-                    val gradientDrawable = rippleDrawable.getDrawable(0) as GradientDrawable
-                    XposedBridge.log(gradientDrawable.toString())
-                    gradientDrawable.cornerRadius = dp2px(OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10).toFloat()
-                    gradientDrawable.setStroke(0,0)
-                    rippleDrawable.setDrawable(0, gradientDrawable)
-                    it.result = rippleDrawable
-                }
-                val searchBarObject = param.thisObject.callMethod("getSearchBar") as FrameLayout
+            ) {
+                val searchBarObject = XposedHelpers.callMethod(it.thisObject, "getSearchBar") as FrameLayout
                 val searchBarDesktop = searchBarObject.getChildAt(0) as RelativeLayout
                 val searchBarDrawer = searchBarObject.getChildAt(1) as RelativeLayout
                 val searchBarContainer = searchBarObject.parent as FrameLayout
@@ -82,7 +65,7 @@ class ModifyDockHook {
                 // 修改应用列表搜索框
                 val mAllAppViewField = launcherClass.getDeclaredField("mAppsView")
                 mAllAppViewField.isAccessible = true
-                val mAllAppView = mAllAppViewField.get(param.thisObject) as RelativeLayout
+                val mAllAppView = mAllAppViewField.get(it.thisObject) as RelativeLayout
                 val mAllAppSearchView = mAllAppView.getChildAt(mAllAppView.childCount - 1) as FrameLayout
                 searchBarObject.removeView(searchBarDrawer)
                 mAllAppSearchView.addView(searchBarDrawer)

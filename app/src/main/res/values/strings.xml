@@ -72,6 +72,7 @@
   <string name="DockBottom">Dock Bar from the bottom of the Screen</string>
   <string name="DockIconBottom">Icons from the bottom of the Screen</string>
   <string name="DockSettings">Dock Settings</string>
+  <string name="DockWarn">Please enable Resource Hooks if you need to modify rounded corners.</string>
   <string name="DockFeature">Enable Dock Feature</string>
   <string name="EnableDockBlur">Enable Blur of the Dock</string>
   <string name="Reset">Reset Dock Parameters</string>

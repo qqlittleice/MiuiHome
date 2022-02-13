@@ -71,6 +71,7 @@
   <string name="DockBottom">底栏距屏幕底部</string>
   <string name="DockIconBottom">图标距屏幕底部</string>
   <string name="DockSettings">底栏设置</string>
+  <string name="DockWarn">修改圆角需要启用资源钩子。</string>
   <string name="DockFeature">启用底栏功能</string>
   <string name="EnableDockBlur">启用底栏模糊</string>
   <string name="Reset">重置底栏配置参数</string>

@@ -33,6 +33,7 @@
   <string name="DockRoundedCorners">Закругленные углы док-бара</string>
   <string name="DockSettings">Настройки док-бара</string>
   <string name="DockSide">Док-бар по бокам экрана</string>
+  <string name="DockWarn">Если вам необходимо изменить закругленные углы, включите перехват ресурсов в настройках LSPosed менеджера.</string>
   <string name="DoubleTap">Двойное нажатие для блокировки экрана</string>
   <string name="EnableDockBlur">Включить размытие панели док-бара</string>
   <string name="EnableIconShadow">Показывать тень и отражение иконок</string>

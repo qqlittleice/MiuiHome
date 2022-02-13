@@ -66,6 +66,7 @@
   <string name="DockBottom">Док-панель у нижній частині екрана</string>
   <string name="DockIconBottom">Значки знизу екрана</string>
   <string name="DockSettings">Налаштування доку</string>
+  <string name="DockWarn">Будь-ласка увімкніть хук ресурсів, якщо ви хочете використовувати закруглені краї.</string>
   <string name="DockFeature">Увімкнути функцію доку</string>
   <string name="EnableDockBlur">Активувати розмиття доку</string>
   <string name="Reset">Скинути параметри доку</string>
