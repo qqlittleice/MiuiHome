@@ -66,7 +66,6 @@
   <string name="DockBottom">സ്ക്രീനിന്റെ താഴെ നിന്ന് ഡോക്ക് ബാർ</string>
   <string name="DockIconBottom">സ്ക്രീനിന്റെ താഴെ നിന്ന് ഐക്കണുകൾ</string>
   <string name="DockSettings">ഡോക്ക് ക്രമീകരണങ്ങൾ</string>
-  <string name="DockWarn">നിങ്ങൾക്ക് വൃത്താകൃതിയിലുള്ള കോണുകൾ പരിഷ്ക്കരിക്കണമെങ്കിൽ റിസോഴ്സ് ഹുക്കുകൾ പ്രവർത്തനക്ഷമമാക്കുക.</string>
   <string name="DockFeature">ഡോക്ക് സവിശേഷത പ്രവർത്തനക്ഷമമാക്കുക</string>
   <string name="EnableDockBlur">ഡോക്കിന്റെ മങ്ങൽ പ്രവർത്തനക്ഷമമാക്കുക</string>
   <string name="Reset">ഡോക്ക് പാരാമീറ്ററുകൾ പുനസജ്ജമാക്കുക</string>

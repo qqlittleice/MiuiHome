@@ -22,7 +22,6 @@
   <string name="DockRoundedCorners">Dock Bar runde Ecken</string>
   <string name="DockSettings">Dock Einstellungen</string>
   <string name="DockSide">Dock Bar von den Seiten des Bildschirmes</string>
-  <string name="DockWarn">Bitte aktiviere Resource Hooks wenn du runde Ecken modifizieren willst.</string>
   <string name="EnableDockBlur">Aktiviere das Weichzeichnen des Docks</string>
   <string name="EnableIconShadow">Icon-Schatten und Reflexion anzeigen</string>
   <string name="EveryThingBuild">Optimiere den Launcher mit dem Everything-Modus</string>

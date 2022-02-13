@@ -66,7 +66,6 @@
   <string name="DockBottom">Barra de Dock na parte inferior da tela</string>
   <string name="DockIconBottom">Ícones da parte inferior da tela</string>
   <string name="DockSettings">Configurações do Dock</string>
-  <string name="DockWarn">Por favor, ative a Modificação de Recursos se você quiser modificar as bordas arrendodadas.</string>
   <string name="DockFeature">Ligar o Recursos do Dock</string>
   <string name="EnableDockBlur">Ligar o Blur no Fundo do Dock</string>
   <string name="Reset">Resetar Parâmetros do Dock</string>

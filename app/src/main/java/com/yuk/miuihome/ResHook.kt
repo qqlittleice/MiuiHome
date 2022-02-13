@@ -15,6 +15,7 @@ import com.yuk.miuihome.view.utils.ktx.dp2px
 import com.yuk.miuihome.view.utils.ktx.hookLayout
 import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResourcesParam
 import com.yuk.miuihome.view.utils.ktx.setTryReplacement
+import de.robv.android.xposed.XposedBridge
 import kotlin.concurrent.thread
 
 class ResHook(private val hookedRes: InitPackageResourcesParam) {
@@ -27,12 +28,6 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
     fun init() {
         thread {
             if (!hasLoad) Thread.sleep(400)
-            if (OwnSP.ownSP.getBoolean("dockSettings", false))
-                hookedRes.res.hookLayout(Config.hookPackage, "layout", "layout_search_bar"
-                ) {
-                    val targetView = it.view
-                    (if (XposedInit().checkAlpha() || XposedInit().checkVersionCode() >= 421153106L) DrawableNameNewList else DrawableNameList).forEach { drawableName -> resetDockRadius(targetView.context, drawableName) }
-                }
             val backgroundTextSize = OwnSP.ownSP.getInt("backgroundTextSize", 13)
             val message: String = OwnSP.ownSP.getString("recentText", "").toString()
             if (!(backgroundTextSize == -1 || backgroundTextSize == 13))
@@ -48,19 +43,5 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
             if (OwnSP.ownSP.getString("recentText", "") != "")
                 hookedRes.res.setTryReplacement(Config.hookPackage, "string", "recents_empty_message", message)
         }
-    }
-
-    private fun resetDockRadius(context: Context, drawableName: String) {
-        hookedRes.res.setTryReplacement(Config.hookPackage, "drawable", drawableName, object : XResources.DrawableLoader() {
-            @SuppressLint("UseCompatLoadingForDrawables")
-            override fun newDrawable(xres: XResources, id: Int): Drawable {
-                val background = context.getDrawable(xres.getIdentifier(drawableName, "drawable", Config.hookPackage)) as RippleDrawable
-                val backgroundShape = background.getDrawable(0) as GradientDrawable
-                backgroundShape.cornerRadius = dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat()
-                backgroundShape.setStroke(0, 0)
-                background.setDrawable(0, backgroundShape)
-                return background
-            }
-        })
     }
 }

@@ -66,7 +66,6 @@
   <string name="DockBottom">Dock Ekranin Altindaki Bosluk</string>
   <string name="DockIconBottom">Ekranin Altindaki Ikonlar</string>
   <string name="DockSettings">Dock Ayarlari</string>
-  <string name="DockWarn">Eger Dockun koselerini ozellestirmeniz gerekiyorsa Resource Hooksu acin.</string>
   <string name="DockFeature">Dock Islevini Ac</string>
   <string name="EnableDockBlur">Docka Bulaniklik Ekle</string>
   <string name="Reset">Dock ayarlarini sifirla.</string>
