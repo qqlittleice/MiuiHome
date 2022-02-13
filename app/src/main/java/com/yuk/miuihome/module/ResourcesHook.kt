@@ -36,7 +36,6 @@ class ResourcesHook {
 
         val value = OwnSP.ownSP.getFloat("recents_task_view_rounded_corners_radius", -1f)
         val value1 = OwnSP.ownSP.getFloat("recents_task_view_header_height", -1f)
-        val message: String = OwnSP.ownSP.getString("recentText", "").toString()
 
         if (OwnSP.ownSP.getBoolean("unlockGrids", false)) {
             val deviceClass = "com.miui.home.launcher.compat.LauncherCellCountCompatDevice".findClass()
@@ -56,6 +55,7 @@ class ResourcesHook {
 
         if (value1 != -1f && value1 != 40f)
             hookMap["recents_task_view_header_height"] = ResourcesHookData("dimen", dp2px(value1))
+
     }
 
     companion object {

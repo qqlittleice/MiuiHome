@@ -1,6 +1,7 @@
 package com.yuk.miuihome.module
 
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.RippleDrawable
 import android.os.Bundle
@@ -21,7 +22,6 @@ class ModifyDockHook {
             val deviceConfigClass = "com.miui.home.launcher.DeviceConfig".findClass()
             val launcherClass = "com.miui.home.launcher.Launcher".findClass()
             val searchBarClass = "com.miui.home.launcher.SearchBarStyleData".findClass()
-            val searchBarDesktopLayoutClass = "com.miui.home.launcher.SearchBarDesktopLayout$1".findClass()
             // Dock距屏幕两侧
             deviceConfigClass.hookBeforeMethod("calcSearchBarWidth", Context::class.java
             ) {
@@ -57,18 +57,15 @@ class ModifyDockHook {
 
             launcherClass.hookAfterMethod("onCreate", Bundle::class.java
             ) { param ->
-
-                searchBarDesktopLayoutClass.hookAfterMethod("doInBackground"
+                searchBarClass.hookAfterMethod("getBackgroundDrawable"
                 ) {
-                    if (it.thisObject.callMethod("doInBackground") != null) {
-                        val rippleDrawable = it.thisObject.callMethod("doInBackground") as RippleDrawable
-                        val gradientDrawable = rippleDrawable.getDrawable(0) as GradientDrawable
-                        XposedBridge.log(gradientDrawable.toString())
-                        gradientDrawable.cornerRadius = dp2px(OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10).toFloat()
-                        gradientDrawable.setStroke(0, 0)
-                        rippleDrawable.setDrawable(0, gradientDrawable)
-                        it.result = rippleDrawable
-                    }
+                    val rippleDrawable = it.thisObject.callMethod("getBackgroundDrawable") as RippleDrawable
+                    val gradientDrawable = rippleDrawable.getDrawable(0) as GradientDrawable
+                    XposedBridge.log(gradientDrawable.toString())
+                    gradientDrawable.cornerRadius = dp2px(OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10).toFloat()
+                    gradientDrawable.setStroke(0,0)
+                    rippleDrawable.setDrawable(0, gradientDrawable)
+                    it.result = rippleDrawable
                 }
                 val searchBarObject = param.thisObject.callMethod("getSearchBar") as FrameLayout
                 val searchBarDesktop = searchBarObject.getChildAt(0) as RelativeLayout

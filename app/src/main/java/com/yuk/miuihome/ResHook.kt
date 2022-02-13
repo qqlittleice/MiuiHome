@@ -1,10 +1,21 @@
 package com.yuk.miuihome
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.res.XModuleResources
+import android.content.res.XResources
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.GradientDrawable
+import android.graphics.drawable.RippleDrawable
 import com.yuk.miuihome.view.utils.Config
+import com.yuk.miuihome.view.utils.Config.DrawableNameList
+import com.yuk.miuihome.view.utils.Config.DrawableNameNewList
 import com.yuk.miuihome.view.utils.OwnSP
+import com.yuk.miuihome.view.utils.ktx.dp2px
+import com.yuk.miuihome.view.utils.ktx.hookLayout
 import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResourcesParam
 import com.yuk.miuihome.view.utils.ktx.setTryReplacement
+import de.robv.android.xposed.XposedBridge
 import kotlin.concurrent.thread
 
 class ResHook(private val hookedRes: InitPackageResourcesParam) {
