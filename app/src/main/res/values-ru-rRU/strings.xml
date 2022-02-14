@@ -103,6 +103,7 @@
   <string name="Yes">Ок</string>
   <string name="current">Текущее значение</string>
   <string name="MiuiVersion">Версия MIUI</string>
+  <string name="AlwaysBlur">Постоянное размытие обоев на раб. столе</string>
   <string name="setDefaults">Оставьте поле пустым, чтобы восстановить значение по умолчанию</string>
   <string name="setRecentString">Оставьте поле пустым, чтобы восстановить значение по умолчанию, и введите пробел, чтобы удалить текст</string>
 </resources>
