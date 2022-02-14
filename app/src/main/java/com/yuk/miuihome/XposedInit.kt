@@ -121,6 +121,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         ModifyBlurRadius().init()
         ModifyIconTitleFontColor().init()
         AlwaysBlurWallpaper().init()
+        ModifyRecents().init()
         //CustomHook.init()
     }
 

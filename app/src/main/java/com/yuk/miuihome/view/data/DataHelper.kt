@@ -119,20 +119,23 @@ object DataHelper {
             }
             add(Item(list = arrayListOf(TextV(resId = R.string.AnimationLevel, onClickListener = { showAnimationLevelDialog() }))))
             add(Item(list = arrayListOf(LineV())))
-
             add(Item(list = arrayListOf(TitleTextV(resId = R.string.AdvancedFeature))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.UnlockGrids), SwitchV("unlockGrids")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.ShowDockIconTitles), SwitchV("showDockIconTitles")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideTaskViewAppIcon), SwitchV("recentIcon")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideTaskViewCleanUpIcon), SwitchV("cleanUp")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideStatusBar), SwitchV("hideStatusBar")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.MamlDownload), SwitchV("mamlDownload")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.UnlockIcons), SwitchV("unlockIcons")))))
             if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                 add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.WallpaperDarken), SwitchV("wallpaperDarken")))))
             }
+            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideTaskViewSmallWindowIcon), SwitchV("smallWindow")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.CategoryHideAll), SwitchV("categoryHideAll")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.CategoryPagingHideEdit), SwitchV("CategoryPagingHideEdit")))))
             add(Item(list = arrayListOf(TextV(resId = R.string.IconTitleFontSize, onClickListener = { showIconTitleFontSizeDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.CustomTitleColor, onClickListener = { showCustomTitleColorDialog() }))))
+            add(Item(list = arrayListOf(TextV(resId = R.string.TaskViewAppCardTextSize, onClickListener = { showTaskViewAppCardTextSizeDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.RoundCorner, onClickListener = { showRoundCornerDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.AppTextSize, onClickListener = { showAppTextSizeDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.VerticalTaskViewOfAppCardSize, onClickListener = { showVerticalTaskViewOfAppCardSizeDialog() }))))
@@ -158,10 +161,6 @@ object DataHelper {
 
             if (XposedInit.hasHookPackageResources) {
                 add(Item(list = arrayListOf(TitleTextV(resId = R.string.ResourceHooks))))
-                add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideTaskViewAppIcon), SwitchV("buttonPadding")))))
-                add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideTaskViewCleanUpIcon), SwitchV("cleanUp")))))
-                add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideTaskViewSmallWindowIcon), SwitchV("smallWindow")))))
-                add(Item(list = arrayListOf(TextV(resId = R.string.TaskViewAppCardTextSize, onClickListener = { showTaskViewAppCardTextSizeDialog() }))))
                 add(Item(list = arrayListOf(TextV(resId = R.string.CustomRecentText, onClickListener = { showCustomRecentTextDialog() }))))
                 add(Item(list = arrayListOf(LineV())))
             }
@@ -335,11 +334,11 @@ object DataHelper {
     private fun showTaskViewAppCardTextSizeDialog() {
         SettingsDialog(currentActivity).apply {
             setTitle(XposedInit.moduleRes.getString(R.string.TaskViewAppCardTextSize))
-            setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 13, ${XposedInit.moduleRes.getString(R.string.Recommend)}：0-30, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
-            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getInt("backgroundTextSize", 13).toString()}")
+            setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: -1, ${XposedInit.moduleRes.getString(R.string.Recommend)}：-1-30, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("recentTextSize", -1f).toString()}")
             setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
-                if (getEditText() == "") editor.putInt("backgroundTextSize", 13)
-                else editor.putInt("backgroundTextSize", getEditText().toInt())
+                if (getEditText() == "") editor.putFloat("recentTextSize", -1f)
+                else editor.putFloat("recentTextSize", getEditText().toFloat())
                 editor.apply()
                 dismiss()
             }
@@ -347,7 +346,6 @@ object DataHelper {
             show()
         }
     }
-
 
     private fun showAnimationLevelDialog() {
         SettingsDialog(currentActivity).apply {

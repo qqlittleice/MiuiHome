@@ -33,18 +33,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                     val targetView = it.view
                     (if (XposedInit().checkAlpha() || XposedInit().checkVersionCode() >= 421153106L) DrawableNameNewList else DrawableNameList).forEach { drawableName -> resetDockRadius(targetView.context, drawableName) }
                 }
-            val backgroundTextSize = OwnSP.ownSP.getInt("backgroundTextSize", 13)
             val message: String = OwnSP.ownSP.getString("recentText", "").toString()
-            if (!(backgroundTextSize == -1 || backgroundTextSize == 13))
-                hookedRes.res.setTryReplacement(Config.hookPackage, "dimen", "recents_task_view_header_title_text_size", modRes.fwd(getResId("dimen", "sp$backgroundTextSize")))
-            if (OwnSP.ownSP.getBoolean("buttonPadding", false))
-                hookedRes.res.setTryReplacement(Config.hookPackage, "dimen", "recents_task_view_header_button_padding", modRes.fwd(getResId("dimen", "sp100")))
-            if (OwnSP.ownSP.getBoolean("smallWindow", false))
-                hookedRes.res.setTryReplacement(Config.hookPackage, "dimen", "recent_tv_small_window_margin_start", modRes.fwd(getResId("dimen", "dp_200")))
-            if (OwnSP.ownSP.getBoolean("cleanUp", false)) {
-                hookedRes.res.setTryReplacement(Config.hookPackage, "drawable", "btn_clear_all", modRes.fwd(R.drawable.a))
-                hookedRes.res.setTryReplacement(Config.hookPackage, "drawable", "notifications_clear_all", modRes.fwd(R.drawable.a))
-            }
             if (OwnSP.ownSP.getString("recentText", "") != "")
                 hookedRes.res.setTryReplacement(Config.hookPackage, "string", "recents_empty_message", message)
         }
