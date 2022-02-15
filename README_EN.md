@@ -1,7 +1,9 @@
 <div align="center">
     <h1> Miuihome </h1>
 
-Hook for MIUI Launcher - Xposed 
+<b>Hook for MIUI Launcher - Xposed 
+
+English 丨 [简体中文](https://github.com/1767523953/MiuiHome/blob/main/README.md)</b>
 
 ![Launcher](https://github.com/1767523953/MiuiHome/blob/main/Pic/MiuiHome.png)
 
@@ -12,13 +14,11 @@ Hook for MIUI Launcher - Xposed
 [![Chat](https://img.shields.io/badge/Telegram-Chat-blue.svg?logo=telegram)](https://t.me/MiuiHome_Xposed)
 </div>
 
-__English 丨 [简体中文](https://github.com/1767523953/MiuiHome/blob/main/README.md)__
+-----
 
 ## How to use
 
-__After activating the module, please restart the Miui Launcher once and then open the Miui Launcher settings, Click the "Module Settings" option to pop up the dialog for setting.__
-
-__Module settings are not in the APP attached to this software!!! Please go to Settings - Home screen - Where the "Default launcher" used to be.__
+__Activating this module in LSPosed Manager, restart Miui Launcher once, open Miui Launcher settings, and click on "Module Settings".__
 
 ## Past and present
 
@@ -29,6 +29,7 @@ __Now：[qqlittleice/MiuiHome](https://github.com/qqlittleice/MiuiHome)__
 ## Module Features
 
 <details>
+
 - Enable Smooth Animation.
 - Always show status bar clock.
 - Enable search bar blur.
@@ -70,6 +71,7 @@ and if you want to translate it into a new language, please place it in the appr
 ## Credits
 
 <details>
+
 - [androidx](https://android.googlesource.com/platform/frameworks/support)
 - [AppCenter](https://github.com/microsoft/appcenter)
 - [BiliRoaming](https://github.com/yujincheng08/BiliRoaming)

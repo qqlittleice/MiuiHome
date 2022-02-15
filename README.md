@@ -1,7 +1,9 @@
 <div align="center">
     <h1> Miuihome </h1>
 
-针对 Miui 桌面的自定义扩展 - Xposed
+<b>针对 Miui 桌面的自定义扩展 - Xposed
+
+[English](https://github.com/1767523953/MiuiHome/blob/main/README_EN.md)  丨 简体中文</b>
 
 ![Launcher](https://github.com/1767523953/MiuiHome/blob/main/Pic/MiuiHome.png)
 
@@ -12,13 +14,11 @@
 [![Chat](https://img.shields.io/badge/Telegram-Chat-blue.svg?logo=telegram)](https://t.me/MiuiHome_Xposed)
 </div>
 
-__[English](https://github.com/1767523953/MiuiHome/blob/main/README_EN.md)  丨 简体中文__
+-----
 
 ## 如何使用
 
-__激活模块后,请重启一次系统桌面再打开桌面设置,点击"模块设置"选项即可弹出功能弹窗.__
-
-__模块设置不在本软件附带的APP内!!!请到"设置"-"桌面"-点击"模块设置"-打开Dialog弹窗进行设置.__
+__在 LSPosed 管理器中激活本模块，重启系统桌面，打开桌面设置，点击"模块设置"即可.__
 
 ## 前世今生
 
@@ -55,17 +55,18 @@ __新仓库：[qqlittleice/MiuiHome](https://github.com/qqlittleice/MiuiHome)__
 - 后台应用图标与标题间距
 - 强制当前设备为高端设备
 - 隐藏应用分页中的编辑按钮
-- 支持将搜索框修改为Dock栏
 - 允许将安卓小部件移到负一屏
+- 支持将搜索框修改为 Dock 栏
 - 隐藏应用抽屉模式中的"全部"分页
 - 支持移除非抽屉模式下的页面指示器
-- 允许在安卓小部件页显示MIUI小部件
+- 允许在安卓小部件页显示 MIUI 小部件
 - 还有更多...
 </details>
 
 ## 引用库
 
 <details>
+
 - [androidx](https://android.googlesource.com/platform/frameworks/support)
 - [AppCenter](https://github.com/microsoft/appcenter)
 - [BiliRoaming](https://github.com/yujincheng08/BiliRoaming)
