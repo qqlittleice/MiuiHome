@@ -33,73 +33,40 @@ jobs:
 
       - name: Build with Gradle
         run: |
+          echo ${{ secrets.SIGNING_KEY }} | base64 -d > keystore.jks
           bash ./gradlew assemble
-
-      - name: Sign Release APK
-        if: success()
-        id: sign_release
-        uses: r0adkll/sign-android-release@v1.0.4
         env:
-          BUILD_TOOLS_VERSION: "31.0.0"
-        with:
-          releaseDirectory: app/build/outputs/apk/release
-          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-          alias: ${{ secrets.ALIAS }}
-          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
-
-      - name: Sign Debug APK
-        if: success()
-        id: sign_debug
-        uses: r0adkll/sign-android-release@v1.0.4
-        env:
-          BUILD_TOOLS_VERSION: "31.0.0"
-        with:
-          releaseDirectory: app/build/outputs/apk/debug
-          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-          alias: ${{ secrets.ALIAS }}
-          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
-
-      - name: Sign NoResHook APK
-        if: success()
-        id: sign_noreshook
-        uses: r0adkll/sign-android-release@v1.0.4
-        env:
-          BUILD_TOOLS_VERSION: "31.0.0"
-        with:
-          releaseDirectory: app/build/outputs/apk/noResHook
-          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-          alias: ${{ secrets.ALIAS }}
-          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
+          KEYSTORE_PATH: "../keystore.jks"
+          KEYSTORE_PASS: ${{ secrets.KEYSTORE_PASS }}
+          ALIAS_NAME: ${{ secrets.KEY_ALIAS }}
+          ALIAS_PASS: ${{ secrets.KEY_PASSWORD }}
 
       - name: Upload Release APK
         uses: actions/upload-artifact@v2
         with:
           name: MiuiHome_Release
-          path: ${{ steps.sign_release.outputs.signedReleaseFile }}
+          path: "app/build/outputs/apk/release/*.apk"
 
       - name: Upload Debug APK
         uses: actions/upload-artifact@v2
         with:
           name: MiuiHome_Debug
-          path: ${{ steps.sign_debug.outputs.signedReleaseFile }}
+          path: "app/build/outputs/apk/debug/*.apk"
 
-      - name: Upload NoResHock APK
+      - name: Upload NoResHook APK
         uses: actions/upload-artifact@v2
         with:
-          name: MiuiHome_NoResHock
-          path: ${{ steps.sign_noreshook.outputs.signedReleaseFile }}
+          name: MiuiHome_NoResHook
+          path: "app/build/outputs/apk/noResHook/*.apk"
 
       - name: Post to channel
         if: contains(github.event.head_commit.message, '[skip post]') == false
         env:
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          RELEASE: ${{ steps.sign_release.outputs.signedReleaseFile }}
-          DEBUG: ${{ steps.sign_debug.outputs.signedReleaseFile }}
-          NORESHOOK: ${{ steps.sign_noreshook.outputs.signedReleaseFile }}
+          RELEASE: "app/build/outputs/apk/release/*.apk"
+          DEBUG: "app/build/outputs/apk/debug/*.apk"
+          NORESHOOK: "app/build/outputs/apk/noResHook/*.apk"
           COMMIT_MESSAGE: |+
             New push in Github\!
             ```
