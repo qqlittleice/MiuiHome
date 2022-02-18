@@ -64,9 +64,9 @@ jobs:
         env:
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          RELEASE: $(ls "app/build/outputs/apk/release/*.apk")
-          DEBUG: $(ls "app/build/outputs/apk/debug/*.apk")
-          NORESHOOK: (ls "app/build/outputs/apk/noResHook/*.apk")
+          RELEASE: $(find "app/build/outputs/apk/release/*.apk")
+          DEBUG: $(find "app/build/outputs/apk/debug/*.apk")
+          NORESHOOK: $(find "app/build/outputs/apk/noResHook/*.apk")
           COMMIT_MESSAGE: |+
             New push in Github\!
             ```
