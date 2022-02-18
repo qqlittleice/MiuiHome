@@ -59,11 +59,11 @@ jobs:
           name: MiuiHome_NoResHook
           path: "app/build/outputs/apk/noResHook/*.apk"
           
-      - name: find apk
+      - name: Find apk
         run: |
-          echo "RELEASE=$(find 'app/build/outputs/apk/release/*.apk')" >> $GITHUB_ENV
-          echo "DEBUG=$(find 'app/build/outputs/apk/debug/*.apk')" >> $GITHUB_ENV
-          echo "NORESHOOK=$(find 'app/build/outputs/apk/noResHook/*.apk')" >> $GITHUB_ENV
+          echo "RELEASE=$(find 'app/build/outputs/apk/release' -name '*.apk')" >> $GITHUB_ENV
+          echo "DEBUG=$(find 'app/build/outputs/apk/debug' -name '*.apk')" >> $GITHUB_ENV
+          echo "NORESHOOK=$(find 'app/build/outputs/apk/noResHook' -name '*.apk')" >> $GITHUB_ENV
 
       - name: Post to channel
         if: contains(github.event.head_commit.message, '[skip post]') == false
