@@ -33,9 +33,7 @@ jobs:
 
       - name: Build with Gradle
         run: |
-          bash ./gradlew assembleRelease
-          bash ./gradlew assembleDebug
-          bash ./gradlew assembleNoResHook
+          bash ./gradlew assemble
 
       - name: Sign Release APK
         if: success()

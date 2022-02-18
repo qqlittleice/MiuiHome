@@ -1,4 +1,5 @@
 import com.android.build.gradle.internal.api.BaseVariantOutputImpl
+import java.util.Properties
 
 plugins {
     id("com.android.application")
@@ -16,11 +17,38 @@ android {
         versionCode = 4210
         versionName = "4.2.1" + (getGitHeadRefsSuffix(rootProject))
     }
+
+    val properties = Properties()
+    properties.load(project.rootProject.file("local.properties").inputStream())
+    val keystorePath = properties.getProperty("KEYSTORE_PATH") ?: System.getenv("KEYSTORE_PATH")
+    val keystorePwd = properties.getProperty("KEYSTORE_PASS") ?: System.getenv("KEYSTORE_PASS")
+    val alias = properties.getProperty("KEY_ALIAS") ?: System.getenv("KEY_ALIAS")
+    val pwd = properties.getProperty("KEY_PASSWORD") ?: System.getenv("KEY_PASSWORD")
+
+    if (keystorePath != null) {
+        signingConfigs {
+            create("release") {
+                storeFile = file(keystorePath)
+                storePassword = keystorePwd
+                keyAlias = alias
+                keyPassword = pwd
+                enableV3Signing = true
+            }
+        }
+    }
     buildTypes {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
             setProguardFiles(listOf("proguard-rules.pro", "proguard-log.pro"))
+            if (keystorePath != null) {
+                signingConfig = signingConfigs.getByName("release")
+            }
+        }
+        debug {
+            if (keystorePath != null) {
+                signingConfig = signingConfigs.getByName("release")
+            }
         }
         create("noResHook") {
             initWith(getByName("release"))
