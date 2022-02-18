@@ -11,7 +11,10 @@ import android.os.Bundle
 import android.view.View
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
+import com.microsoft.appcenter.crashes.AbstractCrashesListener
 import com.microsoft.appcenter.crashes.Crashes
+import com.microsoft.appcenter.crashes.ingestion.models.ErrorAttachmentLog
+import com.microsoft.appcenter.crashes.model.ErrorReport
 import com.yuk.miuihome.module.*
 import com.yuk.miuihome.view.utils.Config
 import com.yuk.miuihome.view.utils.HomeContext
@@ -134,6 +137,12 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
 
     private fun startOnlineLog() {
         AppCenter.start(HomeContext.application, "fd3fd6d6-bc0d-40d1-bc1b-63b6835f9581", Analytics::class.java, Crashes::class.java)
+        Crashes.setListener(object : AbstractCrashesListener() {
+            override fun getErrorAttachments(report: ErrorReport): MutableIterable<ErrorAttachmentLog> {
+                val textLog = ErrorAttachmentLog.attachmentWithText("Module:\n${BuildConfig.APPLICATION_ID} - ${BuildConfig.BUILD_TYPE}\n${BuildConfig.VERSION_NAME}(${BuildConfig.VERSION_CODE})\nUser:\nAndroid ${checkAndroidVersion()}\nMiuiHome ${checkVersionName()}(${checkVersionCode()})", "debug.txt")
+                return mutableListOf(textLog)
+            }
+        })
     }
 
     fun checkVersionName(): String {
