@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.XModuleResources
 import android.content.res.XResources
+import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.RippleDrawable
@@ -43,11 +44,23 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
         hookedRes.res.setTryReplacement(Config.hookPackage, "drawable", drawableName, object : XResources.DrawableLoader() {
             @SuppressLint("UseCompatLoadingForDrawables")
             override fun newDrawable(xres: XResources, id: Int): Drawable {
-                val background = context.getDrawable(xres.getIdentifier(drawableName, "drawable", Config.hookPackage)) as RippleDrawable
-                val backgroundShape = background.getDrawable(0) as GradientDrawable
-                backgroundShape.cornerRadius = dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat()
-                backgroundShape.setStroke(0, 0)
-                background.setDrawable(0, backgroundShape)
+                val drawable = context.getDrawable(
+                    xres.getIdentifier(
+                        drawableName,
+                        "drawable",
+                        Config.hookPackage
+                    )
+                )
+                val background = when (drawable) {
+                    is RippleDrawable -> drawable.getDrawable(0) as GradientDrawable
+                    else -> drawable as GradientDrawable
+                }
+                background.cornerRadius =
+                    dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat()
+                background.setStroke(0, 0)
+                when (drawable) {
+                    is RippleDrawable -> drawable.setDrawable(0, background)
+                }
                 return background
             }
         })
