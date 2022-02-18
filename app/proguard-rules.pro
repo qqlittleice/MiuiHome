@@ -27,16 +27,12 @@
 
 -keep public class * extends android.app.Activity
 
--keep class * implements de.robv.android.xposed.IXposedHookLoadPackage {
-    public void *(de.robv.android.xposed.callbacks.XC_LoadPackage$LoadPackageParam);
+-keep class com.yuk.miuihome.XposedInit {
+    <init>();
 }
 
--keep class * implements de.robv.android.xposed.IXposedHookInitPackageResources {
-    public void *(de.robv.android.xposed.callbacks.XC_InitPackageResources$InitPackageResourcesParam);
-}
-
--keep class * implements de.robv.android.xposed.IXposedHookZygoteInit {
-    public void *(de.robv.android.xposed.IXposedHookZygoteInit$StartupParam);
+-keep class com.yuk.miuihome.NoResXposedInit {
+    <init>();
 }
 
 -assumenosideeffects class kotlin.jvm.internal.Intrinsics {
