@@ -44,19 +44,12 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
         hookedRes.res.setTryReplacement(Config.hookPackage, "drawable", drawableName, object : XResources.DrawableLoader() {
             @SuppressLint("UseCompatLoadingForDrawables")
             override fun newDrawable(xres: XResources, id: Int): Drawable {
-                val drawable = context.getDrawable(
-                    xres.getIdentifier(
-                        drawableName,
-                        "drawable",
-                        Config.hookPackage
-                    )
-                )
+                val drawable = context.getDrawable(xres.getIdentifier(drawableName, "drawable", Config.hookPackage))
                 val background = when (drawable) {
                     is RippleDrawable -> drawable.getDrawable(0) as GradientDrawable
                     else -> drawable as GradientDrawable
                 }
-                background.cornerRadius =
-                    dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat()
+                background.cornerRadius = dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat()
                 background.setStroke(0, 0)
                 when (drawable) {
                     is RippleDrawable -> drawable.setDrawable(0, background)
