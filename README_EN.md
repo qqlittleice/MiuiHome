@@ -1,5 +1,5 @@
 <div align="center">
-    <h1> Miuihome </h1>
+    <h1> MiuiHome </h1>
 
 <b>Hook for MIUI Launcher - Xposed 
 

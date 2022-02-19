@@ -174,7 +174,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
             "com.miui.home.launcher.MIUIWidgetUtil"
         )
         return try {
-            for (item in checkList) XposedHelpers.findClass(item, HomeContext.classLoader)
+            for (item in checkList) item.findClass(HomeContext.classLoader)
             if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: Widget version launcher")
             true
         } catch (e: XposedHelpers.ClassNotFoundError) {
@@ -193,4 +193,3 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         return Class.forName("android.os.SystemProperties").getMethod("get", String::class.java).invoke(Class.forName("android.os.SystemProperties"), key).toString()
     }
 }
-

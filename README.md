@@ -1,5 +1,5 @@
 <div align="center">
-    <h1> Miuihome </h1>
+    <h1> MiuiHome </h1>
 
 <b>针对 Miui 桌面的自定义扩展 - Xposed
 

@@ -54,7 +54,7 @@
   <string name="TestFeature">实验性功能</string>
   <string name="Tips">检测到你是第一次使用本模块，模块会进行默认值设定，并随后重启桌面。\n如需进一步设置，请待桌面重启后再次打开桌面设置。</string>
   <string name="UnlockGrids">解锁桌面布局限制</string>
-  <string name="VerticalTaskViewOfAppCardSize">纵向(瀑布)后台卡片大小</string>
+  <string name="VerticalTaskViewOfAppCardSize">纵向（瀑布）后台卡片大小</string>
   <string name="WallpaperDarken">取消后台壁纸压暗效果</string>
   <string name="Welcome">欢迎</string>
   <string name="Widget">小部件相关</string>
