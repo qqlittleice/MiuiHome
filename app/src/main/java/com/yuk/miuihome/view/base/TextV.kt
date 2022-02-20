@@ -30,7 +30,7 @@ class TextV(
             else
                 view.setTextSize(TypedValue.COMPLEX_UNIT_SP,textSize)
             if (typeface == null)
-                view.paint.typeface = Typeface.defaultFromStyle(Typeface.BOLD)
+                view.paint.typeface = Typeface.create(null, 500, false)
             else
                 view.paint.typeface = typeface
             textColor?.let { view.setTextColor(it) }

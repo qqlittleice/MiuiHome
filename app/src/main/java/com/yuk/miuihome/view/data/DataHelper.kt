@@ -92,7 +92,7 @@ object DataHelper {
     private fun loadItems(): ArrayList<Item> {
         val itemList = arrayListOf<Item>()
         itemList.apply {
-            add(Item(list = arrayListOf(TextV(resId = R.string.app_name, typeface = Typeface.defaultFromStyle(Typeface.NORMAL), textSize = 28f))))
+            add(Item(list = arrayListOf(TextV(resId = R.string.app_name, typeface = Typeface.create(null, 300, false), textSize = 30f))))
             if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                 add(Item(list = arrayListOf(TextV(resId = R.string.SimpleWarn, textColor = Color.parseColor("#ff0c0c")))))
             } else {

@@ -110,7 +110,7 @@ class ListPopupWindowAdapter(
                     setPadding(dp2px(25f), dp2px(20f), 0, dp2px(20f))
                     isSingleLine = true
                     text = thisText
-                    paint.typeface = Typeface.defaultFromStyle(Typeface.BOLD)
+                    paint.typeface = Typeface.create(null, 500, false)
                     if (currentValue == thisText) setTextColor(context.getColor(R.color.popup_select_text))
                 })
                 addView(ImageView(context).apply {
