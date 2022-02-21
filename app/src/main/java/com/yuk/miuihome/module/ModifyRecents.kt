@@ -8,8 +8,6 @@ import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.ktx.getObjectField
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
-import com.yuk.miuihome.utils.ktx.setObjectField
-import org.w3c.dom.Text
 
 class ModifyRecents {
 
