@@ -29,7 +29,6 @@
   <string name="RealTaskViewHorizontal">Verdadero · Recientes con orientación horizontal</string>
   <string name="Reboot">Reiniciar Launcher</string>
   <string name="Reboot2">¡El Launcher se reiniciará en 1 segundo!</string>
-  <string name="ResourceHooks">Funciones de ResourceHook</string>
   <string name="RoundCorner">Tamaño de las esquinas redondeadas en las miniaturas</string>
   <string name="Scope">Rango de entrada permitido</string>
   <string name="SearchBarBlur">Activar desenfoque en el cuadro de búsqueda</string>

@@ -138,6 +138,7 @@ object DataHelper {
             add(Item(list = arrayListOf(TextV(resId = R.string.TaskViewAppCardTextSize, onClickListener = { showTaskViewAppCardTextSizeDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.RoundCorner, onClickListener = { showRoundCornerDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.AppTextSize, onClickListener = { showAppTextSizeDialog() }))))
+            add(Item(list = arrayListOf(TextV(resId = R.string.CustomRecentText, onClickListener = { showCustomRecentTextDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.VerticalTaskViewOfAppCardSize, onClickListener = { showVerticalTaskViewOfAppCardSizeDialog() }))))
             add(Item(list = arrayListOf(TextWithArrowV(TextV(resId = R.string.HorizontalTaskViewOfAppCardSize), onClickListener = { setItems(horizontal) }))))  // SettingDialog().showModifyHorizontal()
             add(Item(list = arrayListOf(LineV())))
@@ -159,21 +160,15 @@ object DataHelper {
                 add(Item(list = arrayListOf(LineV())))
             }
 
-            if (XposedInit.hasHookPackageResources) {
-                add(Item(list = arrayListOf(TitleTextV(resId = R.string.ResourceHooks))))
-                add(Item(list = arrayListOf(TextV(resId = R.string.CustomRecentText, onClickListener = { showCustomRecentTextDialog() }))))
-                add(Item(list = arrayListOf(LineV())))
-            }
-
             add(Item(list = arrayListOf(TitleTextV(resId = R.string.TestFeature))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.SimpleAnimation), SwitchV("simpleAnimation", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
             if (!OwnSP.ownSP.getBoolean("alwaysBlur", false))
                 add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.AppReturnAmin), SwitchV("appReturnAmin", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
-            if (!OwnSP.ownSP.getBoolean("appReturnAmin", false) && !OwnSP.ownSP.getBoolean("simpleAnimation", false))
-                add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.AlwaysBlur), SwitchV("alwaysBlur", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.InfiniteScroll), SwitchV("infiniteScroll")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.RecommendServer), SwitchV("recommendServer")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideSeekPoints), SwitchV("hideSeekPoints")))))
+            if (!OwnSP.ownSP.getBoolean("appReturnAmin", false) && !OwnSP.ownSP.getBoolean("simpleAnimation", false))
+                add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.AlwaysBlur), SwitchV("alwaysBlur", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.SmallWindow), SwitchV("supportSmallWindow")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.LowEndAnim), SwitchV("lowEndAnim")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.LowEndDeviceUseMIUIWidgets), SwitchV("useMIUIWidgets")))))

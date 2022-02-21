@@ -32,7 +32,6 @@
   <string name="RealTaskViewHorizontal">Αληθής · Οριζόντια προβολή παρασκηνίου εφαρμογών</string>
   <string name="Reboot">Επανεκκίνηση εκκινητή</string>
   <string name="Reboot2">Ο εκκινητής θα επανεκκινηθεί σε λίγο!</string>
-  <string name="ResourceHooks">Χαρακτηριστικά ResourceHook</string>
   <string name="RoundCorner">Μέγεθος στρογγυλού μέρους της μικρογραφίας</string>
   <string name="Save">Αποθήκευση</string>
   <string name="Scope">Επιτρεπτές τιμές εισαγωγής</string>

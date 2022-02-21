@@ -38,7 +38,6 @@
   <string name="Reboot">Restart Launcher</string>
   <string name="Reboot1">Are you sure you want to restart the System Launcher?</string>
   <string name="Reboot2">The Launcher will restart in 1 seconds!</string>
-  <string name="ResourceHooks">ResourceHook Features</string>
   <string name="RoundCorner">Size of Thumbnail Rounded Corners</string>
   <string name="Save">Save</string>
   <string name="Scope">Allowed Input Range</string>

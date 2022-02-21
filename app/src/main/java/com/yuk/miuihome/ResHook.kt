@@ -33,9 +33,6 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                     val targetView = it.view
                     (if (XposedInit().checkAlpha() || XposedInit().checkVersionCode() >= 421153106L) DrawableNameNewList else DrawableNameList).forEach { drawableName -> resetDockRadius(targetView.context, drawableName) }
                 }
-            val message: String = OwnSP.ownSP.getString("recentText", "").toString()
-            if (OwnSP.ownSP.getString("recentText", "") != "")
-                hookedRes.res.setTryReplacement(Config.hookPackage, "string", "recents_empty_message", message)
         }
     }
 

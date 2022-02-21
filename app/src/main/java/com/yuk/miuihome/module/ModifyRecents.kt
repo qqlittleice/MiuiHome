@@ -8,6 +8,8 @@ import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.ktx.getObjectField
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
+import com.yuk.miuihome.utils.ktx.setObjectField
+import org.w3c.dom.Text
 
 class ModifyRecents {
 
@@ -15,6 +17,7 @@ class ModifyRecents {
         val recentsContainerClass = "com.miui.home.recents.views.RecentsContainer".findClass()
         val taskViewHeaderClass = "com.miui.home.recents.views.TaskViewHeader".findClass()
         val recentTextSize = OwnSP.ownSP.getFloat("recentTextSize", -1f)
+        val emptyViewText: String = OwnSP.ownSP.getString("recentText", "").toString()
         if (OwnSP.ownSP.getBoolean("smallWindow", false)) {
             recentsContainerClass.hookAfterMethod(
                 "onFinishInflate"
@@ -45,6 +48,15 @@ class ModifyRecents {
             ) {
                 val mImage = it.thisObject.getObjectField("mIconView") as ImageView
                 mImage.visibility = View.GONE
+            }
+        }
+        if (emptyViewText != "") {
+            "com.miui.home.recents.views.RecentsView".hookAfterMethod(
+                "showEmptyView", Int::class.javaPrimitiveType
+            ) {
+                (it.thisObject.getObjectField("mEmptyView") as TextView).apply {
+                    this.text = emptyViewText
+                }
             }
         }
     }
