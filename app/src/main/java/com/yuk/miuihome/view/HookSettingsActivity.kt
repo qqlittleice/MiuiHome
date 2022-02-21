@@ -16,7 +16,6 @@ import com.yuk.miuihome.utils.HomeContext
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.dp2px
-import de.robv.android.xposed.XposedBridge
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 

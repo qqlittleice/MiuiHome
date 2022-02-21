@@ -1,6 +1,6 @@
 package com.yuk.miuihome
 
-import com.yuk.miuihome.view.utils.ktx.callMethod
+import com.yuk.miuihome.utils.ktx.callMethod
 import de.robv.android.xposed.IXposedHookLoadPackage
 import de.robv.android.xposed.IXposedHookZygoteInit
 import de.robv.android.xposed.IXposedHookZygoteInit.StartupParam

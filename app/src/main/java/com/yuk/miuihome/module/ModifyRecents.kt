@@ -1,12 +1,10 @@
 package com.yuk.miuihome.module
 
 import android.util.TypedValue
-import android.view.Gravity
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.ktx.getObjectField
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
