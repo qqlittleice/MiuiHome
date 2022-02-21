@@ -2,8 +2,8 @@ package com.yuk.miuihome.module
 
 import android.appwidget.AppWidgetProviderInfo
 import android.content.Context
-import com.yuk.miuihome.view.utils.OwnSP
-import com.yuk.miuihome.view.utils.ktx.*
+import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.ktx.*
 import de.robv.android.xposed.XC_MethodHook
 
 class AlwaysShowMIUIWidget {

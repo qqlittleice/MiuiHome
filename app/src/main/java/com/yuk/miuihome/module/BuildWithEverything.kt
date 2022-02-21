@@ -1,9 +1,9 @@
 package com.yuk.miuihome.module
 
 import android.widget.Toast
-import com.yuk.miuihome.view.utils.Config
-import com.yuk.miuihome.view.utils.Config.AndroidSDK
-import com.yuk.miuihome.view.utils.HomeContext
+import com.yuk.miuihome.utils.Config
+import com.yuk.miuihome.utils.Config.AndroidSDK
+import com.yuk.miuihome.utils.HomeContext
 import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader

@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.View
 import android.widget.LinearLayout
 import com.yuk.miuihome.R
-import com.yuk.miuihome.view.utils.ktx.dp2px
+import com.yuk.miuihome.utils.ktx.dp2px
 
 class LineV : BaseView() {
 

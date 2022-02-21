@@ -2,10 +2,10 @@ package com.yuk.miuihome.module
 
 import android.view.View
 import android.view.ViewGroup
-import com.yuk.miuihome.view.utils.OwnSP
-import com.yuk.miuihome.view.utils.ktx.hookBeforeMethod
-import com.yuk.miuihome.view.utils.ktx.callMethod
-import com.yuk.miuihome.view.utils.ktx.getObjectField
+import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.ktx.hookBeforeMethod
+import com.yuk.miuihome.utils.ktx.callMethod
+import com.yuk.miuihome.utils.ktx.getObjectField
 
 
 class ModifyHideSeekPoints {

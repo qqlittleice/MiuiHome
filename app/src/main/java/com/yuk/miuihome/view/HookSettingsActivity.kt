@@ -12,10 +12,10 @@ import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.view.adapter.ItemAdapter
 import com.yuk.miuihome.view.data.DataHelper
 import com.yuk.miuihome.view.data.Item
-import com.yuk.miuihome.view.utils.HomeContext
-import com.yuk.miuihome.view.utils.LogUtil
-import com.yuk.miuihome.view.utils.OwnSP
-import com.yuk.miuihome.view.utils.ktx.dp2px
+import com.yuk.miuihome.utils.HomeContext
+import com.yuk.miuihome.utils.LogUtil
+import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.ktx.dp2px
 import de.robv.android.xposed.XposedBridge
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess

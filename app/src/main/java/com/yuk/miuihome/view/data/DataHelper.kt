@@ -11,9 +11,9 @@ import com.yuk.miuihome.module.BuildWithEverything
 import com.yuk.miuihome.module.ModifyBlurLevel
 import com.yuk.miuihome.view.SettingsDialog
 import com.yuk.miuihome.view.base.*
-import com.yuk.miuihome.view.utils.Config
-import com.yuk.miuihome.view.utils.LogUtil
-import com.yuk.miuihome.view.utils.OwnSP
+import com.yuk.miuihome.utils.Config
+import com.yuk.miuihome.utils.LogUtil
+import com.yuk.miuihome.utils.OwnSP
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 

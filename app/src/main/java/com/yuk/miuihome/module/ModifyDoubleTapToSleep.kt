@@ -3,8 +3,8 @@ package com.yuk.miuihome.module
 import android.content.Context
 import android.content.Intent
 import android.view.MotionEvent
-import com.yuk.miuihome.view.utils.OwnSP
-import com.yuk.miuihome.view.utils.ktx.*
+import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.ktx.*
 import de.robv.android.xposed.XposedHelpers
 
 class ModifyDoubleTapToSleep {

@@ -1,8 +1,8 @@
 package com.yuk.miuihome.module
 
 import android.view.Window
-import com.yuk.miuihome.view.utils.OwnSP
-import com.yuk.miuihome.view.utils.ktx.*
+import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.ktx.*
 import kotlin.math.max
 import kotlin.math.min
 

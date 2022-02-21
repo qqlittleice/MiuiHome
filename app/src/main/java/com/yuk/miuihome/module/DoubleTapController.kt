@@ -4,7 +4,7 @@ import android.content.Context
 import android.os.SystemClock
 import android.view.MotionEvent
 import android.view.ViewConfiguration
-import com.yuk.miuihome.view.utils.OwnSP
+import com.yuk.miuihome.utils.OwnSP
 import kotlin.math.abs
 
 class DoubleTapController internal constructor(mContext: Context) {

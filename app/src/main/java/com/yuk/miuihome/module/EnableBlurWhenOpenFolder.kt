@@ -4,8 +4,8 @@ import android.app.Activity
 import android.os.Bundle
 import android.view.View
 import com.yuk.miuihome.XposedInit
-import com.yuk.miuihome.view.utils.OwnSP
-import com.yuk.miuihome.view.utils.ktx.*
+import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.ktx.*
 
 class EnableBlurWhenOpenFolder {
 

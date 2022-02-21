@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.yuk.miuihome.R
 import com.yuk.miuihome.view.base.BaseView
 import com.yuk.miuihome.view.data.Item
-import com.yuk.miuihome.view.utils.ViewBuilder
+import com.yuk.miuihome.utils.ViewBuilder
 
 class ItemAdapter(private val itemList: List<Item>) :
     RecyclerView.Adapter<ItemAdapter.ViewHolder>() {

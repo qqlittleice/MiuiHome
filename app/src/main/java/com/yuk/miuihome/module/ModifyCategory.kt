@@ -1,11 +1,11 @@
 package com.yuk.miuihome.module
 
 import android.view.View
-import com.yuk.miuihome.view.utils.OwnSP
-import com.yuk.miuihome.view.utils.ktx.callMethod
-import com.yuk.miuihome.view.utils.ktx.findClass
-import com.yuk.miuihome.view.utils.ktx.getObjectField
-import com.yuk.miuihome.view.utils.ktx.hookAfterMethod
+import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.ktx.callMethod
+import com.yuk.miuihome.utils.ktx.findClass
+import com.yuk.miuihome.utils.ktx.getObjectField
+import com.yuk.miuihome.utils.ktx.hookAfterMethod
 
 class ModifyCategory {
 

@@ -5,8 +5,8 @@ import android.view.View
 import android.widget.SeekBar
 import android.widget.TextView
 import com.yuk.miuihome.R
-import com.yuk.miuihome.view.utils.OwnSP
-import com.yuk.miuihome.view.utils.ktx.dp2px
+import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.ktx.dp2px
 
 class SeekBarV(
     val key: String = "",

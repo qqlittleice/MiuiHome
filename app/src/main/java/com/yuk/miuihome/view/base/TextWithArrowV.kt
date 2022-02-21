@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import com.yuk.miuihome.R
 import com.yuk.miuihome.view.data.LayoutPair
-import com.yuk.miuihome.view.utils.ktx.dp2px
+import com.yuk.miuihome.utils.ktx.dp2px
 
 class TextWithArrowV(
     private val textV: TextV,

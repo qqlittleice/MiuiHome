@@ -1,4 +1,4 @@
-package com.yuk.miuihome.view.utils
+package com.yuk.miuihome.utils
 
 import android.content.Context
 import android.view.View

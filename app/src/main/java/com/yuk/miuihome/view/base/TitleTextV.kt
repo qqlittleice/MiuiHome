@@ -5,7 +5,7 @@ import android.graphics.Typeface
 import android.view.View
 import com.yuk.miuihome.R
 import com.yuk.miuihome.view.data.Padding
-import com.yuk.miuihome.view.utils.ktx.dp2px
+import com.yuk.miuihome.utils.ktx.dp2px
 
 class TitleTextV(
     val text: String? = null,

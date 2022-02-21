@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.View
 import android.widget.CompoundButton
 import com.yuk.miuihome.R
-import com.yuk.miuihome.view.utils.OwnSP
+import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.view.CustomSwitch
 
 class SwitchV(

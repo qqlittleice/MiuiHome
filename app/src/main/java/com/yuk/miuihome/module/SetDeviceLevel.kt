@@ -1,7 +1,7 @@
 package com.yuk.miuihome.module
 
-import com.yuk.miuihome.view.utils.LogUtil
-import com.yuk.miuihome.view.utils.ktx.setReturnConstant
+import com.yuk.miuihome.utils.LogUtil
+import com.yuk.miuihome.utils.ktx.setReturnConstant
 
 class SetDeviceLevel : BaseClassAndMethodCheck {
 

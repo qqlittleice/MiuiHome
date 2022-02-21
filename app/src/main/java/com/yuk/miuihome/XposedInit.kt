@@ -16,11 +16,11 @@ import com.microsoft.appcenter.crashes.Crashes
 import com.microsoft.appcenter.crashes.ingestion.models.ErrorAttachmentLog
 import com.microsoft.appcenter.crashes.model.ErrorReport
 import com.yuk.miuihome.module.*
-import com.yuk.miuihome.view.utils.Config
-import com.yuk.miuihome.view.utils.HomeContext
-import com.yuk.miuihome.view.utils.ktx.*
+import com.yuk.miuihome.utils.Config
+import com.yuk.miuihome.utils.HomeContext
+import com.yuk.miuihome.utils.ktx.*
 import com.yuk.miuihome.view.HookSettingsActivity
-import com.yuk.miuihome.view.utils.ktx.ActivityHelper
+import com.yuk.miuihome.utils.ktx.ActivityHelper
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
 import de.robv.android.xposed.callbacks.XC_LoadPackage
