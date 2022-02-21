@@ -64,11 +64,12 @@ android {
     }
     packagingOptions {
         resources {
-            excludes += "/META-INF/**"
+            excludes += "/META-INF/*"
             excludes += "/kotlin/**"
+            excludes += "/okhttp3/**"
             excludes += "/*.txt"
             excludes += "/*.bin"
-            excludes += "/okhttp3/**"
+            excludes += "/*.json"
         }
         dex {
             useLegacyPackaging = true
