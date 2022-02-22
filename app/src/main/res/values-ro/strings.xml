@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="AdvancedFeature">Setari avansate</string>
+  <string name="AdvancedFeature">Setări avansate</string>
   <string name="AlwaysShowMIUIWidget">Permite widget-urilor MIUI să fie afișate în widget-uri clasice</string>
   <string name="AlwaysShowStatusBarClock">Dezactivează ascunderea ceasului în bara de stare</string>
   <string name="AnimationLevel">Viteza animației gestului</string>
@@ -8,6 +8,11 @@
   <string name="BlurWhenOpenFolder">Activează estompare fundal dosar</string>
   <string name="Cancel">Anulare</string>
   <string name="CleanModuleSettings">Resetare la setările implicite</string>
+  <string name="RestoreModuleSettingsSuccess">Restaurarea copiei de rezervă a fost reușită, repornire lansator de sistem.</string>
+  <string name="RestoreModuleSettingsFailed">Nu s-a putut restaura copia de rezervă</string>
+  <string name="BackupModuleSettings">Setări copie de rezervă mod</string>
+  <string name="RestoreModuleSettings">Restabilire setări modul</string>
+  <string name="RestoreModuleSettingsTips">Aceasta va șterge toate setările modulului și va restaura setările modulului dintr-un fișier. După acțiune, lansatorul de sistem va fi repornit.</string>
   <string name="Close">Închidere</string>
   <string name="CloseFolder">Închide dosarul la deschiderea aplicațiilor în dosar</string>
   <string name="CompleteBlur">Estompare completă</string>
