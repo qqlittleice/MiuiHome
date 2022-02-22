@@ -2,9 +2,12 @@ package com.yuk.miuihome.view.data
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
+import android.net.Uri
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit
@@ -122,6 +125,7 @@ object DataHelper {
             }
             add(Item(list = arrayListOf(TextV(resId = R.string.AnimationLevel, onClickListener = { showAnimationLevelDialog() }))))
             add(Item(list = arrayListOf(LineV())))
+
             add(Item(list = arrayListOf(TitleTextV(resId = R.string.AdvancedFeature))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.UnlockGrids), SwitchV("unlockGrids")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.ShowDockIconTitles), SwitchV("showDockIconTitles")))))
@@ -136,8 +140,8 @@ object DataHelper {
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideTaskViewSmallWindowIcon), SwitchV("smallWindow")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.CategoryHideAll), SwitchV("categoryHideAll")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.CategoryPagingHideEdit), SwitchV("CategoryPagingHideEdit")))))
-            add(Item(list = arrayListOf(TextV(resId = R.string.IconTitleFontSize, onClickListener = { showIconTitleFontSizeDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.CustomTitleColor, onClickListener = { showCustomTitleColorDialog() }))))
+            add(Item(list = arrayListOf(TextV(resId = R.string.IconTitleFontSize, onClickListener = { showIconTitleFontSizeDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.TaskViewAppCardTextSize, onClickListener = { showTaskViewAppCardTextSizeDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.RoundCorner, onClickListener = { showRoundCornerDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.AppTextSize, onClickListener = { showAppTextSizeDialog() }))))
@@ -194,20 +198,21 @@ object DataHelper {
             add(Item(list = arrayListOf(LineV())))
 
             add(Item(list = arrayListOf(TitleTextV(resId = R.string.ModuleFeature))))
-            add(Item(list = arrayListOf(TextV(resId = R.string.BackupModuleSettings, onClickListener = { (currentActivity as HookSettingsActivity).spBackup.also { it.requestWriteToFile("config_${System.currentTimeMillis()}.json", it.getWriteJson()) } }))))
-            add(Item(list = arrayListOf(TextV(resId = R.string.RestoreModuleSettings, onClickListener = { showRestoreModuleSettingsDialog() }))))
-            add(Item(list = arrayListOf(TextV(resId = R.string.CleanModuleSettings, onClickListener = { showCleanModuleSettingsDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.Reboot, onClickListener = { showRestartDialog() }))))
-            add(Item(list = arrayListOf(TextRV(titleResId = R.string.About, arrow = true, onClickListener = { setItems(menu) }))))
+            add(Item(list = arrayListOf(TextRV(titleResId = R.string.BackupModuleSettings, arrow = true, onClickListener = { (currentActivity as HookSettingsActivity).spBackup.also { it.requestWriteToFile("config_${System.currentTimeMillis()}.json", it.getWriteJson()) } }))))
+            add(Item(list = arrayListOf(TextRV(titleResId = R.string.RestoreModuleSettings, arrow = true, onClickListener = { showRestoreModuleSettingsDialog() }))))
+            add(Item(list = arrayListOf(TextV(resId = R.string.CleanModuleSettings, onClickListener = { showCleanModuleSettingsDialog() }))))
+            add(Item(list = arrayListOf(TextRV(titleResId = R.string.Github, summaryResId = R.string.OpenGithub, arrow = true, onClickListener = { val uri = Uri.parse("https://github.com/qqlittleice/MiuiHome"); val intent = Intent(Intent.ACTION_VIEW, uri); currentActivity.startActivity(intent) }))))
+            add(Item(list = arrayListOf(TextRV(titleResId = R.string.About, summary = "${BuildConfig.VERSION_NAME}(${BuildConfig.BUILD_TYPE})", arrow = true, onClickListener = { setItems(menu) }))))
 
-            add(Item(list = arrayListOf(LineV())))
-            add(Item(list = arrayListOf(TitleTextV(text = "Subtitle"))))
-            add(Item(list = arrayListOf(TextV(text = "Title", onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
-            add(Item(list = arrayListOf(TextRV(title = "Title", arrow = true, onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
-            add(Item(list = arrayListOf(TextRV(title = "Title", summary = "Summary", onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
-            add(Item(list = arrayListOf(TextRV(title = "Title", summary = "Summary", arrow = true, onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV("Switch"), SwitchV("testSwitch")))))
-            add(Item(list = arrayListOf(TextWithSeekBarV(TextV("Seekbar"), key = "testSeekBar", min = 0, max = 100, divide = 1, defaultProgress = 0))))
+            //add(Item(list = arrayListOf(LineV())))
+            //add(Item(list = arrayListOf(TitleTextV(text = "Subtitle"))))
+            //add(Item(list = arrayListOf(TextV(text = "Title", onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
+            //add(Item(list = arrayListOf(TextRV(title = "Title", arrow = true, onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
+            //add(Item(list = arrayListOf(TextRV(title = "Title", summary = "Summary", onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
+            //add(Item(list = arrayListOf(TextRV(title = "Title", summary = "Summary", arrow = true, onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
+            //add(Item(list = arrayListOf(TextWithSwitchV(TextV("Switch"), SwitchV("testSwitch")))))
+            //add(Item(list = arrayListOf(TextWithSeekBarV(TextV("Seekbar"), key = "testSeekBar", min = 0, max = 100, divide = 1, defaultProgress = 0))))
 
         }
         return itemList

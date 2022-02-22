@@ -98,7 +98,7 @@
   <string name="AppReturnAmin">应用返回模糊</string>
   <string name="BlurRadius">模糊半径</string>
   <string name="BasicBlur">基础模糊</string>
-  <string name="CustomTitleColor">应用图标标题颜色</string>
+  <string name="CustomTitleColor">应用标题颜色</string>
   <string name="Tips4">支持十六进制颜色值，例如#FFFFFF为白，#000000为黑</string>
   <string name="About">关于模块</string>
   <string name="MiuiVersion">系统版本</string>
@@ -111,4 +111,6 @@
   <string name="RestoreModuleSettingsFailed">恢复备份失败</string>
   <string name="RestoreModuleSettingsSuccess">恢复备份成功，重启系统桌面</string>
   <string name="RestoreModuleSettingsTips">这将清除所有模块设置并从文件中恢复模块设置，随后重启系统桌面</string>
+  <string name="Github">开源仓库</string>
+  <string name="OpenGithub">点击打开 Github</string>
 </resources>
