@@ -104,4 +104,9 @@
   <string name="ModuleVersion">模塊版本</string>
   <string name="AboutUs">關於我們</string>
   <string name="AlwaysBlur">始終模糊桌面壁紙</string>
+  <string name="RestoreModuleSettings">恢復模塊設置</string>
+  <string name="BackupModuleSettings">備份模塊設置</string>
+  <string name="RestoreModuleSettingsFailed">恢复备份失败</string>
+  <string name="RestoreModuleSettingsSuccess">恢復備份成功，重啟系統桌面</string>
+  <string name="RestoreModuleSettingsTips">这将清除所有模块设置并从文件中恢复模块设置，随后重启系统桌面</string>
 </resources>
