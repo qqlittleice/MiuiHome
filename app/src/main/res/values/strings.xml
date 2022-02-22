@@ -9,6 +9,11 @@
   <string name="BlurWhenOpenFolder">Enable Folder Blur</string>
   <string name="Cancel">Cancel</string>
   <string name="CleanModuleSettings">Reset to Default Settings</string>
+  <string name="RestoreModuleSettingsSuccess">Successfully restore backup, restarting the system launcher.</string>
+  <string name="RestoreModuleSettingsFailed">Failed to restore backup</string>
+  <string name="BackupModuleSettings">Backup module settings</string>
+  <string name="RestoreModuleSettings">Restore module settings</string>
+  <string name="RestoreModuleSettingsTips">This will clear all module settings and restore module settings from a file. After the action, the system launcher will be restarted.</string>
   <string name="Close">Close</string>
   <string name="CloseFolder">Close folder when opening applications inside folder</string>
   <string name="CompleteBlur">Complete blur</string>

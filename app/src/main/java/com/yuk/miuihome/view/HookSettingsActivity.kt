@@ -1,10 +1,12 @@
 package com.yuk.miuihome.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.yuk.miuihome.R
@@ -15,12 +17,17 @@ import com.yuk.miuihome.view.data.Item
 import com.yuk.miuihome.utils.HomeContext
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.SPBackup
 import com.yuk.miuihome.utils.ktx.dp2px
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.lang.StringBuilder
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
 class HookSettingsActivity: TransferActivity() {
 
+    val spBackup = SPBackup(this, OwnSP.ownSP)
     private val itemList = arrayListOf<Item>()
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ItemAdapter
@@ -105,4 +112,39 @@ class HookSettingsActivity: TransferActivity() {
             show()
         }
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        data ?: return
+        val uri = data.data ?: return
+        if (requestCode == SPBackup.createCode && resultCode == RESULT_OK) {
+            val outputSteam = contentResolver.openOutputStream(uri)
+            outputSteam?.use {
+                it.write(spBackup.getWriteJson().toByteArray())
+                it.flush()
+                it.close()
+            }
+        }
+        if (requestCode == SPBackup.readCode && resultCode == RESULT_OK) {
+            val sb = StringBuilder()
+            contentResolver.openInputStream(uri)?.use { steam ->
+                BufferedReader(InputStreamReader(steam)).use { reader ->
+                    var line: String? = reader.readLine()
+                    while (line != null) {
+                        sb.append(line)
+                        line = reader.readLine()
+                    }
+                }
+            }
+            if (spBackup.convertJsonToSP(sb.toString())) {
+                Toast.makeText(this, getString(R.string.RestoreModuleSettingsSuccess), Toast.LENGTH_SHORT).show()
+                thread {
+                    Thread.sleep(1000)
+                    exitProcess(0)
+                }
+            } else {
+                Toast.makeText(this, getString(R.string.RestoreModuleSettingsFailed), Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
 }

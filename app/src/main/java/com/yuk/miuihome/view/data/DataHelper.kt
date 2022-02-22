@@ -14,6 +14,7 @@ import com.yuk.miuihome.view.base.*
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.view.HookSettingsActivity
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
@@ -191,6 +192,8 @@ object DataHelper {
             add(Item(list = arrayListOf(LineV())))
 
             add(Item(list = arrayListOf(TitleTextV(resId = R.string.ModuleFeature))))
+            add(Item(list = arrayListOf(TextV(resId = R.string.BackupModuleSettings, onClickListener = { (currentActivity as HookSettingsActivity).spBackup.also { it.requestWriteToFile("config_${System.currentTimeMillis()}.json", it.getWriteJson()) } }))))
+            add(Item(list = arrayListOf(TextV(resId = R.string.RestoreModuleSettings, onClickListener = { showRestoreModuleSettingsDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.CleanModuleSettings, onClickListener = { showCleanModuleSettingsDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.Reboot, onClickListener = { showRestartDialog() }))))
             add(Item(list = arrayListOf(TextWithArrowV(TextV(resId = R.string.About), onClickListener = { setItems(menu) }))))
@@ -248,6 +251,19 @@ object DataHelper {
                 }
             }
             setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            show()
+        }
+    }
+
+    private fun showRestoreModuleSettingsDialog() {
+        SettingsDialog(currentActivity).apply {
+            setTitle(R.string.RestoreModuleSettings)
+            setMessage(R.string.RestoreModuleSettingsTips)
+            setRButton(R.string.Yes) {
+                dismiss()
+                (currentActivity as HookSettingsActivity).spBackup.requestReadFromFile()
+            }
+            setLButton(R.string.Cancel) { dismiss() }
             show()
         }
     }
