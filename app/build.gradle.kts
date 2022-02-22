@@ -111,6 +111,6 @@ dependencies {
     compileOnly("de.robv.android.xposed:api:82")
     implementation("com.microsoft.appcenter:appcenter-crashes:4.4.2")
     implementation("com.microsoft.appcenter:appcenter-analytics:4.4.2")
-    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.3")
+    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.4")
     implementation("androidx.recyclerview:recyclerview:1.2.1")
 }
