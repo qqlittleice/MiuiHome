@@ -25,7 +25,10 @@ class TextV(
         return TextView(context).also { view ->
             text?.let { view.text = it }
             resId?.let { view.setText(it) }
-            view.setTextSize(TypedValue.COMPLEX_UNIT_SP,18f)
+            if (textSize == null)
+                view.setTextSize(TypedValue.COMPLEX_UNIT_SP,18f)
+            else
+                view.setTextSize(TypedValue.COMPLEX_UNIT_SP,textSize)
             if (typeface == null)
                 view.paint.typeface = Typeface.create(null, 500, false)
             else
