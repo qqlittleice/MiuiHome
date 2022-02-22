@@ -34,7 +34,7 @@ class ModifyAppReturnBlur {
                     XposedBridge.log("MiuiHome: callMethod [isFolderShowing] succeeded, now it's $isFolderShowing")
                     XposedBridge.log("MiuiHome: callMethod [isInEditing] succeeded, now it's $isInEditing")
                 }
-                if (XposedInit().checkAlpha()) {
+                if (XposedInit().checkIsAlpha()) {
                     val isUserBlurWhenOpenFolder = blurClass.callStaticMethod("isUserBlurWhenOpenFolder") as Boolean
                    if (BuildConfig.DEBUG) {
                         XposedBridge.log("MiuiHome: callMethod [isUserBlurWhenOpenFolder] succeeded, now it's $isUserBlurWhenOpenFolder")
@@ -42,10 +42,10 @@ class ModifyAppReturnBlur {
                     if (view.visibility == View.GONE && !isInEditing)
                         if ((isUserBlurWhenOpenFolder && !isFolderShowing) or (!isUserBlurWhenOpenFolder && isFolderShowing))
                             handler.postDelayed(runnable, 100)
-                } else if (!XposedInit().checkAlpha() && OwnSP.ownSP.getBoolean("blurWhenOpenFolder", false)) {
+                } else if (!XposedInit().checkIsAlpha() && OwnSP.ownSP.getBoolean("blurWhenOpenFolder", false)) {
                     if  (view.visibility == View.GONE && !isInEditing  && !isFolderShowing)
                         handler.postDelayed(runnable, 100)
-                } else if (!XposedInit().checkAlpha() && !OwnSP.ownSP.getBoolean("blurWhenOpenFolder", false)){
+                } else if (!XposedInit().checkIsAlpha() && !OwnSP.ownSP.getBoolean("blurWhenOpenFolder", false)){
                     if (view.visibility == View.GONE && !isInEditing)
                         handler.postDelayed(runnable, 100)
                 }

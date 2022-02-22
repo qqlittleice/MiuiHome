@@ -52,7 +52,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                 ) {
                     startOnlineLog()
                     checkVersionName()
-                    checkAlpha()
+                    checkIsAlpha()
                     checkVersionCode()
                     checkWidgetLauncher()
                     checkMiuiVersion()
@@ -65,6 +65,17 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
             }
             else -> return
         }
+    }
+
+    override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam) {
+        if (resparam.packageName != Config.hookPackage) return
+        hasHookPackageResources = true
+        ResHook(resparam).init()
+        if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: Resources hook success")
+    }
+
+    private fun getModuleRes(path: String): Resources {
+        return XModuleResources.createInstance(path, null)
     }
 
     private fun doHook() {
@@ -128,13 +139,6 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         //CustomHook.init()
     }
 
-    override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam) {
-        if (resparam.packageName != Config.hookPackage) return
-        hasHookPackageResources = true
-        ResHook(resparam).init()
-        if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: Resources hook success")
-    }
-
     private fun startOnlineLog() {
         AppCenter.start(HomeContext.application, "fd3fd6d6-bc0d-40d1-bc1b-63b6835f9581", Analytics::class.java, Crashes::class.java)
         Crashes.setListener(object : AbstractCrashesListener() {
@@ -150,12 +154,19 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
 
     }
 
-    fun checkAlpha(): Boolean {
+    fun checkIsAlpha(): Boolean {
         return (checkVersionName().contains("ALPHA", ignoreCase = true))
     }
 
     fun checkMiuiVersion(): String {
-        return getProp("ro.miui.ui.version.name")
+        return when (getProp("ro.miui.ui.version.name")) {
+            "V130" -> "13"
+            "V125" -> "12.5"
+            "V12" -> "12"
+            "V11" -> "11"
+            "V10" -> "10"
+            else -> "?"
+        }
     }
 
     fun checkAndroidVersion(): String {
@@ -164,7 +175,6 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
 
     fun checkVersionCode(): Long {
         return HomeContext.context.packageManager.getPackageInfo(HomeContext.context.packageName, 0).longVersionCode
-
     }
 
     fun checkWidgetLauncher(): Boolean {
@@ -181,10 +191,6 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
             if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: Not widget version launcher")
             false
         }
-    }
-
-    private fun getModuleRes(path: String): Resources {
-        return XModuleResources.createInstance(path, null)
     }
 
     @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")

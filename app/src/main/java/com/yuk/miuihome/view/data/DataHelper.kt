@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.graphics.Color
 import android.graphics.Typeface
+import android.widget.Toast
 import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit
@@ -21,10 +22,10 @@ import kotlin.system.exitProcess
 @SuppressLint("StaticFieldLeak")
 object DataHelper {
     var thisItems = "Main"
-    var main = "Main"
-    private const val menu = "Menu"
+    const val main = "Main"
     const val dock = "Dock"
     const val horizontal = "Horizontal"
+    private const val menu = "Menu"
     lateinit var currentActivity: Activity
     private val editor by lazy { OwnSP.ownSP.edit() }
 
@@ -46,7 +47,7 @@ object DataHelper {
         val itemList = arrayListOf<Item>()
         itemList.apply {
             add(Item(list = arrayListOf(TitleTextV(resId = R.string.MiuiVersion))))
-            add(Item(list = arrayListOf(TextV( "Android " + XposedInit().checkAndroidVersion()+ " / MIUI " + showMiuiVersion()))))
+            add(Item(list = arrayListOf(TextV( "Android " + XposedInit().checkAndroidVersion()+ " / MIUI " + XposedInit().checkMiuiVersion()))))
             add(Item(list = arrayListOf(LineV())))
             add(Item(list = arrayListOf(TitleTextV(resId = R.string.LauncherVersion))))
             add(Item(list = arrayListOf(TextV(XposedInit().checkVersionName()))))
@@ -94,6 +95,13 @@ object DataHelper {
         val itemList = arrayListOf<Item>()
         itemList.apply {
             add(Item(list = arrayListOf(TextV(resId = R.string.app_name, typeface = Typeface.create(null, 300, false), textSize = 30f))))
+
+            add(Item(list = arrayListOf(TextRV(title = "Title", onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
+            add(Item(list = arrayListOf(TextRV(title = "Title", arrow = true, onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
+            add(Item(list = arrayListOf(TextRV(title = "Title", summary = "Summary", onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
+            add(Item(list = arrayListOf(TextRV(title = "Title", summary = "Summary", arrow = true, onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
+            add(Item(list = arrayListOf(LineV())))
+
             if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                 add(Item(list = arrayListOf(TextV(resId = R.string.SimpleWarn, textColor = Color.parseColor("#ff0c0c")))))
             } else {
@@ -141,7 +149,7 @@ object DataHelper {
             add(Item(list = arrayListOf(TextV(resId = R.string.AppTextSize, onClickListener = { showAppTextSizeDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.CustomRecentText, onClickListener = { showCustomRecentTextDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.VerticalTaskViewOfAppCardSize, onClickListener = { showVerticalTaskViewOfAppCardSizeDialog() }))))
-            add(Item(list = arrayListOf(TextWithArrowV(TextV(resId = R.string.HorizontalTaskViewOfAppCardSize), onClickListener = { setItems(horizontal) }))))  // SettingDialog().showModifyHorizontal()
+            add(Item(list = arrayListOf(TextRV(titleResId = R.string.HorizontalTaskViewOfAppCardSize, arrow = true, onClickListener = { setItems(horizontal) }))))
             add(Item(list = arrayListOf(LineV())))
 
             add(Item(list = arrayListOf(TitleTextV(resId = R.string.Folder))))
@@ -182,7 +190,7 @@ object DataHelper {
             add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.DoubleTap), SwitchV("doubleTap")))))
             if (!OwnSP.ownSP.getBoolean("dockSettings", false) && Config.AndroidSDK == 30)
                 add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.SearchBarBlur), SwitchV("searchBarBlur")))))
-            add(Item(list = arrayListOf(TextWithArrowV(TextV(resId = R.string.DockSettings), onClickListener = { setItems(dock) }))))
+            add(Item(list = arrayListOf(TextRV(titleResId = R.string.DockSettings, arrow = true, onClickListener = { setItems(dock) }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.EveryThingBuild, onClickListener = { BuildWithEverything().init() }))))
             add(Item(list = arrayListOf(LineV())))
 
@@ -196,28 +204,10 @@ object DataHelper {
             add(Item(list = arrayListOf(TextV(resId = R.string.RestoreModuleSettings, onClickListener = { showRestoreModuleSettingsDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.CleanModuleSettings, onClickListener = { showCleanModuleSettingsDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.Reboot, onClickListener = { showRestartDialog() }))))
-            add(Item(list = arrayListOf(TextWithArrowV(TextV(resId = R.string.About), onClickListener = { setItems(menu) }))))
-
-            //add(Item(list = arrayListOf(LineV())))
-            //add(Item(list = arrayListOf(TitleTextV("Test Title"))))
-            //add(Item(list = arrayListOf(TextV("Test Function", onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
-            //add(Item(list = arrayListOf(TextWithSeekBarV(TextV("Test Seekbar"), key = "testSeekBar", min = 0, max = 100, divide = 1, defaultProgress = 0))))
-            //add(Item(list = arrayListOf(TextWithSwitchV(TextV("Test Switch"), SwitchV("testSwitch")))))
+            add(Item(list = arrayListOf(TextRV(titleResId = R.string.About, arrow = true, onClickListener = { setItems(menu) }))))
 
         }
         return itemList
-    }
-
-    private fun showMiuiVersion():String {
-        lateinit var value: String
-        when (XposedInit().checkMiuiVersion()) {
-            "V130" -> value = "13"
-            "V125" -> value = "12.5"
-            "V12" -> value = "12"
-            "V11" -> value = "11"
-            "V10" -> value = "10"
-        }
-        return value
     }
 
     private fun showRestartDialog() {

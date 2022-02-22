@@ -31,7 +31,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
                 hookedRes.res.hookLayout(Config.hookPackage, "layout", "layout_search_bar"
                 ) {
                     val targetView = it.view
-                    (if (XposedInit().checkAlpha() || XposedInit().checkVersionCode() >= 421153106L) DrawableNameNewList else DrawableNameList).forEach { drawableName -> resetDockRadius(targetView.context, drawableName) }
+                    (if (XposedInit().checkIsAlpha() || XposedInit().checkVersionCode() >= 421153106L) DrawableNameNewList else DrawableNameList).forEach { drawableName -> resetDockRadius(targetView.context, drawableName) }
                 }
         }
     }

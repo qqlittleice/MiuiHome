@@ -10,8 +10,8 @@ import com.yuk.miuihome.view.data.Padding
 import com.yuk.miuihome.utils.ktx.dp2px
 
 class TextV(
-    val text: String? = null,
-    val resId: Int? = null,
+    var text: String? = null,
+    var resId: Int? = null,
     val textSize: Float? = null,
     val textColor: Int? = null,
     private val padding: Padding? = null,
@@ -25,10 +25,7 @@ class TextV(
         return TextView(context).also { view ->
             text?.let { view.text = it }
             resId?.let { view.setText(it) }
-            if (textSize == null)
-                view.setTextSize(TypedValue.COMPLEX_UNIT_SP,18f)
-            else
-                view.setTextSize(TypedValue.COMPLEX_UNIT_SP,textSize)
+            view.setTextSize(TypedValue.COMPLEX_UNIT_SP,18f)
             if (typeface == null)
                 view.paint.typeface = Typeface.create(null, 500, false)
             else

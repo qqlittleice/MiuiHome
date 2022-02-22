@@ -11,13 +11,13 @@ class EnableBlurWhenOpenFolder {
 
     fun init() {
             if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
-                if (XposedInit().checkAlpha()) {
+                if (XposedInit().checkIsAlpha()) {
                     "com.miui.home.launcher.common.BlurUtils".setReturnConstant("isUserBlurWhenOpenFolder", result = false)
                 }
             }
             else {
                 if (OwnSP.ownSP.getBoolean("blurWhenOpenFolder", false)) {
-                    if (XposedInit().checkAlpha()) {
+                    if (XposedInit().checkIsAlpha()) {
                         "com.miui.home.launcher.common.BlurUtils".setReturnConstant("isUserBlurWhenOpenFolder", result = true)
                     }
                     else {
@@ -38,7 +38,7 @@ class EnableBlurWhenOpenFolder {
                         }
                     }
                 } else {
-                    if (XposedInit().checkAlpha())
+                    if (XposedInit().checkIsAlpha())
                         "com.miui.home.launcher.common.BlurUtils".setReturnConstant("isUserBlurWhenOpenFolder", result = false)
                 }
             }
