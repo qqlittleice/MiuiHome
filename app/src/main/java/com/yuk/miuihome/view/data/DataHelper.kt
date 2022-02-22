@@ -200,15 +200,15 @@ object DataHelper {
             add(Item(list = arrayListOf(TextV(resId = R.string.Reboot, onClickListener = { showRestartDialog() }))))
             add(Item(list = arrayListOf(TextRV(titleResId = R.string.About, arrow = true, onClickListener = { setItems(menu) }))))
 
-
-            add(Item(list = arrayListOf(TextV(text = "Subtitle"))))
-            add(Item(list = arrayListOf(TextRV(title = "Title", onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
+            add(Item(list = arrayListOf(LineV())))
+            add(Item(list = arrayListOf(TitleTextV(text = "Subtitle"))))
+            add(Item(list = arrayListOf(TextV(text = "Title", onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
             add(Item(list = arrayListOf(TextRV(title = "Title", arrow = true, onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
             add(Item(list = arrayListOf(TextRV(title = "Title", summary = "Summary", onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
             add(Item(list = arrayListOf(TextRV(title = "Title", summary = "Summary", arrow = true, onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
-            add(Item(list = arrayListOf(TextWithSeekBarV(TextV("Seekbar"), key = "testSeekBar", min = 0, max = 100, divide = 1, defaultProgress = 0))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextV("Switch"), SwitchV("testSwitch")))))
-            add(Item(list = arrayListOf(LineV())))
+            add(Item(list = arrayListOf(TextWithSeekBarV(TextV("Seekbar"), key = "testSeekBar", min = 0, max = 100, divide = 1, defaultProgress = 0))))
+
         }
         return itemList
     }

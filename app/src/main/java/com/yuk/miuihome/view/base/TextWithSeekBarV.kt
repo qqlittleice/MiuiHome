@@ -64,7 +64,7 @@ class TextWithSeekBarV(
         return LinearContainerV(
             LinearContainerV.VERTICAL,
             arrayOf(
-                LayoutPair(textV.create(context).also { it.setPadding(dp2px(25f), 0, dp2px(25f), dp2px(8f)) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)),
+                LayoutPair(textV.create(context).also { it.setPadding(dp2px(25f), dp2px(16f), dp2px(25f), dp2px(8f)) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)),
                 LayoutPair(seekBar.also { it.setPadding(dp2px(25f), 0, dp2px(25f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)),
                 LayoutPair(
                     LinearContainerV(
