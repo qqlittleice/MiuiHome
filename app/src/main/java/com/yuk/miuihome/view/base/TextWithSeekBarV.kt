@@ -61,20 +61,19 @@ class TextWithSeekBarV(
                 override fun onStopTrackingTouch(p0: SeekBar?) {}
             })
         }
-        return LinearContainerV(
-            LinearContainerV.VERTICAL,
+        return LinearContainerV(LinearContainerV.VERTICAL,
             arrayOf(
                 LayoutPair(textV.create(context).also { it.setPadding(dp2px(25f), dp2px(16f), dp2px(25f), dp2px(8f)) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)),
                 LayoutPair(seekBar.also { it.setPadding(dp2px(25f), 0, dp2px(25f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)),
                 LayoutPair(
-                    LinearContainerV(
-                        LinearContainerV.HORIZONTAL,
+                    LinearContainerV(LinearContainerV.HORIZONTAL,
                         arrayOf(
-                        LayoutPair(minText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_VIEW_START; it.setPadding(0, dp2px(8f), 0, dp2px(16f)) }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)),
-                        LayoutPair(mutableText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_CENTER; it.setPadding(0, dp2px(8f), 0, dp2px(16f)) }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)),
-                        LayoutPair(maxText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_VIEW_END; it.setPadding(0, dp2px(8f), 0, dp2px(16f)) }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f))
+                            LayoutPair(minText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_VIEW_START; it.setPadding(0, dp2px(8f), 0, dp2px(16f)) }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)),
+                            LayoutPair(mutableText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_CENTER; it.setPadding(0, dp2px(8f), 0, dp2px(16f)) }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)),
+                            LayoutPair(maxText.also { it.textAlignment = TextView.TEXT_ALIGNMENT_VIEW_END; it.setPadding(0, dp2px(8f), 0, dp2px(16f)) }, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f))
                         )
-                ).create(context).also { it.setPadding(dp2px(25f), 0, dp2px(25f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT))
+                    ).create(context).also { it.setPadding(dp2px(25f), 0, dp2px(25f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+                )
             )
         ).create(context)
     }

@@ -6,8 +6,6 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.net.Uri
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit
@@ -49,13 +47,13 @@ object DataHelper {
     private fun loadMenuItems(): ArrayList<Item> {
         val itemList = arrayListOf<Item>()
         itemList.apply {
-            add(Item(list = arrayListOf(TitleTextV(resId = R.string.MiuiVersion))))
+            add(Item(list = arrayListOf(SubtitleV(resId = R.string.MiuiVersion))))
             add(Item(list = arrayListOf(TextV( "Android " + XposedInit().checkAndroidVersion()+ " / MIUI " + XposedInit().checkMiuiVersion()))))
             add(Item(list = arrayListOf(LineV())))
-            add(Item(list = arrayListOf(TitleTextV(resId = R.string.LauncherVersion))))
+            add(Item(list = arrayListOf(SubtitleV(resId = R.string.LauncherVersion))))
             add(Item(list = arrayListOf(TextV(XposedInit().checkVersionName()))))
             add(Item(list = arrayListOf(LineV())))
-            add(Item(list = arrayListOf(TitleTextV(resId = R.string.ModuleVersion))))
+            add(Item(list = arrayListOf(SubtitleV(resId = R.string.ModuleVersion))))
             add(Item(list = arrayListOf(TextV("${BuildConfig.VERSION_NAME}(${BuildConfig.VERSION_CODE})-${BuildConfig.BUILD_TYPE}"))))
         }
         return itemList
@@ -64,10 +62,11 @@ object DataHelper {
     private fun loadDockItems(): ArrayList<Item> {
         val itemList = arrayListOf<Item>()
         itemList.apply {
-            add(Item(list = arrayListOf(TitleTextV(resId = R.string.DockSettings))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.DockFeature), SwitchV("dockSettings")))))
+            add(Item(list = arrayListOf(SubtitleV(resId = R.string.DockSettings))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.DockFeature), switchV = SwitchV("dockSettings")
+            ))))
             if (Config.AndroidSDK == 30)
-                add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.EnableDockBlur), SwitchV("searchBarBlur")))))
+                add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.EnableDockBlur), switchV = SwitchV("searchBarBlur")))))
             if (!XposedInit.hasHookPackageResources)
                 add(Item(list = arrayListOf(TextV(resId = R.string.DockWarn, textColor = Color.parseColor("#ff0c0c"), textSize = 16f))))
             else
@@ -86,7 +85,7 @@ object DataHelper {
     private fun loadHorizontalItems(): ArrayList<Item> {
         val itemList = arrayListOf<Item>()
         itemList.apply {
-            add(Item(list = arrayListOf(TitleTextV(resId = R.string.HorizontalTaskViewOfAppCardSize))))
+            add(Item(list = arrayListOf(SubtitleV(resId = R.string.HorizontalTaskViewOfAppCardSize))))
             add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.VerticalScreen), key = "task_horizontal1", min = 500, max = 1500, divide = 1000, defaultProgress = 1000))))
             add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.HorizontalScreen), key = "task_horizontal2", min = 500, max = 1500, divide = 1000, defaultProgress = 1000))))
             add(Item(list = arrayListOf(TextV(resId = R.string.Reset2, onClickListener = { showResetHorizontalDialog() }))))
@@ -102,7 +101,7 @@ object DataHelper {
             if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                 add(Item(list = arrayListOf(TextV(resId = R.string.SimpleWarn, textColor = Color.parseColor("#ff0c0c")))))
             } else {
-                add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.SmoothAnimation), SwitchV("smoothAnimation")))))
+                add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SmoothAnimation), switchV = SwitchV("smoothAnimation")))))
                 val blurLevel = arrayListOf(currentActivity.getString(R.string.CompleteBlur), currentActivity.getString(R.string.TestBlur), currentActivity.getString(R.string.BasicBlur), currentActivity.getString(R.string.SimpleBlur), currentActivity.getString(R.string.NoneBlur))
                 val blurLevel0 = arrayListOf(currentActivity.getString(R.string.CompleteBlur), currentActivity.getString(R.string.TestBlur), currentActivity.getString(R.string.SimpleBlur), currentActivity.getString(R.string.NoneBlur))
                 val dict0: HashMap<String, String> = hashMapOf()
@@ -126,20 +125,20 @@ object DataHelper {
             add(Item(list = arrayListOf(TextV(resId = R.string.AnimationLevel, onClickListener = { showAnimationLevelDialog() }))))
             add(Item(list = arrayListOf(LineV())))
 
-            add(Item(list = arrayListOf(TitleTextV(resId = R.string.AdvancedFeature))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.UnlockGrids), SwitchV("unlockGrids")))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.ShowDockIconTitles), SwitchV("showDockIconTitles")))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideTaskViewAppIcon), SwitchV("recentIcon")))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideTaskViewCleanUpIcon), SwitchV("cleanUp")))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideStatusBar), SwitchV("hideStatusBar")))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.MamlDownload), SwitchV("mamlDownload")))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.UnlockIcons), SwitchV("unlockIcons")))))
+            add(Item(list = arrayListOf(SubtitleV(resId = R.string.AdvancedFeature))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId =R.string.UnlockGrids), switchV = SwitchV("unlockGrids")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.ShowDockIconTitles), switchV = SwitchV("showDockIconTitles")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.HideTaskViewAppIcon), switchV = SwitchV("recentIcon")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.HideTaskViewCleanUpIcon), switchV = SwitchV("cleanUp")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.HideStatusBar), switchV = SwitchV("hideStatusBar")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.MamlDownload), switchV = SwitchV("mamlDownload")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.UnlockIcons), switchV = SwitchV("unlockIcons")))))
             if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
-                add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.WallpaperDarken), SwitchV("wallpaperDarken")))))
+                add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.WallpaperDarken), switchV = SwitchV("wallpaperDarken")))))
             }
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideTaskViewSmallWindowIcon), SwitchV("smallWindow")))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.CategoryHideAll), SwitchV("categoryHideAll")))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.CategoryPagingHideEdit), SwitchV("CategoryPagingHideEdit")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.HideTaskViewSmallWindowIcon), switchV = SwitchV("smallWindow")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.CategoryHideAll), switchV = SwitchV("categoryHideAll")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.CategoryPagingHideEdit), switchV = SwitchV("CategoryPagingHideEdit")))))
             add(Item(list = arrayListOf(TextV(resId = R.string.CustomTitleColor, onClickListener = { showCustomTitleColorDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.IconTitleFontSize, onClickListener = { showIconTitleFontSizeDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.TaskViewAppCardTextSize, onClickListener = { showTaskViewAppCardTextSizeDialog() }))))
@@ -147,71 +146,95 @@ object DataHelper {
             add(Item(list = arrayListOf(TextV(resId = R.string.AppTextSize, onClickListener = { showAppTextSizeDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.CustomRecentText, onClickListener = { showCustomRecentTextDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.VerticalTaskViewOfAppCardSize, onClickListener = { showVerticalTaskViewOfAppCardSizeDialog() }))))
-            add(Item(list = arrayListOf(TextRV(titleResId = R.string.HorizontalTaskViewOfAppCardSize, arrow = true, onClickListener = { setItems(horizontal) }))))
+            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.HorizontalTaskViewOfAppCardSize)) {
+                setItems(
+                    horizontal
+                )
+            })))
             add(Item(list = arrayListOf(LineV())))
 
-            add(Item(list = arrayListOf(TitleTextV(resId = R.string.Folder))))
+            add(Item(list = arrayListOf(SubtitleV(resId = R.string.Folder))))
             if (!OwnSP.ownSP.getBoolean("simpleAnimation", false) && !OwnSP.ownSP.getBoolean("alwaysBlur", false)) {
-                add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.BlurWhenOpenFolder), SwitchV("blurWhenOpenFolder")))))
+                add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.BlurWhenOpenFolder), switchV = SwitchV("blurWhenOpenFolder")))))
             }
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.CloseFolder), SwitchV("closeFolder")))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.FolderWidth), SwitchV("folderWidth")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.CloseFolder), switchV = SwitchV("closeFolder")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.FolderWidth), switchV = SwitchV("folderWidth")))))
             add(Item(list = arrayListOf(TextV(resId = R.string.FolderColumnsCount, onClickListener = { showFolderColumnsCountDialog() }))))
             add(Item(list = arrayListOf(LineV())))
 
             if (XposedInit().checkWidgetLauncher()) {
-                add(Item(list = arrayListOf(TitleTextV(resId = R.string.Widget))))
-                add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideWidgetTitles), SwitchV("hideWidgetTitles")))))
-                add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.WidgetToMinus), SwitchV("widgetToMinus")))))
-                add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.AlwaysShowMIUIWidget), SwitchV("alwaysShowMIUIWidget")))))
+                add(Item(list = arrayListOf(SubtitleV(resId = R.string.Widget))))
+                add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.HideWidgetTitles), switchV = SwitchV("hideWidgetTitles")))))
+                add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.WidgetToMinus), switchV = SwitchV("widgetToMinus")))))
+                add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AlwaysShowMIUIWidget), switchV = SwitchV("alwaysShowMIUIWidget")))))
                 add(Item(list = arrayListOf(LineV())))
             }
 
-            add(Item(list = arrayListOf(TitleTextV(resId = R.string.TestFeature))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.SimpleAnimation), SwitchV("simpleAnimation", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
+            add(Item(list = arrayListOf(SubtitleV(resId = R.string.TestFeature))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SimpleAnimation), switchV = SwitchV("simpleAnimation", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
             if (!OwnSP.ownSP.getBoolean("alwaysBlur", false))
-                add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.AppReturnAmin), SwitchV("appReturnAmin", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.InfiniteScroll), SwitchV("infiniteScroll")))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.RecommendServer), SwitchV("recommendServer")))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.HideSeekPoints), SwitchV("hideSeekPoints")))))
+                add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AppReturnAmin), switchV = SwitchV("appReturnAmin", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.InfiniteScroll), switchV = SwitchV("infiniteScroll")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.RecommendServer), switchV = SwitchV("recommendServer")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.HideSeekPoints), switchV = SwitchV("hideSeekPoints")))))
             if (!OwnSP.ownSP.getBoolean("appReturnAmin", false) && !OwnSP.ownSP.getBoolean("simpleAnimation", false))
-                add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.AlwaysBlur), SwitchV("alwaysBlur", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.SmallWindow), SwitchV("supportSmallWindow")))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.LowEndAnim), SwitchV("lowEndAnim")))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.LowEndDeviceUseMIUIWidgets), SwitchV("useMIUIWidgets")))))
+                add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AlwaysBlur), switchV = SwitchV("alwaysBlur", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SmallWindow), switchV = SwitchV("supportSmallWindow")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.LowEndAnim), switchV = SwitchV("lowEndAnim")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.LowEndDeviceUseMIUIWidgets), switchV = SwitchV("useMIUIWidgets")))))
             if (!OwnSP.ownSP.getBoolean("appReturnAmin", false) && !OwnSP.ownSP.getBoolean("simpleAnimation", false))
                 add(Item(list = arrayListOf(TextV(resId = R.string.BlurRadius, onClickListener = { showBlurRadiusDialog() }))))
             add(Item(list = arrayListOf(LineV())))
 
-            add(Item(list = arrayListOf(TitleTextV(resId = R.string.OtherFeature))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.AlwaysShowStatusBarClock), SwitchV("clockGadget")))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.DoubleTap), SwitchV("doubleTap")))))
+            add(Item(list = arrayListOf(SubtitleV(resId = R.string.OtherFeature))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AlwaysShowStatusBarClock), switchV = SwitchV("clockGadget")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.DoubleTap), switchV = SwitchV("doubleTap")))))
             if (!OwnSP.ownSP.getBoolean("dockSettings", false) && Config.AndroidSDK == 30)
-                add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.SearchBarBlur), SwitchV("searchBarBlur")))))
-            add(Item(list = arrayListOf(TextRV(titleResId = R.string.DockSettings, arrow = true, onClickListener = { setItems(dock) }))))
+                add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SearchBarBlur), switchV = SwitchV("searchBarBlur")))))
+            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.DockSettings)) {
+                setItems(
+                    dock
+                )
+            })))
             add(Item(list = arrayListOf(TextV(resId = R.string.EveryThingBuild, onClickListener = { BuildWithEverything().init() }))))
             add(Item(list = arrayListOf(LineV())))
 
-            add(Item(list = arrayListOf(TitleTextV(resId = R.string.BrokenFeature))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.RealTaskViewHorizontal), SwitchV("horizontal")))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextV(resId = R.string.EnableIconShadow), SwitchV("isEnableIconShadow")))))
+            add(Item(list = arrayListOf(SubtitleV(resId = R.string.BrokenFeature))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.RealTaskViewHorizontal), switchV = SwitchV("horizontal")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.EnableIconShadow), switchV = SwitchV("isEnableIconShadow")))))
             add(Item(list = arrayListOf(LineV())))
 
-            add(Item(list = arrayListOf(TitleTextV(resId = R.string.ModuleFeature))))
+            add(Item(list = arrayListOf(SubtitleV(resId = R.string.ModuleFeature))))
             add(Item(list = arrayListOf(TextV(resId = R.string.Reboot, onClickListener = { showRestartDialog() }))))
-            add(Item(list = arrayListOf(TextRV(titleResId = R.string.BackupModuleSettings, arrow = true, onClickListener = { (currentActivity as HookSettingsActivity).spBackup.also { it.requestWriteToFile("config_${System.currentTimeMillis()}.json", it.getWriteJson()) } }))))
-            add(Item(list = arrayListOf(TextRV(titleResId = R.string.RestoreModuleSettings, arrow = true, onClickListener = { showRestoreModuleSettingsDialog() }))))
+            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.BackupModuleSettings)) {
+                (currentActivity as HookSettingsActivity).spBackup.also {
+                    it.requestWriteToFile(
+                        "config_${System.currentTimeMillis()}.json",
+                        it.getWriteJson()
+                    )
+                }
+            })))
+            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.RestoreModuleSettings)) { showRestoreModuleSettingsDialog() })))
             add(Item(list = arrayListOf(TextV(resId = R.string.CleanModuleSettings, onClickListener = { showCleanModuleSettingsDialog() }))))
-            add(Item(list = arrayListOf(TextRV(titleResId = R.string.Github, summaryResId = R.string.OpenGithub, arrow = true, onClickListener = { val uri = Uri.parse("https://github.com/qqlittleice/MiuiHome"); val intent = Intent(Intent.ACTION_VIEW, uri); currentActivity.startActivity(intent) }))))
-            add(Item(list = arrayListOf(TextRV(titleResId = R.string.About, summary = "${BuildConfig.VERSION_NAME}(${BuildConfig.BUILD_TYPE})", arrow = true, onClickListener = { setItems(menu) }))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AppCenter, summaryResId = R.string.AppCenterTip), SwitchV("appCenter")))))
+
+            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.Github, summaryResId = R.string.OpenGithub)) {
+                val uri = Uri.parse("https://github.com/qqlittleice/MiuiHome");
+                val intent = Intent(Intent.ACTION_VIEW, uri); currentActivity.startActivity(intent)
+            })))
+            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.About, summary = "${BuildConfig.VERSION_NAME}(${BuildConfig.BUILD_TYPE})")) {
+                setItems(
+                    menu
+                )
+            })))
 
             //add(Item(list = arrayListOf(LineV())))
             //add(Item(list = arrayListOf(TitleTextV(text = "Subtitle"))))
             //add(Item(list = arrayListOf(TextV(text = "Title", onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
-            //add(Item(list = arrayListOf(TextRV(title = "Title", arrow = true, onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
+            //add(Item(list = arrayListOf(TextRV(title = "Title"), onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
             //add(Item(list = arrayListOf(TextRV(title = "Title", summary = "Summary", onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
-            //add(Item(list = arrayListOf(TextRV(title = "Title", summary = "Summary", arrow = true, onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
-            //add(Item(list = arrayListOf(TextWithSwitchV(TextV("Switch"), SwitchV("testSwitch")))))
+            //add(Item(list = arrayListOf(TextRV(title = "Title", summary = "Summary"), onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
+            //add(Item(list = arrayListOf(TextWithSwitchV(TextV("Switch"), switchV = SwitchV("testSwitch")))))
             //add(Item(list = arrayListOf(TextWithSeekBarV(TextV("Seekbar"), key = "testSeekBar", min = 0, max = 100, divide = 1, defaultProgress = 0))))
 
         }

@@ -9,7 +9,7 @@ import com.yuk.miuihome.view.CustomSwitch
 
 class SwitchV(
     private val key: String,
-    val customOnCheckedChangeListener: CompoundButton.OnCheckedChangeListener? = null
+    var customOnCheckedChangeListener: CompoundButton.OnCheckedChangeListener? = null
 ) : BaseView() {
 
     override fun getType(): BaseView = this

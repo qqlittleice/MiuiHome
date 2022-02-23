@@ -114,4 +114,6 @@
   <string name="AlwaysBlur">Always Blur Launcher Wallpaper</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Click to open Github</string>
+  <string name="AppCenter">Anonymous Statistics</string>
+  <string name="AppCenterTip">We use Microsoft App Center to help us test/analyze application usage.</string>
 </resources>

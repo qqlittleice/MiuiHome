@@ -108,4 +108,5 @@
   <string name="RestoreModuleSettings">恢復模塊設置</string>
   <string name="RestoreModuleSettingsFailed">恢复备份失败</string>
   <string name="RestoreModuleSettingsSuccess">恢復備份成功，重啟系統桌面</string>
+  <string name="AppCenterTip">我們使用 Microsoft App Center 幫助我們測試/分析應用程序使用情況。</string>
 </resources>

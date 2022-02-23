@@ -7,7 +7,7 @@ import com.yuk.miuihome.R
 import com.yuk.miuihome.view.data.Padding
 import com.yuk.miuihome.utils.ktx.dp2px
 
-class TitleTextV(
+class SubtitleV(
     val text: String? = null,
     val resId: Int? = null,
     private val onClickListener: View.OnClickListener? = null

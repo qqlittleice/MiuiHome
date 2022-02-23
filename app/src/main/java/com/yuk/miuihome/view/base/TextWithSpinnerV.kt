@@ -59,15 +59,13 @@ class TextWithSpinnerV(
                 animator.start()
             }
         }
-        val spinner = LinearContainerV(
-            LinearContainerV.HORIZONTAL,
+        val spinner = LinearContainerV(LinearContainerV.HORIZONTAL,
             arrayOf(
                 LayoutPair(text.also { it.setTextColor(context.getColor(R.color.spinner)); it.text = select; it.setPadding(dp2px(30f), 0, dp2px(6f), 0); it.textSize = 16f }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f).also { it.gravity = Gravity.CENTER_VERTICAL + Gravity.RIGHT }),
                 LayoutPair(ImageView(context).also { it.background = context.getDrawable(R.drawable.ic_up_down) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).also { it.gravity = Gravity.CENTER_VERTICAL })
             )
         )
-        return LinearContainerV(
-            LinearContainerV.HORIZONTAL,
+        return LinearContainerV(LinearContainerV.HORIZONTAL,
             arrayOf(
                 LayoutPair(textV.create(context).also { it.setPadding(dp2px(25f), 0, dp2px(25f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)),
                 LayoutPair(spinner.create(context).also { it.setPadding(0, 0, dp2px(25f), 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).also { it.gravity = Gravity.CENTER_VERTICAL })

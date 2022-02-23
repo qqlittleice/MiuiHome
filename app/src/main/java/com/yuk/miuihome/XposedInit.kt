@@ -18,6 +18,7 @@ import com.microsoft.appcenter.crashes.model.ErrorReport
 import com.yuk.miuihome.module.*
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.HomeContext
+import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
 import com.yuk.miuihome.view.HookSettingsActivity
 import com.yuk.miuihome.utils.ktx.ActivityHelper
@@ -50,7 +51,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                 }
                 Application::class.java.hookAfterMethod("attach", Context::class.java
                 ) {
-                    startOnlineLog()
+                    startAppCenter()
                     checkVersionName()
                     checkIsAlpha()
                     checkVersionCode()
@@ -139,14 +140,18 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         //CustomHook.init()
     }
 
-    private fun startOnlineLog() {
-        AppCenter.start(HomeContext.application, "fd3fd6d6-bc0d-40d1-bc1b-63b6835f9581", Analytics::class.java, Crashes::class.java)
-        Crashes.setListener(object : AbstractCrashesListener() {
-            override fun getErrorAttachments(report: ErrorReport): MutableIterable<ErrorAttachmentLog> {
-                val textLog = ErrorAttachmentLog.attachmentWithText("Module:\n${BuildConfig.APPLICATION_ID} - ${BuildConfig.BUILD_TYPE}\n${BuildConfig.VERSION_NAME}(${BuildConfig.VERSION_CODE})\nUser:\nAndroid ${checkAndroidVersion()}\nMiuiHome ${checkVersionName()}(${checkVersionCode()})", "debug.txt")
-                return mutableListOf(textLog)
-            }
-        })
+    private fun startAppCenter() {
+        if (OwnSP.ownSP.getBoolean("appCenter", false)) {
+            AppCenter.start(HomeContext.application, "fd3fd6d6-bc0d-40d1-bc1b-63b6835f9581", Analytics::class.java,Crashes::class.java)
+            Crashes.setListener(object : AbstractCrashesListener() {
+                override fun getErrorAttachments(report: ErrorReport): MutableIterable<ErrorAttachmentLog> {
+                    val textLog = ErrorAttachmentLog.attachmentWithText("Module:\n${BuildConfig.APPLICATION_ID} - ${BuildConfig.BUILD_TYPE}\n${BuildConfig.VERSION_NAME}(${BuildConfig.VERSION_CODE})\nUser:\nAndroid ${checkAndroidVersion()}\nMiuiHome ${checkVersionName()}(${checkVersionCode()})", "debug.txt")
+                    return mutableListOf(textLog)
+                }
+            })
+        } else {
+            if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: Disable App Center")
+        }
     }
 
     fun checkVersionName(): String {
