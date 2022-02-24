@@ -69,8 +69,7 @@ object DataHelper {
                 add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.EnableDockBlur), switchV = SwitchV("searchBarBlur")))))
             if (!XposedInit.hasHookPackageResources)
                 add(Item(list = arrayListOf(TextV(resId = R.string.DockWarn, textColor = Color.parseColor("#ff0c0c"), textSize = 16f))))
-            else
-                add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockRoundedCorners), key = "dockRadius", min = 0, max = 50, divide = 10, defaultProgress = 25))))
+            else add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockRoundedCorners), key = "dockRadius", min = 0, max = 50, divide = 10, defaultProgress = 25))))
             add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockHeight), key = "dockHeight", min = 30, max = 150, divide = 10, defaultProgress = 79))))
             add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockSide), key = "dockSide", min = 0, max = 100, divide = 10, defaultProgress = 30))))
             add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockBottom), key = "dockBottom", min = 0, max = 150, divide = 10, defaultProgress = 23))))
@@ -116,10 +115,8 @@ object DataHelper {
                 dict0[currentActivity.getString(R.string.SimpleBlur)] = "SimpleBlur"
                 dict0[currentActivity.getString(R.string.NoneBlur)] = "NoneBlur"
                 if (!OwnSP.ownSP.getBoolean("alwaysBlur", false)) {
-                    if (ModifyBlurLevel.checked)
-                        add(Item(list = arrayListOf(TextWithSpinnerV(TextV(resId = R.string.TaskViewBlurLevel), select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], array = blurLevel, callBacks = { OwnSP.set("blurLevel", dict0[it].toString()) }))))
-                    else
-                        add(Item(list = arrayListOf(TextWithSpinnerV(TextV(resId = R.string.TaskViewBlurLevel), select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], array = blurLevel0, callBacks = { OwnSP.set("blurLevel", dict0[it].toString()) }))))
+                    if (ModifyBlurLevel.checked) add(Item(list = arrayListOf(TextWithSpinnerV(TextV(resId = R.string.TaskViewBlurLevel), select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], array = blurLevel, callBacks = { OwnSP.set("blurLevel", dict0[it].toString()) }))))
+                    else add(Item(list = arrayListOf(TextWithSpinnerV(TextV(resId = R.string.TaskViewBlurLevel), select = dict0[OwnSP.ownSP.getString("blurLevel", "SimpleBlur")], array = blurLevel0, callBacks = { OwnSP.set("blurLevel", dict0[it].toString()) }))))
                 }
             }
             add(Item(list = arrayListOf(TextV(resId = R.string.AnimationLevel, onClickListener = { showAnimationLevelDialog() }))))
@@ -146,11 +143,7 @@ object DataHelper {
             add(Item(list = arrayListOf(TextV(resId = R.string.AppTextSize, onClickListener = { showAppTextSizeDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.CustomRecentText, onClickListener = { showCustomRecentTextDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.VerticalTaskViewOfAppCardSize, onClickListener = { showVerticalTaskViewOfAppCardSizeDialog() }))))
-            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.HorizontalTaskViewOfAppCardSize)) {
-                setItems(
-                    horizontal
-                )
-            })))
+            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.HorizontalTaskViewOfAppCardSize)) { setItems(horizontal) })))
             add(Item(list = arrayListOf(LineV())))
 
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.Folder))))
@@ -172,13 +165,11 @@ object DataHelper {
 
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.TestFeature))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SimpleAnimation), switchV = SwitchV("simpleAnimation", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
-            if (!OwnSP.ownSP.getBoolean("alwaysBlur", false))
-                add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AppReturnAmin), switchV = SwitchV("appReturnAmin", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
+            if (!OwnSP.ownSP.getBoolean("alwaysBlur", false)) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AppReturnAmin), switchV = SwitchV("appReturnAmin", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.InfiniteScroll), switchV = SwitchV("infiniteScroll")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.RecommendServer), switchV = SwitchV("recommendServer")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.HideSeekPoints), switchV = SwitchV("hideSeekPoints")))))
-            if (!OwnSP.ownSP.getBoolean("appReturnAmin", false) && !OwnSP.ownSP.getBoolean("simpleAnimation", false))
-                add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AlwaysBlur), switchV = SwitchV("alwaysBlur", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
+            if (!OwnSP.ownSP.getBoolean("appReturnAmin", false) && !OwnSP.ownSP.getBoolean("simpleAnimation", false)) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AlwaysBlur), switchV = SwitchV("alwaysBlur", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SmallWindow), switchV = SwitchV("supportSmallWindow")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.LowEndAnim), switchV = SwitchV("lowEndAnim")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.LowEndDeviceUseMIUIWidgets), switchV = SwitchV("useMIUIWidgets")))))
@@ -191,11 +182,7 @@ object DataHelper {
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.DoubleTap), switchV = SwitchV("doubleTap")))))
             if (!OwnSP.ownSP.getBoolean("dockSettings", false) && Config.AndroidSDK == 30)
                 add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SearchBarBlur), switchV = SwitchV("searchBarBlur")))))
-            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.DockSettings)) {
-                setItems(
-                    dock
-                )
-            })))
+            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.DockSettings)) { setItems(dock) })))
             add(Item(list = arrayListOf(TextV(resId = R.string.EveryThingBuild, onClickListener = { BuildWithEverything().init() }))))
             add(Item(list = arrayListOf(LineV())))
 
@@ -206,14 +193,7 @@ object DataHelper {
 
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.ModuleFeature))))
             add(Item(list = arrayListOf(TextV(resId = R.string.Reboot, onClickListener = { showRestartDialog() }))))
-            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.BackupModuleSettings)) {
-                (currentActivity as HookSettingsActivity).spBackup.also {
-                    it.requestWriteToFile(
-                        "config_${System.currentTimeMillis()}.json",
-                        it.getWriteJson()
-                    )
-                }
-            })))
+            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.BackupModuleSettings)) { (currentActivity as HookSettingsActivity).spBackup.also { it.requestWriteToFile("config_${System.currentTimeMillis()}.json") } })))
             add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.RestoreModuleSettings)) { showRestoreModuleSettingsDialog() })))
             add(Item(list = arrayListOf(TextV(resId = R.string.CleanModuleSettings, onClickListener = { showCleanModuleSettingsDialog() }))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AppCenter, summaryResId = R.string.AppCenterTip), SwitchV("appCenter")))))
@@ -222,11 +202,7 @@ object DataHelper {
                 val uri = Uri.parse("https://github.com/qqlittleice/MiuiHome");
                 val intent = Intent(Intent.ACTION_VIEW, uri); currentActivity.startActivity(intent)
             })))
-            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.About, summary = "${BuildConfig.VERSION_NAME}(${BuildConfig.BUILD_TYPE})")) {
-                setItems(
-                    menu
-                )
-            })))
+            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.About, summary = "${BuildConfig.VERSION_NAME}(${BuildConfig.BUILD_TYPE})")) { setItems(menu) })))
 
             //add(Item(list = arrayListOf(LineV())))
             //add(Item(list = arrayListOf(TitleTextV(text = "Subtitle"))))

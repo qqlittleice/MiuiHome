@@ -5,8 +5,6 @@ import android.content.Intent
 import android.content.SharedPreferences
 import org.json.JSONObject
 
-typealias Callback = (Boolean) -> Unit
-
 class SPBackup(private val activity: Activity, private val sp: SharedPreferences) {
 
     fun getWriteJson(): String {
@@ -40,7 +38,7 @@ class SPBackup(private val activity: Activity, private val sp: SharedPreferences
         }
     }
 
-    fun requestWriteToFile(fileName: String, content: String) {
+    fun requestWriteToFile(fileName: String) {
         val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
             type = "text/plain"
