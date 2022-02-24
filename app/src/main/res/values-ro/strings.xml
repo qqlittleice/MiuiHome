@@ -103,7 +103,7 @@
   <string name="AppReturnAmin">Estompare returnare aplicație</string>
   <string name="BlurRadius">Rază estompare</string>
   <string name="BasicBlur">Estompare de bază</string>
-  <string name="CustomTitleColor">Personalizează culoarea titlului pictogramelor aplicațiilor</string>
+  <string name="CustomTitleColor">Personalizează culoarea titlului aplicațiilor</string>
   <string name="Tips4">Acceptă valoarea de culoare hexazecimală, de exemplu #FFFFFF este alb, #000000 este negru</string>
   <string name="About">Despre modulul</string>
   <string name="MiuiVersion">Versiune MIUI</string>
@@ -111,4 +111,8 @@
   <string name="ModuleVersion">Versiune modul</string>
   <string name="AboutUs">Despre noi</string>
   <string name="AlwaysBlur">Întotdeauna estompează fundalul lansatorului</string>
+  <string name="Github">GitHub</string>
+  <string name="OpenGithub">Click pentru a deschide Github</string>
+  <string name="AppCenter">Statistici anonime</string>
+  <string name="AppCenterTip">Folosim Microsoft App Center pentru a ne ajuta să testăm/analizăm utilizarea aplicației.</string>
 </resources>
