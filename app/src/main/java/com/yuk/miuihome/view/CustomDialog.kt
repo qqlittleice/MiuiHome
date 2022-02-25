@@ -10,7 +10,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.yuk.miuihome.R
 
-class SettingsDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
+class CustomDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
     var view: View
 
     init {
@@ -53,6 +53,7 @@ class SettingsDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
     fun setRButton(text: CharSequence?, callBacks: (it: View) -> Unit) {
         view.findViewById<Button>(R.id.RButton).apply {
             setText(text)
+            visibility = View.VISIBLE
             setOnClickListener {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) it.performHapticFeedback(HapticFeedbackConstants.CONFIRM, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
                 else it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
@@ -64,6 +65,31 @@ class SettingsDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
     fun setRButton(textId: Int, callBacks: () -> Unit) {
         view.findViewById<Button>(R.id.RButton).apply {
             setText(textId)
+            visibility = View.VISIBLE
+            setOnClickListener {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) it.performHapticFeedback(HapticFeedbackConstants.CONFIRM, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
+                else it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
+                callBacks()
+            }
+        }
+    }
+
+    fun setCButton(text: CharSequence?, callBacks: (it: View) -> Unit) {
+        view.findViewById<Button>(R.id.CButton).apply {
+            setText(text)
+            visibility = View.VISIBLE
+            setOnClickListener {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) it.performHapticFeedback(HapticFeedbackConstants.CONFIRM, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
+                else it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
+                callBacks(it)
+            }
+        }
+    }
+
+    fun setCButton(textId: Int, callBacks: () -> Unit) {
+        view.findViewById<Button>(R.id.CButton).apply {
+            setText(textId)
+            visibility = View.VISIBLE
             setOnClickListener {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) it.performHapticFeedback(HapticFeedbackConstants.CONFIRM, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
                 else it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
@@ -75,6 +101,7 @@ class SettingsDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
     fun setLButton(text: CharSequence?, callBacks: (it: View) -> Unit) {
         view.findViewById<Button>(R.id.LButton).apply {
             setText(text)
+            visibility = View.VISIBLE
             setOnClickListener {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) it.performHapticFeedback(HapticFeedbackConstants.REJECT, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
                 else it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
@@ -87,6 +114,7 @@ class SettingsDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
     fun setLButton(textId: Int, callBacks: () -> Unit) {
         view.findViewById<Button>(R.id.LButton).apply {
             setText(textId)
+            visibility = View.VISIBLE
             setOnClickListener {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) it.performHapticFeedback(HapticFeedbackConstants.REJECT, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)
                 else it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING)

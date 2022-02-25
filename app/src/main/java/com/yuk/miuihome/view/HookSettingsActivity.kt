@@ -79,10 +79,11 @@ class HookSettingsActivity: TransferActivity() {
     }
 
     private fun showFirstUseDialog() {
-        SettingsDialog(this).apply {
+        CustomDialog(this).apply {
             setTitle(XposedInit.moduleRes.getString(R.string.Welcome))
             setMessage(XposedInit.moduleRes.getString(R.string.Tips))
-            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+            setCancelable(false)
+            setCButton(XposedInit.moduleRes.getString(R.string.Yes)) {
                 OwnSP.clear()
                 OwnSP.set("isFirstUse",false)
                 OwnSP.set("appCenter", true)
@@ -109,7 +110,6 @@ class HookSettingsActivity: TransferActivity() {
                     exitProcess(0)
                 }
             }
-            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { this@HookSettingsActivity.finish() }
             show()
         }
     }
