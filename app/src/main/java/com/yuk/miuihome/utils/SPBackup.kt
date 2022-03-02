@@ -9,7 +9,18 @@ class SPBackup(private val activity: Activity, private val sp: SharedPreferences
 
     fun getWriteJson(): String {
         val json = JSONObject()
-        val config = JSONObject(sp.all)
+        val map = mutableMapOf<String, String>()
+        sp.all.forEach { (key: String, any: Any?) ->
+            when (any) {
+                is Int -> { map[key] = "int;$any" }
+                is Float -> { map[key] = "float;$any" }
+                is String -> { map[key] = "string;$any" }
+                is Boolean -> { map[key] = "boolean;$any" }
+                is Long -> { map[key] = "long;$any" }
+                is Double -> { map[key] = "double;$any" }
+            }
+        }
+        val config = JSONObject(map.toMap())
         json.put("config", config)
         return json.toString()
     }
@@ -21,14 +32,17 @@ class SPBackup(private val activity: Activity, private val sp: SharedPreferences
             val editor = sp.edit()
             editor.clear()
             config.keys().forEach {
-                when (val any = config[it]) {
-                    is Int -> editor.putInt(it, any)
-                    is Float -> editor.putFloat(it, any)
-                    is String -> editor.putString(it, any)
-                    is Boolean -> editor.putBoolean(it, any)
-                    is Long -> editor.putLong(it, any)
-                    is Double -> editor.putFloat(it, any.toFloat())
-                    else -> { throw RuntimeException("key: $it value: $any type: ${any::class.java.typeName}") }
+                val rawValue = config[it] as String
+                val type = rawValue.split(";")[0]
+                val value = rawValue.split(";")[1]
+                when (type) {
+                    "int" -> { editor.putInt(it, value.toInt()) }
+                    "float" -> { editor.putFloat(it, value.toFloat()) }
+                    "string" -> { editor.putString(it, value) }
+                    "boolean" -> { editor.putBoolean(it, value.toBoolean()) }
+                    "long" -> { editor.putLong(it, value.toLong()) }
+                    "double" -> { editor.putFloat(it, value.toFloat()) }
+                    else -> { throw RuntimeException("key: $it value: $value type: ${value::class.java.typeName}") }
                 }
             }
             editor.apply()
