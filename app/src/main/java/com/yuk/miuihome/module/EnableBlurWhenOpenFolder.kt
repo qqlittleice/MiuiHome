@@ -5,7 +5,10 @@ import android.os.Bundle
 import android.view.View
 import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.*
+import com.yuk.miuihome.utils.ktx.callStaticMethod
+import com.yuk.miuihome.utils.ktx.findClass
+import com.yuk.miuihome.utils.ktx.hookAfterMethod
+import com.yuk.miuihome.utils.ktx.setReturnConstant
 
 class EnableBlurWhenOpenFolder {
 

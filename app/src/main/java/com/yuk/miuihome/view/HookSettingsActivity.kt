@@ -11,17 +11,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit
-import com.yuk.miuihome.view.adapter.ItemAdapter
-import com.yuk.miuihome.view.data.DataHelper
-import com.yuk.miuihome.view.data.Item
 import com.yuk.miuihome.utils.HomeContext
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.SPBackup
 import com.yuk.miuihome.utils.ktx.dp2px
+import com.yuk.miuihome.view.adapter.ItemAdapter
+import com.yuk.miuihome.view.data.DataHelper
+import com.yuk.miuihome.view.data.Item
 import java.io.BufferedReader
 import java.io.InputStreamReader
-import java.lang.StringBuilder
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
@@ -147,5 +146,4 @@ class HookSettingsActivity: TransferActivity() {
             }
         }
     }
-
 }

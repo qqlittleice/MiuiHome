@@ -9,7 +9,10 @@ import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.*
+import com.yuk.miuihome.utils.ktx.callMethod
+import com.yuk.miuihome.utils.ktx.callStaticMethod
+import com.yuk.miuihome.utils.ktx.findClass
+import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import de.robv.android.xposed.XposedBridge
 
 class ModifyAppReturnBlur {

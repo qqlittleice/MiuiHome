@@ -13,8 +13,8 @@ import com.yuk.miuihome.utils.Config.DrawableNameNewList
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.hookLayout
-import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResourcesParam
 import com.yuk.miuihome.utils.ktx.setTryReplacement
+import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResourcesParam
 import kotlin.concurrent.thread
 
 class ResHook(private val hookedRes: InitPackageResourcesParam) {

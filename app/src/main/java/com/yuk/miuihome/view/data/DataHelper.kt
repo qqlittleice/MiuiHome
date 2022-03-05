@@ -11,12 +11,12 @@ import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.module.BuildWithEverything
 import com.yuk.miuihome.module.ModifyBlurLevel
-import com.yuk.miuihome.view.CustomDialog
-import com.yuk.miuihome.view.base.*
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.view.CustomDialog
 import com.yuk.miuihome.view.HookSettingsActivity
+import com.yuk.miuihome.view.base.*
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
@@ -183,6 +183,7 @@ object DataHelper {
             if (!OwnSP.ownSP.getBoolean("dockSettings", false) && Config.AndroidSDK == 30)
                 add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SearchBarBlur), switchV = SwitchV("searchBarBlur")))))
             add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.DockSettings)) { setItems(dock) })))
+            add(Item(list = arrayListOf(TextV(resId = R.string.IconTitleTopMargin, onClickListener = { showModifyIconTitleTopMarginDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.EveryThingBuild, onClickListener = { BuildWithEverything().init() }))))
             add(Item(list = arrayListOf(LineV())))
 
@@ -193,7 +194,8 @@ object DataHelper {
 
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.ModuleFeature))))
             add(Item(list = arrayListOf(TextV(resId = R.string.Reboot, onClickListener = { showRestartDialog() }))))
-            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.BackupModuleSettings)) { (currentActivity as HookSettingsActivity).spBackup.also { it.requestWriteToFile("config_${System.currentTimeMillis()}.json") } })))
+            add(Item(list = arrayListOf(TextV(resId = R.string.OpenLSPosed, onClickListener = { openLSPosed() }))))
+            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.BackupModuleSettings)) { (currentActivity as HookSettingsActivity).spBackup.also { it.requestWriteToFile("miuihome_config_${System.currentTimeMillis()}.json") } })))
             add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.RestoreModuleSettings)) { showRestoreModuleSettingsDialog() })))
             add(Item(list = arrayListOf(TextV(resId = R.string.CleanModuleSettings, onClickListener = { showCleanModuleSettingsDialog() }))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AppCenter, summaryResId = R.string.AppCenterTip), SwitchV("appCenter")))))
@@ -355,6 +357,22 @@ object DataHelper {
         }
     }
 
+    private fun showModifyIconTitleTopMarginDialog() {
+        CustomDialog(currentActivity).apply {
+            setTitle(XposedInit.moduleRes.getString(R.string.IconTitleTopMargin))
+            setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: -1, ${XposedInit.moduleRes.getString(R.string.Recommend)}：0-50, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getInt("titleTopMargin", -1).toString()}")
+            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+                if (getEditText() == "") editor.putInt("titleTopMargin", -1)
+                else editor.putInt("titleTopMargin", getEditText().toInt())
+                editor.apply()
+                dismiss()
+            }
+            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            show()
+        }
+    }
+
     private fun showAnimationLevelDialog() {
         CustomDialog(currentActivity).apply {
             setTitle(XposedInit.moduleRes.getString(R.string.AnimationLevel))
@@ -465,5 +483,15 @@ object DataHelper {
             setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
             show()
         }
+    }
+
+
+    private fun openLSPosed() {
+        val intent = Intent()
+        intent.action = "android.intent.action.MAIN"
+        intent.addCategory("org.lsposed.manager.LAUNCH_MANAGER")
+        intent.setClassName("com.android.shell", "com.android.shell.BugreportWarningActivity")
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED
+        currentActivity.startActivity(intent)
     }
 }

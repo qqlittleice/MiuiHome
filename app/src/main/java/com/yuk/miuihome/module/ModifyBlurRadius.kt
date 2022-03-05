@@ -2,7 +2,10 @@ package com.yuk.miuihome.module
 
 import android.view.Window
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.*
+import com.yuk.miuihome.utils.ktx.callStaticMethod
+import com.yuk.miuihome.utils.ktx.findClass
+import com.yuk.miuihome.utils.ktx.getStaticObjectField
+import com.yuk.miuihome.utils.ktx.replaceMethod
 import kotlin.math.max
 import kotlin.math.min
 

@@ -4,8 +4,8 @@ import android.content.Context
 import android.view.Gravity
 import android.view.View
 import android.widget.LinearLayout
-import com.yuk.miuihome.view.data.LayoutPair
 import com.yuk.miuihome.utils.ktx.dp2px
+import com.yuk.miuihome.view.data.LayoutPair
 
 class TextWithSwitchV(
     private val textWithSummaryV: TextWithSummaryV,

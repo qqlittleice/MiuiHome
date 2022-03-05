@@ -14,7 +14,6 @@ import android.widget.TextView
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.ktx.dp2px
 
-
 class ListPopupWindowAdapter(
     context: Context,
     data: ArrayList<String>,

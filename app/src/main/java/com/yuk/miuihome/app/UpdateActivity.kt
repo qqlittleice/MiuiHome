@@ -1,5 +1,6 @@
 package com.yuk.miuihome.app
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.ComponentName
@@ -67,6 +68,7 @@ class UpdateActivity: Activity() {
         return scrollView
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindService()

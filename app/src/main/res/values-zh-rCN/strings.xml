@@ -114,5 +114,7 @@
   <string name="Github">开源仓库</string>
   <string name="OpenGithub">点击打开 Github</string>
   <string name="AppCenter">匿名统计</string>
-  <string name="AppCenterTip">我们使用 Microsoft App Center 帮助我们测试/分析应用程序使用情况。</string>
+  <string name="AppCenterTip">我们使用 Microsoft AppCenter 帮助我们测试/分析应用程序使用情况。</string>
+  <string name="IconTitleTopMargin">图标与标题间距</string>
+  <string name="OpenLSPosed">打开 LSPosed</string>
 </resources>

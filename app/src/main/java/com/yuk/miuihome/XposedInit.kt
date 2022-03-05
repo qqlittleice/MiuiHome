@@ -21,7 +21,6 @@ import com.yuk.miuihome.utils.HomeContext
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
 import com.yuk.miuihome.view.HookSettingsActivity
-import com.yuk.miuihome.utils.ktx.ActivityHelper
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
 import de.robv.android.xposed.callbacks.XC_LoadPackage
@@ -137,6 +136,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         ModifyIconTitleFontColor().init()
         AlwaysBlurWallpaper().init()
         ModifyRecents().init()
+        ModifyIconTitleTopMargin().init()
         //CustomHook.init()
     }
 
