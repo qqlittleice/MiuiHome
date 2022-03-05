@@ -118,4 +118,5 @@
   <string name="AppCenterTip">We use Microsoft AppCenter to help us test/analyze application usage.</string>
   <string name="IconTitleTopMargin">Icon Title Top Margin</string>
   <string name="OpenLSPosed">Open LSPosed</string>
+  <string name="ShortcutCount">Unlock shortcut count limit</string>
 </resources>

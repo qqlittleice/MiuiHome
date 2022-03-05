@@ -117,4 +117,5 @@
   <string name="AppCenterTip">我们使用 Microsoft AppCenter 帮助我们测试/分析应用程序使用情况。</string>
   <string name="IconTitleTopMargin">图标与标题间距</string>
   <string name="OpenLSPosed">打开 LSPosed</string>
+  <string name="ShortcutCount">解锁 Shortcut 数量限制</string>
 </resources>

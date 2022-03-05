@@ -183,6 +183,8 @@ object DataHelper {
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.OtherFeature))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AlwaysShowStatusBarClock), switchV = SwitchV("clockGadget")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.DoubleTap), switchV = SwitchV("doubleTap")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.ShortcutCount), switchV = SwitchV("unlockShortcutCount")))))
+
             if (!OwnSP.ownSP.getBoolean("dockSettings", false) && Config.AndroidSDK == 30)
                 add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SearchBarBlur), switchV = SwitchV("searchBarBlur")))))
             add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.DockSettings)) { setItems(dock) })))

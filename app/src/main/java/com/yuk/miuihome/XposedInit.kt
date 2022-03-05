@@ -137,6 +137,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         AlwaysBlurWallpaper().init()
         ModifyRecents().init()
         ModifyIconTitleTopMargin().init()
+        ModifyShortcutItemCount().init()
         //CustomHook.init()
     }
 
