@@ -17,6 +17,8 @@ import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.view.CustomDialog
 import com.yuk.miuihome.view.HookSettingsActivity
 import com.yuk.miuihome.view.base.*
+import java.text.SimpleDateFormat
+import java.util.Calendar
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
@@ -92,6 +94,7 @@ object DataHelper {
         return itemList
     }
 
+    @SuppressLint("SimpleDateFormat")
     private fun loadItems(): ArrayList<Item> {
         val itemList = arrayListOf<Item>()
         itemList.apply {
@@ -195,26 +198,12 @@ object DataHelper {
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.ModuleFeature))))
             add(Item(list = arrayListOf(TextV(resId = R.string.Reboot, onClickListener = { showRestartDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.OpenLSPosed, onClickListener = { openLSPosed() }))))
-            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.BackupModuleSettings)) { (currentActivity as HookSettingsActivity).spBackup.also { it.requestWriteToFile("miuihome_config_${System.currentTimeMillis()}.json") } })))
+            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.BackupModuleSettings)) { (currentActivity as HookSettingsActivity).spBackup.also { it.requestWriteToFile("MiuiHome-Config-${SimpleDateFormat("yyyy/MM/dd-HH:mm:ss").format(Calendar.getInstance().time)}") } })))
             add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.RestoreModuleSettings)) { showRestoreModuleSettingsDialog() })))
             add(Item(list = arrayListOf(TextV(resId = R.string.CleanModuleSettings, onClickListener = { showCleanModuleSettingsDialog() }))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AppCenter, summaryResId = R.string.AppCenterTip), SwitchV("appCenter")))))
-
-            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.Github, summaryResId = R.string.OpenGithub)) {
-                val uri = Uri.parse("https://github.com/qqlittleice/MiuiHome");
-                val intent = Intent(Intent.ACTION_VIEW, uri); currentActivity.startActivity(intent)
-            })))
+            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.Github, summaryResId = R.string.OpenGithub)) { val uri = Uri.parse("https://github.com/qqlittleice/MiuiHome"); val intent = Intent(Intent.ACTION_VIEW, uri); currentActivity.startActivity(intent) })))
             add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.About, summary = "${BuildConfig.VERSION_NAME}(${BuildConfig.BUILD_TYPE})")) { setItems(menu) })))
-
-            //add(Item(list = arrayListOf(LineV())))
-            //add(Item(list = arrayListOf(TitleTextV(text = "Subtitle"))))
-            //add(Item(list = arrayListOf(TextV(text = "Title", onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
-            //add(Item(list = arrayListOf(TextRV(title = "Title"), onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
-            //add(Item(list = arrayListOf(TextRV(title = "Title", summary = "Summary", onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
-            //add(Item(list = arrayListOf(TextRV(title = "Title", summary = "Summary"), onClickListener = { Toast.makeText(currentActivity, "Test Toast", Toast.LENGTH_SHORT).show() }))))
-            //add(Item(list = arrayListOf(TextWithSwitchV(TextV("Switch"), switchV = SwitchV("testSwitch")))))
-            //add(Item(list = arrayListOf(TextWithSeekBarV(TextV("Seekbar"), key = "testSeekBar", min = 0, max = 100, divide = 1, defaultProgress = 0))))
-
         }
         return itemList
     }
@@ -484,7 +473,6 @@ object DataHelper {
             show()
         }
     }
-
 
     private fun openLSPosed() {
         val intent = Intent()
