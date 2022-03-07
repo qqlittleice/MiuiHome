@@ -10,7 +10,7 @@
   <string name="CleanModuleSettings">Resetare la setările implicite</string>
   <string name="RestoreModuleSettingsSuccess">Restaurarea copiei de rezervă a fost reușită, repornire lansator de sistem.</string>
   <string name="RestoreModuleSettingsFailed">Nu s-a putut restaura copia de rezervă</string>
-  <string name="BackupModuleSettings">Setări copie de rezervă mod</string>
+  <string name="BackupModuleSettings">Creare copie de rezervă</string>
   <string name="RestoreModuleSettings">Restabilire setări modul</string>
   <string name="RestoreModuleSettingsTips">Aceasta va șterge toate setările modulului și va restaura setările modulului dintr-un fișier. După acțiune, lansatorul de sistem va fi repornit.</string>
   <string name="Close">Închidere</string>
@@ -62,7 +62,7 @@
   <string name="WallpaperDarken">Dezactivează funcția de întunecare a imaginii de fundal în recente</string>
   <string name="Welcome">Bun venit</string>
   <string name="Widget">Caracteristici widget</string>
-  <string name="WidgetToMinus">Permite mutarea widget-elor clasice în \"Aplicație Seif\"</string>
+  <string name="WidgetToMinus">Permite mutarea widget-urilor clasice în \"Aplicație Seif\"</string>
   <string name="Yes">Da</string>
   <string name="EnableIconShadow">Arată umbra pictogramelor și reflecția</string>
   <string name="SmallWindow">Permite tuturor aplicațiilor să folosească ferestrele plutitoare</string>
@@ -115,4 +115,7 @@
   <string name="OpenGithub">Click pentru a deschide Github</string>
   <string name="AppCenter">Statistici anonime</string>
   <string name="AppCenterTip">Folosim Microsoft App Center pentru a ne ajuta să testăm/analizăm utilizarea aplicației.</string>
+  <string name="IconTitleTopMargin">Marginea de sus a titlului pictogramelor</string>
+  <string name="OpenLSPosed">Deschide LSPosed</string>
+  <string name="ShortcutCount">Deblocare limită număr de comenzi rapide</string>
 </resources>
