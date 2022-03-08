@@ -200,7 +200,7 @@ object DataHelper {
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.ModuleFeature))))
             add(Item(list = arrayListOf(TextV(resId = R.string.Reboot, onClickListener = { showRestartDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.OpenLSPosed, onClickListener = { openLSPosed() }))))
-            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.BackupModuleSettings)) { (currentActivity as HookSettingsActivity).spBackup.also { it.requestWriteToFile("MiuiHome-Config-${SimpleDateFormat("yyyy/MM/dd-HH:mm:ss").format(Calendar.getInstance().time)}") } })))
+            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.BackupModuleSettings)) { (currentActivity as HookSettingsActivity).spBackup.also { it.requestWriteToFile("MiuiHome-Config-${SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(Calendar.getInstance().time)}") } })))
             add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.RestoreModuleSettings)) { showRestoreModuleSettingsDialog() })))
             add(Item(list = arrayListOf(TextV(resId = R.string.CleanModuleSettings, onClickListener = { showCleanModuleSettingsDialog() }))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AppCenter, summaryResId = R.string.AppCenterTip), SwitchV("appCenter")))))
@@ -212,35 +212,35 @@ object DataHelper {
 
     private fun showRestartDialog() {
         CustomDialog(currentActivity).apply {
-            setTitle(XposedInit.moduleRes.getString(R.string.Reboot))
-            setMessage(XposedInit.moduleRes.getString(R.string.Reboot1))
-            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+            setTitle(R.string.Reboot)
+            setMessage(R.string.Reboot1)
+            setRButton(R.string.Yes) {
                 dismiss()
                 thread {
-                    LogUtil.toast(XposedInit.moduleRes.getString(R.string.Reboot2))
+                    LogUtil.toast(R.string.Reboot2)
                     Thread.sleep(1000)
                     exitProcess(0)
                 }
             }
-            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            setLButton(R.string.Cancel) { dismiss() }
             show()
         }
     }
 
     private fun showCleanModuleSettingsDialog() {
         CustomDialog(currentActivity).apply {
-            setTitle(XposedInit.moduleRes.getString(R.string.CleanModuleSettings))
-            setMessage(XposedInit.moduleRes.getString(R.string.Tips2))
-            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+            setTitle(R.string.CleanModuleSettings)
+            setMessage(R.string.Tips2)
+            setRButton(R.string.Yes) {
                 OwnSP.clear()
                 dismiss()
                 thread {
-                    LogUtil.toast(XposedInit.moduleRes.getString(R.string.Reboot2))
+                    LogUtil.toast(R.string.Reboot2)
                     Thread.sleep(1000)
                     exitProcess(0)
                 }
             }
-            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            setLButton(R.string.Cancel) { dismiss() }
             show()
         }
     }
@@ -260,28 +260,28 @@ object DataHelper {
 
     private fun showResetHorizontalDialog() {
         CustomDialog(currentActivity).apply {
-            setTitle(XposedInit.moduleRes.getString(R.string.Reset2))
-            setMessage(XposedInit.moduleRes.getString(R.string.Tips3))
-            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+            setTitle(R.string.Reset2)
+            setMessage(R.string.Tips3)
+            setRButton(R.string.Yes) {
                 OwnSP.set("task_horizontal1", 1.0f)
                 OwnSP.set("task_horizontal2", 1.0f)
                 dismiss()
                 thread {
-                    LogUtil.toast(XposedInit.moduleRes.getString(R.string.Reboot2))
+                    LogUtil.toast(R.string.Reboot2)
                     Thread.sleep(1000)
                     exitProcess(0)
                 }
             }
-            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            setLButton(R.string.Cancel) { dismiss() }
             show()
         }
     }
 
     private fun showResetDockDialog() {
         CustomDialog(currentActivity).apply {
-            setTitle(XposedInit.moduleRes.getString(R.string.Reset))
-            setMessage(XposedInit.moduleRes.getString(R.string.Tips1))
-            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+            setTitle(R.string.Reset)
+            setMessage(R.string.Tips1)
+            setRButton(R.string.Yes) {
                 OwnSP.set("dockRadius", 2.5f)
                 OwnSP.set("dockHeight", 7.9f)
                 OwnSP.set("dockSide", 3.0f)
@@ -291,27 +291,27 @@ object DataHelper {
                 OwnSP.set("dockMarginBottom", 11.0f)
                 dismiss()
                 thread {
-                    LogUtil.toast(XposedInit.moduleRes.getString(R.string.Reboot2))
+                    LogUtil.toast(R.string.Reboot2)
                     Thread.sleep(1000)
                     exitProcess(0)
                 }
             }
-            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            setLButton(R.string.Cancel) { dismiss() }
             show()
         }
     }
 
     private fun showCustomTitleColorDialog() {
         CustomDialog(currentActivity).apply {
-            setTitle(XposedInit.moduleRes.getString(R.string.CustomTitleColor))
-            setMessage(XposedInit.moduleRes.getString(R.string.Tips4)+ ", ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
+            setTitle(R.string.CustomTitleColor)
+            setMessage("${XposedInit.moduleRes.getString(R.string.Tips4)}, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
             setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getString("iconTitleFontColor", "").toString()}")
-            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+            setRButton(R.string.Yes) {
                 editor.putString("iconTitleFontColor", getEditText())
                 editor.apply()
                 dismiss()
             }
-            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            setLButton(R.string.Cancel) { dismiss() }
             show()
         }
     }
@@ -319,159 +319,159 @@ object DataHelper {
 
     private fun showCustomRecentTextDialog() {
         CustomDialog(currentActivity).apply {
-            setTitle(XposedInit.moduleRes.getString(R.string.CustomRecentText))
-            setMessage(XposedInit.moduleRes.getString(R.string.setRecentString))
+            setTitle(R.string.CustomRecentText)
+            setMessage(R.string.setRecentString)
             setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getString("recentText", "").toString()}")
-            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+            setRButton(R.string.Yes) {
                 editor.putString("recentText", getEditText())
                 editor.apply()
                 dismiss()
             }
-            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            setLButton(R.string.Cancel) { dismiss() }
             show()
         }
     }
 
     private fun showTaskViewAppCardTextSizeDialog() {
         CustomDialog(currentActivity).apply {
-            setTitle(XposedInit.moduleRes.getString(R.string.TaskViewAppCardTextSize))
+            setTitle(R.string.TaskViewAppCardTextSize)
             setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: -1, ${XposedInit.moduleRes.getString(R.string.Recommend)}：-1-30, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
-            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("recentTextSize", -1f).toString()}")
-            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("recentTextSize", -1f)}")
+            setRButton(R.string.Yes) {
                 if (getEditText() == "") editor.putFloat("recentTextSize", -1f)
                 else editor.putFloat("recentTextSize", getEditText().toFloat())
                 editor.apply()
                 dismiss()
             }
-            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            setLButton(R.string.Cancel) { dismiss() }
             show()
         }
     }
 
     private fun showModifyIconTitleTopMarginDialog() {
         CustomDialog(currentActivity).apply {
-            setTitle(XposedInit.moduleRes.getString(R.string.IconTitleTopMargin))
+            setTitle(R.string.IconTitleTopMargin)
             setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: -1, ${XposedInit.moduleRes.getString(R.string.Recommend)}：0-50, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
-            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getInt("titleTopMargin", -1).toString()}")
-            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getInt("titleTopMargin", -1)}")
+            setRButton(R.string.Yes) {
                 if (getEditText() == "") editor.putInt("titleTopMargin", -1)
                 else editor.putInt("titleTopMargin", getEditText().toInt())
                 editor.apply()
                 dismiss()
             }
-            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            setLButton(R.string.Cancel) { dismiss() }
             show()
         }
     }
 
     private fun showAnimationLevelDialog() {
         CustomDialog(currentActivity).apply {
-            setTitle(XposedInit.moduleRes.getString(R.string.AnimationLevel))
+            setTitle(R.string.AnimationLevel)
             setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 1.0, ${XposedInit.moduleRes.getString(R.string.Recommend)}: 0.1-5.0, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
-            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("animationLevel", 1f).toString()}")
-            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("animationLevel", 1f)}")
+            setRButton(R.string.Yes) {
                 if (getEditText() == "") editor.putFloat("animationLevel", 1f)
                 else editor.putFloat("animationLevel", getEditText().toFloat())
                 editor.apply()
                 dismiss()
             }
-            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            setLButton(R.string.Cancel) { dismiss() }
             show()
         }
     }
 
     private fun showRoundCornerDialog() {
         CustomDialog(currentActivity).apply {
-            setTitle(XposedInit.moduleRes.getString(R.string.RoundCorner))
+            setTitle(R.string.RoundCorner)
             setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 20.0, ${XposedInit.moduleRes.getString(R.string.Recommend)}: 0.0-50.0, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
-            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("recents_task_view_rounded_corners_radius", 20f).toString()}")
-            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("recents_task_view_rounded_corners_radius", 20f)}")
+            setRButton(R.string.Yes) {
                 if (getEditText() == "") editor.putFloat("recents_task_view_rounded_corners_radius", 20f)
                 else editor.putFloat("recents_task_view_rounded_corners_radius", getEditText().toFloat())
                 editor.apply()
                 dismiss()
             }
-            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            setLButton(R.string.Cancel) { dismiss() }
             show()
         }
     }
 
     private fun showAppTextSizeDialog() {
         CustomDialog(currentActivity).apply {
-            setTitle(XposedInit.moduleRes.getString(R.string.AppTextSize))
+            setTitle(R.string.AppTextSize)
             setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 40.0, ${XposedInit.moduleRes.getString(R.string.Recommend)}: 0.0-100.0, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
-            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("recents_task_view_header_height", 40f).toString()}")
-            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("recents_task_view_header_height", 40f)}")
+            setRButton(R.string.Yes) {
                 if (getEditText() == "") editor.putFloat("recents_task_view_header_height", 40f)
                 else editor.putFloat("recents_task_view_header_height", getEditText().toFloat())
                 editor.apply()
                 dismiss()
             }
-            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            setLButton(R.string.Cancel) { dismiss() }
             show()
         }
     }
 
     private fun showVerticalTaskViewOfAppCardSizeDialog() {
         CustomDialog(currentActivity).apply {
-            setTitle(XposedInit.moduleRes.getString(R.string.VerticalTaskViewOfAppCardSize))
+            setTitle(R.string.VerticalTaskViewOfAppCardSize)
             setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 1000.0, ${XposedInit.moduleRes.getString(R.string.Recommend)}: 500.0-1500.0, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
-            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("task_vertical", 1000f).toString()}")
-            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("task_vertical", 1000f)}")
+            setRButton(R.string.Yes) {
                 if (getEditText() == "") editor.putFloat("task_vertical", 1000f)
                 else editor.putFloat("task_vertical", getEditText().toFloat())
                 editor.apply()
                 dismiss()
             }
-            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            setLButton(R.string.Cancel) { dismiss() }
             show()
         }
     }
 
     private fun showIconTitleFontSizeDialog() {
         CustomDialog(currentActivity).apply {
-            setTitle(XposedInit.moduleRes.getString(R.string.IconTitleFontSize))
+            setTitle(R.string.IconTitleFontSize)
             setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 12.0, ${XposedInit.moduleRes.getString(R.string.Recommend)}: 0.0-50.0, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
-            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("iconTitleFontSize", 12f).toString()}")
-            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("iconTitleFontSize", 12f)}")
+            setRButton(R.string.Yes) {
                 if (getEditText() == "") editor.putFloat("iconTitleFontSize", 12f)
                 else editor.putFloat("iconTitleFontSize", getEditText().toFloat())
                 editor.apply()
                 dismiss()
             }
-            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            setLButton(R.string.Cancel) { dismiss() }
             show()
         }
     }
 
     private fun showFolderColumnsCountDialog() {
         CustomDialog(currentActivity).apply {
-            setTitle(XposedInit.moduleRes.getString(R.string.FolderColumnsCount))
+            setTitle(R.string.FolderColumnsCount)
             setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 3, ${XposedInit.moduleRes.getString(R.string.Recommend)}: 1-6, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
-            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getInt("folderColumns", 3).toString()}")
-            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getInt("folderColumns", 3)}")
+            setRButton(R.string.Yes) {
                 if (getEditText() == "") editor.putInt("folderColumns", 3)
                 else editor.putInt("folderColumns", getEditText().toInt())
                 editor.apply()
                 dismiss()
             }
-            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            setLButton(R.string.Cancel) { dismiss() }
             show()
         }
     }
 
     private fun showBlurRadiusDialog() {
         CustomDialog(currentActivity).apply {
-            setTitle(XposedInit.moduleRes.getString(R.string.BlurRadius))
+            setTitle(R.string.BlurRadius)
             setMessage("${XposedInit.moduleRes.getString(R.string.Defaults)}: 1.0, ${XposedInit.moduleRes.getString(R.string.Recommend)}: 0.0-2.0, ${XposedInit.moduleRes.getString(R.string.setDefaults)}")
-            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("blurRadius", 1f).toString()}")
-            setRButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+            setEditText("", "${XposedInit.moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getFloat("blurRadius", 1f)}")
+            setRButton(R.string.Yes) {
                 if (getEditText() == "") editor.putFloat("blurRadius", 1f)
                 else editor.putFloat("blurRadius", getEditText().toFloat())
                 editor.apply()
                 dismiss()
             }
-            setLButton(XposedInit.moduleRes.getString(R.string.Cancel)) { dismiss() }
+            setLButton(R.string.Cancel) { dismiss() }
             show()
         }
     }

@@ -79,10 +79,10 @@ class HookSettingsActivity: TransferActivity() {
 
     private fun showFirstUseDialog() {
         CustomDialog(this).apply {
-            setTitle(XposedInit.moduleRes.getString(R.string.Welcome))
-            setMessage(XposedInit.moduleRes.getString(R.string.Tips))
+            setTitle(R.string.Welcome)
+            setMessage(R.string.Tips)
             setCancelable(false)
-            setCButton(XposedInit.moduleRes.getString(R.string.Yes)) {
+            setCButton(R.string.Yes) {
                 OwnSP.clear()
                 OwnSP.set("isFirstUse",false)
                 OwnSP.set("appCenter", true)
@@ -104,7 +104,7 @@ class HookSettingsActivity: TransferActivity() {
                 OwnSP.set("folderColumns", 3)
                 dismiss()
                 thread {
-                    LogUtil.toast(XposedInit.moduleRes.getString(R.string.Reboot2))
+                    LogUtil.toast(R.string.Reboot2)
                     Thread.sleep(1000)
                     exitProcess(0)
                 }

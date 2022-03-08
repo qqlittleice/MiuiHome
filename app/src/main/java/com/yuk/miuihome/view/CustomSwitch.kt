@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.widget.Switch
 import com.yuk.miuihome.utils.ktx.dp2px
-
 import java.lang.reflect.Field
 
 class CustomSwitch(context: Context) : Switch(context) {
