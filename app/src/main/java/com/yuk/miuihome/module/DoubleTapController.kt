@@ -50,6 +50,6 @@ class DoubleTapController internal constructor(mContext: Context) {
     }
 
     fun onDoubleTapEvent() {
-        (OwnSP.ownSP.getBoolean("doubleTap", false))
+        OwnSP.ownSP.getBoolean("doubleTap", false)
     }
 }

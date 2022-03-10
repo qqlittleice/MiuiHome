@@ -98,46 +98,46 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
             }
         }
         DisableLog().init()
-        SetDeviceLevel().init()
-        ModifyBlurLevel().init()
-        EnableSmoothAnimation().init()
-        EnableBlurWhenOpenFolder().init()
-        EnableMamlDownload().init()
-        EnableClockGadget().init()
-        ModifyAnimDurationRatio().init()
-        EnableHideStatusBarWhenEnterRecents().init()
-        EnableSearchBarBlur().init()
-        EnableRecentsViewHorizontal().init()
-        DisableRecentsViewWallpaperDarken().init()
-        ModifyHideWidgetTitles().init()
-        AllowWidgetToMinus().init()
-        AlwaysShowMIUIWidget().init()
-        ModifyTaskVertical().init()
-        ModifyTaskHorizontal().init()
-        EnableSimpleAnimation().init()
-        ModifyInfiniteScroll().init()
-        ResourcesHook().init()
-        ModifyCloseFolderOnLaunch().init()
-        ModifyShowDockIconTitles().init()
-        EnableDockIconShadow().init()
-        AllowAllAppsToUseSmallWindow().init()
-        EnableLowEndDeviceUseMIUIWidgets().init()
-        DisableRecommendServer().init()
-        ModifyHideSeekPoints().init()
-        ModifyCategory().init()
-        ModifyFolderColumnsCount().init()
-        ModifyIconTitleFontSize().init()
-        ModifyDockHook().init()
-        ModifyDoubleTapToSleep().init()
-        ModifyUnlockHotseatIcon().init()
-        HookSystemProperties().init()
-        ModifyAppReturnBlur().init()
-        ModifyBlurRadius().init()
-        ModifyIconTitleFontColor().init()
-        AlwaysBlurWallpaper().init()
-        ModifyRecents().init()
-        ModifyIconTitleTopMargin().init()
-        ModifyShortcutItemCount().init()
+        SetDeviceLevel().init()  // 设置设备分级等
+        ModifyBlurLevel().init()  // 后台模糊级别
+        EnableSmoothAnimation().init()  // 平滑动画
+        EnableBlurWhenOpenFolder().init()  // 文件夹模糊
+        EnableMamlDownload().init()  // 水波纹下载
+        EnableClockGadget().init()  // 时钟常显
+        ModifyAnimDurationRatio().init()  // 手势动画速度
+        EnableHideStatusBarWhenEnterRecents().init()  // 后台隐藏状态栏
+        EnableSearchBarBlur().init()  // 搜索框模糊
+        EnableRecentsViewHorizontal().init()  // 启用横屏后台
+        DisableRecentsViewWallpaperDarken().init()  // 取消壁纸压暗
+        ModifyHideWidgetTitles().init()  // 隐藏小部件标题
+        AllowWidgetToMinus().init()  // 允许安卓小部件移动到负一屏
+        AlwaysShowMIUIWidget().init()  // 在安卓小部件中显示MIUI小部件
+        ModifyTaskVertical().init()  // 平铺后台卡片大小
+        ModifyTaskHorizontal().init()  // 瀑布后台卡片大小
+        EnableSimpleAnimation().init()  // 简单动画
+        ModifyInfiniteScroll().init()  // 桌面无限滚动
+        ModifyCloseFolderOnLaunch().init()  // 自动关闭文件夹
+        ModifyShowDockIconTitles().init()  // 显示底栏应用标题
+        EnableDockIconShadow().init()  // 图标阴影、倒影
+        AllowAllAppsToUseSmallWindow().init()  // 允许所有应用作为小窗使用
+        EnableLowEndDeviceUseMIUIWidgets().init()  // 允许低端机使用MIUI小部件
+        DisableRecommendServer().init() // 文件夹推荐广告
+        ModifyHideSeekPoints().init()  // 隐藏页面指示器
+        ModifyCategory().init()  // 抽屉相关
+        ModifyFolderColumnsCount().init()  // 文件夹排列数
+        ModifyIconTitleFontSize().init()  // 应用标题文本大小
+        ModifyDockHook().init()  // 搜索框 -> 底栏 设置
+        ModifyDoubleTapToSleep().init()  // 双击锁屏
+        ModifyUnlockHotseatIcon().init()  // 解除底栏图标数量限制
+        HookSystemProperties().init()  // Prop相关
+        ModifyAppReturnBlur().init()  // 应用返回模糊
+        ModifyBlurRadius().init()  // 模糊半径
+        ModifyIconTitleFontColor().init()  // 应用标题文本颜色
+        AlwaysBlurWallpaper().init()  // 始终模糊壁纸
+        ModifyRecents().init()  // 后台元素相关
+        ModifyIconTitleTopMargin().init()  // 应用图标与标题距离
+        ModifyShortcutItemCount().init()  // 解除Shortcut数量限制
+        ResourcesHook().init()  //  资源相关
         //CustomHook.init()
     }
 
