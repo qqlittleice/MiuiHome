@@ -1,14 +1,18 @@
 package com.yuk.miuihome.module
 
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.setReturnConstant
+import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 
 class EnableMamlDownload {
 
     fun init() {
         if (OwnSP.ownSP.getBoolean("mamlDownload", false))
-            "com.miui.home.launcher.common.CpuLevelUtils".setReturnConstant("needMamlDownload", result = true)
+            "com.miui.home.launcher.common.CpuLevelUtils".hookBeforeMethod("needMamlDownload") {
+                it.result = true
+            }
         else
-            "com.miui.home.launcher.common.CpuLevelUtils".setReturnConstant("needMamlDownload", result = false)
+            "com.miui.home.launcher.common.CpuLevelUtils".hookBeforeMethod("needMamlDownload") {
+                it.result = false
+            }
     }
 }

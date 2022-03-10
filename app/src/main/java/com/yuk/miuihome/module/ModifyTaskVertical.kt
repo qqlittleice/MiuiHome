@@ -4,10 +4,7 @@ import android.content.Context
 import android.graphics.RectF
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.callMethod
-import com.yuk.miuihome.utils.ktx.callStaticMethod
-import com.yuk.miuihome.utils.ktx.getObjectField
-import com.yuk.miuihome.utils.ktx.replaceMethod
+import com.yuk.miuihome.utils.ktx.*
 
 class ModifyTaskVertical {
 
@@ -17,8 +14,8 @@ class ModifyTaskVertical {
         "com.miui.home.recents.views.TaskStackViewsAlgorithmVertical".replaceMethod("scaleTaskView", RectF::class.java
         ) {
             val context = it.thisObject.getObjectField("mContext") as Context
-            "com.miui.home.recents.util.Utilities".callStaticMethod("scaleRectAboutCenter", it.args[0], "com.miui.home.recents.util.Utilities".callStaticMethod("getTaskViewScale", context))
-            "com.miui.home.recents.util.Utilities".callStaticMethod("scaleRectAboutCenter", it.args[0], value - (context.resources.getDimensionPixelSize(context.resources.getIdentifier("recents_task_view_padding", "dimen", Config.hookPackage)) * value / it.args[0].callMethod("width") as Float))
+            "com.miui.home.recents.util.Utilities".findClass().callStaticMethod("scaleRectAboutCenter", it.args[0], "com.miui.home.recents.util.Utilities".findClass().callStaticMethod("getTaskViewScale", context))
+            "com.miui.home.recents.util.Utilities".findClass().callStaticMethod("scaleRectAboutCenter", it.args[0], value - (context.resources.getDimensionPixelSize(context.resources.getIdentifier("recents_task_view_padding", "dimen", Config.hookPackage)) * value / it.args[0].callMethod("width") as Float))
         }
     }
 }

@@ -13,7 +13,6 @@ import com.yuk.miuihome.utils.Config.DrawableNameNewList
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.hookLayout
-import com.yuk.miuihome.utils.ktx.setTryReplacement
 import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResourcesParam
 import kotlin.concurrent.thread
 
@@ -37,7 +36,7 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
     }
 
     private fun resetDockRadius(context: Context, drawableName: String) {
-        hookedRes.res.setTryReplacement(Config.hookPackage, "drawable", drawableName, object : XResources.DrawableLoader() {
+        hookedRes.res.setReplacement(Config.hookPackage, "drawable", drawableName, object : XResources.DrawableLoader() {
             @SuppressLint("UseCompatLoadingForDrawables")
             override fun newDrawable(xres: XResources, id: Int): Drawable {
                 val drawable = context.getDrawable(xres.getIdentifier(drawableName, "drawable", Config.hookPackage))

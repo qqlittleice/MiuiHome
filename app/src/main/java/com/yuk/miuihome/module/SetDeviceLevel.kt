@@ -1,20 +1,35 @@
 package com.yuk.miuihome.module
 
 import com.yuk.miuihome.utils.LogUtil
-import com.yuk.miuihome.utils.ktx.setReturnConstant
+import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 
 class SetDeviceLevel : BaseClassAndMethodCheck {
 
     fun init() {
         try {
-            "com.miui.home.launcher.common.DeviceLevelUtils".setReturnConstant("getDeviceLevel", result = 2)
-            "com.miui.home.launcher.common.CpuLevelUtils".setReturnConstant("getQualcommCpuLevel", String::class.java, result = 2)
-            "com.miui.home.launcher.DeviceConfig".setReturnConstant("isSupportCompleteAnimation", result = true)
-            "com.miui.home.launcher.common.DeviceLevelUtils".setReturnConstant("isLowLevelOrLiteDevice", result = false)
-            "com.miui.home.launcher.DeviceConfig".setReturnConstant("isDefaultIcon", result = true)
-            "com.miui.home.launcher.DeviceConfig".setReturnConstant("isMiuiLiteVersion", result = false)
+            "com.miui.home.launcher.common.DeviceLevelUtils".hookBeforeMethod("getDeviceLevel") {
+                it.result = 2
+            }
+            "com.miui.home.launcher.common.CpuLevelUtils".hookBeforeMethod(
+                "getQualcommCpuLevel",
+                String::class.java
+            ) { it.result = 2 }
+            "com.miui.home.launcher.DeviceConfig".hookBeforeMethod("isSupportCompleteAnimation") {
+                it.result = true
+            }
+            "com.miui.home.launcher.common.DeviceLevelUtils".hookBeforeMethod("isLowLevelOrLiteDevice") {
+                it.result = false
+            }
+            "com.miui.home.launcher.DeviceConfig".hookBeforeMethod("isDefaultIcon") {
+                it.result = true
+            }
+            "com.miui.home.launcher.DeviceConfig".hookBeforeMethod("isMiuiLiteVersion") {
+                it.result = false
+            }
             runWithChecked {
-                "com.miui.home.launcher.util.noword.NoWordSettingHelperKt".setReturnConstant("isNoWordAvailable", result = true)
+                "com.miui.home.launcher.util.noword.NoWordSettingHelperKt".hookBeforeMethod("isNoWordAvailable") {
+                    it.result = true
+                }
             }
         } catch (e: Throwable) {
             LogUtil.e(e)

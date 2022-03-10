@@ -8,20 +8,24 @@ import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.callStaticMethod
 import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
-import com.yuk.miuihome.utils.ktx.setReturnConstant
+import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 
 class EnableBlurWhenOpenFolder {
 
     fun init() {
             if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                 if (XposedInit().checkIsAlpha()) {
-                    "com.miui.home.launcher.common.BlurUtils".setReturnConstant("isUserBlurWhenOpenFolder", result = false)
+                    "com.miui.home.launcher.common.BlurUtils".hookBeforeMethod("isUserBlurWhenOpenFolder") {
+                        it.result = false
+                    }
                 }
             }
             else {
                 if (OwnSP.ownSP.getBoolean("blurWhenOpenFolder", false)) {
                     if (XposedInit().checkIsAlpha()) {
-                        "com.miui.home.launcher.common.BlurUtils".setReturnConstant("isUserBlurWhenOpenFolder", result = true)
+                        "com.miui.home.launcher.common.BlurUtils".hookBeforeMethod("isUserBlurWhenOpenFolder") {
+                            it.result = true
+                        }
                     }
                     else {
                         val blurClass = "com.miui.home.launcher.common.BlurUtils".findClass()
@@ -42,7 +46,9 @@ class EnableBlurWhenOpenFolder {
                     }
                 } else {
                     if (XposedInit().checkIsAlpha())
-                        "com.miui.home.launcher.common.BlurUtils".setReturnConstant("isUserBlurWhenOpenFolder", result = false)
+                        "com.miui.home.launcher.common.BlurUtils".hookBeforeMethod("isUserBlurWhenOpenFolder") {
+                            it.result = false
+                        }
                 }
             }
     }
