@@ -13,7 +13,6 @@
   <string name="BackupModuleSettings">Crea un backup delle impostazioni</string>
   <string name="RestoreModuleSettings">Ripristina backup delle impostazioni</string>
   <string name="RestoreModuleSettingsTips">Questo resetterà tutte le impostazioni del modulo e le ripristinerà da un file. Dopo questo il launcher verrà riavviato.</string>
-  <string name="Close">Chiudi</string>
   <string name="CloseFolder">Chiudi la cartella dopo aver aperto un\'app all\'interno</string>
   <string name="CompleteBlur">Sfocatura completa</string>
   <string name="Defaults">Predefinito</string>
