@@ -84,6 +84,7 @@ and if you want to translate it into a new language, please place it in the appr
 - [MIUltra](https://github.com/lamprose/MIUltra)
 - [QNotified](https://github.com/ferredoxin/QNotified)
 - [XposedBridge](https://github.com/rovo89/XposedBridge)
+- [EzXHelper](https://github.com/KyuubiRan/EzXHelper)
 </details>
 
 ## Screenshot

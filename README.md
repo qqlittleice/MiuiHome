@@ -79,6 +79,7 @@ __新仓库：[qqlittleice/MiuiHome](https://github.com/qqlittleice/MiuiHome)__
 - [MIUltra](https://github.com/lamprose/MIUltra)
 - [QNotified](https://github.com/ferredoxin/QNotified)
 - [XposedBridge](https://github.com/rovo89/XposedBridge)
+- [EzXHelper](https://github.com/KyuubiRan/EzXHelper)
 </details>
 
 ## 屏幕截图
