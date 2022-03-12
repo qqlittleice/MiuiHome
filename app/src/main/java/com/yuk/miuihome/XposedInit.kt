@@ -9,6 +9,7 @@ import android.content.res.Resources
 import android.content.res.XModuleResources
 import android.os.Bundle
 import android.view.View
+import com.github.kyuubiran.ezxhelper.init.EzXHelperInit
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.AbstractCrashesListener
@@ -42,7 +43,9 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
             Config.hookPackage -> {
                 Application::class.java.hookBeforeMethod("attach", Context::class.java
                 ) {
+                    EzXHelperInit.initHandleLoadPackage(lpparam)
                     HomeContext.context = it.args[0] as Context
+                    EzXHelperInit.initAppContext(HomeContext.context)
                     HomeContext.classLoader = HomeContext.context.classLoader
                     HomeContext.application = it.thisObject as Application
                     CrashRecord.init(HomeContext.context)
