@@ -2,19 +2,24 @@ package com.yuk.miuihome.view
 
 import android.app.Dialog
 import android.content.Context
+import android.content.res.Resources
 import android.os.Build
+import android.util.DisplayMetrics
 import android.view.*
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.yuk.miuihome.R
+import com.yuk.miuihome.utils.ktx.dp2px
+import de.robv.android.xposed.XposedBridge
+
 
 class CustomDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
     var view: View
 
     init {
-        window!!.setGravity(Gravity.BOTTOM)
+        window!!.setGravity(Gravity.CENTER)
         view = createView(context, R.layout.dialog_layout)
     }
 
@@ -150,10 +155,14 @@ class CustomDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
 
     override fun show() {
         super.show()
+        val resources: Resources = window!!.context.resources
+        val dm: DisplayMetrics = resources.displayMetrics
+        val width = dm.widthPixels
+        val density = dm.density
+        val dp = width / density
         val lp = window!!.attributes
         lp.dimAmount = 0.3f
-        lp.width = WindowManager.LayoutParams.MATCH_PARENT
-        lp.height = WindowManager.LayoutParams.WRAP_CONTENT
+        lp.width = if (dp <= 440) dp2px(360f) else dp2px(400f)
         window!!.attributes = lp
     }
 }
