@@ -12,15 +12,27 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.ktx.dp2px
-import de.robv.android.xposed.XposedBridge
-
 
 class CustomDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
     var view: View
 
     init {
-        window!!.setGravity(Gravity.CENTER)
-        view = createView(context, R.layout.dialog_layout)
+
+        val resources: Resources = window!!.context.resources
+        val dm: DisplayMetrics = resources.displayMetrics
+        val width = dm.widthPixels
+        val density = dm.density
+        val dp = width / density
+        if (dp > 440) {
+            view = createView(context, R.layout.dialog_pad_layout)
+            window!!.attributes.width = dp2px(380f)
+            window!!.setGravity(Gravity.CENTER)
+        }
+        else {
+            view = createView(context, R.layout.dialog_layout)
+            window!!.attributes.width = WindowManager.LayoutParams.MATCH_PARENT
+            window!!.setGravity(Gravity.BOTTOM)
+        }
     }
 
     private fun createView(context: Context, dialog_layout: Int): View {
@@ -155,14 +167,6 @@ class CustomDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
 
     override fun show() {
         super.show()
-        val resources: Resources = window!!.context.resources
-        val dm: DisplayMetrics = resources.displayMetrics
-        val width = dm.widthPixels
-        val density = dm.density
-        val dp = width / density
-        val lp = window!!.attributes
-        lp.dimAmount = 0.3f
-        lp.width = if (dp <= 440) dp2px(360f) else dp2px(400f)
-        window!!.attributes = lp
+        window!!.attributes.dimAmount = 0.3f
     }
 }
