@@ -10,10 +10,9 @@ class SetDeviceLevel : BaseClassAndMethodCheck {
             "com.miui.home.launcher.common.DeviceLevelUtils".hookBeforeMethod("getDeviceLevel") {
                 it.result = 2
             }
-            "com.miui.home.launcher.common.CpuLevelUtils".hookBeforeMethod(
-                "getQualcommCpuLevel",
-                String::class.java
-            ) { it.result = 2 }
+            "com.miui.home.launcher.common.CpuLevelUtils".hookBeforeMethod("getQualcommCpuLevel", String::class.java) {
+                it.result = 2
+            }
             "com.miui.home.launcher.DeviceConfig".hookBeforeMethod("isSupportCompleteAnimation") {
                 it.result = true
             }

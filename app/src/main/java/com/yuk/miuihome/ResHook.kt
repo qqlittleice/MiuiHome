@@ -7,6 +7,7 @@ import android.content.res.XResources
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.RippleDrawable
+import com.github.kyuubiran.ezxhelper.init.InitFields.modulePath
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.Config.DrawableNameList
 import com.yuk.miuihome.utils.Config.DrawableNameNewList
@@ -18,11 +19,10 @@ import kotlin.concurrent.thread
 
 class ResHook(private val hookedRes: InitPackageResourcesParam) {
 
-    private val modRes = XModuleResources.createInstance(XposedInit.modulePath, hookedRes.res)
+    private val modRes = XModuleResources.createInstance(modulePath, hookedRes.res)
     private fun getResId(type: String, name: String): Int = modRes.getIdentifier(name, type, Config.packageName)
 
     companion object { private var hasLoad = false }
-
     fun init() {
         thread {
             if (!hasLoad) Thread.sleep(400)
@@ -39,16 +39,11 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
         hookedRes.res.setReplacement(Config.hookPackage, "drawable", drawableName, object : XResources.DrawableLoader() {
             @SuppressLint("UseCompatLoadingForDrawables")
             override fun newDrawable(xres: XResources, id: Int): Drawable {
-                val drawable = context.getDrawable(xres.getIdentifier(drawableName, "drawable", Config.hookPackage))
-                val background = when (drawable) {
-                    is RippleDrawable -> drawable.getDrawable(0) as GradientDrawable
-                    else -> drawable as GradientDrawable
-                }
-                background.cornerRadius = dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat()
-                background.setStroke(0, 0)
-                when (drawable) {
-                    is RippleDrawable -> drawable.setDrawable(0, background)
-                }
+                val background = context.getDrawable(xres.getIdentifier(drawableName, "drawable", Config.hookPackage)) as RippleDrawable
+                val backgroundShape = background.getDrawable(0) as GradientDrawable
+                backgroundShape.cornerRadius = dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat()
+                backgroundShape.setStroke(0, 0)
+                background.setDrawable(0, backgroundShape)
                 return background
             }
         })

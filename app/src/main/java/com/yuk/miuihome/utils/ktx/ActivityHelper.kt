@@ -14,6 +14,7 @@ import android.content.pm.ActivityInfo
 import android.os.*
 import android.view.KeyEvent
 import android.view.MotionEvent
+import com.github.kyuubiran.ezxhelper.init.InitFields.modulePath
 import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.HomeContext
@@ -314,7 +315,7 @@ class MyInstrumentation(private val mBase: Instrumentation) : Instrumentation() 
         if (clzName.startsWith(Config.packageName)) {
             val assets = activity.resources.assets
             val method = assets.javaClass.getDeclaredMethod("addAssetPath", String::class.java)
-            method.invoke(assets, XposedInit.modulePath)
+            method.invoke(assets, modulePath)
         }
     }
 

@@ -3,7 +3,7 @@ package com.yuk.miuihome.utils
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
-import com.yuk.miuihome.XposedInit
+import com.github.kyuubiran.ezxhelper.init.InitFields.moduleRes
 import com.yuk.miuihome.utils.Config.TAG
 import de.robv.android.xposed.XposedBridge
 import android.util.Log as ALog
@@ -23,7 +23,7 @@ object LogUtil {
     fun toast(msg: Int, force: Boolean = true) {
         if (!force && !OwnSP.ownSP.getBoolean("showLogToast", false)) return
         handler.post {
-            Toast.makeText(HomeContext.context, XposedInit.moduleRes.getString(msg), Toast.LENGTH_SHORT).show()
+            Toast.makeText(HomeContext.context, moduleRes.getString(msg), Toast.LENGTH_SHORT).show()
         }
     }
 

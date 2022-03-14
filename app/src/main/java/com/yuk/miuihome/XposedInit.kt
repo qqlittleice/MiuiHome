@@ -10,6 +10,7 @@ import android.content.res.XModuleResources
 import android.os.Bundle
 import android.view.View
 import com.github.kyuubiran.ezxhelper.init.EzXHelperInit
+import com.github.kyuubiran.ezxhelper.init.InitFields.moduleRes
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.AbstractCrashesListener
@@ -28,14 +29,11 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage
 
 class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookInitPackageResources {
     companion object {
-        lateinit var modulePath: String
-        lateinit var moduleRes: Resources
         var hasHookPackageResources = false
     }
 
     override fun initZygote(startupParam: IXposedHookZygoteInit.StartupParam) {
-        modulePath = startupParam.modulePath
-        moduleRes = getModuleRes(modulePath)
+        EzXHelperInit.initZygote(startupParam)
     }
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
