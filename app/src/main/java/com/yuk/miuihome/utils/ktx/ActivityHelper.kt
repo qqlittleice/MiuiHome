@@ -15,10 +15,10 @@ import android.os.*
 import android.view.KeyEvent
 import android.view.MotionEvent
 import com.github.kyuubiran.ezxhelper.init.InitFields.modulePath
+import com.github.kyuubiran.ezxhelper.utils.Log
 import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.HomeContext
-import com.yuk.miuihome.utils.LogUtil
 import java.lang.reflect.*
 
 object ActivityHelper {
@@ -44,8 +44,8 @@ object ActivityHelper {
                     cActivityManager = Class.forName("android.app.ActivityManager")
                     fgDefault = cActivityManager.getStaticFiledByClass("IActivityManagerSingleton")
                 } catch (e2: Exception) {
-                    LogUtil.e(e1)
-                    LogUtil.e(e2)
+                    Log.e(e1)
+                    Log.e(e2)
                     return
                 }
             }
@@ -74,7 +74,7 @@ object ActivityHelper {
             } catch (ignored: Exception) {
             }
         } catch (e: Exception) {
-            LogUtil.e(e)
+            Log.ex(e)
         }
     }
 
@@ -114,7 +114,6 @@ class MyInstrumentation(private val mBase: Instrumentation) : Instrumentation() 
         mBase.sendStatus(resultCode, results)
     }
 
-    @TargetApi(Build.VERSION_CODES.O)
     override fun addResults(results: Bundle?) {
         mBase.addResults(results)
     }
@@ -151,7 +150,6 @@ class MyInstrumentation(private val mBase: Instrumentation) : Instrumentation() 
         return mBase.targetContext
     }
 
-    @TargetApi(Build.VERSION_CODES.O)
     override fun getProcessName(): String {
         return mBase.processName
     }
@@ -188,7 +186,6 @@ class MyInstrumentation(private val mBase: Instrumentation) : Instrumentation() 
         return mBase.startActivitySync(intent)
     }
 
-    @TargetApi(Build.VERSION_CODES.P)
     override fun startActivitySync(intent: Intent, options: Bundle?): Activity {
         return mBase.startActivitySync(intent, options)
     }
@@ -431,12 +428,10 @@ class MyInstrumentation(private val mBase: Instrumentation) : Instrumentation() 
         return mBase.uiAutomation
     }
 
-    @TargetApi(Build.VERSION_CODES.N)
     override fun getUiAutomation(flags: Int): UiAutomation {
         return mBase.getUiAutomation(flags)
     }
 
-    @TargetApi(Build.VERSION_CODES.O)
     override fun acquireLooperManager(looper: Looper?): TestLooperManager {
         return mBase.acquireLooperManager(looper)
     }
@@ -457,7 +452,7 @@ class MyHandler(private val mDefault: Handler.Callback?) : Handler.Callback {
                         val fExtras = Intent::class.java.getFieldByClassOrObject("mExtras")
                         bundle = fExtras.get(intent) as Bundle?
                     } catch (e: Exception) {
-                        LogUtil.e(e)
+                        Log.ex(e)
                     }
                     //设置
                     bundle?.let {
@@ -468,7 +463,7 @@ class MyHandler(private val mDefault: Handler.Callback?) : Handler.Callback {
                         }
                     }
                 } catch (e: Exception) {
-                    LogUtil.e(e)
+                    Log.ex(e)
                 }
             }
             159 -> {
@@ -491,7 +486,7 @@ class MyHandler(private val mDefault: Handler.Callback?) : Handler.Callback {
                                         val fExtras = Intent::class.java.getFieldByClassOrObject("mExtras")
                                         bundle = fExtras.get(wrapper) as Bundle?
                                     } catch (e: Exception) {
-                                        LogUtil.e(e)
+                                        Log.ex(e)
                                     }
                                     //设置
                                     bundle?.let {
@@ -518,7 +513,7 @@ class MyHandler(private val mDefault: Handler.Callback?) : Handler.Callback {
                         }
                     }
                 } catch (e: Exception) {
-                    LogUtil.e(e)
+                    Log.ex(e)
                 }
             }
         }

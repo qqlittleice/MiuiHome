@@ -4,8 +4,8 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
+import com.github.kyuubiran.ezxhelper.utils.Log
 import com.yuk.miuihome.utils.HomeContext
-import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
 import de.robv.android.xposed.XposedHelpers
@@ -77,7 +77,7 @@ class ModifyDockHook {
                 searchBarDrawer.layoutParams = layoutParams
             }
         } catch (e: XposedHelpers.ClassNotFoundError) {
-            LogUtil.e(e)
+            Log.ex(e)
         }
     }
 }

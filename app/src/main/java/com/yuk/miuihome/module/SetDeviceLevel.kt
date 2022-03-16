@@ -1,6 +1,6 @@
 package com.yuk.miuihome.module
 
-import com.yuk.miuihome.utils.LogUtil
+import com.github.kyuubiran.ezxhelper.utils.Log
 import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 
 class SetDeviceLevel : BaseClassAndMethodCheck {
@@ -31,7 +31,7 @@ class SetDeviceLevel : BaseClassAndMethodCheck {
                 }
             }
         } catch (e: Throwable) {
-            LogUtil.e(e)
+            Log.ex(e)
         }
     }
 

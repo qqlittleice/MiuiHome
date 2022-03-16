@@ -5,8 +5,6 @@ import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.content.Intent
-import android.content.res.Resources
-import android.content.res.XModuleResources
 import android.os.Bundle
 import android.view.View
 import com.github.kyuubiran.ezxhelper.init.EzXHelperInit
@@ -68,15 +66,12 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         }
     }
 
-    override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam) {
+    override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam
+    ) {
         if (resparam.packageName != Config.hookPackage) return
         hasHookPackageResources = true
         ResHook(resparam).init()
         if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: Resources hook success")
-    }
-
-    private fun getModuleRes(path: String): Resources {
-        return XModuleResources.createInstance(path, null)
     }
 
     private fun doHook() {
@@ -139,7 +134,6 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         ModifyIconTitleTopMargin().init()  // 应用图标与标题距离
         ModifyShortcutItemCount().init()  // 解除Shortcut数量限制
         ResourcesHook().init()  //  资源相关
-        //CustomHook.init()
     }
 
     private fun startAppCenter() {

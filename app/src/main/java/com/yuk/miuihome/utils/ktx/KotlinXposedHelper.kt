@@ -3,8 +3,8 @@
 package com.yuk.miuihome.utils.ktx
 
 import android.content.res.XResources
+import com.github.kyuubiran.ezxhelper.utils.Log
 import com.yuk.miuihome.utils.HomeContext
-import com.yuk.miuihome.utils.LogUtil
 import dalvik.system.BaseDexClassLoader
 import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XC_MethodHook.MethodHookParam
@@ -24,35 +24,35 @@ typealias Hooker = (MethodHookParam) -> Unit
 fun Class<*>.hookMethod(method: String?, vararg args: Any?) = try {
     findAndHookMethod(this, method, *args)
 } catch (e: NoSuchMethodError) {
-    LogUtil.e(e)
+    Log.ex(e)
     null
 } catch (e: ClassNotFoundError) {
-    LogUtil.e(e)
+    Log.ex(e)
     null
 } catch (e: ClassNotFoundException) {
-    LogUtil.e(e)
+    Log.ex(e)
     null
 }
 
 fun Member.hookMethod(callback: XC_MethodHook) = try {
     hookMethod(this, callback)
 } catch (e: Throwable) {
-    LogUtil.e(e)
+    Log.ex(e)
     null
 }
 
 inline fun MethodHookParam.callHooker(crossinline hooker: Hooker) = try {
     hooker(this)
 } catch (e: Throwable) {
-    LogUtil.e("Error occurred calling hooker on ${this.method}")
-    LogUtil.e(e)
+    Log.ex("Error occurred calling hooker on ${this.method}")
+    Log.ex(e)
 }
 
 inline fun MethodHookParam.callReplacer(crossinline replacer: Replacer) = try {
     replacer(this)
 } catch (e: Throwable) {
-    LogUtil.e("Error occurred calling replacer on ${this.method}")
-    LogUtil.e(e)
+    Log.ex("Error occurred calling replacer on ${this.method}")
+    Log.ex(e)
     null
 }
 
@@ -99,13 +99,13 @@ fun Class<*>.hookAllMethods(methodName: String?, hooker: XC_MethodHook): Set<XC_
     try {
         hookAllMethods(this, methodName, hooker)
     } catch (e: NoSuchMethodError) {
-        LogUtil.e(e)
+        Log.ex(e)
         emptySet()
     } catch (e: ClassNotFoundError) {
-        LogUtil.e(e)
+        Log.ex(e)
         emptySet()
     } catch (e: ClassNotFoundException) {
-        LogUtil.e(e)
+        Log.ex(e)
         emptySet()
     }
 
@@ -128,13 +128,13 @@ inline fun Class<*>.replaceAfterAllMethods(methodName: String?, crossinline repl
 fun Class<*>.hookConstructor(vararg args: Any?) = try {
     findAndHookConstructor(this, *args)
 } catch (e: NoSuchMethodError) {
-    LogUtil.e(e)
+    Log.ex(e)
     null
 } catch (e: ClassNotFoundError) {
-    LogUtil.e(e)
+    Log.ex(e)
     null
 } catch (e: ClassNotFoundException) {
-    LogUtil.e(e)
+    Log.ex(e)
     null
 }
 
@@ -156,13 +156,13 @@ inline fun Class<*>.replaceConstructor(vararg args: Any?, crossinline hooker: Ho
 fun Class<*>.hookAllConstructors(hooker: XC_MethodHook): Set<XC_MethodHook.Unhook> = try {
     hookAllConstructors(this, hooker)
 } catch (e: NoSuchMethodError) {
-    LogUtil.e(e)
+    Log.ex(e)
     emptySet()
 } catch (e: ClassNotFoundError) {
-    LogUtil.e(e)
+    Log.ex(e)
     emptySet()
 } catch (e: ClassNotFoundException) {
-    LogUtil.e(e)
+    Log.ex(e)
     emptySet()
 }
 
@@ -184,10 +184,10 @@ inline fun Class<*>.replaceAfterAllConstructors(crossinline hooker: Hooker) =
 fun String.hookMethod(method: String?, vararg args: Any?) = try {
     findClass().hookMethod(method, *args)
 } catch (e: ClassNotFoundError) {
-    LogUtil.e(e)
+    Log.ex(e)
     null
 } catch (e: ClassNotFoundException) {
-    LogUtil.e(e)
+    Log.ex(e)
     null
 }
 
@@ -198,10 +198,10 @@ inline fun String.hookBeforeMethod(
 ) = try {
     findClass().hookBeforeMethod(method, *args, hooker = hooker)
 } catch (e: ClassNotFoundError) {
-    LogUtil.e(e)
+    Log.ex(e)
     null
 } catch (e: ClassNotFoundException) {
-    LogUtil.e(e)
+    Log.ex(e)
     null
 }
 
@@ -212,10 +212,10 @@ inline fun String.hookAfterMethod(
 ) = try {
     findClass().hookAfterMethod(method, *args, hooker = hooker)
 } catch (e: ClassNotFoundError) {
-    LogUtil.e(e)
+    Log.ex(e)
     null
 } catch (e: ClassNotFoundException) {
-    LogUtil.e(e)
+    Log.ex(e)
     null
 }
 
@@ -226,10 +226,10 @@ inline fun String.replaceMethod(
 ) = try {
     findClass().replaceMethod(method, *args, replacer = replacer)
 } catch (e: ClassNotFoundError) {
-    LogUtil.e(e)
+    Log.ex(e)
     null
 } catch (e: ClassNotFoundException) {
-    LogUtil.e(e)
+    Log.ex(e)
     null
 }
 
@@ -407,12 +407,12 @@ inline fun XResources.hookLayout(
                 try {
                     hooker(liparam)
                 } catch (e: Throwable) {
-                    LogUtil.e(e)
+                    Log.ex(e)
                 }
             }
         })
     } catch (e: Throwable) {
-        LogUtil.e(e)
+        Log.ex(e)
     }
 }
 
@@ -426,7 +426,7 @@ inline fun XResources.hookLayout(
         val id = getIdentifier(name, type, pkg)
         hookLayout(id, hooker)
     } catch (e: Throwable) {
-        LogUtil.e(e)
+        Log.ex(e)
     }
 }
 

@@ -5,8 +5,8 @@ import android.graphics.Color
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.github.kyuubiran.ezxhelper.utils.Log
 import com.yuk.miuihome.utils.Config
-import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.callMethod
 import com.yuk.miuihome.utils.ktx.findClass
@@ -60,7 +60,7 @@ class ModifyIconTitleFontColor {
                     mTitle.setTextColor(Color.parseColor(value))
             }
         } catch (e: Throwable) {
-            LogUtil.e(e)
+            Log.ex(e)
         }
     }
 }

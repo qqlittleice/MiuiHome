@@ -12,17 +12,13 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.ktx.dp2px
+import com.yuk.miuihome.utils.ktx.getDensityDpi
 
 class CustomDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
     var view: View
 
     init {
-        val resources: Resources = window!!.context.resources
-        val dm: DisplayMetrics = resources.displayMetrics
-        val width = dm.widthPixels
-        val density = dm.density
-        val dp = width / density
-        if (dp > 440) {
+        if (getDensityDpi() > 440) {
             view = createView(context, R.layout.dialog_pad_layout)
             window!!.attributes.width = dp2px(380f)
             window!!.setGravity(Gravity.CENTER)

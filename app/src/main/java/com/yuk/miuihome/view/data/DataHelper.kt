@@ -7,13 +7,13 @@ import android.graphics.Color
 import android.graphics.Typeface
 import android.net.Uri
 import com.github.kyuubiran.ezxhelper.init.InitFields.moduleRes
+import com.github.kyuubiran.ezxhelper.utils.Log
 import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.module.BuildWithEverything
 import com.yuk.miuihome.module.ModifyBlurLevel
 import com.yuk.miuihome.utils.Config
-import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.view.CustomDialog
 import com.yuk.miuihome.view.HookSettingsActivity
@@ -218,7 +218,7 @@ object DataHelper {
             setRButton(R.string.Yes) {
                 dismiss()
                 thread {
-                    LogUtil.toast(R.string.Reboot2)
+                    Log.toast(currentActivity.getString(R.string.Reboot2))
                     Thread.sleep(1000)
                     exitProcess(0)
                 }
@@ -236,7 +236,7 @@ object DataHelper {
                 OwnSP.clear()
                 dismiss()
                 thread {
-                    LogUtil.toast(R.string.Reboot2)
+                    Log.toast(currentActivity.getString(R.string.Reboot2))
                     Thread.sleep(1000)
                     exitProcess(0)
                 }
@@ -268,7 +268,7 @@ object DataHelper {
                 OwnSP.set("task_horizontal2", 1.0f)
                 dismiss()
                 thread {
-                    LogUtil.toast(R.string.Reboot2)
+                    Log.toast(currentActivity.getString(R.string.Reboot2))
                     Thread.sleep(1000)
                     exitProcess(0)
                 }
@@ -292,7 +292,7 @@ object DataHelper {
                 OwnSP.set("dockMarginBottom", 11.0f)
                 dismiss()
                 thread {
-                    LogUtil.toast(R.string.Reboot2)
+                    Log.toast(currentActivity.getString(R.string.Reboot2))
                     Thread.sleep(1000)
                     exitProcess(0)
                 }

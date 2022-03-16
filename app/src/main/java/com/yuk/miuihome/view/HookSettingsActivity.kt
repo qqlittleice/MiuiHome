@@ -2,16 +2,14 @@ package com.yuk.miuihome.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.DisplayMetrics
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.github.kyuubiran.ezxhelper.utils.Log
 import com.yuk.miuihome.R
-import com.yuk.miuihome.utils.HomeContext
-import com.yuk.miuihome.utils.LogUtil
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.SPBackup
 import com.yuk.miuihome.utils.ktx.dp2px
@@ -70,12 +68,6 @@ class HookSettingsActivity: TransferActivity() {
         else super.onBackPressed()
     }
 
-    fun getDensityDpi(): Int {
-        val dm = DisplayMetrics()
-        HomeContext.Activity.windowManager.defaultDisplay.getMetrics(dm)
-        return (dm.density * 160).toInt()
-    }
-
     private fun showFirstUseDialog() {
         CustomDialog(this).apply {
             setTitle(R.string.Welcome)
@@ -103,7 +95,7 @@ class HookSettingsActivity: TransferActivity() {
                 OwnSP.set("folderColumns", 3)
                 dismiss()
                 thread {
-                    LogUtil.toast(R.string.Reboot2)
+                    Log.toast(msg = DataHelper.currentActivity.getString(R.string.Reboot2))
                     Thread.sleep(1000)
                     exitProcess(0)
                 }
