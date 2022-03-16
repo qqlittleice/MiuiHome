@@ -15,7 +15,7 @@ object CrashRecord : Thread.UncaughtExceptionHandler {
         mContext = context
         mDefaultHandler = Thread.getDefaultUncaughtExceptionHandler()
         Thread.setDefaultUncaughtExceptionHandler(this)
-        XposedBridge.log("MiuiHome: CrashRecord Loaded")
+        if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: CrashRecord Loaded")
     }
 
     override fun uncaughtException(p0: Thread, p1: Throwable) {

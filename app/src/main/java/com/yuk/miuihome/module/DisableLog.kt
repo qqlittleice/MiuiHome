@@ -1,8 +1,10 @@
 package com.yuk.miuihome.module
 
+import com.github.kyuubiran.ezxhelper.utils.Log
 import com.yuk.miuihome.XposedInit
+import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.ktx.hookBeforeMethod
-import de.robv.android.xposed.XposedBridge
+import com.yuk.miuihome.utils.ktx.replaceMethod
 
 class DisableLog {
 
@@ -14,18 +16,18 @@ class DisableLog {
             ) {
                 it.result = false
             }
-            "com.miui.home.launcher.MiuiHomeLog".hookBeforeMethod(
+            "com.miui.home.launcher.MiuiHomeLog".findClass().replaceMethod(
                 "log",
                 String::class.java,
                 String::class.java
             ) {
-                it.result = null
+                return@replaceMethod null
             }
             "com.xiaomi.onetrack.OneTrack".hookBeforeMethod("isDisable") {
                 it.result = true
             }
         } catch (e: Throwable) {
-            XposedBridge.log(e)
+            Log.ex(e)
         }
     }
 }
