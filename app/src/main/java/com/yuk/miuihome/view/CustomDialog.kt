@@ -17,7 +17,6 @@ class CustomDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
     var view: View
 
     init {
-
         val resources: Resources = window!!.context.resources
         val dm: DisplayMetrics = resources.displayMetrics
         val width = dm.widthPixels
@@ -166,7 +165,9 @@ class CustomDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
     fun getEditText(): String = view.findViewById<EditText>(R.id.EditText).text.toString()
 
     override fun show() {
+        val lp = window!!.attributes
+        lp.dimAmount = 0.3f
+        window!!.attributes = lp
         super.show()
-        window!!.attributes.dimAmount = 0.3f
     }
 }

@@ -26,7 +26,6 @@ class ModifyDoubleTapToSleep {
             val cellLayout = it.thisObject.callMethod("getCellLayout", mCurrentScreenIndex)
             if (cellLayout != null) if (cellLayout.callMethod("lastDownOnOccupiedCell") as Boolean) return@hookBeforeMethod
             if (it.thisObject.callMethod("isInNormalEditingMode") as Boolean) return@hookBeforeMethod
-            mDoubleTapControllerEx.onDoubleTapEvent()
             val context = it.thisObject.callMethod("getContext") as Context
             context.sendBroadcast(Intent("com.miui.app.ExtraStatusBarManager.action_TRIGGER_TOGGLE").putExtra("com.miui.app.ExtraStatusBarManager.extra_TOGGLE_ID", 10))
         }
