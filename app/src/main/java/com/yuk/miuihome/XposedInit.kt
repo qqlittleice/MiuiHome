@@ -1,6 +1,5 @@
 package com.yuk.miuihome
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Application
 import android.content.Context
@@ -200,11 +199,5 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
             if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: Not widget version launcher")
             false
         }
-    }
-
-    @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
-    @SuppressLint("PrivateApi")
-    fun getProp(key: String): String {
-        return Class.forName("android.os.SystemProperties").getMethod("get", String::class.java).invoke(Class.forName("android.os.SystemProperties"), key).toString()
     }
 }
