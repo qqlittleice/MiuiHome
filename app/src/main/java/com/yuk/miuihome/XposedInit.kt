@@ -79,11 +79,17 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         "com.miui.home.settings.MiuiHomeSettingActivity".hookAfterMethod("onCreate", Bundle::class.java) {
             HomeContext.Activity = it.thisObject as Activity
         }
-        "com.miui.home.settings.MiuiHomeSettings".hookAfterMethod(
-            "onCreatePreferences", Bundle::class.java, String::class.java
-        ) {
-            (it.thisObject.getObjectField("mDefaultHomeSetting")).apply {
-                setObjectField("mTitle", moduleRes.getString(R.string.ModuleSettings))
+        "com.miui.home.settings.MiuiHomeSettings".findClass().hookAfterAllMethods("onCreatePreferences") {
+            val mLayoutResId = (it.thisObject.getObjectField("mDefaultHomeSetting"))?.getObjectField("mLayoutResId")
+            val mWidgetLayoutResId = (it.thisObject.getObjectField("mDefaultHomeSetting"))?.getObjectField("mWidgetLayoutResId")
+            val pref = XposedHelpers.newInstance("com.miui.home.settings.preference.ValuePreference".findClass(), HomeContext.context).apply {
+                setObjectField("mTitle", "MiuiHome")
+                setObjectField("mOrder", 0)
+                setObjectField("mVisible", true)
+                setObjectField("mSummary", moduleRes.getString(R.string.ModuleSettings))
+                setObjectField("mLayoutResId", mLayoutResId)
+                setObjectField("mWidgetLayoutResId", mWidgetLayoutResId)
+                setObjectField("mFragment", "")
                 setObjectField("mClickListener", object : View.OnClickListener {
                     override fun onClick(v: View) {
                         val intent = Intent(HomeContext.context, HookSettingsActivity::class.java)
@@ -91,7 +97,9 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                         HomeContext.context.startActivity(intent)
                     }
                 })
+                callMethod("setIntent", Intent(HomeContext.context, HookSettingsActivity::class.java))
             }
+            it.thisObject.callMethod("getPreferenceScreen")?.callMethod("addPreference", pref)
         }
         DisableLog().init()
         SetDeviceLevel().init()  // 设置设备分级等
