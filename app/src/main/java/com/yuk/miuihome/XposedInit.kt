@@ -16,6 +16,7 @@ import com.microsoft.appcenter.crashes.ingestion.models.ErrorAttachmentLog
 import com.microsoft.appcenter.crashes.model.ErrorReport
 import com.yuk.miuihome.module.*
 import com.yuk.miuihome.utils.Config
+import com.yuk.miuihome.utils.Config.TAG
 import com.yuk.miuihome.utils.HomeContext
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
@@ -36,18 +37,21 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
         when (lpparam.packageName) {
             Config.hookPackage -> {
-                Application::class.java.hookBeforeMethod("attach", Context::class.java
-                ) {
+                Application::class.java.hookBeforeMethod("attach", Context::class.java) {
                     EzXHelperInit.initHandleLoadPackage(lpparam)
+                    EzXHelperInit.setLogTag(TAG)
+                    EzXHelperInit.setToastTag(TAG)
+                    EzXHelperInit.setLogXp(true)
+                    EzXHelperInit.setHostPackageName(Config.hookPackage)
                     HomeContext.context = it.args[0] as Context
-                    EzXHelperInit.initAppContext(HomeContext.context)
+                    EzXHelperInit.initAppContext(it.args[0] as Context, addPath = true, initModuleResources = true)
                     HomeContext.classLoader = HomeContext.context.classLoader
+                    EzXHelperInit.setEzClassLoader(HomeContext.context.classLoader)
                     HomeContext.application = it.thisObject as Application
                     CrashRecord.init(HomeContext.context)
                     doHook()
                 }
-                Application::class.java.hookAfterMethod("attach", Context::class.java
-                ) {
+                Application::class.java.hookAfterMethod("attach", Context::class.java) {
                     startAppCenter()
                     checkVersionName()
                     checkIsAlpha()
@@ -56,8 +60,10 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
                     checkMiuiVersion()
                     checkAndroidVersion()
                 }
-                Application::class.java.hookAfterMethod("onCreate") {
-                    ActivityHelper.initSubActivity()
+                Application::class.java.hookAfterMethod("onCreate"
+                ) {
+                    EzXHelperInit.initActivityProxyManager(Config.packageName, "com.miui.home.settings.DefaultHomeSettings", XposedInit::class.java.classLoader!!, HomeContext.classLoader)
+                    EzXHelperInit.initSubActivity()
                 }
                 if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: [com.miui.home] hook success")
             }
@@ -65,8 +71,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
         }
     }
 
-    override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam
-    ) {
+    override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam) {
         if (resparam.packageName != Config.hookPackage) return
         hasHookPackageResources = true
         ResHook(resparam).init()
