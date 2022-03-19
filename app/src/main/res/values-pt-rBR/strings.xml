@@ -8,11 +8,12 @@
   <string name="BlurWhenOpenFolder">Ativar desfoque em pastas</string>
   <string name="Cancel">Cancelar</string>
   <string name="CleanModuleSettings">Voltar para Configurações de Fábrica</string>
-  <string name="RestoreModuleSettingsSuccess">“Backup” restaurado com sucesso, reiniciando o launcher.</string>
+  <string name="RestoreModuleSettingsSuccess">Backup restaurado com sucesso, reiniciando o 
+MIUI Launcher…</string>
   <string name="RestoreModuleSettingsFailed">Falha ao restaurar o “backup”</string>
   <string name="BackupModuleSettings">Fazer “backup” das configurações do módulo</string>
   <string name="RestoreModuleSettings">Restaurar configurações padrão</string>
-  <string name="RestoreModuleSettingsTips">Limpar todas as configurações do módulo e restaurar as configurações a partir de um arquivo. Após esta ação, o launcher será reiniciado.</string>
+  <string name="RestoreModuleSettingsTips">Limpar todas as configurações do módulo e restaurar as configurações a partir de um arquivo. Após esta ação, o MIUI Launcher será reiniciado.</string>
   <string name="Close">Fechar</string>
   <string name="CloseFolder">Fechar pasta quando abrir aplicativo</string>
   <string name="CompleteBlur">Desfoque \"Completo\"</string>
@@ -21,7 +22,7 @@
   <string name="setDefaults">Para restaurar o \"padrão\" do launcher, deixar em branco.</string>
   <string name="setRecentString">Para restaurar o \"padrão\" do launcher, deixar em branco. Inserir um espaço para remover o texto</string>
   <string name="current">Atual</string>
-  <string name="Description">Modificação para Launcher MIUI</string>
+  <string name="Description">Hook (modificações) para MIUI Launcher</string>
   <string name="Folder">Configurações Pasta</string>
   <string name="HideStatusBar">Esconder Barra de Status na Tela de Aplicativos Recentes</string>
   <string name="HideTaskViewAppIcon">Esconder Ícone do Aplicativo na Tela de Recentes</string>
@@ -39,8 +40,8 @@
   <string name="OtherFeature">Outros Recursos</string>
   <string name="OutOfInput">Por favor, coloque um valor dentro do limite!</string>
   <string name="RealTaskViewHorizontal">Verdadeiro · Recentes Horizontais</string>
-  <string name="Reboot">Reiniciar Launcher</string>
-  <string name="Reboot1">Tem certeza que deseja reiniciar o launcher?</string>
+  <string name="Reboot">Reiniciar MIUI Launcher</string>
+  <string name="Reboot1">Deseja reiniciar o MIUI Launcher?</string>
   <string name="Reboot2">O Laucher será reiniciado em 1 segundo!</string>
   <string name="RoundCorner">Tamanho das bordas arrendodadas na miniatura</string>
   <string name="Save">Salvar</string>
@@ -100,14 +101,14 @@
   <string name="DockMarginBottom">Indicador de página e espaçamento inferior da tela</string>
   <string name="SimpleWarn">Você habilitou a \"animação simples\", isso ocultará algumas configurações.</string>
   <string name="BrokenFeature">Recurso Obsoleto</string>
-  <string name="AppReturnAmin">Desfocar no retorno do aplicativo</string>
+  <string name="AppReturnAmin">Desfocar de retorno do aplicativo</string>
   <string name="BlurRadius">Raio de desfoque</string>
   <string name="BasicBlur">Desfoque \"Básico\"</string>
   <string name="CustomTitleColor">Personalizar a cor do título do aplicativo</string>
   <string name="Tips4">Suporta cor hexadecimal, por exemplo, #FFFFFF é branco, #000000 é preto</string>
   <string name="About">Sobre o Módulo</string>
   <string name="MiuiVersion">Versão da MIUI</string>
-  <string name="LauncherVersion">Versão do launcher</string>
+  <string name="LauncherVersion">Versão do MIUI Launcher</string>
   <string name="ModuleVersion">Versão do Módulo</string>
   <string name="AboutUs">Sobre nós</string>
   <string name="AlwaysBlur">Sempre desfocar o papel de parede do MIUI Launcher</string>
