@@ -8,6 +8,11 @@
   <string name="BlurWhenOpenFolder">文件夾打開背景模糊</string>
   <string name="Cancel">取消</string>
   <string name="CleanModuleSettings">清除用戶配置</string>
+  <string name="RestoreModuleSettingsSuccess">恢復備份成功，重啟系統桌面</string>
+  <string name="RestoreModuleSettingsFailed">恢复备份失败</string>
+  <string name="BackupModuleSettings">備份模塊設置</string>
+  <string name="RestoreModuleSettings">恢復模塊設置</string>
+  <string name="RestoreModuleSettingsTips">This will clear all module settings and restore module settings from a file. After the action, the system launcher will be restarted.</string>
   <string name="Close">關閉</string>
   <string name="CloseFolder">打開應用時關閉文件夾</string>
   <string name="CompleteBlur">完整模糊</string>
@@ -15,6 +20,7 @@
   <string name="Recommend">推薦值</string>
   <string name="setDefaults">留空為恢復默認</string>
   <string name="setRecentString">留空為恢復默認，鍵入空格表示移除文本</string>
+  <string name="current">Current</string>
   <string name="Description">針對　MIUI　桌面的自定義擴展</string>
   <string name="Folder">文件夾相關</string>
   <string name="HideStatusBar">後台界面隱藏狀態欄</string>
@@ -34,6 +40,7 @@
   <string name="OutOfInput">請輸入允許範圍內的值！</string>
   <string name="RealTaskViewHorizontal">真·橫屏最近任務</string>
   <string name="Reboot">重啟桌面</string>
+  <string name="Reboot1">Are you sure you want to restart the System Launcher?</string>
   <string name="Reboot2">桌面將在　1　秒後重啟！</string>
   <string name="RoundCorner">後台卡片圓角大小</string>
   <string name="Save">保存</string>
@@ -104,10 +111,9 @@
   <string name="ModuleVersion">模塊版本</string>
   <string name="AboutUs">關於我們</string>
   <string name="AlwaysBlur">始終模糊桌面壁紙</string>
-  <string name="BackupModuleSettings">備份模塊設置</string>
-  <string name="RestoreModuleSettings">恢復模塊設置</string>
-  <string name="RestoreModuleSettingsFailed">恢复备份失败</string>
-  <string name="RestoreModuleSettingsSuccess">恢復備份成功，重啟系統桌面</string>
+  <string name="Github">Github</string>
+  <string name="OpenGithub">Click to open Github</string>
+  <string name="AppCenter">Anonymous Statistics</string>
   <string name="AppCenterTip">我們使用 Microsoft AppCenter 幫助我們測試/分析應用程序使用情況。</string>
   <string name="IconTitleTopMargin">圖標與標題間距</string>
   <string name="OpenLSPosed">打開 LSPosed</string>
