@@ -8,8 +8,8 @@ class ModifyAnimDurationRatio {
     fun init() {
         val value = OwnSP.ownSP.getFloat("animationLevel", -1f)
         if (value == -1f) return
-        "com.miui.home.recents.TransitionAnimDurationHelper".hookBeforeMethod("getAnimDurationRatio") {
-            it.result = value
+        "com.miui.home.recents.util.RectFSpringAnim".hookBeforeMethod("getModifyResponse", Float::class.java) {
+            it.result = it.args[0] as Float * value
         }
     }
 }

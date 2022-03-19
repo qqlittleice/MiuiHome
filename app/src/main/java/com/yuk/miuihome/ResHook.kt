@@ -19,15 +19,12 @@ import kotlin.concurrent.thread
 
 class ResHook(private val hookedRes: InitPackageResourcesParam) {
 
-    private val modRes = XModuleResources.createInstance(modulePath, hookedRes.res)
-    private fun getResId(type: String, name: String): Int = modRes.getIdentifier(name, type, Config.packageName)
-
     companion object { private var hasLoad = false }
     fun init() {
         thread {
             if (!hasLoad) Thread.sleep(400)
             if (OwnSP.ownSP.getBoolean("dockSettings", false))
-                hookedRes.res.hookLayout(Config.hookPackage, "layout", "layout_search_bar"
+                hookedRes.res.hookLayout(Config.hostPackage, "layout", "layout_search_bar"
                 ) {
                     val targetView = it.view
                     (if (XposedInit().checkIsAlpha() || XposedInit().checkVersionCode() >= 421153106L) DrawableNameNewList else DrawableNameList).forEach { drawableName -> resetDockRadius(targetView.context, drawableName) }
@@ -36,10 +33,10 @@ class ResHook(private val hookedRes: InitPackageResourcesParam) {
     }
 
     private fun resetDockRadius(context: Context, drawableName: String) {
-        hookedRes.res.setReplacement(Config.hookPackage, "drawable", drawableName, object : XResources.DrawableLoader() {
+        hookedRes.res.setReplacement(Config.hostPackage, "drawable", drawableName, object : XResources.DrawableLoader() {
             @SuppressLint("UseCompatLoadingForDrawables")
             override fun newDrawable(xres: XResources, id: Int): Drawable {
-                val background = context.getDrawable(xres.getIdentifier(drawableName, "drawable", Config.hookPackage)) as RippleDrawable
+                val background = context.getDrawable(xres.getIdentifier(drawableName, "drawable", Config.hostPackage)) as RippleDrawable
                 val backgroundShape = background.getDrawable(0) as GradientDrawable
                 backgroundShape.cornerRadius = dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat()
                 backgroundShape.setStroke(0, 0)

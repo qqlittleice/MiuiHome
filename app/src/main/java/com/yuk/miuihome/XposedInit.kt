@@ -36,18 +36,20 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
         when (lpparam.packageName) {
-            Config.hookPackage -> {
+            Config.hostPackage -> {
                 Application::class.java.hookBeforeMethod("attach", Context::class.java) {
-                    EzXHelperInit.initHandleLoadPackage(lpparam)
-                    EzXHelperInit.setLogTag(TAG)
-                    EzXHelperInit.setToastTag(TAG)
-                    EzXHelperInit.setLogXp(true)
-                    EzXHelperInit.initAppContext(it.args[0] as Context)
-                    EzXHelperInit.setEzClassLoader(appContext.classLoader)
-                    application = it.thisObject as Application
+                    EzXHelperInit.apply {
+                        initHandleLoadPackage(lpparam)
+                        setLogTag(TAG)
+                        setToastTag(TAG)
+                        setLogXp(true)
+                        initAppContext(it.args[0] as Context)
+                        setEzClassLoader(appContext.classLoader)
+                        initActivityProxyManager(Config.modulePackage, Config.hostActivityProxy, XposedInit::class.java.classLoader!!, ezXClassLoader)
+                        initSubActivity()
+                    }
                     CrashRecord.init(appContext)
-                    EzXHelperInit.initActivityProxyManager(Config.packageName, "com.miui.home.settings.DefaultHomeSettings", XposedInit::class.java.classLoader!!, ezXClassLoader)
-                    EzXHelperInit.initSubActivity()
+                    application = it.thisObject as Application
                     doHook()
                 }
                 Application::class.java.hookAfterMethod("attach", Context::class.java) {
@@ -66,7 +68,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
     }
 
     override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam) {
-        if (resparam.packageName != Config.hookPackage) return
+        if (resparam.packageName != Config.hostPackage) return
         hasHookPackageResources = true
         ResHook(resparam).init()
         if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: Resources hook success")

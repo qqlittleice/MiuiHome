@@ -15,7 +15,7 @@ class ModifyTaskVertical {
         ) {
             val context = it.thisObject.getObjectField("mContext") as Context
             "com.miui.home.recents.util.Utilities".findClass().callStaticMethod("scaleRectAboutCenter", it.args[0], "com.miui.home.recents.util.Utilities".findClass().callStaticMethod("getTaskViewScale", context))
-            "com.miui.home.recents.util.Utilities".findClass().callStaticMethod("scaleRectAboutCenter", it.args[0], value - (context.resources.getDimensionPixelSize(context.resources.getIdentifier("recents_task_view_padding", "dimen", Config.hookPackage)) * value / it.args[0].callMethod("width") as Float))
+            "com.miui.home.recents.util.Utilities".findClass().callStaticMethod("scaleRectAboutCenter", it.args[0], value - (context.resources.getDimensionPixelSize(context.resources.getIdentifier("recents_task_view_padding", "dimen", Config.hostPackage)) * value / it.args[0].callMethod("width") as Float))
         }
     }
 }

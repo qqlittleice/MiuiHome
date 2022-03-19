@@ -23,11 +23,11 @@ class BuildWithEverything {
     fun init() {
         if (AndroidSDK >= 31) {
             try {
-                readStream(Runtime.getRuntime().exec("su -c cmd package compile -m everything ${Config.hookPackage}").inputStream)
+                readStream(Runtime.getRuntime().exec("su -c cmd package compile -m everything ${Config.hostPackage}").inputStream)
             } catch (ignore: Exception) {
             }
         } else {
-            readStream(Runtime.getRuntime().exec("cmd package compile -m everything ${Config.hookPackage}").inputStream)
+            readStream(Runtime.getRuntime().exec("cmd package compile -m everything ${Config.hostPackage}").inputStream)
         }
     }
 }

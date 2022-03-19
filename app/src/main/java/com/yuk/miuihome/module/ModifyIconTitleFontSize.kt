@@ -57,7 +57,7 @@ class ModifyIconTitleFontSize {
             "com.miui.home.launcher.common.Utilities".hookAfterMethod("adaptTitleStyleToWallpaper", Context::class.java, TextView::class.java, Int::class.javaPrimitiveType, Int::class.javaPrimitiveType
             ) {
                 val mTitle = it.args[1] as TextView
-                if (mTitle.id == mTitle.resources.getIdentifier("icon_title", "id", Config.hookPackage))
+                if (mTitle.id == mTitle.resources.getIdentifier("icon_title", "id", Config.hostPackage))
                     mTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP, value)
             }
         } catch (e: Throwable) {

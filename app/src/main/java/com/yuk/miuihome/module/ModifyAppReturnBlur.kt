@@ -27,7 +27,7 @@ class ModifyAppReturnBlur {
         launcherClass.hookAfterMethod("onCreate", Bundle::class.java
         ) {
             val activity = it.thisObject as Activity
-            val view: View = activity.findViewById(activity.resources.getIdentifier("recents_container", "id", Config.hookPackage))
+            val view: View = activity.findViewById(activity.resources.getIdentifier("recents_container", "id", Config.hostPackage))
             val runnable = Runnable { blurClass.callStaticMethod("fastBlur", 0.0f, activity.window, true, value) }
             navStubViewClass.hookAfterMethod("performAppToHome"
             ) {
