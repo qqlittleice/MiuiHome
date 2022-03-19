@@ -8,6 +8,11 @@
   <string name="BlurWhenOpenFolder">文件夹打开背景模糊</string>
   <string name="Cancel">取消</string>
   <string name="CleanModuleSettings">清除用户配置</string>
+  <string name="RestoreModuleSettingsSuccess">恢复备份成功，重启系统桌面</string>
+  <string name="RestoreModuleSettingsFailed">恢复备份失败</string>
+  <string name="BackupModuleSettings">备份模块设置</string>
+  <string name="RestoreModuleSettings">恢复模块设置</string>
+  <string name="RestoreModuleSettingsTips">这将清除所有模块设置并从文件中恢复模块设置，随后重启系统桌面</string>
   <string name="Close">关闭</string>
   <string name="CloseFolder">打开应用时关闭文件夹</string>
   <string name="CompleteBlur">完整模糊</string>
@@ -106,11 +111,6 @@
   <string name="ModuleVersion">模块版本</string>
   <string name="AboutUs">关于我们</string>
   <string name="AlwaysBlur">始终模糊桌面壁纸</string>
-  <string name="RestoreModuleSettings">恢复模块设置</string>
-  <string name="BackupModuleSettings">备份模块设置</string>
-  <string name="RestoreModuleSettingsFailed">恢复备份失败</string>
-  <string name="RestoreModuleSettingsSuccess">恢复备份成功，重启系统桌面</string>
-  <string name="RestoreModuleSettingsTips">这将清除所有模块设置并从文件中恢复模块设置，随后重启系统桌面</string>
   <string name="Github">开源仓库</string>
   <string name="OpenGithub">点击打开 Github</string>
   <string name="AppCenter">匿名统计</string>
