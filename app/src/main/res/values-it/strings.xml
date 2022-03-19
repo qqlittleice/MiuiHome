@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="AdvancedFeature">Impostazioni avanzate</string>
+  <string name="AlwaysShowMIUIWidget">Mostra widget nuovi nei widget classici</string>
   <string name="AlwaysShowStatusBarClock">Mostra sempre l\'orologio della barra di stato</string>
   <string name="AnimationLevel">Velocità animazioni gesti</string>
   <string name="AppTextSize">Distanza tra le icone e le etichette delle app nella schermata recenti</string>
   <string name="BlurWhenOpenFolder">Attiva sfocatura di sfondo per le cartelle</string>
   <string name="Cancel">Annulla</string>
   <string name="CleanModuleSettings">Ripristina le impostazioni predefinite</string>
-  <string name="Close">Chiudi</string>
   <string name="RestoreModuleSettingsSuccess">Ripristinato backup con successo, riavvio il launcher...</string>
   <string name="RestoreModuleSettingsFailed">Impossibile ripristinare il backup</string>
   <string name="BackupModuleSettings">Crea un backup delle impostazioni</string>
   <string name="RestoreModuleSettings">Ripristina backup delle impostazioni</string>
   <string name="RestoreModuleSettingsTips">Questo resetterà tutte le impostazioni del modulo e le ripristinerà da un file. Dopo questo il launcher verrà riavviato.</string>
+  <string name="Close">Chiudi</string>
   <string name="CloseFolder">Chiudi la cartella dopo aver aperto un\'app all\'interno</string>
   <string name="CompleteBlur">Sfocatura completa</string>
   <string name="Defaults">Predefinito</string>
@@ -39,6 +40,7 @@
   <string name="OutOfInput">Per favore inserisci un valore compreso tra l\'intervallo consentito!</string>
   <string name="RealTaskViewHorizontal">Attiva recenti orizzontali</string>
   <string name="Reboot">Riavvia launcher</string>
+  <string name="Reboot1">Are you sure you want to restart the System Launcher?</string>
   <string name="Reboot2">Il launcher si riavvierà in un secondo!</string>
   <string name="RoundCorner">Ampiezza degli angoli delle anteprime nella schermata recenti</string>
   <string name="Save">Salva</string>
@@ -61,7 +63,6 @@
   <string name="Welcome">Benvenutx!</string>
   <string name="Widget">Opzioni widget</string>
   <string name="WidgetToMinus">Mostra widget classici nell\'Assistente App</string>
-  <string name="AlwaysShowMIUIWidget">Mostra widget nuovi nei widget classici</string>
   <string name="Yes">Si</string>
   <string name="EnableIconShadow">Mostra ombre e riflessi delle icone</string>
   <string name="SmallWindow">Consenti a tutte le app di utilizzare le Finestre Fluttuanti</string>
@@ -74,7 +75,7 @@
   <string name="DockBottom">Distanza barra della Dock dalla parte inferiore dello schermo</string>
   <string name="DockIconBottom">Distanza icone dalla parte inferiore dello schermo</string>
   <string name="DockSettings">Opzioni dock</string>
-  <string name="DockWarn">Per favore abilita "Hook Risorse" se ti serve modificare gli angoli.</string>
+  <string name="DockWarn">Per favore abilita \"Hook Risorse\" se ti serve modificare gli angoli.</string>
   <string name="DockFeature">Attiva dock</string>
   <string name="EnableDockBlur">Attiva sfocatura sfondo della dock</string>
   <string name="Reset">Resetta parametri della dock</string>
@@ -83,6 +84,7 @@
   <string name="Tips2">Questo reimposterà le opzioni predefinite del modulo e riavvierà il launcher.</string>
   <string name="HideSeekPoints">Rimuovi indicatore pagine</string>
   <string name="CategoryHideAll">Nascondi \"Tutte\" nelle categorie del cassetto app</string>
+  <string name="CategoryPagingHideEdit">Hide \"Edit\" Button in App Category\'s Paging</string>
   <string name="FolderColumnsCount">Numero colonne delle cartelle</string>
   <string name="FolderWidth">Usa l\'intera larghezza della cartella</string>
   <string name="IconTitleFontSize">Dimensione carattere delle etichette delle app</string>
@@ -96,7 +98,7 @@
   <string name="UnlockIcons">Sblocca limite icone nella barra dei preferiti</string>
   <string name="DockMarginTop">Spaziatura icone e indicatore pagine</string>
   <string name="DockMarginBottom">Spaziatura tra l\'indicatore pagine e il fondo dello schermo</string>
-  <string name="SimpleWarn">Hai abilitato "animazione semplice", questo nasconderà alcune impostazioni.</string>
+  <string name="SimpleWarn">Hai abilitato \"animazione semplice\", questo nasconderà alcune impostazioni.</string>
   <string name="BrokenFeature">Funzioni obsolete</string>
   <string name="AppReturnAmin">Sfocatura ritorno app</string>
   <string name="BlurRadius">Raggio di sfocatura</string>
