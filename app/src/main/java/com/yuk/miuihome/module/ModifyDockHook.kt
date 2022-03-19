@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
+import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
 import com.github.kyuubiran.ezxhelper.init.InitFields.moduleRes
 import com.github.kyuubiran.ezxhelper.utils.Log
 import com.yuk.miuihome.utils.OwnSP
@@ -20,7 +21,7 @@ class ModifyDockHook {
             // Dock距屏幕两侧
             deviceConfigClass.hookBeforeMethod("calcSearchBarWidth", Context::class.java
             ) {
-                val deviceWidth = px2dp(moduleRes.displayMetrics.widthPixels)
+                val deviceWidth = px2dp(appContext.resources.displayMetrics.widthPixels)
                 it.result = dp2px(deviceWidth - (OwnSP.ownSP.getFloat("dockSide", 3.0f) * 10))
             }
             // Dock距屏幕底部
