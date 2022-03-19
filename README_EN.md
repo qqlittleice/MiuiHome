@@ -10,8 +10,9 @@ English 丨 [简体中文](https://github.com/1767523953/MiuiHome/blob/main/READ
 
 [![Android CI](https://github.com/qqlittleice/MiuiHome/actions/workflows/android.yml/badge.svg)](https://github.com/qqlittleice/MiuiHome/actions/workflows/android.yml) 
 [![Download](https://img.shields.io/github/downloads/Xposed-Modules-Repo/com.yuk.miuihome/total)](https://github.com/Xposed-Modules-Repo/com.yuk.miuihome/releases) 
+[![Crowdin](https://badges.crowdin.net/miuihome_xposed/localized.svg)](https://crowdin.com/project/miuihome_xposed) 
 [![Release](https://img.shields.io/github/v/release/Xposed-Modules-Repo/com.yuk.miuihome?label=release)](https://github.com/Xposed-Modules-Repo/com.yuk.miuihome/releases/latest) 
-[![Chat](https://img.shields.io/badge/Telegram-Chat-blue.svg?logo=telegram)](https://t.me/MiuiHome_Xposed)
+[![Chat](https://img.shields.io/badge/Telegram-Chat-blue.svg?logo=telegram)](https://t.me/MiuiHome_Xposed) 
 </div>
 
 -----
@@ -64,9 +65,7 @@ __Now：[qqlittleice/MiuiHome](https://github.com/qqlittleice/MiuiHome)__
 
 ## Translation Contributions
 
-If you want to help us translate, please submit a PR after checking that the translation is correct.
-
-and if you want to translate it into a new language, please place it in the appropriate location: (`app/src/main/res/values-[lang]/strings.xml`).
+[Crowdin](https://zh.crowdin.com/project/miuihome_xposed)
 
 ## Credits
 
