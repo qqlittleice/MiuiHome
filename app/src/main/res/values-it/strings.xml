@@ -40,7 +40,7 @@
   <string name="OutOfInput">Per favore inserisci un valore compreso tra l\'intervallo consentito!</string>
   <string name="RealTaskViewHorizontal">Attiva recenti orizzontali</string>
   <string name="Reboot">Riavvia launcher</string>
-  <string name="Reboot1">Are you sure you want to restart the System Launcher?</string>
+  <string name="Reboot1">Sei sicuro di voler riavviare il launcher di sistema?</string>
   <string name="Reboot2">Il launcher si riavvierà in un secondo!</string>
   <string name="RoundCorner">Ampiezza degli angoli delle anteprime nella schermata recenti</string>
   <string name="Save">Salva</string>
@@ -84,7 +84,7 @@
   <string name="Tips2">Questo reimposterà le opzioni predefinite del modulo e riavvierà il launcher.</string>
   <string name="HideSeekPoints">Rimuovi indicatore pagine</string>
   <string name="CategoryHideAll">Nascondi \"Tutte\" nelle categorie del cassetto app</string>
-  <string name="CategoryPagingHideEdit">Hide \"Edit\" Button in App Category\'s Paging</string>
+  <string name="CategoryPagingHideEdit">Nascondi pulsante \"modifica\" nella sezione categorie app</string>
   <string name="FolderColumnsCount">Numero colonne delle cartelle</string>
   <string name="FolderWidth">Usa l\'intera larghezza della cartella</string>
   <string name="IconTitleFontSize">Dimensione carattere delle etichette delle app</string>
