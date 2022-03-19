@@ -2,10 +2,11 @@ package com.yuk.miuihome.utils
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
 
 object OwnSP {
 
-    val ownSP: SharedPreferences = HomeContext.context.createDeviceProtectedStorageContext().getSharedPreferences(Config.SP_NAME, Context.MODE_PRIVATE)
+    val ownSP: SharedPreferences = appContext.createDeviceProtectedStorageContext().getSharedPreferences(Config.SP_NAME, Context.MODE_PRIVATE)
 
     private val ownEditor: SharedPreferences.Editor = ownSP.edit()
 

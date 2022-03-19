@@ -1,8 +1,8 @@
 package com.yuk.miuihome.module
 
 import android.content.res.Resources
+import com.github.kyuubiran.ezxhelper.init.InitFields.moduleRes
 import com.yuk.miuihome.BuildConfig
-import com.yuk.miuihome.utils.HomeContext
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ResourcesHookData
 import com.yuk.miuihome.utils.ResourcesHookMap
@@ -17,9 +17,8 @@ class ResourcesHook {
 
     private fun hook(param: XC_MethodHook.MethodHookParam) {
         try {
-            val res = HomeContext.context.resources
-            val resName = res.getResourceEntryName(param.args[0] as Int)
-            val resType = res.getResourceTypeName(param.args[0] as Int)
+            val resName = moduleRes.getResourceEntryName(param.args[0] as Int)
+            val resType = moduleRes.getResourceTypeName(param.args[0] as Int)
             if (hookMap.isKeyExist(resName))
                 if (hookMap[resName]?.type == resType) {
                     param.result = hookMap[resName]?.afterValue

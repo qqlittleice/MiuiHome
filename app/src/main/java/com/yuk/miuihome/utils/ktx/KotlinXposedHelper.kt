@@ -3,8 +3,8 @@
 package com.yuk.miuihome.utils.ktx
 
 import android.content.res.XResources
+import com.github.kyuubiran.ezxhelper.init.InitFields.ezXClassLoader
 import com.github.kyuubiran.ezxhelper.utils.Log
-import com.yuk.miuihome.utils.HomeContext
 import dalvik.system.BaseDexClassLoader
 import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XC_MethodHook.MethodHookParam
@@ -363,9 +363,9 @@ fun Class<*>.callStaticMethodOrNull(
     callStaticMethod(this, methodName, parameterTypes, *args)
 }
 
-fun String.findClass(classLoader: ClassLoader = HomeContext.classLoader): Class<*> = findClass(this, classLoader)
+fun String.findClass(classLoader: ClassLoader = ezXClassLoader): Class<*> = findClass(this, classLoader)
 
-fun String.findClassOrNull(classLoader: ClassLoader = HomeContext.classLoader): Class<*>? =
+fun String.findClassOrNull(classLoader: ClassLoader = ezXClassLoader): Class<*>? =
     findClassIfExists(this, classLoader)
 
 fun Class<*>.new(vararg args: Any?): Any = newInstance(this, *args)

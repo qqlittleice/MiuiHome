@@ -1,9 +1,9 @@
 package com.yuk.miuihome.module
 
 import android.widget.Toast
+import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.Config.AndroidSDK
-import com.yuk.miuihome.utils.HomeContext
 import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader
@@ -17,7 +17,7 @@ class BuildWithEverything {
             val temp: String = reader.readLine() ?: break
             read += temp
         }
-        Toast.makeText(HomeContext.context, read, Toast.LENGTH_LONG).show()
+        Toast.makeText(appContext, read, Toast.LENGTH_LONG).show()
     }
 
     fun init() {

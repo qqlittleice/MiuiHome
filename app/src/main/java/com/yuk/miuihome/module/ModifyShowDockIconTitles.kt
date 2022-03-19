@@ -1,7 +1,7 @@
 package com.yuk.miuihome.module
 
 import android.content.Context
-import com.yuk.miuihome.utils.HomeContext
+import com.github.kyuubiran.ezxhelper.init.InitFields.moduleRes
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.hookAfterMethod
 import com.yuk.miuihome.utils.ktx.hookBeforeMethod
@@ -17,7 +17,7 @@ class ModifyShowDockIconTitles {
             "calcHotSeatsHeight", Context::class.java, Boolean::class.java
         ) {
             val height = it.result as Int
-            it.result = (height + 8 * HomeContext.context.resources.displayMetrics.density).toInt()
+            it.result = (height + 8 * moduleRes.displayMetrics.density).toInt()
         }
     }
 }

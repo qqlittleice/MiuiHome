@@ -1,7 +1,7 @@
 package com.yuk.miuihome.module
 
+import com.github.kyuubiran.ezxhelper.init.InitFields.ezXClassLoader
 import com.yuk.miuihome.BuildConfig
-import com.yuk.miuihome.utils.HomeContext
 import de.robv.android.xposed.XposedBridge
 import de.robv.android.xposed.XposedHelpers
 import de.robv.android.xposed.XposedHelpers.ClassNotFoundError
@@ -26,7 +26,7 @@ interface BaseClassAndMethodCheck {
             throw RuntimeException("checkClassAndMethodExist() -> ClassAndMethodList.size should be an even number")
         try {
             for (i in 0 until list.size step 2) {
-                val cls = XposedHelpers.findClass(list[i], HomeContext.classLoader)
+                val cls = XposedHelpers.findClass(list[i], ezXClassLoader)
                 if (list[i + 1] !in getAllMethods(cls)) return false
             }
         } catch (e: ClassNotFoundError) {

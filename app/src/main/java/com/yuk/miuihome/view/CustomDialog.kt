@@ -2,9 +2,7 @@ package com.yuk.miuihome.view
 
 import android.app.Dialog
 import android.content.Context
-import android.content.res.Resources
 import android.os.Build
-import android.util.DisplayMetrics
 import android.view.*
 import android.widget.Button
 import android.widget.EditText

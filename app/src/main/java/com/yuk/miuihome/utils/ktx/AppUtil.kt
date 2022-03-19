@@ -2,13 +2,13 @@ package com.yuk.miuihome.utils.ktx
 
 import android.annotation.SuppressLint
 import android.util.TypedValue
-import com.yuk.miuihome.utils.HomeContext
+import com.github.kyuubiran.ezxhelper.init.InitFields
 
-fun dp2px(dpValue: Float): Int = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpValue, HomeContext.context.resources.displayMetrics).toInt()
+fun dp2px(dpValue: Float): Int = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpValue, InitFields.moduleRes.displayMetrics).toInt()
 
-fun px2dp(pxValue: Int): Int = (pxValue / HomeContext.context.resources.displayMetrics.density + 0.5f * if (pxValue >= 0) 1 else -1).toInt()
+fun px2dp(pxValue: Int): Int = (pxValue / InitFields.moduleRes.displayMetrics.density + 0.5f * if (pxValue >= 0) 1 else -1).toInt()
 
-fun getDensityDpi(): Int = (HomeContext.context.resources.displayMetrics.widthPixels / HomeContext.context.resources.displayMetrics.density).toInt()
+fun getDensityDpi(): Int = (InitFields.moduleRes.displayMetrics.widthPixels / InitFields.moduleRes.displayMetrics.density).toInt()
 
 @SuppressLint("PrivateApi")
 @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
