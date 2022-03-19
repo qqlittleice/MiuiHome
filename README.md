@@ -10,6 +10,7 @@
 
 [![Android CI](https://github.com/qqlittleice/MiuiHome/actions/workflows/android.yml/badge.svg)](https://github.com/qqlittleice/MiuiHome/actions/workflows/android.yml) 
 [![Download](https://img.shields.io/github/downloads/Xposed-Modules-Repo/com.yuk.miuihome/total)](https://github.com/Xposed-Modules-Repo/com.yuk.miuihome/releases) 
+[![Crowdin](https://badges.crowdin.net/miuihome_xposed/localized.svg)](https://crowdin.com/project/miuihome_xposed) 
 [![Release](https://img.shields.io/github/v/release/Xposed-Modules-Repo/com.yuk.miuihome?label=release)](https://github.com/Xposed-Modules-Repo/com.yuk.miuihome/releases/latest) 
 [![Chat](https://img.shields.io/badge/Telegram-Chat-blue.svg?logo=telegram)](https://t.me/MiuiHome_Xposed)
 </div>
@@ -62,6 +63,10 @@ __新仓库：[qqlittleice/MiuiHome](https://github.com/qqlittleice/MiuiHome)__
 - 允许在安卓小部件页显示 MIUI 小部件
 - 还有更多...
 </details>
+
+## 贡献翻译
+
+[Crowdin](https://zh.crowdin.com/project/miuihome_xposed)
 
 ## 引用库
 
