@@ -7,12 +7,12 @@
   <string name="AppTextSize">Distância entre ícones e nomes de aplicativos na tela Apps Recentes</string>
   <string name="BlurWhenOpenFolder">Ativar desfoque em pastas</string>
   <string name="Cancel">Cancelar</string>
-  <string name="CleanModuleSettings">Restaurar as configurações padrão</string>
+  <string name="CleanModuleSettings">Resetar todas as configurações</string>
   <string name="RestoreModuleSettingsSuccess">Backup restaurado com sucesso, reiniciando o 
 MIUI Launcher…</string>
   <string name="RestoreModuleSettingsFailed">Falha ao restaurar o backup</string>
   <string name="BackupModuleSettings">Backup das configurações do módulo</string>
-  <string name="RestoreModuleSettings">Restaurar as configurações padrão</string>
+  <string name="RestoreModuleSettings">Restaurar backup</string>
   <string name="RestoreModuleSettingsTips">Limpar todas as configurações do módulo e restaurar as configurações a partir de um arquivo. Após esta ação, o MIUI Launcher será reiniciado.</string>
   <string name="Close">Fechar</string>
   <string name="CloseFolder">Fechar a pasta ao abrir aplicativos dentro da pasta</string>
@@ -31,7 +31,7 @@ MIUI Launcher…</string>
   <string name="HideWidgetTitles">Ocultar títulos em Widgets</string>
   <string name="HorizontalTaskViewOfAppCardSize">Tamanho da miniatura na tela Apps Recentes com a orientação horizontal</string>
   <string name="InfiniteScroll">Habilitar rolagem infinita do MIUI Launcher</string>
-  <string name="MamlDownload">Efeito de ondulação de água</string>
+  <string name="MamlDownload">Permitir carregar efeito \"Water Ripple\"</string>
   <string name="ManualInput">Entrada manual</string>
   <string name="ModuleFeature">Recursos do módulo</string>
   <string name="ModuleSettings">Configurações do módulo</string>
