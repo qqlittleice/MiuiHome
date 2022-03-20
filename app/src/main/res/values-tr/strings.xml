@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="AdvancedFeature">Gelişmiş Ayarlar</string>
-  <string name="AlwaysShowMIUIWidget">Yeni Widget\'ların, Klasik Witget\'larda da görüntülenmesine izin verin</string>
+  <string name="AdvancedFeature">Gelişmiş ayarlar</string>
+  <string name="AlwaysShowMIUIWidget">Yeni Widget\'ların, klasik Witget\'larda da görüntülenmesine izin verin</string>
   <string name="AlwaysShowStatusBarClock">Durum çubuğundaki saat sürekli görüntülenir</string>
   <string name="AnimationLevel">Hareketler animasyon hızı</string>
   <string name="AppTextSize">Son uygulamalardaki uygulamaların simgeleri ve isimleri arasındaki boşluk</string>
@@ -22,11 +22,11 @@
   <string name="setRecentString">Varsayılanı kullanmak için boş bırakın veya metni kaldırmak için boşluk bırakın</string>
   <string name="current">Geçerli</string>
   <string name="Description">MiUI başlatıcısı için Resource Hook</string>
-  <string name="Folder">Klasör Ayarları</string>
+  <string name="Folder">Klasör ayarları</string>
   <string name="HideStatusBar">Son uygulamalarda durum çubuğunu gizle</string>
-  <string name="HideTaskViewAppIcon">Son Uygulamalarda uygulamaların simgelerini gizle</string>
+  <string name="HideTaskViewAppIcon">Son uygulamalarda uygulamaların simgelerini gizle</string>
   <string name="HideTaskViewCleanUpIcon">Son Uygulamalarda \"Tüm Uygulamaları Kapat\" simgesini gizle</string>
-  <string name="HideTaskViewSmallWindowIcon">Son Uygulamalarda \"Kayan Pencereleri\" gizle</string>
+  <string name="HideTaskViewSmallWindowIcon">Son uygulamalarda \"Kayan Pencereleri\" gizle</string>
   <string name="HideWidgetTitles">Widget isimlerini gizle</string>
   <string name="HorizontalTaskViewOfAppCardSize">Son uygulamalardaki uygulamaların yatay olarak boyutu</string>
   <string name="InfiniteScroll">Sonsuz kaydırma</string>
@@ -77,7 +77,7 @@
   <string name="DockSettings">Dock ayarları</string>
   <string name="DockWarn">Dock köşelerini özelleştirmek istiyorsanız \"Resource Hook\"u açın.</string>
   <string name="DockFeature">Dock özeliğini aç</string>
-  <string name="EnableDockBlur">Docka bulanıklık ekle</string>
+  <string name="EnableDockBlur">Dock\'a bulanıklık ekle</string>
   <string name="Reset">Dock ayarlarını sıfırla</string>
   <string name="Tips1">Bu seçenek Dock ayarlarını sıfırlar ve sistem başlatıcısını yeniden başlatır.</string>
   <string name="Reset1">Sıfırla</string>
