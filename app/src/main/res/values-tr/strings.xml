@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="AdvancedFeature">Gelişmiş ayarlar</string>
-  <string name="AlwaysShowMIUIWidget">Yeni Widget\'ların, klasik Witget\'larda da görüntülenmesine izin verin</string>
+  <string name="AlwaysShowMIUIWidget">Yeni Widget\'ların, klasik Witget\'larda da görüntülenmesine izin ver</string>
   <string name="AlwaysShowStatusBarClock">Durum çubuğu saatini sürekli görüntüle</string>
   <string name="AnimationLevel">Hareketler animasyon hızı</string>
   <string name="AppTextSize">Son uygulamalardaki uygulamaların simgeleri ve isimleri arasındaki boşluk</string>
@@ -57,9 +57,9 @@
   <string name="TestBlur">Test bulanıklığı</string>
   <string name="TestFeature">Deneysel özellikler</string>
   <string name="Tips">Bu modülü ilk kez kullandığınız tespit edildi, modül varsayılan değeri ayarlayacak ve ardından Sistem başlatıcısını yeniden baslatacaktır.\nDaha fazla ayara ve özelleştirmeye ihtiyacınız varsa, lütfen MiUI\'n başlatıcınızı yeniden başlatmasını bekleyiniz.</string>
-  <string name="UnlockGrids">Ana ekran düzenine daha fazla seçenek ekleyin</string>
+  <string name="UnlockGrids">Ana ekran düzenine daha fazla seçenek ekle</string>
   <string name="VerticalTaskViewOfAppCardSize">Son uygulamalardaki uygulamaların dikey olarak boyutu</string>
-  <string name="WallpaperDarken">Son uygulamalardaki duvar kağıdı karartma özelliğini kapatın</string>
+  <string name="WallpaperDarken">Son uygulamalardaki duvar kağıdı karartma özelliğini kapat</string>
   <string name="Welcome">Merhaba!</string>
   <string name="Widget">Widget ayarları</string>
   <string name="WidgetToMinus">Klasik Widget\'lerin \"Uygulama Kasasına\" taşınmasına izin ver</string>
@@ -93,14 +93,14 @@
   <string name="LowEndAnim">Düşük cihazlar için animasyonlu simgeleri etkinleştir</string>
   <string name="VerticalScreen">Dikey Ekran</string>
   <string name="HorizontalScreen">Yatay Ekran</string>
-  <string name="Reset2">Reset Thumbnail size for Horizontal Recent Parameters</string>
-  <string name="Tips3">This will reset the Thumbnail size for Horizontal Recent parameters to its default value and restart the System Launcher.</string>
-  <string name="UnlockIcons">Docktaki simge kısıtlamasını kaldır</string>
-  <string name="DockMarginTop">Page Indicator and Icon Spacing</string>
-  <string name="DockMarginBottom">Page Indicator and the bottom of the Screen Spacing</string>
+  <string name="Reset2">Yatay son uygulamalar ayarlarını sıfırla</string>
+  <string name="Tips3">Bu seçenek yatay son uygulamalar ayarlarını sıfırlar ve sistem başlatıcısını yeniden başlatır.</string>
+  <string name="UnlockIcons">Dock\'taki simge kısıtlamasını kaldır</string>
+  <string name="DockMarginTop">Sayfa göstergesi ve simge arasındaki boşluk</string>
+  <string name="DockMarginBottom">Sayfa göstergesi ve ekran aralığı arasındaki boşluk</string>
   <string name="SimpleWarn">Basit animasyonu etkinleştirdiniz, bazı ayarlar gizlenecektir.</string>
   <string name="BrokenFeature">Eskimiş özellikler</string>
-  <string name="AppReturnAmin">App Return Blur</string>
+  <string name="AppReturnAmin">Uygulama dönüş bulanıklığı</string>
   <string name="BlurRadius">Bulanıklık yarıçapı</string>
   <string name="BasicBlur">Basit bulanıklık</string>
   <string name="CustomTitleColor">Uygulama ismi rengi</string>
@@ -115,7 +115,7 @@
   <string name="OpenGithub">Github\'u açmak için tıklayın</string>
   <string name="AppCenter">Anonim istatistikler</string>
   <string name="AppCenterTip">Uygulama kullanımını test/analiz etmemize yardımcı olması için Microsoft AppCenter kullanıyoruz.</string>
-  <string name="IconTitleTopMargin">Icon Title Top Margin</string>
+  <string name="IconTitleTopMargin">Simge ismi üst kenar boşluğu</string>
   <string name="OpenLSPosed">LSPosed\'i Aç</string>
-  <string name="ShortcutCount">Unlock shortcut count limit</string>
+  <string name="ShortcutCount">Kısayol kısıtlamasını kaldır</string>
 </resources>
