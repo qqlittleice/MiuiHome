@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:Android="http://schemas.android.com/apk/res/android">
   <item Android:drawable="@drawable/button_right_background_pressed" Android:state_pressed="true" />
   <item Android:drawable="@drawable/button_right_background_no_pressed" />

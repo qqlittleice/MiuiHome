@@ -77,26 +77,39 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
     private fun doHook() {
         if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: MiuiLauncher version = ${checkVersionName()}(${checkVersionCode()})")
         "com.miui.home.settings.MiuiHomeSettings".findClass().hookAfterAllMethods("onCreatePreferences") {
-            val mLayoutResId = (it.thisObject.getObjectField("mDefaultHomeSetting"))?.getObjectField("mLayoutResId")
-            val mWidgetLayoutResId = (it.thisObject.getObjectField("mDefaultHomeSetting"))?.getObjectField("mWidgetLayoutResId")
-            val pref = XposedHelpers.newInstance("com.miui.home.settings.preference.ValuePreference".findClass(), appContext).apply {
-                setObjectField("mTitle", "MiuiHome")
-                setObjectField("mOrder", 0)
-                setObjectField("mVisible", true)
-                setObjectField("mSummary", moduleRes.getString(R.string.ModuleSettings))
-                setObjectField("mLayoutResId", mLayoutResId)
-                setObjectField("mWidgetLayoutResId", mWidgetLayoutResId)
-                setObjectField("mFragment", "")
-                setObjectField("mClickListener", object : View.OnClickListener {
-                    override fun onClick(v: View) {
-                        val intent = Intent(appContext, HookSettingsActivity::class.java)
-                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                        appContext.startActivity(intent)
-                    }
-                })
-                callMethod("setIntent", Intent())
+            try {
+                val mLayoutResId = (it.thisObject.getObjectField("mDefaultHomeSetting"))?.getObjectField("mLayoutResId")
+                val mWidgetLayoutResId = (it.thisObject.getObjectField("mDefaultHomeSetting"))?.getObjectField("mWidgetLayoutResId")
+                val pref = XposedHelpers.newInstance("com.miui.home.settings.preference.ValuePreference".findClass(), appContext).apply {
+                    setObjectField("mTitle", "MiuiHome")
+                    setObjectField("mOrder", 0)
+                    setObjectField("mVisible", true)
+                    setObjectField("mSummary", moduleRes.getString(R.string.ModuleSettings))
+                    setObjectField("mLayoutResId", mLayoutResId)
+                    setObjectField("mWidgetLayoutResId", mWidgetLayoutResId)
+                    setObjectField("mFragment", "")
+                    setObjectField("mClickListener", object : View.OnClickListener {
+                        override fun onClick(v: View) {
+                            val intent = Intent(appContext, HookSettingsActivity::class.java)
+                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                            appContext.startActivity(intent)
+                        }
+                    })
+                    callMethod("setIntent", Intent())
+                }
+                it.thisObject.callMethod("getPreferenceScreen")?.callMethod("addPreference", pref)
+            } catch (e: Throwable) {
+                (it.thisObject.getObjectField("mDefaultHomeSetting")).apply {
+                    setObjectField("mTitle", moduleRes.getString(R.string.ModuleSettings))
+                    setObjectField("mClickListener", object : View.OnClickListener {
+                        override fun onClick(v: View) {
+                            val intent = Intent(appContext, HookSettingsActivity::class.java)
+                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                            appContext.startActivity(intent)
+                        }
+                    })
+                }
             }
-            it.thisObject.callMethod("getPreferenceScreen")?.callMethod("addPreference", pref)
         }
         DisableLog().init()
         SetDeviceLevel().init()  // 设置设备分级等
