@@ -47,7 +47,7 @@
   <string name="Scope">Kabul edilebilir giriş boyutu</string>
   <string name="SearchBarBlur">Arama çubuğu bulanıklığı</string>
   <string name="SetSuccessfully">Başarıyla kaydedildi</string>
-  <string name="ShowDockIconTitles">Docktaki uygulamaların isimlerini göster</string>
+  <string name="ShowDockIconTitles">Dock\'taki uygulamaların isimlerini göster</string>
   <string name="SimpleAnimation">Basit animasyon</string>
   <string name="SimpleBlur">Basit Bulanıklık</string>
   <string name="SmoothAnimation">Akıcı Animasyon</string>
@@ -62,7 +62,7 @@
   <string name="WallpaperDarken">Son uygulamalardaki duvar kağıdı karartma özelliğini kapat</string>
   <string name="Welcome">Merhaba!</string>
   <string name="Widget">Widget ayarları</string>
-  <string name="WidgetToMinus">Klasik Widget\'lerin \"Uygulama Kasasına\" taşınmasına izin ver</string>
+  <string name="WidgetToMinus">Klasik Widget\'ların \"Uygulama Kasasına\" taşınmasına izin ver</string>
   <string name="Yes">Evet</string>
   <string name="EnableIconShadow">Simgelerin hareketlerini ve gölgelerini göster</string>
   <string name="SmallWindow">Tüm uygulamalar için \"Kayan Pencereler\" özelliğini aktif et</string>
