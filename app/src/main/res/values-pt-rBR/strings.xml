@@ -13,7 +13,7 @@ MIUI Launcher...</string>
   <string name="RestoreModuleSettingsFailed">Falha ao restaurar o backup</string>
   <string name="BackupModuleSettings">Fazer backup das configurações do módulo</string>
   <string name="RestoreModuleSettings">Restaurar as configurações originais</string>
-  <string name="RestoreModuleSettingsTips">Esta ação irá limpar todas as configurações do módulo e restaurar as configurações a partir de um arquivo, em seguida a MIUI Launcher será automaticamente reiniciada, deseja continuar?</string>
+  <string name="RestoreModuleSettingsTips">Resetar todas as configurações do módulo e restaurar as configurações a partir de um arquivo. Após esta ação, o launcher do sistema será reiniciado.</string>
   <string name="Close">Fechar</string>
   <string name="CloseFolder">Fechar a pasta quando o aplicativo for aberto</string>
   <string name="CompleteBlur">Desfoque completo</string>
@@ -85,7 +85,7 @@ MIUI Launcher...</string>
   <string name="Tips2">Restaurar as configurações ao seu valor padrão e reiniciar o MIUI Launcher.</string>
   <string name="HideSeekPoints">Remover indicador de página</string>
   <string name="CategoryHideAll">Ocultar \"Todos\" na categoria de aplicativos</string>
-  <string name="CategoryPagingHideEdit">Ocultar botão \"Editar\" na categoria de aplicativos</string>
+  <string name="CategoryPagingHideEdit">Ocultar botão \"Editar\" nas categorias da gaveta de aplicativos</string>
   <string name="FolderColumnsCount">Número de colunas nas pastas</string>
   <string name="FolderWidth">Utilizar toda a largura da pasta</string>
   <string name="IconTitleFontSize">Tamanho da fonte do rótulo do ícone</string>
