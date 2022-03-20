@@ -2,7 +2,7 @@
 <resources>
   <string name="AdvancedFeature">Gelişmiş ayarlar</string>
   <string name="AlwaysShowMIUIWidget">Yeni Widget\'ların, klasik Witget\'larda da görüntülenmesine izin verin</string>
-  <string name="AlwaysShowStatusBarClock">Durum çubuğundaki saat sürekli görüntülenir</string>
+  <string name="AlwaysShowStatusBarClock">Durum çubuğu saatini sürekli görüntüle</string>
   <string name="AnimationLevel">Hareketler animasyon hızı</string>
   <string name="AppTextSize">Son uygulamalardaki uygulamaların simgeleri ve isimleri arasındaki boşluk</string>
   <string name="BlurWhenOpenFolder">Klasör bulanıklığı</string>
@@ -89,8 +89,8 @@
   <string name="FolderWidth">Tüm klasörün genişliğini kullan</string>
   <string name="IconTitleFontSize">Simgedeki isimlerin yazı boyutu</string>
   <string name="CustomRecentText">Son uygulamalardaki metin</string>
-  <string name="DoubleTap">Çift dokunuşla uyutma</string>
-  <string name="LowEndAnim">Düşük cihazlar için animasyonlu simgeleri etkinleştirin</string>
+  <string name="DoubleTap">Çift dokunuşla uyut</string>
+  <string name="LowEndAnim">Düşük cihazlar için animasyonlu simgeleri etkinleştir</string>
   <string name="VerticalScreen">Dikey Ekran</string>
   <string name="HorizontalScreen">Yatay Ekran</string>
   <string name="Reset2">Reset Thumbnail size for Horizontal Recent Parameters</string>
@@ -99,7 +99,7 @@
   <string name="DockMarginTop">Page Indicator and Icon Spacing</string>
   <string name="DockMarginBottom">Page Indicator and the bottom of the Screen Spacing</string>
   <string name="SimpleWarn">Basit animasyonu etkinleştirdiniz, bazı ayarlar gizlenecektir.</string>
-  <string name="BrokenFeature">Obsolete Feature</string>
+  <string name="BrokenFeature">Eskimiş özellikler</string>
   <string name="AppReturnAmin">App Return Blur</string>
   <string name="BlurRadius">Bulanıklık yarıçapı</string>
   <string name="BasicBlur">Basit bulanıklık</string>
