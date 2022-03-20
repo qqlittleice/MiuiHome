@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="AdvancedFeature">Configurações avançadas</string>
-  <string name="AlwaysShowMIUIWidget">Permitir que os widgets MIUI sejam exibidos na gaveta de widgets clássicos</string>
-  <string name="AlwaysShowStatusBarClock">Sempre mostrar o relógio na barra de status</string>
-  <string name="AnimationLevel">Velocidade da animação de gestos</string>
-  <string name="AppTextSize">Ajustar distância de icones e nomes dos aplicativos na aba recentes</string>
+  <string name="AlwaysShowMIUIWidget">Exibir Widgets MIUI em Widgets Clássicos</string>
+  <string name="AlwaysShowStatusBarClock">Sempre exibir o relógio na barra de status</string>
+  <string name="AnimationLevel">Velocidade de animação de gestos</string>
+  <string name="AppTextSize">Definir a distância entre o ícone e o nome do aplicativo no menu recentes</string>
   <string name="BlurWhenOpenFolder">Desfocar ao abrir pastas</string>
   <string name="Cancel">Cancelar</string>
   <string name="CleanModuleSettings">Resetar todas as configurações</string>
@@ -25,9 +25,9 @@
   <string name="Folder">Configurar pasta de aplicativos</string>
   <string name="HideStatusBar">Ocultar a barra de status no menu recentes</string>
   <string name="HideTaskViewAppIcon">Ocultar ícones de aplicativos no menu recentes</string>
-  <string name="HideTaskViewCleanUpIcon">Esconder o Botão de Limpar Tudo na Tela de Recentes</string>
+  <string name="HideTaskViewCleanUpIcon">Ocultar o ícone de limpeza no menu recentes</string>
   <string name="HideTaskViewSmallWindowIcon">Remover menu \"Janelas flutuantes\" na aba recentes</string>
-  <string name="HideWidgetTitles">Ocultar títulos em Widgets</string>
+  <string name="HideWidgetTitles">Ocultar rótulos dos widgets</string>
   <string name="HorizontalTaskViewOfAppCardSize">Tamanho da exibição de tarefas na aba recentes em modo horizontal</string>
   <string name="InfiniteScroll">Ativar rolagem infinita do Launcher</string>
   <string name="MamlDownload">Permitir carregar efeito \"Water Ripple\"</string>
@@ -83,7 +83,7 @@
   <string name="Reset1">Restaurar</string>
   <string name="Tips2">Restaurar as configurações ao seu valor padrão e reiniciar o MIUI Launcher.</string>
   <string name="HideSeekPoints">Remover indicador de página</string>
-  <string name="CategoryHideAll">Ocultar \"Todos\" nas categorias dos aplicativos</string>
+  <string name="CategoryHideAll">Ocultar \"Todos\" na categoria de aplicativos</string>
   <string name="CategoryPagingHideEdit">Ocultar botão \"Editar\" na categoria de aplicativos</string>
   <string name="FolderColumnsCount">Contagem de colunas em pastas</string>
   <string name="FolderWidth">Utilizar toda a largura da pasta</string>
