@@ -77,13 +77,13 @@
   <string name="DockSettings">Dock ayarları</string>
   <string name="DockWarn">Dock köşelerini özelleştirmek istiyorsanız \"Resource Hook\"u açın.</string>
   <string name="DockFeature">Dock özeliğini aç</string>
-  <string name="EnableDockBlur">Dock\'a bulanıklık ekle</string>
+  <string name="EnableDockBlur">Docka bulanıklık ekle</string>
   <string name="Reset">Dock ayarlarını sıfırla</string>
   <string name="Tips1">Bu seçenek Dock ayarlarını sıfırlar ve sistem başlatıcısını yeniden başlatır.</string>
   <string name="Reset1">Sıfırla</string>
   <string name="Tips2">Bu seçenek modül ayarlarını sıfırlar ve sistem başlatıcısını yeniden başlatır.</string>
   <string name="HideSeekPoints">Sayfa göstergesini kaldır</string>
-  <string name="CategoryHideAll">Uygulama Kategorisinde \"Hepsi\" seçeneğini gizle</string>
+  <string name="CategoryHideAll">Uygulama kategorisinde \"Hepsi\" seçeneğini gizle</string>
   <string name="CategoryPagingHideEdit">Uygulama kategorisi sayfalarında \"Düzenle\" düğmesini gizle</string>
   <string name="FolderColumnsCount">Klasör sütun sayısı</string>
   <string name="FolderWidth">Tüm klasörün genişliğini kullan</string>
