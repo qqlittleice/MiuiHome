@@ -106,12 +106,13 @@
   <string name="SimpleWarn">Siz standart animatsiyalarni yoqdingiz, bu baʼzi kichik imkoniyatlardan sizni maxrum qiladi.</string>
   <string name="BrokenFeature">Eski yoki oddiy xususiyatlar</string>
   <string name="AppReturnAmin">Ilovani ochayotganda orqa fonga blur effektini berish</string>
-  <string name="BlurRadius">Blur effekti darajasi</string>
+  <string name="BlurRadius">Blur darajasini sozlash</string>
   <string name="BasicBlur">Asosiy blur effekti boshqaruvi</string>
   <string name="CustomTitleColor">Ilovalar sarlavxasidagi matn rangini oʻzingizga sozlang</string>
   <string name="Tips4">Oltilik rang qiymatini tanglang.
 Masalan: #FFFFFF — Oq, #000000 — Qora‌‌</string>
-  <string name="About">Modulimiz haqida. Tarjimon: xiaomiuiuz</string>
+  <string name="About">Modulimiz haqida.
+• Tarjimon: @xiaomiuiuz</string>
   <string name="MiuiVersion">MIUI versiyasi</string>
   <string name="LauncherVersion">MIUI Launcher versiyasi</string>
   <string name="ModuleVersion">Modulimiz versiyasi</string>
@@ -120,7 +121,7 @@ Masalan: #FFFFFF — Oq, #000000 — Qora‌‌</string>
   <string name="Github">GitHub</string>
   <string name="OpenGithub">Githubdan bizni toping</string>
   <string name="AppCenter">Anonim statistikalar, loglaringiz anomin holatda qoladi</string>
-  <string name="AppCenterTip">Biz Microsoft AppCenter ilovasidan yangi xususiyatlarni sinash/tahlil qilish uchun foydalanamiz.‌‌</string>
+  <string name="AppCenterTip">Biz sizning yordamingizda Microsoft AppCenter ilovasidan yangi xususiyatlarni sinash va tahlil qilish uchun foydalanamiz.‌‌</string>
   <string name="IconTitleTopMargin">Belgialarning yuqori cheti oʻlchami</string>
   <string name="OpenLSPosed">LSPosedni ochish</string>
   <string name="ShortcutCount">Ilova piktogrammasini qulfdan chiqarish</string>
