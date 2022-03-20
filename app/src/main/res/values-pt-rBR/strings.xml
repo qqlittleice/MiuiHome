@@ -13,7 +13,7 @@ MIUI Launcher...</string>
   <string name="RestoreModuleSettingsFailed">Falha ao restaurar o backup</string>
   <string name="BackupModuleSettings">Fazer backup das configurações do módulo</string>
   <string name="RestoreModuleSettings">Restaurar as configurações originais</string>
-  <string name="RestoreModuleSettingsTips">Resetar todas as configurações do módulo e restaurar as configurações a partir de um arquivo. Após esta ação, o launcher do sistema será reiniciado.</string>
+  <string name="RestoreModuleSettingsTips">Resetar todas as configurações do módulo e restaurar as configurações a partir de um arquivo. Após está ação, o launcher do sistema será reiniciado.</string>
   <string name="Close">Fechar</string>
   <string name="CloseFolder">Fechar a pasta quando o aplicativo for aberto</string>
   <string name="CompleteBlur">Desfoque completo</string>
