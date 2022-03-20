@@ -110,13 +110,13 @@ MIUI Launcher...</string>
   <string name="MiuiVersion">Versão da MIUI</string>
   <string name="LauncherVersion">Versão da MIUI Launcher</string>
   <string name="ModuleVersion">Versão do módulo</string>
-  <string name="AboutUs">Quem somos</string>
+  <string name="AboutUs">Quem somos nós</string>
   <string name="AlwaysBlur">Sempre desfocar o papel de parede do MIUI Launcher</string>
   <string name="Github">GitHub</string>
   <string name="OpenGithub">Clique para abrir o GitHub</string>
   <string name="AppCenter">Enviar estatísticas de uso anônimas</string>
   <string name="AppCenterTip">Utilizamos o Microsoft AppCenter para nos ajudar a testar/analisar o uso do aplicativo.</string>
-  <string name="IconTitleTopMargin">Margem superior do título do ícone</string>
+  <string name="IconTitleTopMargin">Ajustar a distância entre nome e ícone</string>
   <string name="OpenLSPosed">Abrir app LSPosed</string>
   <string name="ShortcutCount">Desbloqueie o limite de contagem de atalhos</string>
 </resources>
