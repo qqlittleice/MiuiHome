@@ -28,11 +28,11 @@ MIUI Launcher...</string>
   <string name="HideTaskViewAppIcon">Ocultar ícones de aplicativos no menu recentes</string>
   <string name="HideTaskViewCleanUpIcon">Ocultar o ícone de limpeza no menu recentes</string>
   <string name="HideTaskViewSmallWindowIcon">Ocultar o botão \"Janelas Flutuantes\" no menu recente</string>
-  <string name="HideWidgetTitles">Ocultar rótulos dos widgets</string>
+  <string name="HideWidgetTitles">Ocultar nome dos widgets</string>
   <string name="HorizontalTaskViewOfAppCardSize">Tamanho da exibição de tarefas no menu recentes, horizontal.</string>
   <string name="InfiniteScroll">Rolagem infinita da área de trabalho</string>
   <string name="MamlDownload">Habilitar o efeito \"Ondas\" ao desbloquear</string>
-  <string name="ManualInput">Entrada manual</string>
+  <string name="ManualInput">Inserir manualmente</string>
   <string name="ModuleFeature">Recursos do módulo</string>
   <string name="ModuleSettings">Configurações do módulo</string>
   <string name="ResHook">Recursos adicionais</string>
