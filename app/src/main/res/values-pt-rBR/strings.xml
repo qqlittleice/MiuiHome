@@ -19,8 +19,8 @@ MIUI Launcher…</string>
   <string name="CompleteBlur">Desfoque \"Completo\"</string>
   <string name="Defaults">Padrão</string>
   <string name="Recommend">Recomendado</string>
-  <string name="setDefaults">Para restaurar o \"padrão\" do launcher, deixar em branco.</string>
-  <string name="setRecentString">Para restaurar o \"padrão\" do launcher, deixar em branco. Inserir um espaço para remover o texto</string>
+  <string name="setDefaults">Para restaurar o padrão do MIUI Launcher, deixar em branco.</string>
+  <string name="setRecentString">Para restaurar o padrão do MIUI Launcher, deixar em branco. Inserir um espaço para remover o texto</string>
   <string name="current">Atual</string>
   <string name="Description">Hook (modificações) para MIUI Launcher</string>
   <string name="Folder">Configurações Pasta</string>
@@ -30,7 +30,7 @@ MIUI Launcher…</string>
   <string name="HideTaskViewSmallWindowIcon">Remover Opção \"Janelas Flutuantes\" na Tela de Recentes</string>
   <string name="HideWidgetTitles">Esconder Nome de Widgets</string>
   <string name="HorizontalTaskViewOfAppCardSize">Tamanho da miniatura para Recentes Horizontal</string>
-  <string name="InfiniteScroll">Rolagem Infinita</string>
+  <string name="InfiniteScroll">Habilitar rolagem infinita do MIUI Launcher</string>
   <string name="MamlDownload">Baixar Efeito de Ondas de Água</string>
   <string name="ManualInput">Entrada Manual</string>
   <string name="ModuleFeature">Recursos do módulo</string>
@@ -39,10 +39,10 @@ MIUI Launcher…</string>
   <string name="NoneBlur">Sem desfoque</string>
   <string name="OtherFeature">Outros Recursos</string>
   <string name="OutOfInput">Por favor, coloque um valor dentro do limite!</string>
-  <string name="RealTaskViewHorizontal">Verdadeiro · Recentes Horizontais</string>
+  <string name="RealTaskViewHorizontal">Menu horizontal de aplicativos no Recentes</string>
   <string name="Reboot">Reiniciar MIUI Launcher</string>
   <string name="Reboot1">Deseja reiniciar o MIUI Launcher?</string>
-  <string name="Reboot2">O Laucher será reiniciado em 1 segundo!</string>
+  <string name="Reboot2">O MIUI Laucher será reiniciado agora!</string>
   <string name="RoundCorner">Tamanho das bordas arrendodadas na miniatura</string>
   <string name="Save">Salvar</string>
   <string name="Scope">Limite permitido</string>
