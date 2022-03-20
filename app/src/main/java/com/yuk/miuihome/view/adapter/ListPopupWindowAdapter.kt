@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Typeface
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.StateListDrawable
+import android.util.TypedValue
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
@@ -64,13 +65,12 @@ class ListPopupWindowAdapter(
     }
 
     fun getWidth(): Int {
-        var maxWidth = dp2px(120f)
-        var view: View? = null
-        val count: Int = this@ListPopupWindowAdapter.count
-        for (i in 0 until count) {
-            view = this@ListPopupWindowAdapter.getView(i, view, null)
-            view.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
-            if (view.measuredWidth > maxWidth) maxWidth = view.measuredWidth
+        var maxWidth = 0
+        for (t in data) {
+            val textView = TextView(context).also { it.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT) }
+            textView.text = t
+            textView.measure(0, 0)
+            maxWidth = if (maxWidth > textView.measuredWidth) maxWidth else textView.measuredWidth
         }
         return maxWidth
     }
@@ -91,36 +91,29 @@ class ListPopupWindowAdapter(
         val thisText = data[position]
         return convertView
             ?: LinearLayout(context).apply {
+                orientation = LinearLayout.HORIZONTAL
                 var radius = floatArrayOf(0f, 0f, 0f, 0f)
                 val radiusFloat = dp2px(16f).toFloat()
                 when (position) {
-                    0 -> {
-                        radius = floatArrayOf(radiusFloat, radiusFloat, 0f, 0f)
-                    }
-                    data.size - 1 -> {
-                        radius = floatArrayOf(0f, 0f, radiusFloat, radiusFloat)
-                    }
+                    0 -> radius = floatArrayOf(radiusFloat, radiusFloat, 0f, 0f)
+                    data.size - 1 -> radius = floatArrayOf(0f, 0f, radiusFloat, radiusFloat)
                 }
                 val pressedDrawable = createRectangleDrawable(context.getColor(if (currentValue == thisText) R.color.popup_select_click else R.color.popup_background_click), 0, 0, radius)
                 val normalDrawable = createRectangleDrawable(context.getColor(if (currentValue == thisText) R.color.popup_select else R.color.popup_background), 0, 0, radius)
                 background = createStateListDrawable(pressedDrawable, normalDrawable)
                 addView(TextView(context).apply {
-                    layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
-                    textSize = 16f
-                    setPadding(dp2px(25f), dp2px(20f), 0, dp2px(20f))
+                    gravity = Gravity.START
+                    setTextSize(TypedValue.COMPLEX_UNIT_SP,16f)
+                    setPadding(0, dp2px(20f), 0, dp2px(20f))
                     isSingleLine = true
                     text = thisText
+                    textAlignment = View.TEXT_ALIGNMENT_TEXT_START
                     paint.typeface = Typeface.create(null, 500, false)
                     if (currentValue == thisText) setTextColor(context.getColor(R.color.popup_select_text))
-                })
+                }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f).also { it.gravity = Gravity.START; it.marginStart = dp2px(25f); it.marginEnd = dp2px(25f) })
                 addView(ImageView(context).apply {
-                    layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).also {
-                        it.gravity = Gravity.CENTER_VERTICAL
-                        it.setMargins(0, 0, dp2px(25f), 0)
-                    }
-                    background = context.getDrawable(R.drawable.ic_popup_select)
-                    if (currentValue != thisText) visibility = View.GONE
-                })
+                    if (currentValue == thisText) background = context.getDrawable(R.drawable.ic_popup_select)
+                }, LinearLayout.LayoutParams(dp2px(15f), dp2px(15f)).also { it.gravity = Gravity.CENTER_VERTICAL; it.marginEnd = dp2px(25f) })
             }
     }
 

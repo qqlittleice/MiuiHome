@@ -19,7 +19,7 @@ class TextWithSwitchV(
             LinearContainerV.HORIZONTAL,
             arrayOf(
                 LayoutPair(textWithSummaryV.create(context).also { it.setPadding(0, dp2px(16f), 0, dp2px(16f)) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f).also { it.gravity = Gravity.CENTER_VERTICAL }),
-                LayoutPair(switchV.create(context).also { it.setPadding(0, dp2px(16f), 0, dp2px(16f)) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).also { it.gravity = Gravity.CENTER_VERTICAL; it.setMargins(0, 0, dp2px(25f), 0) })
+                LayoutPair(switchV.create(context).also { it.setPadding(0, dp2px(16f), 0, dp2px(16f)) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).also { it.gravity = Gravity.CENTER_VERTICAL; it.setMargins(0, 0, 0, 0); it.marginEnd = dp2px(25f)})
             )
         ).create(context)
     }

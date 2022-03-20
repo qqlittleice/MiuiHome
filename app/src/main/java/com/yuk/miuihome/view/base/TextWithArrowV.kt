@@ -20,8 +20,8 @@ class TextWithArrowV(
         return LinearContainerV(LinearContainerV.HORIZONTAL,
             arrayOf(
                 LayoutPair(textWithSummaryV.create(context).also { it.setPadding(0, 0, 0, 0) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)),
-                LayoutPair(ImageView(context).also { view -> view.background = context.getDrawable(R.drawable.ic_right_arrow) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).also { it.gravity = Gravity.CENTER_VERTICAL }),
+                LayoutPair(ImageView(context).also { view -> view.background = context.getDrawable(R.drawable.ic_right_arrow) }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT).also { it.gravity = Gravity.CENTER_VERTICAL; it.marginEnd = dp2px(25f) }),
             )
-        ).create(context).also { view -> onClickListener?.let { view.setOnClickListener(it); view.background = context.getDrawable(R.drawable.ic_click_check); view.setPadding(0, dp2px(16f), dp2px(25f), dp2px(16f)) } }
+        ).create(context).also { view -> onClickListener?.let { view.setOnClickListener(it); view.background = context.getDrawable(R.drawable.ic_click_check); view.setPadding(0, dp2px(16f), 0, dp2px(16f))} }
     }
 }

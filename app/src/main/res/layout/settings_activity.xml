@@ -18,7 +18,7 @@
       android:layout_width="38dp"
       android:layout_height="38dp"
       android:layout_marginStart="18dp"
-      android:layout_gravity="center_vertical"
+      android:layout_gravity="start"
       android:src="@drawable/ic_action_back"
       tools:ignore="ContentDescription" />
 

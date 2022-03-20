@@ -3,6 +3,7 @@ package com.yuk.miuihome.view.base
 import android.content.Context
 import android.graphics.Typeface
 import android.util.TypedValue
+import android.view.Gravity
 import android.view.View
 import android.widget.TextView
 import com.yuk.miuihome.R
@@ -25,6 +26,7 @@ class TextV(
         return TextView(context).also { view ->
             text?.let { view.text = it }
             resId?.let { view.setText(it) }
+            view.textAlignment = View.TEXT_ALIGNMENT_VIEW_START
             if (textSize == null)
                 view.setTextSize(TypedValue.COMPLEX_UNIT_SP,18f)
             else

@@ -137,6 +137,7 @@ class CustomDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
     fun setMessage(textId: Int) {
         view.findViewById<TextView>(R.id.Message).apply {
             setText(textId)
+            textAlignment = View.TEXT_ALIGNMENT_VIEW_START
             visibility = View.VISIBLE
         }
     }
@@ -144,6 +145,7 @@ class CustomDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
     fun setMessage(text: CharSequence?) {
         view.findViewById<TextView>(R.id.Message).apply {
             this.text = text
+            textAlignment = View.TEXT_ALIGNMENT_VIEW_START
             visibility = View.VISIBLE
         }
     }
@@ -152,6 +154,7 @@ class CustomDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
         view.findViewById<EditText>(R.id.EditText).apply {
             setText(text.toCharArray(), 0, text.length)
             this.hint = hint
+            textAlignment = View.TEXT_ALIGNMENT_VIEW_START
             visibility = View.VISIBLE
         }
     }
