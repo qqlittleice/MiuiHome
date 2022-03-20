@@ -9,7 +9,7 @@
   <string name="Cancel">Rad etaman</string>
   <string name="CleanModuleSettings">Standart sozlamalarga qaytarish</string>
   <string name="RestoreModuleSettingsSuccess">MIUI Launcheni qayta ishga tushrish ( Amaldagi sozlamalar saqlanadi)</string>
-  <string name="RestoreModuleSettingsFailed">Failed to restore backup</string>
+  <string name="RestoreModuleSettingsFailed">Afsuski oʻrnatilgan sozlamalar amalga oshmadi, qayta uruning!</string>
   <string name="BackupModuleSettings">Dastlabki modul sozlamalariga qaytarish</string>
   <string name="RestoreModuleSettings">Modul sozlamalarini birlamchi holatga qaytaring</string>
   <string name="RestoreModuleSettingsTips">Barcha modul oʻrnatgan sozlamalar oʻchiriladi. Operatsiyadan soʻng tizim launcheri qayta ishga tushadi.‌‌</string>
