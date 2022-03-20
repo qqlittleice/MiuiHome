@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="AdvancedFeature">Gelişmiş Ayarlar</string>
-  <string name="AlwaysShowMIUIWidget">Yeni Widget\'ların, Klasik Witget\'larda da görüntülenmesine izin verin</string>
+  <string name="AdvancedFeature">Gelişmiş ayarlar</string>
+  <string name="AlwaysShowMIUIWidget">Yeni Widget\'ların, klasik Witget\'larda da görüntülenmesine izin verin</string>
   <string name="AlwaysShowStatusBarClock">Durum çubuğundaki saat sürekli görüntülenir</string>
   <string name="AnimationLevel">Hareketler animasyon hızı</string>
   <string name="AppTextSize">Son uygulamalardaki uygulamaların simgeleri ve isimleri arasındaki boşluk</string>
@@ -22,11 +22,11 @@
   <string name="setRecentString">Varsayılanı kullanmak için boş bırakın veya metni kaldırmak için boşluk bırakın</string>
   <string name="current">Geçerli</string>
   <string name="Description">MiUI başlatıcısı için Resource Hook</string>
-  <string name="Folder">Klasör Ayarları</string>
+  <string name="Folder">Klasör ayarları</string>
   <string name="HideStatusBar">Son uygulamalarda durum çubuğunu gizle</string>
-  <string name="HideTaskViewAppIcon">Son Uygulamalarda uygulamaların simgelerini gizle</string>
+  <string name="HideTaskViewAppIcon">Son uygulamalarda uygulamaların simgelerini gizle</string>
   <string name="HideTaskViewCleanUpIcon">Son Uygulamalarda \"Tüm Uygulamaları Kapat\" simgesini gizle</string>
-  <string name="HideTaskViewSmallWindowIcon">Son Uygulamalarda \"Kayan Pencereleri\" gizle</string>
+  <string name="HideTaskViewSmallWindowIcon">Son uygulamalarda \"Kayan Pencereleri\" gizle</string>
   <string name="HideWidgetTitles">Widget isimlerini gizle</string>
   <string name="HorizontalTaskViewOfAppCardSize">Son uygulamalardaki uygulamaların yatay olarak boyutu</string>
   <string name="InfiniteScroll">Sonsuz kaydırma</string>
@@ -83,7 +83,7 @@
   <string name="Reset1">Sıfırla</string>
   <string name="Tips2">Bu seçenek modül ayarlarını sıfırlar ve sistem başlatıcısını yeniden başlatır.</string>
   <string name="HideSeekPoints">Sayfa göstergesini kaldır</string>
-  <string name="CategoryHideAll">Uygulama Kategorisinde \"Hepsi\" seçeneğini gizle</string>
+  <string name="CategoryHideAll">Uygulama kategorisinde \"Hepsi\" seçeneğini gizle</string>
   <string name="CategoryPagingHideEdit">Uygulama kategorisi sayfalarında \"Düzenle\" düğmesini gizle</string>
   <string name="FolderColumnsCount">Klasör sütun sayısı</string>
   <string name="FolderWidth">Tüm klasörün genişliğini kullan</string>
