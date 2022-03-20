@@ -5,7 +5,7 @@
   <string name="AlwaysShowStatusBarClock">Sempre mostrar o relógio na barra de status</string>
   <string name="AnimationLevel">Velocidade da animação de gestos</string>
   <string name="AppTextSize">Ajustar distância de icones e nomes dos aplicativos na aba recentes</string>
-  <string name="BlurWhenOpenFolder">Ativar desfoque de fundo nas pastas</string>
+  <string name="BlurWhenOpenFolder">Desfocar ao abrir pastas</string>
   <string name="Cancel">Cancelar</string>
   <string name="CleanModuleSettings">Resetar todas as configurações</string>
   <string name="RestoreModuleSettingsSuccess">Configurações armazenadas restauradas com sucesso. A launcher do sistema irá reiniciar.</string>
@@ -23,9 +23,9 @@
   <string name="current">Valor atual</string>
   <string name="Description">Configurações adicionais para MIUI Launcher</string>
   <string name="Folder">Configurar pasta de aplicativos</string>
-  <string name="HideStatusBar">Ocultar barra de status na aba recentes</string>
-  <string name="HideTaskViewAppIcon">Ocultar ícones dos aplicativos na tela Apps Recentes</string>
-  <string name="HideTaskViewCleanUpIcon">Ocultar botão de limpar todos os aplicativos da aba recentes</string>
+  <string name="HideStatusBar">Ocultar a barra de status no menu recentes</string>
+  <string name="HideTaskViewAppIcon">Ocultar ícones de aplicativos no menu recentes</string>
+  <string name="HideTaskViewCleanUpIcon">Esconder o Botão de Limpar Tudo na Tela de Recentes</string>
   <string name="HideTaskViewSmallWindowIcon">Remover menu \"Janelas flutuantes\" na aba recentes</string>
   <string name="HideWidgetTitles">Ocultar títulos em Widgets</string>
   <string name="HorizontalTaskViewOfAppCardSize">Tamanho da exibição de tarefas na aba recentes em modo horizontal</string>
