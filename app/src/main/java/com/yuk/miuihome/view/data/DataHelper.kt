@@ -185,7 +185,9 @@ object DataHelper {
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.OtherFeature))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AlwaysShowStatusBarClock), switchV = SwitchV("clockGadget")))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.DoubleTap), switchV = SwitchV("doubleTap")))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.ShortcutCount), switchV = SwitchV("unlockShortcutCount")))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.ShortcutCount), switchV = SwitchV("unlockShortcutCount", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() })))))
+            if (OwnSP.ownSP.getBoolean("unlockShortcutCount", false))
+                add(Item(list = arrayListOf(TextV(resId = R.string.MaxShortcutCount, onClickListener = { showMaxShortcutCountDialog() }))))
             if (!OwnSP.ownSP.getBoolean("dockSettings", false) && Config.AndroidSDK == 30)
                 add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SearchBarBlur), switchV = SwitchV("searchBarBlur")))))
             add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.DockSettings)) { setItems(dock) })))
@@ -452,6 +454,22 @@ object DataHelper {
             setRButton(R.string.Yes) {
                 if (getEditText() == "") editor.putInt("folderColumns", 3)
                 else editor.putInt("folderColumns", getEditText().toInt())
+                editor.apply()
+                dismiss()
+            }
+            setLButton(R.string.Cancel) { dismiss() }
+            show()
+        }
+    }
+
+    private fun showMaxShortcutCountDialog() {
+        CustomDialog(currentActivity).apply {
+            setTitle(R.string.MaxShortcutCount)
+            setMessage("${moduleRes.getString(R.string.Defaults)}: 6, ${moduleRes.getString(R.string.Recommend)}: 3-8, ${moduleRes.getString(R.string.setDefaults)}")
+            setEditText("", "${moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getInt("shortcutCount", 6)}")
+            setRButton(R.string.Yes) {
+                if (getEditText() == "") editor.putInt("shortcutCount", 6)
+                else editor.putInt("shortcutCount", getEditText().toInt())
                 editor.apply()
                 dismiss()
             }
