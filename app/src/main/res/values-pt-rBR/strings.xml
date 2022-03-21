@@ -119,4 +119,5 @@ MIUI Launcher...</string>
   <string name="IconTitleTopMargin">Margem superior do título do ícone</string>
   <string name="OpenLSPosed">Abrir app LSPosed</string>
   <string name="ShortcutCount">Desbloqueie o limite de contagem de atalhos</string>
+  <string name="MaxShortcutCount">Modify max shortcut count</string>
 </resources>
