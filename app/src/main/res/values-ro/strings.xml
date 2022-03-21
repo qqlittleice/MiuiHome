@@ -118,4 +118,5 @@
   <string name="IconTitleTopMargin">Marginea de sus a titlului pictogramelor</string>
   <string name="OpenLSPosed">Deschide LSPosed</string>
   <string name="ShortcutCount">Deblocare limită număr de comenzi rapide</string>
+  <string name="MaxShortcutCount">Modify max shortcut count</string>
 </resources>

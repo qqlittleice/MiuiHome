@@ -118,4 +118,5 @@
   <string name="IconTitleTopMargin">Margine superiore icona titolo</string>
   <string name="OpenLSPosed">Apri LSPosed</string>
   <string name="ShortcutCount">Sblocca il limite del numero di collegamenti</string>
+  <string name="MaxShortcutCount">Modify max shortcut count</string>
 </resources>
