@@ -7,12 +7,13 @@ import com.yuk.miuihome.utils.ktx.hookAfterMethod
 class ModifyShortcutItemCount {
 
     fun init() {
+        val value = OwnSP.ownSP.getInt("shortcutCount", 6)
         if (!OwnSP.ownSP.getBoolean("unlockShortcutCount", false)) return
         "com.miui.home.launcher.shortcuts.AppShortcutMenu".hookAfterMethod("getMaxCountInCurrentOrientation") {
-            it.result = 10
+            it.result = value
         }
         "com.miui.home.launcher.shortcuts.AppShortcutMenu".hookAfterMethod("getMaxShortcutItemCount") {
-            it.result = 99
+            it.result = value
         }
         "com.miui.home.launcher.shortcuts.AppShortcutMenu".hookAfterMethod("getMaxVisualHeight") {
             it.result = it.thisObject.callMethod("getItemHeight")
