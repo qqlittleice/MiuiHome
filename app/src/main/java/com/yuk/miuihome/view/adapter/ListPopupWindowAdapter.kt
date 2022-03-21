@@ -17,12 +17,11 @@ import com.yuk.miuihome.utils.ktx.dp2px
 
 class ListPopupWindowAdapter(
     context: Context,
-    data: ArrayList<String>,
+    array: ArrayList<String>,
     private val currentValue: String?
 ) : BaseAdapter() {
     private val context: Context
-    private val data: ArrayList<String>
-
+    private val array: ArrayList<String>
     /**
      * 创建背景颜色
      *
@@ -31,18 +30,14 @@ class ListPopupWindowAdapter(
      * @param strokeWidth 线条宽度  单位px
      * @param radius      角度  px,长度为4,分别表示左上,右上,右下,左下的角度
      */
-    private fun createRectangleDrawable(color: Int, strokeColor: Int = 0, strokeWidth: Int, radius: FloatArray?): GradientDrawable {
+    private fun createRectangleDrawable(color: Int, strokeColor: Int = 0, strokeWidth: Int, radius: FloatArray): GradientDrawable {
         return try {
             GradientDrawable().apply {
                 shape = GradientDrawable.RECTANGLE
                 setColor(color)
                 if (strokeColor != 0) setStroke(strokeWidth, strokeColor)
-                if (radius != null && radius.size == 4) {
-                    cornerRadii = floatArrayOf(
-                        radius[0], radius[0], radius[1],
-                        radius[1], radius[2], radius[2],
-                        radius[3], radius[3]
-                    )
+                if (radius.size == 4) {
+                    cornerRadii = floatArrayOf(radius[0], radius[0], radius[1], radius[1], radius[2], radius[2], radius[3], radius[3])
                 }
             }
         } catch (e: Exception) {
@@ -66,7 +61,7 @@ class ListPopupWindowAdapter(
 
     fun getWidth(): Int {
         var maxWidth = 0
-        for (t in data) {
+        for (t in array) {
             val textView = TextView(context).also { it.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT) }
             textView.text = t
             textView.measure(0, 0)
@@ -75,40 +70,32 @@ class ListPopupWindowAdapter(
         return maxWidth
     }
 
-    override fun getCount(): Int {
-        return data.size
-    }
+    override fun getCount(): Int = array.size
 
-    override fun getItem(position: Int): Any {
-        return data[position]
-    }
+    override fun getItem(position: Int): Any = array[position]
 
-    override fun getItemId(position: Int): Long {
-        return position.toLong()
-    }
+    override fun getItemId(position: Int): Long = position.toLong()
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val thisText = data[position]
         return convertView
             ?: LinearLayout(context).apply {
+                val thisText = array[position]
                 orientation = LinearLayout.HORIZONTAL
                 var radius = floatArrayOf(0f, 0f, 0f, 0f)
                 val radiusFloat = dp2px(16f).toFloat()
                 when (position) {
                     0 -> radius = floatArrayOf(radiusFloat, radiusFloat, 0f, 0f)
-                    data.size - 1 -> radius = floatArrayOf(0f, 0f, radiusFloat, radiusFloat)
+                    array.size - 1 -> radius = floatArrayOf(0f, 0f, radiusFloat, radiusFloat)
                 }
                 val pressedDrawable = createRectangleDrawable(context.getColor(if (currentValue == thisText) R.color.popup_select_click else R.color.popup_background_click), 0, 0, radius)
                 val normalDrawable = createRectangleDrawable(context.getColor(if (currentValue == thisText) R.color.popup_select else R.color.popup_background), 0, 0, radius)
                 background = createStateListDrawable(pressedDrawable, normalDrawable)
                 addView(TextView(context).apply {
-                    gravity = Gravity.START
-                    setTextSize(TypedValue.COMPLEX_UNIT_SP,16f)
-                    setPadding(0, dp2px(20f), 0, dp2px(20f))
-                    isSingleLine = true
                     text = thisText
-                    textAlignment = View.TEXT_ALIGNMENT_TEXT_START
-                    paint.typeface = Typeface.create(null, 500, false)
+                    isSingleLine = true
+                    setTextSize(TypedValue.COMPLEX_UNIT_SP,16f)
+                    typeface = Typeface.create(null, 500, false)
+                    setPadding(0, dp2px(18f), 0, dp2px(18f))
                     if (currentValue == thisText) setTextColor(context.getColor(R.color.popup_select_text))
                 }, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f).also { it.gravity = Gravity.START; it.marginStart = dp2px(25f); it.marginEnd = dp2px(25f) })
                 addView(ImageView(context).apply {
@@ -119,6 +106,6 @@ class ListPopupWindowAdapter(
 
     init {
         this.context = context
-        this.data = data
+        this.array = array
     }
 }

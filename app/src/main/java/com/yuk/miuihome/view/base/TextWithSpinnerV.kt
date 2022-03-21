@@ -8,13 +8,15 @@ import android.view.Gravity
 import android.view.HapticFeedbackConstants
 import android.view.MotionEvent
 import android.view.View
-import android.widget.*
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.ListPopupWindow
+import android.widget.TextView
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.view.adapter.ListPopupWindowAdapter
 import com.yuk.miuihome.view.data.DataHelper
 import com.yuk.miuihome.view.data.LayoutPair
-
 
 class TextWithSpinnerV(
     private val textV: TextV,
@@ -33,7 +35,7 @@ class TextWithSpinnerV(
         DataHelper.currentActivity.window.attributes = lp
     }
 
-    @SuppressLint("RtlHardcoded", "ClickableViewAccessibility", "MissingPermission")
+    @SuppressLint("ClickableViewAccessibility", "RtlHardcoded")
     override fun create(context: Context): View {
         val text = TextView(context)
         val popup = ListPopupWindow(context).apply {

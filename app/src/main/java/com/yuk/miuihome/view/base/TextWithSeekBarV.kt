@@ -17,8 +17,7 @@ class TextWithSeekBarV(
     private val min: Int,
     private val max: Int,
     val divide: Int = 1,
-    private val defaultProgress: Int,
-    val callBacks: ((Int, TextView) -> Unit)? = null
+    private val defaultProgress: Int
 ) : BaseView() {
 
     override var outside = true
