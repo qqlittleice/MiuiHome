@@ -13,7 +13,7 @@ MIUI Launcher...</string>
   <string name="RestoreModuleSettingsFailed">Falha ao restaurar o backup</string>
   <string name="BackupModuleSettings">Fazer backup das configurações do módulo</string>
   <string name="RestoreModuleSettings">Restaurar as configurações originais</string>
-  <string name="RestoreModuleSettingsTips">Esta ação irá limpar todas as configurações do módulo e restaurar as configurações a partir de um arquivo, em seguida a MIUI Launcher será automaticamente reiniciada, deseja continuar?</string>
+  <string name="RestoreModuleSettingsTips">Resetar todas as configurações do módulo e restaurar as configurações a partir de um arquivo. Após está ação, o launcher do sistema será reiniciado.</string>
   <string name="Close">Fechar</string>
   <string name="CloseFolder">Fechar a pasta quando o aplicativo for aberto</string>
   <string name="CompleteBlur">Desfoque completo</string>
@@ -28,11 +28,11 @@ MIUI Launcher...</string>
   <string name="HideTaskViewAppIcon">Ocultar ícones de aplicativos no menu recentes</string>
   <string name="HideTaskViewCleanUpIcon">Ocultar o ícone de limpeza no menu recentes</string>
   <string name="HideTaskViewSmallWindowIcon">Ocultar o botão \"Janelas Flutuantes\" no menu recente</string>
-  <string name="HideWidgetTitles">Ocultar nome dos widgets</string>
+  <string name="HideWidgetTitles">Ocultar rótulos dos widgets</string>
   <string name="HorizontalTaskViewOfAppCardSize">Tamanho da exibição de tarefas no menu recentes, horizontal.</string>
   <string name="InfiniteScroll">Rolagem infinita da área de trabalho</string>
   <string name="MamlDownload">Habilitar o efeito \"Ondas\" ao desbloquear</string>
-  <string name="ManualInput">Inserir manualmente</string>
+  <string name="ManualInput">Entrada manual</string>
   <string name="ModuleFeature">Recursos do módulo</string>
   <string name="ModuleSettings">Configurações do módulo</string>
   <string name="ResHook">Recursos adicionais</string>
@@ -62,10 +62,10 @@ MIUI Launcher...</string>
   <string name="VerticalTaskViewOfAppCardSize">Tamanho da exibição de tarefas no menu recentes, vertical.</string>
   <string name="WallpaperDarken">Desativar escurecimento do papel de parede no menu recentes</string>
   <string name="Welcome">Bem-vindo(a)</string>
-  <string name="Widget">Funcionalidades do Widget</string>
+  <string name="Widget">Recursos adicionais dos widgets</string>
   <string name="WidgetToMinus">Mover Widgets Clássicos para o \"App Assistente\"</string>
   <string name="Yes">Sim</string>
-  <string name="EnableIconShadow">Mostrar sombra e reflexo dos ícones</string>
+  <string name="EnableIconShadow">Mostrar sombra e reflexo dos ícones na tela inicial</string>
   <string name="SmallWindow">Permitir que todos aplicativos suporte \"Janelas Flutuantes\"</string>
   <string name="LowEndDeviceUseMIUIWidgets">Habilitar nova loja de widget em dispositivos de baixo desempenho</string>
   <string name="RecommendServer">Desabilitar \"Recomendar Servidor\"</string>
@@ -80,12 +80,12 @@ MIUI Launcher...</string>
   <string name="DockFeature">Ativar a barra Dock</string>
   <string name="EnableDockBlur">Ativar desfoque da barra Dock</string>
   <string name="Reset">Restaurar os parâmetros da barra Dock</string>
-  <string name="Tips1">Restaurar os parâmetros da barra dock ao seu valor padrão e reiniciar a launcher do sistema.</string>
+  <string name="Tips1">Restaurar os parâmetros da barra Dock ao seu valor padrão e reiniciar a MIUI Launcher.</string>
   <string name="Reset1">Restaurar</string>
   <string name="Tips2">Restaurar as configurações ao seu valor padrão e reiniciar o MIUI Launcher.</string>
   <string name="HideSeekPoints">Remover indicador de página</string>
   <string name="CategoryHideAll">Ocultar \"Todos\" na categoria de aplicativos</string>
-  <string name="CategoryPagingHideEdit">Ocultar botão \"Editar\" na categoria de aplicativos</string>
+  <string name="CategoryPagingHideEdit">Ocultar botão \"Editar\" nas categorias da gaveta de aplicativos</string>
   <string name="FolderColumnsCount">Número de colunas nas pastas</string>
   <string name="FolderWidth">Utilizar toda a largura da pasta</string>
   <string name="IconTitleFontSize">Tamanho da fonte do rótulo do ícone</string>
@@ -110,13 +110,13 @@ MIUI Launcher...</string>
   <string name="MiuiVersion">Versão da MIUI</string>
   <string name="LauncherVersion">Versão da MIUI Launcher</string>
   <string name="ModuleVersion">Versão do módulo</string>
-  <string name="AboutUs">Quem somos nós</string>
+  <string name="AboutUs">Quem somos</string>
   <string name="AlwaysBlur">Sempre desfocar o papel de parede do MIUI Launcher</string>
   <string name="Github">GitHub</string>
   <string name="OpenGithub">Clique para abrir o GitHub</string>
   <string name="AppCenter">Enviar estatísticas de uso anônimas</string>
   <string name="AppCenterTip">Utilizamos o Microsoft AppCenter para nos ajudar a testar/analisar o uso do aplicativo.</string>
-  <string name="IconTitleTopMargin">Ajustar a distância entre nome e ícone</string>
+  <string name="IconTitleTopMargin">Margem superior do título do ícone</string>
   <string name="OpenLSPosed">Abrir app LSPosed</string>
   <string name="ShortcutCount">Desbloqueie o limite de contagem de atalhos</string>
 </resources>
