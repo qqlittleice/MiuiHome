@@ -1,6 +1,9 @@
 package com.yuk.miuihome.module
 
 import android.content.Context
+import android.graphics.RenderEffect
+import android.graphics.Shader
+import android.os.Build
 import android.os.Bundle
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
@@ -51,7 +54,7 @@ class ModifyDockHook {
             }
             launcherClass.hookAfterMethod("onCreate", Bundle::class.java
             ) {
-                val searchBarObject = XposedHelpers.callMethod(it.thisObject, "getSearchBar") as FrameLayout
+                val searchBarObject = it.thisObject.callMethod( "getSearchBar") as FrameLayout
                 val searchBarDesktop = searchBarObject.getChildAt(0) as RelativeLayout
                 val searchBarDrawer = searchBarObject.getChildAt(1) as RelativeLayout
                 val searchBarContainer = searchBarObject.parent as FrameLayout
