@@ -51,7 +51,7 @@
   <string name="SimpleAnimation">Basit animasyon</string>
   <string name="SimpleBlur">Basit Bulanıklık</string>
   <string name="SmoothAnimation">Akıcı Animasyon</string>
-  <string name="TaskViewAppCardTextSize">Kucuk resim etiketleri metninin boyutu</string>
+  <string name="TaskViewAppCardTextSize">Küçük resim etiketleri metninin boyutu</string>
   <string name="TaskViewBlurLevel">Son uygulamalardaki bulanıklık seviyesi</string>
   <string name="TaskViewBlurSetTo">Son uygulamalar bulaniklik duzeyini buna ayarla </string>
   <string name="TestBlur">Test bulanıklığı</string>
@@ -118,5 +118,5 @@
   <string name="IconTitleTopMargin">Simge ismi üst kenar boşluğu</string>
   <string name="OpenLSPosed">LSPosed\'i Aç</string>
   <string name="ShortcutCount">Kısayol kısıtlamasını kaldır</string>
-  <string name="MaxShortcutCount">Modify max shortcut count</string>
+  <string name="MaxShortcutCount">Maksimum kısayol sayısını değiştir</string>
 </resources>
