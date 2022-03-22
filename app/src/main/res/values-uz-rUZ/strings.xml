@@ -34,7 +34,6 @@
   <string name="ManualInput">Qoʻlda sozlash</string>
   <string name="ModuleFeature">Modulning Oʻzbek tili tarjimoni @xiaomiuiuz</string>
   <string name="ModuleSettings">Modul sozlamalari boʻlimi</string>
-  <string name="ResHook">Resurslarni saqlab qolish</string>
   <string name="NoneBlur">Blur effektini oʻchirish</string>
   <string name="OtherFeature">Boshqa imkoniyatlar</string>
   <string name="OutOfInput">Iltimos, ruxsat berilgan diapazondagi maʼlum bir qiymatni kiriting</string>
@@ -73,18 +72,7 @@
   <string name="SmallWindow">Barcha ilovalar suzuvchi oyna rejimida ishlashiga ruxsat berish</string>
   <string name="LowEndDeviceUseMIUIWidgets">Kuchsiz qurilmalarda ham yangi vidjetlar boʻlimi</string>
   <string name="RecommendServer">Tavsiyalar serverini oʻchirib qoʻyish</string>
-  <string name="EveryThingBuild">MIUI Launcherni «Barcha imkoniyatlar» rejimi bilan optimallashtirish</string>
-  <string name="DockHeight">Dokbarning balandligi</string>
-  <string name="DockRoundedCorners">Dokbarning yumaloqlashgan burchaklari</string>
-  <string name="DockSide">Dokbar uchun ekranning yon qismidagi masofa</string>
-  <string name="DockBottom">Dokbar uchun ekranning pastki qismidagi masofa</string>
-  <string name="DockIconBottom">Dokbardagi Ilovalar uchun ekranning pastki qismidagi masofa</string>
-  <string name="DockSettings">Dokbar sozlamalari</string>
-  <string name="DockWarn">Agar siz burchaklarni yumaloqlashni sozlamoqchi boʻlsangiz iltimos, resurslarni saqlab qolish xususiyatini yoqing.</string>
-  <string name="DockFeature">Dokbar xususiyatlarini yoqish</string>
   <string name="EnableDockBlur">Dokbarda blur effektini yoqish</string>
-  <string name="Reset">Dokbarda oʻrnatilgan sozlamalarni standart holatiga qaytarish</string>
-  <string name="Tips1">Bu amal Dokbar sozlamalarini standart holatiga qaytaradi va 1 soniya ichida MIUI ish stolini qayta ishga tushiradi.</string>
   <string name="Reset1">Qayta oʻrnatish</string>
   <string name="Tips2">Bu modul sozlamalarini standart holatiga qaytaradi va MIUI Launcherni 1 soniya ichida qayta ishga tushiradi.</string>
   <string name="HideSeekPoints">Sahifa indikatorlarini oʻchirish</string>
