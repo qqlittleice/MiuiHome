@@ -13,7 +13,6 @@
   <string name="BackupModuleSettings">Dastlabki modul sozlamalariga qaytarish</string>
   <string name="RestoreModuleSettings">Modul sozlamalarini birlamchi holatga qaytaring</string>
   <string name="RestoreModuleSettingsTips">Barcha modul oʻrnatgan sozlamalar oʻchiriladi. Operatsiyadan soʻng tizim launcheri 1 soniyada qayta ishga tushadi.‌‌</string>
-  <string name="Close">Yopish</string>
   <string name="CloseFolder">Papkadagi ilova ochilganda papkani yopish</string>
   <string name="CompleteBlur">Toʻliq blur</string>
   <string name="Defaults">Boshlangʻich holat</string>
@@ -31,29 +30,23 @@
   <string name="HorizontalTaskViewOfAppCardSize">Gorizontal soʻnggi ilovalar boʻlimi oynasidagi eskizlar hajmi (Yumaloq burchaklar)</string>
   <string name="InfiniteScroll">Ish stolini cheksiz oʻtkazish</string>
   <string name="MamlDownload">Qulfdan ochganingizda «Suv toʻlqinlari» effektini yoqish</string>
-  <string name="ManualInput">Qoʻlda sozlash</string>
   <string name="ModuleFeature">Modulning Oʻzbek tili tarjimoni @xiaomiuiuz</string>
   <string name="ModuleSettings">Modul sozlamalari boʻlimi</string>
   <string name="NoneBlur">Blur effektini oʻchirish</string>
   <string name="OtherFeature">Boshqa imkoniyatlar</string>
-  <string name="OutOfInput">Iltimos, ruxsat berilgan diapazondagi maʼlum bir qiymatni kiriting</string>
   <string name="RealTaskViewHorizontal">So\'nggi foydalanilgan ilovalar menyusini gorizontal koʻrinishda sozlash</string>
   <string name="Reboot">Joriy sozlamalarni amalga oshirish uchun launcherni qayta ishga tushurish</string>
   <string name="Reboot1">Siz chindan ham MIUI Launcherini qayta ishga tushirmoqchimisiz? 
 • Hech narsa oʻchib ketmaydi, siz xohlagan sozlamalar 1 soniyada oʻrnatiladi!</string>
   <string name="Reboot2">Sizning ish stolingiz 1 soniyadan soʻng tayyor. @xiaomiuiuz!</string>
   <string name="RoundCorner">Eskizlarningning burchaklarini yaxlitlash (yumaloqlashtirish)</string>
-  <string name="Save">Saqlang</string>
-  <string name="Scope">Ruxsat etilgan qiymatni kiriting</string>
   <string name="SearchBarBlur">Qidiruv maydonida blur effektini yoqish</string>
-  <string name="SetSuccessfully">Operatsiya muvaffaqiyatli amalga oshirildi — @xiaomiuiuz</string>
   <string name="ShowDockIconTitles">Dokbarda ilovalar nomini koʻrsatish</string>
   <string name="SimpleAnimation">Oddiy animatsiya</string>
   <string name="SimpleBlur">Oddiy blur</string>
   <string name="SmoothAnimation">Silliq animatsiyalar</string>
   <string name="TaskViewAppCardTextSize">Eskizlardagi matn oʻlchami</string>
   <string name="TaskViewBlurLevel">Soʻnggi foydalanilgan ilovalar menyusida blur darajasi</string>
-  <string name="TaskViewBlurSetTo">Soʻnggi ilovalar menyusida blur darajasini sozlash</string>
   <string name="TestBlur">Blur test</string>
   <string name="TestFeature">Eksperimental tajribamizdan oʻtgan xususiyatlar</string>
   <string name="Tips">Siz ushbu modulni birinchi marta sinab koʻrayotganingizni aniqladik.
@@ -72,8 +65,6 @@
   <string name="SmallWindow">Barcha ilovalar suzuvchi oyna rejimida ishlashiga ruxsat berish</string>
   <string name="LowEndDeviceUseMIUIWidgets">Kuchsiz qurilmalarda ham yangi vidjetlar boʻlimi</string>
   <string name="RecommendServer">Tavsiyalar serverini oʻchirib qoʻyish</string>
-  <string name="EnableDockBlur">Dokbarda blur effektini yoqish</string>
-  <string name="Reset1">Qayta oʻrnatish</string>
   <string name="Tips2">Bu modul sozlamalarini standart holatiga qaytaradi va MIUI Launcherni 1 soniya ichida qayta ishga tushiradi.</string>
   <string name="HideSeekPoints">Sahifa indikatorlarini oʻchirish</string>
   <string name="CategoryHideAll">Ilovalarni kategoriyalash interfeysidan «Barchasi» boʻlimini oʻchirish</string>
@@ -89,8 +80,6 @@
   <string name="Reset2">Gorizontal soʻnggi ilovalar boʻlimi uchun eskizlar oʻlchami (yumaloqligini) asl holatiga qaytarish</string>
   <string name="Tips3">Gorizontal soʻnggi ilovalar boʻlimining eskiz oʻlchamini standart — Tavsiya etilgan holatga qaytariladi va MIUI Launcherni qayta ishga tushiriladi</string>
   <string name="UnlockIcons">Dokbardagi ilovalardan raqam cheklovini olib tashlash</string>
-  <string name="DockMarginTop">Sahifa indikatori va ilovalarning oraliq masofasi</string>
-  <string name="DockMarginBottom">Ilovalar joylashishida displeyning pastki qismidagi masofani sozlash</string>
   <string name="SimpleWarn">Siz standart animatsiyalarni yoqdingiz, bu baʼzi kichik imkoniyatlardan sizni maxrum qiladi.</string>
   <string name="BrokenFeature">Eski yoki oddiy xususiyatlar</string>
   <string name="AppReturnAmin">Ilovani ochayotganda orqa fonga blur effektini berish</string>
@@ -104,7 +93,6 @@ Masalan: #FFFFFF — Oq, #000000 — Qora‌‌</string>
   <string name="MiuiVersion">MIUI versiyasi</string>
   <string name="LauncherVersion">MIUI Launcher versiyasi</string>
   <string name="ModuleVersion">Modulimiz versiyasi</string>
-  <string name="AboutUs">Biz haqimizda</string>
   <string name="AlwaysBlur">Har doim fon rasmiga blur effektini qoʻshish</string>
   <string name="Github">GitHub</string>
   <string name="OpenGithub">Githubdan bizni toping</string>
