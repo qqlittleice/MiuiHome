@@ -8,8 +8,7 @@
   <string name="BlurWhenOpenFolder">Habilitar o desfoque de fundo para as pastas</string>
   <string name="Cancel">Cancelar</string>
   <string name="CleanModuleSettings">Limpar as configurações do usuário</string>
-  <string name="RestoreModuleSettingsSuccess">Backup restaurado com sucesso, reiniciando a
-MIUI Launcher...</string>
+  <string name="RestoreModuleSettingsSuccess">Configurações restauradas com sucesso, reiniciando launcher.</string>
   <string name="RestoreModuleSettingsFailed">Falha ao restaurar o backup</string>
   <string name="BackupModuleSettings">Fazer backup das configurações do módulo</string>
   <string name="RestoreModuleSettings">Restaurar as configurações originais</string>
@@ -26,11 +25,11 @@ MIUI Launcher...</string>
   <string name="Folder">Configurar pasta de aplicativos</string>
   <string name="HideStatusBar">Esconder barra de status no menu recentes</string>
   <string name="HideTaskViewAppIcon">Remover ícones de aplicativos no menu recentes</string>
-  <string name="HideTaskViewCleanUpIcon">Ocultar o ícone de limpeza no menu recentes</string>
-  <string name="HideTaskViewSmallWindowIcon">Ocultar o botão \"Janelas Flutuantes\" no menu recente</string>
+  <string name="HideTaskViewCleanUpIcon">Ocultar botão \"limpar tudo\" no menu recentes</string>
+  <string name="HideTaskViewSmallWindowIcon">Remover botão \"Janelas Flutuantes\" no menu recentes</string>
   <string name="HideWidgetTitles">Ocultar rótulos dos widgets</string>
   <string name="HorizontalTaskViewOfAppCardSize">Tamanho da exibição de tarefas no menu recentes, horizontal.</string>
-  <string name="InfiniteScroll">Rolagem infinita da área de trabalho</string>
+  <string name="InfiniteScroll">Habilitar rolagem infinita na tela inicial</string>
   <string name="MamlDownload">Habilitar o efeito \"Ondas\" ao desbloquear</string>
   <string name="ManualInput">Entrada manual</string>
   <string name="ModuleFeature">Recursos do módulo</string>
@@ -38,7 +37,7 @@ MIUI Launcher...</string>
   <string name="ResHook">Recursos Adicionais</string>
   <string name="NoneBlur">Nenhum desfoque</string>
   <string name="OtherFeature">Recursos Extras</string>
-  <string name="OutOfInput">Por favor, insira um valor dentro do intervalo permitido!</string>
+  <string name="OutOfInput">Por favor, insira um valor dentro do limite permitido!</string>
   <string name="RealTaskViewHorizontal">Menu horizontal de aplicativos recentes</string>
   <string name="Reboot">Reiniciar MIUI Launcher</string>
   <string name="Reboot1">Tem certeza de que deseja reiniciar a MIUI Launcher?</string>
@@ -118,6 +117,6 @@ MIUI Launcher...</string>
   <string name="AppCenterTip">Utilizamos o Microsoft AppCenter para nos ajudar a testar/analisar o uso do aplicativo.</string>
   <string name="IconTitleTopMargin">Margem superior do título do ícone</string>
   <string name="OpenLSPosed">Abrir app LSPosed</string>
-  <string name="ShortcutCount">Desbloqueie o limite de contagem de atalhos</string>
+  <string name="ShortcutCount">Desbloquear limite de ícones na dock</string>
   <string name="MaxShortcutCount">Definir limite máximo de icones</string>
 </resources>
