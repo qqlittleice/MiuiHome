@@ -95,4 +95,5 @@
   <string name="OpenLSPosed">打开 LSPosed</string>
   <string name="ShortcutCount">解锁 Shortcut 数量限制</string>
   <string name="MaxShortcutCount">最大 Shortcut 数量</string>
+  <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>
 </resources>
