@@ -34,7 +34,6 @@
   <string name="ManualInput">Wprowadzenie ręczne</string>
   <string name="ModuleFeature">Funkcje modułu</string>
   <string name="ModuleSettings">Ustawienia modułu</string>
-  <string name="ResHook">Resource Hook</string>
   <string name="NoneBlur">Bez rozmyciar</string>
   <string name="OtherFeature">Inne funkcje</string>
   <string name="OutOfInput">Wprowadź wartość mieszczącą się określonym zakresie!</string>
@@ -68,18 +67,7 @@
   <string name="SmallWindow">Zezwól wszystkim aplikacjom używać pływających okien</string>
   <string name="LowEndDeviceUseMIUIWidgets">Włącz nowy sklep z widżetami na urządzeniach z niższej półki</string>
   <string name="RecommendServer">Wyłącz rekomendowany serwer</string>
-  <string name="EveryThingBuild">Zoptymalizuj program uruchamiający w trybie wszystkiego</string>
-  <string name="DockHeight">Wysokość docka</string>
-  <string name="DockRoundedCorners">Zaokrąglenie docka</string>
-  <string name="DockSide">dock z boków ekranu</string>
-  <string name="DockBottom">Dock z dołu ekranu</string>
-  <string name="DockIconBottom">Ikony z dołu ekranu</string>
-  <string name="DockSettings">Ustawienia docka</string>
-  <string name="DockWarn">Włącz Resource Hooks jeśli potrzebujesz modyfikować zaokrąglenie rogów.</string>
-  <string name="DockFeature">Włącz Funkcjé Docka</string>
   <string name="EnableDockBlur">Włącz rozmycie docka</string>
-  <string name="Reset">Zresetuj parametry docka</string>
-  <string name="Tips1">Spowoduje to przywrócenie domyślnych wartości docka i ponowne uruchomienie Launchera.</string>
   <string name="Reset1">Reset</string>
   <string name="Tips2">Spowoduje to przywrócenie domyślnych ustawień modułu i ponowne uruchomienie Launchera.</string>
   <string name="HideSeekPoints">Usuń wskaźnik stron</string>
