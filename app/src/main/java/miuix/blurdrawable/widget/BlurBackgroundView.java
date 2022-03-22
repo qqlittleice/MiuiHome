@@ -14,12 +14,12 @@ public class BlurBackgroundView extends FrameLayout {
   private BlurDrawable mBlurBackground;
   private Drawable mBlurForeground;
 
-  public BlurBackgroundView(Context var1) {
-    this(var1, (AttributeSet)null);
+  public BlurBackgroundView(Context context) {
+    this(context, (AttributeSet)null);
   }
 
-  public BlurBackgroundView(Context var1, AttributeSet var2) {
-    super(var1, var2);
+  public BlurBackgroundView(Context context, AttributeSet attributeSet) {
+    super(context, attributeSet);
   }
 
   private void createBlurBackground() {
@@ -31,7 +31,6 @@ public class BlurBackgroundView extends FrameLayout {
       this.mBlurBackground.setMixColor(18, Color.argb(165, 107, 107, 107));
       this.mBlurForeground = new ColorDrawable(Color.parseColor("#ccffffff"));
     }
-
     this.mBlurBackground.setBlurRatio(1.0F);
   }
 
@@ -39,39 +38,36 @@ public class BlurBackgroundView extends FrameLayout {
     return true;
   }
 
-  public void setAlpha(float var1) {
-    super.setAlpha(var1);
-    int var2 = (int)(var1 * 255.0F);
-    Drawable var3 = this.mBlurForeground;
-    if (var3 != null) {
-      var3.setAlpha(var2);
+  public void setAlpha(float f) {
+    super.setAlpha(f);
+    int i = (int)(f * 255.0F);
+    Drawable mBlurForeground = this.mBlurForeground;
+    if (mBlurForeground != null) {
+      mBlurForeground.setAlpha(i);
     }
-
-    BlurDrawable var4 = this.mBlurBackground;
-    if (var4 != null) {
-      var4.setAlpha(var2);
+    BlurDrawable mBlurBackground = this.mBlurBackground;
+    if (mBlurBackground != null) {
+      mBlurBackground.setAlpha(i);
     }
-
   }
 
-  public boolean setBlurBackground(boolean var1) {
+  public boolean setBlurBackground(boolean b) {
     if (!this.isSupportBlur()) {
       return false;
     } else {
-      if (var1) {
+      if (b) {
         if (this.mBlurBackground == null) {
           try {
             this.createBlurBackground();
-          } catch (Exception var4) {
-            StringBuilder var3 = new StringBuilder();
-            var3.append("Blur creat fail e:");
-            var3.append(var4);
-            Log.e("Blur", var3.toString());
+          } catch (Exception e) {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append("Blur creat fail e:");
+            stringBuilder.append(e);
+            Log.e("Blur", stringBuilder.toString());
             this.mBlurBackground = null;
             return false;
           }
         }
-
         if (this.mBlurBackground != null && (this.getVisibility() != View.VISIBLE || this.getBackground() == null)) {
           this.setVisibility(View.VISIBLE);
           this.setForeground(this.mBlurForeground);
@@ -85,7 +81,6 @@ public class BlurBackgroundView extends FrameLayout {
         this.mBlurBackground = null;
         this.setVisibility(View.GONE);
       }
-
       return true;
     }
   }
