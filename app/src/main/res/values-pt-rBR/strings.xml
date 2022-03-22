@@ -12,7 +12,7 @@
   <string name="RestoreModuleSettingsFailed">Falha ao restaurar o backup</string>
   <string name="BackupModuleSettings">Fazer backup das configurações do módulo</string>
   <string name="RestoreModuleSettings">Restaurar as configurações originais</string>
-  <string name="RestoreModuleSettingsTips">Resetar todas as configurações do módulo e restaurar as configurações a partir de um arquivo. Após está ação, o launcher do sistema será reiniciado.</string>
+  <string name="RestoreModuleSettingsTips">Esta ação irá limpar todas as configurações do módulo e restaurar as configurações a partir de um arquivo, em seguida a MIUI Launcher será automaticamente reiniciada, deseja continuar?</string>
   <string name="Close">Fechar</string>
   <string name="CloseFolder">Fechar a pasta quando o aplicativo for aberto</string>
   <string name="CompleteBlur">Completo</string>
@@ -78,16 +78,16 @@
   <string name="DockWarn">Por favor, habilite os recursos adicionais se você precisar modificar os cantos arredondados.</string>
   <string name="DockFeature">Ativar a barra Dock</string>
   <string name="EnableDockBlur">Ativar desfoque da barra Dock</string>
-  <string name="Reset">Restaurar os parâmetros da barra Dock</string>
+  <string name="Reset">Restaurar os parâmetros da barra dock</string>
   <string name="Tips1">Restaurar os parâmetros da barra Dock ao seu valor padrão e reiniciar a MIUI Launcher.</string>
-  <string name="Reset1">Restaurar</string>
+  <string name="Reset1">Redefinir</string>
   <string name="Tips2">Restaurar as configurações ao seu valor padrão e reiniciar o MIUI Launcher.</string>
   <string name="HideSeekPoints">Remover indicador de páginas da tela inicial</string>
   <string name="CategoryHideAll">Ocultar \"Todos\" na categoria de aplicativos</string>
   <string name="CategoryPagingHideEdit">Remover botão \"Editar\" nas categorias da gaveta de aplicativos</string>
   <string name="FolderColumnsCount">Definir números de colunas dentro das pastas</string>
-  <string name="FolderWidth">Utilizar toda a largura da pasta</string>
-  <string name="IconTitleFontSize">Tamanho da fonte do rótulo do ícone</string>
+  <string name="FolderWidth">Expandir largura dentro da pasta</string>
+  <string name="IconTitleFontSize">Definir tamanho do nome dos ícones</string>
   <string name="CustomRecentText">Personalizar texto no menu recentes quando não houver nenhuma janela de tarefas em exibição</string>
   <string name="DoubleTap">Toque duplo para desligar a tela</string>
   <string name="LowEndAnim">Habilitar animação ao abrir e fechar aplicativos - Low-End</string>
@@ -95,7 +95,7 @@
   <string name="HorizontalScreen">Tela Horizontal</string>
   <string name="Reset2">Restaurar o tamanho da exibição de tarefas no menu recentes, horizontal</string>
   <string name="Tips3">Restaurar o tamanho da exibição de tarefas no menu recentes, horizontal para o seu valor padrão e reiniciar a MIUI Launcher.</string>
-  <string name="UnlockIcons">Remover as restrições de limite dos ícones da barra Dock</string>
+  <string name="UnlockIcons">Desbloquear limite de ícones na dock</string>
   <string name="DockMarginTop">Definir espaçamento entre ícone e indicador</string>
   <string name="DockMarginBottom">Indicador de página e espaçamento inferior da tela</string>
   <string name="SimpleWarn">Você habilitou \"Animações simples\", isso ocultará algumas configurações.</string>
@@ -115,8 +115,8 @@
   <string name="OpenGithub">Clique para abrir o GitHub</string>
   <string name="AppCenter">Enviar estatísticas de uso anônimas</string>
   <string name="AppCenterTip">Utilizamos o Microsoft AppCenter para nos ajudar a testar/analisar o uso do aplicativo.</string>
-  <string name="IconTitleTopMargin">Margem superior do título do ícone</string>
-  <string name="OpenLSPosed">Abrir app LSPosed</string>
+  <string name="IconTitleTopMargin">Definir distância entre nome dos aplicativos e ícones na tela inicial</string>
+  <string name="OpenLSPosed">Abrir a interface LSPosed</string>
   <string name="ShortcutCount">Desbloquear limite de ícones na dock</string>
   <string name="MaxShortcutCount">Definir limite máximo de icones</string>
 </resources>
