@@ -22,10 +22,10 @@
   <string name="setRecentString">Deixe em branco para restaurar as configurações pré-definida, insira um espaço para excluir o texto</string>
   <string name="current">Atual</string>
   <string name="Description">Configurações adicionais para MIUI Launcher</string>
-  <string name="Folder">Configurar pasta de aplicativos</string>
+  <string name="Folder">Configurações de Pasta</string>
   <string name="HideStatusBar">Esconder barra de status no menu recentes</string>
   <string name="HideTaskViewAppIcon">Remover ícones de aplicativos no menu recentes</string>
-  <string name="HideTaskViewCleanUpIcon">Ocultar botão \"limpar tudo\" no menu recentes</string>
+  <string name="HideTaskViewCleanUpIcon">Ocultar botão de \"Limpar Tudo\" no menu recentes</string>
   <string name="HideTaskViewSmallWindowIcon">Remover botão \"Janelas Flutuantes\" no menu recentes</string>
   <string name="HideWidgetTitles">Ocultar rótulos dos widgets</string>
   <string name="HorizontalTaskViewOfAppCardSize">Definir tamanho das janelas de tarefas no menu recentes, horizontal</string>
@@ -38,7 +38,7 @@
   <string name="NoneBlur">Nenhum</string>
   <string name="OtherFeature">Recursos Extras</string>
   <string name="OutOfInput">Por favor, insira um valor dentro do limite permitido!</string>
-  <string name="RealTaskViewHorizontal">Retornar opções leterais nas tarefas de aplicativos no menu recentes</string>
+  <string name="RealTaskViewHorizontal">Retornar as opções leterais nas janelas de aplicativos no menu recentes</string>
   <string name="Reboot">Reiniciar MIUI Launcher</string>
   <string name="Reboot1">Tem certeza de que deseja reiniciar a MIUI Launcher?</string>
   <string name="Reboot2">A MIUI Launcher será reiniciada em 1 segundo!</string>
@@ -116,7 +116,7 @@
   <string name="AppCenter">Enviar estatísticas de uso anônimas</string>
   <string name="AppCenterTip">Utilizamos o Microsoft AppCenter para nos ajudar a testar/analisar o uso do aplicativo.</string>
   <string name="IconTitleTopMargin">Definir distância entre nome dos aplicativos e ícones na tela inicial</string>
-  <string name="OpenLSPosed">Abrir a interface LSPosed</string>
+  <string name="OpenLSPosed">Abrir interface do LSPosed</string>
   <string name="ShortcutCount">Desbloquear limite de ícones na dock</string>
   <string name="MaxShortcutCount">Definir limite máximo de icones</string>
 </resources>
