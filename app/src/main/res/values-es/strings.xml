@@ -34,7 +34,6 @@
   <string name="ManualInput">Manual Input</string>
   <string name="ModuleFeature">Module Features</string>
   <string name="ModuleSettings">Module Settings</string>
-  <string name="ResHook">Resource Hook</string>
   <string name="NoneBlur">No Blur</string>
   <string name="OtherFeature">Other Features</string>
   <string name="OutOfInput">Please enter a value within the allowed range!</string>
@@ -68,18 +67,7 @@
   <string name="SmallWindow">Allow all apps to use Floating Windows</string>
   <string name="LowEndDeviceUseMIUIWidgets">Enable New Widget Store on Low-End Devices</string>
   <string name="RecommendServer">Disable Recommend Server</string>
-  <string name="EveryThingBuild">Optimize Launcher with Everything Mode</string>
-  <string name="DockHeight">Dock Bar Height</string>
-  <string name="DockRoundedCorners">Dock Bar Rounded Corners</string>
-  <string name="DockSide">Dock Bar from the sides of the Screen</string>
-  <string name="DockBottom">Dock Bar from the bottom of the Screen</string>
-  <string name="DockIconBottom">Icons from the bottom of the Screen</string>
-  <string name="DockSettings">Dock Settings</string>
-  <string name="DockWarn">Please enable Resource Hooks if you need to modify rounded corners.</string>
-  <string name="DockFeature">Enable Dock Feature</string>
   <string name="EnableDockBlur">Enable Blur of the Dock</string>
-  <string name="Reset">Reset Dock Parameters</string>
-  <string name="Tips1">This will restore the Dock parameter to its default value and restart the System Launcher.</string>
   <string name="Reset1">Reset</string>
   <string name="Tips2">This will restore the module default settings and restart the System Launcher.</string>
   <string name="HideSeekPoints">Remove Page Indicator</string>
