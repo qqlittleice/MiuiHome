@@ -34,7 +34,6 @@
   <string name="ManualInput">Χειροκίνητη εισαγωγή</string>
   <string name="ModuleFeature">Χαρακτηριστικά Πρόσθετου</string>
   <string name="ModuleSettings">Ρυθμίσεις πρόσθετου</string>
-  <string name="ResHook">Resource Hook</string>
   <string name="NoneBlur">Χωρίς θάμπωμα</string>
   <string name="OtherFeature">Άλλα χαρακτηριστικά</string>
   <string name="OutOfInput">Παρακαλώ εισάγεται μια μεταβλητή μέσα στα όρια!</string>
@@ -68,18 +67,7 @@
   <string name="SmallWindow">Επιτρέψτε σε όλες τις εφαρμογές να χρησιμοποιήσουν την λειτουργιά αναδυόμενα παράθυρα</string>
   <string name="LowEndDeviceUseMIUIWidgets">Ενεργοποιήστε το νέο “μαγαζί” γραφικών στοιχείων και σε ποιο αδύναμες συσκευές</string>
   <string name="RecommendServer">Απενεργοποίηση της πρότασης σέρβερ</string>
-  <string name="EveryThingBuild">Βελτιστοποίηση του εκκινητή σε κάθε λειτουργιά</string>
-  <string name="DockHeight">Ύψος μπάρας αναζήτησης στη γραμμή γρήγορης πρόσβασης</string>
-  <string name="DockRoundedCorners">Μέγεθος στρογγυλεμένων άκρων της μπάρας αναζήτησης στη γραμμή γρήγορης εκκίνησης</string>
-  <string name="DockSide">Επέκταση της μπάρας αναζήτησης στη γραμμή γρήγορης εκκίνησης έως τα άκρα της οθόνης</string>
-  <string name="DockBottom">Απόσταση της μπάρα αναζήτησης στη γραμμή γρήγορης εκκίνησης από το κάτω μέρος της οθόνης</string>
-  <string name="DockIconBottom">Απόσταση των εικονιδίων στη γραμμή γρήγορης εκκίνησης απο το κάτω μέρος της οθόνης</string>
-  <string name="DockSettings">Ρυθμίσεις γραμμής γρήγορης εκκίνησης</string>
-  <string name="DockWarn">Παρακαλώ ενεργοποιήστε το Resource Hooks αν χρειάζεται να αλλάξετε το μέγεθος των στρογγυλεμένων άκρων.</string>
-  <string name="DockFeature">Ενεργοποίηση χαρακτηριστικών γραμμής γρήγορης εκκίνησης</string>
   <string name="EnableDockBlur">Ενεργοποίηση θαμπώματος στη γραμμή γρήγορης εκκίνησης</string>
-  <string name="Reset">Επαναφορά γραμμής γρήγορης εκκίνησης στις προεπιλεγμένες ρυθμίσεις</string>
-  <string name="Tips1">Αυτή η ενέργεια θα επαναφέρει τη γραμμή γρήγορης εκκίνησης στις προεπιλεγμένες ρυθμίσεις και θα επανεκκίνηση τον MIUI εκκινητή.</string>
   <string name="Reset1">Επαναφορά</string>
   <string name="Tips2">Αυτό θα επαναφέρει τις ρυθμίσεις του πρόσθετου και θα επανεκκίνηση τον εκκινητή MIUI.</string>
   <string name="HideSeekPoints">Αφαίρεση σήμανσης σελίδας</string>
