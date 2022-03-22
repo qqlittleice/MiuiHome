@@ -25,7 +25,6 @@
   <string name="ManualInput">მექანიკურად შეყვანა</string>
   <string name="ModuleFeature">მოდულის ფუნქციები</string>
   <string name="ModuleSettings">მოდულის პარამეტრები</string>
-  <string name="ResHook">რესურსების Hook</string>
   <string name="NoneBlur">არანაირი დაბურვა</string>
   <string name="OtherFeature">სხვა ფუნქციები</string>
   <string name="OutOfInput">გთხოვთ შეიყვანოთ დაშვებული ოდენობა!</string>
@@ -58,18 +57,7 @@
   <string name="SmallWindow">ნება მიეცეს ყველა აპლიკაციას "მოტივტივე ფანჯრების" გამოყენების უფლება"</string>
   <string name="LowEndDeviceUseMIUIWidgets">ახალი Widget-ების ფუნქციის ჩართვა სუსტ ტელეფონებზე</string>
   <string name="RecommendServer">რეკომენდაციების სერვერის გათიშვა</string>
-  <string name="EveryThingBuild">Launcher-ის ოპტიციმიზაცია "ყველაფრის" რეჟიმით.</string>
-  <string name="DockHeight">Dock-ის სიმაღლე</string>
-  <string name="DockRoundedCorners">Dock-ის კუთხეების სიმრგვალე</string>
-  <string name="DockSide">Dock-ის მანძილი გვერდითი კუთხეებიდან</string>
-  <string name="DockBottom">Dock-ის სიმაღლე</string>
-  <string name="DockIconBottom">ნახატების სიმაღლე</string>
-  <string name="DockSettings">Dock-ის პარამეტრები</string>
-  <string name="DockWarn">უმჯობესია, რომ Resource Hooks გქონდეთ ჩართული მრგვალი კუთხეებისთვის.</string>
-  <string name="DockFeature">=Dock-ის ჩართვა</string>
   <string name="EnableDockBlur">Dock-ის დაბურვა</string>
-  <string name="Reset">Dock-ის პარამეტრების საწყის ფუნქციებზე დაყენება</string>
-  <string name="Tips1"> ეს Dock-ის პარამეტრებს საწყის პარამეტრებზე დააყენებს, დარესტარტდება Launcher-ი.</string>
   <string name="Reset1">საწყის პარამეტრებზე დაბრუნება</string>
   <string name="Tips2">ეს ყველაფერს საწყის პარამეტრებზე დააბრუნებს. Launcher-ი დარესტარტდება</string>
   <string name="HideSeekPoints">გვერდის ინდიკატორის წაშლა</string>

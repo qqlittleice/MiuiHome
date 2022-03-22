@@ -11,7 +11,6 @@ import com.github.kyuubiran.ezxhelper.utils.Log
 import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit
-import com.yuk.miuihome.module.BuildWithEverything
 import com.yuk.miuihome.module.ModifyBlurLevel
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.OwnSP
@@ -27,7 +26,6 @@ import kotlin.system.exitProcess
 object DataHelper {
     var thisItems = "Main"
     const val main = "Main"
-    const val dock = "Dock"
     const val horizontal = "Horizontal"
     private const val menu = "Menu"
     lateinit var currentActivity: Activity
@@ -42,7 +40,6 @@ object DataHelper {
 
     fun getItems(): ArrayList<Item> = when (thisItems) {
         menu -> loadMenuItems()
-        dock -> loadDockItems()
         horizontal -> loadHorizontalItems()
         else -> loadItems()
     }
@@ -58,27 +55,6 @@ object DataHelper {
             add(Item(list = arrayListOf(LineV())))
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.ModuleVersion))))
             add(Item(list = arrayListOf(TextV("${BuildConfig.VERSION_NAME}(${BuildConfig.VERSION_CODE})-${BuildConfig.BUILD_TYPE}"))))
-        }
-        return itemList
-    }
-
-    private fun loadDockItems(): ArrayList<Item> {
-        val itemList = arrayListOf<Item>()
-        itemList.apply {
-            add(Item(list = arrayListOf(SubtitleV(resId = R.string.DockSettings))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.DockFeature), "dockSettings"))))
-            if (Config.AndroidSDK == 30)
-                add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.EnableDockBlur), "searchBarBlur"))))
-            if (!XposedInit.hasHookPackageResources)
-                add(Item(list = arrayListOf(TextV(resId = R.string.DockWarn, textColor = Color.parseColor("#ff0c0c"), textSize = 16f))))
-            else add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockRoundedCorners), key = "dockRadius", min = 0, max = 50, divide = 10, defaultProgress = 25))))
-            add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockHeight), key = "dockHeight", min = 30, max = 150, divide = 10, defaultProgress = 79))))
-            add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockSide), key = "dockSide", min = 0, max = 100, divide = 10, defaultProgress = 30))))
-            add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockBottom), key = "dockBottom", min = 0, max = 150, divide = 10, defaultProgress = 23))))
-            add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockIconBottom), key = "dockIconBottom", min = 0, max = 150, divide = 10, defaultProgress = 35))))
-            add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockMarginTop), key = "dockMarginTop", min = 0, max = 100, divide = 10, defaultProgress = 6))))
-            add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockMarginBottom), key = "dockMarginBottom", min = 0, max = 200, divide = 10, defaultProgress = 110))))
-            add(Item(list = arrayListOf(TextV(resId = R.string.Reset, onClickListener = { showResetDockDialog() }))))
         }
         return itemList
     }
@@ -133,9 +109,7 @@ object DataHelper {
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.HideStatusBar), "hideStatusBar"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.MamlDownload), "mamlDownload"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.UnlockIcons), "unlockIcons"))))
-            if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
-                add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.WallpaperDarken), "wallpaperDarken"))))
-            }
+            if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.WallpaperDarken), "wallpaperDarken"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.HideTaskViewSmallWindowIcon), "smallWindow"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.CategoryHideAll), "categoryHideAll"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.CategoryPagingHideEdit), "CategoryPagingHideEdit"))))
@@ -151,9 +125,7 @@ object DataHelper {
             add(Item(list = arrayListOf(LineV())))
 
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.Folder))))
-            if (!OwnSP.ownSP.getBoolean("simpleAnimation", false) && !OwnSP.ownSP.getBoolean("alwaysBlur", false)) {
-                add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.BlurWhenOpenFolder), "blurWhenOpenFolder"))))
-            }
+            if (!OwnSP.ownSP.getBoolean("simpleAnimation", false) && !OwnSP.ownSP.getBoolean("alwaysBlur", false)) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.BlurWhenOpenFolder), "blurWhenOpenFolder"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.CloseFolder), "closeFolder"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.FolderWidth), "folderWidth"))))
             add(Item(list = arrayListOf(TextV(resId = R.string.FolderColumnsCount, onClickListener = { showFolderColumnsCountDialog() }))))
@@ -177,20 +149,15 @@ object DataHelper {
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SmallWindow), "supportSmallWindow"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.LowEndAnim), "lowEndAnim"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.LowEndDeviceUseMIUIWidgets), "useMIUIWidgets"))))
-            if (!OwnSP.ownSP.getBoolean("appReturnAmin", false) && !OwnSP.ownSP.getBoolean("simpleAnimation", false))
-                add(Item(list = arrayListOf(TextV(resId = R.string.BlurRadius, onClickListener = { showBlurRadiusDialog() }))))
+            if (!OwnSP.ownSP.getBoolean("appReturnAmin", false) && !OwnSP.ownSP.getBoolean("simpleAnimation", false)) add(Item(list = arrayListOf(TextV(resId = R.string.BlurRadius, onClickListener = { showBlurRadiusDialog() }))))
             add(Item(list = arrayListOf(LineV())))
 
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.OtherFeature))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AlwaysShowStatusBarClock), "clockGadget"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.DoubleTap), "doubleTap"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.ShortcutCount), "unlockShortcutCount", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() }))))
-            if (OwnSP.ownSP.getBoolean("unlockShortcutCount", false))
-                add(Item(list = arrayListOf(TextV(resId = R.string.MaxShortcutCount, onClickListener = { showMaxShortcutCountDialog() }))))
-            if (!OwnSP.ownSP.getBoolean("dockSettings", false) && Config.AndroidSDK == 30)
-                add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SearchBarBlur), "searchBarBlur"))))
-            add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.DockSettings)) { setItems(dock) })))
-            add(Item(list = arrayListOf(TextV(resId = R.string.EveryThingBuild, onClickListener = { BuildWithEverything().init() }))))
+            if (OwnSP.ownSP.getBoolean("unlockShortcutCount", false)) add(Item(list = arrayListOf(TextV(resId = R.string.MaxShortcutCount, onClickListener = { showMaxShortcutCountDialog() }))))
+            if (!OwnSP.ownSP.getBoolean("dockSettings", false) && Config.AndroidSDK == 30) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SearchBarBlur), "searchBarBlur"))))
             add(Item(list = arrayListOf(LineV())))
 
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.BrokenFeature))))
@@ -266,30 +233,6 @@ object DataHelper {
             setRButton(R.string.Yes) {
                 OwnSP.set("task_horizontal1", 1.0f)
                 OwnSP.set("task_horizontal2", 1.0f)
-                dismiss()
-                thread {
-                    Log.toast(currentActivity.getString(R.string.Reboot2))
-                    Thread.sleep(1000)
-                    exitProcess(0)
-                }
-            }
-            setLButton(R.string.Cancel) { dismiss() }
-            show()
-        }
-    }
-
-    private fun showResetDockDialog() {
-        CustomDialog(currentActivity).apply {
-            setTitle(R.string.Reset)
-            setMessage(R.string.Tips1)
-            setRButton(R.string.Yes) {
-                OwnSP.set("dockRadius", 2.5f)
-                OwnSP.set("dockHeight", 7.9f)
-                OwnSP.set("dockSide", 3.0f)
-                OwnSP.set("dockBottom", 2.3f)
-                OwnSP.set("dockIconBottom", 3.5f)
-                OwnSP.set("dockMarginTop", 0.6f)
-                OwnSP.set("dockMarginBottom", 11.0f)
                 dismiss()
                 thread {
                     Log.toast(currentActivity.getString(R.string.Reboot2))

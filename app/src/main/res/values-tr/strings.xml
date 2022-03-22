@@ -34,7 +34,6 @@
   <string name="ManualInput">Manuel giriş</string>
   <string name="ModuleFeature">Modül özellikleri</string>
   <string name="ModuleSettings">Modül ayarları</string>
-  <string name="ResHook">Resource Hook</string>
   <string name="NoneBlur">Bulanıklık kapalı</string>
   <string name="OtherFeature">Diğer özellikler</string>
   <string name="OutOfInput">Lütfen, kabul edilebilir değer içerisinde bir sayı giriniz!</string>
@@ -68,18 +67,7 @@
   <string name="SmallWindow">Tüm uygulamalar için \"Kayan Pencereler\" özelliğini aktif et</string>
   <string name="LowEndDeviceUseMIUIWidgets">Yeni Widget mağazasını eski/düşük cihazlar için aktif et</string>
   <string name="RecommendServer">Önerilen sunucuyu devre dışı bırak</string>
-  <string name="EveryThingBuild">Sistem başlatıcısının ayarlarını optimize et</string>
-  <string name="DockHeight">Yükseklik</string>
-  <string name="DockRoundedCorners">Yuvarlatılmış köşeler</string>
-  <string name="DockSide">Yanındaki boşluk</string>
-  <string name="DockBottom">Altındaki boşluk</string>
-  <string name="DockIconBottom">Simgelerin konumu</string>
-  <string name="DockSettings">Dock ayarları</string>
-  <string name="DockWarn">Dock köşelerini özelleştirmek istiyorsanız \"Resource Hook\"u açın.</string>
-  <string name="DockFeature">Dock özeliğini aç</string>
   <string name="EnableDockBlur">Dock\'a bulanıklık ekle</string>
-  <string name="Reset">Dock ayarlarını sıfırla</string>
-  <string name="Tips1">Bu seçenek Dock ayarlarını sıfırlar ve sistem başlatıcısını yeniden başlatır.</string>
   <string name="Reset1">Sıfırla</string>
   <string name="Tips2">Bu seçenek modül ayarlarını sıfırlar ve sistem başlatıcısını yeniden başlatır.</string>
   <string name="HideSeekPoints">Sayfa göstergesini kaldır</string>

@@ -34,7 +34,6 @@
   <string name="ManualInput">Entrada manual</string>
   <string name="ModuleFeature">Recursos do módulo</string>
   <string name="ModuleSettings">Configurações do módulo</string>
-  <string name="ResHook">Recursos Adicionais</string>
   <string name="NoneBlur">Nenhum</string>
   <string name="OtherFeature">Recursos Extras</string>
   <string name="OutOfInput">Por favor, insira um valor dentro do limite permitido!</string>
@@ -68,18 +67,7 @@
   <string name="SmallWindow">Permitir que todos aplicativos suporte \"Janelas Flutuantes\"</string>
   <string name="LowEndDeviceUseMIUIWidgets">Habilitar nova loja de widget em dispositivos de baixo desempenho</string>
   <string name="RecommendServer">Desabilitar \"Recomendar Servidor\"</string>
-  <string name="EveryThingBuild">Otimizar a MIUI Launcher com o modo \"Everything\"</string>
-  <string name="DockHeight">Definir largura</string>
-  <string name="DockRoundedCorners">Definir cantos arrendados:</string>
-  <string name="DockSide">Definir comprimento</string>
-  <string name="DockBottom">Definir posição</string>
-  <string name="DockIconBottom">Definir posição dos ícones na dock</string>
-  <string name="DockSettings">Configurações da dock</string>
-  <string name="DockWarn">Por favor, habilite os recursos adicionais se você precisar modificar os cantos arredondados.</string>
-  <string name="DockFeature">Habilitar dock na tela inicial</string>
   <string name="EnableDockBlur">Habilitar desfoque na dock</string>
-  <string name="Reset">Restaurar os parâmetros da barra dock</string>
-  <string name="Tips1">Restaurar os parâmetros da barra Dock ao seu valor padrão e reiniciar a MIUI Launcher.</string>
   <string name="Reset1">Redefinir</string>
   <string name="Tips2">Restaurar as configurações ao seu valor padrão e reiniciar o MIUI Launcher.</string>
   <string name="HideSeekPoints">Remover indicador de páginas da tela inicial</string>

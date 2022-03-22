@@ -34,7 +34,6 @@
   <string name="ManualInput">手動輸入</string>
   <string name="ModuleFeature">模塊相關</string>
   <string name="ModuleSettings">模塊設置</string>
-  <string name="ResHook">資源鉤子</string>
   <string name="NoneBlur">無模糊</string>
   <string name="OtherFeature">其他功能</string>
   <string name="OutOfInput">請輸入允許範圍內的值！</string>
@@ -68,18 +67,7 @@
   <string name="SmallWindow">允許所有應用使用小窗口</string>
   <string name="LowEndDeviceUseMIUIWidgets">允許低端機添加　MIUI　小組件</string>
   <string name="RecommendServer">禁用今日推薦</string>
-  <string name="EveryThingBuild">使用　Everything　模式編譯桌面</string>
-  <string name="DockHeight">底欄高度</string>
-  <string name="DockRoundedCorners">底欄圓角</string>
-  <string name="DockSide">底欄距離屏幕兩側</string>
-  <string name="DockBottom">底欄距屏幕底部</string>
-  <string name="DockIconBottom">圖標距屏幕底部</string>
-  <string name="DockSettings">底欄設置</string>
-  <string name="DockWarn">修改圓角需要啟用資源鉤子。</string>
-  <string name="DockFeature">啟用底欄功能</string>
   <string name="EnableDockBlur">啟用底欄模糊</string>
-  <string name="Reset">重置底欄配置參數</string>
-  <string name="Tips1">這將重置底欄配置參數到默認值並重啟桌面。</string>
   <string name="Reset1">重置</string>
   <string name="Tips2">這將還原模塊默認值設定並重啟桌面。</string>
   <string name="HideSeekPoints">移除頁面指示器</string>

@@ -34,7 +34,6 @@
   <string name="ManualInput">Entrada manual</string>
   <string name="ModuleFeature">Características del módulo</string>
   <string name="ModuleSettings">Configuración del módulo</string>
-  <string name="ResHook">Enlace de recursos</string>
   <string name="NoneBlur">Sin desenfoque</string>
   <string name="OtherFeature">Otras funciones</string>
   <string name="OutOfInput">¡Por favor, ingresa un valor dentro del rango permitido!</string>
@@ -68,18 +67,7 @@
   <string name="SmallWindow">Permitir que todas las aplicaciones usen ventanas flotantes</string>
   <string name="LowEndDeviceUseMIUIWidgets">Habilitar nueva Tienda de Widgets en dispositivos de gama baja</string>
   <string name="RecommendServer">Deshabilitar Recomendar Servidor</string>
-  <string name="EveryThingBuild">Optimizar Launcher con el modo Todo</string>
-  <string name="DockHeight">Altura del Dock (barra inferior de aplicaciones)</string>
-  <string name="DockRoundedCorners">Esquinas redondeadas del Dock (barra inferior de aplicaciones)</string>
-  <string name="DockSide">Dock (barra inferior de aplicaciones) desde los lados de la pantalla</string>
-  <string name="DockBottom">Dock (barra inferior de aplicaciones) desde la parte inferior de la pantalla</string>
-  <string name="DockIconBottom">Iconos de la parte inferior de la pantalla</string>
-  <string name="DockSettings">Configuración del Dock (barra inferior de aplicaciones)</string>
-  <string name="DockWarn">Por favor, habilita Resource Hooks si necesitas modificar las esquinas redondeadas.</string>
-  <string name="DockFeature">Habilitar la función del Dock (barra inferior de aplicaciones)</string>
   <string name="EnableDockBlur">Habilitar el desenfoque del Dock (barra inferior de aplicaciones)</string>
-  <string name="Reset">Restablecer los parámetros del Dock (barra inferior de aplicaciones)</string>
-  <string name="Tips1">Esto restaurará el parámetro del Dock (barra inferior de aplicaciones) a su valor predeterminado y reiniciará el Launcher del Sistema.</string>
   <string name="Reset1">Restablecer</string>
   <string name="Tips2">Esto restaurará la configuración predeterminada del módulo y reiniciará el Launcher del Sistema.</string>
   <string name="HideSeekPoints">Eliminar indicador de página</string>

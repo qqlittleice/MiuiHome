@@ -34,7 +34,6 @@
   <string name="ManualInput">Handmatige invoer</string>
   <string name="ModuleFeature">Module functies</string>
   <string name="ModuleSettings">Module-instellingen</string>
-  <string name="ResHook">Resource Hook</string>
   <string name="NoneBlur">Geen vervaging</string>
   <string name="OtherFeature">Andere features</string>
   <string name="OutOfInput">Voer een waarde in binnen het toegestane bereik!</string>
@@ -68,18 +67,7 @@
   <string name="SmallWindow">Alle apps toestaan zwevende vensters te gebruiken</string>
   <string name="LowEndDeviceUseMIUIWidgets">Nieuwe widgetwinkel inschakelen op Low-End apparaten</string>
   <string name="RecommendServer">Aanbevelingsserver uitschakelen</string>
-  <string name="EveryThingBuild">Launcher optimaliseren met Alles-modus</string>
-  <string name="DockHeight">Hoogte dokbalk</string>
-  <string name="DockRoundedCorners">Dockbar afgeronde hoeken</string>
-  <string name="DockSide">Dock Bar vanaf de zijkanten van het scherm</string>
-  <string name="DockBottom">Dock Bar vanaf de onderkant van het scherm</string>
-  <string name="DockIconBottom">Pictogrammen onder aan het scherm</string>
-  <string name="DockSettings">Dock-instellingen</string>
-  <string name="DockWarn">Schakel Resource Hooks in als u afgeronde hoeken wilt aanpassen.</string>
-  <string name="DockFeature">Dock-functie inschakelen</string>
   <string name="EnableDockBlur">Vervaging van het Dock inschakelen</string>
-  <string name="Reset">Dock-parameters resetten</string>
-  <string name="Tips1">Hierdoor wordt de Dock-parameter hersteld naar de standaardwaarde en wordt de System Launcher opnieuw gestart.</string>
   <string name="Reset1">Reset</string>
   <string name="Tips2">Hiermee worden de standaardinstellingen van de module hersteld en wordt de System Launcher opnieuw gestart.</string>
   <string name="HideSeekPoints">Pagina-indicator verwijderen</string>

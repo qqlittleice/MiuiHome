@@ -25,7 +25,6 @@
   <string name="ManualInput">خود اندراج کرو</string>
   <string name="ModuleFeature">ماڈیول کی خصوصیات</string>
   <string name="ModuleSettings">ماڈیول کی ترتیبات۔</string>
-  <string name="ResHook">ریسورس ہک</string>
   <string name="NoneBlur">کوئی دھندلاپن نہیں۔</string>
   <string name="OtherFeature">دیگر خصوصیات</string>
   <string name="OutOfInput">براہ کرم حد کے اندر ایک قدر درج کریں!</string>
@@ -58,18 +57,7 @@
   <string name="SmallWindow">تمام ایپس کو فلوٹنگ ونڈوز استعمال کرنے دیں۔</string>
   <string name="LowEndDeviceUseMIUIWidgets">کم وسائل والے آلات پر نیا ویجیٹ اسٹور فعال کریں۔</string>
   <string name="RecommendServer">تجویز کردہ سرور کو غیر فعال کریں۔</string>
-  <string name="EveryThingBuild">ہر چیز کے موڈ کے ساتھ لانچر کو بہتر بنائیں۔</string>
-  <string name="DockHeight">گودی بار کی اونچائی۔</string>
-  <string name="DockRoundedCorners">ڈاک بار گول کونے۔</string>
-  <string name="DockSide">سکرین کے اطراف سے ڈاک بار کا فاصلہ۔</string>
-  <string name="DockBottom">سکرین کے نیچے سے ڈاک بار کا فاصلہ۔</string>
-  <string name="DockIconBottom">اسکرین کے نیچے سے شبیہیں کا فاصلہ۔</string>
-  <string name="DockSettings">ڈاک کی ترتیبات۔</string>
-  <string name="DockWarn">اگر آپ کو گول کونوں میں ترمیم کرنے کی ضرورت ہو تو براہ کرم ریسورس ہکس کو فعال کریں۔</string>
-  <string name="DockFeature">ڈاک کی خصوصیت کو فعال کریں۔</string>
   <string name="EnableDockBlur">دھندلا پن کو فعال کریں۔</string>
-  <string name="Reset">ڈاک پیرامیٹرز ری سیٹ۔</string>
-  <string name="Tips1">یہ ڈاک کے پیرامیٹر کو اس کی ڈیفالٹ ویلیو پر بحال کرے گا اور سسٹم لانچر کو دوبارہ شروع کرے گا۔</string>
   <string name="Reset1">ری سیٹ کریں۔</string>
   <string name="Tips2">یہ ماڈیول ڈیفالٹ ترتیبات کو بحال کرے گا اور سسٹم لانچر کو دوبارہ شروع کرے گا۔</string>
   <string name="HideSeekPoints">صفحہ اشارے کو ہٹا دیں۔</string>
