@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="AdvancedFeature">Gelişmiş ayarlar</string>
-  <string name="AlwaysShowMIUIWidget">Yeni Widget\'ların, klasik Witget\'larda da görüntülenmesine izin ver</string>
+  <string name="AlwaysShowMIUIWidget">MIUI widget\'larının Klasik widget\'larda görüntülenmesine izin ver</string>
   <string name="AlwaysShowStatusBarClock">Durum çubuğu saatini sürekli görüntüle</string>
   <string name="AnimationLevel">Hareketler animasyon hızı</string>
   <string name="AppTextSize">Son uygulamalardaki uygulamaların simgeleri ve isimleri arasındaki boşluk</string>
@@ -21,7 +21,7 @@
   <string name="setDefaults">Varsayılanı kullanmak için boş bırakın</string>
   <string name="setRecentString">Varsayılanı kullanmak için boş bırakın veya metni kaldırmak için boşluk bırakın</string>
   <string name="current">Geçerli</string>
-  <string name="Description">MiUI başlatıcısı için Resource Hook</string>
+  <string name="Description">MIUI başlatıcısı için Resource Hook</string>
   <string name="Folder">Klasör ayarları</string>
   <string name="HideStatusBar">Son uygulamalarda durum çubuğunu gizle</string>
   <string name="HideTaskViewAppIcon">Son uygulamalarda uygulamaların simgelerini gizle</string>
@@ -51,7 +51,7 @@
   <string name="SimpleAnimation">Basit animasyon</string>
   <string name="SimpleBlur">Basit Bulanıklık</string>
   <string name="SmoothAnimation">Akıcı Animasyon</string>
-  <string name="TaskViewAppCardTextSize">Kucuk resim etiketleri metninin boyutu</string>
+  <string name="TaskViewAppCardTextSize">Küçük resim etiketleri metninin boyutu</string>
   <string name="TaskViewBlurLevel">Son uygulamalardaki bulanıklık seviyesi</string>
   <string name="TaskViewBlurSetTo">Son uygulamalar bulaniklik duzeyini buna ayarla </string>
   <string name="TestBlur">Test bulanıklığı</string>
@@ -106,7 +106,7 @@
   <string name="CustomTitleColor">Uygulama ismi rengi</string>
   <string name="Tips4">Onaltılık renk değerlerinden yardım alabilirsiniz, örneğin: Beyaz için #FFFFFF, Siyah için #000000</string>
   <string name="About">Modül hakkında</string>
-  <string name="MiuiVersion">MiUI sürümü</string>
+  <string name="MiuiVersion">MIUI sürümü</string>
   <string name="LauncherVersion">Başlatıcı sürümü</string>
   <string name="ModuleVersion">Modül sürümü</string>
   <string name="AboutUs">Hakkımızda</string>
@@ -118,5 +118,5 @@
   <string name="IconTitleTopMargin">Simge ismi üst kenar boşluğu</string>
   <string name="OpenLSPosed">LSPosed\'i Aç</string>
   <string name="ShortcutCount">Kısayol kısıtlamasını kaldır</string>
-  <string name="MaxShortcutCount">Modify max shortcut count</string>
+  <string name="MaxShortcutCount">Maksimum kısayol sayısını değiştir</string>
 </resources>
