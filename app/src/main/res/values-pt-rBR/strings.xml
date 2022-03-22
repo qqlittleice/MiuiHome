@@ -95,4 +95,5 @@
   <string name="OpenLSPosed">Abrir a interface LSPosed</string>
   <string name="ShortcutCount">Desbloquear limite de ícones na dock</string>
   <string name="MaxShortcutCount">Definir limite máximo de icones</string>
+  <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>
 </resources>
