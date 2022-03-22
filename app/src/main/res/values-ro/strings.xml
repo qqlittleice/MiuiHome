@@ -34,7 +34,6 @@
   <string name="ManualInput">Introducere manuală</string>
   <string name="ModuleFeature">Caracteristici modul</string>
   <string name="ModuleSettings">Setări modul</string>
-  <string name="ResHook">Implementare resurse</string>
   <string name="NoneBlur">Fără estompare</string>
   <string name="OtherFeature">Alte caracteristici</string>
   <string name="OutOfInput">Introdu o valoare în intervalul permis!</string>
@@ -68,18 +67,7 @@
   <string name="SmallWindow">Permite tuturor aplicațiilor să folosească ferestrele plutitoare</string>
   <string name="LowEndDeviceUseMIUIWidgets">Activează Noul magazin de widget-uri pe dispozitivele de gamă inferioară</string>
   <string name="RecommendServer">Dezactivează Server Recomandat</string>
-  <string name="EveryThingBuild">Optimizează lansatorul cu modul Everything</string>
-  <string name="DockHeight">Înălțime bară Doc</string>
-  <string name="DockRoundedCorners">Colțuri rotunjite în bara de andocare</string>
-  <string name="DockSide">Bară de andocare pe părțile laterale ale ecranului</string>
-  <string name="DockBottom">Bara de andocare din partea de jos a ecranului</string>
-  <string name="DockIconBottom">Pictograme din partea de jos a ecranului</string>
-  <string name="DockSettings">Setări bară de andocare</string>
-  <string name="DockWarn">Dacă trebuie să schimbi colțurile rotunjite, activează interceptarea resurselor.</string>
-  <string name="DockFeature">Activează caracteristicile barei de andocare</string>
   <string name="EnableDockBlur">Activează estompare doc</string>
-  <string name="Reset">Resetează parametrii barei de andocare</string>
-  <string name="Tips1">Acest lucru va restaura parametrii barei de andocare la valorile implicite și va reporni lansatorul de sistem.</string>
   <string name="Reset1">Resetare</string>
   <string name="Tips2">Aceasta opțiune va restaura setările implicite ale modulului și va reporni lansatorul de sistem.</string>
   <string name="HideSeekPoints">Elimină indicatorul paginii</string>
