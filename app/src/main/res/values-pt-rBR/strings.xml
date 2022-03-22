@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="AdvancedFeature">Configurações avançadas</string>
-  <string name="AlwaysShowMIUIWidget">Exibir Widgets MIUI em Widgets Clássicos</string>
+  <string name="AlwaysShowMIUIWidget">Exibir os novos widgets MIUI na gaveta de widgets clássicos</string>
   <string name="AlwaysShowStatusBarClock">Sempre exibir o relógio na barra de status</string>
   <string name="AnimationLevel">Definir velocidade das animações</string>
   <string name="AppTextSize">Definir a distância entre o ícone e o nome do aplicativo no menu recentes</string>
@@ -28,13 +28,12 @@
   <string name="HideTaskViewCleanUpIcon">Ocultar botão \"limpar tudo\" no menu recentes</string>
   <string name="HideTaskViewSmallWindowIcon">Remover botão \"Janelas Flutuantes\" no menu recentes</string>
   <string name="HideWidgetTitles">Ocultar rótulos dos widgets</string>
-  <string name="HorizontalTaskViewOfAppCardSize">Tamanho da exibição de tarefas no menu recentes, horizontal.</string>
+  <string name="HorizontalTaskViewOfAppCardSize">Definir tamanho das janelas de tarefas no menu recentes horizontal</string>
   <string name="InfiniteScroll">Habilitar rolagem infinita na tela inicial</string>
-  <string name="MamlDownload">Habilitar animação ao desbloquear a tela</string>
+  <string name="MamlDownload">Habilitar o efeito onda dos ícones ao desbloquear a tela</string>
   <string name="ManualInput">Entrada manual</string>
   <string name="ModuleFeature">Recursos do módulo</string>
   <string name="ModuleSettings">Configurações do módulo</string>
-  <string name="ResHook">Recursos Adicionais</string>
   <string name="NoneBlur">Nenhum</string>
   <string name="OtherFeature">Recursos Extras</string>
   <string name="OutOfInput">Por favor, insira um valor dentro do limite permitido!</string>
@@ -47,17 +46,16 @@
   <string name="Scope">Faixa de entrada permitida</string>
   <string name="SearchBarBlur">Habilitar desfoque da caixa de pesquisa</string>
   <string name="SetSuccessfully">Operação bem sucedida</string>
-  <string name="ShowDockIconTitles">Exibir o nome dos aplicativos na barra Dock</string>
+  <string name="ShowDockIconTitles">Exibir o nome dos aplicativos na dock</string>
   <string name="SimpleAnimation">Animações simples</string>
   <string name="SimpleBlur">Simples</string>
   <string name="SmoothAnimation">Animações suave</string>
   <string name="TaskViewAppCardTextSize">Definir tamanho do nome dos ícones no menu recentes</string>
   <string name="TaskViewBlurLevel">Nível de desfoque do menu recentes</string>
   <string name="TaskViewBlurSetTo">Definir o nível de desfoque no menu recentes para</string>
-  <string name="TestBlur">Em teste</string>
+  <string name="TestBlur">\"Em teste\"</string>
   <string name="TestFeature">Recursos em desenvolvimento</string>
-  <string name="Tips">Foi detectado que você está usando este módulo pela primeira vez, iremos restaurar as configurações padrões e reiniciar a MIUI Launcher.
-Se você precisar de novas configurações, por favor, aguarde o MIUI launcher reiniciar e abra às configurações novamente.</string>
+  <string name="Tips">Foi detectado que você está usando este módulo pela primeira vez, iremos restaurar as configurações padrões e reiniciar a MIUI Launcher.\nSe você precisar de novas configurações, por favor, aguarde o MIUI launcher reiniciar e abra às configurações novamente.</string>
   <string name="UnlockGrids">Desbloquear limite de grade</string>
   <string name="VerticalTaskViewOfAppCardSize">Definir tamanho das janelas de tarefas no menu recentes vertical</string>
   <string name="WallpaperDarken">Desativar o escurecimento do papel de parede no menu recentes</string>
@@ -67,20 +65,9 @@ Se você precisar de novas configurações, por favor, aguarde o MIUI launcher r
   <string name="Yes">Sim</string>
   <string name="EnableIconShadow">Exibir sombra e reflexo dos ícones na dock da tela inicial</string>
   <string name="SmallWindow">Permitir que todos aplicativos suporte \"Janelas Flutuantes\"</string>
-  <string name="LowEndDeviceUseMIUIWidgets">Habilitar nova loja de widget em dispositivos de baixo desempenho</string>
-  <string name="RecommendServer">Desabilitar \"Recomendar Servidor\"</string>
-  <string name="EveryThingBuild">Otimizar a MIUI Launcher com o modo \"Everything\"</string>
-  <string name="DockHeight">Definir largura</string>
-  <string name="DockRoundedCorners">Definir cantos arrendados:</string>
-  <string name="DockSide">Definir comprimento</string>
-  <string name="DockBottom">Definir posição</string>
-  <string name="DockIconBottom">Definir posição dos ícones na dock</string>
-  <string name="DockSettings">Configurações da dock</string>
-  <string name="DockWarn">Por favor, habilite os recursos adicionais se você precisar modificar os cantos arredondados.</string>
-  <string name="DockFeature">Habilitar dock na tela inicial</string>
+  <string name="LowEndDeviceUseMIUIWidgets">Habilitar suporte aos novos widgets miui em dispositivos sem suporte</string>
+  <string name="RecommendServer">Desabilitar \"Servidor Recomendado\"</string>
   <string name="EnableDockBlur">Habilitar desfoque na dock</string>
-  <string name="Reset">Restaurar os parâmetros da barra dock</string>
-  <string name="Tips1">Restaurar os parâmetros da barra Dock ao seu valor padrão e reiniciar a MIUI Launcher.</string>
   <string name="Reset1">Redefinir</string>
   <string name="Tips2">Restaurar as configurações ao seu valor padrão e reiniciar o MIUI Launcher.</string>
   <string name="HideSeekPoints">Remover indicador de páginas da tela inicial</string>
@@ -98,9 +85,9 @@ Se você precisar de novas configurações, por favor, aguarde o MIUI launcher r
   <string name="Tips3">Restaurar o tamanho da exibição de tarefas no menu recentes, horizontal para o seu valor padrão e reiniciar a MIUI Launcher.</string>
   <string name="UnlockIcons">Desbloquear limite de ícones na dock</string>
   <string name="DockMarginTop">Definir espaçamento entre ícone e indicador</string>
-  <string name="DockMarginBottom">Indicador de página e espaçamento inferior da tela</string>
+  <string name="DockMarginBottom">Definir espaçamento entre indicador de páginas e ícones</string>
   <string name="SimpleWarn">Você habilitou \"Animações simples\", isso ocultará algumas configurações.</string>
-  <string name="BrokenFeature">Recursos obsoleto</string>
+  <string name="BrokenFeature">Recursos Obsoleto</string>
   <string name="AppReturnAmin">Desfoque ao retornar o aplicativo</string>
   <string name="BlurRadius">Grau de desfoque</string>
   <string name="BasicBlur">Básico</string>
