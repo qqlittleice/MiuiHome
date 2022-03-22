@@ -72,9 +72,9 @@ MIUI Launcher...</string>
   <string name="EveryThingBuild">Otimizar a MIUI Launcher com o modo \"Everything\"</string>
   <string name="DockHeight">Definir altura:</string>
   <string name="DockRoundedCorners">Definir cantos arrendados:</string>
-  <string name="DockSide">Definir parte laterais da tela:</string>
-  <string name="DockBottom">Definir parte inferior da tela:</string>
-  <string name="DockIconBottom">Ícones na parte inferior da tela:</string>
+  <string name="DockSide">Definir comprimento</string>
+  <string name="DockBottom">Definir posição</string>
+  <string name="DockIconBottom">Definir posição dos ícones na dock</string>
   <string name="DockSettings">Configurar Dock (barra inferior de aplicativos)</string>
   <string name="DockWarn">Por favor, habilite os recursos adicionais se você precisar modificar os cantos arredondados.</string>
   <string name="DockFeature">Ativar a barra Dock</string>
@@ -83,10 +83,10 @@ MIUI Launcher...</string>
   <string name="Tips1">Restaurar os parâmetros da barra Dock ao seu valor padrão e reiniciar a MIUI Launcher.</string>
   <string name="Reset1">Restaurar</string>
   <string name="Tips2">Restaurar as configurações ao seu valor padrão e reiniciar o MIUI Launcher.</string>
-  <string name="HideSeekPoints">Remover indicador de página</string>
+  <string name="HideSeekPoints">Remover indicador de páginas da tela inicial</string>
   <string name="CategoryHideAll">Ocultar \"Todos\" na categoria de aplicativos</string>
-  <string name="CategoryPagingHideEdit">Ocultar botão \"Editar\" nas categorias da gaveta de aplicativos</string>
-  <string name="FolderColumnsCount">Número de colunas nas pastas</string>
+  <string name="CategoryPagingHideEdit">Remover botão \"Editar\" nas categorias da gaveta de aplicativos</string>
+  <string name="FolderColumnsCount">Definir números de colunas dentro das pastas</string>
   <string name="FolderWidth">Utilizar toda a largura da pasta</string>
   <string name="IconTitleFontSize">Tamanho da fonte do rótulo do ícone</string>
   <string name="CustomRecentText">Personalizar a exibição de texto no menu recentes quando não houver nenhum plano de fundo</string>
