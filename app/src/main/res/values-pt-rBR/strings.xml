@@ -38,11 +38,11 @@
   <string name="NoneBlur">Nenhum</string>
   <string name="OtherFeature">Recursos Extras</string>
   <string name="OutOfInput">Por favor, insira um valor dentro do limite permitido!</string>
-  <string name="RealTaskViewHorizontal">Retornar opções leterais nas tarefas de aplicativos no menu recentes - Low-End</string>
+  <string name="RealTaskViewHorizontal">Retornar opções leterais nas tarefas de aplicativos no menu recentes</string>
   <string name="Reboot">Reiniciar MIUI Launcher</string>
   <string name="Reboot1">Tem certeza de que deseja reiniciar a MIUI Launcher?</string>
   <string name="Reboot2">A MIUI Launcher será reiniciada em 1 segundo!</string>
-  <string name="RoundCorner">Definir bordas da janelas de tarefas dos aplicativos no menu recentes</string>
+  <string name="RoundCorner">Definir bordas arredondadas da janelas de tarefas dos aplicativos no menu recentes</string>
   <string name="Save">Salvar</string>
   <string name="Scope">Faixa de entrada permitida</string>
   <string name="SearchBarBlur">Habilitar desfoque da caixa de pesquisa</string>
@@ -83,7 +83,7 @@
   <string name="Reset1">Redefinir</string>
   <string name="Tips2">Restaurar as configurações ao seu valor padrão e reiniciar o MIUI Launcher.</string>
   <string name="HideSeekPoints">Remover indicador de páginas da tela inicial</string>
-  <string name="CategoryHideAll">Remover categoria \"Todos\" na gaveta de aplicativos</string>
+  <string name="CategoryHideAll">Remover categoria \"Tudo\" na gaveta de aplicativos</string>
   <string name="CategoryPagingHideEdit">Remover botão \"Editar\" nas categorias da gaveta de aplicativos</string>
   <string name="FolderColumnsCount">Definir números de colunas dentro das pastas</string>
   <string name="FolderWidth">Expandir largura dentro da pasta</string>
