@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="AdvancedFeature">Configurações avançadas</string>
+  <string name="AdvancedFeature">Configurações Avançadas</string>
   <string name="AlwaysShowMIUIWidget">Exibir os novos widgets MIUI na gaveta de widgets clássicos</string>
   <string name="AlwaysShowStatusBarClock">Sempre exibir o relógio na barra de status</string>
   <string name="AnimationLevel">Definir velocidade das animações</string>
@@ -77,7 +77,7 @@
   <string name="UnlockIcons">Desbloquear limite de ícones na dock</string>
   <string name="SimpleWarn">Você habilitou \"Animações Simples\", isso ocultará algumas configurações.</string>
   <string name="BrokenFeature">Recursos Obsoleto</string>
-  <string name="AppReturnAmin">Desfoque ao retornar o aplicativo</string>
+  <string name="AppReturnAmin">Desfoque ao retornar os aplicativos</string>
   <string name="BlurRadius">Grau de Desfoque</string>
   <string name="BasicBlur">Básico</string>
   <string name="CustomTitleColor">Personalizar cor para os nomes dos aplicativos</string>
