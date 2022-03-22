@@ -9,7 +9,7 @@
   <string name="Cancel">Cancelar</string>
   <string name="CleanModuleSettings">Resetar configurações</string>
   <string name="RestoreModuleSettingsSuccess">Configurações restauradas com sucesso, reiniciando launcher.</string>
-  <string name="RestoreModuleSettingsFailed">Falha ao tentar restaurar configurações</string>
+  <string name="RestoreModuleSettingsFailed">Falha ao tentar restaurar as configurações</string>
   <string name="BackupModuleSettings">Exportar configurações</string>
   <string name="RestoreModuleSettings">Restaurar configurações do módulo</string>
   <string name="RestoreModuleSettingsTips">Esta ação irá limpar todas as configurações do módulo e restaurar as configurações a partir de um arquivo, em seguida a MIUI Launcher será automaticamente reiniciada, deseja continuar?</string>
@@ -95,5 +95,5 @@
   <string name="OpenLSPosed">Abrir a interface LSPosed</string>
   <string name="ShortcutCount">Desbloquear limite de ícones na dock</string>
   <string name="MaxShortcutCount">Definir limite máximo de icones</string>
-  <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>
+  <string name="TaskViewAppCardBgColor">Personalizar a cor de fundo das janelas no menu recentes, para aplicativos abertos em janelas flutuantes</string>
 </resources>
