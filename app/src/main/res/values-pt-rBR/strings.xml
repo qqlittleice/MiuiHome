@@ -50,13 +50,13 @@
   <string name="SimpleAnimation">Animações simples</string>
   <string name="SimpleBlur">Simples</string>
   <string name="SmoothAnimation">Animações suave</string>
-  <string name="TaskViewAppCardTextSize">Definir tamanho do nome dos ícones no menu recentes</string>
+  <string name="TaskViewAppCardTextSize">Definir tamanho dos nomes dos ícones no menu recentes</string>
   <string name="TaskViewBlurLevel">Nível de desfoque do menu recentes</string>
   <string name="TaskViewBlurSetTo">Definir o nível de desfoque no menu recentes para</string>
   <string name="TestBlur">\"Em teste\"</string>
-  <string name="TestFeature">Recursos em desenvolvimento</string>
+  <string name="TestFeature">Recursos em Desenvolvimento</string>
   <string name="Tips">Foi detectado que você está usando este módulo pela primeira vez, iremos restaurar as configurações padrões e reiniciar a MIUI Launcher.\nSe você precisar de novas configurações, por favor, aguarde o MIUI launcher reiniciar e abra às configurações novamente.</string>
-  <string name="UnlockGrids">Desbloquear limite de grade</string>
+  <string name="UnlockGrids">Desbloquear as restrições de grade</string>
   <string name="VerticalTaskViewOfAppCardSize">Definir tamanho das janelas de tarefas no menu recentes vertical</string>
   <string name="WallpaperDarken">Desativar o escurecimento do papel de parede no menu recentes</string>
   <string name="Welcome">Bem-vindo(a)</string>
@@ -64,7 +64,7 @@
   <string name="WidgetToMinus">Mover widgets clássicos para o assistente</string>
   <string name="Yes">Sim</string>
   <string name="EnableIconShadow">Exibir sombra e reflexo dos ícones na dock da tela inicial</string>
-  <string name="SmallWindow">Permitir que todos aplicativos suporte \"Janelas Flutuantes\"</string>
+  <string name="SmallWindow">Habilitar suporte a \"Janelas flutuantes\" em todos os aplicativos</string>
   <string name="LowEndDeviceUseMIUIWidgets">Habilitar suporte aos novos widgets miui em dispositivos sem suporte</string>
   <string name="RecommendServer">Desabilitar \"Servidor Recomendado\"</string>
   <string name="EnableDockBlur">Habilitar desfoque na dock</string>
