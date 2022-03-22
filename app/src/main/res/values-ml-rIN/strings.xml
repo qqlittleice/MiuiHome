@@ -34,7 +34,6 @@
   <string name="ManualInput">മാനുവൽ ഇൻപുട്ട്</string>
   <string name="ModuleFeature">മൊഡ്യൂൾ സവിശേഷതകൾ</string>
   <string name="ModuleSettings">മൊഡ്യൂൾ ക്രമീകരണങ്ങൾ</string>
-  <string name="ResHook">വിഭവ ഹുക്ക്</string>
   <string name="NoneBlur">മങ്ങലില്ല</string>
   <string name="OtherFeature">മറ്റ് സവിചേഷ്തകൾ </string>
   <string name="OutOfInput">അനുവദനീയമായ പരിധിക്കുള്ളിൽ ഒരു മൂല്യം നൽകുക</string>
@@ -68,18 +67,7 @@
   <string name="SmallWindow">ഫ്ലോട്ടിംഗ് വിൻഡോകൾ ഉപയോഗിക്കാൻ എല്ലാ ആപ്പുകളെയും അനുവദിക്കുക</string>
   <string name="LowEndDeviceUseMIUIWidgets">ലോ എൻഡ് ഉപകരണങ്ങൾക്കായി പുതിയ വിജറ്റ് സ്റ്റോർ പ്രവർത്തനക്ഷമമാക്കുക</string>
   <string name="RecommendServer">ശുപാർശ ചെയ്യുന്ന സെർവർ പ്രവർത്തനരഹിതമാക്കുകr</string>
-  <string name="EveryThingBuild">എല്ലാം മോഡ് ഉപയോഗിച്ച് ലോഞ്ചർ ഒപ്റ്റിമൈസ് ചെയ്യുക</string>
-  <string name="DockHeight">ഡോക്ക് ബാർ ഉയരം</string>
-  <string name="DockRoundedCorners">ഡോക്ക് ബാർ വൃത്താകൃതിയിലുള്ള കോണുകൾ</string>
-  <string name="DockSide">സ്ക്രീനിന്റെ വശങ്ങളിൽ നിന്ന് ഡോക്ക് ബാർ</string>
-  <string name="DockBottom">സ്ക്രീനിന്റെ താഴെ നിന്ന് ഡോക്ക് ബാർ</string>
-  <string name="DockIconBottom">സ്ക്രീനിന്റെ താഴെ നിന്ന് ഐക്കണുകൾ</string>
-  <string name="DockSettings">ഡോക്ക് ക്രമീകരണങ്ങൾ</string>
-  <string name="DockWarn">നിങ്ങൾക്ക് വൃത്താകൃതിയിലുള്ള കോണുകൾ പരിഷ്ക്കരിക്കണമെങ്കിൽ റിസോഴ്സ് ഹുക്കുകൾ പ്രവർത്തനക്ഷമമാക്കുക.</string>
-  <string name="DockFeature">ഡോക്ക് സവിശേഷത പ്രവർത്തനക്ഷമമാക്കുക</string>
   <string name="EnableDockBlur">ഡോക്കിന്റെ മങ്ങൽ പ്രവർത്തനക്ഷമമാക്കുക</string>
-  <string name="Reset">ഡോക്ക് പാരാമീറ്ററുകൾ പുനസജ്ജമാക്കുക</string>
-  <string name="Tips1">ഇത് ഡോക്ക് പാരാമീറ്റർ അതിന്റെ സ്ഥിര മൂല്യത്തിലേക്ക് പുന restoreസ്ഥാപിക്കുകയും സിസ്റ്റം ലോഞ്ചർ പുനരാരംഭിക്കുകയും ചെയ്യും.</string>
   <string name="Reset1">പുനസജ്ജമാക്കുക</string>
   <string name="Tips2">ഇത് മൊഡ്യൂൾ സ്ഥിരസ്ഥിതി ക്രമീകരണങ്ങൾ പുനസ്ഥാപിക്കുകയും സിസ്റ്റം ലോഞ്ചർ പുനരാരംഭിക്കുകയും ചെയ്യും.</string>
   <string name="HideSeekPoints">പേജ് ഇൻഡിക്കേറ്റർ നീക്കം ചെയ്യുക</string>
