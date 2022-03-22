@@ -165,11 +165,6 @@ class CustomDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
         val lp = window!!.attributes
         lp.dimAmount = 0.3f
         window!!.attributes = lp
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            window!!.addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND)
-            window!!.setBackgroundBlurRadius(50)
-            window!!.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
-        }
         super.show()
     }
 }
