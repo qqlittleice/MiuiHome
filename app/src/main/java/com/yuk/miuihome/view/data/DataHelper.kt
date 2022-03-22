@@ -118,6 +118,7 @@ object DataHelper {
             add(Item(list = arrayListOf(TextV(resId = R.string.IconTitleFontSize, onClickListener = { showIconTitleFontSizeDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.TaskViewAppCardTextSize, onClickListener = { showTaskViewAppCardTextSizeDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.RoundCorner, onClickListener = { showRoundCornerDialog() }))))
+            add(Item(list = arrayListOf(TextV(resId = R.string.TaskViewAppCardBgColor, onClickListener = { showCustomAppCardBgColorDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.AppTextSize, onClickListener = { showAppTextSizeDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.CustomRecentText, onClickListener = { showCustomRecentTextDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.VerticalTaskViewOfAppCardSize, onClickListener = { showVerticalTaskViewOfAppCardSizeDialog() }))))
@@ -252,6 +253,22 @@ object DataHelper {
             setEditText("", "${moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getString("iconTitleFontColor", "").toString()}")
             setRButton(R.string.Yes) {
                 editor.putString("iconTitleFontColor", getEditText())
+                editor.apply()
+                dismiss()
+            }
+            setLButton(R.string.Cancel) { dismiss() }
+            show()
+        }
+    }
+
+
+    private fun showCustomAppCardBgColorDialog() {
+        CustomDialog(currentActivity).apply {
+            setTitle(R.string.TaskViewAppCardBgColor)
+            setMessage("${moduleRes.getString(R.string.Tips4)}, ${moduleRes.getString(R.string.setDefaults)}")
+            setEditText("", "${moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getString("appCardBgColor", "").toString()}")
+            setRButton(R.string.Yes) {
+                editor.putString("appCardBgColor", getEditText())
                 editor.apply()
                 dismiss()
             }
