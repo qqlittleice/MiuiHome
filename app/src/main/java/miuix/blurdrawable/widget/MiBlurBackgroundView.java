@@ -5,10 +5,11 @@ import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
 public class MiBlurBackgroundView extends FrameLayout {
+
   private BlurBackgroundView mBackgroundView;
 
   public MiBlurBackgroundView(Context context) {
-    this(context, (AttributeSet)null);
+    this(context, (AttributeSet) null);
   }
 
   public MiBlurBackgroundView(Context context, AttributeSet attributeSet) {

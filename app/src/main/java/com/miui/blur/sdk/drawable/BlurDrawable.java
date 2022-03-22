@@ -6,7 +6,6 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
-import android.os.Build.VERSION;
 import android.os.Handler;
 import android.os.Looper;
 import java.lang.reflect.Method;
@@ -14,13 +13,15 @@ import java.lang.reflect.Method;
 public class BlurDrawable extends Drawable {
 
   private static final Handler mainThreadHandler = new Handler(Looper.getMainLooper());
-  private final long mFunctor;
-  private Method mMethodCallDrawGLFunction;
-  private final Paint mPaint;
 
   static {
     System.loadLibrary("miuiblursdk");
   }
+
+  private final long mFunctor;
+  private final Paint mPaint;
+  private Method mMethodCallDrawGLFunction;
+
 
   public BlurDrawable() {
     Paint paint = new Paint();
@@ -31,6 +32,16 @@ public class BlurDrawable extends Drawable {
     this.mFunctor = nCreateNativeFunctor(mBlurWidth, mBlurHeight);
     this.initMethod();
   }
+
+  public static native long nCreateNativeFunctor(int i1, int i2);
+
+  public static native long nDeleteNativeFunctor(long l1);
+
+  public static native void nSetAlpha(long l, float f);
+
+  public static native void nSetBlurRatio(long l, float f);
+
+  public static native void nSetMixColor(long l, int i1, int i2);
 
   private void drawBlurBack(Canvas canvas) {
     try {
@@ -43,17 +54,9 @@ public class BlurDrawable extends Drawable {
   @SuppressLint("PrivateApi")
   private void initMethod() {
     {
-      int i = VERSION.SDK_INT;
-      if (i > 28) {
-        try {
-          this.mMethodCallDrawGLFunction = (Method) Class.class.getDeclaredMethod("getDeclaredMethod", String.class, Class[].class).invoke(Class.class.getDeclaredMethod("forName", String.class).invoke((Object) null, "android.graphics.RecordingCanvas"), "callDrawGLFunction2", new Class[]{Long.TYPE});
-        } catch (Exception ignored) {
-        }
-      } else if (i > 22) {
-        try {
-          this.mMethodCallDrawGLFunction = Class.forName("android.view.DisplayListCanvas").getMethod("callDrawGLFunction2", Long.TYPE);
-        } catch (Exception ignored) {
-        }
+      try {
+        this.mMethodCallDrawGLFunction = (Method) Class.class.getDeclaredMethod("getDeclaredMethod", String.class, Class[].class).invoke(Class.class.getDeclaredMethod("forName", String.class).invoke((Object) null, "android.graphics.RecordingCanvas"), "callDrawGLFunction2", new Class[]{Long.TYPE});
+      } catch (Exception ignored) {
       }
     }
   }
@@ -66,16 +69,6 @@ public class BlurDrawable extends Drawable {
       mainThreadHandler.post(BlurDrawable.this::invalidateSelf);
     }
   }
-
-  public static native long nCreateNativeFunctor(int i1, int i2);
-
-  public static native long nDeleteNativeFunctor(long l1);
-
-  public static native void nSetAlpha(long l, float f);
-
-  public static native void nSetBlurRatio(long l, float f);
-
-  public static native void nSetMixColor(long l, int i1, int i2);
 
   public void draw(Canvas canvas) {
     if (canvas.isHardwareAccelerated()) {

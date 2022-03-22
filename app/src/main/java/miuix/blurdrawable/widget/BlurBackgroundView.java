@@ -11,11 +11,12 @@ import android.widget.FrameLayout;
 import com.miui.blur.sdk.drawable.BlurDrawable;
 
 public class BlurBackgroundView extends FrameLayout {
+
   private BlurDrawable mBlurBackground;
   private Drawable mBlurForeground;
 
   public BlurBackgroundView(Context context) {
-    this(context, (AttributeSet)null);
+    this(context, (AttributeSet) null);
   }
 
   public BlurBackgroundView(Context context, AttributeSet attributeSet) {
@@ -40,7 +41,7 @@ public class BlurBackgroundView extends FrameLayout {
 
   public void setAlpha(float f) {
     super.setAlpha(f);
-    int i = (int)(f * 255.0F);
+    int i = (int) (f * 255.0F);
     Drawable mBlurForeground = this.mBlurForeground;
     if (mBlurForeground != null) {
       mBlurForeground.setAlpha(i);
@@ -75,8 +76,8 @@ public class BlurBackgroundView extends FrameLayout {
           this.setAlpha(1.0F);
         }
       } else if (this.getVisibility() == View.VISIBLE) {
-        this.setForeground((Drawable)null);
-        this.setBackground((Drawable)null);
+        this.setForeground((Drawable) null);
+        this.setBackground((Drawable) null);
         this.mBlurForeground = null;
         this.mBlurBackground = null;
         this.setVisibility(View.GONE);

@@ -51,9 +51,6 @@ android {
                 signingConfig = signingConfigs.getByName("release")
             }
         }
-        create("noResHook") {
-            initWith(getByName("release"))
-        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
