@@ -30,12 +30,12 @@
   <string name="HideWidgetTitles">Ocultar rótulos dos widgets</string>
   <string name="HorizontalTaskViewOfAppCardSize">Tamanho da exibição de tarefas no menu recentes, horizontal.</string>
   <string name="InfiniteScroll">Habilitar rolagem infinita na tela inicial</string>
-  <string name="MamlDownload">Habilitar o efeito \"Ondas\" ao desbloquear</string>
+  <string name="MamlDownload">Habilitar animação ao desbloquear a tela</string>
   <string name="ManualInput">Entrada manual</string>
   <string name="ModuleFeature">Recursos do módulo</string>
   <string name="ModuleSettings">Configurações do módulo</string>
   <string name="ResHook">Recursos Adicionais</string>
-  <string name="NoneBlur">Nenhum desfoque</string>
+  <string name="NoneBlur">Nenhum</string>
   <string name="OtherFeature">Recursos Extras</string>
   <string name="OutOfInput">Por favor, insira um valor dentro do limite permitido!</string>
   <string name="RealTaskViewHorizontal">Retornar opções leterais nas tarefas de aplicativos no menu recentes - Low-End</string>
@@ -52,7 +52,7 @@
   <string name="SimpleBlur">Simples</string>
   <string name="SmoothAnimation">Animações suave</string>
   <string name="TaskViewAppCardTextSize">Definir tamanho do nome dos ícones no menu recentes</string>
-  <string name="TaskViewBlurLevel">Nível de desfoque no menu recentes</string>
+  <string name="TaskViewBlurLevel">Nível de desfoque do menu recentes</string>
   <string name="TaskViewBlurSetTo">Definir o nível de desfoque no menu recentes para</string>
   <string name="TestBlur">\"Em teste\"</string>
   <string name="TestFeature">Recursos experimentais</string>
@@ -74,10 +74,10 @@
   <string name="DockSide">Definir comprimento</string>
   <string name="DockBottom">Definir posição</string>
   <string name="DockIconBottom">Definir posição dos ícones na dock</string>
-  <string name="DockSettings">Configurar Dock (barra inferior de aplicativos)</string>
+  <string name="DockSettings">Configurações da dock</string>
   <string name="DockWarn">Por favor, habilite os recursos adicionais se você precisar modificar os cantos arredondados.</string>
   <string name="DockFeature">Ativar a barra Dock</string>
-  <string name="EnableDockBlur">Ativar desfoque da barra Dock</string>
+  <string name="EnableDockBlur">Habilitar desfoque na dock</string>
   <string name="Reset">Restaurar os parâmetros da barra dock</string>
   <string name="Tips1">Restaurar os parâmetros da barra Dock ao seu valor padrão e reiniciar a MIUI Launcher.</string>
   <string name="Reset1">Redefinir</string>
