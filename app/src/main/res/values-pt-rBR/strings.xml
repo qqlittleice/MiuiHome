@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="AdvancedFeature">Configurações avançadas</string>
-  <string name="AlwaysShowMIUIWidget">Exibir Widgets MIUI em Widgets Clássicos</string>
+  <string name="AlwaysShowMIUIWidget">Exibir os novos widgets miui na gaveta de widgets clássicos</string>
   <string name="AlwaysShowStatusBarClock">Sempre exibir o relógio na barra de status</string>
   <string name="AnimationLevel">Definir velocidade das animações</string>
   <string name="AppTextSize">Definir a distância entre o ícone e o nome do aplicativo no menu recentes</string>
@@ -11,7 +11,7 @@
   <string name="RestoreModuleSettingsSuccess">Configurações restauradas com sucesso, reiniciando launcher.</string>
   <string name="RestoreModuleSettingsFailed">Falha ao tentar restaurar configurações</string>
   <string name="BackupModuleSettings">Exportar configurações</string>
-  <string name="RestoreModuleSettings">Restaurar as configurações originais</string>
+  <string name="RestoreModuleSettings">Importar configurações</string>
   <string name="RestoreModuleSettingsTips">Esta ação irá limpar todas as configurações do módulo e restaurar as configurações a partir de um arquivo, em seguida a MIUI Launcher será automaticamente reiniciada, deseja continuar?</string>
   <string name="Close">Fechar</string>
   <string name="CloseFolder">Fechar pasta ao abrir aplicativo</string>
@@ -28,7 +28,7 @@
   <string name="HideTaskViewCleanUpIcon">Ocultar botão \"limpar tudo\" no menu recentes</string>
   <string name="HideTaskViewSmallWindowIcon">Remover botão \"Janelas Flutuantes\" no menu recentes</string>
   <string name="HideWidgetTitles">Ocultar rótulos dos widgets</string>
-  <string name="HorizontalTaskViewOfAppCardSize">Tamanho da exibição de tarefas no menu recentes, horizontal.</string>
+  <string name="HorizontalTaskViewOfAppCardSize">Definir tamanho das janelas de tarefas no menu recentes, horizontal</string>
   <string name="InfiniteScroll">Habilitar rolagem infinita na tela inicial</string>
   <string name="MamlDownload">Habilitar animação ao desbloquear a tela</string>
   <string name="ManualInput">Entrada manual</string>
@@ -47,7 +47,7 @@
   <string name="Scope">Faixa de entrada permitida</string>
   <string name="SearchBarBlur">Habilitar desfoque da caixa de pesquisa</string>
   <string name="SetSuccessfully">Operação bem sucedida</string>
-  <string name="ShowDockIconTitles">Exibir o nome dos aplicativos na barra Dock</string>
+  <string name="ShowDockIconTitles">Exibir o nome dos aplicativos na dock</string>
   <string name="SimpleAnimation">Animações simples</string>
   <string name="SimpleBlur">Simples</string>
   <string name="SmoothAnimation">Animações suave</string>
@@ -70,7 +70,7 @@
   <string name="RecommendServer">Desabilitar \"Servidor Recomendo\"</string>
   <string name="EveryThingBuild">Otimizar a MIUI Launcher com o modo \"Everything\"</string>
   <string name="DockHeight">Definir largura</string>
-  <string name="DockRoundedCorners">Definir cantos arrendados:</string>
+  <string name="DockRoundedCorners">Definir cantos arrendados</string>
   <string name="DockSide">Definir comprimento</string>
   <string name="DockBottom">Definir posição</string>
   <string name="DockIconBottom">Definir posição dos ícones na dock</string>
@@ -97,7 +97,7 @@
   <string name="Tips3">Restaurar o tamanho da exibição de tarefas no menu recentes, horizontal para o seu valor padrão e reiniciar a MIUI Launcher.</string>
   <string name="UnlockIcons">Desbloquear limite de ícones na dock</string>
   <string name="DockMarginTop">Definir espaçamento entre ícone e indicador</string>
-  <string name="DockMarginBottom">Indicador de página e espaçamento inferior da tela</string>
+  <string name="DockMarginBottom">Definir o espaçamento do indicador de páginas entre ícones</string>
   <string name="SimpleWarn">Você habilitou \"Animações Simples\", isso ocultará algumas configurações.</string>
   <string name="BrokenFeature">Recursos obsoleto</string>
   <string name="AppReturnAmin">Desfoque ao retornar o aplicativo</string>
