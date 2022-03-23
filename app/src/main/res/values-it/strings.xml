@@ -34,6 +34,7 @@
   <string name="ManualInput">Input manuale</string>
   <string name="ModuleFeature">Funzioni del modulo</string>
   <string name="ModuleSettings">Impostazioni del modulo</string>
+  <string name="ResHook">Hook risorse</string>
   <string name="NoneBlur">Nessuna sfocatura</string>
   <string name="OtherFeature">Altre opzioni</string>
   <string name="OutOfInput">Per favore inserisci un valore compreso tra l\'intervallo consentito!</string>
@@ -67,7 +68,18 @@
   <string name="SmallWindow">Consenti a tutte le app di utilizzare le Finestre Fluttuanti</string>
   <string name="LowEndDeviceUseMIUIWidgets">Abilita il nuovo Widget Store nei dispositivi di fascia bassa</string>
   <string name="RecommendServer">Disattiva server dei consigliati</string>
+  <string name="EveryThingBuild">Modalità ottimizza il launcher con tutto</string>
+  <string name="DockHeight">Altezza dock</string>
+  <string name="DockRoundedCorners">Angoli della dock</string>
+  <string name="DockSide">Distanza barra della Dock dai lati dello schermo</string>
+  <string name="DockBottom">Distanza barra della Dock dalla parte inferiore dello schermo</string>
+  <string name="DockIconBottom">Distanza icone dalla parte inferiore dello schermo</string>
+  <string name="DockSettings">Opzioni dock</string>
+  <string name="DockWarn">Per favore abilita \"Hook Risorse\" se ti serve modificare gli angoli.</string>
+  <string name="DockFeature">Attiva dock</string>
   <string name="EnableDockBlur">Attiva sfocatura sfondo della dock</string>
+  <string name="Reset">Resetta parametri della dock</string>
+  <string name="Tips1">Questo ripristinerà i valori della dock predefiniti e riavvierà il launcher.</string>
   <string name="Reset1">Resetta</string>
   <string name="Tips2">Questo reimposterà le opzioni predefinite del modulo e riavvierà il launcher.</string>
   <string name="HideSeekPoints">Rimuovi indicatore pagine</string>

@@ -34,6 +34,7 @@
   <string name="ManualInput">وارد کردن دستی</string>
   <string name="ModuleFeature">ویژگی های ماژول</string>
   <string name="ModuleSettings">تنظیمات ماژول</string>
+  <string name="ResHook">منبع قالب ها√</string>
   <string name="NoneBlur">بدون تاری</string>
   <string name="OtherFeature">ویژگی های دیگر</string>
   <string name="OutOfInput">لطفاً مقداری را در محدوده مجاز وارد کنید!</string>
@@ -67,7 +68,18 @@
   <string name="SmallWindow">به همه برنامه ها اجازه دهید تا از پنجره ی شناور استفاده کنند</string>
   <string name="LowEndDeviceUseMIUIWidgets">فروشگاه ویجت جدید را در دستگاه های کم مصرف فعال کنید</string>
   <string name="RecommendServer">غیرفعال کردن سرور پیش فرض</string>
+  <string name="EveryThingBuild">بهینه سازی لانچر در همه حالت ها</string>
+  <string name="DockHeight">ارتفاع بارانداز</string>
+  <string name="DockRoundedCorners">بارانداز گوشه های گرد</string>
+  <string name="DockSide">نوار بارگیری از کناره های صفحه</string>
+  <string name="DockBottom">نوار بارگیری از پایین صفحه</string>
+  <string name="DockIconBottom">نمادها از پایین صفحه</string>
+  <string name="DockSettings">تنظیمات نماد ها</string>
+  <string name="DockWarn">در صورت نیاز به تغییر گوشه های گرد ، قالب های منابع را فعال کنید.</string>
+  <string name="DockFeature">ویژگی بارانداز را فعال کنید</string>
   <string name="EnableDockBlur">ویژگی بلوری بارانداز را فعال کنید</string>
+  <string name="Reset">پارامتر های بارانداز را بازنشانی کنید</string>
+  <string name="Tips1">با این کار پارامتر بارانداز به مقدار پیش فرض باز می گردد و لانچر سیستم راه اندازی مجدد می شود.</string>
   <string name="Reset1">بازنشانی</string>
   <string name="Tips2">با این کار تنظیمات پیش فرض ماژول بازیابی می شود و لانچر سیستم راه اندازی مجدد می شود.</string>
   <string name="HideSeekPoints">حذف صفحه کمکی</string>

@@ -57,6 +57,7 @@ __新仓库：[qqlittleice/MiuiHome](https://github.com/qqlittleice/MiuiHome)__
 - 强制当前设备为高端设备
 - 隐藏应用分页中的编辑按钮
 - 允许将安卓小部件移到负一屏
+- 支持将搜索框修改为 Dock 栏
 - 隐藏应用抽屉模式中的"全部"分页
 - 支持移除非抽屉模式下的页面指示器
 - 允许在安卓小部件页显示 MIUI 小部件
@@ -78,6 +79,8 @@ __新仓库：[qqlittleice/MiuiHome](https://github.com/qqlittleice/MiuiHome)__
 - [CustoMIUIzer](https://code.highspec.ru/Mikanoshi/CustoMIUIzer)
 - [FuckCoolapk](https://github.com/ejiaogl/FuckCoolapk)
 - [LSPosed](https://github.com/LSPosed/LSPosed)
+- [MIDock](https://github.com/lamprose/MIDock)
+- [MIUIDock](https://github.com/ouhoukyo/MIUIDock)
 - [MIUltra](https://github.com/lamprose/MIUltra)
 - [QNotified](https://github.com/ferredoxin/QNotified)
 - [XposedBridge](https://github.com/rovo89/XposedBridge)

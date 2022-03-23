@@ -34,6 +34,7 @@
   <string name="ManualInput">Nhập thủ công</string>
   <string name="ModuleFeature">Tính năng mô-đun</string>
   <string name="ModuleSettings">Cài đặt mô-đun</string>
+  <string name="ResHook">Tài nguyên Hook</string>
   <string name="NoneBlur">Không làm mờ</string>
   <string name="OtherFeature">Các tính năng khác</string>
   <string name="OutOfInput">Vui lòng nhập một giá trị trong phạm vi cho phép!</string>
@@ -67,7 +68,18 @@
   <string name="SmallWindow">Cho phép tất cả các ứng dụng sử dụng Cửa sổ nổi</string>
   <string name="LowEndDeviceUseMIUIWidgets">Bật Cửa hàng tiện ích con mới trên thiết bị cấp thấp</string>
   <string name="RecommendServer">Tắt máy chủ được đề xuất</string>
+  <string name="EveryThingBuild">Tối ưu hóa Trình khởi chạy với Chế độ Mọi thứ</string>
+  <string name="DockHeight">Chiều cao thanh Dock</string>
+  <string name="DockRoundedCorners">Bo tròn thanh Dock</string>
+  <string name="DockSide">Thanh Dock từ các cạnh của Màn hình</string>
+  <string name="DockBottom">Thanh Dock từ dưới cùng của Màn hình</string>
+  <string name="DockIconBottom">Các biểu tượng từ cuối màn hình</string>
+  <string name="DockSettings">Cài đặt Dock</string>
+  <string name="DockWarn">Vui lòng kích hoạt Tài nguyên Hooks nếu bạn cần sửa đổi các góc tròn.</string>
+  <string name="DockFeature">Bật tính năng Dock</string>
   <string name="EnableDockBlur">Bật tính năng Làm mờ của thanh Dock</string>
+  <string name="Reset">Đặt lại thông số Dock</string>
+  <string name="Tips1">Thao tác này sẽ khôi phục tham số Dock về giá trị mặc định của nó và khởi động lại Trình khởi chạy hệ thống.</string>
   <string name="Reset1">Đặt lại</string>
   <string name="Tips2">Thao tác này sẽ khôi phục cài đặt mặc định của mô-đun và khởi động lại Trình khởi chạy hệ thống.</string>
   <string name="HideSeekPoints">Loại bỏ Chỉ báo Trang</string>

@@ -25,6 +25,7 @@
   <string name="ManualInput">इनपुट स्वयं दें</string>
   <string name="ModuleFeature">मॉड्यूल विशेषताएं</string>
   <string name="ModuleSettings">मॉड्यूल सेटिंग्स</string>
+  <string name="ResHook">रिसोर्स हुक</string>
   <string name="NoneBlur">नो ब्लर</string>
   <string name="OtherFeature">अन्य विशेषताएं</string>
   <string name="OutOfInput">कृपया अनुमत सीमा के भीतर एक मूल्य दर्ज करें!</string>
@@ -57,7 +58,18 @@
   <string name="SmallWindow">सभी ऐप्स को फ़्लोटिंग विंडोज़ का उपयोग करने दें</string>
   <string name="LowEndDeviceUseMIUIWidgets">लो-एंड डिवाइस पर नया विजेट स्टोर सक्षम करें</string>
   <string name="RecommendServer">अनुशंसित सर्वर अक्षम करें</string>
+  <string name="EveryThingBuild">एवरीथिंग मोड के साथ लॉन्चर को ऑप्टिमाइज़ करें</string>
+  <string name="DockHeight">डॉक बार की ऊंचाई</string>
+  <string name="DockRoundedCorners">डॉक बार के गोलाकार कोने </string>
+  <string name="DockSide">स्क्रीन के किनारों से डॉक बार</string>
+  <string name="DockBottom">स्क्रीन के नीचे से डॉक बार</string>
+  <string name="DockIconBottom">स्क्रीन के नीचे से आइकन</string>
+  <string name="DockSettings">डॉक सेटिंग्स</string>
+  <string name="DockWarn">यदि आपको गोलाकार कोनों को संशोधित करने की आवश्यकता है तो कृपया संसाधन हुक इनेबल करें|</string>
+  <string name="DockFeature">डॉक फ़ीचर इनेबल करें</string>
   <string name="EnableDockBlur">डॉक के ब्लर को इनेबल करें</string>
+  <string name="Reset">डॉक पैरामीटर रीसेट करें</string>
+  <string name="Tips1">यह डॉक पैरामीटर को उसके डिफ़ॉल्ट मूल्य पर पुनर्स्थापित करेगा और सिस्टम लॉन्चर को पुनरारंभ करेगा.</string>
   <string name="Reset1">रीसेट</string>
   <string name="Tips2">यह डॉक सेटिंग्स को उसके डिफ़ॉल्ट मूल्य पर पुनर्स्थापित करेगा और सिस्टम लॉन्चर को पुनरारंभ करेगा|</string>
   <string name="HideSeekPoints">पृष्ठ संकेतक निकालें</string>

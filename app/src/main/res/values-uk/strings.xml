@@ -34,6 +34,7 @@
   <string name="ManualInput">Ручне введення</string>
   <string name="ModuleFeature">Фішки модуля</string>
   <string name="ModuleSettings">Налаштування модулю</string>
+  <string name="ResHook">Хук ресурсів</string>
   <string name="NoneBlur">Без розмиття</string>
   <string name="OtherFeature">Інші фішки</string>
   <string name="OutOfInput">Будь ласка, введіть значення в межах дозволеного діапазону!</string>
@@ -67,7 +68,18 @@
   <string name="SmallWindow">Дозволити всім програмам використовувати плаваючі вікна</string>
   <string name="LowEndDeviceUseMIUIWidgets">Увімкніть новий магазин віджетів на пристроях низького класу</string>
   <string name="RecommendServer">Вимкніть рекомендований сервер</string>
+  <string name="EveryThingBuild">Оптимізуйте MIUI Launcher в режимі \"Все враховано\"</string>
+  <string name="DockHeight">Висота док-бара</string>
+  <string name="DockRoundedCorners">Док-бар має закруглені кути</string>
+  <string name="DockSide">Док-панель з боків екрану</string>
+  <string name="DockBottom">Док-панель у нижній частині екрана</string>
+  <string name="DockIconBottom">Значки знизу екрана</string>
+  <string name="DockSettings">Налаштування доку</string>
+  <string name="DockWarn">Будь-ласка увімкніть хук ресурсів, якщо ви хочете використовувати закруглені краї.</string>
+  <string name="DockFeature">Увімкнути функцію доку</string>
   <string name="EnableDockBlur">Активувати розмиття доку</string>
+  <string name="Reset">Скинути параметри доку</string>
+  <string name="Tips1">Це відновить значення параметра Dock до значення за замовчуванням та перезапустить програму MIUI Launcher</string>
   <string name="Reset1">Скинути</string>
   <string name="Tips2">Це відновить параметри модуля за замовчуванням та перезапустить програму MIUI Launcher.</string>
   <string name="HideSeekPoints">Видалити індикатор сторінок</string>

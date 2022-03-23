@@ -58,6 +58,7 @@ __Now：[qqlittleice/MiuiHome](https://github.com/qqlittleice/MiuiHome)__
 - Use entire Folder space
 - Hide All Section in App Drawer mode
 - Option to Remove Page Indicator
+- Enable Dock Bar and Dock Bar Blur
 - Hide "Edit" Button in App Category's Paging
 - And more...
 </details>
@@ -77,6 +78,8 @@ __Now：[qqlittleice/MiuiHome](https://github.com/qqlittleice/MiuiHome)__
 - [CustoMIUIzer](https://code.highspec.ru/Mikanoshi/CustoMIUIzer)
 - [FuckCoolapk](https://github.com/ejiaogl/FuckCoolapk)
 - [LSPosed](https://github.com/LSPosed/LSPosed)
+- [MIDock](https://github.com/lamprose/MIDock)
+- [MIUIDock](https://github.com/ouhoukyo/MIUIDock)
 - [MIUltra](https://github.com/lamprose/MIUltra)
 - [QNotified](https://github.com/ferredoxin/QNotified)
 - [XposedBridge](https://github.com/rovo89/XposedBridge)

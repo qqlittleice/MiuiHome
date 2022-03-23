@@ -34,6 +34,7 @@
   <string name="ManualInput">Manueller Input</string>
   <string name="ModuleFeature">Modul Features</string>
   <string name="ModuleSettings">Moduleinstellungen</string>
+  <string name="ResHook">Resource Hook</string>
   <string name="NoneBlur">Kein Weichzeichnen</string>
   <string name="OtherFeature">Andere Features</string>
   <string name="OutOfInput">Bitte gib einen Wert innerhalb des zulässigen Bereichs ein!</string>
@@ -67,7 +68,18 @@
   <string name="SmallWindow">Erlaube allen Apps schwebende Fenster zu benutzen</string>
   <string name="LowEndDeviceUseMIUIWidgets">Neuen Widget-Store auf Low-End Geräten aktivieren</string>
   <string name="RecommendServer">Empfohlene Server deaktivieren</string>
+  <string name="EveryThingBuild">Optimiere den Launcher mit dem Everything-Modus</string>
+  <string name="DockHeight">Dock Bar Höhe</string>
+  <string name="DockRoundedCorners">Dock Bar runde Ecken</string>
+  <string name="DockSide">Dock Bar von den Seiten des Bildschirmes</string>
+  <string name="DockBottom">Dock Bar von der Unterseite des Bildschirmes</string>
+  <string name="DockIconBottom">Icons von der Unterseite des Bildschirmes</string>
+  <string name="DockSettings">Dock Einstellungen</string>
+  <string name="DockWarn">Bitte aktiviere Resource Hooks wenn du runde Ecken modifizieren willst.</string>
+  <string name="DockFeature">Aktiviere das Dock</string>
   <string name="EnableDockBlur">Aktiviere das Weichzeichnen des Docks</string>
+  <string name="Reset">Dock Parameter zurücksetzen</string>
+  <string name="Tips1">Dies setzt die Dock-Parameter auf ihren Standardwert zurück und der System Launcher neu gestartet.</string>
   <string name="Reset1">Zurücksetzen</string>
   <string name="Tips2">Dies stellt die Standardeinstellungen des Moduls wieder her und der System Launcher neu gestartet.</string>
   <string name="HideSeekPoints">Seitenindikator entfernen</string>

@@ -34,6 +34,7 @@
   <string name="ManualInput">ادخال يدوي</string>
   <string name="ModuleFeature">مميزات الاضافة</string>
   <string name="ModuleSettings">اعدادات الاضافة</string>
+  <string name="ResHook">Resource Hook</string>
   <string name="NoneBlur">بلا تأثير ضبابي</string>
   <string name="OtherFeature">مميزات اخري</string>
   <string name="OutOfInput">من فضلك ادخل قيمة ضمن الحد المسموح!</string>
@@ -67,7 +68,18 @@
   <string name="SmallWindow">السماح لكل التطبيقات باستخدام النوافذ المنبثقة</string>
   <string name="LowEndDeviceUseMIUIWidgets">تفعيل متجر الاضافات الجديد علي الاجهزة الضعيفة</string>
   <string name="RecommendServer">تعطيل خادم الاقتراحات</string>
+  <string name="EveryThingBuild">تحسين مشغل التطبيقات مع وضع كل شيء</string>
+  <string name="DockHeight">ارتفاع حوض التطبيقات</string>
+  <string name="DockRoundedCorners">تدور اركان حوض التطبيقات</string>
+  <string name="DockSide">بُعد حوض التطبيقات عن جانبيّ الشاشة</string>
+  <string name="DockBottom">بُعد حوض التطبيقات عن اسفل الشاشة</string>
+  <string name="DockIconBottom">بُعد الايقونات عن اسفل الشاشة</string>
+  <string name="DockSettings">اعدادات حوض التطبيقات</string>
+  <string name="DockWarn">قم بتفعيل خيار resource hooks لتعديل تدور الاركان.</string>
+  <string name="DockFeature">تفعيل ميزة حوض التطبيقات</string>
   <string name="EnableDockBlur">تفعيل ضبابية حوض التطبيقات</string>
+  <string name="Reset">اعادة تعيين اعدادات حوض التطبيقات</string>
+  <string name="Tips1">هذا سيقوم بإعادة ضبط حوض التطبيقات الي الاعدادات الافتراضية وسيقوم بإعادة تشغيل مشغل التطبيقات.</string>
   <string name="Reset1">اعادة تعيين</string>
   <string name="Tips2">هذا سيقوم بإعادة ضبط اعدادات الاضافة الي الاعدادات الافتراضية وسيقوم بإعادة تشغيل مشغل التطبيقات.</string>
   <string name="HideSeekPoints">إزالة مؤشر الصفحات</string>

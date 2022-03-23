@@ -21,10 +21,12 @@ import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
 import com.yuk.miuihome.view.HookSettingsActivity
 import de.robv.android.xposed.*
+import de.robv.android.xposed.callbacks.XC_InitPackageResources
 import de.robv.android.xposed.callbacks.XC_LoadPackage
 
-class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
+class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookInitPackageResources {
     companion object {
+        var hasHookPackageResources = false
         var application: Application? = null
     }
 
@@ -63,6 +65,13 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
             }
             else -> return
         }
+    }
+
+    override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam) {
+        if (resparam.packageName != Config.hostPackage) return
+        hasHookPackageResources = true
+        ResHook(resparam).init()
+        if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: Resources hook success")
     }
 
     private fun doHook() {
@@ -131,6 +140,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
         ModifyCategory().init()  // 抽屉相关
         ModifyFolderColumnsCount().init()  // 文件夹排列数
         ModifyIconTitleFontSize().init()  // 应用标题文本大小
+        ModifyDockHook().init()  // 搜索框 -> 底栏 设置
         ModifyDoubleTapToSleep().init()  // 双击锁屏
         ModifyUnlockHotseatIcon().init()  // 解除底栏图标数量限制
         HookSystemProperties().init()  // Prop相关

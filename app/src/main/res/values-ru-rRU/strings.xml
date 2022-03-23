@@ -34,6 +34,7 @@
   <string name="ManualInput">Нажми, чтобы ввести вручную</string>
   <string name="ModuleFeature">Доп. настройки модуля</string>
   <string name="ModuleSettings">Настройки модуля</string>
+  <string name="ResHook">Перехват ресурсов</string>
   <string name="NoneBlur">Без размытия</string>
   <string name="OtherFeature">Другие функции</string>
   <string name="OutOfInput">Пожалуйста, введите значение в пределах допустимого диапазона!</string>
@@ -67,7 +68,18 @@
   <string name="SmallWindow">Все приложения могут использовать \"Плавающее окно\"</string>
   <string name="LowEndDeviceUseMIUIWidgets">Low-end уст-ва могут использовать виджеты MIUI</string>
   <string name="RecommendServer">Отключить сервер рекомендаций</string>
+  <string name="EveryThingBuild">Скомпилировать раб. стол MIUI, используя режим \"Everything\"</string>
+  <string name="DockHeight">Высота док-бара</string>
+  <string name="DockRoundedCorners">Закругленные углы док-бара</string>
+  <string name="DockSide">Док-бар по бокам экрана</string>
+  <string name="DockBottom">Док-бар в нижней части экрана</string>
+  <string name="DockIconBottom">Иконки в нижней части экрана</string>
+  <string name="DockSettings">Настройки док-бара</string>
+  <string name="DockWarn">Если вам необходимо изменить закругленные углы, включите перехват ресурсов в настройках LSPosed менеджера.</string>
+  <string name="DockFeature">Включить функцию \"Док-бар\"</string>
   <string name="EnableDockBlur">Включить размытие панели док-бара</string>
+  <string name="Reset">Сброс параметров док-бара</string>
+  <string name="Tips1">Это приведет к сбросу параметров \"Док-бара\" на значения по умолчанию и перезагрузке рабочего стола.</string>
   <string name="Reset1">Сброс</string>
   <string name="Tips2">Это восстановит настройки модуля по умолчанию и перезагрузит раб. стол системы.</string>
   <string name="HideSeekPoints">Скрыть индикатор страниц рабочего стола</string>
