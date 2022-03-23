@@ -60,6 +60,18 @@
   <string name="SmallWindow">Permitir que todas las aplicaciones usen ventanas flotantes</string>
   <string name="LowEndDeviceUseMIUIWidgets">Habilitar nueva Tienda de Widgets en dispositivos de gama baja</string>
   <string name="RecommendServer">Deshabilitar Recomendar Servidor</string>
+  <string name="EveryThingBuild">Optimizar Launcher con el modo Todo</string>
+  <string name="DockHeight">Altura del Dock (barra inferior de aplicaciones)</string>
+  <string name="DockRoundedCorners">Esquinas redondeadas del Dock (barra inferior de aplicaciones)</string>
+  <string name="DockSide">Dock (barra inferior de aplicaciones) desde los lados de la pantalla</string>
+  <string name="DockBottom">Dock (barra inferior de aplicaciones) desde la parte inferior de la pantalla</string>
+  <string name="DockIconBottom">Iconos de la parte inferior de la pantalla</string>
+  <string name="DockSettings">Configuración del Dock (barra inferior de aplicaciones)</string>
+  <string name="DockWarn">Por favor, habilita Resource Hooks si necesitas modificar las esquinas redondeadas.</string>
+  <string name="DockFeature">Habilitar la función del Dock (barra inferior de aplicaciones)</string>
+  <string name="EnableDockBlur">Habilitar el desenfoque del Dock (barra inferior de aplicaciones)</string>
+  <string name="Reset">Restablecer los parámetros del Dock (barra inferior de aplicaciones)</string>
+  <string name="Tips1">Esto restaurará el parámetro del Dock (barra inferior de aplicaciones) a su valor predeterminado y reiniciará el Launcher del Sistema.</string>
   <string name="Tips2">Esto restaurará la configuración predeterminada del módulo y reiniciará el Launcher del Sistema.</string>
   <string name="HideSeekPoints">Eliminar indicador de página</string>
   <string name="CategoryHideAll">Ocultar \"Todo \" en las Categorías de Aplicaciones</string>
@@ -75,6 +87,8 @@
   <string name="Reset2">Reset Thumbnail size for Horizontal Recent Parameters</string>
   <string name="Tips3">This will reset the Thumbnail size for Horizontal Recent parameters to its default value and restart the System Launcher.</string>
   <string name="UnlockIcons">Remove icon number restriction from dock</string>
+  <string name="DockMarginTop">Page Indicator and Icon Spacing</string>
+  <string name="DockMarginBottom">Page Indicator and the bottom of the Screen Spacing</string>
   <string name="SimpleWarn">You have enabled simple animation, this will hide some settings.</string>
   <string name="BrokenFeature">Obsolete Feature</string>
   <string name="AppReturnAmin">App Return Blur</string>
