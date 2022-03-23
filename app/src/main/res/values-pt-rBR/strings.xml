@@ -44,7 +44,7 @@
   <string name="SimpleAnimation">Animações Simples</string>
   <string name="SimpleBlur">Simples</string>
   <string name="SmoothAnimation">Animações Suave</string>
-  <string name="TaskViewAppCardTextSize">Definir tamanho do nome dos ícones no menu recentes</string>
+  <string name="TaskViewAppCardTextSize">Definir tamanho dos nomes dos aplicativos no menu recentes</string>
   <string name="TaskViewBlurLevel">Nível de desfoque do menu recentes</string>
   <string name="TestBlur">\"Em teste\"</string>
   <string name="TestFeature">Recursos em desenvolvimento</string>
@@ -78,7 +78,7 @@
   <string name="CategoryPagingHideEdit">Remover botão \"Editar\" nas categorias da gaveta de aplicativos</string>
   <string name="FolderColumnsCount">Definir números de colunas dentro das pastas</string>
   <string name="FolderWidth">Expandir largura dentro da pasta</string>
-  <string name="IconTitleFontSize">Definir tamanho dos nomes dos ícones na tela inicial</string>
+  <string name="IconTitleFontSize">Definir tamanho dos nomes dos aplicativos na tela inicial</string>
   <string name="CustomRecentText">Personalizar texto no menu recentes quando não houver nenhuma janela de tarefas em exibição</string>
   <string name="DoubleTap">Toque duplo para desligar a tela</string>
   <string name="LowEndAnim">Habilitar animação ao retornar dos aplicativos</string>
