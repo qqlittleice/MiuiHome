@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="AdvancedFeature">Configurações avançadas</string>
-  <string name="AlwaysShowMIUIWidget">Exibir os novos widgets MIUI na gaveta de widgets clássicos</string>
+  <string name="AlwaysShowMIUIWidget">Exibir Widgets MIUI em Widgets Clássicos</string>
   <string name="AlwaysShowStatusBarClock">Sempre exibir o relógio na barra de status</string>
   <string name="AnimationLevel">Definir velocidade das animações</string>
-  <string name="AppTextSize">Definir o espaçamento entre os ícones e os nomes dos aplicativos no menu recentes</string>
+  <string name="AppTextSize">Definir a distância entre o ícone e o nome do aplicativo no menu recentes</string>
   <string name="BlurWhenOpenFolder">Habilitar o desfoque de fundo nas pastas</string>
   <string name="Cancel">Cancelar</string>
   <string name="CleanModuleSettings">Resetar configurações</string>
   <string name="RestoreModuleSettingsSuccess">Configurações restauradas com sucesso, reiniciando launcher.</string>
   <string name="RestoreModuleSettingsFailed">Falha ao tentar restaurar configurações</string>
   <string name="BackupModuleSettings">Exportar configurações</string>
-  <string name="RestoreModuleSettings">Restaurar configurações do módulo</string>
+  <string name="RestoreModuleSettings">Restaurar as configurações originais</string>
   <string name="RestoreModuleSettingsTips">Esta ação irá limpar todas as configurações do módulo e restaurar as configurações a partir de um arquivo, em seguida a MIUI Launcher será automaticamente reiniciada, deseja continuar?</string>
   <string name="CloseFolder">Fechar pasta ao abrir aplicativo</string>
   <string name="CompleteBlur">Completo</string>
@@ -27,9 +27,9 @@
   <string name="HideTaskViewCleanUpIcon">Ocultar botão \"limpar tudo\" no menu recentes</string>
   <string name="HideTaskViewSmallWindowIcon">Remover botão \"Janelas Flutuantes\" no menu recentes</string>
   <string name="HideWidgetTitles">Ocultar rótulos dos widgets</string>
-  <string name="HorizontalTaskViewOfAppCardSize">Definir tamanho das janelas de tarefas no menu recentes horizontal</string>
+  <string name="HorizontalTaskViewOfAppCardSize">Tamanho da exibição de tarefas no menu recentes, horizontal.</string>
   <string name="InfiniteScroll">Habilitar rolagem infinita na tela inicial</string>
-  <string name="MamlDownload">Habilitar o efeito onda dos ícones ao desbloquear a tela</string>
+  <string name="MamlDownload">Habilitar animação ao desbloquear a tela</string>
   <string name="ModuleFeature">Recursos do módulo</string>
   <string name="ModuleSettings">Configurações do módulo</string>
   <string name="NoneBlur">Nenhum</string>
@@ -40,7 +40,7 @@
   <string name="Reboot2">A MIUI Launcher será reiniciada em 1 segundo!</string>
   <string name="RoundCorner">Definir bordas da janelas de tarefas dos aplicativos no menu recentes</string>
   <string name="SearchBarBlur">Habilitar desfoque da caixa de pesquisa</string>
-  <string name="ShowDockIconTitles">Exibir o nome dos aplicativos na dock</string>
+  <string name="ShowDockIconTitles">Exibir o nome dos aplicativos na barra Dock</string>
   <string name="SimpleAnimation">Animações simples</string>
   <string name="SimpleBlur">Simples</string>
   <string name="SmoothAnimation">Animações suave</string>
@@ -57,9 +57,9 @@
   <string name="WidgetToMinus">Mover widgets clássicos para o assistente</string>
   <string name="Yes">Sim</string>
   <string name="EnableIconShadow">Exibir sombra e reflexo dos ícones na dock da tela inicial</string>
-  <string name="SmallWindow">Habilitar suporte a \"Janelas flutuantes\" em todos os aplicativos</string>
-  <string name="LowEndDeviceUseMIUIWidgets">Habilitar suporte aos novos widgets miui em dispositivos sem suporte</string>
-  <string name="RecommendServer">Desabilitar \"Servidor Recomendado\"</string>
+  <string name="SmallWindow">Permitir que todos aplicativos suporte \"Janelas Flutuantes\"</string>
+  <string name="LowEndDeviceUseMIUIWidgets">Habilitar nova loja de widget em dispositivos de baixo desempenho</string>
+  <string name="RecommendServer">Desabilitar \"Recomendar Servidor\"</string>
   <string name="Tips2">Restaurar as configurações ao seu valor padrão e reiniciar o MIUI Launcher.</string>
   <string name="HideSeekPoints">Remover indicador de páginas da tela inicial</string>
   <string name="CategoryHideAll">Remover categoria \"Todos\" na gaveta de aplicativos</string>
@@ -72,11 +72,11 @@
   <string name="LowEndAnim">Habilitar animação ao abrir e fechar aplicativos - Low-End</string>
   <string name="VerticalScreen">Tela Vertical</string>
   <string name="HorizontalScreen">Tela Horizontal</string>
-  <string name="Reset2">Restaurar o tamanho das janelas de exibição de tarefas no menu recentes horizontal</string>
+  <string name="Reset2">Restaurar o tamanho da exibição de tarefas no menu recentes, horizontal</string>
   <string name="Tips3">Restaurar o tamanho da exibição de tarefas no menu recentes, horizontal para o seu valor padrão e reiniciar a MIUI Launcher.</string>
   <string name="UnlockIcons">Desbloquear limite de ícones na dock</string>
   <string name="SimpleWarn">Você habilitou \"Animações simples\", isso ocultará algumas configurações.</string>
-  <string name="BrokenFeature">Recursos Obsoleto</string>
+  <string name="BrokenFeature">Recursos obsoleto</string>
   <string name="AppReturnAmin">Desfoque ao retornar o aplicativo</string>
   <string name="BlurRadius">Grau de desfoque</string>
   <string name="BasicBlur">Básico</string>
