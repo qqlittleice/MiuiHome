@@ -60,6 +60,18 @@
   <string name="SmallWindow">Alle apps toestaan zwevende vensters te gebruiken</string>
   <string name="LowEndDeviceUseMIUIWidgets">Nieuwe widgetwinkel inschakelen op Low-End apparaten</string>
   <string name="RecommendServer">Aanbevelingsserver uitschakelen</string>
+  <string name="EveryThingBuild">Launcher optimaliseren met Alles-modus</string>
+  <string name="DockHeight">Hoogte dokbalk</string>
+  <string name="DockRoundedCorners">Dockbar afgeronde hoeken</string>
+  <string name="DockSide">Dock Bar vanaf de zijkanten van het scherm</string>
+  <string name="DockBottom">Dock Bar vanaf de onderkant van het scherm</string>
+  <string name="DockIconBottom">Pictogrammen onder aan het scherm</string>
+  <string name="DockSettings">Dock-instellingen</string>
+  <string name="DockWarn">Schakel Resource Hooks in als u afgeronde hoeken wilt aanpassen.</string>
+  <string name="DockFeature">Dock-functie inschakelen</string>
+  <string name="EnableDockBlur">Vervaging van het Dock inschakelen</string>
+  <string name="Reset">Dock-parameters resetten</string>
+  <string name="Tips1">Hierdoor wordt de Dock-parameter hersteld naar de standaardwaarde en wordt de System Launcher opnieuw gestart.</string>
   <string name="Tips2">Hiermee worden de standaardinstellingen van de module hersteld en wordt de System Launcher opnieuw gestart.</string>
   <string name="HideSeekPoints">Pagina-indicator verwijderen</string>
   <string name="CategoryHideAll">Verberg \"Alle\" in app-categorieën</string>
@@ -75,6 +87,8 @@
   <string name="Reset2">Reset Thumbnail size for Horizontal Recent Parameters</string>
   <string name="Tips3">This will reset the Thumbnail size for Horizontal Recent parameters to its default value and restart the System Launcher.</string>
   <string name="UnlockIcons">Remove icon number restriction from dock</string>
+  <string name="DockMarginTop">Page Indicator and Icon Spacing</string>
+  <string name="DockMarginBottom">Page Indicator and the bottom of the Screen Spacing</string>
   <string name="SimpleWarn">You have enabled simple animation, this will hide some settings.</string>
   <string name="BrokenFeature">Obsolete Feature</string>
   <string name="AppReturnAmin">App Return Blur</string>
