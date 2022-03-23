@@ -60,6 +60,18 @@
   <string name="SmallWindow">به همه برنامه ها اجازه دهید تا از پنجره ی شناور استفاده کنند</string>
   <string name="LowEndDeviceUseMIUIWidgets">فروشگاه ویجت جدید را در دستگاه های کم مصرف فعال کنید</string>
   <string name="RecommendServer">غیرفعال کردن سرور پیش فرض</string>
+  <string name="EveryThingBuild">بهینه سازی لانچر در همه حالت ها</string>
+  <string name="DockHeight">ارتفاع بارانداز</string>
+  <string name="DockRoundedCorners">بارانداز گوشه های گرد</string>
+  <string name="DockSide">نوار بارگیری از کناره های صفحه</string>
+  <string name="DockBottom">نوار بارگیری از پایین صفحه</string>
+  <string name="DockIconBottom">نمادها از پایین صفحه</string>
+  <string name="DockSettings">تنظیمات نماد ها</string>
+  <string name="DockWarn">در صورت نیاز به تغییر گوشه های گرد ، قالب های منابع را فعال کنید.</string>
+  <string name="DockFeature">ویژگی بارانداز را فعال کنید</string>
+  <string name="EnableDockBlur">ویژگی بلوری بارانداز را فعال کنید</string>
+  <string name="Reset">پارامتر های بارانداز را بازنشانی کنید</string>
+  <string name="Tips1">با این کار پارامتر بارانداز به مقدار پیش فرض باز می گردد و لانچر سیستم راه اندازی مجدد می شود.</string>
   <string name="Tips2">با این کار تنظیمات پیش فرض ماژول بازیابی می شود و لانچر سیستم راه اندازی مجدد می شود.</string>
   <string name="HideSeekPoints">حذف صفحه کمکی</string>
   <string name="CategoryHideAll">مخفی کردن \"همه\" در قفسه برنامه ها</string>
@@ -75,6 +87,8 @@
   <string name="Reset2">Reset Thumbnail size for Horizontal Recent Parameters</string>
   <string name="Tips3">This will reset the Thumbnail size for Horizontal Recent parameters to its default value and restart the System Launcher.</string>
   <string name="UnlockIcons">Remove icon number restriction from dock</string>
+  <string name="DockMarginTop">Page Indicator and Icon Spacing</string>
+  <string name="DockMarginBottom">Page Indicator and the bottom of the Screen Spacing</string>
   <string name="SimpleWarn">You have enabled simple animation, this will hide some settings.</string>
   <string name="BrokenFeature">Obsolete Feature</string>
   <string name="AppReturnAmin">App Return Blur</string>
