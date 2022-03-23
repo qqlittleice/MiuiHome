@@ -70,9 +70,9 @@
   <string name="DockFeature">Habilitar dock na tela inicial</string>
   <string name="EnableDockBlur">Habilitar desfoque na dock</string>
   <string name="Reset">Resetar as configurações da dock</string>
-  <string name="Tips1">Restaurar os parâmetros da barra Dock ao seu valor padrão e reiniciar a MIUI Launcher.</string>
-  <string name="Tips2">Restaurar as configurações ao seu valor padrão e reiniciar o MIUI Launcher.</string>
-  <string name="HideSeekPoints">Remover indicador de páginas da tela inicial</string>
+  <string name="Tips1">Restaurar as configurações da dock ao seu padrão e reiniciar a Miui Launcher.</string>
+  <string name="Tips2">Restaurar as configurações ao padrão e reiniciar a Miui Launcher.</string>
+  <string name="HideSeekPoints">Remover o indicador de páginas da tela inicial</string>
   <string name="CategoryHideAll">Remover categoria \"Tudo\" na gaveta de aplicativos</string>
   <string name="CategoryPagingHideEdit">Remover botão \"Editar\" nas categorias da gaveta de aplicativos</string>
   <string name="FolderColumnsCount">Definir números de colunas dentro das pastas</string>
