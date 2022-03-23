@@ -60,6 +60,18 @@
   <string name="SmallWindow">Consenti a tutte le app di utilizzare le Finestre Fluttuanti</string>
   <string name="LowEndDeviceUseMIUIWidgets">Abilita il nuovo Widget Store nei dispositivi di fascia bassa</string>
   <string name="RecommendServer">Disattiva server dei consigliati</string>
+  <string name="EveryThingBuild">Modalità ottimizza il launcher con tutto</string>
+  <string name="DockHeight">Altezza dock</string>
+  <string name="DockRoundedCorners">Angoli della dock</string>
+  <string name="DockSide">Distanza barra della Dock dai lati dello schermo</string>
+  <string name="DockBottom">Distanza barra della Dock dalla parte inferiore dello schermo</string>
+  <string name="DockIconBottom">Distanza icone dalla parte inferiore dello schermo</string>
+  <string name="DockSettings">Opzioni dock</string>
+  <string name="DockWarn">Per favore abilita \"Hook Risorse\" se ti serve modificare gli angoli.</string>
+  <string name="DockFeature">Attiva dock</string>
+  <string name="EnableDockBlur">Attiva sfocatura sfondo della dock</string>
+  <string name="Reset">Resetta parametri della dock</string>
+  <string name="Tips1">Questo ripristinerà i valori della dock predefiniti e riavvierà il launcher.</string>
   <string name="Tips2">Questo reimposterà le opzioni predefinite del modulo e riavvierà il launcher.</string>
   <string name="HideSeekPoints">Rimuovi indicatore pagine</string>
   <string name="CategoryHideAll">Nascondi \"Tutte\" nelle categorie del cassetto app</string>
@@ -75,6 +87,8 @@
   <string name="Reset2">Resetta parametri dimensione anteprima per i recenti orizzontali</string>
   <string name="Tips3">Questo reimposterà la dimensione dell\'anteprima per i recenti orizzonatali ai valori predefiniti e riavvierà il launcher.</string>
   <string name="UnlockIcons">Sblocca limite icone nella barra dei preferiti</string>
+  <string name="DockMarginTop">Spaziatura icone e indicatore pagine</string>
+  <string name="DockMarginBottom">Spaziatura tra l\'indicatore pagine e il fondo dello schermo</string>
   <string name="SimpleWarn">Hai abilitato \"animazione semplice\", questo nasconderà alcune impostazioni.</string>
   <string name="BrokenFeature">Funzioni obsolete</string>
   <string name="AppReturnAmin">Sfocatura ritorno app</string>
