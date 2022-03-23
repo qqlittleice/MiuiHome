@@ -67,7 +67,6 @@
   <string name="DockBottom">Dock Bar von der Unterseite des Bildschirmes</string>
   <string name="DockIconBottom">Icons von der Unterseite des Bildschirmes</string>
   <string name="DockSettings">Dock Einstellungen</string>
-  <string name="DockWarn">Bitte aktiviere Resource Hooks wenn du runde Ecken modifizieren willst.</string>
   <string name="DockFeature">Aktiviere das Dock</string>
   <string name="EnableDockBlur">Aktiviere das Weichzeichnen des Docks</string>
   <string name="Reset">Dock Parameter zurücksetzen</string>
