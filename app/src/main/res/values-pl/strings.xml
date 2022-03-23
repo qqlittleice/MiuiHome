@@ -60,6 +60,18 @@
   <string name="SmallWindow">Zezwól wszystkim aplikacjom używać pływających okien</string>
   <string name="LowEndDeviceUseMIUIWidgets">Włącz nowy sklep z widżetami na urządzeniach z niższej półki</string>
   <string name="RecommendServer">Wyłącz rekomendowany serwer</string>
+  <string name="EveryThingBuild">Zoptymalizuj program uruchamiający w trybie wszystkiego</string>
+  <string name="DockHeight">Wysokość docka</string>
+  <string name="DockRoundedCorners">Zaokrąglenie docka</string>
+  <string name="DockSide">dock z boków ekranu</string>
+  <string name="DockBottom">Dock z dołu ekranu</string>
+  <string name="DockIconBottom">Ikony z dołu ekranu</string>
+  <string name="DockSettings">Ustawienia docka</string>
+  <string name="DockWarn">Włącz Resource Hooks jeśli potrzebujesz modyfikować zaokrąglenie rogów.</string>
+  <string name="DockFeature">Włącz Funkcjé Docka</string>
+  <string name="EnableDockBlur">Włącz rozmycie docka</string>
+  <string name="Reset">Zresetuj parametry docka</string>
+  <string name="Tips1">Spowoduje to przywrócenie domyślnych wartości docka i ponowne uruchomienie Launchera.</string>
   <string name="Tips2">Spowoduje to przywrócenie domyślnych ustawień modułu i ponowne uruchomienie Launchera.</string>
   <string name="HideSeekPoints">Usuń wskaźnik stron</string>
   <string name="CategoryHideAll">Usuń \"Wszystkie\" w kategoriach aplikacji</string>
@@ -75,6 +87,8 @@
   <string name="Reset2">Reset Thumbnail size for Horizontal Recent Parameters</string>
   <string name="Tips3">This will reset the Thumbnail size for Horizontal Recent parameters to its default value and restart the System Launcher.</string>
   <string name="UnlockIcons">Remove icon number restriction from dock</string>
+  <string name="DockMarginTop">Page Indicator and Icon Spacing</string>
+  <string name="DockMarginBottom">Page Indicator and the bottom of the Screen Spacing</string>
   <string name="SimpleWarn">You have enabled simple animation, this will hide some settings.</string>
   <string name="BrokenFeature">Obsolete Feature</string>
   <string name="AppReturnAmin">App Return Blur</string>
