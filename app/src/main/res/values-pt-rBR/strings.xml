@@ -74,11 +74,11 @@
   <string name="Tips2">Restaurar as configurações ao padrão e reiniciar a Miui Launcher.</string>
   <string name="HideSeekPoints">Remover o indicador de páginas da tela inicial</string>
   <string name="CategoryHideAll">Remover categoria \"Tudo\" na gaveta de aplicativos</string>
-  <string name="CategoryPagingHideEdit">Remover botão \"Editar\" nas categorias da gaveta de aplicativos</string>
-  <string name="FolderColumnsCount">Definir números de colunas dentro das pastas</string>
+  <string name="CategoryPagingHideEdit">Remover o botão \"Editar\" dentro das categorias da gaveta de aplicativos</string>
+  <string name="FolderColumnsCount">Definir os números de colunas dentro das pastas</string>
   <string name="FolderWidth">Expandir largura dentro da pasta</string>
-  <string name="IconTitleFontSize">Definir tamanho dos nomes dos aplicativos na tela inicial</string>
-  <string name="CustomRecentText">Personalizar texto no menu recentes quando não houver nenhuma janela de tarefas em exibição</string>
+  <string name="IconTitleFontSize">Definir o tamanho dos nomes dos aplicativos na tela inicial</string>
+  <string name="CustomRecentText">Personalizar o texto no menu recentes quando não tem nenhuma janela de tarefas em exibição</string>
   <string name="DoubleTap">Toque duplo para desligar a tela</string>
   <string name="LowEndAnim">Habilitar animação ao retornar dos aplicativos</string>
   <string name="VerticalScreen">Tela Vertical</string>
