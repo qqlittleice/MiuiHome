@@ -109,4 +109,5 @@
   <string name="OpenLSPosed">Apri LSPosed</string>
   <string name="ShortcutCount">Sblocca il limite del numero di collegamenti</string>
   <string name="MaxShortcutCount">Modify max shortcut count</string>
+  <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>
 </resources>

@@ -109,4 +109,5 @@
   <string name="OpenLSPosed">Открыть LSPosed</string>
   <string name="ShortcutCount">Разблокировать лимит количества ярлыков</string>
   <string name="MaxShortcutCount">Изменить максимальное число ярлыков</string>
+  <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>
 </resources>
