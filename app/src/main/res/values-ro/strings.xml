@@ -60,6 +60,18 @@
   <string name="SmallWindow">Permite tuturor aplicațiilor să folosească ferestrele plutitoare</string>
   <string name="LowEndDeviceUseMIUIWidgets">Activează Noul magazin de widget-uri pe dispozitivele de gamă inferioară</string>
   <string name="RecommendServer">Dezactivează Server Recomandat</string>
+  <string name="EveryThingBuild">Optimizează lansatorul cu modul Everything</string>
+  <string name="DockHeight">Înălțime bară Doc</string>
+  <string name="DockRoundedCorners">Colțuri rotunjite în bara de andocare</string>
+  <string name="DockSide">Bară de andocare pe părțile laterale ale ecranului</string>
+  <string name="DockBottom">Bara de andocare din partea de jos a ecranului</string>
+  <string name="DockIconBottom">Pictograme din partea de jos a ecranului</string>
+  <string name="DockSettings">Setări bară de andocare</string>
+  <string name="DockWarn">Dacă trebuie să schimbi colțurile rotunjite, activează interceptarea resurselor.</string>
+  <string name="DockFeature">Activează caracteristicile barei de andocare</string>
+  <string name="EnableDockBlur">Activează estompare doc</string>
+  <string name="Reset">Resetează parametrii barei de andocare</string>
+  <string name="Tips1">Acest lucru va restaura parametrii barei de andocare la valorile implicite și va reporni lansatorul de sistem.</string>
   <string name="Tips2">Aceasta opțiune va restaura setările implicite ale modulului și va reporni lansatorul de sistem.</string>
   <string name="HideSeekPoints">Elimină indicatorul paginii</string>
   <string name="CategoryHideAll">Ascunde \"Toate\" în categoriile aplicațiilor</string>
@@ -75,6 +87,8 @@
   <string name="Reset2">Resetează dimensiunea miniaturii pentru aplicațiile recente orizontale</string>
   <string name="Tips3">Aceasta va reseta dimensiunea miniaturii pentru parametrii recentelor orizontale la valoarea implicită și va reporni lansatorul de sistem.</string>
   <string name="UnlockIcons">Elimină restricția privind numărul de pictograme din bara de andocare</string>
+  <string name="DockMarginTop">Indicator pagină și spațiere pictograme</string>
+  <string name="DockMarginBottom">Indicatorul paginii și partea de jos a ecranului</string>
   <string name="SimpleWarn">Ai activat animația simplă, aceasta va ascunde unele setări.</string>
   <string name="BrokenFeature">Caracteristici învechite</string>
   <string name="AppReturnAmin">Estompare returnare aplicație</string>
