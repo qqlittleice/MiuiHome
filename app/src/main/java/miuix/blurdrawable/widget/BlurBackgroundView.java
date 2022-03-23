@@ -11,78 +11,80 @@ import android.widget.FrameLayout;
 import com.miui.blur.sdk.drawable.BlurDrawable;
 
 public class BlurBackgroundView extends FrameLayout {
-
   private BlurDrawable mBlurBackground;
   private Drawable mBlurForeground;
 
   public BlurBackgroundView(Context context) {
-    this(context, (AttributeSet) null);
+    this(context, null);
   }
 
   public BlurBackgroundView(Context context, AttributeSet attributeSet) {
     super(context, attributeSet);
   }
 
+  public boolean isSupportBlur() {
+    return BlurDrawable.isSupportBlurStatic();
+  }
+
+  public boolean setBlurBackground(boolean z) {
+    if (!isSupportBlur()) {
+      return false;
+    }
+    if (z) {
+      if (this.mBlurBackground == null) {
+        try {
+          createBlurBackground();
+        } catch (Exception e) {
+          Log.e("Blur", "Blur creat fail e:" + e);
+          this.mBlurBackground = null;
+          return false;
+        }
+      }
+      if (this.mBlurBackground == null) {
+        return true;
+      }
+      if (getVisibility() == View.VISIBLE && getBackground() != null) {
+        return true;
+      }
+      setVisibility(View.VISIBLE);
+      setForeground(this.mBlurForeground);
+      setBackground(this.mBlurBackground);
+      setAlpha(1.0f);
+      return true;
+    } else if (getVisibility() != View.VISIBLE) {
+      return true;
+    } else {
+      setForeground(null);
+      setBackground(null);
+      this.mBlurForeground = null;
+      this.mBlurBackground = null;
+      setVisibility(View.GONE);
+      return true;
+    }
+  }
+
   private void createBlurBackground() {
     this.mBlurBackground = new BlurDrawable();
-    if ((this.getResources().getConfiguration().uiMode & 48) == 32) {
+    if ((getResources().getConfiguration().uiMode & 48) == 32) {
       this.mBlurBackground.setMixColor(19, Color.argb(165, 92, 92, 92));
       this.mBlurForeground = new ColorDrawable(Color.parseColor("#80000000"));
     } else {
       this.mBlurBackground.setMixColor(18, Color.argb(165, 107, 107, 107));
       this.mBlurForeground = new ColorDrawable(Color.parseColor("#ccffffff"));
     }
-    this.mBlurBackground.setBlurRatio(1.0F);
-  }
-
-  public boolean isSupportBlur() {
-    return true;
+    this.mBlurBackground.setBlurRatio(1.0f);
   }
 
   public void setAlpha(float f) {
     super.setAlpha(f);
-    int i = (int) (f * 255.0F);
-    Drawable mBlurForeground = this.mBlurForeground;
-    if (mBlurForeground != null) {
-      mBlurForeground.setAlpha(i);
+    int i = (int) (f * 255.0f);
+    Drawable drawable = this.mBlurForeground;
+    if (drawable != null) {
+      drawable.setAlpha(i);
     }
-    BlurDrawable mBlurBackground = this.mBlurBackground;
-    if (mBlurBackground != null) {
-      mBlurBackground.setAlpha(i);
-    }
-  }
-
-  public boolean setBlurBackground(boolean b) {
-    if (!this.isSupportBlur()) {
-      return false;
-    } else {
-      if (b) {
-        if (this.mBlurBackground == null) {
-          try {
-            this.createBlurBackground();
-          } catch (Exception e) {
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append("Blur creat fail e:");
-            stringBuilder.append(e);
-            Log.e("Blur", stringBuilder.toString());
-            this.mBlurBackground = null;
-            return false;
-          }
-        }
-        if (this.mBlurBackground != null && (this.getVisibility() != View.VISIBLE || this.getBackground() == null)) {
-          this.setVisibility(View.VISIBLE);
-          this.setForeground(this.mBlurForeground);
-          this.setBackground(this.mBlurBackground);
-          this.setAlpha(1.0F);
-        }
-      } else if (this.getVisibility() == View.VISIBLE) {
-        this.setForeground((Drawable) null);
-        this.setBackground((Drawable) null);
-        this.mBlurForeground = null;
-        this.mBlurBackground = null;
-        this.setVisibility(View.GONE);
-      }
-      return true;
+    BlurDrawable blurDrawable = this.mBlurBackground;
+    if (blurDrawable != null) {
+      blurDrawable.setAlpha(i);
     }
   }
 }

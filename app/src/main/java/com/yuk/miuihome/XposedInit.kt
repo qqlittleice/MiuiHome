@@ -21,10 +21,9 @@ import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
 import com.yuk.miuihome.view.HookSettingsActivity
 import de.robv.android.xposed.*
-import de.robv.android.xposed.callbacks.XC_InitPackageResources
 import de.robv.android.xposed.callbacks.XC_LoadPackage
 
-class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookInitPackageResources {
+class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
     companion object {
         var hasHookPackageResources = false
         var application: Application? = null
@@ -65,13 +64,6 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookIni
             }
             else -> return
         }
-    }
-
-    override fun handleInitPackageResources(resparam: XC_InitPackageResources.InitPackageResourcesParam) {
-        if (resparam.packageName != Config.hostPackage) return
-        hasHookPackageResources = true
-        ResHook(resparam).init()
-        if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: Resources hook success")
     }
 
     private fun doHook() {

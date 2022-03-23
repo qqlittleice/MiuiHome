@@ -106,9 +106,9 @@ fun getGitHeadRefsSuffix(project: Project): String {
 
 dependencies {
     compileOnly("de.robv.android.xposed:api:82")
+    implementation(files("libs/miuiblursdk.jar"))
+    implementation("com.github.kyuubiran:EzXHelper:0.7.5")
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
     implementation("com.microsoft.appcenter:appcenter-crashes:4.4.3")
     implementation("com.microsoft.appcenter:appcenter-analytics:4.4.3")
-    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.4")
-    implementation("androidx.recyclerview:recyclerview:1.2.1")
-    implementation("com.github.kyuubiran:EzXHelper:0.7.5")
 }

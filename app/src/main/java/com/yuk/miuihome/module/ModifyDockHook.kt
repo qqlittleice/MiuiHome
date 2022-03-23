@@ -1,11 +1,12 @@
 package com.yuk.miuihome.module
 
 import android.content.Context
+import android.graphics.drawable.GradientDrawable
+import android.graphics.drawable.RippleDrawable
 import android.os.Bundle
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
-import com.github.kyuubiran.ezxhelper.init.InitFields.moduleRes
 import com.github.kyuubiran.ezxhelper.utils.Log
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
@@ -40,7 +41,8 @@ class ModifyDockHook {
                 it.result = dp2px((OwnSP.ownSP.getFloat("dockMarginTop", 0.6f) * 10))
             }
             // 页面指示器距离屏幕底部
-            deviceConfigClass.hookBeforeMethod("getWorkspaceIndicatorMarginBottom",
+            deviceConfigClass.hookBeforeMethod(
+                "getWorkspaceIndicatorMarginBottom",
             ) {
                 it.result = dp2px((OwnSP.ownSP.getFloat("dockMarginBottom", 11.0f) * 10))
             }
@@ -51,11 +53,17 @@ class ModifyDockHook {
             }
             launcherClass.hookAfterMethod("onCreate", Bundle::class.java
             ) {
-                val searchBarObject = XposedHelpers.callMethod(it.thisObject, "getSearchBar") as FrameLayout
+                val searchBarObject = it.thisObject.callMethod("getSearchBar") as FrameLayout
                 val searchBarDesktop = searchBarObject.getChildAt(0) as RelativeLayout
                 val searchBarDrawer = searchBarObject.getChildAt(1) as RelativeLayout
                 val searchBarContainer = searchBarObject.parent as FrameLayout
                 val searchEdgeLayout = searchBarContainer.parent as FrameLayout
+                val rippleDrawable =  searchBarDesktop.background as RippleDrawable
+                val gradientDrawable = rippleDrawable.getDrawable(0) as GradientDrawable
+                gradientDrawable.cornerRadius = dp2px(OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10).toFloat()
+                gradientDrawable.setStroke(0,0)
+                rippleDrawable.setDrawable(0, gradientDrawable)
+                it.result = rippleDrawable
                 // 重新给搜索框容器排序
                 searchEdgeLayout.removeView(searchBarContainer)
                 searchEdgeLayout.addView(searchBarContainer, 0)

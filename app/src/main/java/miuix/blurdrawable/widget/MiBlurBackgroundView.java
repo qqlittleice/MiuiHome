@@ -5,27 +5,26 @@ import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
 public class MiBlurBackgroundView extends FrameLayout {
-
   private BlurBackgroundView mBackgroundView;
 
   public MiBlurBackgroundView(Context context) {
-    this(context, (AttributeSet) null);
+    this(context, null);
+    addBlurView(context);
   }
 
   public MiBlurBackgroundView(Context context, AttributeSet attributeSet) {
     super(context, attributeSet);
-    this.addBlurView(context);
+    addBlurView(context);
   }
 
-  private void addBlurView(Context context) {
+  public boolean setBlurBackground(boolean z) {
+    return this.mBackgroundView.setBlurBackground(z);
+  }
+
+  public void addBlurView(Context context) {
     this.mBackgroundView = new BlurBackgroundView(context);
-    LayoutParams lp = new LayoutParams(-1, -1);
-    this.mBackgroundView.setLayoutParams(lp);
-    this.addView(this.mBackgroundView, 0);
-    this.setBlurBackground(false);
-  }
-
-  public boolean setBlurBackground(boolean b) {
-    return this.mBackgroundView.setBlurBackground(b);
+    this.mBackgroundView.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
+    addView(this.mBackgroundView, 0);
+    setBlurBackground(false);
   }
 }
