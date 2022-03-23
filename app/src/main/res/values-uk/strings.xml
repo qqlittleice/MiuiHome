@@ -60,6 +60,18 @@
   <string name="SmallWindow">Дозволити всім програмам використовувати плаваючі вікна</string>
   <string name="LowEndDeviceUseMIUIWidgets">Увімкніть новий магазин віджетів на пристроях низького класу</string>
   <string name="RecommendServer">Вимкніть рекомендований сервер</string>
+  <string name="EveryThingBuild">Оптимізуйте MIUI Launcher в режимі \"Все враховано\"</string>
+  <string name="DockHeight">Висота док-бара</string>
+  <string name="DockRoundedCorners">Док-бар має закруглені кути</string>
+  <string name="DockSide">Док-панель з боків екрану</string>
+  <string name="DockBottom">Док-панель у нижній частині екрана</string>
+  <string name="DockIconBottom">Значки знизу екрана</string>
+  <string name="DockSettings">Налаштування доку</string>
+  <string name="DockWarn">Будь-ласка увімкніть хук ресурсів, якщо ви хочете використовувати закруглені краї.</string>
+  <string name="DockFeature">Увімкнути функцію доку</string>
+  <string name="EnableDockBlur">Активувати розмиття доку</string>
+  <string name="Reset">Скинути параметри доку</string>
+  <string name="Tips1">Це відновить значення параметра Dock до значення за замовчуванням та перезапустить програму MIUI Launcher</string>
   <string name="Tips2">Це відновить параметри модуля за замовчуванням та перезапустить програму MIUI Launcher.</string>
   <string name="HideSeekPoints">Видалити індикатор сторінок</string>
   <string name="CategoryHideAll">Приховати \"усе\" у папках категорій</string>
@@ -75,6 +87,8 @@
   <string name="Reset2">Reset Thumbnail size for Horizontal Recent Parameters</string>
   <string name="Tips3">This will reset the Thumbnail size for Horizontal Recent parameters to its default value and restart the System Launcher.</string>
   <string name="UnlockIcons">Remove icon number restriction from dock</string>
+  <string name="DockMarginTop">Page Indicator and Icon Spacing</string>
+  <string name="DockMarginBottom">Page Indicator and the bottom of the Screen Spacing</string>
   <string name="SimpleWarn">You have enabled simple animation, this will hide some settings.</string>
   <string name="BrokenFeature">Obsolete Feature</string>
   <string name="AppReturnAmin">App Return Blur</string>
