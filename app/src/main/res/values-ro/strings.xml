@@ -108,5 +108,5 @@
   <string name="OpenLSPosed">Deschide LSPosed</string>
   <string name="ShortcutCount">Deblocare limită număr de comenzi rapide</string>
   <string name="MaxShortcutCount">Modifică numărul maxim de scurtături</string>
-  <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>
+  <string name="TaskViewAppCardBgColor">Personalizează culoarea de fundal a miniaturii pentru aplicațiile din fereastra mică</string>
 </resources>
