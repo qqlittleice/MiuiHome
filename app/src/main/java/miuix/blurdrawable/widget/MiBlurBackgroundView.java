@@ -9,7 +9,6 @@ public class MiBlurBackgroundView extends FrameLayout {
 
   public MiBlurBackgroundView(Context context) {
     this(context, null);
-    addBlurView(context);
   }
 
   public MiBlurBackgroundView(Context context, AttributeSet attributeSet) {

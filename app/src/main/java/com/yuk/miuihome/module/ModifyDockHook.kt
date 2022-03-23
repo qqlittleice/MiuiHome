@@ -51,6 +51,17 @@ class ModifyDockHook {
             ) {
                 it.result = 0
             }
+            launcherClass.hookAfterMethod("onResume"
+            ) {
+                val searchBarObject = it.thisObject.callMethod("getSearchBar") as FrameLayout
+                val searchBarDesktop = searchBarObject.getChildAt(0) as RelativeLayout
+                val rippleDrawable = searchBarDesktop.background as RippleDrawable
+                val gradientDrawable = rippleDrawable.getDrawable(0) as GradientDrawable
+                gradientDrawable.cornerRadius = dp2px(OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10).toFloat()
+                gradientDrawable.setStroke(0,0)
+                rippleDrawable.setDrawable(0, gradientDrawable)
+                it.result = rippleDrawable
+            }
             launcherClass.hookAfterMethod("onCreate", Bundle::class.java
             ) {
                 val searchBarObject = it.thisObject.callMethod("getSearchBar") as FrameLayout
