@@ -8,9 +8,18 @@
   <string name="BlurWhenOpenFolder">فولڈر بلر آن کریں</string>
   <string name="Cancel">منسوخ کریں</string>
   <string name="CleanModuleSettings">ڈیفالٹ سیٹنگ پر ری سیٹ کریں</string>
+  <string name="RestoreModuleSettingsSuccess">Successfully restore backup, restarting the system launcher.</string>
+  <string name="RestoreModuleSettingsFailed">Failed to restore backup</string>
+  <string name="BackupModuleSettings">Backup module settings</string>
+  <string name="RestoreModuleSettings">Restore module settings</string>
+  <string name="RestoreModuleSettingsTips">This will clear all module settings and restore module settings from a file. After the action, the system launcher will be restarted.</string>
   <string name="CloseFolder">فولڈر کے اندر ایپلی کیشنز کھولتے وقت فولڈر بند کریں</string>
   <string name="CompleteBlur">مکمل دھندلاپن</string>
   <string name="Defaults">ڈیفالٹ</string>
+  <string name="Recommend">Recommend</string>
+  <string name="setDefaults">Leave blank to restore the default</string>
+  <string name="setRecentString">Leave blank to restore default, type a space to remove text</string>
+  <string name="current">Current</string>
   <string name="Description">MIUI لانچر کے لیے ہک۔</string>
   <string name="Folder">فولڈر کی ترتیبات</string>
   <string name="HideStatusBar">ٹاسک ویو اسکرین میں اسٹیٹس بار چھپائیں۔</string>
@@ -27,6 +36,7 @@
   <string name="OtherFeature">دیگر خصوصیات</string>
   <string name="RealTaskViewHorizontal">سچ · افقی حالیہ۔</string>
   <string name="Reboot">لانچر دوبارہ شروع کریں۔</string>
+  <string name="Reboot1">Are you sure you want to restart the System Launcher?</string>
   <string name="Reboot2">لانچر 1 سیکنڈ میں دوبارہ شروع ہو جائے گا!</string>
   <string name="RoundCorner">تھمب نیل گول کونے کا سائز۔</string>
   <string name="SearchBarBlur">سرچ باکس میں دھندلاپن کو فعال کریں۔</string>
@@ -64,7 +74,8 @@
   <string name="Tips1">یہ ڈاک کے پیرامیٹر کو اس کی ڈیفالٹ ویلیو پر بحال کرے گا اور سسٹم لانچر کو دوبارہ شروع کرے گا۔</string>
   <string name="Tips2">یہ ماڈیول ڈیفالٹ ترتیبات کو بحال کرے گا اور سسٹم لانچر کو دوبارہ شروع کرے گا۔</string>
   <string name="HideSeekPoints">صفحہ اشارے کو ہٹا دیں۔</string>
-  <string name="CategoryHideAll">ایپ زمرہ جات میں "تمام ایپس" سیکشن چھپائیں۔</string>
+  <string name="CategoryHideAll">ایپ زمرہ جات میں \"تمام ایپس\" سیکشن چھپائیں۔</string>
+  <string name="CategoryPagingHideEdit">Hide \"Edit\" Button in App Category\'s Paging</string>
   <string name="FolderColumnsCount">فولڈر کالمز کی گنتی۔</string>
   <string name="FolderWidth">پورے فولڈر کی چوڑائی کا استعمال کریں۔</string>
   <string name="IconTitleFontSize">آئیکن لیبل فونٹ سائز۔</string>
