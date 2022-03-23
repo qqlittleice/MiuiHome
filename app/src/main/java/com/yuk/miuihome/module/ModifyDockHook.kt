@@ -1,13 +1,20 @@
 package com.yuk.miuihome.module
 
 import android.content.Context
+import android.graphics.Color
+import android.graphics.RenderEffect
+import android.graphics.Shader
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.RippleDrawable
+import android.os.Build
 import android.os.Bundle
+import android.view.Gravity
+import android.view.View
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
 import com.github.kyuubiran.ezxhelper.utils.Log
+import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
 import de.robv.android.xposed.XposedHelpers
@@ -51,17 +58,6 @@ class ModifyDockHook {
             ) {
                 it.result = 0
             }
-            launcherClass.hookAfterMethod("onResume"
-            ) {
-                val searchBarObject = it.thisObject.callMethod("getSearchBar") as FrameLayout
-                val searchBarDesktop = searchBarObject.getChildAt(0) as RelativeLayout
-                val rippleDrawable = searchBarDesktop.background as RippleDrawable
-                val gradientDrawable = rippleDrawable.getDrawable(0) as GradientDrawable
-                gradientDrawable.cornerRadius = dp2px(OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10).toFloat()
-                gradientDrawable.setStroke(0,0)
-                rippleDrawable.setDrawable(0, gradientDrawable)
-                it.result = rippleDrawable
-            }
             launcherClass.hookAfterMethod("onCreate", Bundle::class.java
             ) {
                 val searchBarObject = it.thisObject.callMethod("getSearchBar") as FrameLayout
@@ -70,11 +66,12 @@ class ModifyDockHook {
                 val searchBarContainer = searchBarObject.parent as FrameLayout
                 val searchEdgeLayout = searchBarContainer.parent as FrameLayout
                 val rippleDrawable =  searchBarDesktop.background as RippleDrawable
+                //设置Dock样式
+                val searchBarDock = RelativeLayout(appContext)
                 val gradientDrawable = rippleDrawable.getDrawable(0) as GradientDrawable
                 gradientDrawable.cornerRadius = dp2px(OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10).toFloat()
-                gradientDrawable.setStroke(0,0)
-                rippleDrawable.setDrawable(0, gradientDrawable)
-                it.result = rippleDrawable
+                gradientDrawable.setColor(Color.parseColor("#ccffffff"))
+                searchBarDock.background = gradientDrawable
                 // 重新给搜索框容器排序
                 searchEdgeLayout.removeView(searchBarContainer)
                 searchEdgeLayout.addView(searchBarContainer, 0)
@@ -82,6 +79,13 @@ class ModifyDockHook {
                 searchBarDesktop.removeAllViews()
                 // 修改高度
                 searchBarObject.layoutParams.height = dp2px((OwnSP.ownSP.getFloat("dockHeight", 7.9f) * 10))
+                // TODO 添加模糊
+                val mBlurView = XposedHelpers.newInstance("miuix.blurdrawable.widget.MiBlurBackgroundView".findClass(), appContext) as View
+                mBlurView.callMethod("setBlurBackground", true)
+                //重新添加 View
+                searchBarObject.removeAllViews()
+                searchBarObject.addView(mBlurView)
+                searchBarObject.addView(searchBarDock)
                 // 修改应用列表搜索框
                 val mAllAppViewField = launcherClass.getDeclaredField("mAppsView")
                 mAllAppViewField.isAccessible = true
