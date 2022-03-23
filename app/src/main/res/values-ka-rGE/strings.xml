@@ -67,7 +67,6 @@
   <string name="DockBottom">Dock-ის სიმაღლე</string>
   <string name="DockIconBottom">ნახატების სიმაღლე</string>
   <string name="DockSettings">Dock-ის პარამეტრები</string>
-  <string name="DockWarn">უმჯობესია, რომ Resource Hooks გქონდეთ ჩართული მრგვალი კუთხეებისთვის.</string>
   <string name="DockFeature">=Dock-ის ჩართვა</string>
   <string name="EnableDockBlur">Dock-ის დაბურვა</string>
   <string name="Reset">Dock-ის პარამეტრების საწყის ფუნქციებზე დაყენება</string>
