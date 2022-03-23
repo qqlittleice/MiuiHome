@@ -60,6 +60,18 @@
   <string name="SmallWindow">Cho phép tất cả các ứng dụng sử dụng Cửa sổ nổi</string>
   <string name="LowEndDeviceUseMIUIWidgets">Bật Cửa hàng tiện ích con mới trên thiết bị cấp thấp</string>
   <string name="RecommendServer">Tắt máy chủ được đề xuất</string>
+  <string name="EveryThingBuild">Tối ưu hóa Trình khởi chạy với Chế độ Mọi thứ</string>
+  <string name="DockHeight">Chiều cao thanh Dock</string>
+  <string name="DockRoundedCorners">Bo tròn thanh Dock</string>
+  <string name="DockSide">Thanh Dock từ các cạnh của Màn hình</string>
+  <string name="DockBottom">Thanh Dock từ dưới cùng của Màn hình</string>
+  <string name="DockIconBottom">Các biểu tượng từ cuối màn hình</string>
+  <string name="DockSettings">Cài đặt Dock</string>
+  <string name="DockWarn">Vui lòng kích hoạt Tài nguyên Hooks nếu bạn cần sửa đổi các góc tròn.</string>
+  <string name="DockFeature">Bật tính năng Dock</string>
+  <string name="EnableDockBlur">Bật tính năng Làm mờ của thanh Dock</string>
+  <string name="Reset">Đặt lại thông số Dock</string>
+  <string name="Tips1">Thao tác này sẽ khôi phục tham số Dock về giá trị mặc định của nó và khởi động lại Trình khởi chạy hệ thống.</string>
   <string name="Tips2">Thao tác này sẽ khôi phục cài đặt mặc định của mô-đun và khởi động lại Trình khởi chạy hệ thống.</string>
   <string name="HideSeekPoints">Loại bỏ Chỉ báo Trang</string>
   <string name="CategoryHideAll">Ẩn \"Tất cả \" trong Danh mục ứng dụng</string>
@@ -75,6 +87,8 @@
   <string name="Reset2">Đặt lại kích thước hình thu nhỏ cho các thông số trên màn hình gần đây theo chiều ngang</string>
   <string name="Tips3">Thao tác này sẽ đặt lại kích thước Hình thu nhỏ cho các tham số Màn hình gần đây theo chiều ngang về giá trị mặc định của nó và khởi động lại Trình khởi chạy hệ thống.</string>
   <string name="UnlockIcons">Mở khóa giới hạn số icons ghế nóng(hotseat)</string>
+  <string name="DockMarginTop">Khoảng cách giữa Icons và chỉ báo trang</string>
+  <string name="DockMarginBottom">Chỉ báo trang và khoảng cách ở cuối màn hình</string>
   <string name="SimpleWarn">Bạn đã bật hoạt ảnh đơn giản, điều này sẽ ẩn một số cài đặt.</string>
   <string name="BrokenFeature">Tính Năng Lỗi Thời</string>
   <string name="AppReturnAmin">Làm Mờ Ứng Dụng</string>
