@@ -107,6 +107,6 @@
   <string name="IconTitleTopMargin">Marginea de sus a titlului pictogramelor</string>
   <string name="OpenLSPosed">Deschide LSPosed</string>
   <string name="ShortcutCount">Deblocare limită număr de comenzi rapide</string>
-  <string name="MaxShortcutCount">Modify max shortcut count</string>
+  <string name="MaxShortcutCount">Modifică numărul maxim de scurtături</string>
   <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>
 </resources>
