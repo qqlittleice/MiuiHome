@@ -78,7 +78,7 @@
   <string name="CategoryPagingHideEdit">Remover botão \"Editar\" nas categorias da gaveta de aplicativos</string>
   <string name="FolderColumnsCount">Definir números de colunas dentro das pastas</string>
   <string name="FolderWidth">Expandir largura dentro da pasta</string>
-  <string name="IconTitleFontSize">Definir tamanho do nome dos ícones</string>
+  <string name="IconTitleFontSize">Definir tamanho dos nomes dos ícones na tela inicial</string>
   <string name="CustomRecentText">Personalizar texto no menu recentes quando não houver nenhuma janela de tarefas em exibição</string>
   <string name="DoubleTap">Toque duplo para desligar a tela</string>
   <string name="LowEndAnim">Habilitar animação ao retornar dos aplicativos</string>
