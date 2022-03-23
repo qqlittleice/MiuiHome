@@ -80,11 +80,11 @@ class ModifyDockHook {
                 // 修改高度
                 searchBarObject.layoutParams.height = dp2px((OwnSP.ownSP.getFloat("dockHeight", 7.9f) * 10))
                 // TODO 添加模糊
-                val mBlurView = XposedHelpers.newInstance("miuix.blurdrawable.widget.MiBlurBackgroundView".findClass(), appContext) as View
-                mBlurView.callMethod("setBlurBackground", true)
+                //val mBlurView = XposedHelpers.newInstance("miuix.blurdrawable.widget.MiBlurBackgroundView".findClass(), appContext) as View
+                //mBlurView.callMethod("setBlurBackground", true)
                 //重新添加 View
                 searchBarObject.removeAllViews()
-                searchBarObject.addView(mBlurView)
+                //searchBarObject.addView(mBlurView)
                 searchBarObject.addView(searchBarDock)
                 // 修改应用列表搜索框
                 val mAllAppViewField = launcherClass.getDeclaredField("mAppsView")
