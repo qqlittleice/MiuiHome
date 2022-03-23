@@ -67,7 +67,6 @@
   <string name="DockBottom">بُعد حوض التطبيقات عن اسفل الشاشة</string>
   <string name="DockIconBottom">بُعد الايقونات عن اسفل الشاشة</string>
   <string name="DockSettings">اعدادات حوض التطبيقات</string>
-  <string name="DockWarn">قم بتفعيل خيار resource hooks لتعديل تدور الاركان.</string>
   <string name="DockFeature">تفعيل ميزة حوض التطبيقات</string>
   <string name="EnableDockBlur">تفعيل ضبابية حوض التطبيقات</string>
   <string name="Reset">اعادة تعيين اعدادات حوض التطبيقات</string>

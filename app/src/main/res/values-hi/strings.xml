@@ -57,7 +57,6 @@
   <string name="DockBottom">स्क्रीन के नीचे से डॉक बार</string>
   <string name="DockIconBottom">स्क्रीन के नीचे से आइकन</string>
   <string name="DockSettings">डॉक सेटिंग्स</string>
-  <string name="DockWarn">यदि आपको गोलाकार कोनों को संशोधित करने की आवश्यकता है तो कृपया संसाधन हुक इनेबल करें|</string>
   <string name="DockFeature">डॉक फ़ीचर इनेबल करें</string>
   <string name="EnableDockBlur">डॉक के ब्लर को इनेबल करें</string>
   <string name="Reset">डॉक पैरामीटर रीसेट करें</string>

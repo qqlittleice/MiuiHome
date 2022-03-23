@@ -67,7 +67,6 @@
   <string name="DockBottom">Bara de andocare din partea de jos a ecranului</string>
   <string name="DockIconBottom">Pictograme din partea de jos a ecranului</string>
   <string name="DockSettings">Setări bară de andocare</string>
-  <string name="DockWarn">Dacă trebuie să schimbi colțurile rotunjite, activează interceptarea resurselor.</string>
   <string name="DockFeature">Activează caracteristicile barei de andocare</string>
   <string name="EnableDockBlur">Activează estompare doc</string>
   <string name="Reset">Resetează parametrii barei de andocare</string>

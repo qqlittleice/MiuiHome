@@ -67,7 +67,6 @@
   <string name="DockBottom">Dock (barra inferior de aplicaciones) desde la parte inferior de la pantalla</string>
   <string name="DockIconBottom">Iconos de la parte inferior de la pantalla</string>
   <string name="DockSettings">Configuración del Dock (barra inferior de aplicaciones)</string>
-  <string name="DockWarn">Por favor, habilita Resource Hooks si necesitas modificar las esquinas redondeadas.</string>
   <string name="DockFeature">Habilitar la función del Dock (barra inferior de aplicaciones)</string>
   <string name="EnableDockBlur">Habilitar el desenfoque del Dock (barra inferior de aplicaciones)</string>
   <string name="Reset">Restablecer los parámetros del Dock (barra inferior de aplicaciones)</string>

@@ -72,7 +72,6 @@
   <string name="DockBottom">Dokbar uchun ekranning pastki qismidagi masofa</string>
   <string name="DockIconBottom">Dokbardagi Ilovalar uchun ekranning pastki qismidagi masofa</string>
   <string name="DockSettings">Dokbar sozlamalari</string>
-  <string name="DockWarn">Agar siz burchaklarni yumaloqlashni sozlamoqchi boʻlsangiz iltimos, resurslarni saqlab qolish xususiyatini yoqing.</string>
   <string name="DockFeature">Dokbar xususiyatlarini yoqish</string>
   <string name="EnableDockBlur">Dokbarda blur effektini yoqish</string>
   <string name="Reset">Dokbarda oʻrnatilgan sozlamalarni standart holatiga qaytarish</string>

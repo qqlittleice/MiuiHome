@@ -67,7 +67,6 @@
   <string name="DockBottom">Altındaki boşluk</string>
   <string name="DockIconBottom">Simgelerin konumu</string>
   <string name="DockSettings">Dock ayarları</string>
-  <string name="DockWarn">Dock köşelerini özelleştirmek istiyorsanız \"Resource Hook\"u açın.</string>
   <string name="DockFeature">Dock özeliğini aç</string>
   <string name="EnableDockBlur">Dock\'a bulanıklık ekle</string>
   <string name="Reset">Dock ayarlarını sıfırla</string>

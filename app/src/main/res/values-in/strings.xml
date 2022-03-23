@@ -57,7 +57,6 @@
   <string name="DockBottom">Kejauhan antara dock bar dengan bagian layar bawah</string>
   <string name="DockIconBottom">Kejauhan icon antara bagian layar bawah</string>
   <string name="DockSettings">Pengaturan dock</string>
-  <string name="DockWarn">Mohon aktifkan resource hook agar bisa memodifikasi sudut dock</string>
   <string name="DockFeature">Aktifkan fitur dock</string>
   <string name="EnableDockBlur">Aktifkan blur dock</string>
   <string name="Reset">Reset Dock</string>
