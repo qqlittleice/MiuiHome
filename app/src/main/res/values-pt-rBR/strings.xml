@@ -24,7 +24,7 @@
   <string name="Folder">Recursos de Pasta</string>
   <string name="HideStatusBar">Esconder barra de status no menu recentes</string>
   <string name="HideTaskViewAppIcon">Remover ícones de aplicativos no menu recentes</string>
-  <string name="HideTaskViewCleanUpIcon">Ocultar botão \"limpar tudo\" no menu recentes</string>
+  <string name="HideTaskViewCleanUpIcon">Ocultar botão \"Limpar Tudo\" no menu recentes</string>
   <string name="HideTaskViewSmallWindowIcon">Remover botão \"Janelas Flutuantes\" no menu recentes</string>
   <string name="HideWidgetTitles">Ocultar rótulos dos widgets</string>
   <string name="HorizontalTaskViewOfAppCardSize">Definir tamanho das janelas de tarefas no menu recentes horizontal</string>
@@ -43,7 +43,7 @@
   <string name="ShowDockIconTitles">Exibir os nomes dos aplicativos na dock</string>
   <string name="SimpleAnimation">Animações Simples</string>
   <string name="SimpleBlur">Simples</string>
-  <string name="SmoothAnimation">Animações suave</string>
+  <string name="SmoothAnimation">Animações Suave</string>
   <string name="TaskViewAppCardTextSize">Definir tamanho do nome dos ícones no menu recentes</string>
   <string name="TaskViewBlurLevel">Nível de desfoque do menu recentes</string>
   <string name="TestBlur">\"Em teste\"</string>
@@ -62,7 +62,7 @@
   <string name="RecommendServer">Desabilitar \"Servidor Recomendado\"</string>
   <string name="EveryThingBuild">Otimizar a MIUI Launcher com o modo \"Everything\"</string>
   <string name="DockHeight">Definir largura</string>
-  <string name="DockRoundedCorners">Definir cantos arrendados:</string>
+  <string name="DockRoundedCorners">Definir cantos arrendados</string>
   <string name="DockSide">Definir comprimento</string>
   <string name="DockBottom">Definir posição</string>
   <string name="DockIconBottom">Definir posição dos ícones na dock</string>
@@ -87,8 +87,8 @@
   <string name="Reset2">Restaurar o tamanho das janelas de exibição de tarefas no menu recentes horizontal</string>
   <string name="Tips3">Restaurar o tamanho da exibição de tarefas no menu recentes, horizontal para o seu valor padrão e reiniciar a MIUI Launcher.</string>
   <string name="UnlockIcons">Desbloquear limite de ícones na dock</string>
-  <string name="DockMarginTop">Definir espaçamento entre ícone e indicador</string>
-  <string name="DockMarginBottom">Indicador de página e espaçamento inferior da tela</string>
+  <string name="DockMarginTop">Definir espaçamento entre ícones e indicador de página</string>
+  <string name="DockMarginBottom">Definir espaçamento entre o indicador de página e ícones</string>
   <string name="SimpleWarn">Você habilitou \"Animações Simples\", isso ocultará algumas configurações.</string>
   <string name="BrokenFeature">Recursos Obsoleto</string>
   <string name="AppReturnAmin">Desfoque ao retornar o aplicativo</string>
@@ -105,7 +105,7 @@
   <string name="OpenGithub">Clique para abrir o GitHub</string>
   <string name="AppCenter">Enviar estatísticas de uso anônimas</string>
   <string name="AppCenterTip">Utilizamos o Microsoft AppCenter para nos ajudar a testar/analisar o uso do aplicativo.</string>
-  <string name="IconTitleTopMargin">Definir distância entre nome dos aplicativos e ícones na tela inicial</string>
+  <string name="IconTitleTopMargin">Definir distância entre nomes dos aplicativos e ícones na tela inicial</string>
   <string name="OpenLSPosed">Abrir a interface do LSPosed</string>
   <string name="ShortcutCount">Desbloquear limite de ícones na dock</string>
   <string name="MaxShortcutCount">Definir limite máximo de icones</string>
