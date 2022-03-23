@@ -67,7 +67,6 @@
   <string name="DockBottom">Definir posição</string>
   <string name="DockIconBottom">Definir posição dos ícones na dock</string>
   <string name="DockSettings">Configurações da dock</string>
-  <string name="DockWarn">Por favor, habilite os recursos adicionais se você precisar modificar os cantos arredondados.</string>
   <string name="DockFeature">Habilitar dock na tela inicial</string>
   <string name="EnableDockBlur">Habilitar desfoque na dock</string>
   <string name="Reset">Restaurar os parâmetros da barra dock</string>
