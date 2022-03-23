@@ -60,6 +60,18 @@
   <string name="SmallWindow">Все приложения могут использовать \"Плавающее окно\"</string>
   <string name="LowEndDeviceUseMIUIWidgets">Low-end уст-ва могут использовать виджеты MIUI</string>
   <string name="RecommendServer">Отключить сервер рекомендаций</string>
+  <string name="EveryThingBuild">Скомпилировать раб. стол MIUI, используя режим \"Everything\"</string>
+  <string name="DockHeight">Высота док-бара</string>
+  <string name="DockRoundedCorners">Закругленные углы док-бара</string>
+  <string name="DockSide">Док-бар по бокам экрана</string>
+  <string name="DockBottom">Док-бар в нижней части экрана</string>
+  <string name="DockIconBottom">Иконки в нижней части экрана</string>
+  <string name="DockSettings">Настройки док-бара</string>
+  <string name="DockWarn">Если вам необходимо изменить закругленные углы, включите перехват ресурсов в настройках LSPosed менеджера.</string>
+  <string name="DockFeature">Включить функцию \"Док-бар\"</string>
+  <string name="EnableDockBlur">Включить размытие панели док-бара</string>
+  <string name="Reset">Сброс параметров док-бара</string>
+  <string name="Tips1">Это приведет к сбросу параметров \"Док-бара\" на значения по умолчанию и перезагрузке рабочего стола.</string>
   <string name="Tips2">Это восстановит настройки модуля по умолчанию и перезагрузит раб. стол системы.</string>
   <string name="HideSeekPoints">Скрыть индикатор страниц рабочего стола</string>
   <string name="CategoryHideAll">Скрыть \"Все\" в категориях приложений</string>
@@ -75,6 +87,8 @@
   <string name="Reset2">Сброс размера миниатюры для горизонтального меню недавних</string>
   <string name="Tips3">Это приведет к сбросу параметров Размера миниатюры для горизонтального меню недавних на значение по умолчанию и перезапуску рабочего стола.</string>
   <string name="UnlockIcons">Откл. ограничение кол-ва иконок в док-баре</string>
+  <string name="DockMarginTop">Индикатор страницы и Интервал между значками</string>
+  <string name="DockMarginBottom">Индикатор страницы и Интервал в нижней части</string>
   <string name="SimpleWarn">Вы включили простую анимацию, это скроет некоторые настройки.</string>
   <string name="BrokenFeature">Устаревшие функции</string>
   <string name="AppReturnAmin">Размытие при сворачивании</string>
