@@ -22,12 +22,12 @@
   <string name="current">Atual</string>
   <string name="Description">Configurações adicionais para MIUI Launcher</string>
   <string name="Folder">Recursos de Pasta</string>
-  <string name="HideStatusBar">Esconder barra de status no menu recentes</string>
-  <string name="HideTaskViewAppIcon">Remover ícones de aplicativos no menu recentes</string>
+  <string name="HideStatusBar">Esconder a barra de status no menu recentes</string>
+  <string name="HideTaskViewAppIcon">Remover os ícones de aplicativos no menu recentes</string>
   <string name="HideTaskViewCleanUpIcon">Ocultar botão \"Limpar Tudo\" no menu recentes</string>
-  <string name="HideTaskViewSmallWindowIcon">Remover botão \"Janelas Flutuantes\" no menu recentes</string>
+  <string name="HideTaskViewSmallWindowIcon">Remover o botão \"Janelas Flutuantes\" no menu recentes</string>
   <string name="HideWidgetTitles">Ocultar rótulos dos widgets</string>
-  <string name="HorizontalTaskViewOfAppCardSize">Definir tamanho das janelas de tarefas no menu recentes horizontal</string>
+  <string name="HorizontalTaskViewOfAppCardSize">Definir o tamanho das janelas de tarefas dos aplicativos no menu recentes horizontal</string>
   <string name="InfiniteScroll">Habilitar rolagem infinita na tela inicial</string>
   <string name="MamlDownload">Habilitar o efeito onda dos ícones ao desbloquear a tela</string>
   <string name="ModuleFeature">Recursos do Módulo</string>
@@ -69,7 +69,7 @@
   <string name="DockSettings">Configurações da dock</string>
   <string name="DockFeature">Habilitar dock na tela inicial</string>
   <string name="EnableDockBlur">Habilitar desfoque na dock</string>
-  <string name="Reset">Restaurar os parâmetros da barra dock</string>
+  <string name="Reset">Resetar as configurações da dock</string>
   <string name="Tips1">Restaurar os parâmetros da barra Dock ao seu valor padrão e reiniciar a MIUI Launcher.</string>
   <string name="Tips2">Restaurar as configurações ao seu valor padrão e reiniciar o MIUI Launcher.</string>
   <string name="HideSeekPoints">Remover indicador de páginas da tela inicial</string>
@@ -95,7 +95,7 @@
   <string name="BasicBlur">Básico</string>
   <string name="CustomTitleColor">Personalizar cor para os nomes dos aplicativos</string>
   <string name="Tips4">Defina as cores em hexadecimal, por exemplo: #FFFFFF é branco, #000000 é preto</string>
-  <string name="About">Sobre o módulo</string>
+  <string name="About">Sobre o Módulo</string>
   <string name="MiuiVersion">Versão da MIUI</string>
   <string name="LauncherVersion">Versão da MIUI Launcher</string>
   <string name="ModuleVersion">Versão do Módulo</string>
