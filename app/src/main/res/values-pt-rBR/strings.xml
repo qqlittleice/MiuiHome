@@ -4,7 +4,7 @@
   <string name="AlwaysShowMIUIWidget">Exibir os novos widgets MIUI na gaveta de widgets clássicos</string>
   <string name="AlwaysShowStatusBarClock">Sempre exibir o relógio na barra de status</string>
   <string name="AnimationLevel">Definir velocidade das animações</string>
-  <string name="AppTextSize">Definir a distância entre o ícone e o nome do aplicativo no menu recentes</string>
+  <string name="AppTextSize">Definir o espaçamento entre os ícones e os nomes dos aplicativos no menu recentes</string>
   <string name="BlurWhenOpenFolder">Habilitar o desfoque de fundo nas pastas</string>
   <string name="Cancel">Cancelar</string>
   <string name="CleanModuleSettings">Resetar configurações</string>
@@ -27,7 +27,7 @@
   <string name="HideTaskViewCleanUpIcon">Ocultar botão \"limpar tudo\" no menu recentes</string>
   <string name="HideTaskViewSmallWindowIcon">Remover botão \"Janelas Flutuantes\" no menu recentes</string>
   <string name="HideWidgetTitles">Ocultar rótulos dos widgets</string>
-  <string name="HorizontalTaskViewOfAppCardSize">Tamanho da exibição de tarefas no menu recentes, horizontal.</string>
+  <string name="HorizontalTaskViewOfAppCardSize">Definir tamanho das janelas de tarefas no menu recentes horizontal</string>
   <string name="InfiniteScroll">Habilitar rolagem infinita na tela inicial</string>
   <string name="MamlDownload">Habilitar o efeito onda dos ícones ao desbloquear a tela</string>
   <string name="ModuleFeature">Recursos do Módulo</string>
@@ -84,7 +84,7 @@
   <string name="LowEndAnim">Habilitar animação ao retornar dos aplicativos</string>
   <string name="VerticalScreen">Tela Vertical</string>
   <string name="HorizontalScreen">Tela Horizontal</string>
-  <string name="Reset2">Restaurar o tamanho da exibição de tarefas no menu recentes, horizontal</string>
+  <string name="Reset2">Restaurar o tamanho das janelas de exibição de tarefas no menu recentes horizontal</string>
   <string name="Tips3">Restaurar o tamanho da exibição de tarefas no menu recentes, horizontal para o seu valor padrão e reiniciar a MIUI Launcher.</string>
   <string name="UnlockIcons">Desbloquear limite de ícones na dock</string>
   <string name="DockMarginTop">Definir espaçamento entre ícone e indicador</string>
