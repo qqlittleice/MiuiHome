@@ -1,13 +1,12 @@
 package com.yuk.miuihome.module
 
+import android.graphics.Color
 import android.util.TypedValue
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.findClass
-import com.yuk.miuihome.utils.ktx.getObjectField
-import com.yuk.miuihome.utils.ktx.hookAfterMethod
+import com.yuk.miuihome.utils.ktx.*
 
 class ModifyRecents {
 
@@ -16,6 +15,7 @@ class ModifyRecents {
         val taskViewHeaderClass = "com.miui.home.recents.views.TaskViewHeader".findClass()
         val recentTextSize = OwnSP.ownSP.getFloat("recentTextSize", -1f)
         val emptyViewText: String = OwnSP.ownSP.getString("recentText", "").toString()
+        val appCardBgColor = OwnSP.ownSP.getString("appCardBgColor", "")
         if (OwnSP.ownSP.getBoolean("smallWindow", false)) {
             recentsContainerClass.hookAfterMethod(
                 "onFinishInflate"
@@ -55,6 +55,11 @@ class ModifyRecents {
                 (it.thisObject.getObjectField("mEmptyView") as TextView).apply {
                     this.text = emptyViewText
                 }
+            }
+        }
+        if (appCardBgColor != "") {
+            "com.miui.home.recents.views.TaskViewThumbnail".findClass().hookAfterAllConstructors {
+                it.thisObject.setIntField("mBgColorForSmallWindow", Color.parseColor(appCardBgColor))
             }
         }
     }

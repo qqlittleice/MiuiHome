@@ -16,5 +16,4 @@
       android:name="xposedminversion"
       android:value="93" />
   </application>
-
 </manifest>

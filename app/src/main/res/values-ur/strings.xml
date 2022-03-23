@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name" translatable="false">MiuiHome</string>
   <string name="AdvancedFeature">Advanced Settings</string>
   <string name="AlwaysShowMIUIWidget">Allow MIUI widgets to be displayed in Classic widgets</string>
   <string name="AlwaysShowStatusBarClock">Disable status bar clock hide</string>
@@ -96,7 +95,7 @@
   <string name="BlurRadius">Blur Radius</string>
   <string name="BasicBlur">Basic Blur</string>
   <string name="CustomTitleColor">Customize the App title color</string>
-  <string name="Tips4">Support ColorString, for example #FFFFFFFF is White, #FF000000 is Black</string>
+  <string name="Tips4">Support hexadecimal color value, for example #FFFFFF is White, #000000 is Black</string>
   <string name="About">About Module</string>
   <string name="MiuiVersion">MIUI Version</string>
   <string name="LauncherVersion">Launcher Version</string>
@@ -110,5 +109,4 @@
   <string name="OpenLSPosed">Open LSPosed</string>
   <string name="ShortcutCount">Unlock shortcut count limit</string>
   <string name="MaxShortcutCount">Modify max shortcut count</string>
-  <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>
 </resources>
