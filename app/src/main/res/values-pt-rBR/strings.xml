@@ -8,7 +8,7 @@
   <string name="BlurWhenOpenFolder">Habilitar o desfoque de fundo nas pastas</string>
   <string name="Cancel">Cancelar</string>
   <string name="CleanModuleSettings">Resetar as configurações</string>
-  <string name="RestoreModuleSettingsSuccess">Configurações restauradas com sucesso, reiniciando Miui Launcher.</string>
+  <string name="RestoreModuleSettingsSuccess">Configurações restauradas com sucesso, reiniciando a Miui Launcher.</string>
   <string name="RestoreModuleSettingsFailed">Falha ao tentar restaurar as configurações</string>
   <string name="BackupModuleSettings">Exportar Configurações</string>
   <string name="RestoreModuleSettings">Importar Configurações</string>
@@ -17,8 +17,8 @@
   <string name="CompleteBlur">Completo</string>
   <string name="Defaults">Padrão</string>
   <string name="Recommend">Recomendado</string>
-  <string name="setDefaults">Deixe em branco para restaurar as configurações padrão</string>
-  <string name="setRecentString">Deixe em branco para restaurar as configurações padrão, insira um espaço para excluir o texto</string>
+  <string name="setDefaults">Deixe em branco para restaurar a configuração padrão</string>
+  <string name="setRecentString">Deixe em branco para restaurar a configuração padrão. Para excluir o texto, insira um espaço</string>
   <string name="current">Atual</string>
   <string name="Description">Configurações adicionais para MIUI Launcher</string>
   <string name="Folder">Recursos de Pasta</string>
@@ -35,7 +35,7 @@
   <string name="NoneBlur">Nenhum</string>
   <string name="OtherFeature">Recursos Extras</string>
   <string name="RealTaskViewHorizontal">Retornar as opções leterais nas janelas de tarefas dos plicativos no menu recentes</string>
-  <string name="Reboot">Reiniciar Miui Launcher</string>
+  <string name="Reboot">Reiniciar a Miui Launcher</string>
   <string name="Reboot1">Tem certeza de que deseja reiniciar a Miui Launcher?</string>
   <string name="Reboot2">A Miui Launcher será reiniciada, aguarde!</string>
   <string name="RoundCorner">Definir as bordas arredondadas das janelas de tarefas dos aplicativos no menu recentes</string>
@@ -47,9 +47,9 @@
   <string name="TaskViewAppCardTextSize">Definir o tamanho dos nomes dos aplicativos no menu recentes</string>
   <string name="TaskViewBlurLevel">Nível de desfoque do menu recentes</string>
   <string name="TestBlur">\"Em teste\"</string>
-  <string name="TestFeature">Recursos em Desenvolvimento</string>
+  <string name="TestFeature">Recursos Experimentais</string>
   <string name="Tips">Foi detectado que você está usando este módulo pela primeira vez, iremos restaurar as configurações padrões e reiniciar a Miui Launcher.\nSe você precisar de novas configurações, por favor, aguarde o launcher reiniciar e abra às configurações novamente.</string>
-  <string name="UnlockGrids">Desbloquear o limite de grade</string>
+  <string name="UnlockGrids">Desbloquear restrições da grade</string>
   <string name="VerticalTaskViewOfAppCardSize">Definir o tamanho das janelas de tarefas no menu recentes vertical</string>
   <string name="WallpaperDarken">Desativar o escurecimento do papel de parede no menu recentes</string>
   <string name="Welcome">Bem-Vindo(a)</string>
@@ -62,7 +62,7 @@
   <string name="RecommendServer">Desabilitar \"Servidor Recomendado\"</string>
   <string name="EveryThingBuild">Otimizar a Miui Launcher com o modo \"Everything\"</string>
   <string name="DockHeight">Definir largura da dock</string>
-  <string name="DockRoundedCorners">Definir cantos arrendados da dock</string>
+  <string name="DockRoundedCorners">Definir os cantos arredondados da dock</string>
   <string name="DockSide">Definir comprimento da dock</string>
   <string name="DockBottom">Definir posição da dock</string>
   <string name="DockIconBottom">Definir posição dos ícones dentro da dock</string>
@@ -88,7 +88,7 @@
   <string name="UnlockIcons">Desbloquear o limite de ícones na dock</string>
   <string name="DockMarginTop">Definir espaçamento entre ícones e indicador de página</string>
   <string name="DockMarginBottom">Definir espaçamento entre o indicador de página e ícones</string>
-  <string name="SimpleWarn">Você habilitou a \"Animações Simples\", isso ocultará algumas configurações.</string>
+  <string name="SimpleWarn">Você habilitou as \"Animações Simples\", isso ocultará algumas configurações.</string>
   <string name="BrokenFeature">Recursos Obsoleto</string>
   <string name="AppReturnAmin">Desfoque ao retornar os aplicativos</string>
   <string name="BlurRadius">Grau de desfoque</string>
@@ -101,7 +101,7 @@
   <string name="ModuleVersion">Versão do Módulo</string>
   <string name="AlwaysBlur">Desfocar o papel de parede da tela inicial</string>
   <string name="Github">Acessar o GitHub</string>
-  <string name="OpenGithub">Clique-aqui para ser redirecionado o GitHub</string>
+  <string name="OpenGithub">Clique-aqui para ser redirecionado ao GitHub</string>
   <string name="AppCenter">Enviar estatísticas de uso anônimas</string>
   <string name="AppCenterTip">Utilizamos o Microsoft AppCenter para nos ajudar a testar/analisar o uso do aplicativo.</string>
   <string name="IconTitleTopMargin">Definir distância entre nomes dos aplicativos e ícones na tela inicial</string>
