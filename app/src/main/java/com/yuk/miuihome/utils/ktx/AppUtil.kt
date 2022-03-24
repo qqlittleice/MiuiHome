@@ -6,7 +6,7 @@ import com.github.kyuubiran.ezxhelper.init.InitFields
 
 fun dp2px(dpValue: Float): Int = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpValue, InitFields.appContext.resources.displayMetrics).toInt()
 
-fun px2dp(pxValue: Int): Int = (pxValue / InitFields.appContext.resources.displayMetrics.density + 0.5f * if (pxValue >= 0) 1 else -1).toInt()
+fun px2dp(pxValue: Int): Int = (pxValue / InitFields.appContext.resources.displayMetrics.density + 0.5f).toInt()
 
 fun getDensityDpi(): Int = (InitFields.appContext.resources.displayMetrics.widthPixels / InitFields.appContext.resources.displayMetrics.density).toInt()
 

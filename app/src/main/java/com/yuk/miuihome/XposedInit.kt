@@ -25,7 +25,6 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage
 
 class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
     companion object {
-        var hasHookPackageResources = false
         var application: Application? = null
     }
 
