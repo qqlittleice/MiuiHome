@@ -58,7 +58,7 @@
   <string name="Yes">Sim</string>
   <string name="EnableIconShadow">Exibir as sombras e reflexos dos ícones na parte inferior da tela inicial</string>
   <string name="SmallWindow">Habilitar o suporte a \"Janelas flutuantes\" em todos os aplicativos</string>
-  <string name="LowEndDeviceUseMIUIWidgets">Habilitar o suporte aos novos widgets miui em dispositivos sem suporte</string>
+  <string name="LowEndDeviceUseMIUIWidgets">Habilitar o suporte aos novos widgets Miui em dispositivos sem suporte</string>
   <string name="RecommendServer">Desabilitar \"Servidor Recomendado\"</string>
   <string name="EveryThingBuild">Otimizar a Miui Launcher com o modo \"Everything\"</string>
   <string name="DockHeight">Definir largura da dock</string>
@@ -76,7 +76,7 @@
   <string name="CategoryHideAll">Remover a categoria \"Tudo\" da gaveta de aplicativos</string>
   <string name="CategoryPagingHideEdit">Remover o botão \"Editar\" dentro das categorias da gaveta de aplicativos</string>
   <string name="FolderColumnsCount">Definir os números de colunas dentro das pastas</string>
-  <string name="FolderWidth">Expandir largura dentro da pasta</string>
+  <string name="FolderWidth">Expandir a largura dentro da pasta</string>
   <string name="IconTitleFontSize">Definir o tamanho dos nomes dos aplicativos na tela inicial</string>
   <string name="CustomRecentText">Personalizar o texto no menu recentes quando não tem nenhuma janela de tarefas em exibição</string>
   <string name="DoubleTap">Toque duplo para desligar a tela</string>
@@ -97,7 +97,7 @@
   <string name="Tips4">Defina as cores em hexadecimal, por exemplo: #FFFFFF é branco, #000000 é preto</string>
   <string name="About">Sobre o Módulo</string>
   <string name="MiuiVersion">Versão da Miui</string>
-  <string name="LauncherVersion">Versão da MIUI Launcher</string>
+  <string name="LauncherVersion">Versão da Miui Launcher</string>
   <string name="ModuleVersion">Versão do Módulo</string>
   <string name="AlwaysBlur">Desfocar o papel de parede da tela inicial</string>
   <string name="Github">Acessar o GitHub</string>
