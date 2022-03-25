@@ -9,6 +9,7 @@ import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
 import com.github.kyuubiran.ezxhelper.utils.Log
+import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
 import com.yuk.miuihome.view.BlurFrameLayout
@@ -81,7 +82,7 @@ class ModifyDockHook {
                 // 修改高度
                 searchBarObject.layoutParams.height = dp2px((OwnSP.ownSP.getFloat("dockHeight", 7.9f) * 10))
                 // 添加模糊
-                if (OwnSP.ownSP.getBoolean("searchBarBlur", false)) {
+                if (OwnSP.ownSP.getBoolean("searchBarBlur", false) && Config.AndroidSDK == 31) {
                     searchBarObject.removeAllViews()
                     val blur = BlurFrameLayout(searchBarObject.context)
                     blur.setBlurRadius(100)
