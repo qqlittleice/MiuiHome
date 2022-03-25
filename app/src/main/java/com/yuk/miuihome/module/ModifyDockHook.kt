@@ -25,35 +25,35 @@ class ModifyDockHook {
             deviceConfigClass.hookBeforeMethod("calcSearchBarWidth", Context::class.java
             ) {
                 val deviceWidth = px2dp(appContext.resources.displayMetrics.widthPixels)
-                it.result = dp2px(deviceWidth - (OwnSP.ownSP.getFloat("dockSide", 3.0f) * 10))
+                it.result = dp2px(deviceWidth - OwnSP.ownSP.getFloat("dockSide", 3.0f) * 10)
             }
             // Dock距屏幕底部
             deviceConfigClass.hookBeforeMethod("calcSearchBarMarginBottom", Context::class.java, Boolean::class.java
             ) {
-                it.result = dp2px((OwnSP.ownSP.getFloat("dockBottom", 2.3f) * 10))
+                it.result = dp2px(OwnSP.ownSP.getFloat("dockBottom", 2.3f) * 10)
             }
             // 图标距屏幕底部
             deviceConfigClass.hookBeforeMethod("calcHotSeatsMarginBottom", Context::class.java, Boolean::class.java, Boolean::class.java
             ) {
-                it.result = dp2px((OwnSP.ownSP.getFloat("dockIconBottom", 3.5f) * 10))
+                it.result = dp2px(OwnSP.ownSP.getFloat("dockIconBottom", 3.5f) * 10)
             }
             // 页面指示器距离图标距离
             deviceConfigClass.hookBeforeMethod("calcHotSeatsMarginTop", Context::class.java, Boolean::class.java
             ) {
-                it.result = dp2px((OwnSP.ownSP.getFloat("dockMarginTop", 0.6f) * 10))
+                it.result = dp2px(OwnSP.ownSP.getFloat("dockMarginTop", 0.6f) * 10)
             }
             // 页面指示器距离屏幕底部
-            deviceConfigClass.hookBeforeMethod(
-                "getWorkspaceIndicatorMarginBottom",
+            deviceConfigClass.hookBeforeMethod("getWorkspaceIndicatorMarginBottom",
             ) {
-                it.result = dp2px((OwnSP.ownSP.getFloat("dockMarginBottom", 11.0f) * 10))
+                it.result = dp2px(OwnSP.ownSP.getFloat("dockMarginBottom", 11.0f) * 10)
             }
             // 宽度变化量
             deviceConfigClass.hookBeforeMethod("getSearchBarWidthDelta"
             ) {
                 it.result = 0
             }
-            "com.miui.home.launcher.SearchBarDesktopLayout\$1".hookAfterMethod("doInBackground") {
+            "com.miui.home.launcher.SearchBarDesktopLayout\$1".hookAfterMethod("doInBackground"
+            ) {
                 val searchBarDesktop = it.result
                 val background = when (searchBarDesktop) {
                     is RippleDrawable -> searchBarDesktop.getDrawable(0) as GradientDrawable
@@ -61,7 +61,7 @@ class ModifyDockHook {
                     else -> return@hookAfterMethod
                 }
                 background.cornerRadius = dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat()
-                if (Config.AndroidSDK == 31) background.setColor(Color.parseColor("#ccffffff"))
+                if (Config.AndroidSDK == 31) background.setColor(Color.parseColor(if (isDarkMode()) "#80000000" else "#CCFFFFFF"))
                 background.setStroke(0, 0)
                 when (searchBarDesktop) {
                     is RippleDrawable -> searchBarDesktop.setDrawable(0, background)
@@ -91,7 +91,7 @@ class ModifyDockHook {
                 mAllAppSearchView.addView(searchBarDrawer)
                 searchBarDrawer.bringToFront()
                 val layoutParams = searchBarDrawer.layoutParams as FrameLayout.LayoutParams
-                searchBarDrawer.layoutParams.height = dp2px(45f)
+                searchBarDrawer.layoutParams.height = dp2px(43f)
                 layoutParams.leftMargin = dp2px(15f)
                 layoutParams.rightMargin = dp2px(15f)
                 searchBarDrawer.layoutParams = layoutParams

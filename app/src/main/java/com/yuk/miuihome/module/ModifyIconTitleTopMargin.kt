@@ -15,8 +15,7 @@ class ModifyIconTitleTopMargin {
         "com.miui.home.launcher.ItemIcon".hookAfterMethod("onFinishInflate") {
             val mTitleContainer = it.thisObject.getObjectField("mTitleContainer") as ViewGroup
             val lp = mTitleContainer.layoutParams
-            val opt =
-                ((titleTopMargin - 11) * mTitleContainer.resources.displayMetrics.density).roundToInt()
+            val opt = ((titleTopMargin - 11) * mTitleContainer.resources.displayMetrics.density).roundToInt()
             if (lp is RelativeLayout.LayoutParams) {
                 lp.topMargin = opt
                 mTitleContainer.layoutParams = lp
