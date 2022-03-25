@@ -14,7 +14,6 @@ import com.github.kyuubiran.ezxhelper.utils.Log
 import com.github.kyuubiran.ezxhelper.utils.getMethodByClassOrObject
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
-import de.robv.android.xposed.XposedBridge
 import de.robv.android.xposed.XposedHelpers
 
 class ModifyDockHook {
@@ -67,7 +66,7 @@ class ModifyDockHook {
                     else -> return@hookAfterMethod
                 }
                 background.cornerRadius = dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat()
-                if (!init) blur?.let { it1 -> setViewBlurForS(it1) }
+                if (!init && OwnSP.ownSP.getBoolean("searchBarBlur", false)) blur?.let { it1 -> setViewBlurForS(it1) }
                 background.setStroke(0, 0)
                 when (searchBarDesktop) {
                     is RippleDrawable -> searchBarDesktop.setDrawable(0, background)
@@ -87,12 +86,14 @@ class ModifyDockHook {
                 searchBarDesktop.removeAllViews()
                 // 修改高度
                 searchBarObject.layoutParams.height = dp2px((OwnSP.ownSP.getFloat("dockHeight", 7.9f) * 10))
-                // TODO 添加模糊
-                searchBarObject.removeAllViews()
-                blur = FrameLayout(searchBarObject.context)
-                blur?.addView(searchBarDesktop)
-                searchBarObject.addView(blur)
+                // 添加模糊
+                if (OwnSP.ownSP.getBoolean("searchBarBlur", false)) {
+                    searchBarObject.removeAllViews()
+                    blur = FrameLayout(searchBarObject.context)
+                    blur?.addView(searchBarDesktop)
+                    searchBarObject.addView(blur)
 
+                }
                 // 修改应用列表搜索框
                 val mAllAppViewField = launcherClass.getDeclaredField("mAppsView")
                 mAllAppViewField.isAccessible = true
@@ -119,7 +120,7 @@ class ModifyDockHook {
         val drawable = viewRootImpl?.callMethod("createBackgroundBlurDrawable")
         drawable?.callMethod("setBlurRadius", 100)
         drawable?.callMethod("setCornerRadius", dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat())
-        drawable?.callMethod("setColor", Color.parseColor(if (isDarkMode()) "#80000000" else "#CCFFFFFF"))
+        drawable?.callMethod("setColor", Color.parseColor("#33626262"))
         view.background = drawable as? Drawable
     }
 }
