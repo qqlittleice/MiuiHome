@@ -2,19 +2,25 @@ package com.yuk.miuihome.module
 
 import android.content.Context
 import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.RippleDrawable
 import android.os.Bundle
+import android.view.View
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
 import com.github.kyuubiran.ezxhelper.utils.Log
-import com.yuk.miuihome.utils.Config
+import com.github.kyuubiran.ezxhelper.utils.getMethodByClassOrObject
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
+import de.robv.android.xposed.XposedBridge
 import de.robv.android.xposed.XposedHelpers
 
 class ModifyDockHook {
+
+    var blur: FrameLayout? = null
+    var init = false
 
     fun init() {
         if (!OwnSP.ownSP.getBoolean("dockSettings", false)) return
@@ -61,7 +67,7 @@ class ModifyDockHook {
                     else -> return@hookAfterMethod
                 }
                 background.cornerRadius = dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat()
-                if (Config.AndroidSDK == 31) background.setColor(Color.parseColor(if (isDarkMode()) "#80000000" else "#CCFFFFFF"))
+                if (!init) blur?.let { it1 -> setViewBlurForS(it1) }
                 background.setStroke(0, 0)
                 when (searchBarDesktop) {
                     is RippleDrawable -> searchBarDesktop.setDrawable(0, background)
@@ -82,6 +88,11 @@ class ModifyDockHook {
                 // 修改高度
                 searchBarObject.layoutParams.height = dp2px((OwnSP.ownSP.getFloat("dockHeight", 7.9f) * 10))
                 // TODO 添加模糊
+                searchBarObject.removeAllViews()
+                blur = FrameLayout(searchBarObject.context)
+                blur?.addView(searchBarDesktop)
+                searchBarObject.addView(blur)
+
                 // 修改应用列表搜索框
                 val mAllAppViewField = launcherClass.getDeclaredField("mAppsView")
                 mAllAppViewField.isAccessible = true
@@ -99,5 +110,16 @@ class ModifyDockHook {
         } catch (e: XposedHelpers.ClassNotFoundError) {
             Log.ex(e)
         }
+    }
+
+    private fun setViewBlurForS(view: View) {
+        val viewRootImplMethod = view.getMethodByClassOrObject("getViewRootImpl")
+        val viewRootImpl = viewRootImplMethod.invoke(view)
+        if (viewRootImpl != null) init = true
+        val drawable = viewRootImpl?.callMethod("createBackgroundBlurDrawable")
+        drawable?.callMethod("setBlurRadius", 100)
+        drawable?.callMethod("setCornerRadius", dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat())
+        drawable?.callMethod("setColor", Color.parseColor(if (isDarkMode()) "#80000000" else "#CCFFFFFF"))
+        view.background = drawable as? Drawable
     }
 }
