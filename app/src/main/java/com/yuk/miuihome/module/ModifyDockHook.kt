@@ -120,7 +120,7 @@ class ModifyDockHook {
             val drawable = viewRootImpl?.callMethod("createBackgroundBlurDrawable")
             drawable?.callMethod("setBlurRadius", 100)
             drawable?.callMethod("setCornerRadius", dp2px(OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10).toFloat())
-            drawable?.callMethod("setColor", Color.parseColor("#77626262"))
+            drawable?.callMethod("setColor", Color.parseColor("#33FFFFFF"))
             view.background = drawable as? Drawable
         } catch (e: Throwable) {
         }
