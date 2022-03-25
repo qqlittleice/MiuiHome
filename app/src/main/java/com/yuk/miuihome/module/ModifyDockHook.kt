@@ -92,7 +92,6 @@ class ModifyDockHook {
                     blur = FrameLayout(searchBarObject.context)
                     blur?.addView(searchBarDesktop)
                     searchBarObject.addView(blur)
-
                 }
                 // 修改应用列表搜索框
                 val mAllAppViewField = launcherClass.getDeclaredField("mAppsView")
@@ -117,10 +116,13 @@ class ModifyDockHook {
         val viewRootImplMethod = view.getMethodByClassOrObject("getViewRootImpl")
         val viewRootImpl = viewRootImplMethod.invoke(view)
         if (viewRootImpl != null) init = true
-        val drawable = viewRootImpl?.callMethod("createBackgroundBlurDrawable")
-        drawable?.callMethod("setBlurRadius", 100)
-        drawable?.callMethod("setCornerRadius", dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat())
-        drawable?.callMethod("setColor", Color.parseColor("#33626262"))
-        view.background = drawable as? Drawable
+        try {
+            val drawable = viewRootImpl?.callMethod("createBackgroundBlurDrawable")
+            drawable?.callMethod("setBlurRadius", 100)
+            drawable?.callMethod("setCornerRadius", dp2px(OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10).toFloat())
+            drawable?.callMethod("setColor", Color.parseColor("#77626262"))
+            view.background = drawable as? Drawable
+        } catch (e: Throwable) {
+        }
     }
 }
