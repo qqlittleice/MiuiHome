@@ -2,8 +2,6 @@ package com.yuk.miuihome.module
 
 import android.content.Context
 import android.graphics.Color
-import android.graphics.drawable.GradientDrawable
-import android.graphics.drawable.RippleDrawable
 import android.os.Bundle
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
@@ -53,32 +51,15 @@ class ModifyDockHook {
             ) {
                 it.result = 0
             }
-            "com.miui.home.launcher.SearchBarDesktopLayout\$1".hookAfterMethod("doInBackground"
-            ) {
-                val searchBarDesktop = it.result
-                val background = when (searchBarDesktop) {
-                    is RippleDrawable -> searchBarDesktop.getDrawable(0) as GradientDrawable
-                    is GradientDrawable -> searchBarDesktop
-                    else -> return@hookAfterMethod
-                }
-                background.cornerRadius = dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat()
-                background.setStroke(0, 0)
-                when (searchBarDesktop) {
-                    is RippleDrawable -> searchBarDesktop.setDrawable(0, background)
-                }
-            }
             launcherClass.hookAfterMethod("onCreate", Bundle::class.java
             ) {
                 val searchBarObject = it.thisObject.callMethod("getSearchBar") as FrameLayout
-                val searchBarDesktop = searchBarObject.getChildAt(0) as RelativeLayout
                 val searchBarDrawer = searchBarObject.getChildAt(1) as RelativeLayout
                 val searchBarContainer = searchBarObject.parent as FrameLayout
                 val searchEdgeLayout = searchBarContainer.parent as FrameLayout
                 // 重新给搜索框容器排序
                 searchEdgeLayout.removeView(searchBarContainer)
                 searchEdgeLayout.addView(searchBarContainer, 0)
-                // 清空搜索图标和小爱同学
-                searchBarDesktop.removeAllViews()
                 // 修改高度
                 searchBarObject.layoutParams.height = dp2px((OwnSP.ownSP.getFloat("dockHeight", 7.9f) * 10))
                 // 添加模糊
@@ -88,7 +69,6 @@ class ModifyDockHook {
                     blur.setBlurRadius(100)
                     blur.setCornerRadius(dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat())
                     blur.setColor(Color.parseColor("#44FFFFFF"))
-                    blur.addView(searchBarDesktop)
                     searchBarObject.addView(blur)
                 }
                 // 修改应用列表搜索框
@@ -96,7 +76,6 @@ class ModifyDockHook {
                 mAllAppViewField.isAccessible = true
                 val mAllAppView = mAllAppViewField.get(it.thisObject) as RelativeLayout
                 val mAllAppSearchView = mAllAppView.getChildAt(mAllAppView.childCount - 1) as FrameLayout
-                searchBarObject.removeView(searchBarDrawer)
                 mAllAppSearchView.addView(searchBarDrawer)
                 searchBarDrawer.bringToFront()
                 val layoutParams = searchBarDrawer.layoutParams as FrameLayout.LayoutParams

@@ -9,10 +9,10 @@ import com.github.kyuubiran.ezxhelper.utils.hookAfter
 import com.yuk.miuihome.utils.ktx.callMethod
 
 class BlurFrameLayout(context: Context): FrameLayout(context) {
-    var mBackground: Drawable? = null
-    var mColor: Int? = null
-    var mBlurRadius: Int? = null
-    var mCornerRadius: ArrayList<Float?>? = null
+    private var mBackground: Drawable? = null
+    private var mColor: Int? = null
+    private var mBlurRadius: Int? = null
+    private var mCornerRadius: ArrayList<Float?>? = null
 
     init {
         findMethod(this.javaClass, true)
