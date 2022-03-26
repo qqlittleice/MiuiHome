@@ -87,7 +87,7 @@ class ModifyDockHook {
                     val blur = BlurFrameLayout(searchBarObject.context)
                     blur.setBlurRadius(100)
                     blur.setCornerRadius(dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat())
-                    blur.setColor(Color.parseColor("#33626262"))
+                    blur.setColor(Color.parseColor("#44FFFFFF"))
                     blur.addView(searchBarDesktop)
                     searchBarObject.addView(blur)
                 }
