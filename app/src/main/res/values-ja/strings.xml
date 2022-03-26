@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="AdvancedFeature">Advanced Settings</string>
-  <string name="AlwaysShowMIUIWidget">Allow MIUI widgets to be displayed in Classic widgets</string>
-  <string name="AlwaysShowStatusBarClock">Disable status bar clock hide</string>
-  <string name="AnimationLevel">Gesture animation speed</string>
-  <string name="AppTextSize">Distance between task view application icons and names</string>
-  <string name="BlurWhenOpenFolder">Enable Folder Blur</string>
-  <string name="Cancel">Cancel</string>
-  <string name="CleanModuleSettings">Reset to Default Settings</string>
-  <string name="RestoreModuleSettingsSuccess">Successfully restore backup, restarting the system launcher.</string>
-  <string name="RestoreModuleSettingsFailed">Failed to restore backup</string>
-  <string name="BackupModuleSettings">Backup module settings</string>
-  <string name="RestoreModuleSettings">Restore module settings</string>
-  <string name="RestoreModuleSettingsTips">This will clear all module settings and restore module settings from a file. After the action, the system launcher will be restarted.</string>
-  <string name="CloseFolder">Close folder when opening applications inside folder</string>
-  <string name="CompleteBlur">Complete blur</string>
+  <string name="AdvancedFeature">詳細設定</string>
+  <string name="AlwaysShowMIUIWidget">クラシックウィジェットにMIUI ウィジェットを表示することを許可する</string>
+  <string name="AlwaysShowStatusBarClock">ステータスバーの時計の表示を無効化</string>
+  <string name="AnimationLevel">ジェスチャーアニメーションの速度</string>
+  <string name="AppTextSize">タスクビューアプリケーションのアイコンと名前の間の距離</string>
+  <string name="BlurWhenOpenFolder">フォルダのぼかしを有効にする</string>
+  <string name="Cancel">キャンセル</string>
+  <string name="CleanModuleSettings">初期設定に戻す</string>
+  <string name="RestoreModuleSettingsSuccess">バックアップを正常に復元し、システムランチャーを再起動します。</string>
+  <string name="RestoreModuleSettingsFailed">バックアップの復元に失敗しました</string>
+  <string name="BackupModuleSettings">バックアップモジュールの設定</string>
+  <string name="RestoreModuleSettings">モジュール設定を復元する</string>
+  <string name="RestoreModuleSettingsTips">これにより、すべてのモジュール設定がクリアされ、ファイルからモジュール設定が復元されます。 アクションの後、システムランチャーが再起動されます。</string>
+  <string name="CloseFolder">フォルダ内のアプリケーションを開くときに、フォルダを閉じる</string>
+  <string name="CompleteBlur">完全なぼかし</string>
   <string name="Defaults">Default</string>
   <string name="Recommend">Recommend</string>
   <string name="setDefaults">Leave blank to restore the default</string>
