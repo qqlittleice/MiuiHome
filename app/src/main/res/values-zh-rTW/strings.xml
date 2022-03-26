@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="AdvancedFeature">進階設定</string>
-  <string name="AlwaysShowMIUIWidget">在安卓小部件中顯示　MIUI　小部件</string>
+  <string name="AlwaysShowMIUIWidget">在安卓小部件中顯示 MIUI 小部件</string>
   <string name="AlwaysShowStatusBarClock">時鐘常顯</string>
   <string name="AnimationLevel">手勢動畫速度</string>
   <string name="AppTextSize">後台應用圖標與標題間距</string>
@@ -108,5 +108,5 @@
   <string name="OpenLSPosed">打開 LSPosed</string>
   <string name="ShortcutCount">解鎖 Shortcut 數量限制</string>
   <string name="MaxShortcutCount">最大 Shortcut 數量</string>
-  <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>
+  <string name="TaskViewAppCardBgColor">自定義小窗口應用的縮略圖背景顏色</string>
 </resources>
