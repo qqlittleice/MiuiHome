@@ -65,7 +65,7 @@ __Now：[qqlittleice/MiuiHome](https://github.com/qqlittleice/MiuiHome)__
 
 ## Translation Contributions
 
-[Crowdin](https://zh.crowdin.com/project/miuihome_xposed)
+[Crowdin](https://crowdin.com/project/miuihome_xposed)
 
 ## Credits
 
