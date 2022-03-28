@@ -109,4 +109,6 @@
   <string name="ShortcutCount">Разблокировать лимит количества ярлыков</string>
   <string name="MaxShortcutCount">Изменить максимальное число ярлыков</string>
   <string name="TaskViewAppCardBgColor">Настройка цвета фона миниатюр для приложений с плавающими окнами</string>
+  <string name="smallFolderBlur">Small folder blur</string>
+  <string name="smallFolderBlurCorner">Small folder blur corner</string>
 </resources>
