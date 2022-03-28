@@ -109,4 +109,6 @@
   <string name="ShortcutCount">Kısayol kısıtlamasını kaldır</string>
   <string name="MaxShortcutCount">Maksimum kısayol sayısını değiştir</string>
   <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>
+  <string name="smallFolderBlur">Small folder blur</string>
+  <string name="smallFolderBlurCorner">Small folder blur corner</string>
 </resources>
