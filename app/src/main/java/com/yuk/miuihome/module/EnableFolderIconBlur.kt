@@ -5,6 +5,7 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import com.github.kyuubiran.ezxhelper.utils.findMethod
 import com.github.kyuubiran.ezxhelper.utils.hookAfter
+import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.findClass
@@ -14,7 +15,7 @@ import com.yuk.miuihome.view.BlurFrameLayout
 class EnableFolderIconBlur {
 
     fun init() {
-        if (!OwnSP.ownSP.getBoolean("folderBlur", false)) return
+        if (!OwnSP.ownSP.getBoolean("folderBlur", false) || Config.AndroidSDK < 31) return
         val value = OwnSP.ownSP.getFloat("folderBlurCorner", 40f)
         findMethod("com.miui.home.launcher.FolderIcon".findClass(), true)
         { name == "onFinishInflate" }.hookAfter {
