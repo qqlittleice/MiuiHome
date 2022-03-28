@@ -109,4 +109,6 @@
   <string name="ShortcutCount">解鎖 Shortcut 數量限制</string>
   <string name="MaxShortcutCount">最大 Shortcut 數量</string>
   <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>
+  <string name="smallFolderBlur">Small folder blur</string>
+  <string name="smallFolderBlurCorner">Small folder blur corner</string>
 </resources>
