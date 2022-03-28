@@ -116,4 +116,6 @@ Masalan: #FFFFFF — Oq, #000000 — Qora‌‌</string>
   <string name="ShortcutCount">Ilova piktogrammasini qulfdan chiqarish</string>
   <string name="MaxShortcutCount">Modify max shortcut count</string>
   <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>
+  <string name="smallFolderBlur">Small folder blur</string>
+  <string name="smallFolderBlurCorner">Small folder blur corner</string>
 </resources>
