@@ -109,6 +109,6 @@
   <string name="ShortcutCount">Deblocare limită număr de comenzi rapide</string>
   <string name="MaxShortcutCount">Modifică numărul maxim de scurtături</string>
   <string name="TaskViewAppCardBgColor">Personalizează culoarea de fundal a miniaturii pentru aplicațiile din fereastra mică</string>
-  <string name="smallFolderBlur">Small folder blur</string>
-  <string name="smallFolderBlurCorner">Small folder blur corner</string>
+  <string name="smallFolderBlur">Estompare dosar mic</string>
+  <string name="smallFolderBlurCorner">Estompare colț dosar mic</string>
 </resources>
