@@ -105,9 +105,10 @@ fun getGitHeadRefsSuffix(project: Project): String {
 }
 
 dependencies {
-    implementation(project(":library"))
     compileOnly(project(":hidden-api"))
     compileOnly("de.robv.android.xposed:api:82")
+
+    implementation(project(":AndroidSystemBlur"))
     implementation("com.github.kyuubiran:EzXHelper:0.7.8")
     implementation("androidx.recyclerview:recyclerview:1.2.1")
     implementation("com.microsoft.appcenter:appcenter-crashes:4.4.3")
