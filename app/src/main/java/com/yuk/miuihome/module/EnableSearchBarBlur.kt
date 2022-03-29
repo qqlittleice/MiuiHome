@@ -6,7 +6,6 @@ import android.widget.FrameLayout
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
-import com.yuk.miuihome.view.BlurFrameLayout
 import com.zhenxiang.blur.WindowBlurFrameLayout
 import com.zhenxiang.blur.model.CornersRadius
 

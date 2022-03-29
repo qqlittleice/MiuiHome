@@ -10,7 +10,6 @@ import com.github.kyuubiran.ezxhelper.utils.Log
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
-import com.yuk.miuihome.view.BlurFrameLayout
 import com.zhenxiang.blur.WindowBlurFrameLayout
 import com.zhenxiang.blur.model.CornersRadius
 import de.robv.android.xposed.XposedHelpers
