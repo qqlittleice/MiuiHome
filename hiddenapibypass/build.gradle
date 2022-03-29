@@ -1,0 +1,2 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file("hiddenapibypass-4.3.aar"))

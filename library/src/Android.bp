@@ -1,0 +1,40 @@
+android_library {
+    name: "AndroidSystemBlur-platform",
+    resource_dirs: ["common/res"],
+    srcs: [
+        "common/java/**/*.kt",
+        "common/java/**/*.java",
+        "platform/java/**/*.kt",
+        "platform/java/**/*.java",
+    ],
+    static_libs: [
+        "androidx.core_core",
+    ],
+    manifest: "common/AndroidManifest.xml",
+    platform_apis: true,
+}
+
+android_library {
+    name: "AndroidSystemBlur",
+    resource_dirs: ["common/res"],
+    srcs: [
+        "common/java/**/*.kt",
+        "common/java/**/*.java",
+        "main/java/**/*.kt",
+        "main/java/**/*.java",
+    ],
+    libs: [
+        "framework-hidden-api",
+    ],
+    static_libs: [
+        "androidx.core_core",
+        "hiddenapibypass",
+    ],
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    manifest: "common/AndroidManifest.xml",
+    sdk_version: "current",
+    min_sdk_version: "21",
+}

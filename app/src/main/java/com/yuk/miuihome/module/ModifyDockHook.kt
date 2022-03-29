@@ -11,6 +11,8 @@ import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
 import com.yuk.miuihome.view.BlurFrameLayout
+import com.zhenxiang.blur.WindowBlurFrameLayout
+import com.zhenxiang.blur.model.CornersRadius
 import de.robv.android.xposed.XposedHelpers
 
 class ModifyDockHook {
@@ -65,10 +67,12 @@ class ModifyDockHook {
                 // 添加模糊
                 if (OwnSP.ownSP.getBoolean("searchBarBlur", false) && Config.AndroidSDK == 31) {
                     searchBarObject.removeAllViews()
-                    val blur = BlurFrameLayout(searchBarObject.context)
-                    blur.setBlurRadius(100)
-                    blur.setCornerRadius(dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat())
-                    blur.setColor(Color.parseColor("#44FFFFFF"))
+                    val blur = WindowBlurFrameLayout(searchBarObject.context)
+                    blur.blurController.apply {
+                        backgroundColour = Color.parseColor("#44FFFFFF")
+                        blurRadius = 100
+                        cornerRadius = CornersRadius.all(dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat())
+                    }
                     searchBarObject.addView(blur)
                 }
                 // 修改应用列表搜索框

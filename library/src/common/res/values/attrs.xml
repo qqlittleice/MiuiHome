@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <attr format="integer" name="blurRadius" />
+  <attr format="color" name="backgroundColour" />
+  <attr format="float" name="blurBackgroundColourOpacity" />
+  <attr format="dimension" name="cornerRadius" />
+  <attr format="dimension" name="cornerRadiusTopLeft" />
+  <attr format="dimension" name="cornerRadiusTopRight" />
+  <attr format="dimension" name="cornerRadiusBottomLeft" />
+  <attr format="dimension" name="cornerRadiusBottomRight" />
+  <attr format="boolean" name="clipToOutline" />
+
+  <declare-styleable name="WindowBlurLinearLayout">
+    <attr name="blurRadius" />
+    <attr name="backgroundColour" />
+    <attr name="blurBackgroundColourOpacity" />
+    <attr name="cornerRadius" />
+    <attr name="cornerRadiusTopLeft" />
+    <attr name="cornerRadiusTopRight" />
+    <attr name="cornerRadiusBottomLeft" />
+    <attr name="cornerRadiusBottomRight" />
+    <attr name="clipToOutline" />
+  </declare-styleable>
+
+  <declare-styleable name="WindowBlurFrameLayout">
+    <attr name="blurRadius" />
+    <attr name="backgroundColour" />
+    <attr name="blurBackgroundColourOpacity" />
+    <attr name="cornerRadius" />
+    <attr name="cornerRadiusTopLeft" />
+    <attr name="cornerRadiusTopRight" />
+    <attr name="cornerRadiusBottomLeft" />
+    <attr name="cornerRadiusBottomRight" />
+    <attr name="clipToOutline" />
+  </declare-styleable>
+</resources>

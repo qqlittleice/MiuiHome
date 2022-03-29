@@ -1,0 +1,13 @@
+android_library {
+    name: "framework-hidden-api",
+    srcs: [
+        "main/java/**/*.kt",
+        "main/java/**/*.java",
+    ],
+    static_libs: [
+        "androidx.core_core",
+    ],
+    manifest: "main/AndroidManifest.xml",
+    sdk_version: "current",
+    min_sdk_version: "21",
+}

@@ -7,6 +7,8 @@ import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
 import com.yuk.miuihome.view.BlurFrameLayout
+import com.zhenxiang.blur.WindowBlurFrameLayout
+import com.zhenxiang.blur.model.CornersRadius
 
 class EnableSearchBarBlur {
 
@@ -22,10 +24,12 @@ class EnableSearchBarBlur {
                 launcherClass.hookAfterMethod("onCreate", Bundle::class.java
                 ) {
                     val searchBarObject = it.thisObject.callMethod("getSearchBar") as FrameLayout
-                    val blur = BlurFrameLayout(searchBarObject.context)
-                    blur.setBlurRadius(100)
-                    blur.setCornerRadius(100f)
-                    blur.setColor(Color.parseColor("#33626262"))
+                    val blur = WindowBlurFrameLayout(searchBarObject.context)
+                    blur.blurController.apply {
+                        backgroundColour = Color.parseColor("#33626262")
+                        blurRadius = 100
+                        cornerRadius = CornersRadius.all(100f)
+                    }
                     searchBarObject.addView(blur, 0)
                 }
             }

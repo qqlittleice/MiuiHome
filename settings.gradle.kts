@@ -17,3 +17,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "MiuiHome"
 include(":app")
+include(":library")
+include(":hidden-api")
+include(":hiddenapibypass")

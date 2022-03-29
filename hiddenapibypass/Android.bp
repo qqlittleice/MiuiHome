@@ -1,0 +1,9 @@
+android_library_import {
+    name: "hiddenapibypass",
+    aars: ["hiddenapibypass-4.3.aar"],
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    sdk_version: "current",
+}
