@@ -109,4 +109,6 @@
   <string name="ShortcutCount">ショートカットカウント制限のロックを解除する</string>
   <string name="MaxShortcutCount">最大ショートカット数を変更する</string>
   <string name="TaskViewAppCardBgColor">小さなウィンドウアプリのサムネイルの背景色をカスタマイズする</string>
+  <string name="smallFolderBlur">Small folder blur</string>
+  <string name="smallFolderBlurCorner">Small folder blur corner</string>
 </resources>

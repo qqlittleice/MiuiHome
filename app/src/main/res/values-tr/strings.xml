@@ -108,5 +108,7 @@
   <string name="OpenLSPosed">LSPosed\'i Aç</string>
   <string name="ShortcutCount">Kısayol kısıtlamasını kaldır</string>
   <string name="MaxShortcutCount">Maksimum kısayol sayısını değiştir</string>
-  <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>
+  <string name="TaskViewAppCardBgColor">Küçük pencere uygulamaları için küçük resim arka plan rengini özelleştirin</string>
+  <string name="smallFolderBlur">Küçük klasör bulanıklığı</string>
+  <string name="smallFolderBlurCorner">Küçük klasör bulanıklık köşesi</string>
 </resources>

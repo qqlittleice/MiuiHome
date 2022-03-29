@@ -109,4 +109,6 @@
   <string name="ShortcutCount">Desbloquear o limite de ícones na dock</string>
   <string name="MaxShortcutCount">Definir o limite máximo de icones</string>
   <string name="TaskViewAppCardBgColor">Personalizar a cor de fundo das janelas no menu recentes, para aplicativos abertos em janelas flutuantes</string>
+  <string name="smallFolderBlur">Desfoque das pequenas pastas</string>
+  <string name="smallFolderBlurCorner">Desfoque dos cantos das pastas pequenas</string>
 </resources>

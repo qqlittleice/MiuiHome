@@ -109,4 +109,6 @@
   <string name="ShortcutCount">解锁 Shortcut 数量限制</string>
   <string name="MaxShortcutCount">最大 Shortcut 数量</string>
   <string name="TaskViewAppCardBgColor">后台小窗应用卡片背景颜色</string>
+  <string name="smallFolderBlur">小文件夹模糊</string>
+  <string name="smallFolderBlurCorner">小文件夹模糊圆角</string>
 </resources>

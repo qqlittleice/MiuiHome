@@ -109,4 +109,6 @@
   <string name="ShortcutCount">ปลดล็อกขีด จำกัด ทางลัด</string>
   <string name="MaxShortcutCount">จำนวนทางลัดสูงสุด</string>
   <string name="TaskViewAppCardBgColor">สีพื้นหลังของการ์ดแอปพลิเคชันในหน้าต่างพื้นหลัง</string>
+  <string name="smallFolderBlur">เอฟเฟ็คเบลอโฟลเดอร์ขนาดย่อ</string>
+  <string name="smallFolderBlurCorner">การเบลอมุมโค้งมนโฟลเดอร์ขนาดย่อ</string>
 </resources>
