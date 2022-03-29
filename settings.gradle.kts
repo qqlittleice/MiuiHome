@@ -17,6 +17,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "MiuiHome"
 include(":app")
-include(":AndroidSystemBlur")
 include(":hidden-api")
-include(":hiddenapibypass")
+include(":AndroidSystemBlur")

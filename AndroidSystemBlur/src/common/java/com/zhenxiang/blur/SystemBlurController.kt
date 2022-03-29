@@ -12,7 +12,6 @@ import android.view.View
 import android.view.ViewOutlineProvider
 import android.view.WindowManager
 import androidx.annotation.ColorInt
-import androidx.annotation.RequiresApi
 import androidx.core.graphics.ColorUtils
 import com.android.internal.graphics.drawable.BackgroundBlurDrawable
 import com.zhenxiang.blur.model.CornersRadius
@@ -28,10 +27,7 @@ class SystemBlurController(
 ) : View.OnAttachStateChangeListener {
 
     private var windowManager: WindowManager? = null
-    private val crossWindowBlurListener = Consumer<Boolean> {
-        blurEnabled = it
-    }
-
+    private val crossWindowBlurListener = Consumer<Boolean>{ blurEnabled = it }
     private var blurEnabled: Boolean = false
         set(value) {
             if (value != field) {
@@ -40,14 +36,12 @@ class SystemBlurController(
                 updateBlurRadius()
             }
         }
-
     @ColorInt
     var backgroundColour = backgroundColour
         set(value) {
             field = value
             updateBackgroundColour()
         }
-
     // Opacity applied to the background colour when blur is available
     var blurBackgroundColourOpacity = blurBackgroundColourOpacity
         set(value) {
@@ -63,9 +57,7 @@ class SystemBlurController(
         @SuppressLint("NewApi")
         set(value) {
             field = value
-
-            val bg = view.background
-            when (bg) {
+            when (val bg = view.background) {
                 is BackgroundBlurDrawable -> setCornerRadius(bg, value)
                 is ShapeDrawable -> bg.shape = getShapeFromCorners(value)
             }
@@ -80,54 +72,45 @@ class SystemBlurController(
             val shape = ShapeDrawable()
             shape.shape = getShapeFromCorners(cornerRadius)
             shape.paint.color = backgroundColour
-
             view.background = shape
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.S)
-    override fun onViewAttachedToWindow(_v: View) {
+    @SuppressLint("NewApi")
+    override fun onViewAttachedToWindow(v: View) {
         windowManager = getWindowManager(view.context).apply {
             blurEnabled = isCrossWindowBlurEnabled
             addCrossWindowBlurEnabledListener(crossWindowBlurListener)
         }
-
         view.createBackgroundBlurDrawable()?.let {
             // Configure blur drawable with current values
             it.setColor(
-                if (blurEnabled) applyOpacityToColour(
-                    backgroundColour,
-                    blurBackgroundColourOpacity
-                ) else backgroundColour
+                if (blurEnabled) applyOpacityToColour(backgroundColour, blurBackgroundColourOpacity)
+                else backgroundColour
             )
             it.setBlurRadius(blurRadius)
             setCornerRadius(it, cornerRadius)
-
             view.background = it
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.S)
+    @SuppressLint("NewApi")
     override fun onViewDetachedFromWindow(_v: View) {
         // Clear blur drawable
         if (view.background is BackgroundBlurDrawable) {
             view.background = null
         }
-
         windowManager?.removeCrossWindowBlurEnabledListener(crossWindowBlurListener)
         windowManager = null
     }
 
-    @SuppressLint("NewApi")
     private fun updateBackgroundColour() {
         val bg = view.background
         when (bg) {
             is BackgroundBlurDrawable -> {
                 bg.setColor(
-                    if (blurEnabled) applyOpacityToColour(
-                        backgroundColour,
-                        blurBackgroundColourOpacity
-                    ) else backgroundColour
+                    if (blurEnabled) applyOpacityToColour(backgroundColour, blurBackgroundColourOpacity)
+                    else backgroundColour
                 )
             }
             is ShapeDrawable -> bg.paint.color = backgroundColour
@@ -143,12 +126,8 @@ class SystemBlurController(
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.S)
     private fun setCornerRadius(blurDrawable: BackgroundBlurDrawable, corners: CornersRadius) {
-        blurDrawable.setCornerRadius(
-            corners.topLeft, corners.topRight, corners.bottomLeft, corners.bottomRight
-        )
-
+        blurDrawable.setCornerRadius(corners.topLeft, corners.topRight, corners.bottomLeft, corners.bottomRight)
         view.outlineProvider = getViewOutlineProvider(corners)
     }
 
@@ -172,12 +151,9 @@ class SystemBlurController(
     private fun getViewOutlineProvider(corners: CornersRadius): ViewOutlineProvider {
         return object : ViewOutlineProvider() {
             override fun getOutline(view: View, outline: Outline) {
-
                 val radius = getCornersFloatArray(corners)
                 val path = Path()
-                path.addRoundRect(
-                    0f, 0f, view.width.toFloat(), view.height.toFloat(), radius, Path.Direction.CW
-                )
+                path.addRoundRect(0f, 0f, view.width.toFloat(), view.height.toFloat(), radius, Path.Direction.CW)
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                     outline.setPath(path)
                 } else {
@@ -193,7 +169,7 @@ class SystemBlurController(
 
     companion object {
         const val DEFAULT_BLUR_BACKGROUND_COLOUR_OPACITY = 0.7f
-        const val DEFAULT_BLUR_RADIUS = 25
+        const val DEFAULT_BLUR_RADIUS = 100
 
         @ColorInt
         fun applyOpacityToColour(@ColorInt colour: Int, opacity: Float): Int {

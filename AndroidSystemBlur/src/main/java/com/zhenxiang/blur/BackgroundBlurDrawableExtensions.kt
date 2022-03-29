@@ -5,21 +5,11 @@ import com.android.internal.graphics.drawable.BackgroundBlurDrawable
 import org.lsposed.hiddenapibypass.HiddenApiBypass
 
 fun BackgroundBlurDrawable.setColor(@ColorInt color: Int) {
-    HiddenApiBypass.invoke(
-        BackgroundBlurDrawable::class.java,
-        this,
-        "setColor",
-        color
-    )
+    HiddenApiBypass.invoke(BackgroundBlurDrawable::class.java, this, "setColor", color)
 }
 
 fun BackgroundBlurDrawable.setBlurRadius(blurRadius: Int) {
-    HiddenApiBypass.invoke(
-        BackgroundBlurDrawable::class.java,
-        this,
-        "setBlurRadius",
-        blurRadius
-    )
+    HiddenApiBypass.invoke(BackgroundBlurDrawable::class.java, this, "setBlurRadius", blurRadius)
 }
 
 fun BackgroundBlurDrawable.setCornerRadius(

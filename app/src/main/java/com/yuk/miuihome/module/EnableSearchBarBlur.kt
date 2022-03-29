@@ -26,7 +26,6 @@ class EnableSearchBarBlur {
                     val blur = WindowBlurFrameLayout(searchBarObject.context)
                     blur.blurController.apply {
                         backgroundColour = Color.parseColor("#33626262")
-                        blurRadius = 100
                         cornerRadius = CornersRadius.all(100f)
                     }
                     searchBarObject.addView(blur, 0)
