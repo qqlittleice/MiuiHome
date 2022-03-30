@@ -114,8 +114,8 @@ Masalan: #FFFFFF — Oq, #000000 — Qora‌‌</string>
   <string name="IconTitleTopMargin">Belgialarning yuqori cheti oʻlchami</string>
   <string name="OpenLSPosed">LSPosedni ochish</string>
   <string name="ShortcutCount">Ilova piktogrammasini qulfdan chiqarish</string>
-  <string name="MaxShortcutCount">Modify max shortcut count</string>
-  <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>
-  <string name="smallFolderBlur">Small folder blur</string>
-  <string name="smallFolderBlurCorner">Small folder blur corner</string>
+  <string name="MaxShortcutCount">Maksimal yorliqlar sonini oʻzgartirish</string>
+  <string name="TaskViewAppCardBgColor">Suzuvchi oyna ilovalari uchun soʻnggi ilovalar boʻlimida fon rangini moslashtirish</string>
+  <string name="smallFolderBlur">Kichik papkada blur effekti</string>
+  <string name="smallFolderBlurCorner">Kichik papkalarda blur burchagi</string>
 </resources>
