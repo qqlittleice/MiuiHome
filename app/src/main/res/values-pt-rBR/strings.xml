@@ -17,8 +17,8 @@
   <string name="CompleteBlur">Completo</string>
   <string name="Defaults">Padrão</string>
   <string name="Recommend">Recomendado</string>
-  <string name="setDefaults">Deixe em branco para restaurar a configuração padrão</string>
-  <string name="setRecentString">Deixe em branco para restaurar a configuração padrão. Para excluir o texto, insira um espaço</string>
+  <string name="setDefaults">Deixe em branco para restaurar as configurações padrão</string>
+  <string name="setRecentString">Deixe em branco para restaurar as configurações padrão. Para excluir o texto, insira um espaço</string>
   <string name="current">Atual</string>
   <string name="Description">Configurações adicionais para a Miui Launcher</string>
   <string name="Folder">Recursos de Pasta</string>
@@ -103,7 +103,7 @@
   <string name="Github">Acessar o GitHub</string>
   <string name="OpenGithub">Clique-aqui para ser redirecionado ao GitHub</string>
   <string name="AppCenter">Enviar estatísticas de uso anônimas</string>
-  <string name="AppCenterTip">Utilizamos o Microsoft AppCenter para nos ajudar a testar/analisar o uso do aplicativo.</string>
+  <string name="AppCenterTip">Nós utilizamos o Microsoft AppCenter para nos ajudar a testar/analisar o uso do aplicativo.</string>
   <string name="IconTitleTopMargin">Definir distância entre nomes dos aplicativos e ícones na tela inicial</string>
   <string name="OpenLSPosed">Abrir a interface do LSPosed</string>
   <string name="ShortcutCount">Desbloquear o limite de ícones na dock</string>
