@@ -8,7 +8,7 @@ import java.lang.reflect.Field
 
 class CustomSwitch(context: Context) : Switch(context) {
 
-    @SuppressLint("DiscouragedPrivateApi", "DrawAllocation")
+    @SuppressLint("DiscouragedPrivateApi")
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         val switchWidth: Field = Switch::class.java.getDeclaredField("mSwitchWidth")
