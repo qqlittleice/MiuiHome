@@ -26,7 +26,7 @@ class EnableFolderIconBlur {
             val child2 = mIconContainer.getChildAt(2) as ImageView //LauncherIconImageView -> 不知道是啥
             val blur = WindowBlurFrameLayout(mIconContainer.context)
             blur.blurController.apply {
-                backgroundColour = Color.parseColor("#33626262")
+                backgroundColour = Color.parseColor("#44FFFFFF")
                 cornerRadius = CornersRadius.all(value)
             }
             mIconContainer.removeView(child0)

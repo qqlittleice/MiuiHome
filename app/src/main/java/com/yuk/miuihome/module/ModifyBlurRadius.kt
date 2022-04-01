@@ -4,7 +4,7 @@ import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.findClass
 import com.yuk.miuihome.utils.ktx.hookBeforeAllMethods
 
-open class ModifyBlurRadius {
+class ModifyBlurRadius {
 
     fun init() {
         val value = OwnSP.ownSP.getFloat("blurRadius", -1f)
