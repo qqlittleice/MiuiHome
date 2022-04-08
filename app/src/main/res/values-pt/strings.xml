@@ -111,4 +111,5 @@
   <string name="TaskViewAppCardBgColor">Personalizar a cor de fundo das miniaturas para aplicativos de pequena janela</string>
   <string name="smallFolderBlur">Desfoque na pasta pequena</string>
   <string name="smallFolderBlurCorner">Pequena pasta desfocada</string>
+  <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>
