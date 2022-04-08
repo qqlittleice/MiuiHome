@@ -118,4 +118,5 @@ Masalan: #FFFFFF — Oq, #000000 — Qora‌‌</string>
   <string name="TaskViewAppCardBgColor">Suzuvchi oyna ilovalari uchun soʻnggi ilovalar boʻlimida fon rangini moslashtirish</string>
   <string name="smallFolderBlur">Kichik papkada blur effekti</string>
   <string name="smallFolderBlurCorner">Kichik papkalarda blur burchagi</string>
+  <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>
