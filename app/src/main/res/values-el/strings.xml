@@ -111,4 +111,5 @@
   <string name="TaskViewAppCardBgColor">Προσαρμόστε το χρώμα φόντου μικρογραφίας για τις μικρές εφαρμογές παραθύρων</string>
   <string name="smallFolderBlur">Μικρός φάκελος θόλωμα</string>
   <string name="smallFolderBlurCorner">Μικρή γωνία θολώματος φακέλου</string>
+  <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>
