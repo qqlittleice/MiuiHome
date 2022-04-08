@@ -124,7 +124,7 @@ object DataHelper {
 
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.AdvancedFeature))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.UnlockGrids), "unlockGrids"))))
-            add(Item(list = arrayListOf(TextV(resId = R.string.DrawerModeCount, onClickListener = { showDrawerModeCountDialog() }))))
+            if (XposedInit().checkVersionCode() >= 427004546L) add(Item(list = arrayListOf(TextV(resId = R.string.DrawerModeCount, onClickListener = { showDrawerModeCountDialog() }))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.ShowDockIconTitles), "showDockIconTitles"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.HideTaskViewAppIcon), "recentIcon"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.HideTaskViewCleanUpIcon), "cleanUp"))))
