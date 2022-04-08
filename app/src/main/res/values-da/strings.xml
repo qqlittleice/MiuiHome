@@ -111,4 +111,5 @@
   <string name="TaskViewAppCardBgColor">Tilpas miniaturebaggrundsfarven for små vinduesapps</string>
   <string name="smallFolderBlur">Sløring af små mapper</string>
   <string name="smallFolderBlurCorner">Lille mappeslør hjørne</string>
+  <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>
