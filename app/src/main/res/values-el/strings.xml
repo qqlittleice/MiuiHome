@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="AdvancedFeature">Ρυθμίσεις για προχωρημένους</string>
+  <string name="AdvancedFeature">Σύνθετες ρυθμίσεις</string>
   <string name="AlwaysShowMIUIWidget">Επιτρέψτε στα MIUI γραφήματα να προβάλλονται στα κλασικα γραφηματα</string>
   <string name="AlwaysShowStatusBarClock">Εμφάνισε πάντα το ρολόι στην γραμμή εργασίας</string>
   <string name="AnimationLevel">Ταχύτητα χειρονομιών μπάρας ελέγχου</string>
@@ -111,5 +111,5 @@
   <string name="TaskViewAppCardBgColor">Προσαρμόστε το χρώμα φόντου μικρογραφίας για τις μικρές εφαρμογές παραθύρων</string>
   <string name="smallFolderBlur">Μικρός φάκελος θόλωμα</string>
   <string name="smallFolderBlurCorner">Μικρή γωνία θολώματος φακέλου</string>
-  <string name="DrawerModeCount">Drawer mode icon count</string>
+  <string name="DrawerModeCount">Πλήθος εικονιδίων λειτουργίας συρταριού</string>
 </resources>
