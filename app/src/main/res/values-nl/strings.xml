@@ -111,4 +111,5 @@
   <string name="TaskViewAppCardBgColor">Pas de miniatuur achtergrondkleur aan voor apps in kleine schermen</string>
   <string name="smallFolderBlur">Kleine map vervagen</string>
   <string name="smallFolderBlurCorner">Kleine map vervaging hoek</string>
+  <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>
