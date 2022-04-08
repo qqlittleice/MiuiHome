@@ -111,5 +111,5 @@
   <string name="TaskViewAppCardBgColor">Personalizar a cor de fundo das janelas no menu recentes, para aplicativos abertos em janelas flutuantes</string>
   <string name="smallFolderBlur">Desfoque das pequenas pastas</string>
   <string name="smallFolderBlurCorner">Desfoque dos cantos das pastas pequenas</string>
-  <string name="DrawerModeCount">Drawer mode icon count</string>
+  <string name="DrawerModeCount">Definir números de ícones horizontais na gaveta de aplicativos</string>
 </resources>
