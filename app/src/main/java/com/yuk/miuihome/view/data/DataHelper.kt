@@ -123,8 +123,8 @@ object DataHelper {
             add(Item(list = arrayListOf(LineV())))
 
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.AdvancedFeature))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.UnlockGrids), "unlockGrids"))))
-            if (XposedInit().checkVersionCode() >= 427004546L) add(Item(list = arrayListOf(TextV(resId = R.string.DrawerModeCount, onClickListener = { showDrawerModeCountDialog() }))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.UnlockGrids), "unlockGrids", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() }))))
+            if (XposedInit().checkVersionCode() >= 427004546L && OwnSP.ownSP.getBoolean("unlockGrids", false)) add(Item(list = arrayListOf(TextV(resId = R.string.DrawerModeCount, onClickListener = { showDrawerModeCountDialog() }))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.ShowDockIconTitles), "showDockIconTitles"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.HideTaskViewAppIcon), "recentIcon"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.HideTaskViewCleanUpIcon), "cleanUp"))))
@@ -490,7 +490,7 @@ object DataHelper {
     private fun showDrawerModeCountDialog() {
         CustomDialog(currentActivity).apply {
             setTitle(R.string.DrawerModeCount)
-            setMessage("${moduleRes.getString(R.string.Defaults)}: 4, ${moduleRes.getString(R.string.Recommend)}: 3-8, ${moduleRes.getString(R.string.setDefaults)}")
+            setMessage("${moduleRes.getString(R.string.Defaults)}: 4, ${moduleRes.getString(R.string.Recommend)}: 2-10, ${moduleRes.getString(R.string.setDefaults)}")
             setEditText("", "${moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getInt("config_cell_count_x_drawer_mode", 3)}")
             setRButton(R.string.Yes) {
                 if (getEditText() == "") editor.putInt("config_cell_count_x_drawer_mode", 3)
