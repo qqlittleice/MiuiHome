@@ -31,10 +31,6 @@
     <init>();
 }
 
--keep class com.yuk.miuihome.NoResXposedInit {
-    <init>();
-}
-
 -assumenosideeffects class kotlin.jvm.internal.Intrinsics {
     public static void check*(...);
     public static void throw*(...);

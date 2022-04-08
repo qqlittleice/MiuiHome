@@ -21,42 +21,35 @@
  */
 
 plugins {
-    id 'com.android.library'
-    id 'kotlin-android'
+    id("com.android.library")
+    id("kotlin-android")
 }
 
 android {
-    compileSdk 32
-    buildToolsVersion "32.0.0"
+    compileSdk = 32
+    buildToolsVersion = "32.0.0"
     defaultConfig {
-        minSdk 29
-        targetSdk 32
+        minSdk = 29
+        targetSdk = 32
     }
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            isMinifyEnabled = false
+            setProguardFiles(listOf(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"))
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.majorVersion
     }
-    sourceSets {
-        main {
-            java.srcDirs = ['src/common/java', 'src/main/java']
-            res.srcDirs = ['src/common/res']
-            manifest.srcFile 'src/common/AndroidManifest.xml'
-        }
-    }
 }
 
 dependencies {
-    compileOnly project(':hidden-api')
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.annotation:annotation:1.3.0'
-    implementation 'org.lsposed.hiddenapibypass:hiddenapibypass:4.3'
+    compileOnly(project(":hidden-api"))
+    implementation("androidx.core:core-ktx:1.7.0")
+    implementation("androidx.annotation:annotation:1.3.0")
+    implementation("org.lsposed.hiddenapibypass:hiddenapibypass:4.3")
 }

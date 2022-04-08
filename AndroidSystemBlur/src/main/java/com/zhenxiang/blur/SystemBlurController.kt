@@ -43,12 +43,12 @@ class SystemBlurController(
             updateBackgroundColour()
         }
     // Opacity applied to the background colour when blur is available
-    var blurBackgroundColourOpacity = blurBackgroundColourOpacity
+    private var blurBackgroundColourOpacity = blurBackgroundColourOpacity
         set(value) {
             field = value
             updateBackgroundColour()
         }
-    var blurRadius = blurRadius
+    private var blurRadius = blurRadius
         set(value) {
             field = value
             updateBlurRadius()
