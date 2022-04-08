@@ -50,7 +50,7 @@ class ResourcesHook {
             hookMap["config_cell_count_y_min"] = ResourcesHookData("integer", 4)
             hookMap["config_cell_count_x_max"] = ResourcesHookData("integer", 16)
             hookMap["config_cell_count_y_max"] = ResourcesHookData("integer", 18)
-            if (XposedInit().checkVersionCode() >= 427004546L && OwnSP.ownSP.getBoolean("unlockGrids", false)) hookMap["config_cell_count_x_drawer_mode"] = ResourcesHookData("integer", value2)
+            if (XposedInit().checkVersionCode() == 427004546L && OwnSP.ownSP.getBoolean("unlockGrids", false)) hookMap["config_cell_count_x_drawer_mode"] = ResourcesHookData("integer", value2)
         }
 
         if (value != -1f && value != 20f) {
