@@ -111,4 +111,5 @@
   <string name="TaskViewAppCardBgColor">后台小窗应用卡片背景颜色</string>
   <string name="smallFolderBlur">小文件夹模糊</string>
   <string name="smallFolderBlurCorner">小文件夹模糊圆角</string>
+  <string name="DrawerModeCount">抽屉内水平图标个数</string>
 </resources>

@@ -111,4 +111,5 @@
   <string name="TaskViewAppCardBgColor">تخصيص لون الخلفية المصغرة لتطبيقات النافذة الصغيرة</string>
   <string name="smallFolderBlur">ضبابية المجلد الصغير</string>
   <string name="smallFolderBlurCorner">زاوية ضبابية مجلد صغير</string>
+  <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

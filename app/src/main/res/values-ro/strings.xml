@@ -111,4 +111,5 @@
   <string name="TaskViewAppCardBgColor">Personalizează culoarea de fundal a miniaturii pentru aplicațiile din fereastra mică</string>
   <string name="smallFolderBlur">Estompare dosar mic</string>
   <string name="smallFolderBlurCorner">Estompare colț dosar mic</string>
+  <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

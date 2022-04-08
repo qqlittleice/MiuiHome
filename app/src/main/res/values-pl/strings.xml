@@ -111,4 +111,5 @@
   <string name="TaskViewAppCardBgColor">Dostosuj kolor tła miniatury dla małych aplikacji okna</string>
   <string name="smallFolderBlur">Rozmycie małego folderu</string>
   <string name="smallFolderBlurCorner">Mały róg rozmycia folderu</string>
+  <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

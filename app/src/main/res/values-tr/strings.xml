@@ -111,4 +111,5 @@
   <string name="TaskViewAppCardBgColor">Küçük pencere uygulamaları için küçük resim arka plan rengini özelleştirin</string>
   <string name="smallFolderBlur">Küçük klasör bulanıklığı</string>
   <string name="smallFolderBlurCorner">Küçük klasör bulanıklık köşesi</string>
+  <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

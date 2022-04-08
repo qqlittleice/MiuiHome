@@ -111,4 +111,5 @@
   <string name="TaskViewAppCardBgColor">Personnaliser la couleur d\'arrière-plan des vignettes pour les applications de petite fenêtre</string>
   <string name="smallFolderBlur">Flou de petits dossiers</string>
   <string name="smallFolderBlurCorner">Coin flou du petit dossier</string>
+  <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

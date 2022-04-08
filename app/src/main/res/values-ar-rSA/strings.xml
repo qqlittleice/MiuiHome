@@ -111,4 +111,5 @@
   <string name="TaskViewAppCardBgColor">تخصيص لون خلفية الصورة المصغرة لتطبيقات الشاشة العائمة</string>
   <string name="smallFolderBlur">Small folder blur</string>
   <string name="smallFolderBlurCorner">Small folder blur corner</string>
+  <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

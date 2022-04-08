@@ -111,4 +111,5 @@
   <string name="TaskViewAppCardBgColor">Налаштування кольору фону мініатюр для малих віконних програм</string>
   <string name="smallFolderBlur">Маленьке розмиття папки</string>
   <string name="smallFolderBlurCorner">Куточок розмиття папки</string>
+  <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>
