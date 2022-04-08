@@ -124,6 +124,7 @@ object DataHelper {
 
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.AdvancedFeature))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.UnlockGrids), "unlockGrids"))))
+            add(Item(list = arrayListOf(TextV(resId = R.string.DrawerModeCount, onClickListener = { showDrawerModeCountDialog() }))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.ShowDockIconTitles), "showDockIconTitles"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.HideTaskViewAppIcon), "recentIcon"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.HideTaskViewCleanUpIcon), "cleanUp"))))
@@ -478,6 +479,22 @@ object DataHelper {
             setRButton(R.string.Yes) {
                 if (getEditText() == "") editor.putInt("shortcutCount", 6)
                 else editor.putInt("shortcutCount", getEditText().toInt())
+                editor.apply()
+                dismiss()
+            }
+            setLButton(R.string.Cancel) { dismiss() }
+            show()
+        }
+    }
+
+    private fun showDrawerModeCountDialog() {
+        CustomDialog(currentActivity).apply {
+            setTitle(R.string.DrawerModeCount)
+            setMessage("${moduleRes.getString(R.string.Defaults)}: 4, ${moduleRes.getString(R.string.Recommend)}: 3-8, ${moduleRes.getString(R.string.setDefaults)}")
+            setEditText("", "${moduleRes.getString(R.string.current)}: ${OwnSP.ownSP.getInt("config_cell_count_x_drawer_mode", 3)}")
+            setRButton(R.string.Yes) {
+                if (getEditText() == "") editor.putInt("config_cell_count_x_drawer_mode", 3)
+                else editor.putInt("config_cell_count_x_drawer_mode", getEditText().toInt())
                 editor.apply()
                 dismiss()
             }

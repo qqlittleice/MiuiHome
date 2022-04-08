@@ -94,6 +94,7 @@ class HookSettingsActivity: TransferActivity() {
                 OwnSP.set("task_horizontal1", 1.0f)
                 OwnSP.set("task_horizontal2", 1.0f)
                 OwnSP.set("folderColumns", 3)
+                OwnSP.set("config_cell_count_x_drawer_mode", 3)
                 dismiss()
                 thread {
                     Log.toast(msg = DataHelper.currentActivity.getString(R.string.Reboot2))

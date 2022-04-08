@@ -3,6 +3,7 @@ package com.yuk.miuihome.module
 import android.content.res.Resources
 import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
 import com.yuk.miuihome.BuildConfig
+import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ResourcesHookData
 import com.yuk.miuihome.utils.ResourcesHookMap
@@ -38,6 +39,7 @@ class ResourcesHook {
 
         val value = OwnSP.ownSP.getFloat("recents_task_view_rounded_corners_radius", -1f)
         val value1 = OwnSP.ownSP.getFloat("recents_task_view_header_height", -1f)
+        val value2 = OwnSP.ownSP.getInt("config_cell_count_x_drawer_mode", 3)
 
         if (OwnSP.ownSP.getBoolean("unlockGrids", false)) {
             val deviceClass = "com.miui.home.launcher.compat.LauncherCellCountCompatDevice".findClass()
@@ -48,6 +50,7 @@ class ResourcesHook {
             hookMap["config_cell_count_y_min"] = ResourcesHookData("integer", 4)
             hookMap["config_cell_count_x_max"] = ResourcesHookData("integer", 16)
             hookMap["config_cell_count_y_max"] = ResourcesHookData("integer", 18)
+            if (XposedInit().checkVersionCode() >= 427004546L) hookMap["config_cell_count_x_drawer_mode"] = ResourcesHookData("integer", value2)
         }
 
         if (value != -1f && value != 20f) {
