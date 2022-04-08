@@ -111,4 +111,5 @@
   <string name="TaskViewAppCardBgColor">Tùy chỉnh màu nền hình thu nhỏ cho các ứng dụng cửa sổ nhỏ</string>
   <string name="smallFolderBlur">Làm mờ thư mục nhỏ</string>
   <string name="smallFolderBlurCorner">Góc mờ thư mục nhỏ</string>
+  <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>
