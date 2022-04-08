@@ -111,4 +111,5 @@
   <string name="TaskViewAppCardBgColor">Přizpůsobit barvu pozadí pro aplikace malých oken</string>
   <string name="smallFolderBlur">Malé rozostření složky</string>
   <string name="smallFolderBlurCorner">Malá složka rozostření rohu</string>
+  <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>
