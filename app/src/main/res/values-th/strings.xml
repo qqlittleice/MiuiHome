@@ -111,4 +111,5 @@
   <string name="TaskViewAppCardBgColor">สีพื้นหลังของการ์ดแอปพลิเคชันในหน้าต่างพื้นหลัง</string>
   <string name="smallFolderBlur">เอฟเฟ็คเบลอโฟลเดอร์ขนาดย่อ</string>
   <string name="smallFolderBlurCorner">การเบลอมุมโค้งมนโฟลเดอร์ขนาดย่อ</string>
+  <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>
