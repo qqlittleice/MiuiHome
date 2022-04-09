@@ -2,6 +2,8 @@ package com.yuk.miuihome.module
 
 import android.content.Context
 import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
+import android.graphics.drawable.RippleDrawable
 import android.os.Bundle
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
@@ -52,18 +54,44 @@ class ModifyDockHook {
             ) {
                 it.result = 0
             }
+            if (Config.AndroidSDK < 31) {
+                launcherClass.hookAfterMethod(
+                    "onResume"
+                ) {
+                    val searchBarObject = it.thisObject.callMethod("getSearchBar") as FrameLayout
+                    val searchBarDesktop = searchBarObject.getChildAt(0) as RelativeLayout
+                    val rippleDrawable = searchBarDesktop.background as RippleDrawable
+                    val gradientDrawable = rippleDrawable.getDrawable(0) as GradientDrawable
+                    gradientDrawable.cornerRadius = dp2px(OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10).toFloat()
+                    gradientDrawable.setStroke(0, 0)
+                    rippleDrawable.setDrawable(0, gradientDrawable)
+                    searchBarDesktop.background = rippleDrawable
+                }
+            }
             launcherClass.hookAfterMethod("onCreate", Bundle::class.java
             ) {
                 val searchBarObject = it.thisObject.callMethod("getSearchBar") as FrameLayout
                 val searchBarDrawer = searchBarObject.getChildAt(1) as RelativeLayout
+                val searchBarDesktop = searchBarObject.getChildAt(0) as RelativeLayout
                 val searchBarContainer = searchBarObject.parent as FrameLayout
                 val searchEdgeLayout = searchBarContainer.parent as FrameLayout
                 // 重新给搜索框容器排序
                 searchEdgeLayout.removeView(searchBarContainer)
                 searchEdgeLayout.addView(searchBarContainer, 0)
+                // 清空搜索图标和小爱同学
+                searchBarDesktop.removeAllViews()
                 // 修改高度
                 searchBarObject.layoutParams.height = dp2px((OwnSP.ownSP.getFloat("dockHeight", 7.9f) * 10))
-                // 添加模糊
+                // 设置 A11 圆角
+                if (Config.AndroidSDK < 31) {
+                    val rippleDrawable = searchBarDesktop.background as RippleDrawable
+                    val gradientDrawable = rippleDrawable.getDrawable(0) as GradientDrawable
+                    gradientDrawable.cornerRadius = dp2px(OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10).toFloat()
+                    gradientDrawable.setStroke(0, 0)
+                    rippleDrawable.setDrawable(0, gradientDrawable)
+                    searchBarDesktop.background = rippleDrawable
+                }
+                // 添加 A12 模糊
                 if (OwnSP.ownSP.getBoolean("searchBarBlur", false) && Config.AndroidSDK == 31) {
                     searchBarObject.removeAllViews()
                     val blur = WindowBlurFrameLayout(searchBarObject.context)
