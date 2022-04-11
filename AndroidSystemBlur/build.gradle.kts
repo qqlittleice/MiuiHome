@@ -49,7 +49,5 @@ android {
 
 dependencies {
     compileOnly(project(":hidden-api"))
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.annotation:annotation:1.3.0")
     implementation("org.lsposed.hiddenapibypass:hiddenapibypass:4.3")
 }

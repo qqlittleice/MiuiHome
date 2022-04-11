@@ -1,10 +1,12 @@
 package com.yuk.miuihome.module
 
+import android.app.Activity
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.RippleDrawable
 import android.os.Bundle
+import android.view.View
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
@@ -99,7 +101,11 @@ class ModifyDockHook {
                         backgroundColour = Color.parseColor("#44FFFFFF")
                         cornerRadius = CornersRadius.all(dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat())
                     }
-                    searchBarObject.addView(blur)
+                    val activity = it.thisObject as Activity
+                    val view = activity.findViewById(activity.resources.getIdentifier("recents_container", "id", Config.hostPackage)) as View
+                    val isFolderShowing = activity.callMethod("isFolderShowing") as Boolean
+                    val isInEditing = activity.callMethod("isInEditing") as Boolean
+                    if (view.visibility == View.GONE && !isInEditing  && !isFolderShowing) searchBarObject.addView(blur)
                 }
                 // 修改应用列表搜索框
                 val mAllAppViewField = launcherClass.getDeclaredField("mAppsView")

@@ -1,10 +1,9 @@
 package com.zhenxiang.blur
 
-import androidx.annotation.ColorInt
 import com.android.internal.graphics.drawable.BackgroundBlurDrawable
 import org.lsposed.hiddenapibypass.HiddenApiBypass
 
-fun BackgroundBlurDrawable.setColor(@ColorInt color: Int) {
+fun BackgroundBlurDrawable.setColor(color: Int) {
     HiddenApiBypass.invoke(BackgroundBlurDrawable::class.java, this, "setColor", color)
 }
 
