@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="AdvancedFeature">Impostazioni avanzate</string>
-  <string name="AlwaysShowMIUIWidget">Mostra widget nuovi nei widget classici</string>
-  <string name="AlwaysShowStatusBarClock">Mostra sempre l\'orologio della barra di stato</string>
+  <string name="AlwaysShowMIUIWidget">Mostra i widget MIUI con i widget classici</string>
+  <string name="AlwaysShowStatusBarClock">Mostra l\'orologio della barra di stato</string>
   <string name="AnimationLevel">Velocità animazioni gesti</string>
-  <string name="AppTextSize">Distanza tra le icone e le etichette delle app nella schermata recenti</string>
-  <string name="BlurWhenOpenFolder">Attiva sfocatura di sfondo per le cartelle</string>
-  <string name="Cancel">Annulla</string>
+  <string name="AppTextSize">Distanza tra etichette e icone delle app nella schermata recenti</string>
+  <string name="BlurWhenOpenFolder">Sfoca lo sfondo quando apri la cartella</string>
+  <string name="Cancel">Cancella</string>
   <string name="CleanModuleSettings">Ripristina le impostazioni predefinite</string>
-  <string name="RestoreModuleSettingsSuccess">Ripristinato backup con successo, riavvio il launcher...</string>
+  <string name="RestoreModuleSettingsSuccess">Backup ripristinato con successo, riavvia il launcher.</string>
   <string name="RestoreModuleSettingsFailed">Impossibile ripristinare il backup</string>
   <string name="BackupModuleSettings">Crea un backup delle impostazioni</string>
   <string name="RestoreModuleSettings">Ripristina backup delle impostazioni</string>
@@ -27,8 +27,8 @@
   <string name="HideTaskViewCleanUpIcon">Nascondi il pulsante cancella tutto dalla schermata delle app recenti</string>
   <string name="HideTaskViewSmallWindowIcon">Nascondi \"Finestra Fluttuante\" nelle app recenti</string>
   <string name="HideWidgetTitles">Nascondi etichette dei widget</string>
-  <string name="HorizontalTaskViewOfAppCardSize">Dimensione schede delle app nei recenti orizzontali</string>
-  <string name="InfiniteScroll">Scorrimento infinito pagine</string>
+  <string name="HorizontalTaskViewOfAppCardSize">Dimensione delle app recenti in modalità orizzontale</string>
+  <string name="InfiniteScroll">Scorrimento infinito delle pagine</string>
   <string name="MamlDownload">Effetto onda dell\'icona durante il download delle app</string>
   <string name="ModuleFeature">Funzioni del modulo</string>
   <string name="ModuleSettings">Impostazioni del modulo</string>
@@ -111,5 +111,5 @@
   <string name="TaskViewAppCardBgColor">Personalizza il colore di sfondo delle miniature per le applicazioni di piccole finestre</string>
   <string name="smallFolderBlur">Sfocatura cartella piccola</string>
   <string name="smallFolderBlurCorner">Angolo sfocatura cartella piccola</string>
-  <string name="DrawerModeCount">Drawer mode icon count</string>
+  <string name="DrawerModeCount">Numero di icone in modalità cassetto</string>
 </resources>
