@@ -109,7 +109,7 @@
   <string name="ShortcutCount">解鎖 Shortcut 數量限制</string>
   <string name="MaxShortcutCount">最大 Shortcut 數量</string>
   <string name="TaskViewAppCardBgColor">自定義小窗口應用的縮略圖背景顏色</string>
-  <string name="smallFolderBlur">Small folder blur</string>
-  <string name="smallFolderBlurCorner">Small folder blur corner</string>
-  <string name="DrawerModeCount">Drawer mode icon count</string>
+  <string name="smallFolderBlur">小文件夾模糊</string>
+  <string name="smallFolderBlurCorner">小文件夾模糊圓角</string>
+  <string name="DrawerModeCount">抽屜模式圖標計數</string>
 </resources>
