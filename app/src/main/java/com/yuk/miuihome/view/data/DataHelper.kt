@@ -6,6 +6,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.net.Uri
+import android.os.Build
 import com.github.kyuubiran.ezxhelper.init.InitFields.moduleRes
 import com.github.kyuubiran.ezxhelper.utils.Log
 import com.yuk.miuihome.BuildConfig
@@ -13,7 +14,6 @@ import com.yuk.miuihome.R
 import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.module.BuildWithEverything
 import com.yuk.miuihome.module.ModifyBlurLevel
-import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.view.CustomDialog
 import com.yuk.miuihome.view.HookSettingsActivity
@@ -148,8 +148,8 @@ object DataHelper {
             add(Item(list = arrayListOf(LineV())))
 
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.Folder))))
-            if (Config.AndroidSDK >= 31) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.smallFolderBlur), "folderBlur", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() }))))
-            if (Config.AndroidSDK >= 31 && OwnSP.ownSP.getBoolean("folderBlur", false)) add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.smallFolderBlurCorner), key = "folderBlurCorner", min = 0, max = 100, divide = 1, defaultProgress = 40))))
+            if (Build.VERSION.SDK_INT >= 31) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.smallFolderBlur), "folderBlur", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() }))))
+            if (Build.VERSION.SDK_INT >= 31 && OwnSP.ownSP.getBoolean("folderBlur", false)) add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.smallFolderBlurCorner), key = "folderBlurCorner", min = 0, max = 100, divide = 1, defaultProgress = 40))))
             if (!OwnSP.ownSP.getBoolean("simpleAnimation", false) && !OwnSP.ownSP.getBoolean("alwaysBlur", false)) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.BlurWhenOpenFolder), "blurWhenOpenFolder"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.CloseFolder), "closeFolder"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.FolderWidth), "folderWidth"))))

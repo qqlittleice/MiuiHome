@@ -1,9 +1,9 @@
 package com.yuk.miuihome.module
 
+import android.os.Build
 import android.widget.Toast
 import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
 import com.yuk.miuihome.utils.Config
-import com.yuk.miuihome.utils.Config.AndroidSDK
 import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader
@@ -21,7 +21,7 @@ class BuildWithEverything {
     }
 
     fun init() {
-        if (AndroidSDK >= 31) {
+        if (Build.VERSION.SDK_INT >= 31) {
             try {
                 readStream(Runtime.getRuntime().exec("su -c cmd package compile -m everything ${Config.hostPackage}").inputStream)
             } catch (ignore: Exception) {

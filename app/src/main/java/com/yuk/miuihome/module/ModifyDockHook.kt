@@ -5,6 +5,7 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.RippleDrawable
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.FrameLayout
@@ -56,7 +57,7 @@ class ModifyDockHook {
             ) {
                 it.result = 0
             }
-            if (Config.AndroidSDK < 31) {
+            if (Build.VERSION.SDK_INT < 31) {
                 launcherClass.hookAfterMethod(
                     "onResume"
                 ) {
@@ -85,7 +86,7 @@ class ModifyDockHook {
                 // 修改高度
                 searchBarObject.layoutParams.height = dp2px((OwnSP.ownSP.getFloat("dockHeight", 7.9f) * 10))
                 // 设置 A11 圆角
-                if (Config.AndroidSDK < 31) {
+                if (Build.VERSION.SDK_INT < 31) {
                     val rippleDrawable = searchBarDesktop.background as RippleDrawable
                     val gradientDrawable = rippleDrawable.getDrawable(0) as GradientDrawable
                     gradientDrawable.cornerRadius = dp2px(OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10).toFloat()
@@ -94,7 +95,7 @@ class ModifyDockHook {
                     searchBarDesktop.background = rippleDrawable
                 }
                 // 添加 A12 模糊
-                if (OwnSP.ownSP.getBoolean("searchBarBlur", false) && Config.AndroidSDK == 31) {
+                if (OwnSP.ownSP.getBoolean("searchBarBlur", false) && Build.VERSION.SDK_INT == 31) {
                     searchBarObject.removeAllViews()
                     val blur = WindowBlurFrameLayout(searchBarObject.context)
                     blur.blurController.apply {

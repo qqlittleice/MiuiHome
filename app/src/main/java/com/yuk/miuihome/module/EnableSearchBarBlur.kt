@@ -1,9 +1,9 @@
 package com.yuk.miuihome.module
 
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.widget.FrameLayout
-import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
 import com.zhenxiang.blur.WindowBlurFrameLayout
@@ -13,12 +13,12 @@ class EnableSearchBarBlur {
 
     fun init() {
         if (OwnSP.ownSP.getBoolean("searchBarBlur", false)) {
-            if (Config.AndroidSDK < 31) {
+            if (Build.VERSION.SDK_INT < 31) {
                 "com.miui.home.launcher.SearchBarStyleData".hookBeforeMethod("isUserBlur"
                 ) {
                     it.result = true
                 }
-            } else if (!OwnSP.ownSP.getBoolean("dockSettings", false) && Config.AndroidSDK == 31) {
+            } else if (!OwnSP.ownSP.getBoolean("dockSettings", false) && Build.VERSION.SDK_INT == 31) {
                 val launcherClass = "com.miui.home.launcher.Launcher".findClass()
                 launcherClass.hookAfterMethod("onCreate", Bundle::class.java
                 ) {

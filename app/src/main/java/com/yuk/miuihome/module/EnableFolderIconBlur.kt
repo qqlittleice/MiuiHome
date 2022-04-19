@@ -2,6 +2,7 @@ package com.yuk.miuihome.module
 
 import android.app.Activity
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.FrameLayout
@@ -17,7 +18,7 @@ import com.zhenxiang.blur.model.CornersRadius
 class EnableFolderIconBlur {
 
     fun init() {
-        if (!OwnSP.ownSP.getBoolean("folderBlur", false) || Config.AndroidSDK < 31) return
+        if (!OwnSP.ownSP.getBoolean("folderBlur", false) || Build.VERSION.SDK_INT < 31) return
         "com.miui.home.launcher.Launcher".hookAfterMethod("onCreate", Bundle::class.java
         ) { param ->
             val activity = param.thisObject as Activity
