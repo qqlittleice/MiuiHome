@@ -13,8 +13,8 @@ android {
         applicationId = "com.yuk.miuihome"
         minSdk = 29
         targetSdk = 32
-        versionCode = 4220
-        versionName = "4.2.2" + (getGitHeadRefsSuffix(rootProject))
+        versionCode = 4230
+        versionName = "4.2.3" + (getGitHeadRefsSuffix(rootProject))
     }
     val properties = Properties()
     runCatching {
@@ -105,8 +105,8 @@ fun getGitHeadRefsSuffix(project: Project): String {
 dependencies {
     compileOnly("de.robv.android.xposed:api:82")
     implementation(project(":AndroidSystemBlur"))
-    implementation("com.github.kyuubiran:EzXHelper:0.8.4")
-    implementation("androidx.recyclerview:recyclerview:1.3.0-alpha01")
+    implementation("com.github.kyuubiran:EzXHelper:0.8.6")
+    implementation("androidx.recyclerview:recyclerview:1.3.0-alpha02")
     implementation("com.microsoft.appcenter:appcenter-crashes:4.4.3")
     implementation("com.microsoft.appcenter:appcenter-analytics:4.4.3")
 }
