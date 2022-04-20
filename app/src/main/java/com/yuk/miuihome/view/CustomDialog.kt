@@ -166,6 +166,7 @@ class CustomDialog(context: Context) : Dialog(context, R.style.CustomDialog) {
         if (Build.VERSION.SDK_INT >= 31) {
             window!!.addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND)
             lp.blurBehindRadius = 25
+            lp.dimAmount = 0.18f
             window!!.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
         } else {
             lp.dimAmount = 0.3f

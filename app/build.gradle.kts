@@ -13,7 +13,7 @@ android {
         applicationId = "com.yuk.miuihome"
         minSdk = 29
         targetSdk = 32
-        versionCode = 4230
+        versionCode = 4231
         versionName = "4.2.3" + (getGitHeadRefsSuffix(rootProject))
     }
     val properties = Properties()
