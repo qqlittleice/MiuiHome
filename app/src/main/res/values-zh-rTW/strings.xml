@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="AdvancedFeature">進階設定</string>
-  <string name="AlwaysShowMIUIWidget">在安卓小部件中顯示　MIUI　小部件</string>
-  <string name="AlwaysShowStatusBarClock">時鐘常顯</string>
+  <string name="AlwaysShowMIUIWidget">在安卓小工具中顯示 MIUI 小工具</string>
+  <string name="AlwaysShowStatusBarClock">關閉狀態欄時鐘隱藏</string>
   <string name="AnimationLevel">手勢動畫速度</string>
-  <string name="AppTextSize">後台應用圖標與標題間距</string>
-  <string name="BlurWhenOpenFolder">文件夾打開背景模糊</string>
+  <string name="AppTextSize">背景應用圖示與標題間距</string>
+  <string name="BlurWhenOpenFolder">資料夾打開模糊背景</string>
   <string name="Cancel">取消</string>
-  <string name="CleanModuleSettings">清除用戶配置</string>
+  <string name="CleanModuleSettings">清除使用者設定檔</string>
   <string name="RestoreModuleSettingsSuccess">恢復備份成功，重啟系統桌面</string>
   <string name="RestoreModuleSettingsFailed">恢复备份失败</string>
   <string name="BackupModuleSettings">備份模塊設定</string>
