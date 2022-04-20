@@ -1,10 +1,10 @@
 plugins {
     id("com.android.library")
+    id("kotlin-android")
 }
 
 android {
     compileSdk = 32
-    buildToolsVersion = "32.0.0"
     defaultConfig {
         minSdk = 29
         targetSdk = 32
@@ -18,6 +18,9 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.majorVersion
     }
 }
 

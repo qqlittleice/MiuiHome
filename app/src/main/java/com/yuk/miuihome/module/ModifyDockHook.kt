@@ -73,6 +73,10 @@ class ModifyDockHook {
             }
             launcherClass.hookAfterMethod("onCreate", Bundle::class.java
             ) {
+                val activity = it.thisObject as Activity
+                val view = activity.findViewById(activity.resources.getIdentifier("recents_container", "id", Config.hostPackage)) as View
+                val isFolderShowing = activity.callMethod("isFolderShowing") as Boolean
+                val isInEditing = activity.callMethod("isInEditing") as Boolean
                 val searchBarObject = it.thisObject.callMethod("getSearchBar") as FrameLayout
                 val searchBarDrawer = searchBarObject.getChildAt(1) as RelativeLayout
                 val searchBarDesktop = searchBarObject.getChildAt(0) as RelativeLayout
@@ -102,10 +106,6 @@ class ModifyDockHook {
                         backgroundColour = Color.parseColor("#44FFFFFF")
                         cornerRadius = CornersRadius.all(dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat())
                     }
-                    val activity = it.thisObject as Activity
-                    val view = activity.findViewById(activity.resources.getIdentifier("recents_container", "id", Config.hostPackage)) as View
-                    val isFolderShowing = activity.callMethod("isFolderShowing") as Boolean
-                    val isInEditing = activity.callMethod("isInEditing") as Boolean
                     if (view.visibility == View.GONE && !isInEditing  && !isFolderShowing) searchBarObject.addView(blur)
                 }
                 // 修改应用列表搜索框

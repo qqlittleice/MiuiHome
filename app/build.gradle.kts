@@ -8,7 +8,6 @@ plugins {
 
 android {
     compileSdk = 32
-    buildToolsVersion = "32.0.0"
     defaultConfig {
         applicationId = "com.yuk.miuihome"
         minSdk = 29

@@ -34,7 +34,7 @@ class SystemBlurController(
             field = value
             updateBackgroundColour()
         }
-    private var blurRadius = blurRadius
+    var blurRadius = blurRadius
         set(value) {
             field = value
             updateBlurRadius()
