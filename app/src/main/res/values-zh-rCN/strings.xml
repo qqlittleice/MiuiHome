@@ -78,7 +78,7 @@
   <string name="FolderColumnsCount">文件夹排列数</string>
   <string name="FolderWidth">利用整个文件夹的宽度</string>
   <string name="IconTitleFontSize">应用标题文字大小</string>
-  <string name="CustomRecentText">后台无应用时的文本显示</string>
+  <string name="CustomRecentText">后台无应用时显示的文本</string>
   <string name="DoubleTap">双击锁屏</string>
   <string name="LowEndAnim">允许低端机使用动画图标</string>
   <string name="VerticalScreen">竖屏</string>
