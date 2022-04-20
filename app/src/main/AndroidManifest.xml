@@ -6,27 +6,6 @@
     android:icon="@drawable/ic_launcher"
     android:label="@string/app_name"
     android:supportsRtl="true">
-
-    <activity
-      android:exported="true"
-      android:name=".activity.MainActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
-      </intent-filter>
-    </activity>
-
-    <activity-alias
-      android:label="MiuiHome"
-      android:name=".activity.MainActivityAlias"
-      android:exported="true"
-      android:targetActivity=".activity.MainActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN"/>
-        <category android:name="android.intent.category.LAUNCHER"/>
-      </intent-filter>
-
-    </activity-alias>
     <meta-data
       android:name="xposedscope"
       android:resource="@array/xposed_scope" />
