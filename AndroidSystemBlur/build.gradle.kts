@@ -27,6 +27,7 @@ plugins {
 
 android {
     compileSdk = 32
+    namespace = "com.zhenxiang.blur"
     defaultConfig {
         minSdk = 29
         targetSdk = 32

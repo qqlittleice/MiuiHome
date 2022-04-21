@@ -19,7 +19,7 @@ class ModifyAppReturnBlur {
 
     fun init() {
         if (!OwnSP.ownSP.getBoolean("appReturnAmin", false)) return
-        val value = (OwnSP.ownSP.getFloat("animationLevel", -1f) * 500).toLong()
+        val value = (OwnSP.ownSP.getFloat("animationLevel", -1f) * 480).toLong()
         val handler = Handler(Looper.getMainLooper())
         val blurClass = "com.miui.home.launcher.common.BlurUtils".findClass()
         val launcherClass = "com.miui.home.launcher.Launcher".findClass()

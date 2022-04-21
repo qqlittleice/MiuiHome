@@ -5,6 +5,7 @@ plugins {
 
 android {
     compileSdk = 32
+    namespace = "com.android.internal"
     defaultConfig {
         minSdk = 29
         targetSdk = 32

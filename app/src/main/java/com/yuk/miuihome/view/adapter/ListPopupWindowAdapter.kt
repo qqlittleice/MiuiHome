@@ -22,20 +22,13 @@ class ListPopupWindowAdapter(
 ) : BaseAdapter() {
     private val context: Context
     private val array: ArrayList<String>
-    /**
-     * 创建背景颜色
-     *
-     * @param color       填充色
-     * @param strokeColor 线条颜色
-     * @param strokeWidth 线条宽度  单位px
-     * @param radius      角度  px,长度为4,分别表示左上,右上,右下,左下的角度
-     */
-    private fun createRectangleDrawable(color: Int, strokeColor: Int = 0, strokeWidth: Int, radius: FloatArray): GradientDrawable {
+
+    private fun createRectangleDrawable(color: Int, radius: FloatArray): GradientDrawable {
         return try {
             GradientDrawable().apply {
                 shape = GradientDrawable.RECTANGLE
                 setColor(color)
-                if (strokeColor != 0) setStroke(strokeWidth, strokeColor)
+                setStroke(0, 0)
                 if (radius.size == 4) {
                     cornerRadii = floatArrayOf(radius[0], radius[0], radius[1], radius[1], radius[2], radius[2], radius[3], radius[3])
                 }
@@ -45,12 +38,6 @@ class ListPopupWindowAdapter(
         }
     }
 
-    /**
-     * 创建点击颜色
-     *
-     * @param pressedDrawable 点击颜色
-     * @param normalDrawable  正常颜色
-     */
     private fun createStateListDrawable(pressedDrawable: GradientDrawable, normalDrawable: GradientDrawable): StateListDrawable {
         return StateListDrawable().apply {
             addState(intArrayOf(android.R.attr.state_focused), pressedDrawable)
@@ -87,8 +74,8 @@ class ListPopupWindowAdapter(
                     0 -> radius = floatArrayOf(radiusFloat, radiusFloat, 0f, 0f)
                     array.size - 1 -> radius = floatArrayOf(0f, 0f, radiusFloat, radiusFloat)
                 }
-                val pressedDrawable = createRectangleDrawable(context.getColor(if (currentValue == thisText) R.color.popup_select_click else R.color.popup_background_click), 0, 0, radius)
-                val normalDrawable = createRectangleDrawable(context.getColor(if (currentValue == thisText) R.color.popup_select else R.color.popup_background), 0, 0, radius)
+                val pressedDrawable = createRectangleDrawable(context.getColor(if (currentValue == thisText) R.color.popup_select_click else R.color.popup_background_click), radius)
+                val normalDrawable = createRectangleDrawable(context.getColor(if (currentValue == thisText) R.color.popup_select else R.color.popup_background), radius)
                 background = createStateListDrawable(pressedDrawable, normalDrawable)
                 addView(TextView(context).apply {
                     text = thisText
