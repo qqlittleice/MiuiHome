@@ -7,7 +7,6 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
@@ -16,6 +15,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "MiuiHome"
-include(":app")
-include(":hidden-api")
-include(":AndroidSystemBlur")
+include(":app", ":hidden-api")
