@@ -1,20 +1,18 @@
 package com.yuk.miuihome.module
 
-
 import android.view.View
+import com.github.kyuubiran.ezxhelper.utils.*
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.callMethod
-import com.yuk.miuihome.utils.ktx.getBooleanField
-import com.yuk.miuihome.utils.ktx.hookAfterMethod
 
 class ModifyCloseFolderOnLaunch {
 
     fun init() {
         if (!OwnSP.ownSP.getBoolean("closeFolder", false)) return
-        "com.miui.home.launcher.Launcher".hookAfterMethod("launch", "com.miui.home.launcher.ShortcutInfo", View::class.java
-        ) {
-            val mHasLaunchedAppFromFolder = it.thisObject.getBooleanField("mHasLaunchedAppFromFolder")
-            if (mHasLaunchedAppFromFolder) it.thisObject.callMethod("closeFolder")
+        findMethod("com.miui.home.launcher.Launcher") {
+            name == "launch" && parameterTypes[0] == loadClass("com.miui.home.launcher.ShortcutInfo") && parameterTypes[1] == View::class.java
+        }.hookAfter {
+            val mHasLaunchedAppFromFolder = it.thisObject.getObjectAs<Boolean>("mHasLaunchedAppFromFolder")
+            if (mHasLaunchedAppFromFolder) it.thisObject.invokeMethodAuto("closeFolder")
         }
     }
 }

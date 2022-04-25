@@ -11,10 +11,11 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
-import com.github.kyuubiran.ezxhelper.utils.Log
+import com.github.kyuubiran.ezxhelper.utils.*
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.*
+import com.yuk.miuihome.utils.ktx.dp2px
+import com.yuk.miuihome.utils.ktx.px2dp
 import com.zhenxiang.blur.WindowBlurFrameLayout
 import com.zhenxiang.blur.model.CornersRadius
 import de.robv.android.xposed.XposedHelpers
@@ -24,44 +25,39 @@ class ModifyDockHook {
     fun init() {
         if (!OwnSP.ownSP.getBoolean("dockSettings", false)) return
         try {
-            val deviceConfigClass = "com.miui.home.launcher.DeviceConfig".findClass()
-            val launcherClass = "com.miui.home.launcher.Launcher".findClass()
+            val deviceConfigClass = loadClass("com.miui.home.launcher.DeviceConfig")
+            val launcherClass = loadClass("com.miui.home.launcher.Launcher")
+            val deviceWidth = px2dp(appContext.resources.displayMetrics.widthPixels)
             // Dock距屏幕两侧
-            deviceConfigClass.hookBeforeMethod("calcSearchBarWidth", Context::class.java
-            ) {
-                val deviceWidth = px2dp(appContext.resources.displayMetrics.widthPixels)
-                it.result = dp2px(deviceWidth - OwnSP.ownSP.getFloat("dockSide", 3.0f) * 10)
-            }
+            findMethod(deviceConfigClass) {
+                name == "calcSearchBarWidth" && parameterTypes[0] == Context::class.java
+            }.hookReturnConstant(dp2px(deviceWidth - OwnSP.ownSP.getFloat("dockSide", 3.0f) * 10))
             // Dock距屏幕底部
-            deviceConfigClass.hookBeforeMethod("calcSearchBarMarginBottom", Context::class.java, Boolean::class.java
-            ) {
-                it.result = dp2px(OwnSP.ownSP.getFloat("dockBottom", 2.3f) * 10)
-            }
+            findMethod(deviceConfigClass) {
+                name == "calcSearchBarMarginBottom" && parameterTypes[0] == Context::class.java && parameterTypes[1] == Boolean::class.java
+            }.hookReturnConstant(dp2px(OwnSP.ownSP.getFloat("dockBottom", 2.3f) * 10))
             // 图标距屏幕底部
-            deviceConfigClass.hookBeforeMethod("calcHotSeatsMarginBottom", Context::class.java, Boolean::class.java, Boolean::class.java
-            ) {
-                it.result = dp2px(OwnSP.ownSP.getFloat("dockIconBottom", 3.5f) * 10)
-            }
+            findMethod(deviceConfigClass) {
+                name == "calcHotSeatsMarginBottom" && parameterTypes[0] == Context::class.java && parameterTypes[1] == Boolean::class.java && parameterTypes[2] == Boolean::class.java
+            }.hookReturnConstant(dp2px(OwnSP.ownSP.getFloat("dockIconBottom", 3.5f) * 10))
             // 页面指示器距离图标距离
-            deviceConfigClass.hookBeforeMethod("calcHotSeatsMarginTop", Context::class.java, Boolean::class.java
-            ) {
-                it.result = dp2px(OwnSP.ownSP.getFloat("dockMarginTop", 0.6f) * 10)
-            }
+            findMethod(deviceConfigClass) {
+                name == "calcHotSeatsMarginTop" && parameterTypes[0] == Context::class.java && parameterTypes[1] == Boolean::class.java
+            }.hookReturnConstant(dp2px(OwnSP.ownSP.getFloat("dockMarginTop", 0.6f) * 10))
             // 页面指示器距离屏幕底部
-            deviceConfigClass.hookBeforeMethod("getWorkspaceIndicatorMarginBottom",
-            ) {
-                it.result = dp2px(OwnSP.ownSP.getFloat("dockMarginBottom", 11.0f) * 10)
-            }
+            findMethod(deviceConfigClass) {
+                name == "getWorkspaceIndicatorMarginBottom"
+            }.hookReturnConstant(dp2px(OwnSP.ownSP.getFloat("dockMarginBottom", 11.0f) * 10))
             // 宽度变化量
-            deviceConfigClass.hookBeforeMethod("getSearchBarWidthDelta"
-            ) {
-                it.result = 0
-            }
+            findMethod(deviceConfigClass) {
+                name == "getSearchBarWidthDelta"
+            }.hookReturnConstant(0)
+
             if (Build.VERSION.SDK_INT < 31) {
-                launcherClass.hookAfterMethod(
-                    "onResume"
-                ) {
-                    val searchBarObject = it.thisObject.callMethod("getSearchBar") as FrameLayout
+                findMethod(launcherClass) {
+                    name == "onResume"
+                }.hookAfter {
+                    val searchBarObject = it.thisObject.invokeMethodAuto("getSearchBar") as FrameLayout
                     val searchBarDesktop = searchBarObject.getChildAt(0) as RelativeLayout
                     val rippleDrawable = searchBarDesktop.background as RippleDrawable
                     val gradientDrawable = rippleDrawable.getDrawable(0) as GradientDrawable
@@ -71,13 +67,14 @@ class ModifyDockHook {
                     searchBarDesktop.background = rippleDrawable
                 }
             }
-            launcherClass.hookAfterMethod("onCreate", Bundle::class.java
-            ) {
+            findMethod(launcherClass) {
+                name == "onCreate" && parameterTypes[0] == Bundle::class.java //TODO
+            }.hookAfter {
                 val activity = it.thisObject as Activity
                 val view = activity.findViewById(activity.resources.getIdentifier("recents_container", "id", Config.hostPackage)) as View
-                val isFolderShowing = activity.callMethod("isFolderShowing") as Boolean
-                val isInEditing = activity.callMethod("isInEditing") as Boolean
-                val searchBarObject = it.thisObject.callMethod("getSearchBar") as FrameLayout
+                val isFolderShowing = activity.invokeMethodAuto("isFolderShowing") as Boolean
+                val isInEditing = activity.invokeMethodAuto("isInEditing") as Boolean
+                val searchBarObject = it.thisObject.invokeMethodAuto("getSearchBar") as FrameLayout
                 val searchBarDrawer = searchBarObject.getChildAt(1) as RelativeLayout
                 val searchBarDesktop = searchBarObject.getChildAt(0) as RelativeLayout
                 val searchBarContainer = searchBarObject.parent as FrameLayout

@@ -4,8 +4,8 @@ import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.widget.FrameLayout
+import com.github.kyuubiran.ezxhelper.utils.*
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.*
 import com.zhenxiang.blur.WindowBlurFrameLayout
 import com.zhenxiang.blur.model.CornersRadius
 
@@ -14,15 +14,15 @@ class EnableSearchBarBlur {
     fun init() {
         if (OwnSP.ownSP.getBoolean("searchBarBlur", false)) {
             if (Build.VERSION.SDK_INT < 31) {
-                "com.miui.home.launcher.SearchBarStyleData".hookBeforeMethod("isUserBlur"
-                ) {
-                    it.result = true
-                }
+                findMethod("com.miui.home.launcher.SearchBarStyleData") {
+                    name == "isUserBlur"
+                }.hookReturnConstant(true)
             } else if (!OwnSP.ownSP.getBoolean("dockSettings", false) && Build.VERSION.SDK_INT == 31) {
-                val launcherClass = "com.miui.home.launcher.Launcher".findClass()
-                launcherClass.hookAfterMethod("onCreate", Bundle::class.java
-                ) {
-                    val searchBarObject = it.thisObject.callMethod("getSearchBar") as FrameLayout
+                val launcherClass = loadClass("com.miui.home.launcher.Launcher")
+                findMethod(launcherClass) {
+                    name == "onCreate" && parameterTypes[0] == Bundle::class.java //TODO
+                }.hookAfter {
+                    val searchBarObject = it.thisObject.invokeMethodAuto("getSearchBar") as FrameLayout
                     val blur = WindowBlurFrameLayout(searchBarObject.context)
                     blur.blurController.apply {
                         backgroundColour = Color.parseColor("#33626262")
@@ -31,9 +31,9 @@ class EnableSearchBarBlur {
                     searchBarObject.addView(blur, 0)
                 }
             }
-        } else "com.miui.home.launcher.SearchBarStyleData".hookBeforeMethod("isUserBlur"
-        ) {
-            it.result = false
-        }
+        } else
+            findMethod("com.miui.home.launcher.SearchBarStyleData") {
+                name == "isUserBlur"
+            }.hookReturnConstant(false)
     }
 }

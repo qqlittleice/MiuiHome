@@ -1,22 +1,24 @@
 package com.yuk.miuihome.module
 
+import com.github.kyuubiran.ezxhelper.utils.*
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.callMethod
-import com.yuk.miuihome.utils.ktx.hookAfterMethod
 
 class ModifyShortcutItemCount {
 
     fun init() {
         val value = OwnSP.ownSP.getInt("shortcutCount", 6)
         if (!OwnSP.ownSP.getBoolean("unlockShortcutCount", false)) return
-        "com.miui.home.launcher.shortcuts.AppShortcutMenu".hookAfterMethod("getMaxCountInCurrentOrientation") {
-            it.result = value
-        }
-        "com.miui.home.launcher.shortcuts.AppShortcutMenu".hookAfterMethod("getMaxShortcutItemCount") {
-            it.result = value
-        }
-        "com.miui.home.launcher.shortcuts.AppShortcutMenu".hookAfterMethod("getMaxVisualHeight") {
-            it.result = it.thisObject.callMethod("getItemHeight")
+        val appShortcutMenuClass = loadClass("com.miui.home.launcher.shortcuts.AppShortcutMenu")
+        findMethod(appShortcutMenuClass) {
+            name == "getMaxCountInCurrentOrientation"
+        }.hookReturnConstant(value)
+        findMethod(appShortcutMenuClass) {
+            name == "getMaxShortcutItemCount"
+        }.hookReturnConstant(value)
+        findMethod(appShortcutMenuClass) {
+            name == "getMaxVisualHeight"
+        }.hookAfter {
+            it.thisObject.invokeMethodAuto("getItemHeight")
         }
     }
 }
