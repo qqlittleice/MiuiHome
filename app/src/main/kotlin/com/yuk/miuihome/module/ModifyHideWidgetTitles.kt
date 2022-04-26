@@ -31,7 +31,7 @@ class ModifyHideWidgetTitles {
             InitFields.ezXClassLoader,
             "addMaMl",
             maMlWidgetInfo,
-            Bundle::class.java,
+            Boolean::class.java,
             Predicate::class.java,
             object : XC_MethodHook() {
                 override fun afterHookedMethod(param: MethodHookParam) {
