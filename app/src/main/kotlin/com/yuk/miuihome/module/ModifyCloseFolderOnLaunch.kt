@@ -1,18 +1,27 @@
 package com.yuk.miuihome.module
 
 import android.view.View
+import com.github.kyuubiran.ezxhelper.init.InitFields
 import com.github.kyuubiran.ezxhelper.utils.*
 import com.yuk.miuihome.utils.OwnSP
+import de.robv.android.xposed.XC_MethodHook
+import de.robv.android.xposed.XposedHelpers
 
 class ModifyCloseFolderOnLaunch {
 
     fun init() {
         if (!OwnSP.ownSP.getBoolean("closeFolder", false)) return
-        findMethod("com.miui.home.launcher.Launcher") {
-            name == "launch" && parameterTypes[0] == loadClass("com.miui.home.launcher.ShortcutInfo") && parameterTypes[1] == View::class.java
-        }.hookAfter {
-            val mHasLaunchedAppFromFolder = it.thisObject.getObjectAs<Boolean>("mHasLaunchedAppFromFolder")
-            if (mHasLaunchedAppFromFolder) it.thisObject.invokeMethodAuto("closeFolder")
-        }
+        XposedHelpers.findAndHookMethod( // TODO
+            "com.miui.home.launcher.Launcher",
+            InitFields.ezXClassLoader,
+            "launch",
+            View::class.java,
+            loadClass("com.miui.home.launcher.ShortcutInfo"),
+            object : XC_MethodHook() {
+                override fun afterHookedMethod(param: MethodHookParam) {
+                    val mHasLaunchedAppFromFolder = param.thisObject.getObjectAs<Boolean>("mHasLaunchedAppFromFolder")
+                    if (mHasLaunchedAppFromFolder) param.thisObject.invokeMethodAuto("closeFolder")
+                }
+            })
     }
 }

@@ -56,18 +56,22 @@ class ModifyDockHook {
             }.hookReturnConstant(0)
 
             if (Build.VERSION.SDK_INT < 31) {
-                findMethod(launcherClass) {
-                    name == "onResume"
-                }.hookAfter {
-                    val searchBarObject = it.thisObject.invokeMethodAuto("getSearchBar") as FrameLayout
-                    val searchBarDesktop = searchBarObject.getChildAt(0) as RelativeLayout
-                    val rippleDrawable = searchBarDesktop.background as RippleDrawable
-                    val gradientDrawable = rippleDrawable.getDrawable(0) as GradientDrawable
-                    gradientDrawable.cornerRadius = dp2px(OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10).toFloat()
-                    gradientDrawable.setStroke(0, 0)
-                    rippleDrawable.setDrawable(0, gradientDrawable)
-                    searchBarDesktop.background = rippleDrawable
-                }
+                XposedHelpers.findAndHookMethod( // TODO
+                    "com.miui.home.launcher.Launcher",
+                    InitFields.ezXClassLoader,
+                    "onResume",
+                    object : XC_MethodHook() {
+                        override fun afterHookedMethod(param: MethodHookParam) {
+                            val searchBarObject = param.thisObject.invokeMethodAuto("getSearchBar") as FrameLayout
+                            val searchBarDesktop = searchBarObject.getChildAt(0) as RelativeLayout
+                            val rippleDrawable = searchBarDesktop.background as RippleDrawable
+                            val gradientDrawable = rippleDrawable.getDrawable(0) as GradientDrawable
+                            gradientDrawable.cornerRadius = dp2px(OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10).toFloat()
+                            gradientDrawable.setStroke(0, 0)
+                            rippleDrawable.setDrawable(0, gradientDrawable)
+                            searchBarDesktop.background = rippleDrawable
+                        }
+                    })
             }
             XposedHelpers.findAndHookMethod( // TODO
                 "com.miui.home.launcher.Launcher",
