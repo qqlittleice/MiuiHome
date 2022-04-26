@@ -3,7 +3,7 @@ package com.yuk.miuihome.module
 import android.view.ViewGroup
 import android.widget.RelativeLayout
 import com.github.kyuubiran.ezxhelper.utils.findMethod
-import com.github.kyuubiran.ezxhelper.utils.getObject
+import com.github.kyuubiran.ezxhelper.utils.getObjectAs
 import com.github.kyuubiran.ezxhelper.utils.hookAfter
 import com.yuk.miuihome.utils.OwnSP
 import kotlin.math.roundToInt
@@ -16,7 +16,7 @@ class ModifyIconTitleTopMargin {
         findMethod("com.miui.home.launcher.ItemIcon") {
             name == "onFinishInflate"
         }.hookAfter {
-            val mTitleContainer = it.thisObject.getObject("mTitleContainer") as ViewGroup
+            val mTitleContainer = it.thisObject.getObjectAs<ViewGroup>("mTitleContainer")
             val lp = mTitleContainer.layoutParams
             val opt = ((titleTopMargin - 11) * mTitleContainer.resources.displayMetrics.density).roundToInt()
             if (lp is RelativeLayout.LayoutParams) {

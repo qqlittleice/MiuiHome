@@ -25,7 +25,7 @@ class ModifyCategory {
                 name == "onBindViewHolder" && parameterTypes[0] == loadClass("com.miui.home.launcher.allapps.AllAppsGridAdapter.ViewHolder") && parameterTypes[1] == Int::class.javaPrimitiveType
             }.hookAfter {
                 if ((it.args[0].invokeMethodAuto("getItemViewType") as Int) == 64)
-                    (it.args[0].getObject("itemView") as View).visibility = View.INVISIBLE
+                    it.args[0].getObjectAs<View>("itemView").visibility = View.INVISIBLE
             }
         }
     }

@@ -20,39 +20,39 @@ class ModifyIconTitleFontColor {
             findMethod("com.miui.home.launcher.ItemIcon") {
                 name == "onFinishInflate"
             }.hookAfter {
-                val mTitle = it.thisObject.getObject("mTitle") as TextView
+                val mTitle = it.thisObject.getObjectAs<TextView>("mTitle")
                 mTitle.setTextColor(Color.parseColor(value))
             }
             findMethod("com.miui.home.launcher.maml.MaMlWidgetView") {
                 name == "onFinishInflate"
             }.hookAfter {
-                val mTitle = it.thisObject.getObject("mTitle") as TextView
+                val mTitle = it.thisObject.getObjectAs<TextView>("mTitle")
                 mTitle.setTextColor(Color.parseColor(value))
             }
             findMethod("com.miui.home.launcher.LauncherMtzGadgetView") {
                 name == "onFinishInflate"
             }.hookAfter {
-                val mTitle = it.thisObject.getObject("mTitle") as TextView
+                val mTitle = it.thisObject.getObjectAs<TextView>("mTitle")
                 mTitle.setTextColor(Color.parseColor(value))
             }
             findMethod("com.miui.home.launcher.LauncherWidgetView") {
                 name == "onFinishInflate"
             }.hookAfter {
-                val mTitle = it.thisObject.getObject("mTitle") as TextView
+                val mTitle = it.thisObject.getObjectAs<TextView>("mTitle")
                 mTitle.setTextColor(Color.parseColor(value))
             }
             findMethod("com.miui.home.launcher.ShortcutIcon") {
                 name == "fromXml" && parameterTypes[0] == Int::class.javaPrimitiveType && parameterTypes[1] == launcherClass && parameterTypes[2] == ViewGroup::class.java && parameterTypes[3] == shortcutInfoClass
             }.hookAfter {
                 val buddyIconView = it.args[3].invokeMethodAuto("getBuddyIconView", it.args[2]) as View
-                val mTitle = buddyIconView.getObject("mTitle") as TextView
+                val mTitle = buddyIconView.getObjectAs<TextView>("mTitle")
                 mTitle.setTextColor(Color.parseColor(value))
             }
             findMethod("com.miui.home.launcher.ShortcutIcon") {
                 name == "createShortcutIcon" && parameterTypes[0] == Int::class.javaPrimitiveType && parameterTypes[1] == launcherClass && parameterTypes[2] == ViewGroup::class.java
             }.hookAfter {
                 val buddyIcon = it.result as View
-                val mTitle = buddyIcon.getObject("mTitle") as TextView
+                val mTitle = buddyIcon.getObjectAs<TextView>("mTitle")
                 mTitle.setTextColor(Color.parseColor(value))
             }
             findMethod("com.miui.home.launcher.common.Utilities") {

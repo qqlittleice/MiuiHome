@@ -3,9 +3,12 @@ package com.yuk.miuihome.module
 import android.app.Activity
 import android.os.Bundle
 import android.view.View
+import com.github.kyuubiran.ezxhelper.init.InitFields
 import com.github.kyuubiran.ezxhelper.utils.*
 import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.utils.OwnSP
+import de.robv.android.xposed.XC_MethodHook
+import de.robv.android.xposed.XposedHelpers
 
 class EnableBlurWhenOpenFolder {
 
@@ -28,21 +31,26 @@ class EnableBlurWhenOpenFolder {
                         }.hookReturnConstant(true)
                     }
                     else {
-                        findMethod("com.miui.home.launcher.Launcher") {
-                            name == "onCreate" && parameterTypes[0] == Bundle::class.java //TODO
-                        }.hookAfter {
-                            val activity = it.thisObject as Activity
-                            findMethod(launcherClass) {
-                                name == "openFolder" && parameterTypes[0] == folderInfoClass && parameterTypes[1] == View::class.java && parameterCount == 2
-                            }.hookAfter {
-                                blurClass.invokeStaticMethodAuto("fastBlur", 1.0f, activity.window, true)
-                            }
-                            findMethod(launcherClass) {
-                                name == "closeFolder" && parameterTypes[0] == Boolean::class.java
-                            }.hookAfter {
-                                blurClass.invokeStaticMethodAuto("fastBlur", 0.0f, activity.window, true)
-                            }
-                        }
+                        XposedHelpers.findAndHookMethod( // TODO
+                            "com.miui.home.launcher.Launcher",
+                            InitFields.ezXClassLoader,
+                            "onCreate",
+                            Bundle::class.java,
+                            object : XC_MethodHook() {
+                                override fun afterHookedMethod(param: MethodHookParam) {
+                                    val activity = param.thisObject as Activity
+                                    findMethod(launcherClass) {
+                                        name == "openFolder" && parameterTypes[0] == folderInfoClass && parameterTypes[1] == View::class.java && parameterCount == 2
+                                    }.hookAfter {
+                                        blurClass.invokeStaticMethodAuto("fastBlur", 1.0f, activity.window, true)
+                                    }
+                                    findMethod(launcherClass) {
+                                        name == "closeFolder" && parameterTypes[0] == Boolean::class.java
+                                    }.hookAfter {
+                                        blurClass.invokeStaticMethodAuto("fastBlur", 0.0f, activity.window, true)
+                                    }
+                                }
+                            })
                     }
                 } else {
                     if (XposedInit().checkIsAlpha()) {
