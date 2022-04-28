@@ -1,26 +1,31 @@
 package com.yuk.miuihome.module
 
 import com.github.kyuubiran.ezxhelper.utils.Log
-import com.github.kyuubiran.ezxhelper.utils.findMethod
-import com.github.kyuubiran.ezxhelper.utils.hookReplace
-import com.github.kyuubiran.ezxhelper.utils.hookReturnConstant
 import com.yuk.miuihome.XposedInit
+import com.yuk.miuihome.utils.ktx.findClass
+import com.yuk.miuihome.utils.ktx.hookBeforeMethod
+import com.yuk.miuihome.utils.ktx.replaceMethod
 
 class DisableLog {
 
     fun init() {
         try {
-            if (XposedInit().checkVersionCode() <= 426004312L) {
-                findMethod("com.miui.home.launcher.MiuiHomeLog") {
-                    name == "setDebugLogState" && parameterTypes[0] == Boolean::class.java
-                }.hookReturnConstant(false)
+            if (XposedInit().checkVersionCode() <= 426004312L) "com.miui.home.launcher.MiuiHomeLog".hookBeforeMethod(
+                "setDebugLogState",
+                Boolean::class.java
+            ) {
+                it.result = false
             }
-            findMethod("com.miui.home.launcher.MiuiHomeLog") {
-                name == "log" && parameterTypes[0] == String::class.java && parameterTypes[1] == String::class.java
-            }.hookReplace { null }
-            findMethod("com.xiaomi.onetrack.OneTrack") {
-                name == "isDisable"
-            }.hookReturnConstant(true)
+            "com.miui.home.launcher.MiuiHomeLog".findClass().replaceMethod(
+                "log",
+                String::class.java,
+                String::class.java
+            ) {
+                return@replaceMethod null
+            }
+            "com.xiaomi.onetrack.OneTrack".hookBeforeMethod("isDisable") {
+                it.result = true
+            }
         } catch (e: Throwable) {
             Log.ex(e)
         }

@@ -1,35 +1,34 @@
 package com.yuk.miuihome.module
 
 import com.github.kyuubiran.ezxhelper.utils.Log
-import com.github.kyuubiran.ezxhelper.utils.findMethod
-import com.github.kyuubiran.ezxhelper.utils.hookReturnConstant
+import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 
 class SetDeviceLevel : BaseClassAndMethodCheck {
 
     fun init() {
         try {
-            findMethod("com.miui.home.launcher.common.DeviceLevelUtils") {
-                name == "getDeviceLevel"
-            }.hookReturnConstant(2)
-            findMethod("com.miui.home.launcher.common.CpuLevelUtils") {
-                name == "getQualcommCpuLevel" && parameterTypes[0] == String::class.java
-            }.hookReturnConstant(2)
-            findMethod("com.miui.home.launcher.DeviceConfig") {
-                name == "isSupportCompleteAnimation"
-            }.hookReturnConstant(true)
-            findMethod("com.miui.home.launcher.common.DeviceLevelUtils") {
-                name == "isLowLevelOrLiteDevice"
-            }.hookReturnConstant(false)
-            findMethod("com.miui.home.launcher.DeviceConfig") {
-                name == "isMiuiLiteVersion"
-            }.hookReturnConstant(false)
-            //findMethod("com.miui.home.launcher.DeviceConfig") {
-                //name == "isDefaultIcon"
-            //}.hookReturnConstant(true)
+            "com.miui.home.launcher.common.DeviceLevelUtils".hookBeforeMethod("getDeviceLevel") {
+                it.result = 2
+            }
+            "com.miui.home.launcher.common.CpuLevelUtils".hookBeforeMethod("getQualcommCpuLevel", String::class.java) {
+                it.result = 2
+            }
+            "com.miui.home.launcher.DeviceConfig".hookBeforeMethod("isSupportCompleteAnimation") {
+                it.result = true
+            }
+            "com.miui.home.launcher.common.DeviceLevelUtils".hookBeforeMethod("isLowLevelOrLiteDevice") {
+                it.result = false
+            }
+            "com.miui.home.launcher.DeviceConfig".hookBeforeMethod("isDefaultIcon") {
+                it.result = true
+            }
+            "com.miui.home.launcher.DeviceConfig".hookBeforeMethod("isMiuiLiteVersion") {
+                it.result = false
+            }
             runWithChecked {
-                findMethod("com.miui.home.launcher.util.noword.NoWordSettingHelperKt") {
-                    name == "isNoWordAvailable"
-                }.hookReturnConstant(true)
+                "com.miui.home.launcher.util.noword.NoWordSettingHelperKt".hookBeforeMethod("isNoWordAvailable") {
+                    it.result = true
+                }
             }
         } catch (e: Throwable) {
             Log.ex(e)

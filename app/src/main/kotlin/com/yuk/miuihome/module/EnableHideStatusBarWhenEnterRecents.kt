@@ -1,23 +1,28 @@
 package com.yuk.miuihome.module
 
-import com.github.kyuubiran.ezxhelper.utils.findMethod
-import com.github.kyuubiran.ezxhelper.utils.hookReturnConstant
 import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 
 class EnableHideStatusBarWhenEnterRecents {
 
     fun init() {
         if (OwnSP.ownSP.getBoolean("hideStatusBar", false)) {
-            findMethod("com.miui.home.launcher.common.DeviceLevelUtils") {
-                name == "isHideStatusBarWhenEnterRecents"
-            }.hookReturnConstant(true)
-            findMethod("com.miui.home.launcher.DeviceConfig") {
-                name == "keepStatusBarShowingForBetterPerformance"
-            }.hookReturnConstant(false)
+            "com.miui.home.launcher.common.DeviceLevelUtils".hookBeforeMethod(
+                "isHideStatusBarWhenEnterRecents"
+            ) {
+                it.result = true
+            }
+            "com.miui.home.launcher.DeviceConfig".hookBeforeMethod(
+                "keepStatusBarShowingForBetterPerformance"
+            ) {
+                it.result = false
+            }
         } else {
-            findMethod("com.miui.home.launcher.common.DeviceLevelUtils") {
-                name == "isHideStatusBarWhenEnterRecents"
-            }.hookReturnConstant(false)
+            "com.miui.home.launcher.common.DeviceLevelUtils".hookBeforeMethod(
+                "isHideStatusBarWhenEnterRecents"
+            ) {
+                it.result = false
+            }
         }
     }
 }

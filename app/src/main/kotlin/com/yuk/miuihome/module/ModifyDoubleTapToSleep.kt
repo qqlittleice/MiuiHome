@@ -3,30 +3,30 @@ package com.yuk.miuihome.module
 import android.content.Context
 import android.content.Intent
 import android.view.MotionEvent
-import com.github.kyuubiran.ezxhelper.utils.*
 import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.ktx.*
 import de.robv.android.xposed.XposedHelpers
 
 class ModifyDoubleTapToSleep {
 
     fun init() {
         if (!OwnSP.ownSP.getBoolean("doubleTap", false)) return
-        hookAllConstructorAfter("com.miui.home.launcher.Workspace") {
+        val workspace = "com.miui.home.launcher.Workspace".findClass()
+        workspace.hookAfterAllConstructors {
             var mDoubleTapControllerEx = XposedHelpers.getAdditionalInstanceField(it.thisObject, "mDoubleTapControllerEx")
-            if (mDoubleTapControllerEx != null) return@hookAllConstructorAfter
+            if (mDoubleTapControllerEx != null) return@hookAfterAllConstructors
             mDoubleTapControllerEx = DoubleTapController((it.args[0] as Context))
             XposedHelpers.setAdditionalInstanceField(it.thisObject, "mDoubleTapControllerEx", mDoubleTapControllerEx)
         }
-        findMethod("com.miui.home.launcher.Workspace") {
-            name == "dispatchTouchEvent" && parameterTypes[0] == MotionEvent::class.java
-        }.hookBefore {
+        "com.miui.home.launcher.Workspace".hookBeforeMethod("dispatchTouchEvent", MotionEvent::class.java
+        ) {
             val mDoubleTapControllerEx = XposedHelpers.getAdditionalInstanceField(it.thisObject, "mDoubleTapControllerEx") as DoubleTapController
-            if (!mDoubleTapControllerEx.isDoubleTapEvent(it.args[0] as MotionEvent)) return@hookBefore
-            val mCurrentScreenIndex = it.thisObject.getObject("mCurrentScreenIndex")
-            val cellLayout = it.thisObject.invokeMethodAuto("getCellLayout", mCurrentScreenIndex)
-            if (cellLayout != null) if (cellLayout.invokeMethodAuto("lastDownOnOccupiedCell") as Boolean) return@hookBefore
-            if (it.thisObject.invokeMethodAuto("isInNormalEditingMode") as Boolean) return@hookBefore
-            val context = it.thisObject.invokeMethodAuto("getContext") as Context
+            if (!mDoubleTapControllerEx.isDoubleTapEvent(it.args[0] as MotionEvent)) return@hookBeforeMethod
+            val mCurrentScreenIndex = it.thisObject.getIntField("mCurrentScreenIndex")
+            val cellLayout = it.thisObject.callMethod("getCellLayout", mCurrentScreenIndex)
+            if (cellLayout != null) if (cellLayout.callMethod("lastDownOnOccupiedCell") as Boolean) return@hookBeforeMethod
+            if (it.thisObject.callMethod("isInNormalEditingMode") as Boolean) return@hookBeforeMethod
+            val context = it.thisObject.callMethod("getContext") as Context
             context.sendBroadcast(Intent("com.miui.app.ExtraStatusBarManager.action_TRIGGER_TOGGLE").putExtra("com.miui.app.ExtraStatusBarManager.extra_TOGGLE_ID", 10))
         }
     }

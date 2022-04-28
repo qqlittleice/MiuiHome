@@ -8,7 +8,6 @@ import com.github.kyuubiran.ezxhelper.init.EzXHelperInit
 import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
 import com.github.kyuubiran.ezxhelper.init.InitFields.ezXClassLoader
 import com.github.kyuubiran.ezxhelper.init.InitFields.moduleRes
-import com.github.kyuubiran.ezxhelper.utils.*
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.AbstractCrashesListener
@@ -36,31 +35,29 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
         when (lpparam.packageName) {
             Config.hostPackage -> {
-                EzXHelperInit.apply {
-                    initHandleLoadPackage(lpparam)
-                    setLogTag(TAG)
-                    setToastTag(TAG)
-                    setLogXp(true)
-                }
-                findMethod(Application::class.java) {
-                    name == "attach" && parameterTypes[0] == Context::class.java
-                }.hookBefore {
+                Application::class.java.hookBeforeMethod("attach", Context::class.java) {
                     EzXHelperInit.apply {
+                        initHandleLoadPackage(lpparam)
+                        setLogTag(TAG)
+                        setToastTag(TAG)
+                        setLogXp(true)
                         initAppContext(it.args[0] as Context)
                         setEzClassLoader(appContext.classLoader)
                         initActivityProxyManager(Config.modulePackage, Config.hostActivityProxy, XposedInit::class.java.classLoader!!, ezXClassLoader)
                         initSubActivity()
-                        startAppCenter()
-                        checkVersionName()
-                        checkIsAlpha()
-                        checkVersionCode()
-                        checkWidgetLauncher()
-                        checkMiuiVersion()
-                        checkAndroidVersion()
                     }
                     CrashRecord.init(appContext)
                     application = it.thisObject as Application
                     doHook()
+                }
+                Application::class.java.hookAfterMethod("attach", Context::class.java) {
+                    startAppCenter()
+                    checkVersionName()
+                    checkIsAlpha()
+                    checkVersionCode()
+                    checkWidgetLauncher()
+                    checkMiuiVersion()
+                    checkAndroidVersion()
                 }
                 if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: [com.miui.home] hook success")
             }
@@ -70,34 +67,32 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
 
     private fun doHook() {
         if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: MiuiLauncher version = ${checkVersionName()}(${checkVersionCode()})")
-        findAllMethods("com.miui.home.settings.MiuiHomeSettings") {
-            name == "onCreatePreferences"
-        }.hookAfter {
+        "com.miui.home.settings.MiuiHomeSettings".findClass().hookAfterAllMethods("onCreatePreferences") {
             try {
-                val mLayoutResId = it.thisObject.getObject("mDefaultHomeSetting").getObject("mLayoutResId")
-                val mWidgetLayoutResId = it.thisObject.getObject("mDefaultHomeSetting").getObject("mWidgetLayoutResId")
-                val pref = XposedHelpers.newInstance(loadClass("com.miui.home.settings.preference.ValuePreference"), appContext).apply {
-                    putObject("mTitle", "MiuiHome")
-                    putObject("mOrder", 0)
-                    putObject("mVisible", true)
-                    putObject("mSummary", moduleRes.getString(R.string.ModuleSettings))
-                    putObject("mLayoutResId", mLayoutResId)
-                    putObject("mWidgetLayoutResId", mWidgetLayoutResId)
-                    putObject("mFragment", "")
-                    putObject("mClickListener", object : View.OnClickListener {
+                val mLayoutResId = (it.thisObject.getObjectField("mDefaultHomeSetting"))?.getObjectField("mLayoutResId")
+                val mWidgetLayoutResId = (it.thisObject.getObjectField("mDefaultHomeSetting"))?.getObjectField("mWidgetLayoutResId")
+                val pref = XposedHelpers.newInstance("com.miui.home.settings.preference.ValuePreference".findClass(), appContext).apply {
+                    setObjectField("mTitle", "MiuiHome")
+                    setObjectField("mOrder", 0)
+                    setObjectField("mVisible", true)
+                    setObjectField("mSummary", moduleRes.getString(R.string.ModuleSettings))
+                    setObjectField("mLayoutResId", mLayoutResId)
+                    setObjectField("mWidgetLayoutResId", mWidgetLayoutResId)
+                    setObjectField("mFragment", "")
+                    setObjectField("mClickListener", object : View.OnClickListener {
                         override fun onClick(v: View) {
                             val intent = Intent(appContext, HookSettingsActivity::class.java)
                             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
                             appContext.startActivity(intent)
                         }
                     })
-                    invokeMethodAuto("setIntent", Intent())
+                    callMethod("setIntent", Intent())
                 }
-                it.thisObject.invokeMethodAuto("getPreferenceScreen")?.invokeMethodAuto("addPreference", pref)
+                it.thisObject.callMethod("getPreferenceScreen")?.callMethod("addPreference", pref)
             } catch (e: Throwable) {
-                (it.thisObject.getObject("mDefaultHomeSetting")).apply {
-                    putObject("mTitle", moduleRes.getString(R.string.ModuleSettings))
-                    putObject("mClickListener", object : View.OnClickListener {
+                (it.thisObject.getObjectField("mDefaultHomeSetting")).apply {
+                    setObjectField("mTitle", moduleRes.getString(R.string.ModuleSettings))
+                    setObjectField("mClickListener", object : View.OnClickListener {
                         override fun onClick(v: View) {
                             val intent = Intent(appContext, HookSettingsActivity::class.java)
                             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
@@ -200,7 +195,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
             "com.miui.home.launcher.MIUIWidgetUtil"
         )
         return try {
-            for (item in checkList) loadClass(item)
+            for (item in checkList) item.findClass(ezXClassLoader)
             if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: Widget version launcher")
             true
         } catch (e: XposedHelpers.ClassNotFoundError) {

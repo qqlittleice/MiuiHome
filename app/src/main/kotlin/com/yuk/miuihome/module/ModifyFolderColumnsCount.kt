@@ -2,9 +2,9 @@ package com.yuk.miuihome.module
 
 import android.view.ViewGroup
 import android.widget.GridView
-import com.github.kyuubiran.ezxhelper.utils.findAllMethods
-import com.github.kyuubiran.ezxhelper.utils.hookAfter
 import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.ktx.findClass
+import com.yuk.miuihome.utils.ktx.hookAfterAllMethods
 import de.robv.android.xposed.XposedHelpers
 
 class ModifyFolderColumnsCount {
@@ -12,9 +12,8 @@ class ModifyFolderColumnsCount {
     fun init() {
         val value = OwnSP.ownSP.getInt("folderColumns", -1)
         if (value == -1 || value == 3) return
-        findAllMethods("com.miui.home.launcher.Folder") {
-            name == "bind"
-        }.hookAfter {
+        "com.miui.home.launcher.Folder".findClass().hookAfterAllMethods("bind"
+        ) {
             val columns: Int = value
             val mContent = XposedHelpers.getObjectField(it.thisObject, "mContent") as GridView
             mContent.numColumns = columns

@@ -1,19 +1,18 @@
 package com.yuk.miuihome.module
 
-import com.github.kyuubiran.ezxhelper.utils.findMethod
-import com.github.kyuubiran.ezxhelper.utils.hookReturnConstant
 import com.yuk.miuihome.utils.OwnSP
+import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 
 class EnableSimpleAnimation {
 
     fun init() {
         if (OwnSP.ownSP.getBoolean("simpleAnimation", false))
-            findMethod("com.miui.home.launcher.common.DeviceLevelUtils") {
-                name == "isUseSimpleAnim"
-            }.hookReturnConstant(true)
+            "com.miui.home.launcher.common.DeviceLevelUtils".hookBeforeMethod("isUseSimpleAnim") {
+                it.result = true
+            }
         else
-            findMethod("com.miui.home.launcher.common.DeviceLevelUtils") {
-                name == "isUseSimpleAnim"
-            }.hookReturnConstant(false)
+            "com.miui.home.launcher.common.DeviceLevelUtils".hookBeforeMethod("isUseSimpleAnim") {
+                it.result = false
+            }
     }
 }

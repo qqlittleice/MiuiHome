@@ -2,16 +2,15 @@ package com.yuk.miuihome.module
 
 import android.content.res.Resources
 import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
-import com.github.kyuubiran.ezxhelper.utils.findAllMethods
-import com.github.kyuubiran.ezxhelper.utils.findMethod
-import com.github.kyuubiran.ezxhelper.utils.hookBefore
-import com.github.kyuubiran.ezxhelper.utils.hookReturnConstant
 import com.yuk.miuihome.BuildConfig
 import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ResourcesHookData
 import com.yuk.miuihome.utils.ResourcesHookMap
 import com.yuk.miuihome.utils.ktx.dp2px
+import com.yuk.miuihome.utils.ktx.findClass
+import com.yuk.miuihome.utils.ktx.hookBeforeAllMethods
+import com.yuk.miuihome.utils.ktx.hookBeforeMethod
 import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XposedBridge
 
@@ -31,33 +30,20 @@ class ResourcesHook {
     }
 
     fun init() {
-        findMethod(Resources::class.java) {
-            name == "getBoolean" && parameterTypes[0] == Int::class.javaPrimitiveType
-        }.hookBefore { hook(it) }
-        findMethod(Resources::class.java) {
-            name == "getDimension" && parameterTypes[0] == Int::class.javaPrimitiveType
-        }.hookBefore { hook(it) }
-        findMethod(Resources::class.java) {
-            name == "getDimensionPixelOffset" && parameterTypes[0] == Int::class.javaPrimitiveType
-        }.hookBefore { hook(it) }
-        findMethod(Resources::class.java) {
-            name == "getDimensionPixelSize" && parameterTypes[0] == Int::class.javaPrimitiveType
-        }.hookBefore { hook(it) }
-        findMethod(Resources::class.java) {
-            name == "getInteger" && parameterTypes[0] == Int::class.javaPrimitiveType
-        }.hookBefore { hook(it) }
-        findMethod(Resources::class.java) {
-            name == "getText" && parameterTypes[0] == Int::class.javaPrimitiveType
-        }.hookBefore { hook(it) }
+        Resources::class.java.hookBeforeMethod("getBoolean", Int::class.javaPrimitiveType) { hook(it) }
+        Resources::class.java.hookBeforeMethod("getDimension", Int::class.javaPrimitiveType) { hook(it) }
+        Resources::class.java.hookBeforeMethod("getDimensionPixelOffset", Int::class.javaPrimitiveType) { hook(it) }
+        Resources::class.java.hookBeforeMethod("getDimensionPixelSize", Int::class.javaPrimitiveType) { hook(it) }
+        Resources::class.java.hookBeforeMethod("getInteger", Int::class.javaPrimitiveType) { hook(it) }
+        Resources::class.java.hookBeforeMethod("getText", Int::class.javaPrimitiveType) { hook(it) }
 
         val value = OwnSP.ownSP.getFloat("recents_task_view_rounded_corners_radius", -1f)
         val value1 = OwnSP.ownSP.getFloat("recents_task_view_header_height", -1f)
         val value2 = OwnSP.ownSP.getInt("config_cell_count_x_drawer_mode", 3)
 
         if (OwnSP.ownSP.getBoolean("unlockGrids", false)) {
-            findAllMethods("com.miui.home.launcher.compat.LauncherCellCountCompatDevice") {
-                name == "shouldUseDeviceValue"
-            }.hookReturnConstant(false)
+            val deviceClass = "com.miui.home.launcher.compat.LauncherCellCountCompatDevice".findClass()
+            deviceClass.hookBeforeAllMethods("shouldUseDeviceValue") { it.result = false }
             hookMap["config_cell_count_x"] = ResourcesHookData("integer", 3)
             hookMap["config_cell_count_y"] = ResourcesHookData("integer", 4)
             hookMap["config_cell_count_x_min"] = ResourcesHookData("integer", 3)
