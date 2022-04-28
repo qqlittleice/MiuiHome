@@ -100,7 +100,7 @@ object DataHelper {
             if (OwnSP.ownSP.getBoolean("simpleAnimation", false)) {
                 add(Item(list = arrayListOf(TextV(resId = R.string.SimpleWarn, textColor = Color.parseColor("#ff0c0c")))))
             } else {
-                add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SmoothAnimation), "smoothAnimation"))))
+                if (XposedInit().checkVersionCode() < 427004733L) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SmoothAnimation), "smoothAnimation"))))
                 val blurLevel = arrayListOf(currentActivity.getString(R.string.CompleteBlur), currentActivity.getString(R.string.TestBlur), currentActivity.getString(R.string.BasicBlur), currentActivity.getString(R.string.SimpleBlur), currentActivity.getString(R.string.NoneBlur))
                 val blurLevel0 = arrayListOf(currentActivity.getString(R.string.CompleteBlur), currentActivity.getString(R.string.TestBlur), currentActivity.getString(R.string.SimpleBlur), currentActivity.getString(R.string.NoneBlur))
                 val dict0: HashMap<String, String> = hashMapOf()
