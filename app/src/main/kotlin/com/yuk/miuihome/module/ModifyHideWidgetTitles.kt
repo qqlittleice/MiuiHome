@@ -1,16 +1,12 @@
 package com.yuk.miuihome.module
 
 import android.content.Context
-import android.os.Bundle
 import android.view.View
-import com.github.kyuubiran.ezxhelper.init.InitFields
 import com.github.kyuubiran.ezxhelper.utils.findMethod
 import com.github.kyuubiran.ezxhelper.utils.hookAfter
 import com.github.kyuubiran.ezxhelper.utils.invokeMethodAuto
 import com.github.kyuubiran.ezxhelper.utils.loadClass
 import com.yuk.miuihome.utils.OwnSP
-import de.robv.android.xposed.XC_MethodHook
-import de.robv.android.xposed.XposedHelpers
 import java.util.function.Predicate
 
 class ModifyHideWidgetTitles {
@@ -26,18 +22,11 @@ class ModifyHideWidgetTitles {
             val view = it.result as Any
             view.invokeMethodAuto("getTitleView")?.invokeMethodAuto("setVisibility", View.GONE)
         }
-        XposedHelpers.findAndHookMethod( // TODO
-            "com.miui.home.launcher.Launcher",
-            InitFields.ezXClassLoader,
-            "addMaMl",
-            maMlWidgetInfo,
-            Bundle::class.java,
-            Predicate::class.java,
-            object : XC_MethodHook() {
-                override fun afterHookedMethod(param: MethodHookParam) {
-                    val view = param.result as Any
-                    view.invokeMethodAuto("getTitleView")?.invokeMethodAuto("setVisibility", View.GONE)
-                }
-            })
+        findMethod("com.miui.home.launcher.Launcher") {
+            name == "addMaMl" && parameterTypes[0] == maMlWidgetInfo && parameterTypes[1] == Boolean::class.java && parameterTypes[2] == Predicate::class.java
+        }.hookAfter {
+            val view = it.result as Any
+            view.invokeMethodAuto("getTitleView")?.invokeMethodAuto("setVisibility", View.GONE)
+        }
     }
 }
