@@ -22,7 +22,7 @@ class ModifyHideWidgetTitles {
             val view = it.result as Any
             view.invokeMethodAuto("getTitleView")?.invokeMethodAuto("setVisibility", View.GONE)
         }
-        findMethod("com.miui.home.launcher.Launcher") {
+        findMethod("com.miui.home.launcher.LauncherAppWidgetHost") {
             name == "addMaMl" && parameterTypes[0] == maMlWidgetInfo && parameterTypes[1] == Boolean::class.java && parameterTypes[2] == Predicate::class.java
         }.hookAfter {
             val view = it.result as Any

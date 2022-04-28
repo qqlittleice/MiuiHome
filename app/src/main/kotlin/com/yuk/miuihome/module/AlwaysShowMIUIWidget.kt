@@ -24,7 +24,7 @@ class AlwaysShowMIUIWidget {
                 }
             }
             hook2 = findMethod("com.miui.home.launcher.MIUIWidgetUtil") {
-                name == "isMIUIWidgetSupport"
+                name == "fromProviderInfo" && parameterTypes[0] == Context::class.java && parameterTypes[1] == AppWidgetProviderInfo::class.java
             }.hookReturnConstant(false)
         }
         findMethod("com.miui.home.launcher.widget.WidgetsVerticalAdapter") {
