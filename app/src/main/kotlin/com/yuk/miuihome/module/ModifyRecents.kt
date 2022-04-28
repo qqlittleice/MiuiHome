@@ -20,7 +20,7 @@ class ModifyRecents {
             findMethod(recentsContainerClass) {
                 name == "onFinishInflate"
             }.hookAfter {
-                val mTitle = it.thisObject.getObjectAs<TextView>("mTxtSmallWindow")
+                val mTitle = it.thisObject.getObject("mTxtSmallWindow") as TextView
                 mTitle.visibility = View.GONE
             }
         }
@@ -28,7 +28,7 @@ class ModifyRecents {
             findMethod(recentsContainerClass) {
                 name == "onFinishInflate"
             }.hookAfter {
-                val mTitle = it.thisObject.getObjectAs<TextView>("mClearAnimView")
+                val mTitle = it.thisObject.getObject("mClearAnimView") as TextView
                 mTitle.visibility = View.GONE
             }
         }
@@ -36,7 +36,7 @@ class ModifyRecents {
             findMethod(taskViewHeaderClass) {
                 name == "onFinishInflate"
             }.hookAfter {
-                val mTitle = it.thisObject.getObjectAs<TextView>("mTitleView")
+                val mTitle = it.thisObject.getObject("mTitleView") as TextView
                 mTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP, recentTextSize)
             }
         }
@@ -44,7 +44,7 @@ class ModifyRecents {
             findMethod(taskViewHeaderClass) {
                 name == "onFinishInflate"
             }.hookAfter {
-                val mImage = it.thisObject.getObjectAs<ImageView>("mIconView")
+                val mImage = it.thisObject.getObject("mIconView") as ImageView
                 mImage.visibility = View.GONE
             }
         }
@@ -52,7 +52,7 @@ class ModifyRecents {
             findMethod("com.miui.home.recents.views.RecentsView") {
                 name == "showEmptyView" && parameterTypes[0] == Int::class.javaPrimitiveType
             }.hookAfter {
-                (it.thisObject.getObjectAs<TextView>("mEmptyView")).apply {
+                (it.thisObject.getObject("mEmptyView") as TextView).apply {
                     this.text = emptyViewText
                 }
             }

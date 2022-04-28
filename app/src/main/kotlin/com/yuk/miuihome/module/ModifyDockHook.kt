@@ -10,7 +10,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
-import com.github.kyuubiran.ezxhelper.init.InitFields
 import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
 import com.github.kyuubiran.ezxhelper.utils.*
 import com.yuk.miuihome.utils.Config
@@ -19,7 +18,6 @@ import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.px2dp
 import com.zhenxiang.blur.WindowBlurFrameLayout
 import com.zhenxiang.blur.model.CornersRadius
-import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XposedHelpers
 
 class ModifyDockHook {
@@ -69,62 +67,57 @@ class ModifyDockHook {
                     searchBarDesktop.background = rippleDrawable
                 }
             }
-            XposedHelpers.findAndHookMethod( // TODO
-                "com.miui.home.launcher.Launcher",
-                InitFields.ezXClassLoader,
-                "onCreate",
-                Bundle::class.java,
-                object : XC_MethodHook() {
-                    override fun afterHookedMethod(param: MethodHookParam) {
-                        val activity = param.thisObject as Activity
-                        val view = activity.findViewById(activity.resources.getIdentifier("recents_container", "id", Config.hostPackage)) as View
-                        val isFolderShowing = activity.invokeMethodAuto("isFolderShowing") as Boolean
-                        val isInEditing = activity.invokeMethodAuto("isInEditing") as Boolean
-                        val searchBarObject = param.thisObject.invokeMethodAuto("getSearchBar") as FrameLayout
-                        val searchBarDrawer = searchBarObject.getChildAt(1) as RelativeLayout
-                        val searchBarDesktop = searchBarObject.getChildAt(0) as RelativeLayout
-                        val searchBarContainer = searchBarObject.parent as FrameLayout
-                        val searchEdgeLayout = searchBarContainer.parent as FrameLayout
-                        // 重新给搜索框容器排序
-                        searchEdgeLayout.removeView(searchBarContainer)
-                        searchEdgeLayout.addView(searchBarContainer, 0)
-                        // 清空搜索图标和小爱同学
-                        searchBarDesktop.removeAllViews()
-                        // 修改高度
-                        searchBarObject.layoutParams.height = dp2px((OwnSP.ownSP.getFloat("dockHeight", 7.9f) * 10))
-                        // 设置 A11 圆角
-                        if (Build.VERSION.SDK_INT < 31) {
-                            val rippleDrawable = searchBarDesktop.background as RippleDrawable
-                            val gradientDrawable = rippleDrawable.getDrawable(0) as GradientDrawable
-                            gradientDrawable.cornerRadius = dp2px(OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10).toFloat()
-                            gradientDrawable.setStroke(0, 0)
-                            rippleDrawable.setDrawable(0, gradientDrawable)
-                            searchBarDesktop.background = rippleDrawable
-                        }
-                        // 添加 A12 模糊
-                        if (OwnSP.ownSP.getBoolean("searchBarBlur", false) && Build.VERSION.SDK_INT == 31) {
-                            searchBarObject.removeAllViews()
-                            val blur = WindowBlurFrameLayout(searchBarObject.context)
-                            blur.blurController.apply {
-                                backgroundColour = Color.parseColor("#44FFFFFF")
-                                cornerRadius = CornersRadius.all(dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat())
-                            }
-                            if (view.visibility == View.GONE && !isInEditing  && !isFolderShowing) searchBarObject.addView(blur)
-                        }
-                        // 修改应用列表搜索框
-                        val mAllAppViewField = launcherClass.getDeclaredField("mAppsView")
-                        mAllAppViewField.isAccessible = true
-                        val mAllAppView = mAllAppViewField.get(param.thisObject) as RelativeLayout
-                        val mAllAppSearchView = mAllAppView.getChildAt(mAllAppView.childCount - 1) as FrameLayout
-                        mAllAppSearchView.addView(searchBarDrawer)
-                        searchBarDrawer.bringToFront()
-                        val layoutParams = searchBarDrawer.layoutParams as FrameLayout.LayoutParams
-                        searchBarDrawer.layoutParams.height = dp2px(43f)
-                        layoutParams.leftMargin = dp2px(15f)
-                        layoutParams.rightMargin = dp2px(15f)
-                        searchBarDrawer.layoutParams = layoutParams
+            findMethod(launcherClass) {
+                name == "onCreate" && parameterTypes[0] == Bundle::class.java //TODO
+            }.hookAfter {
+                val activity = it.thisObject as Activity
+                val view = activity.findViewById(activity.resources.getIdentifier("recents_container", "id", Config.hostPackage)) as View
+                val isFolderShowing = activity.invokeMethodAuto("isFolderShowing") as Boolean
+                val isInEditing = activity.invokeMethodAuto("isInEditing") as Boolean
+                val searchBarObject = it.thisObject.invokeMethodAuto("getSearchBar") as FrameLayout
+                val searchBarDrawer = searchBarObject.getChildAt(1) as RelativeLayout
+                val searchBarDesktop = searchBarObject.getChildAt(0) as RelativeLayout
+                val searchBarContainer = searchBarObject.parent as FrameLayout
+                val searchEdgeLayout = searchBarContainer.parent as FrameLayout
+                // 重新给搜索框容器排序
+                searchEdgeLayout.removeView(searchBarContainer)
+                searchEdgeLayout.addView(searchBarContainer, 0)
+                // 清空搜索图标和小爱同学
+                searchBarDesktop.removeAllViews()
+                // 修改高度
+                searchBarObject.layoutParams.height = dp2px((OwnSP.ownSP.getFloat("dockHeight", 7.9f) * 10))
+                // 设置 A11 圆角
+                if (Build.VERSION.SDK_INT < 31) {
+                    val rippleDrawable = searchBarDesktop.background as RippleDrawable
+                    val gradientDrawable = rippleDrawable.getDrawable(0) as GradientDrawable
+                    gradientDrawable.cornerRadius = dp2px(OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10).toFloat()
+                    gradientDrawable.setStroke(0, 0)
+                    rippleDrawable.setDrawable(0, gradientDrawable)
+                    searchBarDesktop.background = rippleDrawable
+                }
+                // 添加 A12 模糊
+                if (OwnSP.ownSP.getBoolean("searchBarBlur", false) && Build.VERSION.SDK_INT == 31) {
+                    searchBarObject.removeAllViews()
+                    val blur = WindowBlurFrameLayout(searchBarObject.context)
+                    blur.blurController.apply {
+                        backgroundColour = Color.parseColor("#44FFFFFF")
+                        cornerRadius = CornersRadius.all(dp2px((OwnSP.ownSP.getFloat("dockRadius", 2.5f) * 10)).toFloat())
                     }
-                })
+                    if (view.visibility == View.GONE && !isInEditing  && !isFolderShowing) searchBarObject.addView(blur)
+                }
+                // 修改应用列表搜索框
+                val mAllAppViewField = launcherClass.getDeclaredField("mAppsView")
+                mAllAppViewField.isAccessible = true
+                val mAllAppView = mAllAppViewField.get(it.thisObject) as RelativeLayout
+                val mAllAppSearchView = mAllAppView.getChildAt(mAllAppView.childCount - 1) as FrameLayout
+                mAllAppSearchView.addView(searchBarDrawer)
+                searchBarDrawer.bringToFront()
+                val layoutParams = searchBarDrawer.layoutParams as FrameLayout.LayoutParams
+                searchBarDrawer.layoutParams.height = dp2px(43f)
+                layoutParams.leftMargin = dp2px(15f)
+                layoutParams.rightMargin = dp2px(15f)
+                searchBarDrawer.layoutParams = layoutParams
+            }
         } catch (e: XposedHelpers.ClassNotFoundError) {
             Log.ex(e)
         }
