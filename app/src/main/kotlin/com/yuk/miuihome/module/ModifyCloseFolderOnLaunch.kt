@@ -15,8 +15,8 @@ class ModifyCloseFolderOnLaunch {
             "com.miui.home.launcher.Launcher",
             InitFields.ezXClassLoader,
             "launch",
-            loadClass("com.miui.home.launcher.ShortcutInfo"),
             View::class.java,
+            loadClass("com.miui.home.launcher.ShortcutInfo"),
             object : XC_MethodHook() {
                 override fun afterHookedMethod(param: MethodHookParam) {
                     val mHasLaunchedAppFromFolder = param.thisObject.getObjectAs<Boolean>("mHasLaunchedAppFromFolder")
