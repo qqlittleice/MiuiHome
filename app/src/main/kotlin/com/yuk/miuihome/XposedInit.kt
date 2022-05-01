@@ -81,9 +81,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
                     setObjectField("mFragment", "")
                     setObjectField("mClickListener", object : View.OnClickListener {
                         override fun onClick(v: View) {
-                            val intent = Intent(appContext, HookSettingsActivity::class.java)
-                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                            appContext.startActivity(intent)
+                            v.context.startActivity(Intent(v.context, HookSettingsActivity::class.java))
                         }
                     })
                     callMethod("setIntent", Intent())
@@ -94,9 +92,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
                     setObjectField("mTitle", moduleRes.getString(R.string.ModuleSettings))
                     setObjectField("mClickListener", object : View.OnClickListener {
                         override fun onClick(v: View) {
-                            val intent = Intent(appContext, HookSettingsActivity::class.java)
-                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                            appContext.startActivity(intent)
+                            v.context.startActivity(Intent(v.context, HookSettingsActivity::class.java))
                         }
                     })
                 }
