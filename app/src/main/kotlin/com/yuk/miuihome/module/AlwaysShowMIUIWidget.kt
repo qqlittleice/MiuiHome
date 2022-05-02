@@ -1,7 +1,6 @@
 package com.yuk.miuihome.module
 
-import android.appwidget.AppWidgetProviderInfo
-import android.content.Context
+import android.content.ComponentName
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
 import de.robv.android.xposed.XC_MethodHook
@@ -14,11 +13,10 @@ class AlwaysShowMIUIWidget {
         var hook2: XC_MethodHook.Unhook? = null
         "com.miui.home.launcher.widget.WidgetsVerticalAdapter".hookBeforeMethod("buildAppWidgetsItems", List::class.java, ArrayList::class.java
         ) {
-            hook1 = "com.miui.home.launcher.LauncherAppWidgetProviderInfo".hookAfterMethod("fromProviderInfo", Context::class.java, AppWidgetProviderInfo::class.java
+            hook1 = "com.miui.home.launcher.widget.MIUIAppWidgetInfo".hookAfterMethod("initMiuiAttribute", ComponentName::class.java
             ) {
                 it.thisObject.apply {
                     setBooleanField("isMIUIWidget", false)
-                    getObjectField("providerInfo")?.setIntField("widgetFeatures", 0)
                 }
             }
             hook2 = "com.miui.home.launcher.MIUIWidgetUtil".hookBeforeMethod("isMIUIWidgetSupport"
