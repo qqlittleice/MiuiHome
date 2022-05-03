@@ -8,7 +8,7 @@
   <string name="BlurWhenOpenFolder">Sfoca lo sfondo quando apri la cartella</string>
   <string name="Cancel">Cancella</string>
   <string name="CleanModuleSettings">Ripristina le impostazioni predefinite</string>
-  <string name="RestoreModuleSettingsSuccess">Backup ripristinato con successo, riavvia il launcher.</string>
+  <string name="RestoreModuleSettingsSuccess">Ripristinato backup con successo, riavvio il launcher...</string>
   <string name="RestoreModuleSettingsFailed">Impossibile ripristinare il backup</string>
   <string name="BackupModuleSettings">Crea un backup delle impostazioni</string>
   <string name="RestoreModuleSettings">Ripristina backup delle impostazioni</string>
