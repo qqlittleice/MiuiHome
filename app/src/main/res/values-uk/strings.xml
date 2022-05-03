@@ -39,7 +39,6 @@
   <string name="Reboot1">Ви впевнені, що хочете перезапустити системний запуск?</string>
   <string name="Reboot2">Лаунчер перезапуститься через 1 секунду!</string>
   <string name="RoundCorner">Розмір заокруглених кутів мініатюр</string>
-  <string name="SearchBarBlur">Увімкнути розмиття у вікні пошуку</string>
   <string name="ShowDockIconTitles">Показувати назву програми в Dock</string>
   <string name="SimpleAnimation">Проста анімація</string>
   <string name="SimpleBlur">Просте розмиття</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Увімкніть новий магазин віджетів на пристроях низького класу</string>
   <string name="RecommendServer">Вимкніть рекомендований сервер</string>
   <string name="EveryThingBuild">Оптимізуйте MIUI Launcher в режимі \"Все враховано\"</string>
-  <string name="DockHeight">Висота док-бара</string>
-  <string name="DockRoundedCorners">Док-бар має закруглені кути</string>
-  <string name="DockSide">Док-панель з боків екрану</string>
-  <string name="DockBottom">Док-панель у нижній частині екрана</string>
-  <string name="DockIconBottom">Значки знизу екрана</string>
-  <string name="DockSettings">Налаштування доку</string>
-  <string name="DockFeature">Увімкнути функцію доку</string>
-  <string name="EnableDockBlur">Активувати розмиття доку</string>
-  <string name="Reset">Скинути параметри доку</string>
-  <string name="Tips1">Це відновить значення параметра Dock до значення за замовчуванням та перезапустить програму MIUI Launcher</string>
   <string name="Tips2">Це відновить параметри модуля за замовчуванням та перезапустить програму MIUI Launcher.</string>
   <string name="HideSeekPoints">Видалити індикатор сторінок</string>
   <string name="CategoryHideAll">Приховати \"усе\" у папках категорій</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Скинути розмір ескізів для горизонтальних нещодавніх параметрів</string>
   <string name="Tips3">Це скине розмір мініатюри для горизонтальних параметрів до стандартного значення та перезапустить системний Launcher.</string>
   <string name="UnlockIcons">Видалити заборону номерів значків з док-станції</string>
-  <string name="DockMarginTop">Індикатор сторінок і інтервали іконок</string>
-  <string name="DockMarginBottom">Індикатор сторінки і значення інтервалу на екрані</string>
   <string name="SimpleWarn">Ви ввімкнули просту анімацію, це приховає деякі налаштування.</string>
   <string name="BrokenFeature">Застаріла функція</string>
-  <string name="AppReturnAmin">Розмиття повернення додатків</string>
   <string name="BlurRadius">Blur Radius</string>
   <string name="BasicBlur">Базове розмиття</string>
   <string name="CustomTitleColor">Змінити колір заголовка програми</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Завжди розмиті шпалери лаунчера</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Клацніть, щоб відкрити Github</string>
-  <string name="AppCenter">Анонімна статистика</string>
-  <string name="AppCenterTip">Ми використовуємо Microsoft AppCenter щоб допомогти нам тестувати/аналізувати використання додатків.</string>
   <string name="IconTitleTopMargin">Верхнє поле заголовку піктограми</string>
   <string name="OpenLSPosed">Відкрити LSPosed</string>
   <string name="ShortcutCount">Ліміт кількості ярликів</string>
   <string name="MaxShortcutCount">Змінити максимальну кількість ярликів</string>
   <string name="TaskViewAppCardBgColor">Налаштування кольору фону мініатюр для малих віконних програм</string>
-  <string name="smallFolderBlur">Маленьке розмиття папки</string>
-  <string name="smallFolderBlurCorner">Куточок розмиття папки</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

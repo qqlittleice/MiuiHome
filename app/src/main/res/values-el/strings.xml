@@ -39,7 +39,6 @@
   <string name="Reboot1">Είστε βέβαιοι ότι θέλετε να κάνετε επανεκκίνηση του System Launcher?</string>
   <string name="Reboot2">Ο εκκινητής θα επανεκκινηθεί σε λίγο!</string>
   <string name="RoundCorner">Μέγεθος στρογγυλού μέρους της μικρογραφίας</string>
-  <string name="SearchBarBlur">Ενεργοποίηση θαμπώματος στην αναζήτηση</string>
   <string name="ShowDockIconTitles">Εμφάνιση ονομάτων εφαρμογών στην γραμμή γρήγορης πρόσβασης</string>
   <string name="SimpleAnimation">Απλή κίνηση</string>
   <string name="SimpleBlur">Απλό θάμπωμα</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Ενεργοποιήστε το νέο “μαγαζί” γραφικών στοιχείων και σε ποιο αδύναμες συσκευές</string>
   <string name="RecommendServer">Απενεργοποίηση της πρότασης σέρβερ</string>
   <string name="EveryThingBuild">Βελτιστοποίηση του εκκινητή σε κάθε λειτουργιά</string>
-  <string name="DockHeight">Ύψος μπάρας αναζήτησης στη γραμμή γρήγορης πρόσβασης</string>
-  <string name="DockRoundedCorners">Μέγεθος στρογγυλεμένων άκρων της μπάρας αναζήτησης στη γραμμή γρήγορης εκκίνησης</string>
-  <string name="DockSide">Επέκταση της μπάρας αναζήτησης στη γραμμή γρήγορης εκκίνησης έως τα άκρα της οθόνης</string>
-  <string name="DockBottom">Απόσταση της μπάρα αναζήτησης στη γραμμή γρήγορης εκκίνησης από το κάτω μέρος της οθόνης</string>
-  <string name="DockIconBottom">Απόσταση των εικονιδίων στη γραμμή γρήγορης εκκίνησης απο το κάτω μέρος της οθόνης</string>
-  <string name="DockSettings">Ρυθμίσεις γραμμής γρήγορης εκκίνησης</string>
-  <string name="DockFeature">Ενεργοποίηση χαρακτηριστικών γραμμής γρήγορης εκκίνησης</string>
-  <string name="EnableDockBlur">Ενεργοποίηση θαμπώματος στη γραμμή γρήγορης εκκίνησης</string>
-  <string name="Reset">Επαναφορά γραμμής γρήγορης εκκίνησης στις προεπιλεγμένες ρυθμίσεις</string>
-  <string name="Tips1">Αυτή η ενέργεια θα επαναφέρει τη γραμμή γρήγορης εκκίνησης στις προεπιλεγμένες ρυθμίσεις και θα επανεκκίνηση τον MIUI εκκινητή.</string>
   <string name="Tips2">Αυτό θα επαναφέρει τις ρυθμίσεις του πρόσθετου και θα επανεκκίνηση τον εκκινητή MIUI.</string>
   <string name="HideSeekPoints">Αφαίρεση σήμανσης σελίδας</string>
   <string name="CategoryHideAll">Απόκρυψη της κατηγορίας \"Όλα\" στις κατηγορίες εφαρμογών</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Επαναφορά μεγέθους μικρογραφιών για τις οριζόντιες πρόσφατες παραμέτρους</string>
   <string name="Tips3">Αυτό θα επαναφέρει το μέγεθος της μικρογραφίας για τις οριζόντιες πρόσφατες παραμέτρους στην προεπιλεγμένη του τιμή και θα επανεκκινήσει το System Launcher.</string>
   <string name="UnlockIcons">Αφαίρεση περιορισμού αριθμού εικονιδίων από την μπάρα εφαρμογών</string>
-  <string name="DockMarginTop">Δείκτης σελίδας και Διάστημα εικονιδίων</string>
-  <string name="DockMarginBottom">Ένδειξη σελίδας και το κάτω μέρος του διαστήματος οθόνης</string>
   <string name="SimpleWarn">Έχετε ενεργοποιήσει το απλό εφέ κίνησης, αυτό θα κρύψει κάποιες ρυθμίσεις.</string>
   <string name="BrokenFeature">Ξεπερασμένο Χαρακτηριστικό</string>
-  <string name="AppReturnAmin">Θάμπωμα Επιστροφής Εφαρμογής</string>
   <string name="BlurRadius">Blur Radius</string>
   <string name="BasicBlur">Βασικό Θόλωμα</string>
   <string name="CustomTitleColor">Προσαρμόστε το χρώμα τίτλου εφαρμογής</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Ταπετσαρία Εκτοξευτή Θαμπώματος Πάντα</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Κλικ για άνοιγμα του Github</string>
-  <string name="AppCenter">Ανώνυμα Στατιστικά</string>
-  <string name="AppCenterTip">Χρησιμοποιούμε το Microsoft AppCenter για να μας βοηθήσει να δοκιμάσουμε/αναλύσουμε τη χρήση της εφαρμογής.</string>
   <string name="IconTitleTopMargin">Τίτλος Εικονιδίου Επάνω Περιθώριο</string>
   <string name="OpenLSPosed">Άνοιγμα LSPosed</string>
   <string name="ShortcutCount">Ξεκλείδωμα ορίου πλήθους συντόμευσης</string>
   <string name="MaxShortcutCount">Τροποποίηση μέγιστου αριθμού συντομεύσεων</string>
   <string name="TaskViewAppCardBgColor">Προσαρμόστε το χρώμα φόντου μικρογραφίας για τις μικρές εφαρμογές παραθύρων</string>
-  <string name="smallFolderBlur">Μικρός φάκελος θόλωμα</string>
-  <string name="smallFolderBlurCorner">Μικρή γωνία θολώματος φακέλου</string>
   <string name="DrawerModeCount">Πλήθος εικονιδίων λειτουργίας συρταριού</string>
 </resources>

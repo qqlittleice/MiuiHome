@@ -40,7 +40,6 @@
 • Hech narsa oʻchib ketmaydi, siz xohlagan sozlamalar 1 soniyada oʻrnatiladi!</string>
   <string name="Reboot2">Sizning ish stolingiz 1 soniyadan soʻng tayyor. @xiaomiuiuz!</string>
   <string name="RoundCorner">Eskizlarningning burchaklarini yaxlitlash (yumaloqlashtirish)</string>
-  <string name="SearchBarBlur">Qidiruv maydonida blur effektini yoqish</string>
   <string name="ShowDockIconTitles">Dokbarda ilovalar nomini koʻrsatish</string>
   <string name="SimpleAnimation">Oddiy animatsiya</string>
   <string name="SimpleBlur">Oddiy blur</string>
@@ -66,16 +65,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Kuchsiz qurilmalarda ham yangi vidjetlar boʻlimi</string>
   <string name="RecommendServer">Tavsiyalar serverini oʻchirib qoʻyish</string>
   <string name="EveryThingBuild">MIUI Launcherni «Barcha imkoniyatlar» rejimi bilan optimallashtirish</string>
-  <string name="DockHeight">Dokbarning balandligi</string>
-  <string name="DockRoundedCorners">Dokbarning yumaloqlashgan burchaklari</string>
-  <string name="DockSide">Dokbar uchun ekranning yon qismidagi masofa</string>
-  <string name="DockBottom">Dokbar uchun ekranning pastki qismidagi masofa</string>
-  <string name="DockIconBottom">Dokbardagi Ilovalar uchun ekranning pastki qismidagi masofa</string>
-  <string name="DockSettings">Dokbar sozlamalari</string>
-  <string name="DockFeature">Dokbar xususiyatlarini yoqish</string>
-  <string name="EnableDockBlur">Dokbarda blur effektini yoqish</string>
-  <string name="Reset">Dokbarda oʻrnatilgan sozlamalarni standart holatiga qaytarish</string>
-  <string name="Tips1">Bu amal Dokbar sozlamalarini standart holatiga qaytaradi va 1 soniya ichida MIUI ish stolini qayta ishga tushiradi.</string>
   <string name="Tips2">Bu modul sozlamalarini standart holatiga qaytaradi va MIUI Launcherni 1 soniya ichida qayta ishga tushiradi.</string>
   <string name="HideSeekPoints">Sahifa indikatorlarini oʻchirish</string>
   <string name="CategoryHideAll">Ilovalarni kategoriyalash interfeysidan «Barchasi» boʻlimini oʻchirish</string>
@@ -91,11 +80,8 @@
   <string name="Reset2">Gorizontal soʻnggi ilovalar boʻlimi uchun eskizlar oʻlchami (yumaloqligini) asl holatiga qaytarish</string>
   <string name="Tips3">Gorizontal soʻnggi ilovalar boʻlimining eskiz oʻlchamini standart — Tavsiya etilgan holatga qaytariladi va MIUI Launcherni qayta ishga tushiriladi</string>
   <string name="UnlockIcons">Dokbardagi ilovalardan raqam cheklovini olib tashlash</string>
-  <string name="DockMarginTop">Sahifa indikatori va ilovalarning oraliq masofasi</string>
-  <string name="DockMarginBottom">Ilovalar joylashishida displeyning pastki qismidagi masofani sozlash</string>
   <string name="SimpleWarn">Siz standart animatsiyalarni yoqdingiz, bu baʼzi kichik imkoniyatlardan sizni maxrum qiladi.</string>
   <string name="BrokenFeature">Eski yoki oddiy xususiyatlar</string>
-  <string name="AppReturnAmin">Ilovani ochayotganda orqa fonga blur effektini berish</string>
   <string name="BlurRadius">Blur darajasini sozlash</string>
   <string name="BasicBlur">Asosiy blur effekti boshqaruvi</string>
   <string name="CustomTitleColor">Ilovalar sarlavxasidagi matn rangini oʻzingizga sozlang</string>
@@ -109,14 +95,10 @@ Masalan: #FFFFFF — Oq, #000000 — Qora‌‌</string>
   <string name="AlwaysBlur">Har doim fon rasmiga blur effektini qoʻshish</string>
   <string name="Github">GitHub</string>
   <string name="OpenGithub">Githubdan bizni toping</string>
-  <string name="AppCenter">Anonim statistikalar, loglaringiz anomin holatda qoladi</string>
-  <string name="AppCenterTip">Biz sizning yordamingizda Microsoft AppCenter ilovasidan yangi xususiyatlarni sinash va tahlil qilish uchun foydalanamiz.‌‌</string>
   <string name="IconTitleTopMargin">Belgialarning yuqori cheti oʻlchami</string>
   <string name="OpenLSPosed">LSPosedni ochish</string>
   <string name="ShortcutCount">Ilova piktogrammasini qulfdan chiqarish</string>
   <string name="MaxShortcutCount">Maksimal yorliqlar sonini oʻzgartirish</string>
   <string name="TaskViewAppCardBgColor">Suzuvchi oyna ilovalari uchun soʻnggi ilovalar boʻlimida fon rangini moslashtirish</string>
-  <string name="smallFolderBlur">Kichik papkada blur effekti</string>
-  <string name="smallFolderBlurCorner">Kichik papkalarda blur burchagi</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

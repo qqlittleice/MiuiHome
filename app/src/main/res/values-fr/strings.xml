@@ -39,7 +39,6 @@
   <string name="Reboot1">Êtes-vous sûr de vouloir redémarrer le lanceur système?</string>
   <string name="Reboot2">Le Launcher va redémarrer dans 1 seconde!</string>
   <string name="RoundCorner">Taille de la miniature des coins arrondis</string>
-  <string name="SearchBarBlur">Activer le flou dans la zone de recherche</string>
   <string name="ShowDockIconTitles">Afficher le nom de l\'application dans le Dock</string>
   <string name="SimpleAnimation">Animation simple</string>
   <string name="SimpleBlur">Flou simple</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Activer le nouveau Widget Store sur les appareils de bas de gamme</string>
   <string name="RecommendServer">Désactiver le serveur Recommandé</string>
   <string name="EveryThingBuild">Optimiser le lanceur avec tout le mode</string>
-  <string name="DockHeight">Hauteur de la barre de dock</string>
-  <string name="DockRoundedCorners">Coins arrondis de la barre du dock</string>
-  <string name="DockSide">Barre de dock des côtés de l\'écran</string>
-  <string name="DockBottom">Barre de dock en bas de l\'écran</string>
-  <string name="DockIconBottom">Icônes en bas de l\'écran</string>
-  <string name="DockSettings">Paramètres de la station d\'accueil</string>
-  <string name="DockFeature">Activer la fonctionnalité de dock</string>
-  <string name="EnableDockBlur">Activer le flou du dock</string>
-  <string name="Reset">Réinitialiser les paramètres du Dock</string>
-  <string name="Tips1">Cela restaurera le paramètre Dock à sa valeur par défaut et redémarrera le lanceur système.</string>
   <string name="Tips2">Cela restaurera les paramètres par défaut du module et redémarrera le lanceur système.</string>
   <string name="HideSeekPoints">Supprimer l\'indicateur de page</string>
   <string name="CategoryHideAll">Cacher \"Toutes\" dans les catégories d\'applications</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Réinitialiser la taille des vignettes pour les paramètres horizontaux récents</string>
   <string name="Tips3">Cela réinitialisera la taille des vignettes pour les paramètres horizontaux récents à sa valeur par défaut et redémarrera le lanceur système.</string>
   <string name="UnlockIcons">Supprimer la restriction de numéro d\'icône du dock</string>
-  <string name="DockMarginTop">Indicateur de page et Espacement des icônes</string>
-  <string name="DockMarginBottom">Indicateur de page et le bas de l\'espace d\'écran</string>
   <string name="SimpleWarn">Vous avez activé l\'animation simple, cela masquera certains paramètres.</string>
   <string name="BrokenFeature">Fonctionnalité obsolète</string>
-  <string name="AppReturnAmin">Flou de retour d\'application</string>
   <string name="BlurRadius">Blur Radius</string>
   <string name="BasicBlur">Flou de base</string>
   <string name="CustomTitleColor">Personnaliser la couleur du titre de l\'application</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Toujours flouer le fond d\'écran du lanceur</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Cliquez pour ouvrir Github</string>
-  <string name="AppCenter">Statistiques anonymes</string>
-  <string name="AppCenterTip">Nous utilisons Microsoft AppCenter pour nous aider à tester/analyser l\'utilisation de l\'application.</string>
   <string name="IconTitleTopMargin">Marge supérieure du titre de l\'icône</string>
   <string name="OpenLSPosed">Ouvrir LSPosed</string>
   <string name="ShortcutCount">Déverrouiller la limite du nombre de raccourcis</string>
   <string name="MaxShortcutCount">Modifier le nombre maximum de raccourcis</string>
   <string name="TaskViewAppCardBgColor">Personnaliser la couleur d\'arrière-plan des vignettes pour les applications de petite fenêtre</string>
-  <string name="smallFolderBlur">Flou de petits dossiers</string>
-  <string name="smallFolderBlurCorner">Coin flou du petit dossier</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

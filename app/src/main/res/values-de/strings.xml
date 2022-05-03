@@ -39,7 +39,6 @@
   <string name="Reboot1">Sind Sie sicher, dass Sie den System-Launcher neu starten möchten?</string>
   <string name="Reboot2">Der Launcher wird in 1 Sekunde neustarten!</string>
   <string name="RoundCorner">Größe der runden Ecken der Miniaturansicht</string>
-  <string name="SearchBarBlur">Weichzeichnen in der Suchbox aktivieren</string>
   <string name="ShowDockIconTitles">Appnamen im Dock anzeigen</string>
   <string name="SimpleAnimation">EInfache Animation</string>
   <string name="SimpleBlur">Einfaches Weichzeichnen</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Neuen Widget-Store auf Low-End Geräten aktivieren</string>
   <string name="RecommendServer">Empfohlene Server deaktivieren</string>
   <string name="EveryThingBuild">Optimiere den Launcher mit dem Everything-Modus</string>
-  <string name="DockHeight">Dock Bar Höhe</string>
-  <string name="DockRoundedCorners">Dock Bar runde Ecken</string>
-  <string name="DockSide">Dock Bar von den Seiten des Bildschirmes</string>
-  <string name="DockBottom">Dock Bar von der Unterseite des Bildschirmes</string>
-  <string name="DockIconBottom">Icons von der Unterseite des Bildschirmes</string>
-  <string name="DockSettings">Dock Einstellungen</string>
-  <string name="DockFeature">Aktiviere das Dock</string>
-  <string name="EnableDockBlur">Aktiviere das Weichzeichnen des Docks</string>
-  <string name="Reset">Dock Parameter zurücksetzen</string>
-  <string name="Tips1">Dies setzt die Dock-Parameter auf ihren Standardwert zurück und der System Launcher neu gestartet.</string>
   <string name="Tips2">Dies stellt die Standardeinstellungen des Moduls wieder her und der System Launcher neu gestartet.</string>
   <string name="HideSeekPoints">Seitenindikator entfernen</string>
   <string name="CategoryHideAll">Verstecke \"Alle\" in App Kategorien</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Miniaturansicht für horizontale Neueste Parameter zurücksetzen</string>
   <string name="Tips3">Dadurch wird die Vorschaugröße für die horizontale Neueste Parameter auf ihren Standardwert zurückgesetzt und der Systemstart neu gestartet.</string>
   <string name="UnlockIcons">Sperrung der Symbolnummer vom Dock entfernen</string>
-  <string name="DockMarginTop">Seitenanzeige und Symbolabstand</string>
-  <string name="DockMarginBottom">Seitenanzeige und das Ende des Bildschirmabstands</string>
   <string name="SimpleWarn">Sie haben eine einfache Animation aktiviert, dies wird einige Einstellungen ausblenden.</string>
   <string name="BrokenFeature">Veraltete Funktion</string>
-  <string name="AppReturnAmin">App-Retourenunschärfe</string>
   <string name="BlurRadius">Blur Radius</string>
   <string name="BasicBlur">Unschärfe</string>
   <string name="CustomTitleColor">App-Titelfarbe anpassen</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Immer Unschärfe Launcher Hintergrund</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Klicke um Github zu öffnen</string>
-  <string name="AppCenter">Anonyme Statistiken</string>
-  <string name="AppCenterTip">Wir verwenden Microsoft AppCenter um uns dabei zu helfen, die Anwendungsnutzung zu testen/zu analysieren.</string>
   <string name="IconTitleTopMargin">Symboltitel oberer Rand</string>
   <string name="OpenLSPosed">LSPosed öffnen</string>
   <string name="ShortcutCount">Anzahl der Verknüpfungen entsperren</string>
   <string name="MaxShortcutCount">Max. Anzahl der Verknüpfungen ändern</string>
   <string name="TaskViewAppCardBgColor">Miniatur-Hintergrundfarbe für kleine Fenster-Apps anpassen</string>
-  <string name="smallFolderBlur">Kleine Ordnerunschärfe</string>
-  <string name="smallFolderBlurCorner">Kleine Ordnerunschärfe-Ecke</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

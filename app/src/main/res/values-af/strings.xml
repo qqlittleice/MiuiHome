@@ -39,7 +39,6 @@
   <string name="Reboot1">Are you sure you want to restart the System Launcher?</string>
   <string name="Reboot2">De Launcher start over 1 seconde opnieuw op!</string>
   <string name="RoundCorner">Grootte van de afgeronde hoeken van de miniatuur</string>
-  <string name="SearchBarBlur">Vervaging in zoekvak inschakelen</string>
   <string name="ShowDockIconTitles">Toon applicatienaam in het Dock</string>
   <string name="SimpleAnimation">Eenvoudige animatie</string>
   <string name="SimpleBlur">Eenvoudige vervaging</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Nieuwe widgetwinkel inschakelen op Low-End apparaten</string>
   <string name="RecommendServer">Aanbevelingsserver uitschakelen</string>
   <string name="EveryThingBuild">Launcher optimaliseren met Alles-modus</string>
-  <string name="DockHeight">Hoogte dokbalk</string>
-  <string name="DockRoundedCorners">Dockbar afgeronde hoeken</string>
-  <string name="DockSide">Dock Bar vanaf de zijkanten van het scherm</string>
-  <string name="DockBottom">Dock Bar vanaf de onderkant van het scherm</string>
-  <string name="DockIconBottom">Pictogrammen onder aan het scherm</string>
-  <string name="DockSettings">Dock-instellingen</string>
-  <string name="DockFeature">Dock-functie inschakelen</string>
-  <string name="EnableDockBlur">Vervaging van het Dock inschakelen</string>
-  <string name="Reset">Dock-parameters resetten</string>
-  <string name="Tips1">Hierdoor wordt de Dock-parameter hersteld naar de standaardwaarde en wordt de System Launcher opnieuw gestart.</string>
   <string name="Tips2">Hiermee worden de standaardinstellingen van de module hersteld en wordt de System Launcher opnieuw gestart.</string>
   <string name="HideSeekPoints">Pagina-indicator verwijderen</string>
   <string name="CategoryHideAll">Verberg \"Alle\" in app-categorieën</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Reset Thumbnail size for Horizontal Recent Parameters</string>
   <string name="Tips3">This will reset the Thumbnail size for Horizontal Recent parameters to its default value and restart the System Launcher.</string>
   <string name="UnlockIcons">Remove icon number restriction from dock</string>
-  <string name="DockMarginTop">Page Indicator and Icon Spacing</string>
-  <string name="DockMarginBottom">Page Indicator and the bottom of the Screen Spacing</string>
   <string name="SimpleWarn">You have enabled simple animation, this will hide some settings.</string>
   <string name="BrokenFeature">Obsolete Feature</string>
-  <string name="AppReturnAmin">App Return Blur</string>
   <string name="BlurRadius">Blur Radius</string>
   <string name="BasicBlur">Basic Blur</string>
   <string name="CustomTitleColor">Customize the App title color</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Always Blur Launcher Wallpaper</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Click to open Github</string>
-  <string name="AppCenter">Anonymous Statistics</string>
-  <string name="AppCenterTip">We use Microsoft AppCenter to help us test/analyze application usage.</string>
   <string name="IconTitleTopMargin">Icon Title Top Margin</string>
   <string name="OpenLSPosed">Open LSPosed</string>
   <string name="ShortcutCount">Unlock shortcut count limit</string>
   <string name="MaxShortcutCount">Modify max shortcut count</string>
   <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>
-  <string name="smallFolderBlur">Small folder blur</string>
-  <string name="smallFolderBlurCorner">Small folder blur corner</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

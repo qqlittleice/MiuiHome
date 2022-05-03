@@ -39,7 +39,6 @@
   <string name="Reboot1">Czy na pewno chcesz zrestartować System Launcher?</string>
   <string name="Reboot2">Launcher zostanie zrestartowany za 1 sekundę!</string>
   <string name="RoundCorner">Rozmiar miniatur zaokrąglonych rogów</string>
-  <string name="SearchBarBlur">Włącz rozmycie na pasku wyszukiwania</string>
   <string name="ShowDockIconTitles">Pokaż nazwę aplikacji w docku</string>
   <string name="SimpleAnimation">Prosta animacja</string>
   <string name="SimpleBlur">Proste rozmycie</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Włącz nowy sklep z widżetami na urządzeniach z niższej półki</string>
   <string name="RecommendServer">Wyłącz rekomendowany serwer</string>
   <string name="EveryThingBuild">Zoptymalizuj program uruchamiający w trybie wszystkiego</string>
-  <string name="DockHeight">Wysokość docka</string>
-  <string name="DockRoundedCorners">Zaokrąglenie docka</string>
-  <string name="DockSide">dock z boków ekranu</string>
-  <string name="DockBottom">Dock z dołu ekranu</string>
-  <string name="DockIconBottom">Ikony z dołu ekranu</string>
-  <string name="DockSettings">Ustawienia docka</string>
-  <string name="DockFeature">Włącz Funkcjé Docka</string>
-  <string name="EnableDockBlur">Włącz rozmycie docka</string>
-  <string name="Reset">Zresetuj parametry docka</string>
-  <string name="Tips1">Spowoduje to przywrócenie domyślnych wartości docka i ponowne uruchomienie Launchera.</string>
   <string name="Tips2">Spowoduje to przywrócenie domyślnych ustawień modułu i ponowne uruchomienie Launchera.</string>
   <string name="HideSeekPoints">Usuń wskaźnik stron</string>
   <string name="CategoryHideAll">Usuń \"Wszystkie\" w kategoriach aplikacji</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Zresetuj rozmiar miniatury dla parametrów w poziomie</string>
   <string name="Tips3">Spowoduje to zresetowanie rozmiaru miniaturki dla parametrów w poziomie do wartości domyślnej i ponowne uruchomienie systemu Launcher.</string>
   <string name="UnlockIcons">Usuń ograniczenie numeru ikon z doku</string>
-  <string name="DockMarginTop">Wskaźnik strony i odstępy ikon</string>
-  <string name="DockMarginBottom">Wskaźnik strony i dolna część odstępu ekranu</string>
   <string name="SimpleWarn">Włączyłeś prostą animację, to ukryje kilka ustawień.</string>
   <string name="BrokenFeature">Nieaktualna funkcja</string>
-  <string name="AppReturnAmin">Rozmycie zwrotne aplikacji</string>
   <string name="BlurRadius">Blur Radius</string>
   <string name="BasicBlur">Rozmycie podstawowe</string>
   <string name="CustomTitleColor">Dostosuj kolor tytułu aplikacji</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Zawsze rozmyj tapetę wyrzutni</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Kliknij, aby otworzyć Github</string>
-  <string name="AppCenter">Anonimowe statystyki</string>
-  <string name="AppCenterTip">Używamy Microsoft AppCenter, aby pomóc nam przetestować/analizować użycie aplikacji.</string>
   <string name="IconTitleTopMargin">Górny margines tytułu ikony</string>
   <string name="OpenLSPosed">Otwórz stratę</string>
   <string name="ShortcutCount">Limit liczby skrótów odblokowanych</string>
   <string name="MaxShortcutCount">Modyfikuj maksymalną liczbę skrótów</string>
   <string name="TaskViewAppCardBgColor">Dostosuj kolor tła miniatury dla małych aplikacji okna</string>
-  <string name="smallFolderBlur">Rozmycie małego folderu</string>
-  <string name="smallFolderBlurCorner">Mały róg rozmycia folderu</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

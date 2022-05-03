@@ -39,7 +39,6 @@
   <string name="Reboot1">Bạn có chắc chắn muốn khởi động lại Trình khởi chạy hệ thống không?</string>
   <string name="Reboot2">Trình khởi chạy sẽ khởi động lại sau 1 giây!</string>
   <string name="RoundCorner">Kích thước của các góc được làm tròn hình thu nhỏ</string>
-  <string name="SearchBarBlur">Bật Làm mờ trong Hộp Tìm kiếm</string>
   <string name="ShowDockIconTitles">Hiển thị tên ứng dụng trong Dock</string>
   <string name="SimpleAnimation">Hoạt ảnh đơn giản</string>
   <string name="SimpleBlur">Làm mờ đơn giản</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Bật Cửa hàng tiện ích con mới trên thiết bị cấp thấp</string>
   <string name="RecommendServer">Tắt máy chủ được đề xuất</string>
   <string name="EveryThingBuild">Tối ưu hóa Trình khởi chạy với Chế độ Mọi thứ</string>
-  <string name="DockHeight">Chiều cao thanh Dock</string>
-  <string name="DockRoundedCorners">Bo tròn thanh Dock</string>
-  <string name="DockSide">Thanh Dock từ các cạnh của Màn hình</string>
-  <string name="DockBottom">Thanh Dock từ dưới cùng của Màn hình</string>
-  <string name="DockIconBottom">Các biểu tượng từ cuối màn hình</string>
-  <string name="DockSettings">Cài đặt Dock</string>
-  <string name="DockFeature">Bật tính năng Dock</string>
-  <string name="EnableDockBlur">Bật tính năng Làm mờ của thanh Dock</string>
-  <string name="Reset">Đặt lại thông số Dock</string>
-  <string name="Tips1">Thao tác này sẽ khôi phục tham số Dock về giá trị mặc định của nó và khởi động lại Trình khởi chạy hệ thống.</string>
   <string name="Tips2">Thao tác này sẽ khôi phục cài đặt mặc định của Module và khởi động lại Trình khởi chạy hệ thống.</string>
   <string name="HideSeekPoints">Loại bỏ Chỉ báo Trang</string>
   <string name="CategoryHideAll">Ẩn \"Tất cả \" trong Danh mục ứng dụng</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Đặt lại kích thước hình thu nhỏ cho các thông số trên màn hình gần đây theo chiều ngang</string>
   <string name="Tips3">Thao tác này sẽ đặt lại kích thước Hình thu nhỏ cho các tham số Màn hình gần đây theo chiều ngang về giá trị mặc định của nó và khởi động lại Trình khởi chạy hệ thống.</string>
   <string name="UnlockIcons">Mở khóa giới hạn số icons ghế nóng(hotseat)</string>
-  <string name="DockMarginTop">Khoảng cách giữa Icons và chỉ báo trang</string>
-  <string name="DockMarginBottom">Chỉ báo trang và khoảng cách ở cuối màn hình</string>
   <string name="SimpleWarn">Bạn đã bật hoạt ảnh đơn giản, điều này sẽ ẩn một số cài đặt.</string>
   <string name="BrokenFeature">Tính Năng Lỗi Thời</string>
-  <string name="AppReturnAmin">Làm Mờ Ứng Dụng</string>
   <string name="BlurRadius">Bán Kính làm mờ</string>
   <string name="BasicBlur">Làm mờ cơ bản</string>
   <string name="CustomTitleColor">Tùy chỉnh màu cho tiêu đề ứng dụng</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Hình nền Trình khởi chạy Luôn làm mờ</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Bấm để mở Github</string>
-  <string name="AppCenter">Thống kê nặc danh</string>
-  <string name="AppCenterTip">Chúng tôi sử dụng Microsoft AppCenter để chúng tôi kiểm tra / phân tích việc sử dụng ứng dụng.</string>
   <string name="IconTitleTopMargin">Biểu tượng Lề trên cùng của Tiêu đề</string>
   <string name="OpenLSPosed">Mở LSPosed</string>
   <string name="ShortcutCount">Mở khóa giới hạn số lượng phím tắt</string>
   <string name="MaxShortcutCount">Sửa đổi số lượng phím tắt tối đa</string>
   <string name="TaskViewAppCardBgColor">Tùy chỉnh màu nền hình thu nhỏ cho các ứng dụng cửa sổ nhỏ</string>
-  <string name="smallFolderBlur">Làm mờ thư mục nhỏ</string>
-  <string name="smallFolderBlurCorner">Góc mờ thư mục nhỏ</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

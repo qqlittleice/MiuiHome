@@ -39,7 +39,6 @@
   <string name="Reboot1">Oletko varma, että haluat käynnistää järjestelmän käynnistimen uudelleen?</string>
   <string name="Reboot2">Käynnistin käynnistyy uudelleen 1 sekunnin kuluttua!</string>
   <string name="RoundCorner">Pikkukuvan koko pyöristetty kulmat</string>
-  <string name="SearchBarBlur">Ota sumennus käyttöön hakulaatikossa</string>
   <string name="ShowDockIconTitles">Näytä sovelluksen nimi Dockissa</string>
   <string name="SimpleAnimation">Yksinkertainen Animaatio</string>
   <string name="SimpleBlur">Yksinkertainen Sumennus</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Ota käyttöön uusi pienoisohjelma pienikokoisille laitteille</string>
   <string name="RecommendServer">Poista Suosituspalvelin Käytöstä</string>
   <string name="EveryThingBuild">Optimoi käynnistysohjelma kaikki tila</string>
-  <string name="DockHeight">Telakan Korkeus</string>
-  <string name="DockRoundedCorners">Telakarungon Pyöristetyt Kulmat</string>
-  <string name="DockSide">Telakan palkki näytön puolilta</string>
-  <string name="DockBottom">Telakan palkki näytön alareunasta</string>
-  <string name="DockIconBottom">Kuvakkeet näytön alareunasta</string>
-  <string name="DockSettings">Telakan Asetukset</string>
-  <string name="DockFeature">Ota Käyttöön Telakan Ominaisuus</string>
-  <string name="EnableDockBlur">Ota käyttöön telakan sumennus</string>
-  <string name="Reset">Nollaa Telakan Parametrit</string>
-  <string name="Tips1">Tämä palauttaa Dock-parametrin sen oletusarvoon ja käynnistää järjestelmän Launcherin uudelleen.</string>
   <string name="Tips2">Tämä palauttaa moduulin oletusasetukset ja käynnistää järjestelmän käynnistyksen uudelleen.</string>
   <string name="HideSeekPoints">Poista Sivun Indikaattori</string>
   <string name="CategoryHideAll">Piilota \"kaikki\" sovelluskategorioissa</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Nollaa pikkukuvan koko vaakasuuntaisille viimeisille parametreille</string>
   <string name="Tips3">Tämä palauttaa pikkukuvan koon Vaakasuoraan Viimeisimmät parametrit sen oletusarvoon ja käynnistää järjestelmän käynnistyslaitteen uudelleen.</string>
   <string name="UnlockIcons">Poista kuvakkeen numerorajoitus telakasta</string>
-  <string name="DockMarginTop">Sivun ilmaisin ja kuvakkeiden väli</string>
-  <string name="DockMarginBottom">Sivun ilmaisin ja näytön tilan alareunassa</string>
   <string name="SimpleWarn">Olet ottanut käyttöön yksinkertaisen animaation, tämä piilottaa joitakin asetuksia.</string>
   <string name="BrokenFeature">Vanhentunut Ominaisuus</string>
-  <string name="AppReturnAmin">Sovelluksen Palautuksen Sumennus</string>
   <string name="BlurRadius">Blur Radius</string>
   <string name="BasicBlur">Perus Sumennus</string>
   <string name="CustomTitleColor">Muokkaa sovelluksen otsikon väriä</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Sumenna Käynnistimen Taustakuva Aina</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Klikkaa avataksesi GitHub</string>
-  <string name="AppCenter">Anonyymit Tilastot</string>
-  <string name="AppCenterTip">Käytämme Microsoft AppCenteriä auttaaksemme meitä testaamaan / analysoimaan sovelluksen käyttöä.</string>
   <string name="IconTitleTopMargin">Kuvakkeen Otsikon Yläreunan Marginaali</string>
   <string name="OpenLSPosed">Avaa LSPosed</string>
   <string name="ShortcutCount">Avaa pikakuvakkeiden lukuraja</string>
   <string name="MaxShortcutCount">Muokkaa pikanäppäinten enimmäismäärää</string>
   <string name="TaskViewAppCardBgColor">Mukauta pikkukuvan taustaväriä pienille ikkunasovelluksille</string>
-  <string name="smallFolderBlur">Pieni kansion sumennus</string>
-  <string name="smallFolderBlurCorner">Pieni kansion sumennuksen kulma</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

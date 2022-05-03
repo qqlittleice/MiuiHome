@@ -29,7 +29,6 @@
   <string name="Reboot">Restart Launcher</string>
   <string name="Reboot2">Launcher akan restart pada 1 detik!</string>
   <string name="RoundCorner">Ukuran  sudut bundar thumbnail</string>
-  <string name="SearchBarBlur">Tambahkan blur dalam search bar</string>
   <string name="ShowDockIconTitles">Tampilkan nama aplikasi di dalam dock</string>
   <string name="SimpleAnimation">Animasi simpel</string>
   <string name="SimpleBlur">Blur simpel</string>
@@ -51,16 +50,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Aktifkan toko widget di HP low-end</string>
   <string name="RecommendServer">Matikan server rekomendasi</string>
   <string name="EveryThingBuild">Optimize launcher dengan mode "segalanya"</string>
-  <string name="DockHeight">Tinggi dock bar</string>
-  <string name="DockRoundedCorners">Sudut membulat dock bar</string>
-  <string name="DockSide">Kejauhan antara dock bar dengan layar kiri-kanan</string>
-  <string name="DockBottom">Kejauhan antara dock bar dengan bagian layar bawah</string>
-  <string name="DockIconBottom">Kejauhan icon antara bagian layar bawah</string>
-  <string name="DockSettings">Pengaturan dock</string>
-  <string name="DockFeature">Aktifkan fitur dock</string>
-  <string name="EnableDockBlur">Aktifkan blur dock</string>
-  <string name="Reset">Reset Dock</string>
-  <string name="Tips1">Ini akan mereset pengaturan dock, dan akan merestart launcher.</string>
   <string name="Tips2">Ini akan mereset pengaturan kedefault, dan merestar launcher.</string>
   <string name="HideSeekPoints">Hilangkan indikator halaman</string>
   <string name="CategoryHideAll">Sembunyikan \"All\" dalam kategori aplikasi</string>

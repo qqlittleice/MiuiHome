@@ -39,7 +39,6 @@
   <string name="Reboot1">Ești sigur că vrei să repornești Lansatorul de Sistem?</string>
   <string name="Reboot2">Lansatorul va reporni într-o secundă!</string>
   <string name="RoundCorner">Dimensiunea colțurilor rotunjite în miniatură</string>
-  <string name="SearchBarBlur">Activează estomparea în Căutare</string>
   <string name="ShowDockIconTitles">Arată numele aplicațiilor în zona de andocare</string>
   <string name="SimpleAnimation">Animație simplă</string>
   <string name="SimpleBlur">Estompare simplă</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Activează Noul magazin de widget-uri pe dispozitivele de gamă inferioară</string>
   <string name="RecommendServer">Dezactivează Server Recomandat</string>
   <string name="EveryThingBuild">Optimizează lansatorul cu modul Everything</string>
-  <string name="DockHeight">Înălțime bară Doc</string>
-  <string name="DockRoundedCorners">Colțuri rotunjite în bara de andocare</string>
-  <string name="DockSide">Bară de andocare pe părțile laterale ale ecranului</string>
-  <string name="DockBottom">Bara de andocare din partea de jos a ecranului</string>
-  <string name="DockIconBottom">Pictograme din partea de jos a ecranului</string>
-  <string name="DockSettings">Setări bară de andocare</string>
-  <string name="DockFeature">Activează caracteristicile barei de andocare</string>
-  <string name="EnableDockBlur">Activează estompare doc</string>
-  <string name="Reset">Resetează parametrii barei de andocare</string>
-  <string name="Tips1">Acest lucru va restaura parametrii barei de andocare la valorile implicite și va reporni lansatorul de sistem.</string>
   <string name="Tips2">Aceasta opțiune va restaura setările implicite ale modulului și va reporni lansatorul de sistem.</string>
   <string name="HideSeekPoints">Elimină indicatorul paginii</string>
   <string name="CategoryHideAll">Ascunde \"Toate\" în categoriile aplicațiilor</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Resetează dimensiunea miniaturii pentru aplicațiile recente orizontale</string>
   <string name="Tips3">Aceasta va reseta dimensiunea miniaturii pentru parametrii recentelor orizontale la valoarea implicită și va reporni lansatorul de sistem.</string>
   <string name="UnlockIcons">Elimină restricția privind numărul de pictograme din bara de andocare</string>
-  <string name="DockMarginTop">Indicator pagină și spațiere pictograme</string>
-  <string name="DockMarginBottom">Indicatorul paginii și partea de jos a ecranului</string>
   <string name="SimpleWarn">Ai activat animația simplă, aceasta va ascunde unele setări.</string>
   <string name="BrokenFeature">Caracteristici învechite</string>
-  <string name="AppReturnAmin">Estompare returnare aplicație</string>
   <string name="BlurRadius">Rază estompare</string>
   <string name="BasicBlur">Estompare de bază</string>
   <string name="CustomTitleColor">Personalizează culoarea titlului aplicațiilor</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Întotdeauna estompează fundalul lansatorului</string>
   <string name="Github">GitHub</string>
   <string name="OpenGithub">Click pentru a deschide Github</string>
-  <string name="AppCenter">Statistici anonime</string>
-  <string name="AppCenterTip">Folosim Microsoft App Center pentru a ne ajuta să testăm/analizăm utilizarea aplicației.</string>
   <string name="IconTitleTopMargin">Marginea de sus a titlului pictogramelor</string>
   <string name="OpenLSPosed">Deschide LSPosed</string>
   <string name="ShortcutCount">Deblocare limită număr de comenzi rapide</string>
   <string name="MaxShortcutCount">Modifică numărul maxim de scurtături</string>
   <string name="TaskViewAppCardBgColor">Personalizează culoarea de fundal a miniaturii pentru aplicațiile din fereastra mică</string>
-  <string name="smallFolderBlur">Estompare dosar mic</string>
-  <string name="smallFolderBlurCorner">Estompare colț dosar mic</string>
   <string name="DrawerModeCount">Numărul de pictograme în modul sertar</string>
 </resources>

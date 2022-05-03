@@ -9,7 +9,6 @@ class ModifyBlurRadius {
     fun init() {
         val value = OwnSP.ownSP.getFloat("blurRadius", -1f)
         if (value == -1f || value == 1f) return
-        if (OwnSP.ownSP.getBoolean("appReturnAmin", false)) return
         val blurUtilsClass = "com.miui.home.launcher.common.BlurUtils".findClass()
         blurUtilsClass.hookBeforeAllMethods("fastBlur") {
             it.args[0] = it.args[0] as Float * value

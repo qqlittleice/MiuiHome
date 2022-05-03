@@ -39,7 +39,6 @@
   <string name="Reboot1">Are you sure you want to restart the System Launcher?</string>
   <string name="Reboot2">لانچر 1 سیکنڈ میں دوبارہ شروع ہو جائے گا!</string>
   <string name="RoundCorner">تھمب نیل گول کونے کا سائز۔</string>
-  <string name="SearchBarBlur">سرچ باکس میں دھندلاپن کو فعال کریں۔</string>
   <string name="ShowDockIconTitles">گودی میں درخواست کا نام دکھائیں۔</string>
   <string name="SimpleAnimation">سادہ حرکت پذیری۔</string>
   <string name="SimpleBlur">سادہ دھندلاپن۔</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">کم وسائل والے آلات پر نیا ویجیٹ اسٹور فعال کریں۔</string>
   <string name="RecommendServer">تجویز کردہ سرور کو غیر فعال کریں۔</string>
   <string name="EveryThingBuild">ہر چیز کے موڈ کے ساتھ لانچر کو بہتر بنائیں۔</string>
-  <string name="DockHeight">گودی بار کی اونچائی۔</string>
-  <string name="DockRoundedCorners">ڈاک بار گول کونے۔</string>
-  <string name="DockSide">سکرین کے اطراف سے ڈاک بار کا فاصلہ۔</string>
-  <string name="DockBottom">سکرین کے نیچے سے ڈاک بار کا فاصلہ۔</string>
-  <string name="DockIconBottom">اسکرین کے نیچے سے شبیہیں کا فاصلہ۔</string>
-  <string name="DockSettings">ڈاک کی ترتیبات۔</string>
-  <string name="DockFeature">ڈاک کی خصوصیت کو فعال کریں۔</string>
-  <string name="EnableDockBlur">دھندلا پن کو فعال کریں۔</string>
-  <string name="Reset">ڈاک پیرامیٹرز ری سیٹ۔</string>
-  <string name="Tips1">یہ ڈاک کے پیرامیٹر کو اس کی ڈیفالٹ ویلیو پر بحال کرے گا اور سسٹم لانچر کو دوبارہ شروع کرے گا۔</string>
   <string name="Tips2">یہ ماڈیول ڈیفالٹ ترتیبات کو بحال کرے گا اور سسٹم لانچر کو دوبارہ شروع کرے گا۔</string>
   <string name="HideSeekPoints">صفحہ اشارے کو ہٹا دیں۔</string>
   <string name="CategoryHideAll">ایپ زمرہ جات میں \"تمام ایپس\" سیکشن چھپائیں۔</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Reset Thumbnail size for Horizontal Recent Parameters</string>
   <string name="Tips3">This will reset the Thumbnail size for Horizontal Recent parameters to its default value and restart the System Launcher.</string>
   <string name="UnlockIcons">Remove icon number restriction from dock</string>
-  <string name="DockMarginTop">Page Indicator and Icon Spacing</string>
-  <string name="DockMarginBottom">Page Indicator and the bottom of the Screen Spacing</string>
   <string name="SimpleWarn">You have enabled simple animation, this will hide some settings.</string>
   <string name="BrokenFeature">Obsolete Feature</string>
-  <string name="AppReturnAmin">App Return Blur</string>
   <string name="BlurRadius">Blur Radius</string>
   <string name="BasicBlur">Basic Blur</string>
   <string name="CustomTitleColor">Customize the App title color</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Always Blur Launcher Wallpaper</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Click to open Github</string>
-  <string name="AppCenter">Anonymous Statistics</string>
-  <string name="AppCenterTip">We use Microsoft AppCenter to help us test/analyze application usage.</string>
   <string name="IconTitleTopMargin">Icon Title Top Margin</string>
   <string name="OpenLSPosed">Open LSPosed</string>
   <string name="ShortcutCount">Unlock shortcut count limit</string>
   <string name="MaxShortcutCount">Modify max shortcut count</string>
   <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>
-  <string name="smallFolderBlur">Small folder blur</string>
-  <string name="smallFolderBlurCorner">Small folder blur corner</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

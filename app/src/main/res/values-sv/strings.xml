@@ -39,7 +39,6 @@
   <string name="Reboot1">Är du säker på att du vill starta om systemstarten?</string>
   <string name="Reboot2">Launcher kommer att starta om om 1 sekunder!</string>
   <string name="RoundCorner">Storlek på miniatyr rundade hörn</string>
-  <string name="SearchBarBlur">Aktivera oskärpa i sökrutan</string>
   <string name="ShowDockIconTitles">Visa applikationsnamn i dockan</string>
   <string name="SimpleAnimation">Enkel animering</string>
   <string name="SimpleBlur">Enkel oskärpa</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Aktivera ny widget-butik på låg-slut-enheter</string>
   <string name="RecommendServer">Inaktivera Rekommendera Server</string>
   <string name="EveryThingBuild">Optimera Launcher med allt läge</string>
-  <string name="DockHeight">Docka Bar Höjd</string>
-  <string name="DockRoundedCorners">Docka Bar rundade hörn</string>
-  <string name="DockSide">Docka Bar från sidorna av skärmen</string>
-  <string name="DockBottom">Docka Bar från botten av skärmen</string>
-  <string name="DockIconBottom">Ikoner från botten av skärmen</string>
-  <string name="DockSettings">Inställningar för docka</string>
-  <string name="DockFeature">Aktivera dockningsfunktion</string>
-  <string name="EnableDockBlur">Aktivera oskärpa i dockan</string>
-  <string name="Reset">Återställ docknings parametrar</string>
-  <string name="Tips1">Detta kommer att återställa dockningsparametern till dess standardvärde och starta om System Launcher.</string>
   <string name="Tips2">Detta kommer att återställa modulens standardinställningar och starta om System Launcher.</string>
   <string name="HideSeekPoints">Ta bort sidindikator</string>
   <string name="CategoryHideAll">Dölj \"Alla\" i appkategorier</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Återställ miniatyrstorlek för horisontella senaste parametrar</string>
   <string name="Tips3">Detta kommer att återställa miniatyrstorleken för horisontella senaste parametrar till dess standardvärde och starta om System Launcher.</string>
   <string name="UnlockIcons">Ta bort begränsning av ikonnummer från dockningsstation</string>
-  <string name="DockMarginTop">Sidindikator och Ikon Mellanrum</string>
-  <string name="DockMarginBottom">Sidan indikator och botten av skärmen Mellanrum</string>
   <string name="SimpleWarn">Du har aktiverat enkel animation, detta kommer att dölja vissa inställningar.</string>
   <string name="BrokenFeature">Föråldrad funktion</string>
-  <string name="AppReturnAmin">Appens returoskärpa</string>
   <string name="BlurRadius">Blur Radius</string>
   <string name="BasicBlur">Grundläggande oskärpa</string>
   <string name="CustomTitleColor">Anpassa färgen på appens titel</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Alltid oskärpa Launcher Bakgrund</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Klicka för att öppna Github</string>
-  <string name="AppCenter">Anonym statistik</string>
-  <string name="AppCenterTip">Vi använder Microsoft AppCenter för att hjälpa oss att testa/analysera applikationsanvändning.</string>
   <string name="IconTitleTopMargin">Ikon titel överst marginal</string>
   <string name="OpenLSPosed">Öppna LSP-filer</string>
   <string name="ShortcutCount">Lås upp genvägsgräns</string>
   <string name="MaxShortcutCount">Ändra max antal genvägar</string>
   <string name="TaskViewAppCardBgColor">Anpassa bakgrundsfärgen för miniatyrbilder för små fönsterappar</string>
-  <string name="smallFolderBlur">Oskärpa i liten mapp</string>
-  <string name="smallFolderBlurCorner">Liten mapp oskärpa hörn</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

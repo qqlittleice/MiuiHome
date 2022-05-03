@@ -39,7 +39,6 @@
   <string name="Reboot1">Er du sikker på at du vil starte systemmenyen på nytt?</string>
   <string name="Reboot2">Launcher vil starte på nytt om 1 sekunder!</string>
   <string name="RoundCorner">Størrelsen på miniatyrbildenes rundede hjørner</string>
-  <string name="SearchBarBlur">Aktiver Blur i søkeboks</string>
   <string name="ShowDockIconTitles">Vis programnavn i dokkingen?</string>
   <string name="SimpleAnimation">Enkel animasjon</string>
   <string name="SimpleBlur">Simple Blur</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Aktiver Ny Widget Store på Lav-Enheter</string>
   <string name="RecommendServer">Deaktiver Anbefalte Server</string>
   <string name="EveryThingBuild">Optimaliser Launcher med Altinn</string>
-  <string name="DockHeight">Dock søyle høyde</string>
-  <string name="DockRoundedCorners">Rundte hjørner av forankringssøyle</string>
-  <string name="DockSide">Forankre søyle fra sidene av skjermen</string>
-  <string name="DockBottom">Forankre søyle fra bunnen av skjermen</string>
-  <string name="DockIconBottom">Ikoner fra bunnen av skjermen</string>
-  <string name="DockSettings">Innstillinger for forankringsstasjon</string>
-  <string name="DockFeature">Aktiver Dock-funksjon</string>
-  <string name="EnableDockBlur">Aktiver Blur av Dock</string>
-  <string name="Reset">Tilbakestill Dock parametere</string>
-  <string name="Tips1">Dette vil gjenopprette Dock-parameteren til sin standardverdi og starte systemlauncheren på nytt.</string>
   <string name="Tips2">Dette vil gjenopprette standardinnstillingene for modulen og starte systemlauncheren på nytt.</string>
   <string name="HideSeekPoints">Fjern sideindikator</string>
   <string name="CategoryHideAll">Skjul \"Alle\" i App Kategorier</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Tilbakestill miniatyrbilde størrelse for Horisontale Nylige Parametere</string>
   <string name="Tips3">Dette vil tilbakestille miniatyrbildet for horisontale siste parametere til sin standardverdi og starte systemoppstarten på nytt.</string>
   <string name="UnlockIcons">Fjern symbolnummerbegrensning fra forankringen</string>
-  <string name="DockMarginTop">Sideindikator og ikon mellomrom</string>
-  <string name="DockMarginBottom">Sideindikator og bunnen av mellomrom på skjermen</string>
   <string name="SimpleWarn">Du har aktivert enkel animasjon, dette vil skjule noen innstillinger.</string>
   <string name="BrokenFeature">Foreldet funksjon</string>
-  <string name="AppReturnAmin">App Retur uklarhet</string>
   <string name="BlurRadius">Blur Radius</string>
   <string name="BasicBlur">Grunnleggende Blur</string>
   <string name="CustomTitleColor">Tilpass fargen for topptekst</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Alltid Blur Launcher bakgrunnsbilde</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Klikk for å åpne Github</string>
-  <string name="AppCenter">Anonym statistikk</string>
-  <string name="AppCenterTip">Vi bruker Microsoft AppCenter for å hjelpe oss med å teste og analysere applikasjonsbruken.</string>
   <string name="IconTitleTopMargin">Ikon tittel topp margin</string>
   <string name="OpenLSPosed">Åpne LSPosed</string>
   <string name="ShortcutCount">Lås opp antall snarveier</string>
   <string name="MaxShortcutCount">Endre maks antall snarveier</string>
   <string name="TaskViewAppCardBgColor">Tilpass bakgrunnsfarge for miniatyrbilder for små programmer</string>
-  <string name="smallFolderBlur">Liten mappeuskarphet</string>
-  <string name="smallFolderBlurCorner">Liten mappeuskarphet hjørne</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

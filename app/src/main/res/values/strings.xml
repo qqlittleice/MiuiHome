@@ -40,7 +40,6 @@
   <string name="Reboot1">Are you sure you want to restart the System Launcher?</string>
   <string name="Reboot2">The Launcher will restart in 1 seconds!</string>
   <string name="RoundCorner">Size of Thumbnail Rounded Corners</string>
-  <string name="SearchBarBlur">Enable Blur in Search Box</string>
   <string name="ShowDockIconTitles">Show application name in the Dock</string>
   <string name="SimpleAnimation">Simple Animation</string>
   <string name="SimpleBlur">Simple Blur</string>
@@ -62,16 +61,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Enable New Widget Store on Low-End Devices</string>
   <string name="RecommendServer">Disable Recommend Server</string>
   <string name="EveryThingBuild">Optimize Launcher with Everything Mode</string>
-  <string name="DockHeight">Dock Bar Height</string>
-  <string name="DockRoundedCorners">Dock Bar Rounded Corners</string>
-  <string name="DockSide">Dock Bar from the sides of the Screen</string>
-  <string name="DockBottom">Dock Bar from the bottom of the Screen</string>
-  <string name="DockIconBottom">Icons from the bottom of the Screen</string>
-  <string name="DockSettings">Dock Settings</string>
-  <string name="DockFeature">Enable Dock Feature</string>
-  <string name="EnableDockBlur">Enable Blur of the Dock</string>
-  <string name="Reset">Reset Dock Parameters</string>
-  <string name="Tips1">This will restore the Dock parameter to its default value and restart the System Launcher.</string>
   <string name="Tips2">This will restore the module default settings and restart the System Launcher.</string>
   <string name="HideSeekPoints">Remove Page Indicator</string>
   <string name="CategoryHideAll">Hide \"All\" in App Categories</string>
@@ -87,11 +76,8 @@
   <string name="Reset2">Reset Thumbnail size for Horizontal Recent Parameters</string>
   <string name="Tips3">This will reset the Thumbnail size for Horizontal Recent parameters to its default value and restart the System Launcher.</string>
   <string name="UnlockIcons">Remove icon number restriction from dock</string>
-  <string name="DockMarginTop">Page Indicator and Icon Spacing</string>
-  <string name="DockMarginBottom">Page Indicator and the bottom of the Screen Spacing</string>
   <string name="SimpleWarn">You have enabled simple animation, this will hide some settings.</string>
   <string name="BrokenFeature">Obsolete Feature</string>
-  <string name="AppReturnAmin">App Return Blur</string>
   <string name="BlurRadius">Blur Radius</string>
   <string name="BasicBlur">Basic Blur</string>
   <string name="CustomTitleColor">Customize the App title color</string>
@@ -103,14 +89,10 @@
   <string name="AlwaysBlur">Always Blur Launcher Wallpaper</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Click to open Github</string>
-  <string name="AppCenter">Anonymous Statistics</string>
-  <string name="AppCenterTip">We use Microsoft AppCenter to help us test/analyze application usage.</string>
   <string name="IconTitleTopMargin">Icon Title Top Margin</string>
   <string name="OpenLSPosed">Open LSPosed</string>
   <string name="ShortcutCount">Unlock shortcut count limit</string>
   <string name="MaxShortcutCount">Modify max shortcut count</string>
   <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>
-  <string name="smallFolderBlur">Small folder blur</string>
-  <string name="smallFolderBlurCorner">Small folder blur corner</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

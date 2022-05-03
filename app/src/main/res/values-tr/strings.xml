@@ -39,7 +39,6 @@
   <string name="Reboot1">Sistem başlatıcısını yeniden başlatmak istediğinizden emin misiniz?</string>
   <string name="Reboot2">Yeniden başlatılıyor!</string>
   <string name="RoundCorner">Yuvarlatılmış köşeler boyutu</string>
-  <string name="SearchBarBlur">Arama çubuğu bulanıklığı</string>
   <string name="ShowDockIconTitles">Dock\'taki uygulamaların isimlerini göster</string>
   <string name="SimpleAnimation">Basit animasyon</string>
   <string name="SimpleBlur">Basit Bulanıklık</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Yeni Widget mağazasını eski/düşük cihazlar için aktif et</string>
   <string name="RecommendServer">Önerilen sunucuyu devre dışı bırak</string>
   <string name="EveryThingBuild">Sistem başlatıcısının ayarlarını optimize et</string>
-  <string name="DockHeight">Yükseklik</string>
-  <string name="DockRoundedCorners">Yuvarlatılmış köşeler</string>
-  <string name="DockSide">Yanındaki boşluk</string>
-  <string name="DockBottom">Altındaki boşluk</string>
-  <string name="DockIconBottom">Simgelerin konumu</string>
-  <string name="DockSettings">Dock ayarları</string>
-  <string name="DockFeature">Dock özeliğini aç</string>
-  <string name="EnableDockBlur">Dock\'a bulanıklık ekle</string>
-  <string name="Reset">Dock ayarlarını sıfırla</string>
-  <string name="Tips1">Bu seçenek Dock ayarlarını sıfırlar ve sistem başlatıcısını yeniden başlatır.</string>
   <string name="Tips2">Bu seçenek modül ayarlarını sıfırlar ve sistem başlatıcısını yeniden başlatır.</string>
   <string name="HideSeekPoints">Sayfa göstergesini kaldır</string>
   <string name="CategoryHideAll">Uygulama kategorisinde \"Hepsi\" seçeneğini gizle</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Yatay son uygulamalar ayarlarını sıfırla</string>
   <string name="Tips3">Bu seçenek yatay son uygulamalar ayarlarını sıfırlar ve sistem başlatıcısını yeniden başlatır.</string>
   <string name="UnlockIcons">Dock\'taki simge kısıtlamasını kaldır</string>
-  <string name="DockMarginTop">Sayfa göstergesi ve simge arasındaki boşluk</string>
-  <string name="DockMarginBottom">Sayfa göstergesi ve ekran aralığı arasındaki boşluk</string>
   <string name="SimpleWarn">Basit animasyonu etkinleştirdiniz, bazı ayarlar gizlenecektir.</string>
   <string name="BrokenFeature">Eskimiş özellikler</string>
-  <string name="AppReturnAmin">Uygulama dönüş bulanıklığı</string>
   <string name="BlurRadius">Bulanıklık yarıçapı</string>
   <string name="BasicBlur">Basit bulanıklık</string>
   <string name="CustomTitleColor">Uygulama ismi rengi</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Duvar kağıdı bulanıklığı</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Github\'u açmak için tıklayın</string>
-  <string name="AppCenter">Anonim istatistikler</string>
-  <string name="AppCenterTip">Uygulama kullanımını test/analiz etmemize yardımcı olması için Microsoft AppCenter kullanıyoruz.</string>
   <string name="IconTitleTopMargin">Simge ismi üst kenar boşluğu</string>
   <string name="OpenLSPosed">LSPosed\'i Aç</string>
   <string name="ShortcutCount">Kısayol kısıtlamasını kaldır</string>
   <string name="MaxShortcutCount">Maksimum kısayol sayısını değiştir</string>
   <string name="TaskViewAppCardBgColor">Küçük pencere uygulamaları için küçük resim arka plan rengini özelleştirin</string>
-  <string name="smallFolderBlur">Küçük klasör bulanıklığı</string>
-  <string name="smallFolderBlurCorner">Küçük klasör bulanıklık köşesi</string>
   <string name="DrawerModeCount">Çekmece modu simgesi sayısı</string>
 </resources>

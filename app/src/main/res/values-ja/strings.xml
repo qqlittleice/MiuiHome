@@ -39,7 +39,6 @@
   <string name="Reboot1">システムランチャーを再起動してもよろしいですか？</string>
   <string name="Reboot2">ランチャーは1秒で再起動します！</string>
   <string name="RoundCorner">サムネイルの丸みを帯びた角のサイズ</string>
-  <string name="SearchBarBlur">検索ボックスでぼかしを有効にする</string>
   <string name="ShowDockIconTitles">Dockにアプリケーション名を表示します</string>
   <string name="SimpleAnimation">簡単なアニメーション</string>
   <string name="SimpleBlur">簡単なぼかし</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">ローエンドデバイスで新しいウィジェットストアを有効にする</string>
   <string name="RecommendServer">推奨サーバーを無効にする</string>
   <string name="EveryThingBuild">すべてのモードでランチャーを最適化する</string>
-  <string name="DockHeight">ドックバーの高さ</string>
-  <string name="DockRoundedCorners">ドックバー丸みを帯びた角</string>
-  <string name="DockSide">画面の側面のドックバー</string>
-  <string name="DockBottom">画面下部のドックバー</string>
-  <string name="DockIconBottom">画面下部のアイコン</string>
-  <string name="DockSettings">ドック設定</string>
-  <string name="DockFeature">ドック機能を有効にする</string>
-  <string name="EnableDockBlur">ドックのぼかしを有効にする</string>
-  <string name="Reset">ドックパラメータのリセット</string>
-  <string name="Tips1">これにより、Dockパラメータがデフォルト値に復元され、システムランチャーが再起動します。</string>
   <string name="Tips2">これにより、モジュールのデフォルト設定が復元され、システムランチャーが再起動します。</string>
   <string name="HideSeekPoints">ページインジケータを削除する</string>
   <string name="CategoryHideAll">アプリカテゴリの「すべて」を非表示</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">水平方向の最近のパラメータのサムネイルサイズをリセット</string>
   <string name="Tips3">これにより、水平最近のパラメータのサムネイルサイズがデフォルト値にリセットされ、システムランチャーが再起動します。</string>
   <string name="UnlockIcons">ドックからアイコン番号の制限を削除します</string>
-  <string name="DockMarginTop">ページインジケーターとアイコンの間隔</string>
-  <string name="DockMarginBottom">ページインジケーターと画面の下部</string>
   <string name="SimpleWarn">簡単なアニメーションを有効にしました。これにより、一部の設定が非表示になります。</string>
   <string name="BrokenFeature">廃止された機能</string>
-  <string name="AppReturnAmin">アプリリターンブラー</string>
   <string name="BlurRadius">ぼかし半径</string>
   <string name="BasicBlur">基本的なぼかし</string>
   <string name="CustomTitleColor">アプリのタイトルの色をカスタマイズする</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">ランチャーの壁紙を常にぼかします</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">クリックしてGithubを開きます</string>
-  <string name="AppCenter">匿名の統計情報</string>
-  <string name="AppCenterTip">Microsoft AppCenterを使用して、アプリケーションの使用状況のテスト/分析に役立てています。</string>
   <string name="IconTitleTopMargin">アイコンタイトル上マージン</string>
   <string name="OpenLSPosed">LSPosedを開く</string>
   <string name="ShortcutCount">ショートカットカウント制限のロックを解除する</string>
   <string name="MaxShortcutCount">最大ショートカット数を変更する</string>
   <string name="TaskViewAppCardBgColor">小さなウィンドウアプリのサムネイルの背景色をカスタマイズする</string>
-  <string name="smallFolderBlur">小さなフォルダのぼかし</string>
-  <string name="smallFolderBlurCorner">小さなフォルダぼかし角</string>
   <string name="DrawerModeCount">ドロワーモードのアイコン数</string>
 </resources>

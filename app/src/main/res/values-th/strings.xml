@@ -39,7 +39,6 @@
   <string name="Reboot1">คุณแน่ใจหรือว่าต้องการเริ่มต้นใหม่</string>
   <string name="Reboot2">หน้าแรกจะรีสตาร์ทใน 1 วินาที!</string>
   <string name="RoundCorner">ขนาดมุมโค้งมนของแอปล่าสุด</string>
-  <string name="SearchBarBlur">เอฟเฟกต์เบลอช่องค้นหา</string>
   <string name="ShowDockIconTitles">แสดงชื่อแอพที่แถบด้านล่างบน Dock</string>
   <string name="SimpleAnimation">แอนิเมชั่นง่ายๆ</string>
   <string name="SimpleBlur">เบลอเริ่มต้น</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">เปิดใช้งานวิดเจ็ต MIUI บนเครื่องระดับล่าง</string>
   <string name="RecommendServer">ปิดคำแนะนำ</string>
   <string name="EveryThingBuild">รวบรวมหน้าแรกด้วยโหมดทุกอย่าง</string>
-  <string name="DockHeight">ความสูงของDock</string>
-  <string name="DockRoundedCorners">การโค้งมนของ Dock</string>
-  <string name="DockSide">ระดับความกว้างDock</string>
-  <string name="DockBottom">ระดับของDockจากด้านล่างของหน้าจอ</string>
-  <string name="DockIconBottom">ระดับไอคอนจากด้านล่างของหน้าจอ</string>
-  <string name="DockSettings">การตั้งค่าDock</string>
-  <string name="DockFeature">เปิดใช้งานคุณสมบัติDock</string>
-  <string name="EnableDockBlur">เปิดใช้งานการเบลอบนDock</string>
-  <string name="Reset">รีเซ็ต</string>
-  <string name="Tips1">การดำเนินการนี้จะรีเซ็ตพารามิเตอร์การกำหนดค่าDockเป็นค่าเริ่มต้นและรีสตาร์ทหน้าแรก</string>
   <string name="Tips2">การดำเนินการนี้จะคืนค่าการตั้งค่าเริ่มต้นของโมดูลและรีสตาร์ทหน้าแรก</string>
   <string name="HideSeekPoints">ลบตัวบ่งชี้หน้า</string>
   <string name="CategoryHideAll">ซ่อน \"ทั้งหมด\" ในกลุ่มแอป</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">รีเซ็ตขนาดตัวอย่างแอปแนวนอน (ไทล์)</string>
   <string name="Tips3">การดำเนินการนี้จะรีเซ็ตการกำหนดค่าขนาดตัวอย่างแอปแนวนอน (ไทล์) เป็นค่าเริ่มต้นและรีสตาร์ทหน้าแรก</string>
   <string name="UnlockIcons">ปลดล็อกขีดจำกัดจำนวนไอคอนในDock</string>
-  <string name="DockMarginTop">ระยะห่างของตัวบ่งชี้หน้า</string>
-  <string name="DockMarginBottom">ตัวบ่งชี้หน้าจากด้านล่างของหน้าจอ</string>
   <string name="SimpleWarn">คุณเปิดใช้งานแอนิเมชั่นอย่างง่าย ซึ่งปิดใช้งานการตั้งค่าคุณสมบัติบางอย่าง</string>
   <string name="BrokenFeature">ฟังก์ชั่นล้าสมัย</string>
-  <string name="AppReturnAmin">อนิเมชั่นเบลอหลังจากออกจากแอป</string>
   <string name="BlurRadius">รัศมีความเบลอ</string>
   <string name="BasicBlur">เบสิคเบลอ</string>
   <string name="CustomTitleColor">ใส่สีชื่อเรื่อง</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">เบลอวอลเปเปอร์หน้าแรกเสมอ</string>
   <string name="Github">ที่เก็บโอเพ่นซอร์ส</string>
   <string name="OpenGithub">คลิกเพื่อเปิด Github</string>
-  <string name="AppCenter">สถิตินิรนาม</string>
-  <string name="AppCenterTip">เราใช้ Microsoft AppCenter เพื่อช่วยเราทดสอบ/วิเคราะห์การใช้งานแอปพลิเคชัน</string>
   <string name="IconTitleTopMargin">ระยะห่างไอคอนและชื่อเรื่อง</string>
   <string name="OpenLSPosed">เปิด LSPosed</string>
   <string name="ShortcutCount">ปลดล็อกขีด จำกัด ทางลัด</string>
   <string name="MaxShortcutCount">จำนวนทางลัดสูงสุด</string>
   <string name="TaskViewAppCardBgColor">สีพื้นหลังของการ์ดแอปพลิเคชันในหน้าต่างพื้นหลัง</string>
-  <string name="smallFolderBlur">เอฟเฟ็คเบลอโฟลเดอร์ขนาดย่อ</string>
-  <string name="smallFolderBlurCorner">การเบลอมุมโค้งมนโฟลเดอร์ขนาดย่อ</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

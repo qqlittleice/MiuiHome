@@ -39,7 +39,6 @@
   <string name="Reboot1">Sei sicuro di voler riavviare il launcher di sistema?</string>
   <string name="Reboot2">Il launcher si riavvierà in un secondo!</string>
   <string name="RoundCorner">Ampiezza degli angoli delle anteprime nella schermata recenti</string>
-  <string name="SearchBarBlur">Abilita sfocatura della barra di ricerca</string>
   <string name="ShowDockIconTitles">Mostra etichette nella Dock</string>
   <string name="SimpleAnimation">Animazione semplice</string>
   <string name="SimpleBlur">Sfocatura semplice</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Abilita il nuovo Widget Store nei dispositivi di fascia bassa</string>
   <string name="RecommendServer">Disattiva server dei consigliati</string>
   <string name="EveryThingBuild">Modalità ottimizza il launcher con tutto</string>
-  <string name="DockHeight">Altezza dock</string>
-  <string name="DockRoundedCorners">Angoli della dock</string>
-  <string name="DockSide">Distanza barra della Dock dai lati dello schermo</string>
-  <string name="DockBottom">Distanza barra della Dock dalla parte inferiore dello schermo</string>
-  <string name="DockIconBottom">Distanza icone dalla parte inferiore dello schermo</string>
-  <string name="DockSettings">Opzioni dock</string>
-  <string name="DockFeature">Attiva dock</string>
-  <string name="EnableDockBlur">Attiva sfocatura sfondo della dock</string>
-  <string name="Reset">Resetta parametri della dock</string>
-  <string name="Tips1">Questo ripristinerà i valori della dock predefiniti e riavvierà il launcher.</string>
   <string name="Tips2">Questo reimposterà le opzioni predefinite del modulo e riavvierà il launcher.</string>
   <string name="HideSeekPoints">Rimuovi indicatore pagine</string>
   <string name="CategoryHideAll">Nascondi \"Tutte\" nelle categorie del cassetto app</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Resetta parametri dimensione anteprima per i recenti orizzontali</string>
   <string name="Tips3">Questo reimposterà la dimensione dell\'anteprima per i recenti orizzonatali ai valori predefiniti e riavvierà il launcher.</string>
   <string name="UnlockIcons">Sblocca limite icone nella barra dei preferiti</string>
-  <string name="DockMarginTop">Spaziatura icone e indicatore pagine</string>
-  <string name="DockMarginBottom">Spaziatura tra l\'indicatore pagine e il fondo dello schermo</string>
   <string name="SimpleWarn">Hai abilitato \"animazione semplice\", questo nasconderà alcune impostazioni.</string>
   <string name="BrokenFeature">Funzioni obsolete</string>
-  <string name="AppReturnAmin">Sfocatura ritorno app</string>
   <string name="BlurRadius">Raggio di sfocatura</string>
   <string name="BasicBlur">Sfocatura di base</string>
   <string name="CustomTitleColor">Personalizza il colore dell\'etichetta dell\'icona dell\'app</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Sfoca sempre sfondo launcher</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Clicca per aprire Github</string>
-  <string name="AppCenter">Statistiche anonime</string>
-  <string name="AppCenterTip">Usiamo Microsoft AppCenter per testare/analizzare l\'uso dell\'applicazione.</string>
   <string name="IconTitleTopMargin">Margine superiore icona titolo</string>
   <string name="OpenLSPosed">Apri LSPosed</string>
   <string name="ShortcutCount">Sblocca il limite del numero di collegamenti</string>
   <string name="MaxShortcutCount">Modifica numero massimo di scorciatoie</string>
   <string name="TaskViewAppCardBgColor">Personalizza il colore di sfondo delle miniature per le applicazioni di piccole finestre</string>
-  <string name="smallFolderBlur">Sfocatura cartella piccola</string>
-  <string name="smallFolderBlurCorner">Angolo sfocatura cartella piccola</string>
   <string name="DrawerModeCount">Numero di icone in modalità cassetto</string>
 </resources>

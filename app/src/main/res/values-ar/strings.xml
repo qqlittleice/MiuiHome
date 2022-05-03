@@ -39,7 +39,6 @@
   <string name="Reboot1">هل أنت متأكد من أنك تريد إعادة تشغيل مشغل النظام؟</string>
   <string name="Reboot2">سيتم إعادة تشغيل المشغل في غضون ثانية واحدة!</string>
   <string name="RoundCorner">حجم زوايا التقريب المصغرة</string>
-  <string name="SearchBarBlur">تمكين التشويش في مربع البحث</string>
   <string name="ShowDockIconTitles">إظهار اسم التطبيق في القائمة</string>
   <string name="SimpleAnimation">حركة متحركة بسيطة</string>
   <string name="SimpleBlur">ضبابية بسيطة</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">تمكين متجر ويدجت جديد على الأجهزة المنخفضة</string>
   <string name="RecommendServer">تعطيل الخادم الموصى به</string>
   <string name="EveryThingBuild">تحسين المشغل مع وضع كل شيء</string>
-  <string name="DockHeight">ارتفاع شريط الإرساء</string>
-  <string name="DockRoundedCorners">زوايا شريط الشريط المدوي</string>
-  <string name="DockSide">شريط الإرساء من جوانب الشاشة</string>
-  <string name="DockBottom">شريط الإرساء من أسفل الشاشة</string>
-  <string name="DockIconBottom">الأيقونات من أسفل الشاشة</string>
-  <string name="DockSettings">إعدادات الإرساء</string>
-  <string name="DockFeature">تمكين ميزة الإرساء</string>
-  <string name="EnableDockBlur">تمكين طمس القائمة</string>
-  <string name="Reset">إعادة تعيين معلمات القفل</string>
-  <string name="Tips1">سيؤدي هذا إلى استعادة معلمة Dock إلى قيمتها الافتراضية وإعادة تشغيل مشغل النظام.</string>
   <string name="Tips2">سيؤدي هذا إلى استعادة إعدادات الوحدة الافتراضية وإعادة تشغيل مشغل النظام.</string>
   <string name="HideSeekPoints">إزالة مؤشر الصفحة</string>
   <string name="CategoryHideAll">إخفاء \"الكل\" في تصنيفات التطبيق</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">إعادة تعيين حجم الصورة المصغرة للمعلمات الأخيرة الأفقية</string>
   <string name="Tips3">سيؤدي هذا إلى إعادة تعيين حجم الصورة المصغرة للمعلمات الحديثة الأفقية إلى قيمتها الافتراضية وإعادة تشغيل مشغل النظام.</string>
   <string name="UnlockIcons">إزالة تقييد رقم الأيقونة من الإرساء</string>
-  <string name="DockMarginTop">مؤشر الصفحة وتباعد الأيقونة</string>
-  <string name="DockMarginBottom">مؤشر الصفحة وأسفل المسافة بين الشاشة</string>
   <string name="SimpleWarn">لقد قمت بتمكين الرسوم المتحركة البسيطة، سيؤدي هذا إلى إخفاء بعض الإعدادات.</string>
   <string name="BrokenFeature">ميزة متقادمة</string>
-  <string name="AppReturnAmin">ضبابية إرجاع التطبيق</string>
   <string name="BlurRadius">Blur Radius</string>
   <string name="BasicBlur">طمس أساسي</string>
   <string name="CustomTitleColor">تخصيص لون عنوان التطبيق</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">طمس خلفية المشغل دائمًا</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">انقر لفتح Github</string>
-  <string name="AppCenter">إحصاءات مجهولة</string>
-  <string name="AppCenterTip">نحن نستخدم Microsoft AppCenter لمساعدتنا على اختبار/تحليل استخدام التطبيق.</string>
   <string name="IconTitleTopMargin">رأس عنوان الأيقونة</string>
   <string name="OpenLSPosed">فتح LSPosed</string>
   <string name="ShortcutCount">فتح حد عدد الاختصارات</string>
   <string name="MaxShortcutCount">تعديل الحد الأقصى لعدد الاختصارات</string>
   <string name="TaskViewAppCardBgColor">تخصيص لون الخلفية المصغرة لتطبيقات النافذة الصغيرة</string>
-  <string name="smallFolderBlur">ضبابية المجلد الصغير</string>
-  <string name="smallFolderBlurCorner">زاوية ضبابية مجلد صغير</string>
   <string name="DrawerModeCount">عدد أيقونات وضع درج التطبيقات</string>
 </resources>

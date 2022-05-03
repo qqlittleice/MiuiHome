@@ -39,7 +39,6 @@
   <string name="Reboot1">Вы уверены, что хотите перезапустить?</string>
   <string name="Reboot2">Рабочий стол перезагрузится через 1 секунду!</string>
   <string name="RoundCorner">Размер закругления углов миниатюры</string>
-  <string name="SearchBarBlur">Размытие поля поиска</string>
   <string name="ShowDockIconTitles">Отображать названия приложений в док-баре</string>
   <string name="SimpleAnimation">Простые анимации</string>
   <string name="SimpleBlur">Простое размытие</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Low-end уст-ва могут использовать виджеты MIUI</string>
   <string name="RecommendServer">Отключить сервер рекомендаций</string>
   <string name="EveryThingBuild">Скомпилировать раб. стол MIUI, используя режим \"Everything\"</string>
-  <string name="DockHeight">Высота док-бара</string>
-  <string name="DockRoundedCorners">Закругленные углы док-бара</string>
-  <string name="DockSide">Док-бар по бокам экрана</string>
-  <string name="DockBottom">Док-бар в нижней части экрана</string>
-  <string name="DockIconBottom">Иконки в нижней части экрана</string>
-  <string name="DockSettings">Настройки док-бара</string>
-  <string name="DockFeature">Включить функцию \"Док-бар\"</string>
-  <string name="EnableDockBlur">Включить размытие панели док-бара</string>
-  <string name="Reset">Сброс параметров док-бара</string>
-  <string name="Tips1">Это приведет к сбросу параметров \"Док-бара\" на значения по умолчанию и перезагрузке рабочего стола.</string>
   <string name="Tips2">Это восстановит настройки модуля по умолчанию и перезагрузит раб. стол системы.</string>
   <string name="HideSeekPoints">Скрыть индикатор страниц рабочего стола</string>
   <string name="CategoryHideAll">Скрыть \"Все\" в категориях приложений</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Сброс размера миниатюры для горизонтального меню недавних</string>
   <string name="Tips3">Это приведет к сбросу параметров Размера миниатюры для горизонтального меню недавних на значение по умолчанию и перезапуску рабочего стола.</string>
   <string name="UnlockIcons">Откл. ограничение кол-ва иконок в док-баре</string>
-  <string name="DockMarginTop">Индикатор страницы и Интервал между значками</string>
-  <string name="DockMarginBottom">Индикатор страницы и Интервал в нижней части</string>
   <string name="SimpleWarn">Вы включили простую анимацию, это скроет некоторые настройки.</string>
   <string name="BrokenFeature">Устаревшие функции</string>
-  <string name="AppReturnAmin">Размытие при сворачивании</string>
   <string name="BlurRadius">Степень размытия</string>
   <string name="BasicBlur">Простое размытие</string>
   <string name="CustomTitleColor">Настройка цвета подписи под иконками приложений</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Постоянное размытие обоев на раб. столе</string>
   <string name="Github">GitHub</string>
   <string name="OpenGithub">Нажмите что бы открыть Github</string>
-  <string name="AppCenter">Анонимная статистика использования</string>
-  <string name="AppCenterTip">Мы используем Microsoft AppCenter для анализа использования приложения.</string>
   <string name="IconTitleTopMargin">Внешний отступ иконки</string>
   <string name="OpenLSPosed">Открыть LSPosed</string>
   <string name="ShortcutCount">Разблокировать лимит количества ярлыков</string>
   <string name="MaxShortcutCount">Изменить максимальное число ярлыков</string>
   <string name="TaskViewAppCardBgColor">Настройка цвета фона миниатюр для приложений с плавающими окнами</string>
-  <string name="smallFolderBlur">Размытие папки</string>
-  <string name="smallFolderBlurCorner">Угол размытия папки</string>
   <string name="DrawerModeCount">Кол-во значков в режиме панели</string>
 </resources>

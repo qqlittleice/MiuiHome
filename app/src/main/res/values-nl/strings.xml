@@ -39,7 +39,6 @@
   <string name="Reboot1">Weet u zeker dat u de Systeem Launcher wilt herstarten?</string>
   <string name="Reboot2">De Launcher zal over 1 seconden herstarten!</string>
   <string name="RoundCorner">Grootte van Thumbnail Rond Hoeken</string>
-  <string name="SearchBarBlur">Activeer vervagen in zoekvak</string>
   <string name="ShowDockIconTitles">Toon toepassingsnaam in het dock</string>
   <string name="SimpleAnimation">Eenvoudige Animatie</string>
   <string name="SimpleBlur">Eenvoudige vervaging</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Schakel de Nieuwe Widget Store in op Laag-End Apparaten</string>
   <string name="RecommendServer">Schakel aanbevolen server uit</string>
   <string name="EveryThingBuild">Optimaliseer Launcher met Alles Modus</string>
-  <string name="DockHeight">Dock balk hoogte</string>
-  <string name="DockRoundedCorners">Dockbalk geronde hoeken</string>
-  <string name="DockSide">Vastbalk van de zijkant van het scherm</string>
-  <string name="DockBottom">Dock-balk aan de onderkant van het scherm</string>
-  <string name="DockIconBottom">Pictogrammen vanaf de onderkant van het scherm</string>
-  <string name="DockSettings">Instellingen voor dockstation</string>
-  <string name="DockFeature">Dock-functie inschakelen</string>
-  <string name="EnableDockBlur">Vervagen van het dock inschakelen</string>
-  <string name="Reset">Dock-parameters resetten</string>
-  <string name="Tips1">Dit zal de Dock parameter herstellen naar de standaard waarde en de Systeem Launcher herstarten.</string>
   <string name="Tips2">Dit zal de standaardinstellingen van de module herstellen en het systeem Launcher opnieuw starten.</string>
   <string name="HideSeekPoints">Pagina-indicator verwijderen</string>
   <string name="CategoryHideAll">Verberg \"Alle\" in App Categorieën</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Thumbnail grootte voor horizontale Recente Parameters resetten</string>
   <string name="Tips3">Dit zal de thumbnail grootte van de horizontale recente parameters herstellen naar de standaardwaarde en de systeem Launcher opnieuw starten.</string>
   <string name="UnlockIcons">Beperking van pictogramnummer uit dock verwijderen</string>
-  <string name="DockMarginTop">Pagina Indicator en pictogram afstand</string>
-  <string name="DockMarginBottom">Pagina Indicator en de onderkant van de scherm afstand</string>
   <string name="SimpleWarn">Je hebt eenvoudige animatie ingeschakeld, dit zal sommige instellingen verbergen.</string>
   <string name="BrokenFeature">Verouderde functie</string>
-  <string name="AppReturnAmin">App retour vervaging</string>
   <string name="BlurRadius">Blur Radius</string>
   <string name="BasicBlur">Basis vervaging</string>
   <string name="CustomTitleColor">Pas de titelkleur van de app aan</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Vervaag vervagen Achtergrond</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Klik om Github te openen</string>
-  <string name="AppCenter">Anonieme statistieken</string>
-  <string name="AppCenterTip">We gebruiken Microsoft AppCenter om ons te helpen het aanvraaggebruik te testen/analyseren.</string>
   <string name="IconTitleTopMargin">Pictogram titel top marge</string>
   <string name="OpenLSPosed">Open verliesde</string>
   <string name="ShortcutCount">Ontgrendel snelkoppeling teller limiet</string>
   <string name="MaxShortcutCount">Wijzig maximale aantal snelkoppelingen</string>
   <string name="TaskViewAppCardBgColor">Pas de miniatuur achtergrondkleur aan voor apps in kleine schermen</string>
-  <string name="smallFolderBlur">Kleine map vervagen</string>
-  <string name="smallFolderBlurCorner">Kleine map vervaging hoek</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

@@ -39,7 +39,6 @@
   <string name="Reboot1">Jste si jisti, že chcete restartovat systémový spouštěč?</string>
   <string name="Reboot2">Spouštěč bude restartován za 1 sekundy!</string>
   <string name="RoundCorner">Velikost zaoblených rohů miniatur</string>
-  <string name="SearchBarBlur">Povolit rozostření v vyhledávacím poli</string>
   <string name="ShowDockIconTitles">Zobrazit název aplikace v Docku</string>
   <string name="SimpleAnimation">Jednoduchá animace</string>
   <string name="SimpleBlur">Jednoduché rozostření</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Povolit nový obchod s widgety na nízkokoncových zařízeních</string>
   <string name="RecommendServer">Zakázat Doporučený server</string>
   <string name="EveryThingBuild">Optimalizovat spouštěč pomocí režimu Vše</string>
-  <string name="DockHeight">Výška dokové lišty</string>
-  <string name="DockRoundedCorners">Zaoblené rohy dokové lišty</string>
-  <string name="DockSide">Dokovací panel ze stran obrazovky</string>
-  <string name="DockBottom">Dokovací panel z dolní části obrazovky</string>
-  <string name="DockIconBottom">Ikony z dolní části obrazovky</string>
-  <string name="DockSettings">Nastavení doku</string>
-  <string name="DockFeature">Povolit funkci doku</string>
-  <string name="EnableDockBlur">Povolit rozostření doku</string>
-  <string name="Reset">Resetovat parametry doku</string>
-  <string name="Tips1">Tímto se obnoví parametr Dock na výchozí hodnotu a restartuje System Launcher.</string>
   <string name="Tips2">Tímto obnovíte výchozí nastavení modulu a restartujte Launcher.</string>
   <string name="HideSeekPoints">Odstranit indikátor stránky</string>
   <string name="CategoryHideAll">Skrýt \"Vše\" v kategoriích aplikací</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Obnovit velikost náhledu pro horizontální nedávné parametry</string>
   <string name="Tips3">Tímto resetujete velikost náhledu pro poslední parametry horizontálně na výchozí hodnotu a restartujte Launcher.</string>
   <string name="UnlockIcons">Odstranit omezení čísla ikony z doku</string>
-  <string name="DockMarginTop">Ukazatel stránky a mezery ikon</string>
-  <string name="DockMarginBottom">Indikátor stránky a konec mezery obrazovky</string>
   <string name="SimpleWarn">Povolili jste jednoduchou animaci, toto skryje některá nastavení.</string>
   <string name="BrokenFeature">Zastaralá funkce</string>
-  <string name="AppReturnAmin">Rozostření aplikace</string>
   <string name="BlurRadius">Blur Radius</string>
   <string name="BasicBlur">Základní rozostření</string>
   <string name="CustomTitleColor">Přizpůsobit barvu titulku aplikace</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Vždy rozostřit pozadí spouštěče</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Kliknutím otevřete Github</string>
-  <string name="AppCenter">Anonymní statistiky</string>
-  <string name="AppCenterTip">Používáme Microsoft AppCenter k testování/analýze používání aplikace.</string>
   <string name="IconTitleTopMargin">Titulek ikony horní okraj</string>
   <string name="OpenLSPosed">Otevřít LSPosed</string>
   <string name="ShortcutCount">Limit počtu zástupců pro odemknutí</string>
   <string name="MaxShortcutCount">Upravit maximální počet zástupců</string>
   <string name="TaskViewAppCardBgColor">Přizpůsobit barvu pozadí pro aplikace malých oken</string>
-  <string name="smallFolderBlur">Malé rozostření složky</string>
-  <string name="smallFolderBlurCorner">Malá složka rozostření rohu</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

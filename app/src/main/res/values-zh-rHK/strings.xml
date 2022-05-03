@@ -39,7 +39,6 @@
   <string name="Reboot1">確定要重啟嗎</string>
   <string name="Reboot2">桌面將在　1　秒後重啟！</string>
   <string name="RoundCorner">後台卡片圓角大小</string>
-  <string name="SearchBarBlur">搜索框模糊</string>
   <string name="ShowDockIconTitles">顯示底欄應用標題</string>
   <string name="SimpleAnimation">簡單動畫</string>
   <string name="SimpleBlur">簡單模糊</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">允許低端機添加　MIUI　小組件</string>
   <string name="RecommendServer">禁用今日推薦</string>
   <string name="EveryThingBuild">使用　Everything　模式編譯桌面</string>
-  <string name="DockHeight">底欄高度</string>
-  <string name="DockRoundedCorners">底欄圓角</string>
-  <string name="DockSide">底欄距離屏幕兩側</string>
-  <string name="DockBottom">底欄距屏幕底部</string>
-  <string name="DockIconBottom">圖標距屏幕底部</string>
-  <string name="DockSettings">底欄設置</string>
-  <string name="DockFeature">啟用底欄功能</string>
-  <string name="EnableDockBlur">啟用底欄模糊</string>
-  <string name="Reset">重置底欄配置參數</string>
-  <string name="Tips1">這將重置底欄配置參數到默認值並重啟桌面。</string>
   <string name="Tips2">這將還原模塊默認值設定並重啟桌面。</string>
   <string name="HideSeekPoints">移除頁面指示器</string>
   <string name="CategoryHideAll">隱藏應用分組中的 \"全部\"</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">重置橫向卡片大小配置參數</string>
   <string name="Tips3">這將重置橫向卡片大小配置參數到默認值並重啟桌面。</string>
   <string name="UnlockIcons">解鎖底欄圖標數量限制</string>
-  <string name="DockMarginTop">頁面指示器距圖標</string>
-  <string name="DockMarginBottom">頁面寬度屏幕底部</string>
   <string name="SimpleWarn">你啟用了簡單動畫，這會禁用一些功能設置。</string>
   <string name="BrokenFeature">廢棄功能</string>
-  <string name="AppReturnAmin">應用返回模糊</string>
   <string name="BlurRadius">模糊半徑</string>
   <string name="BasicBlur">基礎模糊</string>
   <string name="CustomTitleColor">應用標題顔色</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">始終模糊桌面壁紙</string>
   <string name="Github">開源倉庫</string>
   <string name="OpenGithub">點擊打開 Github</string>
-  <string name="AppCenter">匿名统计</string>
-  <string name="AppCenterTip">我們使用 Microsoft AppCenter 幫助我們測試/分析應用程序使用情況。</string>
   <string name="IconTitleTopMargin">圖標與標題間距</string>
   <string name="OpenLSPosed">打開 LSPosed</string>
   <string name="ShortcutCount">解鎖 Shortcut 數量限制</string>
   <string name="MaxShortcutCount">最大 Shortcut 數量</string>
   <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>
-  <string name="smallFolderBlur">Small folder blur</string>
-  <string name="smallFolderBlurCorner">Small folder blur corner</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

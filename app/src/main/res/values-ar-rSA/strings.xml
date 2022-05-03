@@ -39,7 +39,6 @@
   <string name="Reboot1">هل أنت متأكد أنك تريد إعادة تشغيل مشغل التطبيقات؟</string>
   <string name="Reboot2">سيتم إعادة تشغيل مشغل التطبيقات بعد ثانية!</string>
   <string name="RoundCorner">حجم تدور اركان التطبيق في مشغل التطبيقات</string>
-  <string name="SearchBarBlur">تفعيل ضبابية صندوق البحث</string>
   <string name="ShowDockIconTitles">إظهار اسماء التطبيقات في حوض التطبيقات</string>
   <string name="SimpleAnimation">انيميشن بسيطة</string>
   <string name="SimpleBlur">ضبابية بسيطة</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">تفعيل متجر الاضافات الجديد علي الاجهزة الضعيفة</string>
   <string name="RecommendServer">تعطيل خادم الاقتراحات</string>
   <string name="EveryThingBuild">تحسين مشغل التطبيقات مع وضع كل شيء</string>
-  <string name="DockHeight">ارتفاع حوض التطبيقات</string>
-  <string name="DockRoundedCorners">تدور اركان حوض التطبيقات</string>
-  <string name="DockSide">بُعد حوض التطبيقات عن جانبيّ الشاشة</string>
-  <string name="DockBottom">بُعد حوض التطبيقات عن اسفل الشاشة</string>
-  <string name="DockIconBottom">بُعد الايقونات عن اسفل الشاشة</string>
-  <string name="DockSettings">اعدادات حوض التطبيقات</string>
-  <string name="DockFeature">تفعيل ميزة حوض التطبيقات</string>
-  <string name="EnableDockBlur">تفعيل ضبابية حوض التطبيقات</string>
-  <string name="Reset">اعادة تعيين اعدادات حوض التطبيقات</string>
-  <string name="Tips1">هذا سيقوم بإعادة ضبط حوض التطبيقات الي الاعدادات الافتراضية وسيقوم بإعادة تشغيل مشغل التطبيقات.</string>
   <string name="Tips2">هذا سيقوم بإعادة ضبط اعدادات الاضافة الي الاعدادات الافتراضية وسيقوم بإعادة تشغيل مشغل التطبيقات.</string>
   <string name="HideSeekPoints">إزالة مؤشر الصفحات</string>
   <string name="CategoryHideAll">اخفاء \"الكل\" من تصنيفات التطبيقات</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">اعادة تعين حجم التطبيقات الاخيرة الافقية</string>
   <string name="Tips3">سيتم اعادة تعيين حجم التطبيقات الاخيرة الافقية واعادة تشغيل مشغل التطبيقات.</string>
   <string name="UnlockIcons">السماح بعدد لا نهائي في حوض التطبيقات</string>
-  <string name="DockMarginTop">المسافة بين مؤشر الشاشة والايقونات</string>
-  <string name="DockMarginBottom">مؤشر الصفحة والمسافة في أسفل الشاشة</string>
   <string name="SimpleWarn">لقد قمت بتفعيل الانيميشن البسيطة، هذا سيقوم بإخفاء بعض الاعدادات.</string>
   <string name="BrokenFeature">ميزات قديمة</string>
-  <string name="AppReturnAmin">بلور الرجوع من التطبيق</string>
   <string name="BlurRadius">حدة البلور</string>
   <string name="BasicBlur">بلور بسيط</string>
   <string name="CustomTitleColor">تخصيص لون اسم التطبيق</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">عمل بلور دائم للخلفية</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">انقر لفتح Github</string>
-  <string name="AppCenter">السماح بإرسال إحصائيات مجهولة</string>
-  <string name="AppCenterTip">نحن نستخدم Microsoft AppCenter لمساعدتنا على اختبار وتحليل استخدام التطبيق.</string>
   <string name="IconTitleTopMargin">المسافة بين اسم التطبيق والأيقونة</string>
   <string name="OpenLSPosed">فتح LSPosed</string>
   <string name="ShortcutCount">إزالة الحد علي عدد الاختصارات</string>
   <string name="MaxShortcutCount">تعديل الحد الأقصى لعدد الاختصارات</string>
   <string name="TaskViewAppCardBgColor">تخصيص لون خلفية الصورة المصغرة لتطبيقات الشاشة العائمة</string>
-  <string name="smallFolderBlur">ضبابية ايقونة المجلد</string>
-  <string name="smallFolderBlurCorner">مستوي ضبابية ايقونة المجلد</string>
   <string name="DrawerModeCount">عدد أيقونات وضع درج التطبيقات</string>
 </resources>

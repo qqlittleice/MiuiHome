@@ -39,7 +39,6 @@
   <string name="Reboot1">Tem certeza de que deseja reiniciar a Miui Launcher?</string>
   <string name="Reboot2">A Miui Launcher será reiniciada, aguarde!</string>
   <string name="RoundCorner">Definir as bordas arredondadas das janelas de tarefas dos aplicativos no menu recentes</string>
-  <string name="SearchBarBlur">Habilitar o desfoque da caixa de pesquisa</string>
   <string name="ShowDockIconTitles">Exibir os nomes dos aplicativos na dock</string>
   <string name="SimpleAnimation">Animações Simples</string>
   <string name="SimpleBlur">Simples</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Habilitar o suporte aos novos widgets Miui em dispositivos sem suporte</string>
   <string name="RecommendServer">Desabilitar \"Servidor Recomendado\"</string>
   <string name="EveryThingBuild">Otimizar a Miui Launcher com o modo \"Everything\"</string>
-  <string name="DockHeight">Definir largura da dock</string>
-  <string name="DockRoundedCorners">Definir cantos arredondados da dock</string>
-  <string name="DockSide">Definir comprimento da dock</string>
-  <string name="DockBottom">Definir posição da dock</string>
-  <string name="DockIconBottom">Definir posição dos ícones dentro da dock</string>
-  <string name="DockSettings">Configurações da dock</string>
-  <string name="DockFeature">Habilitar a dock da tela inicial</string>
-  <string name="EnableDockBlur">Habilitar o desfoque da dock</string>
-  <string name="Reset">Resetar as configurações da dock</string>
-  <string name="Tips1">Restaurar as configurações da dock ao seu padrão e reiniciar a Miui Launcher.</string>
   <string name="Tips2">Restaurar as configurações ao padrão e reiniciar a Miui Launcher.</string>
   <string name="HideSeekPoints">Remover o indicador de página da tela inicial</string>
   <string name="CategoryHideAll">Remover a categoria \"Tudo\" da gaveta de aplicativos</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Restaurar o tamanho das janelas de exibição de tarefas no menu recentes horizontal</string>
   <string name="Tips3">Restaurar o tamanho da exibição de tarefas no menu recentes horizontal, para o seu padrão e reiniciar a Miui Launcher.</string>
   <string name="UnlockIcons">Desbloquear o limite de ícones na dock</string>
-  <string name="DockMarginTop">Definir espaçamento entre ícones e indicador de página</string>
-  <string name="DockMarginBottom">Definir espaçamento entre o indicador de página e ícones</string>
   <string name="SimpleWarn">Você habilitou as \"Animações Simples\", isso ocultará algumas configurações.</string>
   <string name="BrokenFeature">Recursos Obsoleto</string>
-  <string name="AppReturnAmin">Desfoque ao retornar os aplicativos</string>
   <string name="BlurRadius">Grau de desfoque</string>
   <string name="BasicBlur">Básico</string>
   <string name="CustomTitleColor">Personalizar cor para os nomes dos aplicativos</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Desfocar o papel de parede da tela inicial</string>
   <string name="Github">Acessar o GitHub</string>
   <string name="OpenGithub">Clique-aqui para ser redirecionado ao GitHub</string>
-  <string name="AppCenter">Enviar estatísticas de uso anônimas</string>
-  <string name="AppCenterTip">Nós utilizamos o Microsoft AppCenter para nos ajudar a testar/analisar o uso do aplicativo.</string>
   <string name="IconTitleTopMargin">Definir distância entre nomes dos aplicativos e ícones na tela inicial</string>
   <string name="OpenLSPosed">Abrir a interface do LSPosed</string>
   <string name="ShortcutCount">Desbloquear o limite de ícones na dock</string>
   <string name="MaxShortcutCount">Definir o limite máximo de icones</string>
   <string name="TaskViewAppCardBgColor">Personalizar a cor de fundo das janelas no menu recentes, para aplicativos abertos em janelas flutuantes</string>
-  <string name="smallFolderBlur">Desfoque das pequenas pastas</string>
-  <string name="smallFolderBlurCorner">Desfoque dos cantos das pastas pequenas</string>
   <string name="DrawerModeCount">Definir números de ícones horizontais na gaveta de aplicativos</string>
 </resources>

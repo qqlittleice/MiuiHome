@@ -39,7 +39,6 @@
   <string name="Reboot1">Er du sikker på, at du vil genstarte System Launcher?</string>
   <string name="Reboot2">Launcher vil genstarte om 1 sekunder!</string>
   <string name="RoundCorner">Størrelse af miniature afrundede hjørner</string>
-  <string name="SearchBarBlur">Aktiver sløring i søgefeltet</string>
   <string name="ShowDockIconTitles">Vis programnavn i dokken</string>
   <string name="SimpleAnimation">Simpel Animation</string>
   <string name="SimpleBlur">Simpel Sløring</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Aktiver ny Widget Store på Low-End Enheder</string>
   <string name="RecommendServer">Deaktiver Anbefal Server</string>
   <string name="EveryThingBuild">Optimer Launcher med Alt</string>
-  <string name="DockHeight">Dok Bar Højde</string>
-  <string name="DockRoundedCorners">Dock Bar Afrundede Hjørner</string>
-  <string name="DockSide">Dockbjælke fra siderne af skærmen</string>
-  <string name="DockBottom">Dockbjælke fra bunden af skærmen</string>
-  <string name="DockIconBottom">Ikoner fra bunden af skærmen</string>
-  <string name="DockSettings">Indstillinger For Dock</string>
-  <string name="DockFeature">Aktivér Dock-funktion</string>
-  <string name="EnableDockBlur">Aktivér Sløring af dokken</string>
-  <string name="Reset">Nulstil Dockparametre</string>
-  <string name="Tips1">Dette vil gendanne Dock-parameteren til standardværdien og genstarte Systemets Launcher.</string>
   <string name="Tips2">Dette vil gendanne modulet standardindstillinger og genstarte System Launcher.</string>
   <string name="HideSeekPoints">Fjern Sideindikator</string>
   <string name="CategoryHideAll">Skjul \"Alle\" i App kategorier</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Nulstil miniaturestørrelse for de seneste horisontale parametre</string>
   <string name="Tips3">Dette vil nulstille Thumbnail størrelsen for Horisontal Seneste parametre til dens standardværdi og genstarte System Launcher.</string>
   <string name="UnlockIcons">Fjern begrænsning af ikonnummer fra dock</string>
-  <string name="DockMarginTop">Sideindikator og ikonafstand</string>
-  <string name="DockMarginBottom">Sideindikator og bunden af skærmafstanden</string>
   <string name="SimpleWarn">Du har aktiveret simpel animation, dette vil skjule nogle indstillinger.</string>
   <string name="BrokenFeature">Forældet Funktion</string>
-  <string name="AppReturnAmin">App Retursløring</string>
   <string name="BlurRadius">Blur Radius</string>
   <string name="BasicBlur">Grundlæggende Sløring</string>
   <string name="CustomTitleColor">Tilpas appens titelfarve</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Altid Slør Launcher Baggrund</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Klik for at åbne Github</string>
-  <string name="AppCenter">Anonyme Statistikker</string>
-  <string name="AppCenterTip">Vi bruger Microsoft AppCenter til at hjælpe os med at test/analysere applikationsforbrug.</string>
   <string name="IconTitleTopMargin">Ikon Titel Top Margen</string>
   <string name="OpenLSPosed">Åbn LSPosed</string>
   <string name="ShortcutCount">Lås op for genvejstællergrænse</string>
   <string name="MaxShortcutCount">Ændre maks. genvejstæller</string>
   <string name="TaskViewAppCardBgColor">Tilpas miniaturebaggrundsfarven for små vinduesapps</string>
-  <string name="smallFolderBlur">Sløring af små mapper</string>
-  <string name="smallFolderBlurCorner">Lille mappeslør hjørne</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

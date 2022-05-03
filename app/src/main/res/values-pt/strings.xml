@@ -39,7 +39,6 @@
   <string name="Reboot1">Você tem certeza que deseja reiniciar o Launcher do sistema?</string>
   <string name="Reboot2">O Launcher será reiniciado em 1 segundos!</string>
   <string name="RoundCorner">Tamanho dos cantos arredondados de miniaturas</string>
-  <string name="SearchBarBlur">Ativar desfoque na Caixa de Pesquisa</string>
   <string name="ShowDockIconTitles">Mostrar o nome do aplicativo no Dock</string>
   <string name="SimpleAnimation">Animação Simples</string>
   <string name="SimpleBlur">Desfoque Simples</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Habilitar Nova Loja de Widget em Dispositivos de Fim</string>
   <string name="RecommendServer">Desabilitar servidor recomendado</string>
   <string name="EveryThingBuild">Otimizar o Launcher com o modo tudo</string>
-  <string name="DockHeight">Altura da barra de doca</string>
-  <string name="DockRoundedCorners">Cantos arredondados da barra de doca</string>
-  <string name="DockSide">Barra de doca dos lados da tela</string>
-  <string name="DockBottom">Barra de dock da parte inferior da tela</string>
-  <string name="DockIconBottom">Ícones da parte inferior da tela</string>
-  <string name="DockSettings">Configurações de dock</string>
-  <string name="DockFeature">Ativar recurso Dock</string>
-  <string name="EnableDockBlur">Ativar desfoque da dock</string>
-  <string name="Reset">Redefinir parâmetros do Dock</string>
-  <string name="Tips1">Isso restaurará o parâmetro Dock ao seu valor padrão e reiniciará o Launcher do sistema.</string>
   <string name="Tips2">Isto irá restaurar as configurações padrão do módulo e reiniciar o Launcher do sistema.</string>
   <string name="HideSeekPoints">Remover indicador de página</string>
   <string name="CategoryHideAll">Ocultar \"Todos\" nas Categorias de aplicativos</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Redefinir tamanho de miniatura para Parâmetros Horizontais Recentes</string>
   <string name="Tips3">Isto irá redefinir o tamanho da miniatura para parâmetros Horizontais Recentes para seu valor padrão e reiniciar a Interface do Sistema.</string>
   <string name="UnlockIcons">Remover restrição de número de ícone do dock</string>
-  <string name="DockMarginTop">Indicador de Página e Espaçamento dos Ícones</string>
-  <string name="DockMarginBottom">Indicador de página e a parte inferior do espaçamento da tela</string>
   <string name="SimpleWarn">Você ativou a animação simples, isso ocultará algumas configurações.</string>
   <string name="BrokenFeature">Recurso Obsoleto</string>
-  <string name="AppReturnAmin">Desfoque no retorno do aplicativo</string>
   <string name="BlurRadius">Blur Radius</string>
   <string name="BasicBlur">Desfoque básico</string>
   <string name="CustomTitleColor">Personalizar a cor do título do aplicativo</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Sempre desfocar o fundo do lançador</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Clique para abrir o Github</string>
-  <string name="AppCenter">Estatísticas anônimas</string>
-  <string name="AppCenterTip">Usamos o Microsoft AppCenter para nos ajudar a testar/analisar o uso do aplicativo.</string>
   <string name="IconTitleTopMargin">Margem Superior do Ícone</string>
   <string name="OpenLSPosed">Abrir LSPosed</string>
   <string name="ShortcutCount">Limite de desbloqueio de atalhos</string>
   <string name="MaxShortcutCount">Modificar contagem máxima de atalhos</string>
   <string name="TaskViewAppCardBgColor">Personalizar a cor de fundo das miniaturas para aplicativos de pequena janela</string>
-  <string name="smallFolderBlur">Desfoque na pasta pequena</string>
-  <string name="smallFolderBlurCorner">Pequena pasta desfocada</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>

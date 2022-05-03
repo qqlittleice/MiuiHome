@@ -29,7 +29,6 @@
   <string name="Reboot">लॉन्चर फिर से शुरू करें</string>
   <string name="Reboot2">लॉन्चर फिर से एक सेकंड में शुरू होगा!</string>
   <string name="RoundCorner">राउंडेड कॉर्नर्स थंबनेल का आकार</string>
-  <string name="SearchBarBlur">खोज बॉक्स में ब्लर इनेबल करें</string>
   <string name="ShowDockIconTitles">डॉक में एप्लीकेशन का नाम दिखाएं</string>
   <string name="SimpleAnimation">सरल एनिमेशन</string>
   <string name="SimpleBlur">सरल ब्लर</string>
@@ -51,16 +50,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">लो-एंड डिवाइस पर नया विजेट स्टोर सक्षम करें</string>
   <string name="RecommendServer">अनुशंसित सर्वर अक्षम करें</string>
   <string name="EveryThingBuild">एवरीथिंग मोड के साथ लॉन्चर को ऑप्टिमाइज़ करें</string>
-  <string name="DockHeight">डॉक बार की ऊंचाई</string>
-  <string name="DockRoundedCorners">डॉक बार के गोलाकार कोने </string>
-  <string name="DockSide">स्क्रीन के किनारों से डॉक बार</string>
-  <string name="DockBottom">स्क्रीन के नीचे से डॉक बार</string>
-  <string name="DockIconBottom">स्क्रीन के नीचे से आइकन</string>
-  <string name="DockSettings">डॉक सेटिंग्स</string>
-  <string name="DockFeature">डॉक फ़ीचर इनेबल करें</string>
-  <string name="EnableDockBlur">डॉक के ब्लर को इनेबल करें</string>
-  <string name="Reset">डॉक पैरामीटर रीसेट करें</string>
-  <string name="Tips1">यह डॉक पैरामीटर को उसके डिफ़ॉल्ट मूल्य पर पुनर्स्थापित करेगा और सिस्टम लॉन्चर को पुनरारंभ करेगा.</string>
   <string name="Tips2">यह डॉक सेटिंग्स को उसके डिफ़ॉल्ट मूल्य पर पुनर्स्थापित करेगा और सिस्टम लॉन्चर को पुनरारंभ करेगा|</string>
   <string name="HideSeekPoints">पृष्ठ संकेतक निकालें</string>
   <string name="CategoryHideAll">\"आल\" को ऐप काटेगोरिएस से छुपाये </string>

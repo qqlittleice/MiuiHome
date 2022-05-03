@@ -39,7 +39,6 @@
   <string name="Reboot1">¿Está seguro de que desea reiniciar el lanzador del sistema?</string>
   <string name="Reboot2">¡El lanzador se reiniciará en 1 segundo!</string>
   <string name="RoundCorner">Tamaño de las esquinas redondeadas en miniatura</string>
-  <string name="SearchBarBlur">Activar Desenfoque en la caja de búsqueda</string>
   <string name="ShowDockIconTitles">Mostrar el nombre de la aplicación en el Dock</string>
   <string name="SimpleAnimation">Animación simple</string>
   <string name="SimpleBlur">Desenfoque simple</string>
@@ -61,16 +60,6 @@
   <string name="LowEndDeviceUseMIUIWidgets">Habilitar la nueva tienda Widget en dispositivos de bajo fin</string>
   <string name="RecommendServer">Deshabilitar servidor recomendado</string>
   <string name="EveryThingBuild">Optimizar el lanzador con todo el modo</string>
-  <string name="DockHeight">Altura de barra de Dock</string>
-  <string name="DockRoundedCorners">Barra de base redondeada Esquinas</string>
-  <string name="DockSide">Barra de muelles desde los lados de la pantalla</string>
-  <string name="DockBottom">Barra de conexión desde la parte inferior de la pantalla</string>
-  <string name="DockIconBottom">Iconos desde la parte inferior de la pantalla</string>
-  <string name="DockSettings">Ajustes del Dock</string>
-  <string name="DockFeature">Activar Característica del Dock</string>
-  <string name="EnableDockBlur">Activar Desenfoque del Dock</string>
-  <string name="Reset">Restablecer parámetros del Dock</string>
-  <string name="Tips1">Esto restaurará el parámetro Dock a su valor predeterminado y reiniciará el lanzador del sistema.</string>
   <string name="Tips2">Esto restaurará la configuración predeterminada del módulo y reiniciará el lanzador del sistema.</string>
   <string name="HideSeekPoints">Eliminar Indicador de Página</string>
   <string name="CategoryHideAll">Ocultar \"Todos\" en las categorías de aplicaciones</string>
@@ -86,11 +75,8 @@
   <string name="Reset2">Restablecer tamaño de miniatura para parámetros recientes horizontales</string>
   <string name="Tips3">Esto restablecerá el tamaño de la miniatura para los parámetros recientes horizontales a su valor predeterminado y reiniciará el lanzador del sistema.</string>
   <string name="UnlockIcons">Eliminar restricción de número de icono del acoplamiento</string>
-  <string name="DockMarginTop">Indicador de página y espaciado de iconos</string>
-  <string name="DockMarginBottom">Indicador de página y la parte inferior del espacio de pantalla</string>
   <string name="SimpleWarn">Has activado una animación simple, esto ocultará algunos ajustes.</string>
   <string name="BrokenFeature">Característica obsoleta</string>
-  <string name="AppReturnAmin">Desenfoque de retorno</string>
   <string name="BlurRadius">Blur Radius</string>
   <string name="BasicBlur">Desenfoque básico</string>
   <string name="CustomTitleColor">Personalizar el color del título de la aplicación</string>
@@ -102,14 +88,10 @@
   <string name="AlwaysBlur">Desenfocar siempre el fondo de pantalla</string>
   <string name="Github">Github</string>
   <string name="OpenGithub">Clic para abrir Github</string>
-  <string name="AppCenter">Estadísticas anónimas</string>
-  <string name="AppCenterTip">Utilizamos Microsoft AppCenter para ayudarnos a probar/analizar el uso de la aplicación.</string>
   <string name="IconTitleTopMargin">Margen superior del título del icono</string>
   <string name="OpenLSPosed">Abrir LSPosed</string>
   <string name="ShortcutCount">Desbloquear límite de atajos</string>
   <string name="MaxShortcutCount">Modificar número máximo de atajos</string>
   <string name="TaskViewAppCardBgColor">Personalizar el color de fondo de la miniatura para aplicaciones pequeñas</string>
-  <string name="smallFolderBlur">Desenfoque de carpeta pequeña</string>
-  <string name="smallFolderBlurCorner">Esquina de desenfoque de carpeta pequeña</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
 </resources>
