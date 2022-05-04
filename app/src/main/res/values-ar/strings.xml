@@ -89,7 +89,6 @@
   <string name="Github">Github</string>
   <string name="OpenGithub">انقر لفتح Github</string>
   <string name="IconTitleTopMargin">رأس عنوان الأيقونة</string>
-  <string name="OpenLSPosed">فتح LSPosed</string>
   <string name="ShortcutCount">فتح حد عدد الاختصارات</string>
   <string name="MaxShortcutCount">تعديل الحد الأقصى لعدد الاختصارات</string>
   <string name="TaskViewAppCardBgColor">تخصيص لون الخلفية المصغرة لتطبيقات النافذة الصغيرة</string>
