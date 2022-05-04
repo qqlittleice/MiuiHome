@@ -89,7 +89,6 @@
   <string name="Github">Github</string>
   <string name="OpenGithub">Clique para abrir o Github</string>
   <string name="IconTitleTopMargin">Margem Superior do Ícone</string>
-  <string name="OpenLSPosed">Abrir LSPosed</string>
   <string name="ShortcutCount">Limite de desbloqueio de atalhos</string>
   <string name="MaxShortcutCount">Modificar contagem máxima de atalhos</string>
   <string name="TaskViewAppCardBgColor">Personalizar a cor de fundo das miniaturas para aplicativos de pequena janela</string>
