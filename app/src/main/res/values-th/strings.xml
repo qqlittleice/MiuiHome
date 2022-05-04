@@ -89,7 +89,6 @@
   <string name="Github">ที่เก็บโอเพ่นซอร์ส</string>
   <string name="OpenGithub">คลิกเพื่อเปิด Github</string>
   <string name="IconTitleTopMargin">ระยะห่างไอคอนและชื่อเรื่อง</string>
-  <string name="OpenLSPosed">เปิด LSPosed</string>
   <string name="ShortcutCount">ปลดล็อกขีด จำกัด ทางลัด</string>
   <string name="MaxShortcutCount">จำนวนทางลัดสูงสุด</string>
   <string name="TaskViewAppCardBgColor">สีพื้นหลังของการ์ดแอปพลิเคชันในหน้าต่างพื้นหลัง</string>
