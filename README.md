@@ -1,11 +1,12 @@
 <div align="center">
-    <h1> MiuiHome </h1>
 
-<b>针对 Miui 桌面的自定义扩展 - Xposed
+<h1>MiuiHome</h1>
 
-[English](https://github.com/1767523953/MiuiHome/blob/main/README_EN.md)  丨 简体中文</b>
+<b>[EOL] 针对 Miui 桌面的自定义扩展 - Xposed
 
-![Launcher](https://github.com/1767523953/MiuiHome/blob/main/Pic/MiuiHome.png)
+[English](https://github.com/qqlittleice/MiuiHome/blob/main/README_EN.md)  丨 简体中文</b>
+
+![Launcher](https://github.com/qqlittleice/MiuiHome/blob/main/Pic/MiuiHome.png)
 
 
 [![Android CI](https://github.com/qqlittleice/MiuiHome/actions/workflows/android.yml/badge.svg)](https://github.com/qqlittleice/MiuiHome/actions/workflows/android.yml) 
@@ -33,7 +34,6 @@ __新仓库：[qqlittleice/MiuiHome](https://github.com/qqlittleice/MiuiHome)__
 
 - 平滑动画
 - 双击锁屏
-- 搜索框模糊
 - 桌面时钟常显
 - 后台模糊级别
 - 手势动画速度
@@ -57,11 +57,9 @@ __新仓库：[qqlittleice/MiuiHome](https://github.com/qqlittleice/MiuiHome)__
 - 强制当前设备为高端设备
 - 隐藏应用分页中的编辑按钮
 - 允许将安卓小部件移到负一屏
-- 支持将搜索框修改为 Dock 栏
 - 隐藏应用抽屉模式中的"全部"分页
 - 支持移除非抽屉模式下的页面指示器
 - 允许在安卓小部件页显示 MIUI 小部件
-- 还有更多...
 </details>
 
 ## 贡献翻译
@@ -72,26 +70,20 @@ __新仓库：[qqlittleice/MiuiHome](https://github.com/qqlittleice/MiuiHome)__
 
 <details>
 
-- [AndroidHiddenApiBypass](https://github.com/LSPosed/AndroidHiddenApiBypass)
-- [AndroidSystemBlur](https://github.com/Lucchetto/AndroidSystemBlur)
 - [androidx](https://android.googlesource.com/platform/frameworks/support)
-- [AppCenter](https://github.com/microsoft/appcenter)
 - [BiliRoaming](https://github.com/yujincheng08/BiliRoaming)
 - [blockmiui](https://github.com/577fkj/blockmiui)
 - [CustoMIUIzer](https://code.highspec.ru/Mikanoshi/CustoMIUIzer)
 - [FuckCoolapk](https://github.com/ejiaogl/FuckCoolapk)
 - [LSPosed](https://github.com/LSPosed/LSPosed)
-- [MIDock](https://github.com/lamprose/MIDock)
-- [MIUIDock](https://github.com/ouhoukyo/MIUIDock)
 - [MIUltra](https://github.com/lamprose/MIUltra)
-- [QNotified](https://github.com/ferredoxin/QNotified)
 - [XposedBridge](https://github.com/rovo89/XposedBridge)
 - [EzXHelper](https://github.com/KyuubiRan/EzXHelper)
 </details>
 
 ## 屏幕截图
 
-![Screenshot](https://github.com/1767523953/MiuiHome/blob/main/Pic/Screenshot_ZH.png)
+![Screenshot](https://github.com/qqlittleice/MiuiHome/blob/main/Pic/Screenshot_ZH.png)
 
 ## 许可证
 
@@ -99,4 +91,4 @@ __新仓库：[qqlittleice/MiuiHome](https://github.com/qqlittleice/MiuiHome)__
 
 ## Star 数量统计
 
-[![Stargazers over time](https://starchart.cc/1767523953/MiuiHome.svg)](https://starchart.cc/1767523953/MiuiHome)
+[![Stargazers over time](https://starchart.cc/qqlittleice/MiuiHome.svg)](https://starchart.cc/qqlittleice/MiuiHome)
