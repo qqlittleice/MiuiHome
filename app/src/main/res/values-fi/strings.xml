@@ -89,7 +89,6 @@
   <string name="Github">Github</string>
   <string name="OpenGithub">Klikkaa avataksesi GitHub</string>
   <string name="IconTitleTopMargin">Kuvakkeen Otsikon Yläreunan Marginaali</string>
-  <string name="OpenLSPosed">Avaa LSPosed</string>
   <string name="ShortcutCount">Avaa pikakuvakkeiden lukuraja</string>
   <string name="MaxShortcutCount">Muokkaa pikanäppäinten enimmäismäärää</string>
   <string name="TaskViewAppCardBgColor">Mukauta pikkukuvan taustaväriä pienille ikkunasovelluksille</string>
