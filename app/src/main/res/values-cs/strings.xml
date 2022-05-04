@@ -89,7 +89,6 @@
   <string name="Github">Github</string>
   <string name="OpenGithub">Kliknutím otevřete Github</string>
   <string name="IconTitleTopMargin">Titulek ikony horní okraj</string>
-  <string name="OpenLSPosed">Otevřít LSPosed</string>
   <string name="ShortcutCount">Limit počtu zástupců pro odemknutí</string>
   <string name="MaxShortcutCount">Upravit maximální počet zástupců</string>
   <string name="TaskViewAppCardBgColor">Přizpůsobit barvu pozadí pro aplikace malých oken</string>
