@@ -89,7 +89,6 @@
   <string name="Github">Github</string>
   <string name="OpenGithub">Cliquez pour ouvrir Github</string>
   <string name="IconTitleTopMargin">Marge supérieure du titre de l\'icône</string>
-  <string name="OpenLSPosed">Ouvrir LSPosed</string>
   <string name="ShortcutCount">Déverrouiller la limite du nombre de raccourcis</string>
   <string name="MaxShortcutCount">Modifier le nombre maximum de raccourcis</string>
   <string name="TaskViewAppCardBgColor">Personnaliser la couleur d\'arrière-plan des vignettes pour les applications de petite fenêtre</string>

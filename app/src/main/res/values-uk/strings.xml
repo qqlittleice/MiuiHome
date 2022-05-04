@@ -89,7 +89,6 @@
   <string name="Github">Github</string>
   <string name="OpenGithub">Клацніть, щоб відкрити Github</string>
   <string name="IconTitleTopMargin">Верхнє поле заголовку піктограми</string>
-  <string name="OpenLSPosed">Відкрити LSPosed</string>
   <string name="ShortcutCount">Ліміт кількості ярликів</string>
   <string name="MaxShortcutCount">Змінити максимальну кількість ярликів</string>
   <string name="TaskViewAppCardBgColor">Налаштування кольору фону мініатюр для малих віконних програм</string>

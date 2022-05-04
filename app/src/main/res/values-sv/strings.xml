@@ -89,7 +89,6 @@
   <string name="Github">Github</string>
   <string name="OpenGithub">Klicka för att öppna Github</string>
   <string name="IconTitleTopMargin">Ikon titel överst marginal</string>
-  <string name="OpenLSPosed">Öppna LSP-filer</string>
   <string name="ShortcutCount">Lås upp genvägsgräns</string>
   <string name="MaxShortcutCount">Ändra max antal genvägar</string>
   <string name="TaskViewAppCardBgColor">Anpassa bakgrundsfärgen för miniatyrbilder för små fönsterappar</string>

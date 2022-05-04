@@ -1,6 +1,5 @@
 package com.yuk.miuihome.utils
 
-import android.os.Build
 import com.yuk.miuihome.BuildConfig
 
 object Config {

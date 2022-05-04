@@ -89,7 +89,6 @@
   <string name="Github">Github</string>
   <string name="OpenGithub">クリックしてGithubを開きます</string>
   <string name="IconTitleTopMargin">アイコンタイトル上マージン</string>
-  <string name="OpenLSPosed">LSPosedを開く</string>
   <string name="ShortcutCount">ショートカットカウント制限のロックを解除する</string>
   <string name="MaxShortcutCount">最大ショートカット数を変更する</string>
   <string name="TaskViewAppCardBgColor">小さなウィンドウアプリのサムネイルの背景色をカスタマイズする</string>

@@ -90,7 +90,6 @@
   <string name="Github">Github</string>
   <string name="OpenGithub">Click to open Github</string>
   <string name="IconTitleTopMargin">Icon Title Top Margin</string>
-  <string name="OpenLSPosed">Open LSPosed</string>
   <string name="ShortcutCount">Unlock shortcut count limit</string>
   <string name="MaxShortcutCount">Modify max shortcut count</string>
   <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>

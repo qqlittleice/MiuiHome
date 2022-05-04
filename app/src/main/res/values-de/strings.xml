@@ -89,7 +89,6 @@
   <string name="Github">Github</string>
   <string name="OpenGithub">Klicke um Github zu öffnen</string>
   <string name="IconTitleTopMargin">Symboltitel oberer Rand</string>
-  <string name="OpenLSPosed">LSPosed öffnen</string>
   <string name="ShortcutCount">Anzahl der Verknüpfungen entsperren</string>
   <string name="MaxShortcutCount">Max. Anzahl der Verknüpfungen ändern</string>
   <string name="TaskViewAppCardBgColor">Miniatur-Hintergrundfarbe für kleine Fenster-Apps anpassen</string>

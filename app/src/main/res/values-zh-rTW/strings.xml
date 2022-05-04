@@ -89,7 +89,6 @@
   <string name="Github">GitHub</string>
   <string name="OpenGithub">點擊打開 GitHub</string>
   <string name="IconTitleTopMargin">圖示與標題間距</string>
-  <string name="OpenLSPosed">打開 LSPosed</string>
   <string name="ShortcutCount">解鎖 Shortcut 數量限制</string>
   <string name="MaxShortcutCount">最大 Shortcut 數量</string>
   <string name="TaskViewAppCardBgColor">自定義小窗口應用程式的縮略圖背景顏色</string>

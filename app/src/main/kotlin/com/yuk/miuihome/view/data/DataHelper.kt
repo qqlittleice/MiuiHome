@@ -168,7 +168,6 @@ object DataHelper {
 
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.ModuleFeature))))
             add(Item(list = arrayListOf(TextV(resId = R.string.Reboot, onClickListener = { showRestartDialog() }))))
-            add(Item(list = arrayListOf(TextV(resId = R.string.OpenLSPosed, onClickListener = { openLSPosed() }))))
             add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.BackupModuleSettings)) { (currentActivity as HookSettingsActivity).spBackup.also { it.requestWriteToFile("MiuiHome-Config-${SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(Calendar.getInstance().time)}") } })))
             add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.RestoreModuleSettings)) { showRestoreModuleSettingsDialog() })))
             add(Item(list = arrayListOf(TextV(resId = R.string.CleanModuleSettings, onClickListener = { showCleanModuleSettingsDialog() }))))
@@ -466,14 +465,5 @@ object DataHelper {
             setLButton(R.string.Cancel) { dismiss() }
             show()
         }
-    }
-
-    private fun openLSPosed() {
-        val intent = Intent()
-        intent.action = "android.intent.action.MAIN"
-        intent.addCategory("org.lsposed.manager.LAUNCH_MANAGER")
-        intent.setClassName("com.android.shell", "com.android.shell.BugreportWarningActivity")
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED
-        currentActivity.startActivity(intent)
     }
 }

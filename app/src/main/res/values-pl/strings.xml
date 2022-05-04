@@ -89,7 +89,6 @@
   <string name="Github">Github</string>
   <string name="OpenGithub">Kliknij, aby otworzyć Github</string>
   <string name="IconTitleTopMargin">Górny margines tytułu ikony</string>
-  <string name="OpenLSPosed">Otwórz stratę</string>
   <string name="ShortcutCount">Limit liczby skrótów odblokowanych</string>
   <string name="MaxShortcutCount">Modyfikuj maksymalną liczbę skrótów</string>
   <string name="TaskViewAppCardBgColor">Dostosuj kolor tła miniatury dla małych aplikacji okna</string>

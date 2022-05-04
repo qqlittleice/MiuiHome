@@ -89,7 +89,6 @@
   <string name="Github">Github</string>
   <string name="OpenGithub">Bấm để mở Github</string>
   <string name="IconTitleTopMargin">Biểu tượng Lề trên cùng của Tiêu đề</string>
-  <string name="OpenLSPosed">Mở LSPosed</string>
   <string name="ShortcutCount">Mở khóa giới hạn số lượng phím tắt</string>
   <string name="MaxShortcutCount">Sửa đổi số lượng phím tắt tối đa</string>
   <string name="TaskViewAppCardBgColor">Tùy chỉnh màu nền hình thu nhỏ cho các ứng dụng cửa sổ nhỏ</string>
