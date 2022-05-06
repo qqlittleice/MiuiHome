@@ -1,5 +1,6 @@
 package com.yuk.miuihome
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 import android.content.Intent
@@ -18,6 +19,8 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage
 
 class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
     companion object {
+        @SuppressLint("StaticFieldLeak")
+        var context: Context? = null
         var application: Application? = null
     }
 
@@ -74,6 +77,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
                     setObjectField("mClickListener", object : View.OnClickListener {
                         override fun onClick(v: View) {
                             v.context.startActivity(Intent(v.context, HookSettingsActivity::class.java))
+                            context = v.context
                         }
                     })
                     callMethod("setIntent", Intent())
@@ -85,6 +89,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
                     setObjectField("mClickListener", object : View.OnClickListener {
                         override fun onClick(v: View) {
                             v.context.startActivity(Intent(v.context, HookSettingsActivity::class.java))
+                            context = v.context
                         }
                     })
                 }
