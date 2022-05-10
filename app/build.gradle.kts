@@ -82,7 +82,7 @@ dependencies {
     //xposed api
     compileOnly("de.robv.android.xposed:api:82")
     //EzXHelper
-    implementation("com.github.kyuubiran:EzXHelper:0.9.1")
+    implementation("com.github.kyuubiran:EzXHelper:0.9.2")
     //recyclerview
     implementation("androidx.recyclerview:recyclerview:1.3.0-alpha02")
 }
