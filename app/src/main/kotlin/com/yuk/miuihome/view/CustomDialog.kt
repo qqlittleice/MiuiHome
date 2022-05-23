@@ -2,8 +2,6 @@ package com.yuk.miuihome.view
 
 import android.app.Dialog
 import android.content.Context
-import android.graphics.Color
-import android.graphics.drawable.GradientDrawable
 import android.os.Build
 import android.view.*
 import android.widget.Button
@@ -13,25 +11,17 @@ import android.widget.TextView
 import com.yuk.miuihome.R
 import com.yuk.miuihome.utils.ktx.dp2px
 import com.yuk.miuihome.utils.ktx.getDensityDpi
-import com.yuk.miuihome.utils.ktx.isDarkMode
 
-class CustomDialog(context: Context) : Dialog(context) {
+class CustomDialog(context: Context) : Dialog(context, if (getDensityDpi() >= 440) R.style.CustomPadDialog else R.style.CustomDialog) {
     var view: View
 
     init {
-        if (getDensityDpi() > 440) {
+        if (getDensityDpi() >= 440) {
             view = createView(context, R.layout.dialog_pad_layout)
             window!!.attributes.width = dp2px(380f)
-            val radius = floatArrayOf(dp2px(25f).toFloat(), dp2px(25f).toFloat(), dp2px(25f).toFloat(), dp2px(25f).toFloat())
-            val background = createDrawable(Color.parseColor(if (isDarkMode()) "#242424" else "#FFFFFF"), radius)
-            view.background = background
             window!!.setGravity(Gravity.CENTER)
-        }
-        else {
+        } else {
             view = createView(context, R.layout.dialog_layout)
-            val radius = floatArrayOf(dp2px(25f).toFloat(), dp2px(25f).toFloat(), 0f, 0f)
-            val background = createDrawable(Color.parseColor(if (isDarkMode()) "#242424" else "#FFFFFF"), radius)
-            view.background = background
             window!!.attributes.width = WindowManager.LayoutParams.MATCH_PARENT
             window!!.setGravity(Gravity.BOTTOM)
         }
@@ -180,23 +170,8 @@ class CustomDialog(context: Context) : Dialog(context) {
             window!!.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
         } else {
             lp.dimAmount = 0.3f
-            window!!.attributes = lp
-        }
-
-    }
-
-    private fun createDrawable(color: Int, radius: FloatArray): GradientDrawable {
-        return try {
-            GradientDrawable().apply {
-                shape = GradientDrawable.RECTANGLE
-                setColor(color)
-                setStroke(0, 0)
-                if (radius.size == 4) {
-                    cornerRadii = floatArrayOf(radius[0], radius[0], radius[1], radius[1], radius[2], radius[2], radius[3], radius[3])
-                }
-            }
-        } catch (e: Exception) {
-            GradientDrawable()
+            window!!.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
         }
     }
+
 }

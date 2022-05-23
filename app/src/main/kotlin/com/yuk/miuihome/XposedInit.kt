@@ -73,7 +73,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
                     setObjectField("mSummary", moduleRes.getString(R.string.ModuleSettings))
                     setObjectField("mLayoutResId", mLayoutResId)
                     setObjectField("mWidgetLayoutResId", mWidgetLayoutResId)
-                    setObjectField("mFragment", "")
+                    setObjectField("mFragment", "MiuiHome")
                     setObjectField("mClickListener", object : View.OnClickListener {
                         override fun onClick(v: View) {
                             v.context.startActivity(Intent(v.context, HookSettingsActivity::class.java))
