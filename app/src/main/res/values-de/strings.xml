@@ -40,7 +40,7 @@
   <string name="Reboot2">Der Launcher wird in 1 Sekunde neustarten!</string>
   <string name="RoundCorner">Größe der runden Ecken der Miniaturansicht</string>
   <string name="ShowDockIconTitles">Appnamen im Dock anzeigen</string>
-  <string name="SimpleAnimation">EInfache Animation</string>
+  <string name="SimpleAnimation">Einfache Animation</string>
   <string name="SimpleBlur">Einfaches Weichzeichnen</string>
   <string name="SmoothAnimation">Flüssige Animation</string>
   <string name="TaskViewAppCardTextSize">Größe der Miniaturansicht-Beschriftung</string>
@@ -92,5 +92,5 @@
   <string name="ShortcutCount">Anzahl der Verknüpfungen entsperren</string>
   <string name="MaxShortcutCount">Max. Anzahl der Verknüpfungen ändern</string>
   <string name="TaskViewAppCardBgColor">Miniatur-Hintergrundfarbe für kleine Fenster-Apps anpassen</string>
-  <string name="DrawerModeCount">Drawer mode icon count</string>
+  <string name="DrawerModeCount">App-Schublade Anzahl der Icons</string>
 </resources>
