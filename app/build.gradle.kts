@@ -3,16 +3,17 @@ import java.util.Properties
 
 plugins {
     id("com.android.application")
-    id("kotlin-android")
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
-    compileSdk = 32
+    compileSdk = 33
+    buildToolsVersion = "33.0.0"
     namespace = "com.yuk.miuihome"
     defaultConfig {
         applicationId = "com.yuk.miuihome"
         minSdk = 29
-        targetSdk = 32
+        targetSdk = 33
         versionCode = 4300
         versionName = "4.3"
     }

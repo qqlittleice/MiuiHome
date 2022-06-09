@@ -68,7 +68,7 @@ jobs:
           RELEASE: ${{ env.RELEASE }}
           DEBUG: ${{ env.DEBUG }}
           COMMIT_MESSAGE: |+
-            New push to Github\!
+            New push in Github\!
             ```
             ${{ github.event.head_commit.message }}
             ```
