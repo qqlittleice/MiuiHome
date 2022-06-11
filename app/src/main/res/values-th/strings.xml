@@ -93,4 +93,9 @@
   <string name="MaxShortcutCount">จำนวนทางลัดสูงสุด</string>
   <string name="TaskViewAppCardBgColor">สีพื้นหลังของการ์ดแอปพลิเคชันในหน้าต่างพื้นหลัง</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
+  <string name="smallFolderBlur">Small folder blur</string>
+  <string name="smallFolderSummy">Moving folders in edit mode will cause a crash when this feature is enabled</string>
+  <string name="smallFolderBlurCorner">Small folder blur corner</string>
+  <string name="smallFolderBlurMargins">Small folder blur margins</string>
+  <string name="PadDockBlur">Pad Dock Blur</string>
 </resources>
