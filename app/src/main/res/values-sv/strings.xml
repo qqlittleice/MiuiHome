@@ -93,4 +93,9 @@
   <string name="MaxShortcutCount">Ändra max antal genvägar</string>
   <string name="TaskViewAppCardBgColor">Anpassa bakgrundsfärgen för miniatyrbilder för små fönsterappar</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
+  <string name="smallFolderBlur">Small folder blur</string>
+  <string name="smallFolderSummy">Moving folders in edit mode will cause a crash when this feature is enabled</string>
+  <string name="smallFolderBlurCorner">Small folder blur corner</string>
+  <string name="smallFolderBlurMargins">Small folder blur margins</string>
+  <string name="PadDockBlur">Pad Dock Blur</string>
 </resources>
