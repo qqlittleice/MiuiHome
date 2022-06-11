@@ -6,6 +6,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.net.Uri
+import android.os.Build
 import com.github.kyuubiran.ezxhelper.init.InitFields.moduleRes
 import com.github.kyuubiran.ezxhelper.utils.Log
 import com.yuk.miuihome.BuildConfig
@@ -127,6 +128,9 @@ object DataHelper {
             add(Item(list = arrayListOf(LineV())))
 
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.Folder))))
+            if (Build.VERSION.SDK_INT >= 31) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.smallFolderBlur, summaryResId = R.string.smallFolderSummy), "folderBlur", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() }))))
+            if (Build.VERSION.SDK_INT >= 31 && OwnSP.ownSP.getBoolean("folderBlur", false)) add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.smallFolderBlurCorner), key = "folderBlurCorner", min = 0, max = 100, divide = 1, defaultProgress = 32))))
+            if (Build.VERSION.SDK_INT >= 31 && OwnSP.ownSP.getBoolean("folderBlur", false)) add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.smallFolderBlurMargins), key = "folderBlurMargins", min = -50, max = 50, divide = 10, defaultProgress = -21))))
             if (!OwnSP.ownSP.getBoolean("simpleAnimation", false) && !OwnSP.ownSP.getBoolean("alwaysBlur", false)) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.BlurWhenOpenFolder), "blurWhenOpenFolder"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.CloseFolder), "closeFolder"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.FolderWidth), "folderWidth"))))
@@ -156,7 +160,7 @@ object DataHelper {
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.OtherFeature))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AlwaysShowStatusBarClock), "clockGadget"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.DoubleTap), "doubleTap"))))
-            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(title = "A12 Pad Dock Blur"), "PadDockBlur"))))
+            if (Build.VERSION.SDK_INT >= 31) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.PadDockBlur), "PadDockBlur"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.ShortcutCount), "unlockShortcutCount", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() }))))
             if (OwnSP.ownSP.getBoolean("unlockShortcutCount", false)) add(Item(list = arrayListOf(TextV(resId = R.string.MaxShortcutCount, onClickListener = { showMaxShortcutCountDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.EveryThingBuild, onClickListener = { BuildWithEverything().init() }))))

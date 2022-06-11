@@ -96,7 +96,6 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
             }
         }
         DisableLog().init()
-        ModifyPadA12DockBlur().init()
         SetDeviceLevel().init()  // 设置设备分级等
         ModifyBlurLevel().init()  // 后台模糊级别
         EnableSmoothAnimation().init()  // 平滑动画
@@ -133,6 +132,8 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
         ModifyRecents().init()  // 后台元素相关
         ModifyIconTitleTopMargin().init()  // 应用图标与标题距离
         ModifyShortcutItemCount().init()  // 解除Shortcut数量限制
+        ModifyPadA12DockBlur().init() //安卓12平板Dock模糊
+        EnableFolderIconBlur().init() //安卓12小文件夹模糊
         ResourcesHook().init()  //  资源相关
     }
 

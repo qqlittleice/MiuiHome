@@ -5,7 +5,6 @@
   <string name="AlwaysShowStatusBarClock">时钟常显</string>
   <string name="AnimationLevel">手势动画速度</string>
   <string name="AppTextSize">后台应用图标与标题间距</string>
-  <string name="BlurWhenOpenFolder">启用文件夹背景模糊</string>
   <string name="Cancel">取消</string>
   <string name="CleanModuleSettings">重置为默认设置</string>
   <string name="RestoreModuleSettingsSuccess">恢复备份成功，正在重启系统桌面</string>
@@ -93,4 +92,10 @@
   <string name="MaxShortcutCount">最大 Shortcut 数量</string>
   <string name="TaskViewAppCardBgColor">后台小窗应用卡片背景颜色</string>
   <string name="DrawerModeCount">抽屉内水平图标个数</string>
+  <string name="BlurWhenOpenFolder">文件夹展开背景模糊</string>
+  <string name="smallFolderBlur">小文件夹模糊</string>
+  <string name="smallFolderSummy">启用该功能后，在编辑模式移动小文件夹图标将导致崩溃</string>
+  <string name="smallFolderBlurCorner">小文件夹模糊圆角半径</string>
+  <string name="smallFolderBlurMargins">小文件夹模糊四边边距</string>
+  <string name="PadDockBlur">小米平板 Dock 模糊</string>
 </resources>
