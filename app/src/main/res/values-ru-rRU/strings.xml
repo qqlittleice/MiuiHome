@@ -93,4 +93,9 @@
   <string name="MaxShortcutCount">Изменить максимальное число ярлыков</string>
   <string name="TaskViewAppCardBgColor">Настройка цвета фона миниатюр для приложений с плавающими окнами</string>
   <string name="DrawerModeCount">Кол-во значков в режиме панели</string>
+  <string name="smallFolderBlur">Small folder blur</string>
+  <string name="smallFolderSummy">Moving folders in edit mode will cause a crash when this feature is enabled</string>
+  <string name="smallFolderBlurCorner">Small folder blur corner</string>
+  <string name="smallFolderBlurMargins">Small folder blur margins</string>
+  <string name="PadDockBlur">Pad Dock Blur</string>
 </resources>
