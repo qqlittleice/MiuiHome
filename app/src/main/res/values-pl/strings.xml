@@ -93,4 +93,9 @@
   <string name="MaxShortcutCount">Modyfikuj maksymalną liczbę skrótów</string>
   <string name="TaskViewAppCardBgColor">Dostosuj kolor tła miniatury dla małych aplikacji okna</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
+  <string name="smallFolderBlur">Small folder blur</string>
+  <string name="smallFolderSummy">Moving folders in edit mode will cause a crash when this feature is enabled</string>
+  <string name="smallFolderBlurCorner">Small folder blur corner</string>
+  <string name="smallFolderBlurMargins">Small folder blur margins</string>
+  <string name="PadDockBlur">Pad Dock Blur</string>
 </resources>
