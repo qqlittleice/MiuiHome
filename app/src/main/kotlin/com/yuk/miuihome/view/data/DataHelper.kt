@@ -156,6 +156,7 @@ object DataHelper {
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.OtherFeature))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AlwaysShowStatusBarClock), "clockGadget"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.DoubleTap), "doubleTap"))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(title = "A12 Pad Dock Blur"), "PadDockBlur"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.ShortcutCount), "unlockShortcutCount", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() }))))
             if (OwnSP.ownSP.getBoolean("unlockShortcutCount", false)) add(Item(list = arrayListOf(TextV(resId = R.string.MaxShortcutCount, onClickListener = { showMaxShortcutCountDialog() }))))
             add(Item(list = arrayListOf(TextV(resId = R.string.EveryThingBuild, onClickListener = { BuildWithEverything().init() }))))

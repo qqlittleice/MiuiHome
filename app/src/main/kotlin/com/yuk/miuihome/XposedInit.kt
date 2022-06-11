@@ -96,6 +96,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
             }
         }
         DisableLog().init()
+        ModifyPadA12DockBlur().init()
         SetDeviceLevel().init()  // 设置设备分级等
         ModifyBlurLevel().init()  // 后台模糊级别
         EnableSmoothAnimation().init()  // 平滑动画

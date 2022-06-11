@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "MiuiHome"
-include(":app")
+include(":app", ":hidden-api")
