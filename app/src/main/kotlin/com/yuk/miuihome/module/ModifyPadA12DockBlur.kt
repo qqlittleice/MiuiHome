@@ -31,7 +31,7 @@ class ModifyPadA12DockBlur {
                 val blur = WindowBlurFrameLayout(view.context)
                 blur.blurController.apply {
                     backgroundColour = Color.parseColor("#44FFFFFF")
-                    cornerRadius = CornersRadius.all(0f)
+                    cornerRadius = CornersRadius.all(40f)
                 }
                 view.addView(blur)
             }
