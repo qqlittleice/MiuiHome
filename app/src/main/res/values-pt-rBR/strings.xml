@@ -93,4 +93,9 @@
   <string name="MaxShortcutCount">Definir o limite máximo de icones</string>
   <string name="TaskViewAppCardBgColor">Personalizar a cor de fundo das janelas no menu recentes, para aplicativos abertos em janelas flutuantes</string>
   <string name="DrawerModeCount">Definir números de ícones horizontais na gaveta de aplicativos</string>
+  <string name="smallFolderBlur">Small folder blur</string>
+  <string name="smallFolderSummy">Moving folders in edit mode will cause a crash when this feature is enabled</string>
+  <string name="smallFolderBlurCorner">Small folder blur corner</string>
+  <string name="smallFolderBlurMargins">Small folder blur margins</string>
+  <string name="PadDockBlur">Pad Dock Blur</string>
 </resources>
