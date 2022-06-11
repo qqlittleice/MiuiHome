@@ -93,4 +93,9 @@
   <string name="MaxShortcutCount">最大 Shortcut 數量</string>
   <string name="TaskViewAppCardBgColor">自定義小窗口應用程式的縮略圖背景顏色</string>
   <string name="DrawerModeCount">抽屜模式圖示計數</string>
+  <string name="smallFolderBlur">Small folder blur</string>
+  <string name="smallFolderSummy">Moving folders in edit mode will cause a crash when this feature is enabled</string>
+  <string name="smallFolderBlurCorner">Small folder blur corner</string>
+  <string name="smallFolderBlurMargins">Small folder blur margins</string>
+  <string name="PadDockBlur">Pad Dock Blur</string>
 </resources>
