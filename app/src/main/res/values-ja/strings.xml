@@ -93,9 +93,5 @@
   <string name="MaxShortcutCount">最大ショートカット数を変更する</string>
   <string name="TaskViewAppCardBgColor">小さなウィンドウアプリのサムネイルの背景色をカスタマイズする</string>
   <string name="DrawerModeCount">ドロワーモードのアイコン数</string>
-  <string name="smallFolderBlur">Small folder blur</string>
-  <string name="smallFolderSummy">Moving folders in edit mode will cause a crash when this feature is enabled</string>
-  <string name="smallFolderBlurCorner">Small folder blur corner</string>
-  <string name="smallFolderBlurMargins">Small folder blur margins</string>
   <string name="PadDockBlur">Pad Dock Blur</string>
 </resources>
