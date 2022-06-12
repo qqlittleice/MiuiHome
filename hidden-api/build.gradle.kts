@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = 33
     namespace = "com.android.internal"
     defaultConfig {
         minSdk = 29
-        targetSdk = 32
+        targetSdk = 33
     }
     buildTypes {
         release {

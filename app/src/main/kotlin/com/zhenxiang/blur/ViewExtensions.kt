@@ -9,8 +9,8 @@ import org.lsposed.hiddenapibypass.HiddenApiBypass
 fun View.createBackgroundBlurDrawable(): BackgroundBlurDrawable? {
 
     return try {
-        val viewRootImpl = HiddenApiBypass.invoke(View::class.java, this, "getViewRootImpl") as ViewRootImpl
-        HiddenApiBypass.invoke(ViewRootImpl::class.java, viewRootImpl, "createBackgroundBlurDrawable") as BackgroundBlurDrawable
+        val getViewRootImpl = HiddenApiBypass.invoke(View::class.java, this, "getViewRootImpl") as ViewRootImpl
+        HiddenApiBypass.invoke(ViewRootImpl::class.java, getViewRootImpl, "createBackgroundBlurDrawable") as BackgroundBlurDrawable
     } catch (e: Exception) {
         Log.w(null, e)
         null
