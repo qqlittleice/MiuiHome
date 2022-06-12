@@ -93,9 +93,5 @@
   <string name="MaxShortcutCount">Τροποποίηση μέγιστου αριθμού συντομεύσεων</string>
   <string name="TaskViewAppCardBgColor">Προσαρμόστε το χρώμα φόντου μικρογραφίας για τις μικρές εφαρμογές παραθύρων</string>
   <string name="DrawerModeCount">Πλήθος εικονιδίων λειτουργίας συρταριού</string>
-  <string name="smallFolderBlur">Small folder blur</string>
-  <string name="smallFolderSummy">Moving folders in edit mode will cause a crash when this feature is enabled</string>
-  <string name="smallFolderBlurCorner">Small folder blur corner</string>
-  <string name="smallFolderBlurMargins">Small folder blur margins</string>
   <string name="PadDockBlur">Pad Dock Blur</string>
 </resources>
