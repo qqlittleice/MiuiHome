@@ -93,9 +93,5 @@
   <string name="MaxShortcutCount">最大 Shortcut 数量</string>
   <string name="TaskViewAppCardBgColor">后台小窗应用卡片背景颜色</string>
   <string name="DrawerModeCount">抽屉内水平图标个数</string>
-  <string name="smallFolderBlur">小文件夹模糊</string>
-  <string name="smallFolderSummy">启用该功能后，在编辑模式移动小文件夹图标将导致崩溃</string>
-  <string name="smallFolderBlurCorner">小文件夹模糊圆角半径</string>
-  <string name="smallFolderBlurMargins">小文件夹模糊四边边距</string>
   <string name="PadDockBlur">小米平板 Dock 模糊</string>
 </resources>
