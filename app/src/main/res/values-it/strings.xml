@@ -93,9 +93,5 @@
   <string name="MaxShortcutCount">Modifica numero massimo di scorciatoie</string>
   <string name="TaskViewAppCardBgColor">Personalizza il colore di sfondo delle miniature per le applicazioni di piccole finestre</string>
   <string name="DrawerModeCount">Numero di icone in modalità cassetto</string>
-  <string name="smallFolderBlur">Small folder blur</string>
-  <string name="smallFolderSummy">Moving folders in edit mode will cause a crash when this feature is enabled</string>
-  <string name="smallFolderBlurCorner">Small folder blur corner</string>
-  <string name="smallFolderBlurMargins">Small folder blur margins</string>
   <string name="PadDockBlur">Pad Dock Blur</string>
 </resources>
