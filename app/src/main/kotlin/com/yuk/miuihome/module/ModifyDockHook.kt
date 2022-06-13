@@ -11,8 +11,6 @@ import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
 import com.github.kyuubiran.ezxhelper.utils.Log
-import com.github.kyuubiran.ezxhelper.utils.findMethod
-import com.github.kyuubiran.ezxhelper.utils.getObject
 import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
@@ -25,11 +23,10 @@ class ModifyDockHook {
 
     @SuppressLint("DiscouragedApi")
     fun init() {
-        if (!OwnSP.ownSP.getBoolean("dockSettings", false) && Build.VERSION.SDK_INT < 31) return
+        if (!OwnSP.ownSP.getBoolean("dockSettings", false) || Build.VERSION.SDK_INT < 31) return
         try {
             val deviceConfigClass = "com.miui.home.launcher.DeviceConfig".findClass()
             val launcherClass = "com.miui.home.launcher.Launcher".findClass()
-            val launcherStateClass = "com.miui.home.launcher.LauncherState".findClass()
             val launcherStateManagerClass = "com.miui.home.launcher.LauncherStateManager".findClass()
             // Dock距屏幕两侧
             deviceConfigClass.hookBeforeMethod("calcSearchBarWidth", Context::class.java) {
@@ -81,16 +78,15 @@ class ModifyDockHook {
                 // 添加 A12 模糊
                 if (OwnSP.ownSP.getBoolean("searchBarBlur", false)) {
                     searchBarObject.removeAllViews()
-                    if (view.visibility == View.GONE && !isInEditing  && !isFolderShowing) searchBarObject.addView(blur)
+                    searchBarObject.addView(blur)
+                    launcherStateManagerClass.hookAfterMethod("getState") {
+                        val state = it.result.toString()
+                        val a = state.lastIndexOf("LauncherState")
+                        XposedBridge.log(a.toString())
+                        if (a != -1) blur.visibility = View.VISIBLE
+                        else blur.visibility = View.GONE
+                    }
                 }
-                launcherStateManagerClass.hookAfterMethod("getState") {
-                    val state = it.result
-                    XposedBridge.log(state.toString())
-                    val a= state.toString().lastIndexOf("AllAppsState")
-                    if (a != -1) searchBarObject.removeView(blur)
-                    else searchBarObject.addView(blur)
-                }
-
                 // 修改应用列表搜索框
                 val mAllAppViewField = launcherClass.getDeclaredField("mAppsView")
                 mAllAppViewField.isAccessible = true
