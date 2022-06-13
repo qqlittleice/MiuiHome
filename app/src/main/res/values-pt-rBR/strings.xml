@@ -94,4 +94,16 @@
   <string name="TaskViewAppCardBgColor">Personalizar a cor de fundo das janelas no menu recentes, para aplicativos abertos em janelas flutuantes</string>
   <string name="DrawerModeCount">Definir números de ícones horizontais na gaveta de aplicativos</string>
   <string name="PadDockBlur">Pad Dock Blur</string>
+  <string name="DockHeight">Dock Bar Height</string>
+  <string name="DockRoundedCorners">Dock Bar Rounded Corners</string>
+  <string name="DockSide">Dock Bar from the sides of the Screen</string>
+  <string name="DockBottom">Dock Bar from the bottom of the Screen</string>
+  <string name="DockIconBottom">Icons from the bottom of the Screen</string>
+  <string name="DockSettings">Dock Settings</string>
+  <string name="DockFeature">Enable Dock Feature</string>
+  <string name="EnableDockBlur">Enable Blur of the Dock</string>
+  <string name="Reset">Reset Dock Parameters</string>
+  <string name="Tips1">This will restore the Dock parameter to its default value and restart the System Launcher.</string>
+  <string name="DockMarginTop">Page Indicator and Icon Spacing</string>
+  <string name="DockMarginBottom">Page Indicator and the bottom of the Screen Spacing</string>
 </resources>
