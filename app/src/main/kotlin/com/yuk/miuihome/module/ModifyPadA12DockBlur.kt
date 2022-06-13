@@ -25,7 +25,7 @@ class ModifyPadA12DockBlur {
                 val view = activity.findViewById(activity.resources.getIdentifier("hotseat_background", "id", Config.hostPackage)) as ViewGroup
                 val blur = WindowBlurFrameLayout(view.context)
                 blur.blurController.apply {
-                    backgroundColour = Color.parseColor("#44FFFFFF")
+                    backgroundColour = Color.parseColor("#80BFBFBF")
                     cornerRadius = CornersRadius.all(40f)
                 }
                 view.addView(blur)

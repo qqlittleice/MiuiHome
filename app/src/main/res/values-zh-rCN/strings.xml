@@ -94,4 +94,16 @@
   <string name="DrawerModeCount">抽屉内水平图标个数</string>
   <string name="BlurWhenOpenFolder">文件夹展开背景模糊</string>
   <string name="PadDockBlur">小米平板 Dock 模糊</string>
+  <string name="DockHeight">底栏高度</string>
+  <string name="DockRoundedCorners">底栏圆角</string>
+  <string name="DockSide">底栏距屏幕两侧</string>
+  <string name="DockBottom">底栏距屏幕底部</string>
+  <string name="DockIconBottom">图标距屏幕底部</string>
+  <string name="DockSettings">底栏设置</string>
+  <string name="DockFeature">启用底栏功能</string>
+  <string name="EnableDockBlur">启用底栏模糊</string>
+  <string name="Reset">重置底栏配置参数</string>
+  <string name="Tips1">这将重置底栏配置参数到默认值并重启桌面.</string>
+  <string name="DockMarginTop">页面指示器距图标</string>
+  <string name="DockMarginBottom">页面指示器距屏幕底部</string>
 </resources>

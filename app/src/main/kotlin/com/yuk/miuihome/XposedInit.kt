@@ -133,6 +133,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
         ModifyIconTitleTopMargin().init()  // 应用图标与标题距离
         ModifyShortcutItemCount().init()  // 解除Shortcut数量限制
         ModifyPadA12DockBlur().init() //安卓12平板Dock模糊
+        ModifyDockHook().init() //Dock相关
         ResourcesHook().init()  //  资源相关
     }
 

@@ -2,13 +2,13 @@ package com.yuk.miuihome.module
 
 import android.app.Activity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.callStaticMethod
-import com.yuk.miuihome.utils.ktx.findClass
-import com.yuk.miuihome.utils.ktx.hookAfterMethod
-import com.yuk.miuihome.utils.ktx.hookBeforeMethod
+import com.yuk.miuihome.utils.ktx.*
+import de.robv.android.xposed.XposedBridge
 
 class EnableBlurWhenOpenFolder {
 
@@ -34,13 +34,24 @@ class EnableBlurWhenOpenFolder {
                         launcherClass.hookAfterMethod("onCreate", Bundle::class.java
                         ) {
                             val activity = it.thisObject as Activity
-                            launcherClass.hookAfterMethod("openFolder", folderInfo,View::class.java
+                            launcherClass.hookAfterMethod("openFolder", folderInfo, View::class.java
                             ) {
                                 blurClass.callStaticMethod("fastBlur", 1.0f, activity.window, true)
                             }
                             launcherClass.hookAfterMethod("closeFolder", Boolean::class.java
                             ) {
                                 blurClass.callStaticMethod("fastBlur", 0.0f, activity.window, true)
+                            }
+                            val isFolderShowing = activity.callMethod("isFolderShowing") as Boolean
+                            val navStubViewClass = "com.miui.home.recents.NavStubView".findClass()
+                            val handler = Handler(Looper.getMainLooper())
+                            val runnable = Runnable { blurClass.callStaticMethod("fastBlur", 1.0f, activity.window, true) }
+                            navStubViewClass.hookAfterMethod("performAppToHome"
+                            ) {
+                                if (isFolderShowing) {
+                                    handler.postDelayed(runnable, 1000)
+                                    XposedBridge.log("Do it")
+                                }
                             }
                         }
                     }
