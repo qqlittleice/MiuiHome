@@ -11,12 +11,10 @@ import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import com.github.kyuubiran.ezxhelper.init.InitFields.appContext
 import com.github.kyuubiran.ezxhelper.utils.Log
-import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
 import com.zhenxiang.blur.WindowBlurFrameLayout
 import com.zhenxiang.blur.model.CornersRadius
-import de.robv.android.xposed.XposedBridge
 import de.robv.android.xposed.XposedHelpers
 
 class ModifyDockHook {
@@ -55,9 +53,6 @@ class ModifyDockHook {
             }
             launcherClass.hookAfterMethod("onCreate", Bundle::class.java) { it ->
                 val activity = it.thisObject as Activity
-                val view = activity.findViewById(activity.resources.getIdentifier("recents_container", "id", Config.hostPackage)) as View
-                val isFolderShowing = activity.callMethod("isFolderShowing") as Boolean
-                val isInEditing = activity.callMethod("isInEditing") as Boolean
                 val searchBarObject = activity.callMethod("getSearchBar") as FrameLayout
                 val searchBarDrawer = searchBarObject.getChildAt(1) as RelativeLayout
                 val searchBarDesktop = searchBarObject.getChildAt(0) as RelativeLayout
@@ -82,7 +77,6 @@ class ModifyDockHook {
                     launcherStateManagerClass.hookAfterMethod("getState") {
                         val state = it.result.toString()
                         val a = state.lastIndexOf("LauncherState")
-                        XposedBridge.log(a.toString())
                         if (a != -1) blur.visibility = View.VISIBLE
                         else blur.visibility = View.GONE
                     }
