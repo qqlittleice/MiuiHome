@@ -106,4 +106,5 @@
   <string name="Tips1">Questo ripristinerà i valori della dock predefiniti e riavvierà il launcher.</string>
   <string name="DockMarginTop">Spaziatura icone e indicatore pagine</string>
   <string name="DockMarginBottom">Spaziatura tra l\'indicatore pagine e il fondo dello schermo</string>
+  <string name="AppReturnAmin">App Return Blur</string>
 </resources>
