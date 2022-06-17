@@ -28,10 +28,11 @@ class EnableBlurWhenOpenFolder {
                         val blurClass = "com.miui.home.launcher.common.BlurUtils".findClass()
                         val folderInfo = "com.miui.home.launcher.FolderInfo".findClass()
                         val launcherClass = "com.miui.home.launcher.Launcher".findClass()
+                        val launcherStateClass = "com.miui.home.launcher.LauncherState".findClass()
                         launcherClass.hookAfterMethod("onCreate", Bundle::class.java) {
                             val activity = it.thisObject as Activity
                             var isFolderShowing = false
-                                launcherClass.hookAfterMethod("isFolderShowing") { hookParam ->
+                            launcherClass.hookAfterMethod("isFolderShowing") { hookParam ->
                                 isFolderShowing = hookParam.result as Boolean
                             }
                             launcherClass.hookAfterMethod("openFolder", folderInfo, View::class.java) {
@@ -44,6 +45,9 @@ class EnableBlurWhenOpenFolder {
                                 if (isFolderShowing) hookParam.result = blurClass.callStaticMethod("fastBlur", 1.0f, activity.window, true)
                             }
                             blurClass.hookAfterMethod("fastBlurWhenFinishOpenOrCloseApp", launcherClass) { hookParam ->
+                                if (isFolderShowing) hookParam.result = blurClass.callStaticMethod("fastBlur", 1.0f, activity.window, true, 0L)
+                            }
+                            blurClass.hookAfterMethod("fastBlurWhenExitRecents", launcherClass, launcherStateClass, Boolean::class.java) { hookParam ->
                                 if (isFolderShowing) hookParam.result = blurClass.callStaticMethod("fastBlur", 1.0f, activity.window, true, 0L)
                             }
                             launcherClass.hookAfterMethod("onGesturePerformAppToHome") {

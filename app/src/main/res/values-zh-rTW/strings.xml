@@ -93,4 +93,17 @@
   <string name="MaxShortcutCount">最大 Shortcut 數量</string>
   <string name="TaskViewAppCardBgColor">自定義小窗口應用程式的縮略圖背景顏色</string>
   <string name="DrawerModeCount">抽屜模式圖示計數</string>
+  <string name="DockHeight">底欄高度</string>
+  <string name="DockRoundedCorners">底欄圓角</string>
+  <string name="DockSide">底欄距離螢幕兩側</string>
+  <string name="DockBottom">底欄距螢幕底部</string>
+  <string name="DockIconBottom">圖標距螢幕底部</string>
+  <string name="DockSettings">底欄設定</string>
+  <string name="DockFeature">啟用底欄功能</string>
+  <string name="EnableDockBlur">啟用底欄模糊</string>
+  <string name="Reset">重置底欄設定參數</string>
+  <string name="Tips1">這將重置底欄設定參數到預設值並重啟桌面。</string>
+  <string name="DockMarginTop">頁面指示器距圖示</string>
+  <string name="DockMarginBottom">頁面寬度螢幕底部</string>
+  <string name="AppReturnAmin">應用程式返回模糊</string>
 </resources>
