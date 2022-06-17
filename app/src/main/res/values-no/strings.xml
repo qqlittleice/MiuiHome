@@ -106,4 +106,5 @@
   <string name="Tips1">This will restore the Dock parameter to its default value and restart the System Launcher.</string>
   <string name="DockMarginTop">Page Indicator and Icon Spacing</string>
   <string name="DockMarginBottom">Page Indicator and the bottom of the Screen Spacing</string>
+  <string name="AppReturnAmin">App Return Blur</string>
 </resources>
