@@ -39,10 +39,10 @@ class EnableBlurWhenOpenFolder {
                                 blurClass.callStaticMethod("fastBlur", 1.0f, activity.window, true)
                             }
                             launcherClass.hookAfterMethod("closeFolder", Boolean::class.java) {
-                                blurClass.callStaticMethod("fastBlur", 0.0f, activity.window, true)
+                                blurClass.callStaticMethod("fastBlur", 0.0f, activity.window, true, 300L)
                             }
                             blurClass.hookAfterMethod("fastBlurWhenStartOpenOrCloseApp", Boolean::class.java, launcherClass) { hookParam ->
-                                if (isFolderShowing) hookParam.result = blurClass.callStaticMethod("fastBlur", 1.0f, activity.window, true)
+                                if (isFolderShowing) hookParam.result = blurClass.callStaticMethod("fastBlur", 1.0f, activity.window, true, 0L)
                             }
                             blurClass.hookAfterMethod("fastBlurWhenFinishOpenOrCloseApp", launcherClass) { hookParam ->
                                 if (isFolderShowing) hookParam.result = blurClass.callStaticMethod("fastBlur", 1.0f, activity.window, true, 0L)
