@@ -108,4 +108,5 @@
   <string name="DockMarginTop">Page Indicator and Icon Spacing</string>
   <string name="DockMarginBottom">Page Indicator and the bottom of the Screen Spacing</string>
   <string name="AppReturnAmin">App Return Blur</string>
+  <string name="appReturnAminSpend">App Return Blur Speed</string>
 </resources>

@@ -82,7 +82,6 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
                     })
                     callMethod("setIntent", Intent())
                 }
-
                 it.thisObject.callMethod("getPreferenceScreen")?.callMethod("addPreference", pref)
             } catch (e: Throwable) {
                 (it.thisObject.getObjectField("mDefaultHomeSetting")).apply {
@@ -133,10 +132,10 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
         ModifyRecents().init()  // 后台元素相关
         ModifyIconTitleTopMargin().init()  // 应用图标与标题距离
         ModifyShortcutItemCount().init()  // 解除Shortcut数量限制
-        ModifyPadA12DockBlur().init() //安卓12平板Dock模糊
-        ModifyAppReturnBlur().init() // 应用返回桌面模糊
-        ModifyDockHook().init() //Dock相关
-        ResourcesHook().init()  //  资源相关
+        ModifyPadA12DockBlur().init()  // 安卓12平板Dock模糊
+        ModifyAppReturnBlur().init()  // 应用返回桌面模糊
+        ModifyDockHook().init()  // Dock相关
+        ResourcesHook().init() // 资源相关
     }
 
     fun checkVersionName(): String {

@@ -107,4 +107,5 @@
   <string name="DockMarginTop">页面指示器距图标</string>
   <string name="DockMarginBottom">页面指示器距屏幕底部</string>
   <string name="AppReturnAmin">应用返回桌面模糊过渡</string>
+  <string name="appReturnAminSpend">应用返回桌面模糊过渡的速度</string>
 </resources>

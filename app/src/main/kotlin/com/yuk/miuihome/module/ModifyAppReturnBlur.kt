@@ -17,7 +17,7 @@ class ModifyAppReturnBlur {
     @SuppressLint("DiscouragedApi")
     fun init() {
         if (!OwnSP.ownSP.getBoolean("appReturnAmin", false)) return
-        val value = (OwnSP.ownSP.getFloat("animationLevel", -1f) * 400).toLong()
+        val value = (OwnSP.ownSP.getFloat("appReturnAminSpend", 5f) * 100).toLong()
         val handler = Handler(Looper.getMainLooper())
         val blurClass = "com.miui.home.launcher.common.BlurUtils".findClass()
         val launcherClass = "com.miui.home.launcher.Launcher".findClass()
@@ -35,16 +35,18 @@ class ModifyAppReturnBlur {
             }
             blurClass.hookAfterMethod("fastBlurWhenStartOpenOrCloseApp", Boolean::class.java, launcherClass) { hookParam ->
                 val z = hookParam.args[0] as Boolean
-                if (!isFolderShowing && !z) hookParam.result = blurClass.callStaticMethod("fastBlur", 0.0f, activity.window, true, value)
+                if (view.visibility == View.GONE && !isFolderShowing && !z) hookParam.result = blurClass.callStaticMethod("fastBlur", 0.0f, activity.window, true, value)
             }
             launcherClass.hookAfterMethod("onGesturePerformAppToHome") {
                 val isUserBlurWhenOpenFolder = OwnSP.ownSP.getBoolean("blurWhenOpenFolder", false)
                 if (view.visibility == View.GONE && !isInEditing) {
                     if (isUserBlurWhenOpenFolder) {
                         if (!isFolderShowing) {
+                            blurClass.callStaticMethod("fastBlur", 1.0f, activity.window, true, 0L)
                             handler.postDelayed(runnable, 100)
                         }
                     } else {
+                        blurClass.callStaticMethod("fastBlur", 1.0f, activity.window, true, 0L)
                         handler.postDelayed(runnable, 100)
                     }
                 }
