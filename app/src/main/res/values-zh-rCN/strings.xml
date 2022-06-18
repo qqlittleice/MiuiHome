@@ -106,6 +106,6 @@
   <string name="Tips1">这将重置底栏配置参数到默认值并重启桌面.</string>
   <string name="DockMarginTop">页面指示器距图标</string>
   <string name="DockMarginBottom">页面指示器距屏幕底部</string>
-  <string name="AppReturnAmin">App Return Blur</string>
-  <string name="appReturnAminSpend">App Return Blur Speed</string>
+  <string name="AppReturnAmin">应用返回桌面模糊过渡</string>
+  <string name="appReturnAminSpend">应用返回桌面模糊过渡的速度</string>
 </resources>
