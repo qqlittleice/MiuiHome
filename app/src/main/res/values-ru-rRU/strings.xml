@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="AdvancedFeature">Расширенные настройки</string>
-  <string name="AlwaysShowMIUIWidget">Отображать виджеты MIUI в классических виджетах</string>
+  <string name="AdvancedFeature">Дополнительные настройки</string>
+  <string name="AlwaysShowMIUIWidget">Разрешить виджетам MIUI отображаться в классических виджетах</string>
   <string name="AlwaysShowStatusBarClock">Всегда отображать часы в строке состояния</string>
   <string name="AnimationLevel">Скорость анимации жестов</string>
   <string name="AppTextSize">Расстояние между иконкой и именем приложения</string>
@@ -93,4 +93,19 @@
   <string name="MaxShortcutCount">Изменить максимальное число ярлыков</string>
   <string name="TaskViewAppCardBgColor">Настройка цвета фона миниатюр для приложений с плавающими окнами</string>
   <string name="DrawerModeCount">Кол-во значков в режиме панели</string>
+  <string name="PadDockBlur">Размытие док-панели</string>
+  <string name="DockHeight">Dock Bar Height</string>
+  <string name="DockRoundedCorners">Dock Bar Rounded Corners</string>
+  <string name="DockSide">Dock Bar from the sides of the Screen</string>
+  <string name="DockBottom">Dock Bar from the bottom of the Screen</string>
+  <string name="DockIconBottom">Icons from the bottom of the Screen</string>
+  <string name="DockSettings">Dock Settings</string>
+  <string name="DockFeature">Enable Dock Feature</string>
+  <string name="EnableDockBlur">Enable Blur of the Dock</string>
+  <string name="Reset">Reset Dock Parameters</string>
+  <string name="Tips1">This will restore the Dock parameter to its default value and restart the System Launcher.</string>
+  <string name="DockMarginTop">Page Indicator and Icon Spacing</string>
+  <string name="DockMarginBottom">Page Indicator and the bottom of the Screen Spacing</string>
+  <string name="AppReturnAmin">App Return Blur</string>
+  <string name="appReturnAminSpend">App Return Blur Speed</string>
 </resources>

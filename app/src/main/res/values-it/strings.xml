@@ -93,4 +93,19 @@
   <string name="MaxShortcutCount">Modifica numero massimo di scorciatoie</string>
   <string name="TaskViewAppCardBgColor">Personalizza il colore di sfondo delle miniature per le applicazioni di piccole finestre</string>
   <string name="DrawerModeCount">Numero di icone in modalità cassetto</string>
+  <string name="PadDockBlur">Sfocatura del pad Dock</string>
+  <string name="DockHeight">Altezza barra della Dock</string>
+  <string name="DockRoundedCorners">Angoli arrotondati barra della Dock</string>
+  <string name="DockSide">Distanza barra della Dock dai lati dello schermo</string>
+  <string name="DockBottom">Distanza barra della Dock dalla parte inferiore dello schermo</string>
+  <string name="DockIconBottom">Distanza icone dalla parte inferiore dello schermo</string>
+  <string name="DockSettings">Opzioni dock</string>
+  <string name="DockFeature">Attiva dock</string>
+  <string name="EnableDockBlur">Attiva sfocatura sfondo della dock</string>
+  <string name="Reset">Resetta parametri della dock</string>
+  <string name="Tips1">Questo ripristinerà i valori della dock predefiniti e riavvierà il launcher.</string>
+  <string name="DockMarginTop">Spaziatura icone e indicatore pagine</string>
+  <string name="DockMarginBottom">Spaziatura tra l\'indicatore pagine e il fondo dello schermo</string>
+  <string name="AppReturnAmin">App Return Blur</string>
+  <string name="appReturnAminSpend">App Return Blur Speed</string>
 </resources>

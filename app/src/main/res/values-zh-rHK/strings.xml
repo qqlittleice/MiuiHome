@@ -93,6 +93,7 @@
   <string name="MaxShortcutCount">最大 Shortcut 數量</string>
   <string name="TaskViewAppCardBgColor">Customize the thumbnail background color for small window apps</string>
   <string name="DrawerModeCount">Drawer mode icon count</string>
+  <string name="PadDockBlur">Pad Dock Blur</string>
   <string name="DockHeight">底欄高度</string>
   <string name="DockRoundedCorners">底欄圓角</string>
   <string name="DockSide">底欄距離螢幕兩側</string>
@@ -106,4 +107,5 @@
   <string name="DockMarginTop">頁面指示器距圖示</string>
   <string name="DockMarginBottom">頁面寬度螢幕底部</string>
   <string name="AppReturnAmin">應用程式返回模糊</string>
+  <string name="appReturnAminSpend">App Return Blur Speed</string>
 </resources>
