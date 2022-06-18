@@ -107,4 +107,5 @@
   <string name="DockMarginTop">Spaziatura icone e indicatore pagine</string>
   <string name="DockMarginBottom">Spaziatura tra l\'indicatore pagine e il fondo dello schermo</string>
   <string name="AppReturnAmin">App Return Blur</string>
+  <string name="appReturnAminSpend">App Return Blur Speed</string>
 </resources>
