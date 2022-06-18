@@ -19,7 +19,7 @@ import com.yuk.miuihome.view.CustomDialog
 import com.yuk.miuihome.view.HookSettingsActivity
 import com.yuk.miuihome.view.base.*
 import java.text.SimpleDateFormat
-import java.util.Calendar
+import java.util.*
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
@@ -27,6 +27,7 @@ import kotlin.system.exitProcess
 object DataHelper {
     var thisItems = "Main"
     const val main = "Main"
+    const val dock = "Dock"
     const val horizontal = "Horizontal"
     private const val menu = "Menu"
     lateinit var currentActivity: Activity
@@ -41,6 +42,7 @@ object DataHelper {
 
     fun getItems(): ArrayList<Item> = when (thisItems) {
         menu -> loadMenuItems()
+        dock -> loadDockItems()
         horizontal -> loadHorizontalItems()
         else -> loadItems()
     }
@@ -56,6 +58,23 @@ object DataHelper {
             add(Item(list = arrayListOf(LineV())))
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.ModuleVersion))))
             add(Item(list = arrayListOf(TextV("${BuildConfig.VERSION_NAME}(${BuildConfig.VERSION_CODE})-${BuildConfig.BUILD_TYPE}"))))
+        }
+        return itemList
+    }
+    private fun loadDockItems(): ArrayList<Item> {
+        val itemList = arrayListOf<Item>()
+        itemList.apply {
+            add(Item(list = arrayListOf(SubtitleV(resId = R.string.DockSettings))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.DockFeature), "dockSettings"))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.EnableDockBlur), "searchBarBlur"))))
+            add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockRoundedCorners), key = "dockRadius", min = 0, max = 50, divide = 10, defaultProgress = 25))))
+            add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockHeight), key = "dockHeight", min = 30, max = 150, divide = 10, defaultProgress = 79))))
+            add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockSide), key = "dockSide", min = 0, max = 100, divide = 10, defaultProgress = 30))))
+            add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockBottom), key = "dockBottom", min = 0, max = 150, divide = 10, defaultProgress = 23))))
+            add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockIconBottom), key = "dockIconBottom", min = 0, max = 150, divide = 10, defaultProgress = 35))))
+            add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockMarginTop), key = "dockMarginTop", min = 0, max = 100, divide = 10, defaultProgress = 6))))
+            add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.DockMarginBottom), key = "dockMarginBottom", min = 0, max = 200, divide = 10, defaultProgress = 110))))
+            add(Item(list = arrayListOf(TextV(resId = R.string.Reset, onClickListener = { showResetDockDialog() }))))
         }
         return itemList
     }
@@ -128,9 +147,6 @@ object DataHelper {
             add(Item(list = arrayListOf(LineV())))
 
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.Folder))))
-            if (Build.VERSION.SDK_INT >= 31) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.smallFolderBlur, summaryResId = R.string.smallFolderSummy), "folderBlur", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() }))))
-            if (Build.VERSION.SDK_INT >= 31 && OwnSP.ownSP.getBoolean("folderBlur", false)) add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.smallFolderBlurCorner), key = "folderBlurCorner", min = 0, max = 100, divide = 1, defaultProgress = 32))))
-            if (Build.VERSION.SDK_INT >= 31 && OwnSP.ownSP.getBoolean("folderBlur", false)) add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.smallFolderBlurMargins), key = "folderBlurMargins", min = -50, max = 50, divide = 10, defaultProgress = -21))))
             if (!OwnSP.ownSP.getBoolean("simpleAnimation", false) && !OwnSP.ownSP.getBoolean("alwaysBlur", false)) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.BlurWhenOpenFolder), "blurWhenOpenFolder"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.CloseFolder), "closeFolder"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.FolderWidth), "folderWidth"))))
@@ -151,6 +167,7 @@ object DataHelper {
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.RecommendServer), "recommendServer"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.HideSeekPoints), "hideSeekPoints"))))
             if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AlwaysBlur), "alwaysBlur", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() }))))
+            if (!OwnSP.ownSP.getBoolean("alwaysBlur", false)) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AppReturnAmin), "appReturnAmin"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SmallWindow), "supportSmallWindow"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.LowEndAnim), "lowEndAnim"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.LowEndDeviceUseMIUIWidgets), "useMIUIWidgets"))))
@@ -163,6 +180,7 @@ object DataHelper {
             if (Build.VERSION.SDK_INT >= 31) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.PadDockBlur), "PadDockBlur"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.ShortcutCount), "unlockShortcutCount", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() }))))
             if (OwnSP.ownSP.getBoolean("unlockShortcutCount", false)) add(Item(list = arrayListOf(TextV(resId = R.string.MaxShortcutCount, onClickListener = { showMaxShortcutCountDialog() }))))
+            if (Build.VERSION.SDK_INT >= 31) add(Item(list = arrayListOf(TextWithArrowV(TextWithSummaryV(titleResId = R.string.DockSettings)) { setItems(dock) })))
             add(Item(list = arrayListOf(TextV(resId = R.string.EveryThingBuild, onClickListener = { BuildWithEverything().init() }))))
             add(Item(list = arrayListOf(LineV())))
 
@@ -187,6 +205,30 @@ object DataHelper {
             setTitle(R.string.Reboot)
             setMessage(R.string.Reboot1)
             setRButton(R.string.Yes) {
+                dismiss()
+                thread {
+                    Log.toast(currentActivity.getString(R.string.Reboot2))
+                    Thread.sleep(1000)
+                    exitProcess(0)
+                }
+            }
+            setLButton(R.string.Cancel) { dismiss() }
+            show()
+        }
+    }
+
+    private fun showResetDockDialog() {
+        CustomDialog(currentActivity).apply {
+            setTitle(R.string.Reset)
+            setMessage(R.string.Tips1)
+            setRButton(R.string.Yes) {
+                OwnSP.set("dockRadius", 2.5f)
+                OwnSP.set("dockHeight", 7.9f)
+                OwnSP.set("dockSide", 3.0f)
+                OwnSP.set("dockBottom", 2.3f)
+                OwnSP.set("dockIconBottom", 3.5f)
+                OwnSP.set("dockMarginTop", 0.6f)
+                OwnSP.set("dockMarginBottom", 11.0f)
                 dismiss()
                 thread {
                     Log.toast(currentActivity.getString(R.string.Reboot2))

@@ -2,7 +2,7 @@
 
 <h1>MiuiHome</h1>
 
-<b>[EOL] Hook for MIUI Launcher - Xposed 
+<b>Hook for MIUI Launcher - Xposed 
 
 English 丨 [简体中文](https://github.com/qqlittleice/MiuiHome/blob/main/README.md)</b>
 
@@ -22,45 +22,6 @@ English 丨 [简体中文](https://github.com/qqlittleice/MiuiHome/blob/main/REA
 
 __Activating this module in LSPosed Manager, restart Miui Launcher once, open Miui Launcher settings, and click on "Module Settings".__
 
-## Past and present
-
-__Old：[YuKongA/MiuiHome](https://github.com/YuKongA/MiuiHome)__
-
-__Now：[qqlittleice/MiuiHome](https://github.com/qqlittleice/MiuiHome)__
-
-## Module Features
-
-<details>
-
-- Enable Smooth Animation.
-- Always show status bar clock.
-- Change task view blur level.
-- Gesture animation speed.
-- Infinite scrolling on the launcher.
-- Hide the status bar in the Task view.
-- The task view applies the card text size.
-- The rounded corner size of the card is applied.
-- Hide launcher application icons.
-- Hide Task view application icons.
-- Hide the Task view clean up icon.
-- Hide the name of the launcher widget.
-- Enable Water Ripple download effect.
-- Blur when opening a folder..
-- Close the folder when opening the app.
-- Cancel the darking effect of Task view wallpaper.
-- Hide the application icons in the Task view.
-- The distance between the Task view application icon and the name.
-- Force the current device to be a high-end device.
-- Allow Android widgets to be moved to -1 screen.
-- Allow MIUI widgets to be displayed in Android widget page.
-- Change Icon Label Font Size.
-- Change Folder Column Count.
-- Use entire Folder space.
-- Hide All Section in App Drawer mode.
-- Option to Remove Page Indicator.
-- Hide "Edit" Button in App Category's Paging.
-</details>
-
 ## Translation Contributions
 
 [Crowdin](https://crowdin.com/project/miuihome_xposed)
@@ -69,13 +30,19 @@ __Now：[qqlittleice/MiuiHome](https://github.com/qqlittleice/MiuiHome)__
 
 <details>
 
+- [AndroidHiddenApiBypass](https://github.com/LSPosed/AndroidHiddenApiBypass)
+- [AndroidSystemBlur](https://github.com/Lucchetto/AndroidSystemBlur)
 - [androidx](https://android.googlesource.com/platform/frameworks/support)
+- [AppCenter](https://github.com/microsoft/appcenter)
 - [BiliRoaming](https://github.com/yujincheng08/BiliRoaming)
 - [blockmiui](https://github.com/577fkj/blockmiui)
 - [CustoMIUIzer](https://code.highspec.ru/Mikanoshi/CustoMIUIzer)
 - [FuckCoolapk](https://github.com/ejiaogl/FuckCoolapk)
 - [LSPosed](https://github.com/LSPosed/LSPosed)
+- [MIDock](https://github.com/lamprose/MIDock)
+- [MIUIDock](https://github.com/ouhoukyo/MIUIDock)
 - [MIUltra](https://github.com/lamprose/MIUltra)
+- [QNotified](https://github.com/ferredoxin/QNotified)
 - [XposedBridge](https://github.com/rovo89/XposedBridge)
 - [EzXHelper](https://github.com/KyuubiRan/EzXHelper)
 </details>

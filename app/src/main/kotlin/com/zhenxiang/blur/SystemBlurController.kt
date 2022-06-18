@@ -95,7 +95,6 @@ class SystemBlurController(
         bg?.invalidateSelf()
     }
 
-    @SuppressLint("NewApi")
     private fun updateBlurRadius() {
         val bg = view.background
         if (bg is BackgroundBlurDrawable) {

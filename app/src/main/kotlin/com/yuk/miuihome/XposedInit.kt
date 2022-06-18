@@ -67,10 +67,10 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
                 val mLayoutResId = (it.thisObject.getObjectField("mDefaultHomeSetting"))?.getObjectField("mLayoutResId")
                 val mWidgetLayoutResId = (it.thisObject.getObjectField("mDefaultHomeSetting"))?.getObjectField("mWidgetLayoutResId")
                 val pref = XposedHelpers.newInstance("com.miui.home.settings.preference.ValuePreference".findClass(), appContext).apply {
+                    callMethod("setValue",moduleRes.getString(R.string.ModuleSettings))
                     setObjectField("mTitle", "MiuiHome")
                     setObjectField("mOrder", 0)
                     setObjectField("mVisible", true)
-                    setObjectField("mSummary", moduleRes.getString(R.string.ModuleSettings))
                     setObjectField("mLayoutResId", mLayoutResId)
                     setObjectField("mWidgetLayoutResId", mWidgetLayoutResId)
                     setObjectField("mFragment", "MiuiHome")
@@ -82,6 +82,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
                     })
                     callMethod("setIntent", Intent())
                 }
+
                 it.thisObject.callMethod("getPreferenceScreen")?.callMethod("addPreference", pref)
             } catch (e: Throwable) {
                 (it.thisObject.getObjectField("mDefaultHomeSetting")).apply {
@@ -133,7 +134,8 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
         ModifyIconTitleTopMargin().init()  // 应用图标与标题距离
         ModifyShortcutItemCount().init()  // 解除Shortcut数量限制
         ModifyPadA12DockBlur().init() //安卓12平板Dock模糊
-        EnableFolderIconBlur().init() //安卓12小文件夹模糊
+        ModifyAppReturnBlur().init() // 应用返回桌面模糊
+        ModifyDockHook().init() //Dock相关
         ResourcesHook().init()  //  资源相关
     }
 
