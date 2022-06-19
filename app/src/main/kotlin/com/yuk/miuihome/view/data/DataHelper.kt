@@ -149,7 +149,7 @@ object DataHelper {
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.Folder))))
             if (Build.VERSION.SDK_INT >= 31) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.smallFolderBlur, summaryResId = R.string.smallFolderSummy), "folderBlur", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() }))))
             if (Build.VERSION.SDK_INT >= 31 && OwnSP.ownSP.getBoolean("folderBlur", false)) add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.smallFolderBlurCorner), key = "folderBlurCorner", min = 0, max = 100, divide = 1, defaultProgress = 30))))
-            if (Build.VERSION.SDK_INT >= 31 && OwnSP.ownSP.getBoolean("folderBlur", false)) add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.smallFolderBlurSide), key = "folderBlurSide", min = 50, max = 200, divide = 100, defaultProgress = 120))))
+            if (Build.VERSION.SDK_INT >= 31 && OwnSP.ownSP.getBoolean("folderBlur", false)) add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.smallFolderBlurSide), key = "folderBlurSide", min = 50, max = 300, divide = 100, defaultProgress = 120))))
             if (!OwnSP.ownSP.getBoolean("simpleAnimation", false) && !OwnSP.ownSP.getBoolean("alwaysBlur", false)) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.BlurWhenOpenFolder), "blurWhenOpenFolder"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.CloseFolder), "closeFolder"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.FolderWidth), "folderWidth"))))
