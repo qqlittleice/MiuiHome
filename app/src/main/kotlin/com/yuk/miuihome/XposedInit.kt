@@ -53,6 +53,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
                     checkWidgetLauncher()
                     checkMiuiVersion()
                     checkAndroidVersion()
+                    checkIsPadDevice()
                 }
                 if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: [com.miui.home] hook success")
             }
@@ -67,13 +68,13 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
                 val mLayoutResId = (it.thisObject.getObjectField("mDefaultHomeSetting"))?.getObjectField("mLayoutResId")
                 val mWidgetLayoutResId = (it.thisObject.getObjectField("mDefaultHomeSetting"))?.getObjectField("mWidgetLayoutResId")
                 val pref = XposedHelpers.newInstance("com.miui.home.settings.preference.ValuePreference".findClass(), appContext).apply {
-                    callMethod("setValue",moduleRes.getString(R.string.ModuleSettings))
                     setObjectField("mTitle", "MiuiHome")
                     setObjectField("mOrder", 0)
                     setObjectField("mVisible", true)
                     setObjectField("mLayoutResId", mLayoutResId)
                     setObjectField("mWidgetLayoutResId", mWidgetLayoutResId)
                     setObjectField("mFragment", "MiuiHome")
+                    callMethod("setValue",moduleRes.getString(R.string.ModuleSettings))
                     setObjectField("mClickListener", object : View.OnClickListener {
                         override fun onClick(v: View) {
                             v.context.startActivity(Intent(v.context, HookSettingsActivity::class.java))
@@ -86,6 +87,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
             } catch (e: Throwable) {
                 (it.thisObject.getObjectField("mDefaultHomeSetting")).apply {
                     setObjectField("mTitle", moduleRes.getString(R.string.ModuleSettings))
+                    callMethod("setValue",moduleRes.getString(R.string.ModuleSettings))
                     setObjectField("mClickListener", object : View.OnClickListener {
                         override fun onClick(v: View) {
                             v.context.startActivity(Intent(v.context, HookSettingsActivity::class.java))
@@ -133,6 +135,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
         ModifyIconTitleTopMargin().init()  // 应用图标与标题距离
         ModifyShortcutItemCount().init()  // 解除Shortcut数量限制
         ModifyPadA12DockBlur().init()  // 安卓12平板Dock模糊
+        EnableFolderIconBlur().init()  //安卓12小文件夹模糊
         ModifyAppReturnBlur().init()  // 应用返回桌面模糊
         ModifyDockHook().init()  // Dock相关
         ResourcesHook().init() // 资源相关
@@ -145,6 +148,10 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
 
     fun checkIsAlpha(): Boolean {
         return (checkVersionName().contains("ALPHA", ignoreCase = true))
+    }
+
+    fun checkIsPadDevice(): Boolean {
+        return XposedHelpers.callStaticMethod("com.miui.home.launcher.common.Utilities".findClass(),"isPadDevice") as Boolean
     }
 
     fun checkMiuiVersion(): String {
