@@ -108,4 +108,8 @@
   <string name="DockMarginBottom">页面指示器距屏幕底部</string>
   <string name="AppReturnAmin">应用返回桌面模糊过渡</string>
   <string name="appReturnAminSpend">应用返回桌面模糊过渡的速度</string>
+  <string name="smallFolderBlur">小文件夹模糊</string>
+  <string name="smallFolderSummy">启用该功能后，在编辑模式移动小文件夹图标将导致崩溃</string>
+  <string name="smallFolderBlurCorner">小文件夹模糊圆角半径</string>
+  <string name="smallFolderBlurSide">小文件夹模糊大小</string>
 </resources>
