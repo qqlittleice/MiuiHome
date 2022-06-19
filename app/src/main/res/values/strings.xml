@@ -109,4 +109,8 @@
   <string name="DockMarginBottom">Page Indicator and the bottom of the Screen Spacing</string>
   <string name="AppReturnAmin">App Return Blur</string>
   <string name="appReturnAminSpend">App Return Blur Speed</string>
+  <string name="smallFolderBlur">Small folder blur</string>
+  <string name="smallFolderSummy">Moving folders in edit mode will cause a crash when this feature is enabled</string>
+  <string name="smallFolderBlurCorner">Small folder blur corner</string>
+  <string name="smallFolderBlurSide">Small folder blur side</string>
 </resources>
