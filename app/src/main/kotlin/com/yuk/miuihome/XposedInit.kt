@@ -137,7 +137,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
         ModifyPadA12DockBlur().init()  // 安卓12平板Dock模糊
         EnableFolderIconBlur().init()  //安卓12小文件夹模糊
         ModifyAppReturnBlur().init()  // 应用返回桌面模糊
-        ModifyDockHook().init()  // Dock相关
+        ModifyDockHook().init()  // 安卓12底栏设置
         ResourcesHook().init() // 资源相关
     }
 

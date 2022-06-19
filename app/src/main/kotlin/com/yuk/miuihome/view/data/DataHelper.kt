@@ -171,7 +171,7 @@ object DataHelper {
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.HideSeekPoints), "hideSeekPoints"))))
             if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AlwaysBlur), "alwaysBlur", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() }))))
             if (!OwnSP.ownSP.getBoolean("alwaysBlur", false)) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AppReturnAmin), "appReturnAmin", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() }))))
-            if (OwnSP.ownSP.getBoolean("appReturnAmin", false)) add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.appReturnAminSpend), key = "appReturnAminSpend", min = 50, max = 300, divide = 50, defaultProgress = 10))))
+            if (OwnSP.ownSP.getBoolean("appReturnAmin", false)) add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.appReturnAminSpend), key = "appReturnAminSpend", min = 50, max = 300, divide = 100, defaultProgress = 200))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SmallWindow), "supportSmallWindow"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.LowEndAnim), "lowEndAnim"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.LowEndDeviceUseMIUIWidgets), "useMIUIWidgets"))))
