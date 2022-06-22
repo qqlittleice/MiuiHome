@@ -2,7 +2,6 @@ package com.yuk.miuihome
 
 import android.annotation.SuppressLint
 import android.app.Application
-import android.app.LocalActivityManager
 import android.content.Context
 import android.content.Intent
 import android.view.View
