@@ -35,9 +35,10 @@ object DataHelper {
 
     fun setItems(string: String) {
         thisItems = string
-        val intent = XposedInit.context
+        val intent = Intent(XposedInit.context, HookSettingsActivity::class.java)
         this.currentActivity.finish()
-        XposedInit.context?.startActivity(Intent(intent, HookSettingsActivity::class.java))
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        XposedInit.context?.startActivity(intent)
     }
 
     fun getItems(): ArrayList<Item> = when (thisItems) {

@@ -2,6 +2,7 @@ package com.yuk.miuihome
 
 import android.annotation.SuppressLint
 import android.app.Application
+import android.app.LocalActivityManager
 import android.content.Context
 import android.content.Intent
 import android.view.View
@@ -16,6 +17,7 @@ import com.yuk.miuihome.utils.ktx.*
 import com.yuk.miuihome.view.HookSettingsActivity
 import de.robv.android.xposed.*
 import de.robv.android.xposed.callbacks.XC_LoadPackage
+
 
 class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
     companion object {
@@ -77,7 +79,9 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
                     callMethod("setValue",moduleRes.getString(R.string.ModuleSettings))
                     setObjectField("mClickListener", object : View.OnClickListener {
                         override fun onClick(v: View) {
-                            v.context.startActivity(Intent(v.context, HookSettingsActivity::class.java))
+                            val intent = Intent(v.context, HookSettingsActivity::class.java)
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            v.context.startActivity(intent)
                             context = v.context
                         }
                     })
