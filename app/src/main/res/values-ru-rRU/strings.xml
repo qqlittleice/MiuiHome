@@ -112,4 +112,6 @@
   <string name="smallFolderSummy">Перемещение папок в режиме редактирования приведет к сбою, если эта функция включена</string>
   <string name="smallFolderBlurCorner">Угол размытия папки</string>
   <string name="smallFolderBlurSide">Размытие папки</string>
+  <string name="AllAppsBlur">Enable All Apps Container View Blur</string>
+  <string name="AllAppsBlurSummy">Please set app drawer background transparency to 100% to use this feature.Also this is a very early test feature, because refresh issues blur very easily turned into a black screen</string>
 </resources>
