@@ -112,5 +112,6 @@
   <string name="smallFolderSummy">启用该功能后，在编辑模式移动小文件夹图标将导致崩溃</string>
   <string name="smallFolderBlurSide">小文件夹模糊大小</string>
   <string name="smallFolderBlurCorner">小文件夹模糊圆角半径</string>
-
+  <string name="AllAppsBlur">抽屉模糊</string>
+  <string name="AllAppsBlurSummy">请将应用程序抽屉的背景透明度设置为100%以使用此功能。因为刷新机制的问题，模糊很容易变成纯黑屏</string>
 </resources>

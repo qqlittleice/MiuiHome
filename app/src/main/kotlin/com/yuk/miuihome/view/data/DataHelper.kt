@@ -167,6 +167,7 @@ object DataHelper {
 
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.TestFeature))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SimpleAnimation), "simpleAnimation", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() }))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AllAppsBlur), "allAppsBlur"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.InfiniteScroll), "infiniteScroll"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.RecommendServer), "recommendServer"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.HideSeekPoints), "hideSeekPoints"))))

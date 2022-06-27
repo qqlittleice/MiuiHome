@@ -11,5 +11,14 @@ data class CornersRadius(
         fun all(radius: Float): CornersRadius {
             return CornersRadius(radius, radius, radius, radius)
         }
+
+        fun custom(
+            topLeft: Float,
+            topRight: Float,
+            bottomLeft: Float,
+            bottomRight: Float
+        ): CornersRadius {
+            return CornersRadius(topLeft, topRight, bottomLeft, bottomRight)
+        }
     }
 }

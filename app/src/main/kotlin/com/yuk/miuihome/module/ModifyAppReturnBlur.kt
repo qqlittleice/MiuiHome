@@ -20,7 +20,7 @@ class ModifyAppReturnBlur {
         val blurClass = "com.miui.home.launcher.common.BlurUtils".findClass()
         val launcherClass = "com.miui.home.launcher.Launcher".findClass()
         val isUserBlurWhenOpenFolder = OwnSP.ownSP.getBoolean("blurWhenOpenFolder", false)
-        launcherClass.hookAfterMethod("onCreate", Bundle::class.java) {
+        launcherClass.hookAfterMethod("onResume") {
             val activity = it.thisObject as Activity
             val view: View = activity.findViewById(activity.resources.getIdentifier("recents_container", "id", Config.hostPackage))
             var isFolderShowing: Boolean

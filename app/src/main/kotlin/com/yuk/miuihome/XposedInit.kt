@@ -14,7 +14,10 @@ import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.Config.TAG
 import com.yuk.miuihome.utils.ktx.*
 import com.yuk.miuihome.view.HookSettingsActivity
-import de.robv.android.xposed.*
+import de.robv.android.xposed.IXposedHookLoadPackage
+import de.robv.android.xposed.IXposedHookZygoteInit
+import de.robv.android.xposed.XposedBridge
+import de.robv.android.xposed.XposedHelpers
 import de.robv.android.xposed.callbacks.XC_LoadPackage
 
 
@@ -141,6 +144,7 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
         EnableFolderIconBlur().init()  //安卓12小文件夹模糊
         ModifyAppReturnBlur().init()  // 应用返回桌面模糊
         ModifyDockHook().init()  // 安卓12底栏设置
+        EnableAllAppsContainerViewBlur().init()  // 安卓12抽屉模糊
         ResourcesHook().init() // 资源相关
     }
 
@@ -174,6 +178,14 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
 
     fun checkVersionCode(): Long {
         return appContext.packageManager.getPackageInfo(appContext.packageName, 0).longVersionCode
+    }
+
+    @SuppressLint("DiscouragedApi")
+    fun getCornerRadiusTop(): Int {
+        val resourceId = appContext.resources.getIdentifier("rounded_corner_radius_top", "dimen", "android")
+        return if (resourceId > 0) {
+            appContext.resources.getDimensionPixelSize(resourceId)
+        } else 100
     }
 
     fun checkWidgetLauncher(): Boolean {
