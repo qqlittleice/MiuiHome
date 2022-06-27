@@ -112,4 +112,6 @@
   <string name="smallFolderSummy">启用该功能后，在编辑模式移动小文件夹图标将导致崩溃</string>
   <string name="smallFolderBlurCorner">小文件夹模糊圆角半径</string>
   <string name="smallFolderBlurSide">小文件夹模糊大小</string>
+  <string name="AllAppsBlur">Enable All Apps Container View Blur</string>
+  <string name="AllAppsBlurSummy">Please set app drawer background transparency to 100% to use this feature.Also this is a very early test feature, because refresh issues blur very easily turned into a black screen</string>
 </resources>
