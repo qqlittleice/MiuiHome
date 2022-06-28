@@ -1,6 +1,9 @@
 package com.yuk.miuihome.module
 
 import android.content.ComponentName
+import com.github.kyuubiran.ezxhelper.utils.findMethod
+import com.github.kyuubiran.ezxhelper.utils.hookAfter
+import com.github.kyuubiran.ezxhelper.utils.hookBefore
 import com.yuk.miuihome.utils.OwnSP
 import com.yuk.miuihome.utils.ktx.*
 import de.robv.android.xposed.XC_MethodHook
@@ -11,8 +14,15 @@ class AlwaysShowMIUIWidget {
         if (!OwnSP.ownSP.getBoolean("alwaysShowMIUIWidget", false)) return
         var hook1: XC_MethodHook.Unhook? = null
         var hook2: XC_MethodHook.Unhook? = null
-        "com.miui.home.launcher.widget.WidgetsVerticalAdapter".hookBeforeMethod("buildAppWidgetsItems", List::class.java, ArrayList::class.java
-        ) {
+        try {
+            findMethod("com.miui.home.launcher.widget.WidgetsVerticalAdapter") {
+                name == "buildAppWidgetsItems"
+            }
+        } catch (e : Exception) {
+            findMethod("com.miui.home.launcher.widget.BaseWidgetsVerticalAdapter") {
+                name == "buildAppWidgetsItems"
+            }
+        }.hookBefore {
             hook1 = "com.miui.home.launcher.widget.MIUIAppWidgetInfo".hookAfterMethod("initMiuiAttribute", ComponentName::class.java
             ) {
                 it.thisObject.apply {
@@ -24,8 +34,15 @@ class AlwaysShowMIUIWidget {
                     it.result = false
                 }
         }
-        "com.miui.home.launcher.widget.WidgetsVerticalAdapter".hookAfterMethod("buildAppWidgetsItems", List::class.java, ArrayList::class.java
-        ) {
+        try {
+            findMethod("com.miui.home.launcher.widget.WidgetsVerticalAdapter") {
+                name == "buildAppWidgetsItems"
+            }
+        } catch (e : Exception) {
+            findMethod("com.miui.home.launcher.widget.BaseWidgetsVerticalAdapter") {
+                name == "buildAppWidgetsItems"
+            }
+        }.hookAfter {
             hook1?.unhook()
             hook2?.unhook()
         }
