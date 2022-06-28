@@ -2,10 +2,11 @@ package com.yuk.miuihome.module
 
 import android.content.ComponentName
 import com.github.kyuubiran.ezxhelper.utils.findMethod
-import com.github.kyuubiran.ezxhelper.utils.hookAfter
-import com.github.kyuubiran.ezxhelper.utils.hookBefore
+import com.github.kyuubiran.ezxhelper.utils.hookMethod
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.*
+import com.yuk.miuihome.utils.ktx.hookAfterMethod
+import com.yuk.miuihome.utils.ktx.hookBeforeMethod
+import com.yuk.miuihome.utils.ktx.setBooleanField
 import de.robv.android.xposed.XC_MethodHook
 
 class AlwaysShowMIUIWidget {
@@ -18,33 +19,27 @@ class AlwaysShowMIUIWidget {
             findMethod("com.miui.home.launcher.widget.WidgetsVerticalAdapter") {
                 name == "buildAppWidgetsItems"
             }
-        } catch (e : Exception) {
+        } catch (e: Exception) {
             findMethod("com.miui.home.launcher.widget.BaseWidgetsVerticalAdapter") {
                 name == "buildAppWidgetsItems"
             }
-        }.hookBefore {
-            hook1 = "com.miui.home.launcher.widget.MIUIAppWidgetInfo".hookAfterMethod("initMiuiAttribute", ComponentName::class.java
-            ) {
-                it.thisObject.apply {
-                    setBooleanField("isMIUIWidget", false)
+        }.hookMethod {
+            before {
+                hook1 = "com.miui.home.launcher.widget.MIUIAppWidgetInfo".hookAfterMethod(
+                    "initMiuiAttribute", ComponentName::class.java
+                ) {
+                    it.thisObject.setBooleanField("isMIUIWidget", false)
                 }
-            }
-            hook2 = "com.miui.home.launcher.MIUIWidgetUtil".hookBeforeMethod("isMIUIWidgetSupport"
-            ) {
+                hook2 = "com.miui.home.launcher.MIUIWidgetUtil".hookBeforeMethod(
+                    "isMIUIWidgetSupport"
+                ) {
                     it.result = false
                 }
-        }
-        try {
-            findMethod("com.miui.home.launcher.widget.WidgetsVerticalAdapter") {
-                name == "buildAppWidgetsItems"
             }
-        } catch (e : Exception) {
-            findMethod("com.miui.home.launcher.widget.BaseWidgetsVerticalAdapter") {
-                name == "buildAppWidgetsItems"
+            after {
+                hook1?.unhook()
+                hook2?.unhook()
             }
-        }.hookAfter {
-            hook1?.unhook()
-            hook2?.unhook()
         }
     }
 }

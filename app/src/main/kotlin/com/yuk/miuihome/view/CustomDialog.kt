@@ -9,14 +9,14 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.yuk.miuihome.R
+import com.yuk.miuihome.XposedInit
 import com.yuk.miuihome.utils.ktx.dp2px
-import com.yuk.miuihome.utils.ktx.getDensityDpi
 
-class CustomDialog(context: Context) : Dialog(context, if (getDensityDpi() >= 440) R.style.CustomPadDialog else R.style.CustomDialog) {
+class CustomDialog(context: Context) : Dialog(context, if (XposedInit().checkIsPadDevice()) R.style.CustomPadDialog else R.style.CustomDialog) {
     var view: View
 
     init {
-        if (getDensityDpi() >= 440) {
+        if (XposedInit().checkIsPadDevice()) {
             view = createView(context, R.layout.dialog_pad_layout)
             window!!.attributes.width = dp2px(380f)
             window!!.setGravity(Gravity.CENTER)
