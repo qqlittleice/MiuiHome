@@ -40,7 +40,6 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
                         initHandleLoadPackage(lpparam)
                         setLogTag(TAG)
                         setToastTag(TAG)
-                        setLogXp(true)
                         initAppContext(it.args[0] as Context)
                         setEzClassLoader(appContext.classLoader)
                         initActivityProxyManager(Config.modulePackage, Config.hostActivityProxy, XposedInit::class.java.classLoader!!, ezXClassLoader)
