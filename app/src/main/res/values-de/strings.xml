@@ -93,11 +93,11 @@
   <string name="MaxShortcutCount">Max. Anzahl der Verknüpfungen ändern</string>
   <string name="TaskViewAppCardBgColor">Miniatur-Hintergrundfarbe für kleine Fenster-Apps anpassen</string>
   <string name="DrawerModeCount">App-Schublade Anzahl der Icons</string>
-  <string name="PadDockBlur">Pad Dock Blur</string>
-  <string name="DockHeight">Dock Bar Height</string>
-  <string name="DockRoundedCorners">Dock Bar Rounded Corners</string>
-  <string name="DockSide">Dock Bar from the sides of the Screen</string>
-  <string name="DockBottom">Dock Bar from the bottom of the Screen</string>
+  <string name="PadDockBlur">Pad Dock Unschärfe</string>
+  <string name="DockHeight">Dock Bar Höhe</string>
+  <string name="DockRoundedCorners">Dock Bar runde Ecken</string>
+  <string name="DockSide">Dock Bar Entfernung der Seiten des Bildschirmes</string>
+  <string name="DockBottom">Dock Bar Entfernung von der Unterseite</string>
   <string name="DockIconBottom">Icons from the bottom of the Screen</string>
   <string name="DockSettings">Dock Settings</string>
   <string name="DockFeature">Enable Dock Feature</string>
