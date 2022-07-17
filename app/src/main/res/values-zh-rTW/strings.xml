@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="AdvancedFeature">進階設定</string>
-  <string name="AlwaysShowMIUIWidget">在安卓小工具中顯示 MIUI 小工具</string>
-  <string name="AlwaysShowStatusBarClock">關閉狀態欄時鐘隱藏</string>
+  <string name="AlwaysShowMIUIWidget">在 Android 小工具中顯示 MIUI 小工具</string>
+  <string name="AlwaysShowStatusBarClock">停用狀態列時鐘隱藏</string>
   <string name="AnimationLevel">手勢動畫速度</string>
   <string name="AppTextSize">背景應用圖示與標題間距</string>
   <string name="BlurWhenOpenFolder">資料夾打開模糊背景</string>
@@ -93,7 +93,7 @@
   <string name="MaxShortcutCount">最大 Shortcut 數量</string>
   <string name="TaskViewAppCardBgColor">自定義小窗口應用程式的縮略圖背景顏色</string>
   <string name="DrawerModeCount">抽屜模式圖示計數</string>
-  <string name="PadDockBlur">Pad Dock Blur</string>
+  <string name="PadDockBlur">平板 Dock 模糊</string>
   <string name="DockHeight">底欄高度</string>
   <string name="DockRoundedCorners">底欄圓角</string>
   <string name="DockSide">底欄距離螢幕兩側</string>
@@ -107,11 +107,11 @@
   <string name="DockMarginTop">頁面指示器距圖示</string>
   <string name="DockMarginBottom">頁面寬度螢幕底部</string>
   <string name="AppReturnAmin">應用程式返回模糊</string>
-  <string name="appReturnAminSpend">App Return Blur Speed</string>
-  <string name="smallFolderBlur">Small folder blur</string>
-  <string name="smallFolderSummy">Moving folders in edit mode will cause a crash when this feature is enabled</string>
-  <string name="smallFolderBlurCorner">Small folder blur corner</string>
-  <string name="smallFolderBlurSide">Small folder blur side</string>
-  <string name="AllAppsBlur">Enable All Apps Container View Blur</string>
+  <string name="appReturnAminSpend">應用程式返回模糊速度</string>
+  <string name="smallFolderBlur">小資料夾模糊</string>
+  <string name="smallFolderSummy">此功能啟用後，在編輯模式移動資料夾將會導致當機</string>
+  <string name="smallFolderBlurCorner">小資料夾模糊圓角</string>
+  <string name="smallFolderBlurSide">小資料夾模糊側邊</string>
+  <string name="AllAppsBlur">啟用所有應用程式容器檢視模糊</string>
   <string name="AllAppsBlurSummy">Please set app drawer background transparency to 100% to use this feature.Also this is a very early test feature, because refresh issues blur very easily turned into a black screen</string>
 </resources>
