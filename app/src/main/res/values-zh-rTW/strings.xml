@@ -49,7 +49,7 @@
   <string name="TestFeature">實驗性功能</string>
   <string name="Tips">偵測到你是第一次使用本模組，模組將設定為預設值，並隨後重啟桌面。\n如需進一步設定，請待桌面重啟後再次開啟「桌面設定」。</string>
   <string name="UnlockGrids">解鎖方格限制</string>
-  <string name="VerticalTaskViewOfAppCardSize">縱向最近任務畫面縮圖大小</string>
+  <string name="VerticalTaskViewOfAppCardSize">直向最近任務畫面縮圖大小</string>
   <string name="WallpaperDarken">關閉最近任務畫面桌布壓暗功能</string>
   <string name="Welcome">歡迎使用</string>
   <string name="Widget">小工具功能</string>
@@ -70,7 +70,7 @@
   <string name="CustomRecentText">自訂最近任務畫面無應用程式時的文字顯示</string>
   <string name="DoubleTap">雙擊熄滅螢幕</string>
   <string name="LowEndAnim">為入門機啟用動畫圖示</string>
-  <string name="VerticalScreen">縱向螢幕</string>
+  <string name="VerticalScreen">直向螢幕</string>
   <string name="HorizontalScreen">橫向螢幕</string>
   <string name="Reset2">重設橫向最近任務卡片縮圖大小</string>
   <string name="Tips3">這將重設橫向卡片大小設定參數為預設值並重啟桌面。</string>
