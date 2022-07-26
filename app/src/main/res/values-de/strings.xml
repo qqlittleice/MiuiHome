@@ -93,11 +93,11 @@
   <string name="MaxShortcutCount">Max. Anzahl der Verknüpfungen ändern</string>
   <string name="TaskViewAppCardBgColor">Miniatur-Hintergrundfarbe für kleine Fenster-Apps anpassen</string>
   <string name="DrawerModeCount">App-Schublade Anzahl der Icons</string>
-  <string name="PadDockBlur">Pad Dock Blur</string>
-  <string name="DockHeight">Dock Bar Height</string>
-  <string name="DockRoundedCorners">Dock Bar Rounded Corners</string>
-  <string name="DockSide">Dock Bar from the sides of the Screen</string>
-  <string name="DockBottom">Dock Bar from the bottom of the Screen</string>
+  <string name="PadDockBlur">Pad Dock Unschärfe</string>
+  <string name="DockHeight">Dock Bar Höhe</string>
+  <string name="DockRoundedCorners">Dock Bar runde Ecken</string>
+  <string name="DockSide">Dock Bar Entfernung der Seiten des Bildschirmes</string>
+  <string name="DockBottom">Dock Bar Entfernung von der Unterseite</string>
   <string name="DockIconBottom">Icons from the bottom of the Screen</string>
   <string name="DockSettings">Dock Settings</string>
   <string name="DockFeature">Enable Dock Feature</string>
@@ -108,4 +108,10 @@
   <string name="DockMarginBottom">Page Indicator and the bottom of the Screen Spacing</string>
   <string name="AppReturnAmin">App Return Blur</string>
   <string name="appReturnAminSpend">App Return Blur Speed</string>
+  <string name="smallFolderBlur">Small folder blur</string>
+  <string name="smallFolderSummy">Moving folders in edit mode will cause a crash when this feature is enabled</string>
+  <string name="smallFolderBlurCorner">Small folder blur corner</string>
+  <string name="smallFolderBlurSide">Small folder blur side</string>
+  <string name="AllAppsBlur">Enable All Apps Container View Blur</string>
+  <string name="AllAppsBlurSummy">Please set app drawer background transparency to 100% to use this feature.Also this is a very early test feature, because refresh issues blur very easily turned into a black screen</string>
 </resources>
