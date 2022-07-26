@@ -1,8 +1,12 @@
 package com.yuk.miuihome.module
 
 import android.content.ComponentName
+import com.github.kyuubiran.ezxhelper.utils.findMethod
+import com.github.kyuubiran.ezxhelper.utils.hookMethod
 import com.yuk.miuihome.utils.OwnSP
-import com.yuk.miuihome.utils.ktx.*
+import com.yuk.miuihome.utils.ktx.hookAfterMethod
+import com.yuk.miuihome.utils.ktx.hookBeforeMethod
+import com.yuk.miuihome.utils.ktx.setBooleanField
 import de.robv.android.xposed.XC_MethodHook
 
 class AlwaysShowMIUIWidget {
@@ -11,23 +15,31 @@ class AlwaysShowMIUIWidget {
         if (!OwnSP.ownSP.getBoolean("alwaysShowMIUIWidget", false)) return
         var hook1: XC_MethodHook.Unhook? = null
         var hook2: XC_MethodHook.Unhook? = null
-        "com.miui.home.launcher.widget.WidgetsVerticalAdapter".hookBeforeMethod("buildAppWidgetsItems", List::class.java, ArrayList::class.java
-        ) {
-            hook1 = "com.miui.home.launcher.widget.MIUIAppWidgetInfo".hookAfterMethod("initMiuiAttribute", ComponentName::class.java
-            ) {
-                it.thisObject.apply {
-                    setBooleanField("isMIUIWidget", false)
-                }
+        try {
+            findMethod("com.miui.home.launcher.widget.WidgetsVerticalAdapter") {
+                name == "buildAppWidgetsItems"
             }
-            hook2 = "com.miui.home.launcher.MIUIWidgetUtil".hookBeforeMethod("isMIUIWidgetSupport"
-            ) {
+        } catch (e: Exception) {
+            findMethod("com.miui.home.launcher.widget.BaseWidgetsVerticalAdapter") {
+                name == "buildAppWidgetsItems"
+            }
+        }.hookMethod {
+            before {
+                hook1 = "com.miui.home.launcher.widget.MIUIAppWidgetInfo".hookAfterMethod(
+                    "initMiuiAttribute", ComponentName::class.java
+                ) {
+                    it.thisObject.setBooleanField("isMIUIWidget", false)
+                }
+                hook2 = "com.miui.home.launcher.MIUIWidgetUtil".hookBeforeMethod(
+                    "isMIUIWidgetSupport"
+                ) {
                     it.result = false
                 }
-        }
-        "com.miui.home.launcher.widget.WidgetsVerticalAdapter".hookAfterMethod("buildAppWidgetsItems", List::class.java, ArrayList::class.java
-        ) {
-            hook1?.unhook()
-            hook2?.unhook()
+            }
+            after {
+                hook1?.unhook()
+                hook2?.unhook()
+            }
         }
     }
 }

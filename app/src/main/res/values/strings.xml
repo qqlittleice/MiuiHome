@@ -113,4 +113,6 @@
   <string name="smallFolderSummy">Moving folders in edit mode will cause a crash when this feature is enabled</string>
   <string name="smallFolderBlurCorner">Small folder blur corner</string>
   <string name="smallFolderBlurSide">Small folder blur side</string>
+  <string name="AllAppsBlur">Enable All Apps Container View Blur</string>
+  <string name="AllAppsBlurSummy">Please set app drawer background transparency to 100% to use this feature.Also this is a very early test feature, because refresh issues blur very easily turned into a black screen</string>
 </resources>

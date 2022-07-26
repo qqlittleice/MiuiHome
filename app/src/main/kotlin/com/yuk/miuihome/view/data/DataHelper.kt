@@ -35,9 +35,10 @@ object DataHelper {
 
     fun setItems(string: String) {
         thisItems = string
-        val intent = XposedInit.context
+        val intent = Intent(XposedInit.context, HookSettingsActivity::class.java)
         this.currentActivity.finish()
-        XposedInit.context?.startActivity(Intent(intent, HookSettingsActivity::class.java))
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        XposedInit.context?.startActivity(intent)
     }
 
     fun getItems(): ArrayList<Item> = when (thisItems) {
@@ -166,12 +167,13 @@ object DataHelper {
 
             add(Item(list = arrayListOf(SubtitleV(resId = R.string.TestFeature))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SimpleAnimation), "simpleAnimation", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() }))))
+            add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AllAppsBlur), "allAppsBlur"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.InfiniteScroll), "infiniteScroll"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.RecommendServer), "recommendServer"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.HideSeekPoints), "hideSeekPoints"))))
             if (!OwnSP.ownSP.getBoolean("simpleAnimation", false)) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AlwaysBlur), "alwaysBlur", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() }))))
             if (!OwnSP.ownSP.getBoolean("alwaysBlur", false)) add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.AppReturnAmin), "appReturnAmin", customOnCheckedChangeListener =  { _, _ -> currentActivity.recreate() }))))
-            if (OwnSP.ownSP.getBoolean("appReturnAmin", false)) add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.appReturnAminSpend), key = "appReturnAminSpend", min = 50, max = 300, divide = 50, defaultProgress = 10))))
+            if (OwnSP.ownSP.getBoolean("appReturnAmin", false)) add(Item(list = arrayListOf(TextWithSeekBarV(TextV(resId = R.string.appReturnAminSpend), key = "appReturnAminSpend", min = 50, max = 300, divide = 100, defaultProgress = 200))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.SmallWindow), "supportSmallWindow"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.LowEndAnim), "lowEndAnim"))))
             add(Item(list = arrayListOf(TextWithSwitchV(TextWithSummaryV(titleResId = R.string.LowEndDeviceUseMIUIWidgets), "useMIUIWidgets"))))

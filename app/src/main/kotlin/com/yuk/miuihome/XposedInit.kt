@@ -14,8 +14,12 @@ import com.yuk.miuihome.utils.Config
 import com.yuk.miuihome.utils.Config.TAG
 import com.yuk.miuihome.utils.ktx.*
 import com.yuk.miuihome.view.HookSettingsActivity
-import de.robv.android.xposed.*
+import de.robv.android.xposed.IXposedHookLoadPackage
+import de.robv.android.xposed.IXposedHookZygoteInit
+import de.robv.android.xposed.XposedBridge
+import de.robv.android.xposed.XposedHelpers
 import de.robv.android.xposed.callbacks.XC_LoadPackage
+
 
 class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
     companion object {
@@ -36,7 +40,6 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
                         initHandleLoadPackage(lpparam)
                         setLogTag(TAG)
                         setToastTag(TAG)
-                        setLogXp(true)
                         initAppContext(it.args[0] as Context)
                         setEzClassLoader(appContext.classLoader)
                         initActivityProxyManager(Config.modulePackage, Config.hostActivityProxy, XposedInit::class.java.classLoader!!, ezXClassLoader)
@@ -77,7 +80,9 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
                     callMethod("setValue",moduleRes.getString(R.string.ModuleSettings))
                     setObjectField("mClickListener", object : View.OnClickListener {
                         override fun onClick(v: View) {
-                            v.context.startActivity(Intent(v.context, HookSettingsActivity::class.java))
+                            val intent = Intent(v.context, HookSettingsActivity::class.java)
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            v.context.startActivity(intent)
                             context = v.context
                         }
                     })
@@ -137,7 +142,8 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
         ModifyPadA12DockBlur().init()  // 安卓12平板Dock模糊
         EnableFolderIconBlur().init()  //安卓12小文件夹模糊
         ModifyAppReturnBlur().init()  // 应用返回桌面模糊
-        ModifyDockHook().init()  // Dock相关
+        ModifyDockHook().init()  // 安卓12底栏设置
+        EnableAllAppsContainerViewBlur().init()  // 安卓12抽屉模糊
         ResourcesHook().init() // 资源相关
     }
 
@@ -171,6 +177,14 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
 
     fun checkVersionCode(): Long {
         return appContext.packageManager.getPackageInfo(appContext.packageName, 0).longVersionCode
+    }
+
+    @SuppressLint("DiscouragedApi")
+    fun getCornerRadiusTop(): Int {
+        val resourceId = appContext.resources.getIdentifier("rounded_corner_radius_top", "dimen", "android")
+        return if (resourceId > 0) {
+            appContext.resources.getDimensionPixelSize(resourceId)
+        } else 100
     }
 
     fun checkWidgetLauncher(): Boolean {
