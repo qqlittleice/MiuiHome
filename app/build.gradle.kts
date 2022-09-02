@@ -108,7 +108,7 @@ dependencies {
     // Xposed
     compileOnly("de.robv.android.xposed:api:82")
     // EzXHelper
-    implementation("com.github.kyuubiran:EzXHelper:1.0.2")
+    implementation("com.github.kyuubiran:EzXHelper:1.0.3")
     // HiddenApiByPass
     implementation("org.lsposed.hiddenapibypass:hiddenapibypass:4.3")
     // Recyclerview
