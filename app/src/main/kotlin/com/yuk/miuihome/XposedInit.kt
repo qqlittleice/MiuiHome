@@ -68,8 +68,8 @@ class XposedInit : IXposedHookLoadPackage, IXposedHookZygoteInit {
         if (BuildConfig.DEBUG) XposedBridge.log("MiuiHome: MiuiLauncher version = ${checkVersionName()}(${checkVersionCode()})")
         "com.miui.home.settings.MiuiHomeSettings".findClass().hookAfterAllMethods("onCreatePreferences") {
             try {
-                val mLayoutResId = (it.thisObject.getObjectField("mDefaultHomeSetting"))?.getObjectField("mLayoutResId")
-                val mWidgetLayoutResId = (it.thisObject.getObjectField("mDefaultHomeSetting"))?.getObjectField("mWidgetLayoutResId")
+                val mLayoutResId = (it.thisObject.getObjectField("mAllAppsSetting"))?.getObjectField("mLayoutResId")
+                val mWidgetLayoutResId = (it.thisObject.getObjectField("mAllAppsSetting"))?.getObjectField("mWidgetLayoutResId")
                 val pref = XposedHelpers.newInstance("com.miui.home.settings.preference.ValuePreference".findClass(), appContext).apply {
                     setObjectField("mTitle", "MiuiHome")
                     setObjectField("mOrder", 0)
