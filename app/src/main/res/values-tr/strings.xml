@@ -93,7 +93,7 @@
   <string name="MaxShortcutCount">Maksimum kısayol sayısını değiştir</string>
   <string name="TaskViewAppCardBgColor">Küçük pencere uygulamaları için küçük resim arka plan rengini özelleştirin</string>
   <string name="DrawerModeCount">Çekmece modu simgesi sayısı</string>
-  <string name="PadDockBlur">Pad Dock Blur</string>
+  <string name="PadDockBlur">Pad Dock Bulanıklığı</string>
   <string name="DockHeight">Dock Bar Height</string>
   <string name="DockRoundedCorners">Dock Bar Rounded Corners</string>
   <string name="DockSide">Dock Bar from the sides of the Screen</string>
