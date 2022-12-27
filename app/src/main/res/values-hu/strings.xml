@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="AdvancedFeature">Advanced Settings</string>
+  <string name="AdvancedFeature">Haladó beállítások</string>
   <string name="AlwaysShowMIUIWidget">Allow MIUI widgets to be displayed in Classic widgets</string>
   <string name="AlwaysShowStatusBarClock">Disable status bar clock hide</string>
   <string name="AnimationLevel">Gesture animation speed</string>
